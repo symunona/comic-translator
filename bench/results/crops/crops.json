@@ -1,0 +1,758 @@
+[
+ {
+  "id": "r0",
+  "panelId": "p0",
+  "kind": "sfx",
+  "box": [
+   326,
+   27,
+   294,
+   191
+  ],
+  "file": "r0.png",
+  "gt": "UNKA!",
+  "gtLines": [
+   "UNKA!"
+  ]
+ },
+ {
+  "id": "r1",
+  "panelId": "p1",
+  "kind": "speech",
+  "box": [
+   302,
+   510,
+   132,
+   98
+  ],
+  "file": "r1.png",
+  "gt": "NA! E! DEJÓ, HOGY ELJÖTTÉ, E!",
+  "gtLines": [
+   "NA! E!",
+   "DEJÓ, HOGY",
+   "ELJÖTTÉ, E!"
+  ]
+ },
+ {
+  "id": "r2",
+  "panelId": "p1",
+  "kind": "speech",
+  "box": [
+   261,
+   706,
+   55,
+   30
+  ],
+  "file": "r2.png",
+  "gt": "HÍREK",
+  "gtLines": [
+   "HÍREK"
+  ]
+ },
+ {
+  "id": "r4",
+  "panelId": "p2",
+  "kind": "speech",
+  "box": [
+   83,
+   943,
+   225,
+   153
+  ],
+  "file": "r4.png",
+  "gt": "MOST ARRA GONDOLSZ, HOGY „DE KÁR, HOGY ELKÖLTÖTTEM AZ ELŐLEGET, MOST LEMONDHATNÁM",
+  "gtLines": [
+   "MOST ARRA GONDOLSZ,",
+   "HOGY „DE KÁR, HOGY",
+   "ELKÖLTÖTTEM AZ",
+   "ELŐLEGET, MOST",
+   "LEMONDHATNÁM"
+  ]
+ },
+ {
+  "id": "r5",
+  "panelId": "p2",
+  "kind": "sign",
+  "box": [
+   380,
+   922,
+   165,
+   51
+  ],
+  "file": "r5.png",
+  "gt": "CAVALEIR",
+  "gtLines": [
+   "CAVALEIR"
+  ]
+ },
+ {
+  "id": "r6",
+  "panelId": "p2",
+  "kind": "speech",
+  "box": [
+   179,
+   1083,
+   125,
+   41
+  ],
+  "file": "r6.png",
+  "gt": "A MELÓT!”",
+  "gtLines": [
+   "A MELÓT!”"
+  ]
+ },
+ {
+  "id": "r7",
+  "panelId": "p2",
+  "kind": "speech",
+  "box": [
+   176,
+   1129,
+   122,
+   46
+  ],
+  "file": "r7.png",
+  "gt": "HÁT... KÁBÉ.",
+  "gtLines": [
+   "HÁT... KÁBÉ."
+  ]
+ },
+ {
+  "id": "r8",
+  "panelId": "p2",
+  "kind": "sign",
+  "box": [
+   464,
+   1115,
+   98,
+   39
+  ],
+  "file": "r8.png",
+  "gt": "FASZI BÁCSI",
+  "gtLines": [
+   "FASZI BÁCSI"
+  ]
+ },
+ {
+  "id": "r9",
+  "panelId": "p2",
+  "kind": "speech",
+  "box": [
+   213,
+   1182,
+   180,
+   35
+  ],
+  "file": "r9.png",
+  "gt": "NA. PATTANJ FEL!",
+  "gtLines": [
+   "NA. PATTANJ FEL!"
+  ]
+ },
+ {
+  "id": "r10",
+  "panelId": "p2",
+  "kind": "sign",
+  "box": [
+   344,
+   1303,
+   242,
+   48
+  ],
+  "file": "r10.png",
+  "gt": "FASZI-1",
+  "gtLines": [
+   "FASZI-1"
+  ]
+ },
+ {
+  "id": "r11",
+  "panelId": "p3",
+  "kind": "sign",
+  "box": [
+   372,
+   1496,
+   230,
+   66
+  ],
+  "file": "r11.png",
+  "gt": "CALAVRIE",
+  "gtLines": [
+   "CALAVRIE"
+  ]
+ },
+ {
+  "id": "r12",
+  "panelId": "p3",
+  "kind": "speech",
+  "box": [
+   125,
+   1615,
+   244,
+   93
+  ],
+  "file": "r12.png",
+  "gt": "NEM BAJ, AZ EMBER AZÉRT FIATAL, HOGY TANULJON.",
+  "gtLines": [
+   "NEM BAJ, AZ EMBER",
+   "AZÉRT FIATAL, HOGY",
+   "TANULJON."
+  ]
+ },
+ {
+  "id": "r13",
+  "panelId": "p3",
+  "kind": "sign",
+  "box": [
+   468,
+   1688,
+   98,
+   39
+  ],
+  "file": "r13.png",
+  "gt": "FASZI BÁCSI",
+  "gtLines": [
+   "FASZI BÁCSI"
+  ]
+ },
+ {
+  "id": "r14",
+  "panelId": "p3",
+  "kind": "sign",
+  "box": [
+   413,
+   1856,
+   155,
+   38
+  ],
+  "file": "r14.png",
+  "gt": "FASZI-1",
+  "gtLines": [
+   "FASZI-1"
+  ]
+ },
+ {
+  "id": "r15",
+  "panelId": "p4",
+  "kind": "speech",
+  "box": [
+   89,
+   2023,
+   236,
+   47
+  ],
+  "file": "r15.png",
+  "gt": "JÉZUS, ATYA, ÚRISTEN!",
+  "gtLines": [
+   "JÉZUS, ATYA, ÚRISTEN!"
+  ]
+ },
+ {
+  "id": "r16",
+  "panelId": "p4",
+  "kind": "sign",
+  "box": [
+   333,
+   2047,
+   267,
+   79
+  ],
+  "file": "r16.png",
+  "gt": "VECALAIR",
+  "gtLines": [
+   "VECALAIR"
+  ]
+ },
+ {
+  "id": "r17",
+  "panelId": "p4",
+  "kind": "speech",
+  "box": [
+   52,
+   2097,
+   293,
+   274
+  ],
+  "file": "r17.png",
+  "gt": "Ö A HÁLÓFÜLKÉBEN LÓG, EGY KRISTÁLYHOLOGRAM FORMÁJÁBAN, DE ITT VALÓBAN A SZENTFÖLDI LOVAGVÁRAK STÍLUSÁT IGYEKEZTEM HOZNI. AZ OTT EGY BEDUIN KEMENCE, HENNÁS KASPÓ TEVENYEREG, ASZTROLÁBIUM...",
+  "gtLines": [
+   "Ö A HÁLÓFÜLKÉBEN LÓG,",
+   "EGY KRISTÁLYHOLOGRAM",
+   "FORMÁJÁBAN, DE ITT",
+   "VALÓBAN A SZENTFÖLDI",
+   "LOVAGVÁRAK",
+   "STÍLUSÁT IGYEKEZTEM HOZNI.",
+   "AZ OTT EGY BEDUIN",
+   "KEMENCE, HENNÁS KASPÓ",
+   "TEVENYEREG, ASZTROLÁBIUM..."
+  ]
+ },
+ {
+  "id": "r18",
+  "panelId": "p4",
+  "kind": "sign",
+  "box": [
+   474,
+   2251,
+   100,
+   38
+  ],
+  "file": "r18.png",
+  "gt": "FASZI BÁCSI",
+  "gtLines": [
+   "FASZI BÁCSI"
+  ]
+ },
+ {
+  "id": "r19",
+  "panelId": "p4",
+  "kind": "speech",
+  "box": [
+   76,
+   2372,
+   207,
+   95
+  ],
+  "file": "r19.png",
+  "gt": "CSAK MÁR GECIRE UNOM. EZÉRT VAGY ITT, E!",
+  "gtLines": [
+   "CSAK MÁR GECIRE",
+   "UNOM.",
+   "EZÉRT VAGY ITT, E!"
+  ]
+ },
+ {
+  "id": "r20",
+  "panelId": "p5",
+  "kind": "speech",
+  "box": [
+   42,
+   2617,
+   309,
+   42
+  ],
+  "file": "r20.png",
+  "gt": "HÁTŐŐ... EDDIG EGY KAMIONT...",
+  "gtLines": [
+   "HÁTŐŐ... EDDIG EGY KAMIONT..."
+  ]
+ },
+ {
+  "id": "r23",
+  "panelId": "p5",
+  "kind": "sign",
+  "box": [
+   420,
+   2611,
+   200,
+   71
+  ],
+  "file": "r23.png",
+  "gt": "RELAVACI",
+  "gtLines": [
+   "RELAVACI"
+  ]
+ },
+ {
+  "id": "r24",
+  "panelId": "p5",
+  "kind": "speech",
+  "box": [
+   114,
+   2657,
+   213,
+   35
+  ],
+  "file": "r24.png",
+  "gt": "NYERGES VONTATÓT.",
+  "gtLines": [
+   "NYERGES VONTATÓT."
+  ]
+ },
+ {
+  "id": "r25",
+  "panelId": "p5",
+  "kind": "speech",
+  "box": [
+   43,
+   2691,
+   400,
+   128
+  ],
+  "file": "r25.png",
+  "gt": "PARDON. NYERGESVONTATÓT CSINÁLTAM, VIII. HENRIK STÍLUSÁBAN, „TRUBADÚR” LETT A MUNKACÍME. ITT VAN A PORTFÓLIÓMBAN:",
+  "gtLines": [
+   "PARDON. NYERGESVONTATÓT",
+   "CSINÁLTAM, VIII. HENRIK STÍLUSÁBAN,",
+   "„TRUBADÚR” LETT A MUNKACÍME.",
+   "ITT VAN A PORTFÓLIÓMBAN:"
+  ]
+ },
+ {
+  "id": "r26",
+  "panelId": "p5",
+  "kind": "speech",
+  "box": [
+   62,
+   2825,
+   321,
+   200
+  ],
+  "file": "r26.png",
+  "gt": "AHA ... VÁGOM. KÁRPIT MÁR MESSZIRŐL. ELKAPTAD A BROKÁT. SOK A BOJT. FELBASZNA AZONNAL. MEG EZIS ILYEN „RÉGI”, VÁGOD? ÁNTIK.",
+  "gtLines": [
+   "AHA ... VÁGOM. KÁRPIT",
+   "MÁR MESSZIRŐL. ELKAPTAD A",
+   "BROKÁT. SOK A BOJT. FELBASZNA",
+   "AZONNAL. MEG EZIS ILYEN",
+   "„RÉGI”, VÁGOD?",
+   "ÁNTIK."
+  ]
+ },
+ {
+  "id": "r27",
+  "panelId": "p5",
+  "kind": "sign",
+  "box": [
+   529,
+   2815,
+   87,
+   36
+  ],
+  "file": "r27.png",
+  "gt": "FASZI BÁCSI",
+  "gtLines": [
+   "FASZI BÁCSI"
+  ]
+ },
+ {
+  "id": "r28",
+  "panelId": "p5",
+  "kind": "sign",
+  "box": [
+   385,
+   3004,
+   222,
+   46
+  ],
+  "file": "r28.png",
+  "gt": "FASZI-1",
+  "gtLines": [
+   "FASZI-1"
+  ]
+ },
+ {
+  "id": "r29",
+  "panelId": "p5",
+  "kind": "caption",
+  "box": [
+   106,
+   3081,
+   45,
+   25
+  ],
+  "file": "r29.png",
+  "gt": "ROPI",
+  "gtLines": [
+   "ROPI"
+  ]
+ },
+ {
+  "id": "r30",
+  "panelId": "p6",
+  "kind": "speech",
+  "box": [
+   44,
+   3185,
+   351,
+   231
+  ],
+  "file": "r30.png",
+  "gt": "SZÓVAL, AMIKOR A GROẞKUGELNI PIHENŐBEN KINYITJA A KURVA AZ AJTÓT AKKOR NE AZT KÉRDEZZE, MERRE VAN A MÚZEUMSHOP, VÁGOD? IRÁNYNAK ILYEN NEOLOFTOS ART DEKÓT GONDOLNÉK.",
+  "gtLines": [
+   "SZÓVAL, AMIKOR A GROẞKUGELNI",
+   "PIHENŐBEN KINYITJA A",
+   "KURVA AZ AJTÓT AKKOR",
+   "NE AZT KÉRDEZZE, MERRE VAN",
+   "A MÚZEUMSHOP, VÁGOD?",
+   "IRÁNYNAK ILYEN NEOLOFTOS",
+   "ART DEKÓT GONDOLNÉK."
+  ]
+ },
+ {
+  "id": "r32",
+  "panelId": "p6",
+  "kind": "sign",
+  "box": [
+   420,
+   3235,
+   177,
+   47
+  ],
+  "file": "r32.png",
+  "gt": "RACALVIE",
+  "gtLines": [
+   "RACALVIE"
+  ]
+ },
+ {
+  "id": "r33",
+  "panelId": "p6",
+  "kind": "sign",
+  "box": [
+   541,
+   3384,
+   79,
+   37
+  ],
+  "file": "r33.png",
+  "gt": "FASZI BÁCSI",
+  "gtLines": [
+   "FASZI BÁCSI"
+  ]
+ },
+ {
+  "id": "r34",
+  "panelId": "p6",
+  "kind": "speech",
+  "box": [
+   44,
+   3425,
+   316,
+   77
+  ],
+  "file": "r34.png",
+  "gt": "ÉRTEM. EZ A DOBOZ, EZ MI? MARADNIA KELL?",
+  "gtLines": [
+   "ÉRTEM. EZ A DOBOZ, EZ MI?",
+   "MARADNIA KELL?"
+  ]
+ },
+ {
+  "id": "r35",
+  "panelId": "p6",
+  "kind": "speech",
+  "box": [
+   61,
+   3497,
+   303,
+   50
+  ],
+  "file": "r35.png",
+  "gt": "AKKSIK A FÉNYHEZ. MARAD.",
+  "gtLines": [
+   "AKKSIK A FÉNYHEZ. MARAD."
+  ]
+ },
+ {
+  "id": "r36",
+  "panelId": "p6",
+  "kind": "speech",
+  "box": [
+   234,
+   3541,
+   138,
+   49
+  ],
+  "file": "r36.png",
+  "gt": "„FÉNYHEZ”?",
+  "gtLines": [
+   "„FÉNYHEZ”?"
+  ]
+ },
+ {
+  "id": "r37",
+  "panelId": "p6",
+  "kind": "sign",
+  "box": [
+   384,
+   3534,
+   236,
+   47
+  ],
+  "file": "r37.png",
+  "gt": "FASZI-1",
+  "gtLines": [
+   "FASZI-1"
+  ]
+ },
+ {
+  "id": "r38",
+  "panelId": "p7",
+  "kind": "sign",
+  "box": [
+   44,
+   3835,
+   548,
+   233
+  ],
+  "file": "r38.png",
+  "gt": "BALKON",
+  "gtLines": [
+   "BALKON"
+  ]
+ },
+ {
+  "id": "r40",
+  "panelId": "p8",
+  "kind": "sign",
+  "box": [
+   412,
+   4497,
+   201,
+   44
+  ],
+  "file": "r40.png",
+  "gt": "CAVELIAR",
+  "gtLines": [
+   "CAVELIAR"
+  ]
+ },
+ {
+  "id": "r41",
+  "panelId": "p8",
+  "kind": "speech",
+  "box": [
+   73,
+   4608,
+   160,
+   72
+  ],
+  "file": "r41.png",
+  "gt": "TIÉD VOLT AZ A SMART?",
+  "gtLines": [
+   "TIÉD VOLT AZ",
+   "A SMART?"
+  ]
+ },
+ {
+  "id": "r42",
+  "panelId": "p8",
+  "kind": "sign",
+  "box": [
+   494,
+   4660,
+   106,
+   38
+  ],
+  "file": "r42.png",
+  "gt": "FASZI BÁCSI",
+  "gtLines": [
+   "FASZI BÁCSI"
+  ]
+ },
+ {
+  "id": "r45",
+  "panelId": "p8",
+  "kind": "sign",
+  "box": [
+   368,
+   4817,
+   231,
+   38
+  ],
+  "file": "r45.png",
+  "gt": "FASZI-1",
+  "gtLines": [
+   "FASZI-1"
+  ]
+ },
+ {
+  "id": "r46",
+  "panelId": "p9",
+  "kind": "sfx",
+  "box": [
+   245,
+   5140,
+   366,
+   167
+  ],
+  "file": "r46.png",
+  "gt": "FIFU! HURUHATÁRR!",
+  "gtLines": [
+   "FIFU!",
+   "HURUHATÁRR!"
+  ]
+ },
+ {
+  "id": "r47",
+  "panelId": "p9",
+  "kind": "sign",
+  "box": [
+   383,
+   5285,
+   182,
+   43
+  ],
+  "file": "r47.png",
+  "gt": "CAVALIER",
+  "gtLines": [
+   "CAVALIER"
+  ]
+ },
+ {
+  "id": "r48",
+  "panelId": "p9",
+  "kind": "speech",
+  "box": [
+   100,
+   5393,
+   76,
+   39
+  ],
+  "file": "r48.png",
+  "gt": "BOCSI.",
+  "gtLines": [
+   "BOCSI."
+  ]
+ },
+ {
+  "id": "r49",
+  "panelId": "p9",
+  "kind": "speech",
+  "box": [
+   79,
+   5429,
+   166,
+   61
+  ],
+  "file": "r49.png",
+  "gt": "MEG HAZAVISZLEK.",
+  "gtLines": [
+   "MEG",
+   "HAZAVISZLEK."
+  ]
+ },
+ {
+  "id": "r50",
+  "panelId": "p9",
+  "kind": "sign",
+  "box": [
+   502,
+   5422,
+   99,
+   41
+  ],
+  "file": "r50.png",
+  "gt": "FASZI BÁCSI",
+  "gtLines": [
+   "FASZI BÁCSI"
+  ]
+ },
+ {
+  "id": "r52",
+  "panelId": "p9",
+  "kind": "sign",
+  "box": [
+   405,
+   5581,
+   175,
+   44
+  ],
+  "file": "r52.png",
+  "gt": "FASZI-1",
+  "gtLines": [
+   "FASZI-1"
+  ]
+ }
+]
