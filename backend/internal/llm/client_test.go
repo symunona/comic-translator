@@ -17,6 +17,13 @@ func TestExtractWithKey(t *testing.T) {
 	}
 }
 
+func TestExtractJSONTrailingComma(t *testing.T) {
+	raw, err := ExtractJSON("```json\n{\"regions\": {\"r0\": {\"text\": \"A, }\",},\n },}\n```")
+	if err != nil || string(raw) != "{\"regions\": {\"r0\": {\"text\": \"A, }\"}\n }}" {
+		t.Fatalf("got %s, %v", raw, err)
+	}
+}
+
 func TestStageOf(t *testing.T) {
 	for in, want := range map[string]string{"ocr-p3": "ocr", "translate-en": "translate:en", "retranslate-de": "retranslate:de", "scene": "scene"} {
 		if got := StageOf(in); got != want {
