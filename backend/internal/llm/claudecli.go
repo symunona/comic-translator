@@ -13,12 +13,26 @@ import (
 
 const maxArgPrompt = 120_000
 
+const leanSystemPrompt = "You read comic images with the Read tool and answer with exactly one JSON object, no prose."
+
+// leanArgs strip the Claude Code harness down to the Read tool: no default
+// system prompt, no settings, CLAUDE.md, MCP or skills. Cuts ~12k cached
+// prompt tokens per call.
+var leanArgs = []string{
+	"--tools", "Read",
+	"--system-prompt", leanSystemPrompt,
+	"--setting-sources", "",
+	"--strict-mcp-config",
+	"--disable-slash-commands",
+}
+
 type ClaudeCLI struct {
 	Bin     string
 	Model   string
 	Dir     string
 	TmpDir  string
 	Timeout time.Duration
+	Lean    bool
 	sem     chan struct{}
 }
 
@@ -26,15 +40,19 @@ func NewClaudeCLI(bin, model, dir, tmpDir string, concurrency int) *ClaudeCLI {
 	return &ClaudeCLI{
 		Bin: bin, Model: model, Dir: dir, TmpDir: tmpDir,
 		Timeout: 15 * time.Minute,
+		Lean:    true,
 		sem:     make(chan struct{}, concurrency),
 	}
 }
 
 type cliResult struct {
-	Result  string  `json:"result"`
-	IsError bool    `json:"is_error"`
-	Subtype string  `json:"subtype"`
-	CostUSD float64 `json:"total_cost_usd"`
+	Result     string          `json:"result"`
+	IsError    bool            `json:"is_error"`
+	Subtype    string          `json:"subtype"`
+	CostUSD    float64         `json:"total_cost_usd"`
+	NumTurns   int             `json:"num_turns"`
+	Usage      *Usage          `json:"usage"`
+	ModelUsage json.RawMessage `json:"modelUsage"`
 }
 
 func (c *ClaudeCLI) Call(ctx context.Context, prompt string, images []string, schemaHint string) (json.RawMessage, error) {
@@ -92,6 +110,9 @@ func (c *ClaudeCLI) run(ctx context.Context, prompt string, images []string, att
 	}
 	args = append(args, "--allowedTools", "Read", "--model", c.Model,
 		"--output-format", "json", "--no-session-persistence")
+	if c.Lean {
+		args = append(args, leanArgs...)
+	}
 
 	cmd := exec.CommandContext(ctx, c.Bin, args...)
 	cmd.Dir = c.Dir
@@ -122,6 +143,7 @@ func (c *ClaudeCLI) run(ctx context.Context, prompt string, images []string, att
 		return "", fmt.Errorf("claude cli: %s", entry.Error)
 	}
 	entry.Result, entry.CostUSD = res.Result, res.CostUSD
+	entry.Usage, entry.NumTurns, entry.ModelUsage = res.Usage, res.NumTurns, res.ModelUsage
 	if res.IsError {
 		entry.Error = "cli reported error: " + res.Subtype
 		return "", fmt.Errorf("claude cli: %s: %s", res.Subtype, res.Result)

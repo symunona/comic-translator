@@ -88,12 +88,15 @@ Interface `LLM.Call(ctx, prompt string, images []string /*abs paths*/, schemaHin
 Impl `claudecli`:
 ```
 claude -p "<prompt listing image paths: 'Read these images with the Read tool: ...'>" \
-  --allowedTools Read --model <model> --output-format json --no-session-persistence
+  --allowedTools Read --model <model> --output-format json --no-session-persistence \
+  --tools Read --system-prompt <1 line> --setting-sources "" --strict-mcp-config --disable-slash-commands
 ```
+- Second line = lean mode (`ClaudeCLI.Lean`, default on). Drops Claude Code system prompt, settings, CLAUDE.md, MCP, skills: ~$0.11/call less. See `docs/llm.md`.
 - stdout JSON `.result` = model text. Extract first `{...}` block, `json.Unmarshal`. Retry once on parse fail with "return ONLY valid JSON".
 - Models: ocr/scene/translate/review `opus` (flag `-model`, default opus). Verified: sonnet reads images in ~7s, ~$0.07/call.
 - Run with cwd = data dir, `TMPDIR` set to data-ssd tmp.
-- Log prompt + raw result to `data/<id>/llm/<stage>-<n>.json` (debug, prompt eval later).
+- Log prompt + raw result + `usage` tokens + `numTurns` + `modelUsage` + `costUsd` to `data/<id>/llm/<stage>-<n>.json`. Editor retranslate logs as `retranslate-<lang>`.
+- Usage: `llm.ReadUsage` aggregates logs per stage. `go run ./cmd/llmusage [id-prefix]` prints table.
 - Concurrency cap 4 global.
 
 ## API (Go, net/http, JSON)
@@ -103,6 +106,7 @@ claude -p "<prompt listing image paths: 'Read these images with the Read tool: .
 | GET | `/api/strips?limit=10` | `[StripSummary]` newest first: `{id, origName, createdAt, width, height, thumbUrl, langs:[...] }` |
 | POST | `/api/strips` | multipart `file`. resp `{id, existing:bool}`. Does ingest only |
 | GET | `/api/strips/{id}` | `Strip` (full current state, whatever stages done) |
+| GET | `/api/strips/{id}/usage` | `{stages:[StageUsage], total}` LLM tokens + cost per stage, from `llm/` logs |
 | GET | `/api/strips/{id}/events?lang=en` | SSE. Starts/joins pipeline job for (id, lang). Replays done stages first (status `cached`), then live |
 | GET | `/api/strips/{id}/image/orig.png`, `/clean.png`, `/overlays/{rid}.png`, `/debug/{pid}.png`, `/out/{lang}.png` | files |
 | GET | `/api/strips/{id}/translations/{lang}` | `Translation` (edit file if exists, else pipeline) |

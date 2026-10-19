@@ -1,4 +1,4 @@
-import type { Region, Strip, StripSummary, StreamHandlers, Translation } from "./types";
+import type { Region, Strip, StripSummary, StreamHandlers, Translation, UsageReport } from "./types";
 
 export type Api = {
   listStrips(limit: number): Promise<StripSummary[]>;
@@ -9,6 +9,7 @@ export type Api = {
   retranslate(id: string, lang: string, body: { regionIds?: string[]; hint?: string }): Promise<Translation>;
   render(id: string, lang: string, png: Blob): Promise<{ url: string }>;
   patchRegion(id: string, rid: string, body: { replace?: boolean; source?: { text: string; lines: string[] } }): Promise<Region>;
+  usage(id: string): Promise<UsageReport>;
   stream(id: string, lang: string, h: StreamHandlers): () => void;
   imageUrl(id: string, name: string): string;
 };
@@ -45,6 +46,7 @@ export const httpApi: Api = {
       json<{ url: string }>(r),
     ),
   patchRegion: (id, rid, body) => fetch(`${base(id)}/regions/${rid}`, send("PATCH", body)).then((r) => json<Region>(r)),
+  usage: (id) => fetch(`${base(id)}/usage`).then((r) => json<UsageReport>(r)),
   stream(id, lang, h) {
     const es = new EventSource(`${base(id)}/events?lang=${encodeURIComponent(lang)}`);
     const parse = (e: MessageEvent) => JSON.parse(e.data);

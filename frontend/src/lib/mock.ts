@@ -382,6 +382,23 @@ export const mockApi: Api = {
     if (body.replace !== undefined) r.replace = body.replace;
     return structuredClone(r);
   },
+  async usage() {
+    const row = (stage: string, calls: number, costUsd: number, out: number) => ({
+      stage, calls, errors: 0, untracked: 0, turns: calls * 2, costUsd, durationMs: calls * 12000, models: ["opus"],
+      tokens: { input_tokens: calls * 4, cache_creation_input_tokens: calls * 4000, cache_read_input_tokens: calls * 4800, output_tokens: out },
+    });
+    const stages = [row("ocr", 10, 0.49, 7700), row("scene", 1, 0.25, 12000), row("translate:en", 1, 0.3, 9000), row("review:en", 1, 0.39, 10200)];
+    const total = stages.reduce((t, s) => ({
+      ...t, calls: t.calls + s.calls, turns: t.turns + s.turns, costUsd: t.costUsd + s.costUsd, durationMs: t.durationMs + s.durationMs,
+      tokens: {
+        input_tokens: t.tokens.input_tokens + s.tokens.input_tokens,
+        cache_creation_input_tokens: t.tokens.cache_creation_input_tokens + s.tokens.cache_creation_input_tokens,
+        cache_read_input_tokens: t.tokens.cache_read_input_tokens + s.tokens.cache_read_input_tokens,
+        output_tokens: t.tokens.output_tokens + s.tokens.output_tokens,
+      },
+    }), row("total", 0, 0, 0));
+    return { stages, total };
+  },
   stream,
   imageUrl: (id, name) => (name === "orig.png" ? "" : `/mock/${id}/${name}`),
 };

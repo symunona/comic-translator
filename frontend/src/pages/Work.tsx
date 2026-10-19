@@ -3,6 +3,7 @@ import { For, Show, createEffect, createMemo, createSignal, on, onCleanup, onMou
 import Checklist from "../components/Checklist";
 import RegionCard from "../components/RegionCard";
 import Strip from "../components/Strip";
+import UsagePanel from "../components/UsagePanel";
 import { api, isMock } from "../lib/api";
 import { FONT_FAMILY } from "../lib/layout";
 import { renderStrip } from "../lib/render";
@@ -140,6 +141,9 @@ function WorkView(props: { id: string }) {
             </Show>
           </div>
           <Checklist stages={s.stages} collapsed={s.everDone && s.phase !== "fatal"} error={s.error} />
+          <Show when={s.everDone}>
+            <UsagePanel id={props.id} refresh={`${s.phase}:${s.translation?.updatedAt ?? ""}`} />
+          </Show>
           <Show when={exportError()}>
             <p class="fatal">{exportError()}</p>
           </Show>

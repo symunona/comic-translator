@@ -65,9 +65,13 @@ type logEntry struct {
 	Images   []string        `json:"images"`
 	Duration string          `json:"duration"`
 	CostUSD  float64         `json:"costUsd,omitempty"`
+	Usage    *Usage          `json:"usage,omitempty"`
+	NumTurns int             `json:"numTurns,omitempty"`
 	Result   string          `json:"result,omitempty"`
 	Error    string          `json:"error,omitempty"`
 	Raw      json.RawMessage `json:"raw,omitempty"`
+
+	ModelUsage json.RawMessage `json:"modelUsage,omitempty"`
 }
 
 // ExtractJSON returns the first balanced {...} block in s.
