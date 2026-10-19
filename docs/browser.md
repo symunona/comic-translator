@@ -59,6 +59,7 @@ Headless Chrome on devbox (12 cores). Prod build.
 - Misses that matter: `HÍREK` (47x22, p1) and `ROPI` (37x17, p5). Tiny text. Both translated in prod.
 - Other server-only: sign/none dupes, overlapping double boxes that v4-s returns as one larger box (p6, p8).
 - v4-s labels more as `text_free`, fewer `text_bubble`. Affects nothing downstream except `detClass` shown.
+- End to end on server (deployed build, browser boxes): order -> ocr -> scene -> clean -> translate:en -> review:en all done, 39 regions translated.
 - Verdict: speech bubbles fine. Tiny captions/signs weaker. Check 5-10 more strips before trusting it (Q3 step 2).
 
 ## Gotchas
