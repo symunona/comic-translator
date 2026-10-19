@@ -17,6 +17,7 @@ type Usage struct {
 	CacheCreationTokens int `json:"cache_creation_input_tokens"`
 	CacheReadTokens     int `json:"cache_read_input_tokens"`
 	OutputTokens        int `json:"output_tokens"`
+	ReasoningTokens     int `json:"reasoning_tokens,omitempty"`
 }
 
 func (u *Usage) add(o Usage) {
@@ -24,6 +25,7 @@ func (u *Usage) add(o Usage) {
 	u.CacheCreationTokens += o.CacheCreationTokens
 	u.CacheReadTokens += o.CacheReadTokens
 	u.OutputTokens += o.OutputTokens
+	u.ReasoningTokens += o.ReasoningTokens
 }
 
 // StageUsage sums every logged call of one stage. Untracked counts calls

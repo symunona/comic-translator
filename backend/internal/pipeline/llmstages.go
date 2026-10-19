@@ -148,7 +148,7 @@ func (r *runState) ocrPanel(ctx context.Context, panel Panel, idx []int) (*panel
 	if err != nil {
 		return nil, err
 	}
-	raw, err := r.p.LLM.Call(r.llmCtx(ctx, stageName), prompt, images, ocrSchema)
+	raw, err := r.p.LLM.Call(r.llmCtx(ctx, "ocr", stageName), prompt, images, ocrSchema)
 	if err != nil {
 		return nil, err
 	}
@@ -305,7 +305,7 @@ func (r *runState) runScene(ctx context.Context) error {
 	if err != nil {
 		return err
 	}
-	raw, err := r.p.LLM.Call(r.llmCtx(ctx, "scene"), prompt, images, sceneSchema)
+	raw, err := r.p.LLM.Call(r.llmCtx(ctx, "scene", "scene"), prompt, images, sceneSchema)
 	if err != nil {
 		return err
 	}
@@ -347,10 +347,11 @@ type trPass struct {
 }
 
 func (r *runState) passLog(ctx context.Context, pass trPass, stage string) context.Context {
+	name := stage
 	if pass.edit {
-		stage = "retranslate"
+		name = "retranslate"
 	}
-	return r.llmCtx(ctx, stage+"-"+r.lang)
+	return r.llmCtx(ctx, stage, name+"-"+r.lang)
 }
 
 func (r *runState) promptData(pass trPass) map[string]any {

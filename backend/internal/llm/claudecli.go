@@ -4,6 +4,7 @@ import (
 	"bytes"
 	"context"
 	"encoding/json"
+	"errors"
 	"fmt"
 	"os"
 	"os/exec"
@@ -13,19 +14,8 @@ import (
 
 const maxArgPrompt = 120_000
 
-const leanSystemPrompt = "You read comic images with the Read tool and answer with exactly one JSON object, no prose."
-
-// leanArgs strip the Claude Code harness down to the Read tool: no default
-// system prompt, no settings, CLAUDE.md, MCP or skills. Cuts ~12k cached
-// prompt tokens per call.
-var leanArgs = []string{
-	"--tools", "Read",
-	"--system-prompt", leanSystemPrompt,
-	"--setting-sources", "",
-	"--strict-mcp-config",
-	"--disable-slash-commands",
-}
-
+// ClaudeCLI runs `claude -p` on a Claude subscription. Images are read by the
+// model through the Read tool, one turn per image.
 type ClaudeCLI struct {
 	Bin     string
 	Model   string
@@ -33,17 +23,13 @@ type ClaudeCLI struct {
 	TmpDir  string
 	Timeout time.Duration
 	Lean    bool
-	sem     chan struct{}
 }
 
-func NewClaudeCLI(bin, model, dir, tmpDir string, concurrency int) *ClaudeCLI {
-	return &ClaudeCLI{
-		Bin: bin, Model: model, Dir: dir, TmpDir: tmpDir,
-		Timeout: 15 * time.Minute,
-		Lean:    true,
-		sem:     make(chan struct{}, concurrency),
-	}
+func NewClaudeCLI(bin, model, dir, tmpDir string) *ClaudeCLI {
+	return &ClaudeCLI{Bin: bin, Model: model, Dir: dir, TmpDir: tmpDir, Timeout: 15 * time.Minute, Lean: true}
 }
+
+func (c *ClaudeCLI) Name() string { return "claude-cli:" + c.Model }
 
 type cliResult struct {
 	Result     string          `json:"result"`
@@ -55,52 +41,25 @@ type cliResult struct {
 	ModelUsage json.RawMessage `json:"modelUsage"`
 }
 
-func (c *ClaudeCLI) Call(ctx context.Context, prompt string, images []string, schemaHint string) (json.RawMessage, error) {
-	full := buildPrompt(prompt, images, schemaHint)
-	out, err := c.run(ctx, full, images, 0)
-	if err != nil {
-		return nil, err
+func cliPrompt(req Request) string {
+	if len(req.Images) == 0 {
+		return req.Prompt
 	}
-	raw, err := ExtractJSON(out)
-	if err == nil {
-		return raw, nil
-	}
-	retry := full + "\n\nYour previous reply was not valid JSON. Return ONLY valid JSON, no prose, no code fences."
-	out, err = c.run(ctx, retry, images, 1)
-	if err != nil {
-		return nil, err
-	}
-	return ExtractJSON(out)
-}
-
-func buildPrompt(prompt string, images []string, schemaHint string) string {
 	var b strings.Builder
-	if len(images) > 0 {
-		b.WriteString("Read these images with the Read tool before answering (in this order):\n")
-		for i, p := range images {
-			fmt.Fprintf(&b, "%d. %s\n", i+1, p)
-		}
-		b.WriteString("\n")
+	b.WriteString("Read these images with the Read tool before answering (in this order):\n")
+	for i, p := range req.Images {
+		fmt.Fprintf(&b, "%d. %s\n", i+1, p)
 	}
-	b.WriteString(prompt)
-	if schemaHint != "" {
-		b.WriteString("\n\nReturn ONLY one JSON object matching this shape, no prose and no code fences:\n")
-		b.WriteString(schemaHint)
-	}
+	b.WriteString("\n")
+	b.WriteString(req.Prompt)
 	return b.String()
 }
 
-func (c *ClaudeCLI) run(ctx context.Context, prompt string, images []string, attempt int) (string, error) {
-	select {
-	case c.sem <- struct{}{}:
-	case <-ctx.Done():
-		return "", ctx.Err()
-	}
-	defer func() { <-c.sem }()
-
+func (c *ClaudeCLI) Complete(ctx context.Context, req Request) (*Response, error) {
 	ctx, cancel := context.WithTimeout(ctx, c.Timeout)
 	defer cancel()
 
+	prompt := cliPrompt(req)
 	args := []string{"-p"}
 	var stdin *strings.Reader
 	if len(prompt) <= maxArgPrompt {
@@ -111,7 +70,10 @@ func (c *ClaudeCLI) run(ctx context.Context, prompt string, images []string, att
 	args = append(args, "--allowedTools", "Read", "--model", c.Model,
 		"--output-format", "json", "--no-session-persistence")
 	if c.Lean {
-		args = append(args, leanArgs...)
+		// Strip the Claude Code harness down to the Read tool: no default system
+		// prompt, settings, CLAUDE.md, MCP or skills. ~12k fewer tokens per call.
+		args = append(args, "--tools", "Read", "--system-prompt", req.System,
+			"--setting-sources", "", "--strict-mcp-config", "--disable-slash-commands")
 	}
 
 	cmd := exec.CommandContext(ctx, c.Bin, args...)
@@ -123,37 +85,16 @@ func (c *ClaudeCLI) run(ctx context.Context, prompt string, images []string, att
 	var stdout, stderr bytes.Buffer
 	cmd.Stdout, cmd.Stderr = &stdout, &stderr
 
-	start := time.Now()
-	runErr := cmd.Run()
-	entry := logEntry{
-		Time: start, Model: c.Model, Attempt: attempt, Prompt: prompt, Images: images,
-		Duration: time.Since(start).Round(time.Millisecond).String(),
-	}
-	defer func() { writeLog(ctx, entry) }()
-
-	if runErr != nil {
-		entry.Error = fmt.Sprintf("%v: %s", runErr, strings.TrimSpace(stderr.String()))
-		entry.Raw = rawOrNil(stdout.Bytes())
-		return "", fmt.Errorf("claude cli: %s", entry.Error)
+	if err := cmd.Run(); err != nil {
+		return &Response{Text: stdout.String()}, fmt.Errorf("%v: %s", err, strings.TrimSpace(stderr.String()))
 	}
 	var res cliResult
 	if err := json.Unmarshal(stdout.Bytes(), &res); err != nil {
-		entry.Error = "decode cli output: " + err.Error()
-		entry.Result = stdout.String()
-		return "", fmt.Errorf("claude cli: %s", entry.Error)
+		return &Response{Text: stdout.String()}, errors.New("decode cli output: " + err.Error())
 	}
-	entry.Result, entry.CostUSD = res.Result, res.CostUSD
-	entry.Usage, entry.NumTurns, entry.ModelUsage = res.Usage, res.NumTurns, res.ModelUsage
+	out := &Response{Text: res.Result, Usage: res.Usage, CostUSD: res.CostUSD, Turns: res.NumTurns, ModelUsage: res.ModelUsage}
 	if res.IsError {
-		entry.Error = "cli reported error: " + res.Subtype
-		return "", fmt.Errorf("claude cli: %s: %s", res.Subtype, res.Result)
+		return out, fmt.Errorf("cli reported error: %s", res.Subtype)
 	}
-	return res.Result, nil
-}
-
-func rawOrNil(b []byte) json.RawMessage {
-	if json.Valid(b) {
-		return b
-	}
-	return nil
+	return out, nil
 }

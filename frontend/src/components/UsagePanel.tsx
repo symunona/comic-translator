@@ -54,7 +54,7 @@ export default function UsagePanel(p: { id: string; refresh: unknown }) {
         <Show when={report.latest!.total.untracked}>
           <p class="usage-note">* {report.latest!.total.untracked} calls logged before token capture: cost only.</p>
         </Show>
-        <p class="usage-note">Claude CLI list-price equivalent, all calls incl. reruns.</p>
+        <p class="usage-note">List price (claude-cli: subscription equivalent). All calls incl. reruns.</p>
       </details>
     </Show>
   );

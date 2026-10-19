@@ -16,7 +16,40 @@ type LLM interface {
 	Call(ctx context.Context, prompt string, images []string, schemaHint string) (json.RawMessage, error)
 }
 
+// Backend sends one request to one model and reports what it cost.
+type Backend interface {
+	Name() string
+	Complete(ctx context.Context, req Request) (*Response, error)
+}
+
+type Request struct {
+	System string
+	Prompt string
+	Images []string
+}
+
+type Response struct {
+	Text       string
+	Usage      *Usage
+	CostUSD    float64
+	Turns      int
+	ModelUsage json.RawMessage
+}
+
 type logKey struct{}
+
+type stageCtxKey struct{}
+
+// WithStage tags calls with the pipeline stage (ocr, scene, translate, review)
+// so a Router can send each stage to its own backend.
+func WithStage(ctx context.Context, stage string) context.Context {
+	return context.WithValue(ctx, stageCtxKey{}, stage)
+}
+
+func stageFrom(ctx context.Context) string {
+	s, _ := ctx.Value(stageCtxKey{}).(string)
+	return s
+}
 
 type logTarget struct {
 	dir, name string
@@ -59,6 +92,7 @@ func writeLog(ctx context.Context, entry any) {
 
 type logEntry struct {
 	Time     time.Time       `json:"time"`
+	Backend  string          `json:"backend,omitempty"`
 	Model    string          `json:"model"`
 	Attempt  int             `json:"attempt"`
 	Prompt   string          `json:"prompt"`
