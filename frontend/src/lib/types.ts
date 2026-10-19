@@ -70,6 +70,7 @@ export type TrVersion = {
   createdAt: string;
   updatedAt: string;
   usage?: VersionUsage;
+  reviewError?: string;
   regions: Record<string, RegionTranslation>;
 };
 

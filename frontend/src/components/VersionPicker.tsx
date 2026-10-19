@@ -25,6 +25,9 @@ function Facts(p: { v: TrVersion }) {
         </span>
         <span>{secs(u()!.durationMs)}</span>
       </Show>
+      <Show when={p.v.reviewError}>
+        <span class="chip sfx" title={p.v.reviewError}>unreviewed draft</span>
+      </Show>
     </p>
   );
 }

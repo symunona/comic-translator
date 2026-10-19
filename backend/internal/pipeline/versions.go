@@ -16,15 +16,17 @@ const SourceUser = "user"
 // TrVersion is one saved translation of a strip into one language. Source is
 // "user" for hand-made versions, else "llm" with Model naming the backends.
 type TrVersion struct {
-	ID        string              `json:"id"`
-	Label     string              `json:"label"`
-	Source    string              `json:"source"`
-	Model     string              `json:"model,omitempty"`
-	From      string              `json:"from,omitempty"`
-	CreatedAt string              `json:"createdAt"`
-	UpdatedAt string              `json:"updatedAt"`
-	Usage     *llm.MeterTotal     `json:"usage,omitempty"`
-	Regions   map[string]TrRegion `json:"regions"`
+	ID        string          `json:"id"`
+	Label     string          `json:"label"`
+	Source    string          `json:"source"`
+	Model     string          `json:"model,omitempty"`
+	From      string          `json:"from,omitempty"`
+	CreatedAt string          `json:"createdAt"`
+	UpdatedAt string          `json:"updatedAt"`
+	Usage     *llm.MeterTotal `json:"usage,omitempty"`
+	// ReviewError is set when the review pass failed and Regions is the unreviewed draft.
+	ReviewError string              `json:"reviewError,omitempty"`
+	Regions     map[string]TrRegion `json:"regions"`
 }
 
 type TrVersions struct {
@@ -224,10 +226,16 @@ func (p *Pipeline) generateVersion(ctx context.Context, id, lang string, req Ver
 		return nil, err
 	}
 	final, _, err := r.reviewPass(ctx, pass, draft)
+	reviewErr := ""
 	if err != nil {
-		return nil, err
+		if ctx.Err() != nil {
+			return nil, err
+		}
+		final, reviewErr = draft, err.Error()
 	}
-	return p.addVersion(id, lang, r.llmVersion(req.Label, final))
+	v := r.llmVersion(req.Label, final)
+	v.ReviewError = reviewErr
+	return p.addVersion(id, lang, v)
 }
 
 func (r *runState) llmVersion(label string, regions map[string]TrRegion) TrVersion {

@@ -177,7 +177,7 @@ type Strip = { meta: {...}; panels: Panel[]; regions: Region[]; scene?: Scene; s
 
 - N versions per (strip, lang) in `tr/<lang>.versions.json`. One active. Ids `v1..`, never reused.
 - Pipeline review run -> appends `llm` version (model = backends used, usage = translate+review calls via `llm.Meter`), activates it.
-- LLM versions stay as generated. First editor edit forks `user` version; later edits in place.
+- LLM versions stay as generated. Review pass fails (weak local model, bad JSON) -> version keeps translate draft, `reviewError` set, UI chip "unreviewed draft". First editor edit forks `user` version; later edits in place.
 - Migration (lazy, in memory until first write): `tr/<lang>@v1.json` -> v1 `llm` (model from `llm/review-<lang>-0.json`), `tr/<lang>.edit.json` -> v2 `user` active.
 - Backend per request: `llm.WithSpec(ctx, spec)` on Router, `?timeout=90m` for slow local OpenAI-compat backends.
 - `LLM_ALLOW_SPECS`: comma list of specs clients may request, `*` = any. Empty = no client specs (prod default).
