@@ -39,6 +39,7 @@ func (s *Server) Handler() http.Handler {
 	mux.HandleFunc("POST /api/strips", s.upload)
 	mux.HandleFunc("GET /api/strips/{id}", s.strip(s.get))
 	mux.HandleFunc("GET /api/strips/{id}/events", s.strip(s.events))
+	mux.HandleFunc("GET /api/strips/{id}/usage", s.strip(s.usage))
 	mux.HandleFunc("GET /api/strips/{id}/image/{name}", s.strip(s.image))
 	mux.HandleFunc("GET /api/strips/{id}/image/{dir}/{name}", s.strip(s.image))
 	mux.HandleFunc("GET /api/strips/{id}/translations/{lang}", s.strip(s.lang(s.getTranslation)))
@@ -144,6 +145,15 @@ func (s *Server) get(w http.ResponseWriter, r *http.Request) {
 		st.Stages[k] = v
 	}
 	writeJSON(w, http.StatusOK, st)
+}
+
+func (s *Server) usage(w http.ResponseWriter, r *http.Request) {
+	rep, err := s.P.Usage(r.PathValue("id"))
+	if err != nil {
+		pipelineError(w, err)
+		return
+	}
+	writeJSON(w, http.StatusOK, rep)
 }
 
 func (s *Server) events(w http.ResponseWriter, r *http.Request) {

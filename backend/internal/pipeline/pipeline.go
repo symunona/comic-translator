@@ -131,8 +131,8 @@ func (r *runState) image() (*image.RGBA, error) {
 	return r.img, nil
 }
 
-func (r *runState) llmCtx(ctx context.Context, name string) context.Context {
-	return llm.WithLog(ctx, r.p.Store.Path(r.id, "llm"), name)
+func (r *runState) llmCtx(ctx context.Context, stage, name string) context.Context {
+	return llm.WithStage(llm.WithLog(ctx, r.p.Store.Path(r.id, "llm"), name), stage)
 }
 
 // Run executes every stage for (id, lang), reusing cached stage outputs until
