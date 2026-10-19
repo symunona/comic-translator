@@ -1,6 +1,7 @@
 import { batch, createSignal, onCleanup } from "solid-js";
 import { createStore, produce, reconcile } from "solid-js/store";
 import { api } from "./api";
+import { translatedLangs } from "./langs";
 import { STAGES, type Meta, type Panel, type Region, type Scene, type StageEvent, type StageName, type StageStatus, type Translation } from "./types";
 
 export type StageState = { status: StageStatus; message?: string; progress?: { done: number; total: number } };
@@ -18,6 +19,7 @@ export function createWork(id: string) {
     scene: null as Scene | null,
     stages: emptyStages(),
     translation: null as Translation | null,
+    langs: [] as string[],
     phase: "loading" as "loading" | "done" | "fatal",
     everDone: false,
     error: "",
@@ -71,6 +73,7 @@ export function createWork(id: string) {
     api
       .getStrip(id)
       .then((s) => {
+        setState("langs", (ls) => [...new Set([...ls, ...translatedLangs(s.stages)])]);
         if (state.meta) return;
         batch(() => {
           setState("meta", { ...s.meta, imageUrl: s.imageUrl || s.meta.imageUrl });
@@ -105,6 +108,7 @@ export function createWork(id: string) {
         if (l !== lang()) return;
         batch(() => {
           if (t) setTranslation(t);
+          setState("langs", (ls) => (ls.includes(l) ? ls : [...ls, l]));
           setState("phase", "done");
           setState("everDone", true);
         });

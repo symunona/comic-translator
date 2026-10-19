@@ -29,7 +29,7 @@ const uploads = new Map<string, { file: File; name: string; createdAt: string }>
 const assets = new Map<string, Promise<Assets>>();
 const edits = new Map<string, Translation>();
 const outputs = new Map<string, string>();
-const completed = new Set<string>();
+const completed = new Set<string>([`${DEFAULT_ID}:en`]);
 
 const blobUrl = (c: HTMLCanvasElement) =>
   new Promise<string>((res) => c.toBlob((b) => res(URL.createObjectURL(b!)), "image/png"));
@@ -254,13 +254,16 @@ const scene: Scene = {
   notes: ["\"ELJÖTTÉ\" is a deliberate dialect spelling.", "The 'BOLT' sign is background only."],
 };
 
-const strip = (id: string, a: Assets): Strip => ({
-  meta: { id, origName: nameOf(id), createdAt: new Date().toISOString(), width: a.width, height: a.height, mime: "image/png", imageUrl: a.imageUrl },
-  panels: [],
-  regions: [],
-  stages: {},
-  imageUrl: a.imageUrl,
-});
+const strip = (id: string, a: Assets): Strip => {
+  const langs = [...completed].filter((k) => k.startsWith(`${id}:`)).map((k) => k.slice(id.length + 1));
+  return {
+    meta: { id, origName: nameOf(id), createdAt: new Date().toISOString(), width: a.width, height: a.height, mime: "image/png", imageUrl: a.imageUrl },
+    panels: langs.length ? a.panels : [],
+    regions: langs.length ? structuredClone(a.regions) : [],
+    stages: Object.fromEntries(langs.map((l) => [`review:${l}`, "done"])),
+    imageUrl: a.imageUrl,
+  };
+};
 
 function stream(id: string, lang: string, h: Parameters<Api["stream"]>[2]) {
   const timers: number[] = [];
@@ -342,7 +345,7 @@ export const mockApi: Api = {
       id, origName: u.name, createdAt: u.createdAt, width: 0, height: 0, thumbUrl: "", langs: [],
     }));
     const demo = await getAssets(DEFAULT_ID);
-    items.push({ id: DEFAULT_ID, origName: nameOf(DEFAULT_ID), createdAt: "2026-10-19T08:00:00Z", width: W, height: H, thumbUrl: demo.imageUrl, langs: ["en"] });
+    items.push({ id: DEFAULT_ID, origName: nameOf(DEFAULT_ID), createdAt: "2026-10-19T08:00:00Z", width: W, height: H, thumbUrl: demo.imageUrl, langs: [...completed].filter((k) => k.startsWith(`${DEFAULT_ID}:`)).map((k) => k.slice(DEFAULT_ID.length + 1)) });
     for (const it of items) if (!it.thumbUrl) it.thumbUrl = (await getAssets(it.id)).imageUrl;
     return items.slice(0, limit);
   },

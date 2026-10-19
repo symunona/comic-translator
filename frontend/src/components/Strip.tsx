@@ -1,26 +1,31 @@
 import { For, Show, createMemo } from "solid-js";
 import { blockTop } from "../lib/layout";
 import { regionLayout } from "../lib/render";
-import type { Box, Region } from "../lib/types";
-import type { Work } from "../lib/work";
+import type { Box, Meta, Panel, Region, Translation } from "../lib/types";
 
 type Props = {
-  work: Work;
+  meta: Meta;
+  panels: Panel[];
+  regions: Region[];
+  translation: Translation | null;
+  lang: string;
+  loading?: boolean;
   imageUrl: string;
   showOriginal: boolean;
   fontsReady: boolean;
-  hovered: string | null;
-  active: string | null;
-  onHover: (rid: string | null) => void;
-  onPick: (rid: string) => void;
   overlaySrc: (r: Region) => string | undefined;
-  boxRef: (rid: string, el: HTMLElement) => void;
+  hovered?: string | null;
+  active?: string | null;
+  onHover?: (rid: string | null) => void;
+  onPick?: (rid: string) => void;
+  boxRef?: (rid: string, el: HTMLElement) => void;
+  ref?: (el: HTMLDivElement) => void;
 };
 
 export default function Strip(p: Props) {
-  const s = p.work.state;
-  const W = () => s.meta!.width;
-  const H = () => s.meta!.height;
+  const W = () => p.meta.width;
+  const H = () => p.meta.height;
+  const interactive = () => !!p.onPick;
   const pct = (b: Box) => ({
     left: `${(b[0] / W()) * 100}%`,
     top: `${(b[1] / H()) * 100}%`,
@@ -31,15 +36,18 @@ export default function Strip(p: Props) {
 
   return (
     <div
+      ref={p.ref}
       class="strip"
-      classList={{ loading: s.phase !== "done", original: p.showOriginal }}
+      classList={{ loading: p.loading, original: p.showOriginal }}
       style={{ "aspect-ratio": `${W()} / ${H()}` }}
     >
-      <img class="strip-img" src={p.imageUrl} alt={s.meta!.origName} draggable={false} />
-      <For each={s.panels}>{(panel) => <div class="panel-box" style={pct(panel.bbox)} />}</For>
-      <For each={s.regions}>
+      <img class="strip-img" src={p.imageUrl} alt={p.meta.origName} draggable={false} />
+      <Show when={interactive()}>
+        <For each={p.panels}>{(panel) => <div class="panel-box" style={pct(panel.bbox)} />}</For>
+      </Show>
+      <For each={p.regions}>
         {(r) => {
-          const fit = createMemo(() => (p.fontsReady && s.translation ? regionLayout(r, s.translation, p.work.lang()) : null));
+          const fit = createMemo(() => (p.fontsReady && p.translation ? regionLayout(r, p.translation, p.lang) : null));
           const showOverlay = () => !p.showOriginal && r.replace && r.overlayBox && p.overlaySrc(r);
           return (
             <>
@@ -62,8 +70,9 @@ export default function Strip(p: Props) {
                   </div>
                 )}
               </Show>
+              <Show when={interactive()}>
               <div
-                ref={(el) => p.boxRef(r.id, el)}
+                ref={(el) => p.boxRef?.(r.id, el)}
                 class="region-box"
                 classList={{
                   pending: !r.source,
@@ -73,12 +82,13 @@ export default function Strip(p: Props) {
                   keep: !r.replace,
                 }}
                 style={pct(r.bubbleBox ?? r.textBox)}
-                onMouseEnter={() => p.onHover(r.id)}
-                onMouseLeave={() => p.onHover(null)}
-                onClick={() => p.onPick(r.id)}
+                onMouseEnter={() => p.onHover?.(r.id)}
+                onMouseLeave={() => p.onHover?.(null)}
+                onClick={() => p.onPick?.(r.id)}
               >
                 <span class="region-num">{r.order + 1}</span>
               </div>
+              </Show>
             </>
           );
         }}

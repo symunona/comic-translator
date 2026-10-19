@@ -1,5 +1,7 @@
 import { useNavigate } from "@solidjs/router";
 import { For, Show, createResource, createSignal } from "solid-js";
+import LangPicker from "../components/LangPicker";
+import Logo from "../components/Logo";
 import { api, isMock } from "../lib/api";
 import { LANGS } from "../lib/types";
 
@@ -18,6 +20,8 @@ export default function Upload() {
   let input!: HTMLInputElement;
 
   const go = (id: string, l = lang()) => navigate(`/s/${encodeURIComponent(id)}?lang=${l}`);
+  const view = (id: string, langs: string[]) =>
+    navigate(`/v/${encodeURIComponent(id)}${langs.length ? `?lang=${langs.includes(lang()) ? lang() : langs[0]}` : ""}`);
 
   const upload = async (file?: File | null) => {
     if (!file) return;
@@ -37,7 +41,10 @@ export default function Upload() {
     <div class="home">
       <header class="hero">
         <h1>
-          comic<span>·</span>translator
+          <Logo size={58} />
+          <span class="brand-name">
+            comic<span>·</span>translator
+          </span>
         </h1>
         <p>Drop a strip. It finds the bubbles, reads them, gets the joke, and letters it back in your language.</p>
         <Show when={isMock}>
@@ -69,12 +76,8 @@ export default function Upload() {
         <strong>{busy() ? "Uploading…" : "Drop a comic strip here"}</strong>
         <span>or click to pick a PNG, JPG or WebP</span>
         <div class="lang-pick" onClick={(e) => e.stopPropagation()}>
-          <label>
-            translate to
-            <select value={lang()} onChange={(e) => setLang(e.currentTarget.value)}>
-              <For each={LANGS}>{(l) => <option value={l.code}>{l.name}</option>}</For>
-            </select>
-          </label>
+          <span>translate to</span>
+          <LangPicker value={lang()} translated={LANGS.map((l) => l.code)} translatedTitle="Translate to" credits={0} onSelect={setLang} align="left" />
         </div>
       </div>
       <Show when={error()}>
@@ -89,7 +92,7 @@ export default function Upload() {
               <For each={recent()}>
                 {(s) => (
                   <li>
-                    <button class="thumb-card" onClick={() => go(s.id)}>
+                    <button class="thumb-card" onClick={() => view(s.id, s.langs ?? [])}>
                       <div class="thumb">
                         <img src={s.thumbUrl || api.imageUrl(s.id, "orig.png")} alt="" loading="lazy" />
                       </div>

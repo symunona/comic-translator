@@ -1,12 +1,16 @@
 import { A, useParams, useSearchParams } from "@solidjs/router";
 import { For, Show, createEffect, createMemo, createSignal, on, onCleanup, onMount } from "solid-js";
+import Brand from "../components/Brand";
 import Checklist from "../components/Checklist";
+import LangPicker from "../components/LangPicker";
 import RegionCard from "../components/RegionCard";
 import Strip from "../components/Strip";
-import { api, isMock } from "../lib/api";
+import ViewToggle from "../components/ViewToggle";
+import { api } from "../lib/api";
+import { creditsFor } from "../lib/langs";
 import { FONT_FAMILY } from "../lib/layout";
 import { renderStrip } from "../lib/render";
-import { LANGS, STAGES, type Region } from "../lib/types";
+import { STAGES, type Region } from "../lib/types";
 import { createWork } from "../lib/work";
 
 const SAVE_LABEL = { idle: "", pending: "editing…", saving: "saving…", saved: "saved", error: "save failed" };
@@ -23,6 +27,7 @@ function WorkView(props: { id: string }) {
   const [hovered, setHovered] = createSignal<string | null>(null);
   const [active, setActive] = createSignal<string | null>(null);
   const [showOriginal, setShowOriginal] = createSignal(false);
+  const [summaryOpen, setSummaryOpen] = createSignal(false);
   const [exporting, setExporting] = createSignal(false);
   const [result, setResult] = createSignal<{ url: string; name: string } | null>(null);
   const [exportError, setExportError] = createSignal("");
@@ -89,9 +94,7 @@ function WorkView(props: { id: string }) {
   return (
     <div class="work">
       <header class="topbar">
-        <A href={isMock ? "/?mock=1" : "/"} class="brand">
-          comic<span>·</span>translator
-        </A>
+        <Brand />
         <span class="strip-name" title={s.meta?.origName}>
           {s.meta?.origName ?? props.id.slice(0, 12)}
         </span>
@@ -102,13 +105,17 @@ function WorkView(props: { id: string }) {
         </Show>
         <div class="spacer" />
         <span class={`save-state ${work.saveState()}`}>{SAVE_LABEL[work.saveState()]}</span>
-        <label class="seg">
-          <input type="checkbox" checked={showOriginal()} onChange={(e) => setShowOriginal(e.currentTarget.checked)} />
-          <span>{showOriginal() ? "original" : "translated"}</span>
-        </label>
-        <select value={lang()} onChange={(e) => setSearch({ lang: e.currentTarget.value })} aria-label="Target language">
-          <For each={LANGS}>{(l) => <option value={l.code}>{l.name}</option>}</For>
-        </select>
+        <ViewToggle original={showOriginal()} onChange={setShowOriginal} />
+        <LangPicker
+          value={lang()}
+          translated={s.langs}
+          credits={creditsFor(s.regions.length)}
+          onSelect={(l) => setSearch({ lang: l })}
+          onTranslate={(l) => setSearch({ lang: l })}
+        />
+        <A class="button ghost" href={`/v/${encodeURIComponent(props.id)}?lang=${lang()}`}>
+          View
+        </A>
         <button class="primary" disabled={!s.everDone || s.phase !== "done" || exporting()} onClick={save}>
           {exporting() ? "Rendering…" : "Save PNG"}
         </button>
@@ -118,7 +125,12 @@ function WorkView(props: { id: string }) {
         <section class="strip-col">
           <Show when={s.meta} fallback={<div class="strip-placeholder"><i class="spinner" /> loading strip…</div>}>
             <Strip
-              work={work}
+              meta={s.meta!}
+              panels={s.panels}
+              regions={s.regions}
+              translation={s.translation}
+              lang={work.lang()}
+              loading={s.phase !== "done"}
               imageUrl={imageUrl()}
               showOriginal={showOriginal()}
               fontsReady={fontsReady()}
@@ -136,7 +148,9 @@ function WorkView(props: { id: string }) {
           <div class="side-head">
             <h2>{editing() ? "Bubbles" : "Working on it"}</h2>
             <Show when={s.scene?.summary}>
-              <p class="summary">{s.scene!.summary}</p>
+              <p class="summary" classList={{ open: summaryOpen() }} title={summaryOpen() ? "" : "Show all"} onClick={() => setSummaryOpen((v) => !v)}>
+                {s.scene!.summary}
+              </p>
             </Show>
           </div>
           <Checklist stages={s.stages} collapsed={s.everDone && s.phase !== "fatal"} error={s.error} />
