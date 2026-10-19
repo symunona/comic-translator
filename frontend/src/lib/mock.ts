@@ -1,6 +1,6 @@
 import type { Api } from "./api";
 import { FONT_FAMILY } from "./layout";
-import type { Box, DataEvent, Kind, Panel, Region, Scene, StageEvent, Strip, StripSummary, Translation } from "./types";
+import type { Box, DataEvent, Kind, Panel, Region, Scene, StageEvent, Strip, StripSummary, Translation, TrVersion } from "./types";
 
 type Line = { hu: string; en: string; kind: Kind; speaker: string };
 
@@ -365,6 +365,23 @@ export const mockApi: Api = {
     await new Promise((r) => setTimeout(r, 250));
     return saved;
   },
+  async versions(id, lang) {
+    const t = await mockApi.getTranslation(id, lang);
+    if (!t) return null;
+    const v: TrVersion = { id: "v1", label: "claude-cli:opus", source: "llm", model: "claude-cli:opus", createdAt: t.updatedAt, updatedAt: t.updatedAt, regions: t.regions };
+    return { lang, active: "v1", versions: [v] };
+  },
+  async newVersion(id, lang, body) {
+    const vs = (await mockApi.versions(id, lang))!;
+    const ts = new Date().toISOString();
+    return { ...vs.versions[0], id: "v2", label: body.label ?? "My version", source: "user", model: undefined, from: "v1", createdAt: ts, updatedAt: ts };
+  },
+  async patchVersion(id, lang, vid, body) {
+    const vs = (await mockApi.versions(id, lang))!;
+    return { ...vs.versions[0], id: vid, label: body.label ?? vs.versions[0].label };
+  },
+  deleteVersion: async (id, lang) => (await mockApi.versions(id, lang))!,
+  activateVersion: async (id, lang) => (await mockApi.versions(id, lang))!,
   async retranslate(id, lang, body) {
     await new Promise((r) => setTimeout(r, 1200));
     const a = await getAssets(id);

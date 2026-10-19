@@ -82,6 +82,10 @@ type Translation struct {
 	Edited    bool                `json:"edited"`
 	UpdatedAt string              `json:"updatedAt"`
 	Regions   map[string]TrRegion `json:"regions"`
+	Version   string              `json:"version,omitempty"`
+	Label     string              `json:"label,omitempty"`
+	Source    string              `json:"source,omitempty"`
+	Model     string              `json:"model,omitempty"`
 }
 
 type Strip struct {

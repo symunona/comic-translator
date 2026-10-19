@@ -91,6 +91,9 @@ func (c *Client) complete(ctx context.Context, prompt string, images []string, a
 		entry.Error = err.Error()
 	}
 	writeLog(ctx, entry)
+	if m := meterFrom(ctx); m != nil {
+		m.record(c.Backend.Name(), res, time.Since(start))
+	}
 	if err != nil {
 		return "", fmt.Errorf("%s: %w", c.Backend.Name(), err)
 	}

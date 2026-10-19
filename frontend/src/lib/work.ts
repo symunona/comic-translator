@@ -2,7 +2,7 @@ import { batch, createSignal, onCleanup } from "solid-js";
 import { createStore, produce, reconcile } from "solid-js/store";
 import { api } from "./api";
 import { translatedLangs } from "./langs";
-import { STAGES, type Meta, type Panel, type Region, type Scene, type StageEvent, type StageName, type StageStatus, type Translation } from "./types";
+import { STAGES, type Meta, type Panel, type Region, type Scene, type StageEvent, type StageName, type StageStatus, type Translation, type TrVersions } from "./types";
 
 export type StageState = { status: StageStatus; message?: string; progress?: { done: number; total: number } };
 export type SaveState = "idle" | "pending" | "saving" | "saved" | "error";
@@ -19,6 +19,7 @@ export function createWork(id: string) {
     scene: null as Scene | null,
     stages: emptyStages(),
     translation: null as Translation | null,
+    versions: null as TrVersions | null,
     langs: [] as string[],
     phase: "loading" as "loading" | "done" | "fatal",
     everDone: false,
@@ -59,13 +60,14 @@ export function createWork(id: string) {
   let close: (() => void) | null = null;
   let timer: number | undefined;
 
-  const connect = (l: string) => {
+  const connect = (l: string, ver?: string) => {
     close?.();
     flush();
     batch(() => {
       setLang(l);
       setState("stages", emptyStages());
       setState("translation", null);
+      setState("versions", null);
       setState("phase", "loading");
       setState("error", "");
       setSaveState("idle");
@@ -108,6 +110,8 @@ export function createWork(id: string) {
         if (l !== lang()) return;
         batch(() => {
           if (t) setTranslation(t);
+          if (ver && t?.version !== ver) switchVersion(ver).catch(() => loadVersions());
+          else loadVersions();
           setState("langs", (ls) => (ls.includes(l) ? ls : [...ls, l]));
           setState("phase", "done");
           setState("everDone", true);
@@ -126,7 +130,11 @@ export function createWork(id: string) {
     setSaveState("saving");
     try {
       const saved = await api.putTranslation(id, t.lang, { ...t, edited: true, regions: { ...t.regions } });
-      if (saved.lang === lang()) setState("translation", "updatedAt", saved.updatedAt);
+      if (saved.lang === lang()) {
+        const forked = saved.version !== state.translation?.version;
+        setState("translation", (cur) => (cur ? { ...cur, updatedAt: saved.updatedAt, version: saved.version, label: saved.label, source: saved.source, model: saved.model } : cur));
+        if (forked) loadVersions();
+      }
       setSaveState(timer === undefined ? "saved" : "pending");
     } catch {
       setSaveState("error");
@@ -169,6 +177,46 @@ export function createWork(id: string) {
     const entry = t.regions[rid];
     if (entry && state.translation) setState("translation", "regions", rid, entry);
     else setTranslation(t);
+    loadVersions();
+  };
+
+  const loadVersions = async () => {
+    const l = lang();
+    const vs = await api.versions(id, l).catch(() => null);
+    if (l === lang()) setState("versions", vs ? reconcile(vs) : null);
+  };
+
+  const showVersions = (vs: TrVersions) => {
+    setState("versions", reconcile(vs));
+    const v = vs.versions.find((x) => x.id === vs.active);
+    if (!v) return;
+    setTranslation({
+      lang: lang(), final: true, edited: v.source === "user", updatedAt: v.updatedAt, regions: structuredClone(v.regions),
+      version: v.id, label: v.label, source: v.source, model: v.model,
+    });
+  };
+
+  const switchVersion = async (vid: string) => {
+    await flush();
+    showVersions(await api.activateVersion(id, lang(), vid));
+  };
+
+  const copyVersion = async () => {
+    await flush();
+    const v = await api.newVersion(id, lang(), { from: state.translation?.version });
+    const vs = await api.versions(id, lang());
+    if (vs) showVersions({ ...vs, active: v.id });
+  };
+
+  const renameVersion = async (vid: string, label: string) => {
+    const v = await api.patchVersion(id, lang(), vid, { label });
+    setState("versions", "versions", (x) => x.id === vid, "label", v.label);
+    if (state.translation?.version === vid) setState("translation", "label", v.label);
+  };
+
+  const deleteVersion = async (vid: string) => {
+    await flush();
+    showVersions(await api.deleteVersion(id, lang(), vid));
   };
 
   onCleanup(() => {
@@ -176,7 +224,10 @@ export function createWork(id: string) {
     close?.();
   });
 
-  return { state, lang, connect, editText, setReplace, retranslate, flush, saveState, overlayRev };
+  return {
+    state, lang, connect, editText, setReplace, retranslate, flush, saveState, overlayRev,
+    switchVersion, copyVersion, renameVersion, deleteVersion,
+  };
 }
 
 export type Work = ReturnType<typeof createWork>;

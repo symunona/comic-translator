@@ -3,11 +3,12 @@ import { Show, createMemo, createResource, createSignal, onCleanup, onMount } fr
 import Brand from "../components/Brand";
 import LangPicker from "../components/LangPicker";
 import Strip from "../components/Strip";
+import VersionPicker from "../components/VersionPicker";
 import ViewToggle from "../components/ViewToggle";
 import { api } from "../lib/api";
 import { creditsFor, translatedLangs } from "../lib/langs";
 import { FONT_FAMILY } from "../lib/layout";
-import type { Panel, Region } from "../lib/types";
+import type { Panel, Region, Translation } from "../lib/types";
 
 type Cam = { x: number; y: number; k: number };
 
@@ -26,10 +27,21 @@ function ViewerView(props: { id: string }) {
     if (ls.includes(asked())) return asked();
     return ls.includes("en") ? "en" : ls[0] ?? (asked() || "en");
   });
-  const [translation] = createResource(
+  const [versions] = createResource(
     () => (langs().includes(lang()) ? lang() : false),
-    (l) => api.getTranslation(props.id, l),
+    (l) => api.versions(props.id, l),
   );
+  const ver = createMemo(() => {
+    const vs = versions();
+    if (!vs) return undefined;
+    const want = typeof search.ver === "string" ? search.ver : "";
+    return vs.versions.find((v) => v.id === want) ?? vs.versions.find((v) => v.id === vs.active) ?? vs.versions.at(-1);
+  });
+  const translation = createMemo<Translation | null>(() => {
+    const v = ver();
+    if (!v) return null;
+    return { lang: lang(), final: true, edited: v.source === "user", updatedAt: v.updatedAt, regions: v.regions, version: v.id, label: v.label, source: v.source, model: v.model };
+  });
   const [fontsReady, setFontsReady] = createSignal(false);
   const [showOriginal, setShowOriginal] = createSignal(false);
   const [idx, setIdx] = createSignal(-1);
@@ -168,15 +180,18 @@ function ViewerView(props: { id: string }) {
           {strip()?.meta.origName ?? ""}
         </span>
         <div class="spacer" />
+        <Show when={versions() && versions()!.versions.length > 1 && ver()}>
+          <VersionPicker versions={versions()!} value={ver()!.id} onSelect={(v) => setSearch({ ver: v })} />
+        </Show>
         <ViewToggle original={showOriginal() || untranslated()} onChange={setShowOriginal} disabled={untranslated()} />
         <LangPicker
           value={lang()}
           translated={langs()}
           credits={creditsFor(strip()?.regions.length ?? 0)}
-          onSelect={(l) => setSearch({ lang: l })}
+          onSelect={(l) => setSearch({ lang: l, ver: undefined })}
           onTranslate={(l) => navigate(`/s/${encodeURIComponent(props.id)}?lang=${l}`)}
         />
-        <A class="button edit-link" href={`/s/${encodeURIComponent(props.id)}?lang=${lang()}`}>
+        <A class="button edit-link" href={`/s/${encodeURIComponent(props.id)}?lang=${lang()}${ver() ? `&ver=${ver()!.id}` : ""}`}>
           <svg viewBox="0 0 20 20" aria-hidden="true">
             <path d="M13.5 3.5l3 3L7 16H4v-3z" />
           </svg>
@@ -192,7 +207,7 @@ function ViewerView(props: { id: string }) {
                 meta={st().meta}
                 panels={panels()}
                 regions={st().regions}
-                translation={translation() ?? null}
+                translation={translation()}
                 lang={lang()}
                 imageUrl={imageUrl()}
                 showOriginal={showOriginal() || untranslated()}

@@ -110,6 +110,7 @@ type runState struct {
 	scene   *Scene
 	clean   *cleanResult
 	draft   *Translation
+	meter   *llm.Meter
 }
 
 func (r *runState) stage(name, status, msg string, prog *Progress) {
@@ -132,7 +133,11 @@ func (r *runState) image() (*image.RGBA, error) {
 }
 
 func (r *runState) llmCtx(ctx context.Context, stage, name string) context.Context {
-	return llm.WithStage(llm.WithLog(ctx, r.p.Store.Path(r.id, "llm"), name), stage)
+	ctx = llm.WithStage(llm.WithLog(ctx, r.p.Store.Path(r.id, "llm"), name), stage)
+	if r.meter != nil {
+		ctx = llm.WithMeter(ctx, r.meter)
+	}
+	return ctx
 }
 
 // Run executes every stage for (id, lang), reusing cached stage outputs until

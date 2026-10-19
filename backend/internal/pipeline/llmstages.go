@@ -12,6 +12,8 @@ import (
 	"text/template"
 	"time"
 	"unicode/utf8"
+
+	"comic-translator/backend/internal/llm"
 )
 
 //go:embed prompts/*.tmpl
@@ -467,6 +469,7 @@ func regionNum(id string) int {
 func now() string { return time.Now().UTC().Format(time.RFC3339) }
 
 func (r *runState) runTranslate(ctx context.Context) error {
+	r.meter = &llm.Meter{}
 	regions, err := r.translatePass(ctx, trPass{ids: r.translatable(nil)})
 	if err != nil {
 		return err
@@ -484,5 +487,9 @@ func (r *runState) runReview(ctx context.Context) error {
 		return err
 	}
 	t := Translation{Lang: r.lang, Final: true, UpdatedAt: now(), Regions: final}
-	return r.p.Store.SaveTranslation(r.id, r.lang, vReview, t)
+	if err := r.p.Store.SaveTranslation(r.id, r.lang, vReview, t); err != nil {
+		return err
+	}
+	_, err = r.p.addVersion(r.id, r.lang, r.llmVersion("", final))
+	return err
 }

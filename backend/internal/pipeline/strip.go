@@ -13,6 +13,7 @@ import (
 var (
 	ErrNotFound = errors.New("not found")
 	ErrNotReady = errors.New("pipeline has not reached this stage yet")
+	ErrConflict = errors.New("conflict")
 )
 
 // load reads every available stage output for id into a runState.
@@ -120,32 +121,43 @@ func (p *Pipeline) Summaries(limit int) ([]StripSummary, error) {
 	return out, nil
 }
 
-// Translation returns the user edit if one exists, else the pipeline result.
+// Translation returns the active version of (id, lang).
 func (p *Pipeline) Translation(id, lang string) (*Translation, error) {
-	var t Translation
-	if ok, err := p.Store.LoadEdit(id, lang, &t); err != nil {
+	vs, err := p.Versions(id, lang)
+	if err != nil {
 		return nil, err
-	} else if ok {
-		t.Edited = true
-		return &t, nil
 	}
-	if ok, err := p.Store.LoadTranslation(id, lang, vReview, &t); err != nil {
-		return nil, err
-	} else if !ok {
+	v := vs.active()
+	if v == nil {
 		return nil, ErrNotFound
 	}
-	return &t, nil
+	return v.translation(lang), nil
 }
 
+// SaveEdit stores editor changes. A user version is edited in place; editing
+// an LLM version forks it into a new user version so the original stays intact.
 func (p *Pipeline) SaveEdit(id, lang string, t Translation) (*Translation, error) {
-	if !p.Store.Has(id) {
-		return nil, ErrNotFound
-	}
-	t.Lang, t.Edited, t.UpdatedAt = lang, true, now()
 	if t.Regions == nil {
 		t.Regions = map[string]TrRegion{}
 	}
-	return &t, p.Store.SaveEdit(id, lang, t)
+	var out *Translation
+	_, err := p.editVersions(id, lang, func(vs *TrVersions) error {
+		v := vs.active()
+		if t.Version != "" {
+			v = vs.find(t.Version)
+		}
+		if v == nil || v.Source != SourceUser {
+			fork := TrVersion{Source: SourceUser, CreatedAt: now()}
+			if v != nil {
+				fork.From, fork.Label = v.ID, "Edit of "+v.Label
+			}
+			v = vs.add(fork)
+		}
+		v.Regions, v.UpdatedAt = t.Regions, now()
+		out = v.translation(lang)
+		return nil
+	})
+	return out, err
 }
 
 type RegionPatch struct {
@@ -227,8 +239,8 @@ func patchSource(old *Source, text string, lines []string) *Source {
 	return s
 }
 
-// Retranslate reruns translate and review for the given regions (all when empty)
-// and merges the result into the pipeline translation and any user edit.
+// Retranslate reruns translate and review for the given regions (all when
+// empty) and merges the result into the active version.
 func (p *Pipeline) Retranslate(ctx context.Context, id, lang string, regionIDs []string, hint string) (*Translation, error) {
 	r, err := p.load(id, lang)
 	if err != nil {
@@ -238,20 +250,17 @@ func (p *Pipeline) Retranslate(ctx context.Context, id, lang string, regionIDs [
 		return nil, ErrNotReady
 	}
 	defer p.lock(id + "/" + lang)()
-	var base Translation
-	if ok, err := p.Store.LoadTranslation(id, lang, vReview, &base); err != nil {
-		return nil, err
-	} else if !ok {
+	cur, err := p.Translation(id, lang)
+	if errors.Is(err, ErrNotFound) {
 		return nil, ErrNotReady
+	} else if err != nil {
+		return nil, err
 	}
-	current := base.Regions
-	if eff, err := p.Translation(id, lang); err == nil {
-		current = eff.Regions
-	}
-	pass := trPass{ids: r.translatable(regionIDs), current: current, hint: hint, edit: true}
+	pass := trPass{ids: r.translatable(regionIDs), current: cur.Regions, hint: hint, edit: true}
 	if len(pass.ids) == 0 {
 		return nil, ErrNotFound
 	}
+	r.meter = &llm.Meter{}
 	draft, err := r.translatePass(ctx, pass)
 	if err != nil {
 		return nil, err
@@ -260,30 +269,28 @@ func (p *Pipeline) Retranslate(ctx context.Context, id, lang string, regionIDs [
 	if err != nil {
 		return nil, err
 	}
-	if base.Regions == nil {
-		base.Regions = map[string]TrRegion{}
-	}
-	for rid, t := range final {
-		base.Regions[rid] = t
-	}
-	base.UpdatedAt = now()
-	if err := p.Store.SaveTranslation(id, lang, vReview, base); err != nil {
-		return nil, err
-	}
-	var edit Translation
-	if ok, _ := p.Store.LoadEdit(id, lang, &edit); ok {
-		if edit.Regions == nil {
-			edit.Regions = map[string]TrRegion{}
+	var out *Translation
+	_, err = p.editVersions(id, lang, func(vs *TrVersions) error {
+		v := vs.find(cur.Version)
+		if v == nil {
+			return ErrNotFound
+		}
+		if v.Regions == nil {
+			v.Regions = map[string]TrRegion{}
 		}
 		for rid, t := range final {
-			edit.Regions[rid] = t
+			v.Regions[rid] = t
 		}
-		edit.UpdatedAt = now()
-		if err := p.Store.SaveEdit(id, lang, edit); err != nil {
-			return nil, err
+		total := r.meter.Total()
+		if v.Usage == nil {
+			v.Usage = &llm.MeterTotal{}
 		}
-	}
-	return p.Translation(id, lang)
+		v.Usage.Add(total)
+		v.UpdatedAt = now()
+		out = v.translation(lang)
+		return nil
+	})
+	return out, err
 }
 
 // Usage aggregates token and cost logs of every LLM call made for the strip.

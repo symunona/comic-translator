@@ -47,7 +47,33 @@ export type Translation = {
   edited: boolean;
   updatedAt: string;
   regions: Record<string, RegionTranslation>;
+  version?: string;
+  label?: string;
+  source?: string;
+  model?: string;
 };
+
+export type VersionUsage = {
+  calls: number;
+  tokens: TokenUsage;
+  costUsd: number;
+  durationMs: number;
+  models: string[];
+};
+
+export type TrVersion = {
+  id: string;
+  label: string;
+  source: "user" | "llm" | string;
+  model?: string;
+  from?: string;
+  createdAt: string;
+  updatedAt: string;
+  usage?: VersionUsage;
+  regions: Record<string, RegionTranslation>;
+};
+
+export type TrVersions = { lang: string; active: string; versions: TrVersion[] };
 
 export type Meta = {
   id: string;

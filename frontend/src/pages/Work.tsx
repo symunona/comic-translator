@@ -7,6 +7,7 @@ import RegionCard from "../components/RegionCard";
 import Strip from "../components/Strip";
 import ViewToggle from "../components/ViewToggle";
 import UsagePanel from "../components/UsagePanel";
+import VersionPicker from "../components/VersionPicker";
 import { api } from "../lib/api";
 import { creditsFor } from "../lib/langs";
 import { FONT_FAMILY } from "../lib/layout";
@@ -43,7 +44,7 @@ function WorkView(props: { id: string }) {
     ]).finally(() => setFontsReady(true));
   });
 
-  createEffect(on(lang, (l) => work.connect(l)));
+  createEffect(on(lang, (l) => work.connect(l, typeof search.ver === "string" ? search.ver : undefined)));
 
   const imageUrl = () => s.meta?.imageUrl || api.imageUrl(props.id, "orig.png");
   const overlaySrc = (r: Region) => {
@@ -111,10 +112,10 @@ function WorkView(props: { id: string }) {
           value={lang()}
           translated={s.langs}
           credits={creditsFor(s.regions.length)}
-          onSelect={(l) => setSearch({ lang: l })}
-          onTranslate={(l) => setSearch({ lang: l })}
+          onSelect={(l) => setSearch({ lang: l, ver: undefined })}
+          onTranslate={(l) => setSearch({ lang: l, ver: undefined })}
         />
-        <A class="button ghost" href={`/v/${encodeURIComponent(props.id)}?lang=${lang()}`}>
+        <A class="button ghost" href={`/v/${encodeURIComponent(props.id)}?lang=${lang()}${s.translation?.version ? `&ver=${s.translation.version}` : ""}`}>
           View
         </A>
         <button class="primary" disabled={!s.everDone || s.phase !== "done" || exporting()} onClick={save}>
@@ -157,6 +158,20 @@ function WorkView(props: { id: string }) {
           <Checklist stages={s.stages} collapsed={s.everDone && s.phase !== "fatal"} error={s.error} />
           <Show when={s.everDone}>
             <UsagePanel id={props.id} refresh={`${s.phase}:${s.translation?.updatedAt ?? ""}`} />
+          </Show>
+          <Show when={s.everDone && s.versions && s.translation?.version}>
+            <VersionPicker
+              versions={s.versions!}
+              value={s.translation!.version!}
+              editable
+              onSelect={(v) => {
+                setSearch({ ver: undefined });
+                return work.switchVersion(v);
+              }}
+              onCopy={work.copyVersion}
+              onRename={work.renameVersion}
+              onDelete={work.deleteVersion}
+            />
           </Show>
           <Show when={exportError()}>
             <p class="fatal">{exportError()}</p>
