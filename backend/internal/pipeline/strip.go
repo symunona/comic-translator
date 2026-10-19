@@ -6,6 +6,8 @@ import (
 	"fmt"
 	"os"
 	"strings"
+
+	"comic-translator/backend/internal/llm"
 )
 
 var (
@@ -246,7 +248,7 @@ func (p *Pipeline) Retranslate(ctx context.Context, id, lang string, regionIDs [
 	if eff, err := p.Translation(id, lang); err == nil {
 		current = eff.Regions
 	}
-	pass := trPass{ids: r.translatable(regionIDs), current: current, hint: hint}
+	pass := trPass{ids: r.translatable(regionIDs), current: current, hint: hint, edit: true}
 	if len(pass.ids) == 0 {
 		return nil, ErrNotFound
 	}
@@ -282,4 +284,12 @@ func (p *Pipeline) Retranslate(ctx context.Context, id, lang string, regionIDs [
 		}
 	}
 	return p.Translation(id, lang)
+}
+
+// Usage aggregates token and cost logs of every LLM call made for the strip.
+func (p *Pipeline) Usage(id string) (*llm.Report, error) {
+	if !p.Store.Has(id) {
+		return nil, ErrNotFound
+	}
+	return llm.ReadUsage(p.Store.Path(id, "llm"))
 }

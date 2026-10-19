@@ -20,7 +20,7 @@ Test file: `~/dropx/org/90-99 misc logs, admin, docs, and dumps/93 resources/mem
 - `TMPDIR`, `GOCACHE`, `GOMODCACHE`, pnpm store: under `/data/cache` or `/data/dev/comic-translator/.tmp`. Never `/tmp` or `~`.
 - Detector ONNX: `/data/cache/models/comic-detector/detector.onnx` (already downloaded).
 - ONNX Runtime shared lib: `/data/cache/onnxruntime/` (backend agent installs; version must match `github.com/yalue/onnxruntime_go`). Env `ORT_LIB`.
-- LLM: `claude` CLI (no API key on box). See LLM section.
+- LLM: swappable backend, env `LLM` (default `claude-cli`). See LLM section.
 
 ## Coordinates
 
@@ -84,17 +84,15 @@ For region with bubbleBox (or textBox when none):
 
 ### LLM adapter
 
-Interface `LLM.Call(ctx, prompt string, images []string /*abs paths*/, schemaHint string) (json.RawMessage, error)`.
-Impl `claudecli`:
-```
-claude -p "<prompt listing image paths: 'Read these images with the Read tool: ...'>" \
-  --allowedTools Read --model <model> --output-format json --no-session-persistence
-```
-- stdout JSON `.result` = model text. Extract first `{...}` block, `json.Unmarshal`. Retry once on parse fail with "return ONLY valid JSON".
-- Models: ocr/scene/translate/review `opus` (flag `-model`, default opus). Verified: sonnet reads images in ~7s, ~$0.07/call.
-- Run with cwd = data dir, `TMPDIR` set to data-ssd tmp.
-- Log prompt + raw result to `data/<id>/llm/<stage>-<n>.json` (debug, prompt eval later).
-- Concurrency cap 4 global.
+Interface `LLM.Call(ctx, prompt string, images []string /*abs paths*/, schemaHint string) (json.RawMessage, error)`. Details, providers, prices: `docs/llm.md`.
+
+- Backend from env: `LLM=<provider>:<model>[?effort=..&json=1]`, per stage `LLM_OCR|SCENE|TRANSLATE|REVIEW`. Unset -> `claude-cli:<-model>`.
+- Providers: `anthropic` (official Go SDK), OpenAI-compatible presets (`openrouter`, `qwen`, `zai`, `moonshot`, `deepseek`, `minimax`, `stepfun`, `gemini`, `openai`, `mistral`, `siliconflow`, `ollama`), `claude-cli` (dev, subscription, lean flags).
+- Images: inline base64 (API backends); Read tool paths (`claude-cli`).
+- Extract first `{...}` block, `json.Unmarshal`. Retry once on parse fail with "return ONLY valid JSON".
+- Log prompt + result + `usage` tokens + `costUsd` + backend/model to `data/<id>/llm/<stage>-<n>.json`. Editor retranslate logs as `retranslate-<lang>`.
+- Usage: `llm.ReadUsage` aggregates per stage. `go run ./cmd/llmusage [id-prefix]` prints table. `go run ./cmd/llmprobe -spec ... <log.json>` replays a logged call on another backend.
+- Concurrency cap 4 global (shared by all backends).
 
 ## API (Go, net/http, JSON)
 
@@ -103,6 +101,7 @@ claude -p "<prompt listing image paths: 'Read these images with the Read tool: .
 | GET | `/api/strips?limit=10` | `[StripSummary]` newest first: `{id, origName, createdAt, width, height, thumbUrl, langs:[...] }` |
 | POST | `/api/strips` | multipart `file`. resp `{id, existing:bool}`. Does ingest only |
 | GET | `/api/strips/{id}` | `Strip` (full current state, whatever stages done) |
+| GET | `/api/strips/{id}/usage` | `{stages:[StageUsage], total}` LLM tokens + cost per stage, from `llm/` logs |
 | GET | `/api/strips/{id}/events?lang=en` | SSE. Starts/joins pipeline job for (id, lang). Replays done stages first (status `cached`), then live |
 | GET | `/api/strips/{id}/image/orig.png`, `/clean.png`, `/overlays/{rid}.png`, `/debug/{pid}.png`, `/out/{lang}.png` | files |
 | GET | `/api/strips/{id}/translations/{lang}` | `Translation` (edit file if exists, else pipeline) |
