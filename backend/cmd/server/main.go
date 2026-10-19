@@ -9,6 +9,7 @@ import (
 	"os"
 	"os/signal"
 	"path/filepath"
+	"strings"
 	"syscall"
 	"time"
 
@@ -106,6 +107,7 @@ func main() {
 	var handler http.Handler = (&api.Server{
 		P: p, Jobs: pipeline.NewJobs(ctx, p), ClientDetect: det == nil,
 		Debug: *debug, DetectorModel: detName, LLMStages: lm.Specs(),
+		AllowSpecs: splitList(os.Getenv("LLM_ALLOW_SPECS")),
 	}).Handler()
 	if *static != "" || *models != "" {
 		mux := http.NewServeMux()
@@ -136,4 +138,14 @@ func main() {
 	if err := srv.ListenAndServe(); err != nil && !errors.Is(err, http.ErrServerClosed) {
 		log.Fatal(err)
 	}
+}
+
+func splitList(s string) []string {
+	var out []string
+	for _, part := range strings.Split(s, ",") {
+		if part = strings.TrimSpace(part); part != "" {
+			out = append(out, part)
+		}
+	}
+	return out
 }

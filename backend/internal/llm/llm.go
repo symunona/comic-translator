@@ -132,6 +132,9 @@ func ExtractJSON(s string) (json.RawMessage, error) {
 					if json.Valid(raw) {
 						return raw, nil
 					}
+					if fixed := stripTrailingCommas(raw); json.Valid(fixed) {
+						return fixed, nil
+					}
 					i = len(s)
 				}
 			}
@@ -143,4 +146,32 @@ func ExtractJSON(s string) (json.RawMessage, error) {
 		start += next + 1
 	}
 	return nil, errors.New("no JSON object in model output")
+}
+
+// stripTrailingCommas drops commas directly before } or ] outside strings,
+// the most common JSON slip of small local models.
+func stripTrailingCommas(raw []byte) json.RawMessage {
+	out := make([]byte, 0, len(raw))
+	inStr, esc := false, false
+	for i := 0; i < len(raw); i++ {
+		c := raw[i]
+		switch {
+		case esc:
+			esc = false
+		case inStr && c == '\\':
+			esc = true
+		case c == '"':
+			inStr = !inStr
+		case !inStr && c == ',':
+			j := i + 1
+			for j < len(raw) && strings.ContainsRune(" \t\r\n", rune(raw[j])) {
+				j++
+			}
+			if j < len(raw) && (raw[j] == '}' || raw[j] == ']') {
+				continue
+			}
+		}
+		out = append(out, c)
+	}
+	return out
 }

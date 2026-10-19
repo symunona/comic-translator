@@ -1,5 +1,5 @@
 import type { ClientDetect } from "./detect";
-import type { Config, Panel, Region, Strip, StripSummary, StreamHandlers, Translation, UsageReport } from "./types";
+import type { Config, Panel, Region, Strip, StripSummary, StreamHandlers, Translation, TrVersion, TrVersions, UsageReport } from "./types";
 
 export type Api = {
   config(): Promise<Config>;
@@ -10,6 +10,11 @@ export type Api = {
   getStrip(id: string): Promise<Strip>;
   getTranslation(id: string, lang: string): Promise<Translation | null>;
   putTranslation(id: string, lang: string, t: Translation): Promise<Translation>;
+  versions(id: string, lang: string): Promise<TrVersions | null>;
+  newVersion(id: string, lang: string, body: { from?: string; label?: string; spec?: string }): Promise<TrVersion>;
+  patchVersion(id: string, lang: string, vid: string, body: { label?: string }): Promise<TrVersion>;
+  deleteVersion(id: string, lang: string, vid: string): Promise<TrVersions>;
+  activateVersion(id: string, lang: string, vid: string): Promise<TrVersions>;
   retranslate(id: string, lang: string, body: { regionIds?: string[]; hint?: string }): Promise<Translation>;
   render(id: string, lang: string, png: Blob): Promise<{ url: string }>;
   patchRegion(id: string, rid: string, body: { replace?: boolean; source?: { text: string; lines: string[] } }): Promise<Region>;
@@ -52,6 +57,17 @@ export const httpApi: Api = {
     return r.status === 404 ? null : json<Translation>(r);
   },
   putTranslation: (id, lang, t) => fetch(`${base(id)}/translations/${lang}`, send("PUT", t)).then((r) => json<Translation>(r)),
+  async versions(id, lang) {
+    const r = await fetch(`${base(id)}/translations/${lang}/versions`);
+    return r.status === 404 ? null : json<TrVersions>(r);
+  },
+  newVersion: (id, lang, body) => fetch(`${base(id)}/translations/${lang}/versions`, send("POST", body)).then((r) => json<TrVersion>(r)),
+  patchVersion: (id, lang, vid, body) =>
+    fetch(`${base(id)}/translations/${lang}/versions/${vid}`, send("PATCH", body)).then((r) => json<TrVersion>(r)),
+  deleteVersion: (id, lang, vid) =>
+    fetch(`${base(id)}/translations/${lang}/versions/${vid}`, { method: "DELETE" }).then((r) => json<TrVersions>(r)),
+  activateVersion: (id, lang, vid) =>
+    fetch(`${base(id)}/translations/${lang}/versions/${vid}/activate`, { method: "POST" }).then((r) => json<TrVersions>(r)),
   retranslate: (id, lang, body) => fetch(`${base(id)}/retranslate/${lang}`, send("POST", body)).then((r) => json<Translation>(r)),
   render: (id, lang, png) =>
     fetch(`${base(id)}/render/${lang}`, { method: "POST", headers: { "content-type": "image/png" }, body: png }).then((r) =>

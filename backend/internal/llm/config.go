@@ -2,10 +2,12 @@ package llm
 
 import (
 	"fmt"
+	"net/http"
 	"net/url"
 	"os"
 	"sort"
 	"strings"
+	"time"
 )
 
 type preset struct {
@@ -48,33 +50,20 @@ type Options struct {
 //
 // Providers: claude-cli, anthropic, and the OpenAI-compatible presets.
 func FromEnv(o Options) (*Router, error) {
-	sem := make(chan struct{}, max(o.Concurrency, 1))
-	built := map[string]*Client{}
-	get := func(spec string) (*Client, error) {
-		if c, ok := built[spec]; ok {
-			return c, nil
-		}
-		b, err := NewBackend(spec, o)
-		if err != nil {
-			return nil, err
-		}
-		c := NewClient(b, sem)
-		built[spec] = c
-		return c, nil
-	}
+	r := &Router{Routes: map[string]*Client{}, opts: o, sem: make(chan struct{}, max(o.Concurrency, 1)), built: map[string]*Client{}}
 	spec := os.Getenv("LLM")
 	if spec == "" {
 		spec = o.DefaultSpec
 	}
-	def, err := get(spec)
+	def, err := r.Client(spec)
 	if err != nil {
 		return nil, fmt.Errorf("LLM=%q: %w", spec, err)
 	}
-	r := &Router{Default: def, Routes: map[string]*Client{}}
+	r.Default = def
 	for _, st := range Stages {
 		env := "LLM_" + strings.ToUpper(st)
 		if s := os.Getenv(env); s != "" {
-			c, err := get(s)
+			c, err := r.Client(s)
 			if err != nil {
 				return nil, fmt.Errorf("%s=%q: %w", env, s, err)
 			}
@@ -84,7 +73,8 @@ func FromEnv(o Options) (*Router, error) {
 	return r, nil
 }
 
-// NewBackend parses "<provider>:<model>[?effort=..&json=1]".
+// NewBackend parses "<provider>:<model>[?effort=..&json=1&timeout=30m]".
+// timeout applies to OpenAI-compatible backends (slow local models).
 func NewBackend(spec string, o Options) (Backend, error) {
 	provider, rest, ok := strings.Cut(spec, ":")
 	if !ok || rest == "" {
@@ -120,7 +110,15 @@ func NewBackend(spec string, o Options) (Backend, error) {
 			return nil, fmt.Errorf("%s not set", p.keyEnv)
 		}
 	}
-	return &OpenAI{Provider: provider, BaseURL: base, APIKey: key, Model: model, Effort: effort, JSONMode: q.Get("json") == "1", Extra: p.extra}, nil
+	oa := &OpenAI{Provider: provider, BaseURL: base, APIKey: key, Model: model, Effort: effort, JSONMode: q.Get("json") == "1", Extra: p.extra}
+	if v := q.Get("timeout"); v != "" {
+		d, err := time.ParseDuration(v)
+		if err != nil {
+			return nil, fmt.Errorf("timeout: %w", err)
+		}
+		oa.HTTP = &http.Client{Timeout: d}
+	}
+	return oa, nil
 }
 
 func presetNames() []string {

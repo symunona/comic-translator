@@ -37,6 +37,8 @@ type Store interface {
 	SaveTranslation(id, lang string, ver int, v any) error
 	LoadEdit(id, lang string, v any) (bool, error)
 	SaveEdit(id, lang string, v any) error
+	LoadVersions(id, lang string, v any) (bool, error)
+	SaveVersions(id, lang string, v any) error
 	Langs(id string) []string
 
 	Path(id string, rel ...string) string
@@ -126,6 +128,14 @@ func (s *FS) SaveEdit(id, lang string, v any) error {
 	return s.save(s.Path(id, "tr", lang+".edit.json"), v)
 }
 
+func (s *FS) LoadVersions(id, lang string, v any) (bool, error) {
+	return s.load(s.Path(id, "tr", lang+".versions.json"), v)
+}
+
+func (s *FS) SaveVersions(id, lang string, v any) error {
+	return s.save(s.Path(id, "tr", lang+".versions.json"), v)
+}
+
 func (s *FS) Langs(id string) []string {
 	entries, _ := os.ReadDir(s.Path(id, "tr"))
 	seen := map[string]bool{}
@@ -133,8 +143,10 @@ func (s *FS) Langs(id string) []string {
 	for _, e := range entries {
 		name := e.Name()
 		lang, _, ok := strings.Cut(name, "@")
-		if !ok {
-			lang, _, ok = strings.Cut(name, ".edit.json")
+		for _, suffix := range []string{".edit.json", ".versions.json"} {
+			if !ok {
+				lang, _, ok = strings.Cut(name, suffix)
+			}
 		}
 		if ok && !seen[lang] {
 			seen[lang] = true

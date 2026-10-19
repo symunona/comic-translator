@@ -10,6 +10,7 @@ import (
 	"net/http"
 	"path/filepath"
 	"regexp"
+	"slices"
 	"strconv"
 
 	"comic-translator/backend/internal/llm"
@@ -25,6 +26,7 @@ var (
 	idRe    = regexp.MustCompile(`^[0-9a-f]{64}$`)
 	langRe  = regexp.MustCompile(`^[a-z]{2,3}(-[A-Za-z]{2,4})?$`)
 	ridRe   = regexp.MustCompile(`^r\d+$`)
+	vidRe   = regexp.MustCompile(`^v\d+$`)
 	pidRe   = regexp.MustCompile(`^p\d+$`)
 	pngSign = []byte("\x89PNG\r\n\x1a\n")
 )
@@ -37,6 +39,8 @@ type Server struct {
 	// DetectorModel is the server detector file; unused when ClientDetect.
 	DetectorModel string
 	LLMStages     map[string]string
+	// AllowSpecs lists LLM specs clients may request for new versions; "*" allows any.
+	AllowSpecs []string
 }
 
 func (s *Server) Handler() http.Handler {
@@ -53,6 +57,11 @@ func (s *Server) Handler() http.Handler {
 	mux.HandleFunc("GET /api/strips/{id}/image/{dir}/{name}", s.strip(s.image))
 	mux.HandleFunc("GET /api/strips/{id}/translations/{lang}", s.strip(s.lang(s.getTranslation)))
 	mux.HandleFunc("PUT /api/strips/{id}/translations/{lang}", s.strip(s.lang(s.putTranslation)))
+	mux.HandleFunc("GET /api/strips/{id}/translations/{lang}/versions", s.strip(s.lang(s.listVersions)))
+	mux.HandleFunc("POST /api/strips/{id}/translations/{lang}/versions", s.strip(s.lang(s.newVersion)))
+	mux.HandleFunc("PATCH /api/strips/{id}/translations/{lang}/versions/{vid}", s.strip(s.lang(s.version(s.patchVersion))))
+	mux.HandleFunc("DELETE /api/strips/{id}/translations/{lang}/versions/{vid}", s.strip(s.lang(s.version(s.deleteVersion))))
+	mux.HandleFunc("POST /api/strips/{id}/translations/{lang}/versions/{vid}/activate", s.strip(s.lang(s.version(s.activateVersion))))
 	mux.HandleFunc("POST /api/strips/{id}/retranslate/{lang}", s.strip(s.lang(s.retranslate)))
 	mux.HandleFunc("POST /api/strips/{id}/render/{lang}", s.strip(s.lang(s.render)))
 	mux.HandleFunc("PATCH /api/strips/{id}/regions/{rid}", s.strip(s.patchRegion))
@@ -105,7 +114,7 @@ func pipelineError(w http.ResponseWriter, err error) {
 		httpError(w, http.StatusNotFound, err.Error())
 	case errors.Is(err, pipeline.ErrBadInput):
 		httpError(w, http.StatusBadRequest, err.Error())
-	case errors.Is(err, pipeline.ErrNotReady):
+	case errors.Is(err, pipeline.ErrNotReady), errors.Is(err, pipeline.ErrConflict):
 		httpError(w, http.StatusConflict, err.Error())
 	default:
 		httpError(w, http.StatusInternalServerError, err.Error())
@@ -285,6 +294,86 @@ func (s *Server) putTranslation(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	writeJSON(w, http.StatusOK, saved)
+}
+
+func (s *Server) version(h http.HandlerFunc) http.HandlerFunc {
+	return func(w http.ResponseWriter, r *http.Request) {
+		if !vidRe.MatchString(r.PathValue("vid")) {
+			httpError(w, http.StatusNotFound, "version not found")
+			return
+		}
+		h(w, r)
+	}
+}
+
+func (s *Server) specAllowed(spec string) bool {
+	return slices.Contains(s.AllowSpecs, "*") || slices.Contains(s.AllowSpecs, spec)
+}
+
+func (s *Server) listVersions(w http.ResponseWriter, r *http.Request) {
+	vs, err := s.P.Versions(r.PathValue("id"), r.PathValue("lang"))
+	if err != nil {
+		pipelineError(w, err)
+		return
+	}
+	writeJSON(w, http.StatusOK, vs)
+}
+
+func (s *Server) newVersion(w http.ResponseWriter, r *http.Request) {
+	var req pipeline.VersionRequest
+	if err := json.NewDecoder(http.MaxBytesReader(w, r.Body, 8<<20)).Decode(&req); err != nil && err != io.EOF {
+		httpError(w, http.StatusBadRequest, err.Error())
+		return
+	}
+	id, lang := r.PathValue("id"), r.PathValue("lang")
+	if req.Spec != "" {
+		if !s.specAllowed(req.Spec) {
+			httpError(w, http.StatusForbidden, "spec not allowed: set LLM_ALLOW_SPECS")
+			return
+		}
+		if s.Jobs.Busy(id, lang) {
+			httpError(w, http.StatusConflict, "pipeline is running for this language")
+			return
+		}
+	}
+	v, err := s.P.NewVersion(r.Context(), id, lang, req)
+	if err != nil {
+		pipelineError(w, err)
+		return
+	}
+	writeJSON(w, http.StatusCreated, v)
+}
+
+func (s *Server) patchVersion(w http.ResponseWriter, r *http.Request) {
+	var patch pipeline.VersionPatch
+	if err := json.NewDecoder(http.MaxBytesReader(w, r.Body, 8<<20)).Decode(&patch); err != nil {
+		httpError(w, http.StatusBadRequest, err.Error())
+		return
+	}
+	v, err := s.P.PatchVersion(r.PathValue("id"), r.PathValue("lang"), r.PathValue("vid"), patch)
+	if err != nil {
+		pipelineError(w, err)
+		return
+	}
+	writeJSON(w, http.StatusOK, v)
+}
+
+func (s *Server) deleteVersion(w http.ResponseWriter, r *http.Request) {
+	vs, err := s.P.DeleteVersion(r.PathValue("id"), r.PathValue("lang"), r.PathValue("vid"))
+	if err != nil {
+		pipelineError(w, err)
+		return
+	}
+	writeJSON(w, http.StatusOK, vs)
+}
+
+func (s *Server) activateVersion(w http.ResponseWriter, r *http.Request) {
+	vs, err := s.P.ActivateVersion(r.PathValue("id"), r.PathValue("lang"), r.PathValue("vid"))
+	if err != nil {
+		pipelineError(w, err)
+		return
+	}
+	writeJSON(w, http.StatusOK, vs)
 }
 
 func (s *Server) retranslate(w http.ResponseWriter, r *http.Request) {

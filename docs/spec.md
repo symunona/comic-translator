@@ -37,8 +37,9 @@ data/<sha256-hex>/
   overlays/<rid>.png   opaque crop of clean.png at region overlayBox
   debug/<panelId>.png  panel crop with numbered boxes (also LLM input)
   stages/<stage>@v<N>.json
-  tr/<lang>@v<N>.json  pipeline translation
-  tr/<lang>.edit.json  user edits (PUT), wins over pipeline result
+  tr/<lang>@v<N>.json  pipeline translation (review stage cache)
+  tr/<lang>.versions.json  saved translation versions, see Translation versions
+  tr/<lang>.edit.json  legacy user edit (read once for migration, never written)
   out/<lang>.png       final export
 ```
 
@@ -104,9 +105,14 @@ Interface `LLM.Call(ctx, prompt string, images []string /*abs paths*/, schemaHin
 | GET | `/api/strips/{id}/usage` | `{stages:[StageUsage], total, calls:[Call], detect?}` LLM tokens + cost + credits per stage and per call, from `llm/` logs. `detect` = browser detect run info |
 | GET | `/api/strips/{id}/events?lang=en` | SSE. Starts/joins pipeline job for (id, lang). Replays done stages first (status `cached`), then live |
 | GET | `/api/strips/{id}/image/orig.png`, `/clean.png`, `/overlays/{rid}.png`, `/debug/{pid}.png`, `/out/{lang}.png` | files |
-| GET | `/api/strips/{id}/translations/{lang}` | `Translation` (edit file if exists, else pipeline) |
-| PUT | `/api/strips/{id}/translations/{lang}` | `Translation` -> `tr/<lang>.edit.json` |
-| POST | `/api/strips/{id}/retranslate/{lang}` | body `{regionIds?:[...], hint?:string}` -> reruns translate+review for those regions, returns Translation |
+| GET | `/api/strips/{id}/translations/{lang}` | `Translation` of the active version |
+| PUT | `/api/strips/{id}/translations/{lang}` | `Translation` -> active version if `user`, else forks a new `user` version (`Edit of <label>`), makes it active |
+| GET | `/api/strips/{id}/translations/{lang}/versions` | `TrVersions` |
+| POST | `/api/strips/{id}/translations/{lang}/versions` | `{spec?, label?, from?, regions?}`. `spec` -> run translate+review on that backend (sync, minutes), needs `LLM_ALLOW_SPECS`. No spec -> copy `from` (default active) as `user` version. New version becomes active. 201 `TrVersion` |
+| PATCH | `/api/strips/{id}/translations/{lang}/versions/{vid}` | `{label?, regions?}` in place -> `TrVersion` |
+| POST | `/api/strips/{id}/translations/{lang}/versions/{vid}/activate` | -> `TrVersions` |
+| DELETE | `/api/strips/{id}/translations/{lang}/versions/{vid}` | -> `TrVersions`. Last version: 409 |
+| POST | `/api/strips/{id}/retranslate/{lang}` | body `{regionIds?:[...], hint?:string}` -> reruns translate+review for those regions, merges into active version (usage added), returns Translation |
 | POST | `/api/strips/{id}/render/{lang}` | body `image/png` -> `out/<lang>.png`, resp `{url}` |
 | PATCH | `/api/strips/{id}/regions/{rid}` | `{replace?:bool, source?:{text,lines}}` -> updates stage json, re-cleans if replace changed. resp Region |
 
@@ -155,9 +161,29 @@ type Scene = {
 type Translation = {
   lang: string; final: boolean; edited: boolean; updatedAt: string
   regions: Record<string, { text: string; literal?: string; notes?: string; maxChars?: number; maxLines?: number }>
+  version?: string; label?: string; source?: string; model?: string // active version
 }
+type TrVersion = {
+  id: string /* v1.. */; label: string; source: "user" | "llm"; model?: string /* "claude-cli:opus, ..." */
+  from?: string; createdAt: string; updatedAt: string
+  usage?: { calls: number; tokens: TokenUsage; costUsd: number; durationMs: number; models: string[] }
+  regions: Translation["regions"]
+}
+type TrVersions = { lang: string; active: string; versions: TrVersion[] }
 type Strip = { meta: {...}; panels: Panel[]; regions: Region[]; scene?: Scene; stages: Record<string, string>; imageUrl: string; cleanUrl?: string }
 ```
+
+## Translation versions
+
+- N versions per (strip, lang) in `tr/<lang>.versions.json`. One active. Ids `v1..`, never reused.
+- Pipeline review run -> appends `llm` version (model = backends used, usage = translate+review calls via `llm.Meter`), activates it.
+- LLM versions stay as generated. Review pass fails (weak local model, bad JSON) -> version keeps translate draft, `reviewError` set, UI chip "unreviewed draft". First editor edit forks `user` version; later edits in place.
+- Migration (lazy, in memory until first write): `tr/<lang>@v1.json` -> v1 `llm` (model from `llm/review-<lang>-0.json`), `tr/<lang>.edit.json` -> v2 `user` active.
+- Backend per request: `llm.WithSpec(ctx, spec)` on Router, `?timeout=90m` for slow local OpenAI-compat backends.
+- `LLM_ALLOW_SPECS`: comma list of specs clients may request, `*` = any. Empty = no client specs (prod default).
+- Editor: version select + facts (source, model, $, tokens, time) + rename + "Copy as mine" + delete.
+- Viewer: version select in top bar when >1 version, `?ver=v3`. Local choice, does not activate. Edit link passes `ver` -> editor activates it.
+- Bench: `bench/translate-versions.sh [api] [id] [lang] [spec...]` -> one version per spec, dump `bench/results/translate-<lang>-<date>.json`.
 
 ## Frontend (SolidJS)
 

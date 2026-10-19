@@ -1,0 +1,7 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>ocr bench</title>
+<script type="module">
+  const engine = new URLSearchParams(location.search).get("engine") ?? "paddle";
+  import(`/dist/${engine}.js`);
+</script>
