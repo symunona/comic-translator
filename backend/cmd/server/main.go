@@ -71,6 +71,7 @@ func main() {
 	static := flag.String("static", "", "serve built frontend from this dir (SPA fallback to index.html)")
 	models := flag.String("models", "", "serve browser models (onnx) from this dir at /models/")
 	isolate := flag.Bool("isolate", false, "send COOP/COEP headers (multi-threaded WASM in the browser)")
+	debug := flag.Bool("debug", os.Getenv("DEBUG") == "1", "UI shows where each step ran, models, raw $ and tokens (env DEBUG=1)")
 	flag.Parse()
 
 	tmp := envOr("TMPDIR", defaultTmp)
@@ -82,7 +83,9 @@ func main() {
 		log.Fatal(err)
 	}
 	var det *detect.Detector
+	detName := ""
 	if *detModel != "" {
+		detName = filepath.Base(*detModel)
 		if det, err = detect.New(envOr("ORT_LIB", defaultORT), *detModel, *threads); err != nil {
 			log.Fatal(err)
 		}
@@ -100,7 +103,10 @@ func main() {
 	defer stop()
 
 	p := pipeline.New(st, det, lm)
-	var handler http.Handler = (&api.Server{P: p, Jobs: pipeline.NewJobs(ctx, p), ClientDetect: det == nil}).Handler()
+	var handler http.Handler = (&api.Server{
+		P: p, Jobs: pipeline.NewJobs(ctx, p), ClientDetect: det == nil,
+		Debug: *debug, DetectorModel: detName, LLMStages: lm.Specs(),
+	}).Handler()
 	if *static != "" || *models != "" {
 		mux := http.NewServeMux()
 		mux.Handle("/api/", handler)
@@ -126,7 +132,7 @@ func main() {
 		defer cancel()
 		srv.Shutdown(shutdown)
 	}()
-	log.Printf("comic-translator api on http://%s data=%s llm=%s detect=%s", *addr, st.Root(), lm, map[bool]string{true: "browser", false: "server"}[det == nil])
+	log.Printf("comic-translator api on http://%s data=%s llm=%s detect=%s debug=%v", *addr, st.Root(), lm, map[bool]string{true: "browser", false: "server"}[det == nil], *debug)
 	if err := srv.ListenAndServe(); err != nil && !errors.Is(err, http.ErrServerClosed) {
 		log.Fatal(err)
 	}

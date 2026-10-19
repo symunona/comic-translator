@@ -10,6 +10,8 @@ export type SaveState = "idle" | "pending" | "saving" | "saved" | "error";
 
 const emptyStages = () => Object.fromEntries(STAGES.map((s) => [s, { status: "pending" }])) as Record<StageName, StageState>;
 
+const LLM_STAGES = new Set<StageName>(["ocr", "scene", "translate", "review"]);
+
 const stageName = (s: string) => s.split(":")[0] as StageName;
 
 export function createWork(id: string) {
@@ -28,6 +30,7 @@ export function createWork(id: string) {
   const [lang, setLang] = createSignal("");
   const [saveState, setSaveState] = createSignal<SaveState>("idle");
   const [overlayRev, setOverlayRev] = createSignal<Record<string, number>>({});
+  const [usageRev, setUsageRev] = createSignal(0);
 
   const upsertRegions = (list: Region[], replace = false) =>
     setState(
@@ -54,7 +57,9 @@ export function createWork(id: string) {
   const onStage = (e: StageEvent) => {
     const name = stageName(e.stage);
     if (!(name in state.stages)) return;
+    const prev = state.stages[name];
     setState("stages", name, { status: e.status, message: e.message, progress: e.progress });
+    if (LLM_STAGES.has(name) && e.status !== "cached" && (prev.status !== e.status || prev.progress?.done !== e.progress?.done)) setUsageRev((n) => n + 1);
   };
 
   let close: (() => void) | null = null;
@@ -195,7 +200,7 @@ export function createWork(id: string) {
 
   const retranslate = async (rid: string, hint?: string) => {
     await flush();
-    const t = await api.retranslate(id, lang(), { regionIds: [rid], hint });
+    const t = await api.retranslate(id, lang(), { regionIds: [rid], hint }).finally(() => setUsageRev((n) => n + 1));
     const entry = t.regions[rid];
     if (entry && state.translation) setState("translation", "regions", rid, entry);
     else setTranslation(t);
@@ -206,7 +211,7 @@ export function createWork(id: string) {
     close?.();
   });
 
-  return { state, lang, connect, editText, setReplace, retranslate, flush, saveState, overlayRev };
+  return { state, lang, connect, editText, setReplace, retranslate, flush, saveState, overlayRev, usageRev };
 }
 
 export type Work = ReturnType<typeof createWork>;

@@ -218,6 +218,7 @@ Goal: server (2 cores, ~3.8GB RAM, no GPU) runs **zero inference**. Every model 
 
 - Charge credits for **LLM API usage only** (browser inference is free to us).
 - Price = **>= 2x** actual provider cost per call. Source of truth: per-call `costUsd` in `data/<id>/llm/*.json` (provider-reported for OpenRouter, else `prices.go`), aggregated by `GET /api/strips/{id}/usage`.
+- Implemented as display only (no charging yet): 1 credit = $0.01 billed, billed = 2x `costUsd`, rounded up per call. `backend/internal/llm/credits.go`. UI per step + per call: `docs/browser.md` Credits.
 - Needs later: per-user attribution (calls carry strip id only), cost for `claude-cli` is list-price equivalent, not real spend.
 
 ## Q4: per-stage token + cost measurement

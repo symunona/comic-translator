@@ -12,6 +12,7 @@ import (
 	"regexp"
 	"strconv"
 
+	"comic-translator/backend/internal/llm"
 	"comic-translator/backend/internal/pipeline"
 )
 
@@ -32,6 +33,10 @@ type Server struct {
 	P            *pipeline.Pipeline
 	Jobs         *pipeline.Jobs
 	ClientDetect bool
+	Debug        bool
+	// DetectorModel is the server detector file; unused when ClientDetect.
+	DetectorModel string
+	LLMStages     map[string]string
 }
 
 func (s *Server) Handler() http.Handler {
@@ -108,7 +113,12 @@ func pipelineError(w http.ResponseWriter, err error) {
 }
 
 func (s *Server) config(w http.ResponseWriter, r *http.Request) {
-	writeJSON(w, http.StatusOK, map[string]bool{"clientDetect": s.ClientDetect})
+	cfg := map[string]any{"clientDetect": s.ClientDetect, "debug": s.Debug}
+	if s.Debug {
+		cfg["detector"] = s.DetectorModel
+		cfg["llm"] = s.LLMStages
+	}
+	writeJSON(w, http.StatusOK, cfg)
 }
 
 func (s *Server) panels(w http.ResponseWriter, r *http.Request) {
@@ -181,12 +191,16 @@ func (s *Server) get(w http.ResponseWriter, r *http.Request) {
 }
 
 func (s *Server) usage(w http.ResponseWriter, r *http.Request) {
-	rep, err := s.P.Usage(r.PathValue("id"))
+	id := r.PathValue("id")
+	rep, err := s.P.Usage(id)
 	if err != nil {
 		pipelineError(w, err)
 		return
 	}
-	writeJSON(w, http.StatusOK, rep)
+	writeJSON(w, http.StatusOK, struct {
+		*llm.Report
+		Detect *pipeline.DetectRun `json:"detect,omitempty"`
+	}{rep, s.P.DetectRun(id)})
 }
 
 func (s *Server) events(w http.ResponseWriter, r *http.Request) {

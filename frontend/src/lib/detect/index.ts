@@ -1,11 +1,27 @@
-import { DETECTOR_URL, type ClientDetect, type DetectMessage, type DetectTiming } from "./protocol";
+import { DETECTOR_URL, type ClientDetect, type DetectEP, type DetectMessage, type DetectTiming } from "./protocol";
 import type { Panel } from "../types";
 
 export type { ClientDetect } from "./protocol";
 
 export type DetectRun = { result: ClientDetect; timing: DetectTiming };
 
-export async function detectInBrowser(imageUrl: string, panels: Panel[], onProgress: (done: number, total: number, device: string) => void): Promise<DetectRun> {
+const DEFAULT_EP: DetectEP = "wasm";
+
+export type DetectOptions = { ep: DetectEP; threads?: number };
+
+export function urlOptions(): DetectOptions {
+  const q = new URLSearchParams(location.search);
+  const ep = q.get("ep");
+  const threads = Number(q.get("threads"));
+  return { ep: ep === "wasm" || ep === "webgpu" || ep === "auto" ? ep : DEFAULT_EP, threads: threads > 0 ? threads : undefined };
+}
+
+export async function detectInBrowser(
+  imageUrl: string,
+  panels: Panel[],
+  onProgress: (done: number, total: number, device: string) => void,
+  opts: DetectOptions = urlOptions(),
+): Promise<DetectRun> {
   const image = await fetch(imageUrl).then((r) => {
     if (!r.ok) throw new Error(`image ${r.status}`);
     return r.blob();
@@ -20,7 +36,7 @@ export async function detectInBrowser(imageUrl: string, panels: Panel[], onProgr
         else if (m.type === "result") resolve({ result: m.result, timing: m.timing });
         else reject(new Error(m.message));
       };
-      worker.postMessage({ image, panels: panels.map((p) => ({ id: p.id, bbox: p.bbox })), modelUrl: DETECTOR_URL });
+      worker.postMessage({ image, panels: panels.map((p) => ({ id: p.id, bbox: p.bbox })), modelUrl: DETECTOR_URL, ...opts });
     });
   } finally {
     worker.terminate();

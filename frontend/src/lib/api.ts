@@ -1,8 +1,8 @@
 import type { ClientDetect } from "./detect";
-import type { Panel, Region, Strip, StripSummary, StreamHandlers, Translation, UsageReport } from "./types";
+import type { Config, Panel, Region, Strip, StripSummary, StreamHandlers, Translation, UsageReport } from "./types";
 
 export type Api = {
-  config(): Promise<{ clientDetect: boolean }>;
+  config(): Promise<Config>;
   panels(id: string): Promise<{ panels: Panel[]; detected: boolean }>;
   putDetect(id: string, body: ClientDetect): Promise<Region[]>;
   listStrips(limit: number): Promise<StripSummary[]>;
@@ -18,6 +18,8 @@ export type Api = {
   imageUrl(id: string, name: string): string;
 };
 
+let configP: Promise<Config> | undefined;
+
 const base = (id: string) => `/api/strips/${encodeURIComponent(id)}`;
 
 async function json<T>(res: Response): Promise<T> {
@@ -32,7 +34,10 @@ const send = (method: string, body: unknown) => ({
 });
 
 export const httpApi: Api = {
-  config: () => fetch("/api/config").then((r) => json<{ clientDetect: boolean }>(r)),
+  config: () => (configP ??= fetch("/api/config").then((r) => json<Config>(r)).catch((e) => {
+    configP = undefined;
+    throw e;
+  })),
   panels: (id) => fetch(`${base(id)}/panels`).then((r) => json<{ panels: Panel[]; detected: boolean }>(r)),
   putDetect: (id, body) => fetch(`${base(id)}/stages/detect`, send("PUT", body)).then((r) => json<Region[]>(r)),
   listStrips: (limit) => fetch(`/api/strips?limit=${limit}`).then((r) => json<StripSummary[]>(r)),

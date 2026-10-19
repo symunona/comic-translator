@@ -1,5 +1,5 @@
 import { A, useParams, useSearchParams } from "@solidjs/router";
-import { For, Show, createEffect, createMemo, createSignal, on, onCleanup, onMount } from "solid-js";
+import { For, Show, createEffect, createMemo, createResource, createSignal, on, onCleanup, onMount } from "solid-js";
 import Brand from "../components/Brand";
 import Checklist from "../components/Checklist";
 import LangPicker from "../components/LangPicker";
@@ -8,7 +8,7 @@ import Strip from "../components/Strip";
 import UsagePanel from "../components/UsagePanel";
 import ViewToggle from "../components/ViewToggle";
 import { api } from "../lib/api";
-import { creditsFor } from "../lib/langs";
+import { langCredits } from "../lib/credits";
 import { FONT_FAMILY } from "../lib/layout";
 import { renderStrip } from "../lib/render";
 import { STAGES, type Region } from "../lib/types";
@@ -23,6 +23,11 @@ function WorkView(props: { id: string }) {
   const lang = () => (typeof search.lang === "string" && search.lang) || "en";
   const work = createWork(props.id);
   const s = work.state;
+  const [config] = createResource(() => api.config().catch(() => undefined));
+  const [usage] = createResource(
+    () => ({ id: props.id, key: `${work.usageRev()}:${s.phase}:${s.translation?.updatedAt ?? ""}` }),
+    ({ id }) => api.usage(id).catch(() => undefined),
+  );
 
   const [fontsReady, setFontsReady] = createSignal(false);
   const [hovered, setHovered] = createSignal<string | null>(null);
@@ -110,7 +115,7 @@ function WorkView(props: { id: string }) {
         <LangPicker
           value={lang()}
           translated={s.langs}
-          credits={creditsFor(s.regions.length)}
+          credits={langCredits(usage.latest, s.regions.length)}
           onSelect={(l) => setSearch({ lang: l })}
           onTranslate={(l) => setSearch({ lang: l })}
         />
@@ -154,9 +159,16 @@ function WorkView(props: { id: string }) {
               </p>
             </Show>
           </div>
-          <Checklist stages={s.stages} collapsed={s.everDone && s.phase !== "fatal"} error={s.error} />
-          <Show when={s.everDone}>
-            <UsagePanel id={props.id} refresh={`${s.phase}:${s.translation?.updatedAt ?? ""}`} />
+          <Checklist
+            stages={s.stages}
+            collapsed={s.everDone && s.phase !== "fatal"}
+            error={s.error}
+            lang={work.lang()}
+            usage={usage.latest}
+            config={config()}
+          />
+          <Show when={s.everDone && config()?.debug && usage.latest}>
+            <UsagePanel report={usage.latest!} />
           </Show>
           <Show when={exportError()}>
             <p class="fatal">{exportError()}</p>

@@ -15,6 +15,7 @@ ExecStart=%h/comic-browser/bin/server \
   -static %h/comic-browser/web \
   -models %h/comic-browser/vendor/models \
   -detector "" \
+  -debug \
   -llm-concurrency 2
 Restart=always
 RestartSec=5

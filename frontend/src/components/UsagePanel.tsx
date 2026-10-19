@@ -1,6 +1,5 @@
-import { For, Show, createResource } from "solid-js";
-import { api } from "../lib/api";
-import type { StageUsage } from "../lib/types";
+import { For, Show } from "solid-js";
+import type { StageUsage, UsageReport } from "../lib/types";
 
 const usd = (n: number) => `$${n.toFixed(n < 1 ? 3 : 2)}`;
 
@@ -11,18 +10,14 @@ const tokens = (s: StageUsage, n: number) => (s.untracked === s.calls ? "–" : 
 const inTokens = (s: StageUsage) =>
   s.tokens.input_tokens + s.tokens.cache_creation_input_tokens + s.tokens.cache_read_input_tokens;
 
-export default function UsagePanel(p: { id: string; refresh: unknown }) {
-  const [report] = createResource(
-    () => ({ id: p.id, key: p.refresh }),
-    ({ id }) => api.usage(id),
-  );
+export default function UsagePanel(p: { report: UsageReport }) {
   return (
-    <Show when={report.latest?.total.calls}>
+    <Show when={p.report.total.calls}>
       <details class="usage">
         <summary>
-          LLM cost <b>{usd(report.latest!.total.costUsd)}</b>
+          Debug · LLM cost <b>{usd(p.report.total.costUsd)}</b>
           <span>
-            {report.latest!.total.calls} calls · {report.latest!.total.models.join(", ")}
+            {p.report.total.calls} calls · {p.report.total.models.join(", ")}
           </span>
         </summary>
         <table>
@@ -34,10 +29,11 @@ export default function UsagePanel(p: { id: string; refresh: unknown }) {
               <th title="cache write">write</th>
               <th title="output incl. thinking">out</th>
               <th>cost</th>
+              <th>credits</th>
             </tr>
           </thead>
           <tbody>
-            <For each={[...report.latest!.stages, report.latest!.total]}>
+            <For each={[...p.report.stages, p.report.total]}>
               {(s) => (
                 <tr classList={{ total: s.stage === "total" }}>
                   <td>{s.stage}</td>
@@ -46,13 +42,14 @@ export default function UsagePanel(p: { id: string; refresh: unknown }) {
                   <td>{tokens(s, s.tokens.cache_creation_input_tokens)}</td>
                   <td>{tokens(s, s.tokens.output_tokens)}</td>
                   <td>{usd(s.costUsd)}</td>
+                  <td>{s.credits}</td>
                 </tr>
               )}
             </For>
           </tbody>
         </table>
-        <Show when={report.latest!.total.untracked}>
-          <p class="usage-note">* {report.latest!.total.untracked} calls logged before token capture: cost only.</p>
+        <Show when={p.report.total.untracked}>
+          <p class="usage-note">* {p.report.total.untracked} calls logged before token capture: cost only.</p>
         </Show>
         <p class="usage-note">List price (claude-cli: subscription equivalent). All calls incl. reruns.</p>
       </details>

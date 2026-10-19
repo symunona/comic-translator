@@ -7,6 +7,7 @@ import (
 	"image"
 	"log"
 	"slices"
+	"time"
 
 	"comic-translator/backend/internal/detect"
 )
@@ -32,9 +33,30 @@ type ClientDetection struct {
 
 type ClientDetect struct {
 	Model  string        `json:"model"`
+	Bytes  int64         `json:"bytes,omitempty"`
 	Device string        `json:"device"`
 	Ms     float64       `json:"ms"`
 	Panels []ClientPanel `json:"panels"`
+}
+
+// DetectRun records where the stored detect stage ran (browser uploads only).
+type DetectRun struct {
+	Where   string    `json:"where"`
+	Model   string    `json:"model"`
+	Bytes   int64     `json:"bytes,omitempty"`
+	Device  string    `json:"device"`
+	Ms      float64   `json:"ms"`
+	Panels  int       `json:"panels"`
+	Regions int       `json:"regions"`
+	At      time.Time `json:"at"`
+}
+
+func (p *Pipeline) DetectRun(id string) *DetectRun {
+	var run DetectRun
+	if ok, _ := p.Store.LoadStage(id, "detect-run", vDetect, &run); !ok {
+		return nil
+	}
+	return &run
 }
 
 type PanelsResult struct {
@@ -110,6 +132,10 @@ func (p *Pipeline) SaveClientDetect(id string, in ClientDetect) ([]Region, error
 	}
 	if err := p.Store.SaveStage(id, "detect", vDetect, regions); err != nil {
 		return nil, err
+	}
+	run := DetectRun{Where: "browser", Model: in.Model, Bytes: in.Bytes, Device: in.Device, Ms: in.Ms, Panels: len(panels), Regions: len(regions), At: time.Now()}
+	if err := p.Store.SaveStage(id, "detect-run", vDetect, run); err != nil {
+		log.Printf("%s detect-run: %v", id[:8], err)
 	}
 	log.Printf("%s detect: browser %s on %s, %d panels, %.0f ms, %d regions", id[:8], in.Model, in.Device, len(panels), in.Ms, len(regions))
 	return regions, nil

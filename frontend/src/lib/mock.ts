@@ -1,6 +1,6 @@
 import type { Api } from "./api";
 import { FONT_FAMILY } from "./layout";
-import type { Box, DataEvent, Kind, Panel, Region, Scene, StageEvent, Strip, StripSummary, Translation } from "./types";
+import type { Box, DataEvent, Kind, LLMCall, Panel, Region, Scene, StageEvent, StageUsage, Strip, StripSummary, Translation } from "./types";
 
 type Line = { hu: string; en: string; kind: Kind; speaker: string };
 
@@ -340,7 +340,7 @@ function stream(id: string, lang: string, h: Parameters<Api["stream"]>[2]) {
 }
 
 export const mockApi: Api = {
-  config: async () => ({ clientDetect: false }),
+  config: async () => ({ clientDetect: false, debug: true, detector: "detector.onnx", llm: { ocr: "claude-cli:opus", scene: "claude-cli:opus", translate: "claude-cli:opus", review: "claude-cli:opus" } }),
   panels: async (id) => ({ panels: (await getAssets(id)).panels, detected: true }),
   putDetect: async (id) => (await getAssets(id)).regions,
   async listStrips(limit) {
@@ -389,21 +389,28 @@ export const mockApi: Api = {
     return structuredClone(r);
   },
   async usage() {
-    const row = (stage: string, calls: number, costUsd: number, out: number) => ({
-      stage, calls, errors: 0, untracked: 0, turns: calls * 2, costUsd, durationMs: calls * 12000, models: ["opus"],
-      tokens: { input_tokens: calls * 4, cache_creation_input_tokens: calls * 4000, cache_read_input_tokens: calls * 4800, output_tokens: out },
+    const call = (stage: string, label: string, costUsd: number, out: number): LLMCall => ({
+      name: `${stage}-${label}`, stage, label, backend: "claude-cli", model: "opus", attempt: 0, local: false,
+      tokens: { input_tokens: 4, cache_creation_input_tokens: 4000, cache_read_input_tokens: 4800, output_tokens: out },
+      turns: 2, costUsd, credits: Math.ceil((costUsd * 2) / 0.01), durationMs: 12000, time: "2026-10-19T08:00:00Z",
     });
-    const stages = [row("ocr", 10, 0.49, 7700), row("scene", 1, 0.25, 12000), row("translate:en", 1, 0.3, 9000), row("review:en", 1, 0.39, 10200)];
-    const total = stages.reduce((t, s) => ({
-      ...t, calls: t.calls + s.calls, turns: t.turns + s.turns, costUsd: t.costUsd + s.costUsd, durationMs: t.durationMs + s.durationMs,
+    const calls = [
+      ...Array.from({ length: 10 }, (_, i) => call("ocr", `p${i}`, 0.049, 770)),
+      call("scene", "scene", 0.25, 12000),
+      call("translate:en", "translate", 0.3, 9000),
+      call("review:en", "review", 0.39, 10200),
+    ];
+    const sum = (stage: string, cs: LLMCall[]): StageUsage => ({
+      stage, calls: cs.length, errors: 0, untracked: 0, turns: cs.length * 2, models: ["claude-cli:opus"],
+      costUsd: cs.reduce((n, c) => n + c.costUsd, 0), durationMs: cs.length * 12000,
+      paid: cs.filter((c) => c.credits > 0).length, credits: cs.reduce((n, c) => n + c.credits, 0),
       tokens: {
-        input_tokens: t.tokens.input_tokens + s.tokens.input_tokens,
-        cache_creation_input_tokens: t.tokens.cache_creation_input_tokens + s.tokens.cache_creation_input_tokens,
-        cache_read_input_tokens: t.tokens.cache_read_input_tokens + s.tokens.cache_read_input_tokens,
-        output_tokens: t.tokens.output_tokens + s.tokens.output_tokens,
+        input_tokens: cs.length * 4, cache_creation_input_tokens: cs.length * 4000, cache_read_input_tokens: cs.length * 4800,
+        output_tokens: cs.reduce((n, c) => n + (c.tokens?.output_tokens ?? 0), 0),
       },
-    }), row("total", 0, 0, 0));
-    return { stages, total };
+    });
+    const stages = [...new Set(calls.map((c) => c.stage))].map((st) => sum(st, calls.filter((c) => c.stage === st)));
+    return { stages, total: sum("total", calls), calls };
   },
   stream,
   imageUrl: (id, name) => (name === "orig.png" ? "" : `/mock/${id}/${name}`),

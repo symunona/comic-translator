@@ -5,11 +5,13 @@ export const DETECTOR_NAME = "detector-v4-s_int8";
 
 export type ClientDetection = { class: string; score: number; box: [number, number, number, number] };
 export type ClientPanel = { panelId: string; detections: ClientDetection[] };
-export type ClientDetect = { model: string; device: string; ms: number; panels: ClientPanel[] };
+export type ClientDetect = { model: string; bytes?: number; device: string; ms: number; panels: ClientPanel[] };
 
-export type DetectRequest = { image: Blob; panels: { id: string; bbox: Box }[]; modelUrl: string };
+export type DetectEP = "auto" | "wasm" | "webgpu";
 
-export type DetectTiming = { loadMs: number; firstMs: number; panelMs: number[] };
+export type DetectRequest = { image: Blob; panels: { id: string; bbox: Box }[]; modelUrl: string; ep: DetectEP; threads?: number };
+
+export type DetectTiming = { loadMs: number; firstMs: number; panelMs: number[]; fallback?: string };
 
 export type DetectMessage =
   | { type: "progress"; done: number; total: number; device: string }
