@@ -8,6 +8,7 @@ import (
 	"net/http"
 	"os"
 	"os/signal"
+	"path/filepath"
 	"syscall"
 	"time"
 
@@ -32,6 +33,17 @@ func envOr(key, def string) string {
 	return def
 }
 
+func spa(dir string) http.Handler {
+	files := http.FileServer(http.Dir(dir))
+	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		if _, err := os.Stat(filepath.Join(dir, filepath.Clean("/"+r.URL.Path))); err != nil {
+			http.ServeFile(w, r, filepath.Join(dir, "index.html"))
+			return
+		}
+		files.ServeHTTP(w, r)
+	})
+}
+
 func main() {
 	addr := flag.String("addr", "127.0.0.1:4720", "listen address")
 	dataDir := flag.String("data", defaultData, "data directory")
@@ -40,6 +52,7 @@ func main() {
 	claudeBin := flag.String("claude", "claude", "claude CLI binary")
 	concurrency := flag.Int("llm-concurrency", 4, "max concurrent LLM calls")
 	threads := flag.Int("ort-threads", 0, "onnxruntime intra-op threads (0 = default)")
+	static := flag.String("static", "", "serve built frontend from this dir (SPA fallback to index.html)")
 	flag.Parse()
 
 	tmp := envOr("TMPDIR", defaultTmp)
@@ -61,9 +74,16 @@ func main() {
 	defer stop()
 
 	p := pipeline.New(st, det, cli)
+	var handler http.Handler = (&api.Server{P: p, Jobs: pipeline.NewJobs(ctx, p)}).Handler()
+	if *static != "" {
+		mux := http.NewServeMux()
+		mux.Handle("/api/", handler)
+		mux.Handle("/", spa(*static))
+		handler = mux
+	}
 	srv := &http.Server{
 		Addr:              *addr,
-		Handler:           (&api.Server{P: p, Jobs: pipeline.NewJobs(ctx, p)}).Handler(),
+		Handler:           handler,
 		ReadHeaderTimeout: 10 * time.Second,
 	}
 	go func() {
