@@ -1,5 +1,37 @@
-data/
-.tmp/
+# runtime data, per-hash store
+/data/
+# scratch, tmp, screenshots
+/.tmp/
+.agent-browser/
+
+# go
+/backend/bin/
+/backend/server
+*.test
+*.out
+
+# node / vite
 node_modules/
-dist/
-backend/bin/
+/frontend/dist/
+/frontend/.vite/
+*.tsbuildinfo
+
+# models and native libs live in /data/cache, never in git
+*.onnx
+*.so
+*.so.*
+*.safetensors
+
+# secrets / local env
+.env
+.env.*
+!.env.example
+*.htpasswd
+deploy/*.local
+
+# logs, os, editors
+*.log
+.DS_Store
+.idea/
+.vscode/
+*.swp
