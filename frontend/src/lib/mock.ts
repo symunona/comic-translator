@@ -340,6 +340,9 @@ function stream(id: string, lang: string, h: Parameters<Api["stream"]>[2]) {
 }
 
 export const mockApi: Api = {
+  config: async () => ({ clientDetect: false }),
+  panels: async (id) => ({ panels: (await getAssets(id)).panels, detected: true }),
+  putDetect: async (id) => (await getAssets(id)).regions,
   async listStrips(limit) {
     const items: StripSummary[] = [...uploads.entries()].reverse().map(([id, u]) => ({
       id, origName: u.name, createdAt: u.createdAt, width: 0, height: 0, thumbUrl: "", langs: [],

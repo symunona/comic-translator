@@ -29,17 +29,21 @@ var (
 )
 
 type Server struct {
-	P    *pipeline.Pipeline
-	Jobs *pipeline.Jobs
+	P            *pipeline.Pipeline
+	Jobs         *pipeline.Jobs
+	ClientDetect bool
 }
 
 func (s *Server) Handler() http.Handler {
 	mux := http.NewServeMux()
+	mux.HandleFunc("GET /api/config", s.config)
 	mux.HandleFunc("GET /api/strips", s.list)
 	mux.HandleFunc("POST /api/strips", s.upload)
 	mux.HandleFunc("GET /api/strips/{id}", s.strip(s.get))
 	mux.HandleFunc("GET /api/strips/{id}/events", s.strip(s.events))
 	mux.HandleFunc("GET /api/strips/{id}/usage", s.strip(s.usage))
+	mux.HandleFunc("GET /api/strips/{id}/panels", s.strip(s.panels))
+	mux.HandleFunc("PUT /api/strips/{id}/stages/detect", s.strip(s.putDetect))
 	mux.HandleFunc("GET /api/strips/{id}/image/{name}", s.strip(s.image))
 	mux.HandleFunc("GET /api/strips/{id}/image/{dir}/{name}", s.strip(s.image))
 	mux.HandleFunc("GET /api/strips/{id}/translations/{lang}", s.strip(s.lang(s.getTranslation)))
@@ -94,11 +98,40 @@ func pipelineError(w http.ResponseWriter, err error) {
 	switch {
 	case errors.Is(err, pipeline.ErrNotFound):
 		httpError(w, http.StatusNotFound, err.Error())
+	case errors.Is(err, pipeline.ErrBadInput):
+		httpError(w, http.StatusBadRequest, err.Error())
 	case errors.Is(err, pipeline.ErrNotReady):
 		httpError(w, http.StatusConflict, err.Error())
 	default:
 		httpError(w, http.StatusInternalServerError, err.Error())
 	}
+}
+
+func (s *Server) config(w http.ResponseWriter, r *http.Request) {
+	writeJSON(w, http.StatusOK, map[string]bool{"clientDetect": s.ClientDetect})
+}
+
+func (s *Server) panels(w http.ResponseWriter, r *http.Request) {
+	res, err := s.P.Panels(r.PathValue("id"))
+	if err != nil {
+		pipelineError(w, err)
+		return
+	}
+	writeJSON(w, http.StatusOK, res)
+}
+
+func (s *Server) putDetect(w http.ResponseWriter, r *http.Request) {
+	var in pipeline.ClientDetect
+	if err := json.NewDecoder(http.MaxBytesReader(w, r.Body, 4<<20)).Decode(&in); err != nil {
+		httpError(w, http.StatusBadRequest, err.Error())
+		return
+	}
+	regions, err := s.P.SaveClientDetect(r.PathValue("id"), in)
+	if err != nil {
+		pipelineError(w, err)
+		return
+	}
+	writeJSON(w, http.StatusOK, regions)
 }
 
 func (s *Server) list(w http.ResponseWriter, r *http.Request) {

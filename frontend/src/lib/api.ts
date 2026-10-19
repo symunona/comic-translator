@@ -1,6 +1,10 @@
-import type { Region, Strip, StripSummary, StreamHandlers, Translation, UsageReport } from "./types";
+import type { ClientDetect } from "./detect";
+import type { Panel, Region, Strip, StripSummary, StreamHandlers, Translation, UsageReport } from "./types";
 
 export type Api = {
+  config(): Promise<{ clientDetect: boolean }>;
+  panels(id: string): Promise<{ panels: Panel[]; detected: boolean }>;
+  putDetect(id: string, body: ClientDetect): Promise<Region[]>;
   listStrips(limit: number): Promise<StripSummary[]>;
   upload(file: File): Promise<{ id: string; existing: boolean }>;
   getStrip(id: string): Promise<Strip>;
@@ -28,6 +32,9 @@ const send = (method: string, body: unknown) => ({
 });
 
 export const httpApi: Api = {
+  config: () => fetch("/api/config").then((r) => json<{ clientDetect: boolean }>(r)),
+  panels: (id) => fetch(`${base(id)}/panels`).then((r) => json<{ panels: Panel[]; detected: boolean }>(r)),
+  putDetect: (id, body) => fetch(`${base(id)}/stages/detect`, send("PUT", body)).then((r) => json<Region[]>(r)),
   listStrips: (limit) => fetch(`/api/strips?limit=${limit}`).then((r) => json<StripSummary[]>(r)),
   upload(file) {
     const fd = new FormData();

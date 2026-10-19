@@ -206,9 +206,9 @@ Goal: server (2 cores, ~3.8GB RAM, no GPU) runs **zero inference**. Every model 
 | Kites (`github.com/Unheat/Kites`) | GPL-3.0 | YOLO11n, PaddleOCR v3-v6, LaMa-manga / AOT / Telea, WebLLM |
 | vermilion10/comic-translator | MIT | own detector, PP-OCRv6, opencv.js Telea, WebLLM Gemma |
 
-### Migration plan (not started)
+### Migration plan (step 1 done on branch `browser-offload`, see `docs/browser.md`)
 
-1. Frontend: ort-web + v4-s detector in a Web Worker. Output = same `regions` JSON as Go `detect`+`order`. POST to new `PUT /api/strips/{id}/stages/detect` (server validates, stores). Go detector stays as dev fallback, off on server.
+1. **Done (browser-offload).** Frontend: ort-web + v4-s detector in a Web Worker. Browser PUTs raw detections to `PUT /api/strips/{id}/stages/detect`; server runs the same NMS/assign, stores `detect` stage. Go detector stays as dev fallback (`-detector ""` = off).
 2. Compare v4-s (browser) vs r50 (server) boxes on 5-10 strips.
 3. PaddleOCR v5 latin in worker per crop; confidence < threshold -> server LLM OCR for that panel only. `kind`/`caps` from scene call.
 4. Erase: port Go `clean` CV to TS (canvas), AOT-GAN for non-bubble text. Server stores `clean.png` + overlays uploaded by client.

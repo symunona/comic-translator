@@ -35,3 +35,11 @@ logs:
 # prod service status
 status:
     ssh server systemctl --user status comic-translator --no-pager
+
+# browser-offload env: build, ship to server ~/comic-browser, restart comic-browser.tmpx.space
+deploy-browser:
+    {{root}}/deploy/browser.sh
+
+# tail browser-offload env logs on server
+logs-browser:
+    ssh server journalctl --user -u comic-browser -f -n 50

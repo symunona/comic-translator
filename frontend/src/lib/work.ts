@@ -1,8 +1,9 @@
 import { batch, createSignal, onCleanup } from "solid-js";
 import { createStore, produce, reconcile } from "solid-js/store";
 import { api } from "./api";
+import { detectInBrowser } from "./detect";
 import { translatedLangs } from "./langs";
-import { STAGES, type Meta, type Panel, type Region, type Scene, type StageEvent, type StageName, type StageStatus, type Translation } from "./types";
+import { STAGES, type Meta, type Panel, type Region, type Scene, type StageEvent, type StageName, type StageStatus, type StreamHandlers, type Translation } from "./types";
 
 export type StageState = { status: StageStatus; message?: string; progress?: { done: number; total: number } };
 export type SaveState = "idle" | "pending" | "saving" | "saved" | "error";
@@ -58,6 +59,21 @@ export function createWork(id: string) {
 
   let close: (() => void) | null = null;
   let timer: number | undefined;
+  let seq = 0;
+
+  const clientDetect = async () => {
+    const cfg = await api.config();
+    if (!cfg.clientDetect) return;
+    const { panels, detected } = await api.panels(id);
+    if (detected) return;
+    setState("panels", panels);
+    onStage({ stage: "detect", status: "running", message: "in browser" });
+    const run = await detectInBrowser(api.imageUrl(id, "orig.png"), panels, (done, total, device) =>
+      onStage({ stage: "detect", status: "running", message: `in browser · ${device}`, progress: { done, total } }),
+    );
+    console.info("browser detect", JSON.stringify({ device: run.result.device, ...run.timing }));
+    await api.putDetect(id, run.result);
+  };
 
   const connect = (l: string) => {
     close?.();
@@ -83,42 +99,56 @@ export function createWork(id: string) {
         });
       })
       .catch(() => {});
-    close = api.stream(id, l, {
-      stage: onStage,
-      data: (e) => {
-        switch (e.kind) {
-          case "meta":
-            return setState("meta", e.payload);
-          case "panels":
-            return setState("panels", e.payload);
-          case "regions":
-            return upsertRegions(e.payload, true);
-          case "overlays":
-            return upsertRegions(e.payload);
-          case "region":
-            return upsertRegions([e.payload]);
-          case "scene":
-            return setState("scene", e.payload);
-          case "translation":
-            return setTranslation(e.payload);
-        }
-      },
-      done: async () => {
-        const t = await api.getTranslation(id, l).catch(() => null);
-        if (l !== lang()) return;
+    const gen = ++seq;
+    clientDetect()
+      .then(() => {
+        if (gen === seq) close = api.stream(id, l, handlers(l));
+      })
+      .catch((err) => {
+        if (gen !== seq) return;
+        onStage({ stage: "detect", status: "error", message: String(err?.message ?? err) });
         batch(() => {
-          if (t) setTranslation(t);
-          setState("langs", (ls) => (ls.includes(l) ? ls : [...ls, l]));
-          setState("phase", "done");
-          setState("everDone", true);
+          setState("phase", "fatal");
+          setState("error", `browser detect failed: ${err?.message ?? err}`);
         });
+      });
+  };
+
+  const handlers = (l: string): StreamHandlers => ({
+    stage: onStage,
+    data: (e) => {
+      switch (e.kind) {
+        case "meta":
+          return setState("meta", e.payload);
+        case "panels":
+          return setState("panels", e.payload);
+        case "regions":
+          return upsertRegions(e.payload, true);
+        case "overlays":
+          return upsertRegions(e.payload);
+        case "region":
+          return upsertRegions([e.payload]);
+        case "scene":
+          return setState("scene", e.payload);
+        case "translation":
+          return setTranslation(e.payload);
+      }
+    },
+    done: async () => {
+      const t = await api.getTranslation(id, l).catch(() => null);
+      if (l !== lang()) return;
+      batch(() => {
+        if (t) setTranslation(t);
+        setState("langs", (ls) => (ls.includes(l) ? ls : [...ls, l]));
+        setState("phase", "done");
+        setState("everDone", true);
+      });
       },
       fatal: (message) => batch(() => {
         setState("phase", "fatal");
         setState("error", message);
       }),
-    });
-  };
+  });
 
   const put = async () => {
     const t = state.translation;
