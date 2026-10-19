@@ -104,6 +104,27 @@ export type StreamHandlers = {
   fatal: (message: string) => void;
 };
 
+export type TokenUsage = {
+  input_tokens: number;
+  cache_creation_input_tokens: number;
+  cache_read_input_tokens: number;
+  output_tokens: number;
+};
+
+export type StageUsage = {
+  stage: string;
+  calls: number;
+  errors: number;
+  untracked: number;
+  turns: number;
+  tokens: TokenUsage;
+  costUsd: number;
+  durationMs: number;
+  models: string[];
+};
+
+export type UsageReport = { stages: StageUsage[]; total: StageUsage };
+
 export const STAGES = ["ingest", "panels", "detect", "order", "ocr", "scene", "clean", "translate", "review"] as const;
 export type StageName = (typeof STAGES)[number];
 

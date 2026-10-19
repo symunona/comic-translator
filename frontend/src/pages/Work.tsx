@@ -6,6 +6,7 @@ import LangPicker from "../components/LangPicker";
 import RegionCard from "../components/RegionCard";
 import Strip from "../components/Strip";
 import ViewToggle from "../components/ViewToggle";
+import UsagePanel from "../components/UsagePanel";
 import { api } from "../lib/api";
 import { creditsFor } from "../lib/langs";
 import { FONT_FAMILY } from "../lib/layout";
@@ -154,6 +155,9 @@ function WorkView(props: { id: string }) {
             </Show>
           </div>
           <Checklist stages={s.stages} collapsed={s.everDone && s.phase !== "fatal"} error={s.error} />
+          <Show when={s.everDone}>
+            <UsagePanel id={props.id} refresh={`${s.phase}:${s.translation?.updatedAt ?? ""}`} />
+          </Show>
           <Show when={exportError()}>
             <p class="fatal">{exportError()}</p>
           </Show>

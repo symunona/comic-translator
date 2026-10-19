@@ -47,7 +47,7 @@ func spa(dir string) http.Handler {
 func main() {
 	addr := flag.String("addr", "127.0.0.1:4720", "listen address")
 	dataDir := flag.String("data", defaultData, "data directory")
-	model := flag.String("model", "opus", "claude model for ocr/scene/translate/review")
+	model := flag.String("model", "opus", "claude CLI model when env LLM is unset")
 	detModel := flag.String("detector", defaultModel, "detector onnx path")
 	claudeBin := flag.String("claude", "claude", "claude CLI binary")
 	concurrency := flag.Int("llm-concurrency", 4, "max concurrent LLM calls")
@@ -68,12 +68,18 @@ func main() {
 		log.Fatal(err)
 	}
 	defer det.Close()
-	cli := llm.NewClaudeCLI(*claudeBin, *model, st.Root(), tmp, *concurrency)
+	lm, err := llm.FromEnv(llm.Options{
+		ClaudeBin: *claudeBin, DefaultSpec: "claude-cli:" + *model,
+		DataDir: st.Root(), TmpDir: tmp, Concurrency: *concurrency,
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
 	ctx, stop := signal.NotifyContext(context.Background(), os.Interrupt, syscall.SIGTERM)
 	defer stop()
 
-	p := pipeline.New(st, det, cli)
+	p := pipeline.New(st, det, lm)
 	var handler http.Handler = (&api.Server{P: p, Jobs: pipeline.NewJobs(ctx, p)}).Handler()
 	if *static != "" {
 		mux := http.NewServeMux()
@@ -92,7 +98,7 @@ func main() {
 		defer cancel()
 		srv.Shutdown(shutdown)
 	}()
-	log.Printf("comic-translator api on http://%s data=%s model=%s", *addr, st.Root(), *model)
+	log.Printf("comic-translator api on http://%s data=%s llm=%s", *addr, st.Root(), lm)
 	if err := srv.ListenAndServe(); err != nil && !errors.Is(err, http.ErrServerClosed) {
 		log.Fatal(err)
 	}
