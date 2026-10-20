@@ -17,6 +17,7 @@ ExecStart=%h/comic-translator/bin/server \
   -models %h/comic-translator/vendor/models \
   -detector "" \
   -debug \
+  -ocr-per-panel \
   -llm-concurrency 2
 Restart=always
 RestartSec=5
