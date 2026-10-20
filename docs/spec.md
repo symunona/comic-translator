@@ -102,7 +102,7 @@ Interface `LLM.Call(ctx, prompt string, images []string /*abs paths*/, schemaHin
 | GET | `/api/strips?limit=10` | `[StripSummary]` newest first: `{id, origName, createdAt, width, height, thumbUrl, langs:[...] }` |
 | POST | `/api/strips` | multipart `file`. resp `{id, existing:bool}`. Does ingest only |
 | GET | `/api/strips/{id}` | `Strip` (full current state, whatever stages done) |
-| GET | `/api/strips/{id}/usage` | `{stages:[StageUsage], total}` LLM tokens + cost per stage, from `llm/` logs |
+| GET | `/api/strips/{id}/usage` | `{stages:[StageUsage], total, calls:[Call], detect?}` LLM tokens + cost + credits per stage and per call, from `llm/` logs. `detect` = browser detect run info |
 | GET | `/api/strips/{id}/events?lang=en` | SSE. Starts/joins pipeline job for (id, lang). Replays done stages first (status `cached`), then live |
 | GET | `/api/strips/{id}/image/orig.png`, `/clean.png`, `/overlays/{rid}.png`, `/debug/{pid}.png`, `/out/{lang}.png` | files |
 | GET | `/api/strips/{id}/translations/{lang}` | `Translation` of the active version |

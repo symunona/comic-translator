@@ -69,3 +69,16 @@ func (r *Router) String() string {
 	}
 	return strings.Join(parts, " ")
 }
+
+// Specs maps each routable stage to the backend name it calls.
+func (r *Router) Specs() map[string]string {
+	out := map[string]string{}
+	for _, st := range Stages {
+		c, ok := r.Routes[st]
+		if !ok {
+			c = r.Default
+		}
+		out[st] = c.Backend.Name()
+	}
+	return out
+}

@@ -5,10 +5,15 @@ export default defineConfig({
   plugins: [solid()],
   server: {
     host: "127.0.0.1",
-    port: 4721,
+    port: Number(process.env.VITE_PORT ?? 4721),
+    headers: {
+      "Cross-Origin-Opener-Policy": "same-origin",
+      "Cross-Origin-Embedder-Policy": "require-corp",
+    },
     strictPort: true,
     allowedHosts: true,
     proxy: {
+      "/models": { target: process.env.API_TARGET ?? "http://127.0.0.1:4720", changeOrigin: true },
       "/api": {
         target: process.env.API_TARGET ?? "http://127.0.0.1:4720",
         changeOrigin: true,
@@ -24,5 +29,7 @@ export default defineConfig({
       },
     },
   },
-  build: { target: "es2022" },
+  build: { target: "es2022", rollupOptions: { input: { main: "index.html", bench: "bench.html" } } },
+  worker: { format: "es" },
+  optimizeDeps: { exclude: ["onnxruntime-web"] },
 });

@@ -13,6 +13,7 @@ import (
 	"slices"
 	"strconv"
 
+	"comic-translator/backend/internal/llm"
 	"comic-translator/backend/internal/pipeline"
 )
 
@@ -31,19 +32,27 @@ var (
 )
 
 type Server struct {
-	P    *pipeline.Pipeline
-	Jobs *pipeline.Jobs
+	P            *pipeline.Pipeline
+	Jobs         *pipeline.Jobs
+	ClientDetect bool
+	Debug        bool
+	// DetectorModel is the server detector file; unused when ClientDetect.
+	DetectorModel string
+	LLMStages     map[string]string
 	// AllowSpecs lists LLM specs clients may request for new versions; "*" allows any.
 	AllowSpecs []string
 }
 
 func (s *Server) Handler() http.Handler {
 	mux := http.NewServeMux()
+	mux.HandleFunc("GET /api/config", s.config)
 	mux.HandleFunc("GET /api/strips", s.list)
 	mux.HandleFunc("POST /api/strips", s.upload)
 	mux.HandleFunc("GET /api/strips/{id}", s.strip(s.get))
 	mux.HandleFunc("GET /api/strips/{id}/events", s.strip(s.events))
 	mux.HandleFunc("GET /api/strips/{id}/usage", s.strip(s.usage))
+	mux.HandleFunc("GET /api/strips/{id}/panels", s.strip(s.panels))
+	mux.HandleFunc("PUT /api/strips/{id}/stages/detect", s.strip(s.putDetect))
 	mux.HandleFunc("GET /api/strips/{id}/image/{name}", s.strip(s.image))
 	mux.HandleFunc("GET /api/strips/{id}/image/{dir}/{name}", s.strip(s.image))
 	mux.HandleFunc("GET /api/strips/{id}/translations/{lang}", s.strip(s.lang(s.getTranslation)))
@@ -103,11 +112,45 @@ func pipelineError(w http.ResponseWriter, err error) {
 	switch {
 	case errors.Is(err, pipeline.ErrNotFound):
 		httpError(w, http.StatusNotFound, err.Error())
+	case errors.Is(err, pipeline.ErrBadInput):
+		httpError(w, http.StatusBadRequest, err.Error())
 	case errors.Is(err, pipeline.ErrNotReady), errors.Is(err, pipeline.ErrConflict):
 		httpError(w, http.StatusConflict, err.Error())
 	default:
 		httpError(w, http.StatusInternalServerError, err.Error())
 	}
+}
+
+func (s *Server) config(w http.ResponseWriter, r *http.Request) {
+	cfg := map[string]any{"clientDetect": s.ClientDetect, "debug": s.Debug}
+	if s.Debug {
+		cfg["detector"] = s.DetectorModel
+		cfg["llm"] = s.LLMStages
+	}
+	writeJSON(w, http.StatusOK, cfg)
+}
+
+func (s *Server) panels(w http.ResponseWriter, r *http.Request) {
+	res, err := s.P.Panels(r.PathValue("id"))
+	if err != nil {
+		pipelineError(w, err)
+		return
+	}
+	writeJSON(w, http.StatusOK, res)
+}
+
+func (s *Server) putDetect(w http.ResponseWriter, r *http.Request) {
+	var in pipeline.ClientDetect
+	if err := json.NewDecoder(http.MaxBytesReader(w, r.Body, 4<<20)).Decode(&in); err != nil {
+		httpError(w, http.StatusBadRequest, err.Error())
+		return
+	}
+	regions, err := s.P.SaveClientDetect(r.PathValue("id"), in)
+	if err != nil {
+		pipelineError(w, err)
+		return
+	}
+	writeJSON(w, http.StatusOK, regions)
 }
 
 func (s *Server) list(w http.ResponseWriter, r *http.Request) {
@@ -157,12 +200,16 @@ func (s *Server) get(w http.ResponseWriter, r *http.Request) {
 }
 
 func (s *Server) usage(w http.ResponseWriter, r *http.Request) {
-	rep, err := s.P.Usage(r.PathValue("id"))
+	id := r.PathValue("id")
+	rep, err := s.P.Usage(id)
 	if err != nil {
 		pipelineError(w, err)
 		return
 	}
-	writeJSON(w, http.StatusOK, rep)
+	writeJSON(w, http.StatusOK, struct {
+		*llm.Report
+		Detect *pipeline.DetectRun `json:"detect,omitempty"`
+	}{rep, s.P.DetectRun(id)})
 }
 
 func (s *Server) events(w http.ResponseWriter, r *http.Request) {

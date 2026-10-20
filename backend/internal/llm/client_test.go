@@ -41,3 +41,28 @@ func TestPriceFor(t *testing.T) {
 		t.Fatalf("cost = %v", c)
 	}
 }
+
+func TestCredits(t *testing.T) {
+	for cost, want := range map[float64]int{0: 0, 0.0001: 1, 0.005: 1, 0.01: 2, 0.15255: 31, 1: 200} {
+		if got := Credits(cost); got != want {
+			t.Errorf("Credits(%v) = %d, want %d", cost, got, want)
+		}
+	}
+}
+
+func TestNewCall(t *testing.T) {
+	old := newCall("ocr-p3-0", "ocr-p3", "ocr", logEntry{Model: "opus", CostUSD: 0.15, Duration: "11s"})
+	if old.Backend != "claude-cli" || old.Model != "opus" || old.Label != "p3" || old.Credits != 30 || old.DurationMs != 11000 {
+		t.Fatalf("old log: %+v", old)
+	}
+	local := newCall("scene-0", "scene", "scene", logEntry{Backend: "ollama", Model: "ollama:gemma4", CostUSD: 0.2})
+	if !local.Local || local.Credits != 0 || local.Model != "gemma4" {
+		t.Fatalf("local: %+v", local)
+	}
+}
+
+func TestNaturalLess(t *testing.T) {
+	if !naturalLess("ocr-p2-0", "ocr-p10-0") || naturalLess("ocr-p10-0", "ocr-p2-0") || !naturalLess("ocr-p2-0", "ocr-p2-1") {
+		t.Fatal("natural order")
+	}
+}

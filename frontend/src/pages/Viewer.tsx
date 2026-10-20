@@ -6,7 +6,8 @@ import Strip from "../components/Strip";
 import VersionPicker from "../components/VersionPicker";
 import ViewToggle from "../components/ViewToggle";
 import { api } from "../lib/api";
-import { creditsFor, translatedLangs } from "../lib/langs";
+import { langCredits } from "../lib/credits";
+import { translatedLangs } from "../lib/langs";
 import { FONT_FAMILY } from "../lib/layout";
 import type { Panel, Region, Translation } from "../lib/types";
 
@@ -20,6 +21,7 @@ function ViewerView(props: { id: string }) {
   const [search, setSearch] = useSearchParams();
   const navigate = useNavigate();
   const [strip] = createResource(() => props.id, api.getStrip);
+  const [usage] = createResource(() => props.id, (id) => api.usage(id).catch(() => undefined));
   const langs = createMemo(() => translatedLangs(strip()?.stages));
   const asked = () => (typeof search.lang === "string" ? search.lang : "");
   const lang = createMemo(() => {
@@ -187,7 +189,7 @@ function ViewerView(props: { id: string }) {
         <LangPicker
           value={lang()}
           translated={langs()}
-          credits={creditsFor(strip()?.regions.length ?? 0)}
+          credits={langCredits(usage(), strip()?.regions.length ?? 0)}
           onSelect={(l) => setSearch({ lang: l, ver: undefined })}
           onTranslate={(l) => navigate(`/s/${encodeURIComponent(props.id)}?lang=${l}`)}
         />

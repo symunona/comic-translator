@@ -45,6 +45,9 @@ func (r *runState) runPanels(ctx context.Context) error {
 }
 
 func (r *runState) runDetect(ctx context.Context) error {
+	if r.p.Detector == nil {
+		return ErrClientDetect
+	}
 	img, err := r.image()
 	if err != nil {
 		return err

@@ -6,5 +6,3 @@ export const translatedLangs = (stages: Record<string, string> | undefined) =>
   Object.entries(stages ?? {})
     .filter(([k, v]) => k.startsWith("review:") && v === "done")
     .map(([k]) => k.slice("review:".length));
-
-export const creditsFor = (regionCount: number) => Math.max(1, Math.ceil(regionCount / 4));

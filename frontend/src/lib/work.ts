@@ -1,13 +1,16 @@
 import { batch, createSignal, onCleanup } from "solid-js";
 import { createStore, produce, reconcile } from "solid-js/store";
 import { api } from "./api";
+import { detectInBrowser } from "./detect";
 import { translatedLangs } from "./langs";
-import { STAGES, type Meta, type Panel, type Region, type Scene, type StageEvent, type StageName, type StageStatus, type Translation, type TrVersions } from "./types";
+import { STAGES, type Meta, type Panel, type Region, type Scene, type StageEvent, type StageName, type StageStatus, type StreamHandlers, type Translation, type TrVersions } from "./types";
 
 export type StageState = { status: StageStatus; message?: string; progress?: { done: number; total: number } };
 export type SaveState = "idle" | "pending" | "saving" | "saved" | "error";
 
 const emptyStages = () => Object.fromEntries(STAGES.map((s) => [s, { status: "pending" }])) as Record<StageName, StageState>;
+
+const LLM_STAGES = new Set<StageName>(["ocr", "scene", "translate", "review"]);
 
 const stageName = (s: string) => s.split(":")[0] as StageName;
 
@@ -28,6 +31,7 @@ export function createWork(id: string) {
   const [lang, setLang] = createSignal("");
   const [saveState, setSaveState] = createSignal<SaveState>("idle");
   const [overlayRev, setOverlayRev] = createSignal<Record<string, number>>({});
+  const [usageRev, setUsageRev] = createSignal(0);
 
   const upsertRegions = (list: Region[], replace = false) =>
     setState(
@@ -54,11 +58,28 @@ export function createWork(id: string) {
   const onStage = (e: StageEvent) => {
     const name = stageName(e.stage);
     if (!(name in state.stages)) return;
+    const prev = state.stages[name];
     setState("stages", name, { status: e.status, message: e.message, progress: e.progress });
+    if (LLM_STAGES.has(name) && e.status !== "cached" && (prev.status !== e.status || prev.progress?.done !== e.progress?.done)) setUsageRev((n) => n + 1);
   };
 
   let close: (() => void) | null = null;
   let timer: number | undefined;
+  let seq = 0;
+
+  const clientDetect = async () => {
+    const cfg = await api.config();
+    if (!cfg.clientDetect) return;
+    const { panels, detected } = await api.panels(id);
+    if (detected) return;
+    setState("panels", panels);
+    onStage({ stage: "detect", status: "running", message: "in browser" });
+    const run = await detectInBrowser(api.imageUrl(id, "orig.png"), panels, (done, total, device) =>
+      onStage({ stage: "detect", status: "running", message: `in browser · ${device}`, progress: { done, total } }),
+    );
+    console.info("browser detect", JSON.stringify({ device: run.result.device, ...run.timing }));
+    await api.putDetect(id, run.result);
+  };
 
   const connect = (l: string, ver?: string) => {
     close?.();
@@ -85,44 +106,58 @@ export function createWork(id: string) {
         });
       })
       .catch(() => {});
-    close = api.stream(id, l, {
-      stage: onStage,
-      data: (e) => {
-        switch (e.kind) {
-          case "meta":
-            return setState("meta", e.payload);
-          case "panels":
-            return setState("panels", e.payload);
-          case "regions":
-            return upsertRegions(e.payload, true);
-          case "overlays":
-            return upsertRegions(e.payload);
-          case "region":
-            return upsertRegions([e.payload]);
-          case "scene":
-            return setState("scene", e.payload);
-          case "translation":
-            return setTranslation(e.payload);
-        }
-      },
-      done: async () => {
-        const t = await api.getTranslation(id, l).catch(() => null);
-        if (l !== lang()) return;
+    const gen = ++seq;
+    clientDetect()
+      .then(() => {
+        if (gen === seq) close = api.stream(id, l, handlers(l, ver));
+      })
+      .catch((err) => {
+        if (gen !== seq) return;
+        onStage({ stage: "detect", status: "error", message: String(err?.message ?? err) });
         batch(() => {
-          if (t) setTranslation(t);
-          if (ver && t?.version !== ver) switchVersion(ver).catch(() => loadVersions());
-          else loadVersions();
-          setState("langs", (ls) => (ls.includes(l) ? ls : [...ls, l]));
-          setState("phase", "done");
-          setState("everDone", true);
+          setState("phase", "fatal");
+          setState("error", `browser detect failed: ${err?.message ?? err}`);
         });
-      },
-      fatal: (message) => batch(() => {
-        setState("phase", "fatal");
-        setState("error", message);
-      }),
-    });
+      });
   };
+
+  const handlers = (l: string, ver?: string): StreamHandlers => ({
+    stage: onStage,
+    data: (e) => {
+      switch (e.kind) {
+        case "meta":
+          return setState("meta", e.payload);
+        case "panels":
+          return setState("panels", e.payload);
+        case "regions":
+          return upsertRegions(e.payload, true);
+        case "overlays":
+          return upsertRegions(e.payload);
+        case "region":
+          return upsertRegions([e.payload]);
+        case "scene":
+          return setState("scene", e.payload);
+        case "translation":
+          return setTranslation(e.payload);
+      }
+    },
+    done: async () => {
+      const t = await api.getTranslation(id, l).catch(() => null);
+      if (l !== lang()) return;
+      batch(() => {
+        if (t) setTranslation(t);
+        if (ver && t?.version !== ver) switchVersion(ver).catch(() => loadVersions());
+        else loadVersions();
+        setState("langs", (ls) => (ls.includes(l) ? ls : [...ls, l]));
+        setState("phase", "done");
+        setState("everDone", true);
+      });
+    },
+    fatal: (message) => batch(() => {
+      setState("phase", "fatal");
+      setState("error", message);
+    }),
+  });
 
   const put = async () => {
     const t = state.translation;
@@ -173,7 +208,7 @@ export function createWork(id: string) {
 
   const retranslate = async (rid: string, hint?: string) => {
     await flush();
-    const t = await api.retranslate(id, lang(), { regionIds: [rid], hint });
+    const t = await api.retranslate(id, lang(), { regionIds: [rid], hint }).finally(() => setUsageRev((n) => n + 1));
     const entry = t.regions[rid];
     if (entry && state.translation) setState("translation", "regions", rid, entry);
     else setTranslation(t);
@@ -224,8 +259,8 @@ export function createWork(id: string) {
     close?.();
   });
 
-  return {
-    state, lang, connect, editText, setReplace, retranslate, flush, saveState, overlayRev,
+return {
+    state, lang, connect, editText, setReplace, retranslate, flush, saveState, overlayRev, usageRev,
     switchVersion, copyVersion, renameVersion, deleteVersion,
   };
 }

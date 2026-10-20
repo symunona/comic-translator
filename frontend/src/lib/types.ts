@@ -148,9 +148,46 @@ export type StageUsage = {
   costUsd: number;
   durationMs: number;
   models: string[];
+  paid: number;
+  credits: number;
 };
 
-export type UsageReport = { stages: StageUsage[]; total: StageUsage };
+export type LLMCall = {
+  name: string;
+  stage: string;
+  label: string;
+  backend: string;
+  model: string;
+  attempt: number;
+  error?: string;
+  local: boolean;
+  tokens?: TokenUsage;
+  turns?: number;
+  costUsd: number;
+  credits: number;
+  durationMs: number;
+  time: string;
+};
+
+export type DetectRun = {
+  where: string;
+  model: string;
+  bytes?: number;
+  device: string;
+  ms: number;
+  panels: number;
+  regions: number;
+  at: string;
+};
+
+export type UsageReport = { stages: StageUsage[]; total: StageUsage; calls: LLMCall[]; detect?: DetectRun };
+
+export type Config = {
+  clientDetect: boolean;
+  debug: boolean;
+  detector?: string;
+  llm?: Record<string, string>;
+};
 
 export const STAGES = ["ingest", "panels", "detect", "order", "ocr", "scene", "clean", "translate", "review"] as const;
 export type StageName = (typeof STAGES)[number];

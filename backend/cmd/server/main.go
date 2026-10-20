@@ -45,15 +45,34 @@ func spa(dir string) http.Handler {
 	})
 }
 
+func crossOriginIsolated(h http.Handler) http.Handler {
+	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set("Cross-Origin-Opener-Policy", "same-origin")
+		w.Header().Set("Cross-Origin-Embedder-Policy", "require-corp")
+		w.Header().Set("Cross-Origin-Resource-Policy", "same-origin")
+		h.ServeHTTP(w, r)
+	})
+}
+
+func immutable(h http.Handler) http.Handler {
+	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set("Cache-Control", "public, max-age=31536000, immutable")
+		h.ServeHTTP(w, r)
+	})
+}
+
 func main() {
 	addr := flag.String("addr", "127.0.0.1:4720", "listen address")
 	dataDir := flag.String("data", defaultData, "data directory")
 	model := flag.String("model", "opus", "claude CLI model when env LLM is unset")
-	detModel := flag.String("detector", defaultModel, "detector onnx path")
+	detModel := flag.String("detector", defaultModel, "detector onnx path; empty = detect runs in the browser")
 	claudeBin := flag.String("claude", "claude", "claude CLI binary")
 	concurrency := flag.Int("llm-concurrency", 4, "max concurrent LLM calls")
 	threads := flag.Int("ort-threads", 0, "onnxruntime intra-op threads (0 = default)")
 	static := flag.String("static", "", "serve built frontend from this dir (SPA fallback to index.html)")
+	models := flag.String("models", "", "serve browser models (onnx) from this dir at /models/")
+	isolate := flag.Bool("isolate", false, "send COOP/COEP headers (multi-threaded WASM in the browser)")
+	debug := flag.Bool("debug", os.Getenv("DEBUG") == "1", "UI shows where each step ran, models, raw $ and tokens (env DEBUG=1)")
 	flag.Parse()
 
 	tmp := envOr("TMPDIR", defaultTmp)
@@ -64,11 +83,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	det, err := detect.New(envOr("ORT_LIB", defaultORT), *detModel, *threads)
-	if err != nil {
-		log.Fatal(err)
+	var det *detect.Detector
+	detName := ""
+	if *detModel != "" {
+		detName = filepath.Base(*detModel)
+		if det, err = detect.New(envOr("ORT_LIB", defaultORT), *detModel, *threads); err != nil {
+			log.Fatal(err)
+		}
+		defer det.Close()
 	}
-	defer det.Close()
 	lm, err := llm.FromEnv(llm.Options{
 		ClaudeBin: *claudeBin, DefaultSpec: "claude-cli:" + *model,
 		DataDir: st.Root(), TmpDir: tmp, Concurrency: *concurrency,
@@ -81,12 +104,24 @@ func main() {
 	defer stop()
 
 	p := pipeline.New(st, det, lm)
-	var handler http.Handler = (&api.Server{P: p, Jobs: pipeline.NewJobs(ctx, p), AllowSpecs: splitList(os.Getenv("LLM_ALLOW_SPECS"))}).Handler()
-	if *static != "" {
+	var handler http.Handler = (&api.Server{
+		P: p, Jobs: pipeline.NewJobs(ctx, p), ClientDetect: det == nil,
+		Debug: *debug, DetectorModel: detName, LLMStages: lm.Specs(),
+		AllowSpecs: splitList(os.Getenv("LLM_ALLOW_SPECS")),
+	}).Handler()
+	if *static != "" || *models != "" {
 		mux := http.NewServeMux()
 		mux.Handle("/api/", handler)
-		mux.Handle("/", spa(*static))
+		if *models != "" {
+			mux.Handle("/models/", immutable(http.StripPrefix("/models/", http.FileServer(http.Dir(*models)))))
+		}
+		if *static != "" {
+			mux.Handle("/", spa(*static))
+		}
 		handler = mux
+	}
+	if *isolate {
+		handler = crossOriginIsolated(handler)
 	}
 	srv := &http.Server{
 		Addr:              *addr,
@@ -99,7 +134,7 @@ func main() {
 		defer cancel()
 		srv.Shutdown(shutdown)
 	}()
-	log.Printf("comic-translator api on http://%s data=%s llm=%s", *addr, st.Root(), lm)
+	log.Printf("comic-translator api on http://%s data=%s llm=%s detect=%s debug=%v", *addr, st.Root(), lm, map[bool]string{true: "browser", false: "server"}[det == nil], *debug)
 	if err := srv.ListenAndServe(); err != nil && !errors.Is(err, http.ErrServerClosed) {
 		log.Fatal(err)
 	}
