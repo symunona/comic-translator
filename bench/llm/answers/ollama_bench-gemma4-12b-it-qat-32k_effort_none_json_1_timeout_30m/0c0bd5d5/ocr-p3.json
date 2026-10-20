@@ -1,0 +1,55 @@
+{
+  "spec": "ollama:bench-gemma4-12b-it-qat-32k?effort=none\u0026json=1\u0026timeout=30m",
+  "log": "../bench/llm/prompts/0c0bd5d58b4b8bd03a1229371408586ca54a0de357a882ded2c9843589bea963/llm/ocr-p3.json",
+  "text": "{\"regions\":[{\"n\":8,\"kind\":\"speech\",\"lines\":[\"NEM IS JÁRTAM ARRA MA, BAZME...\",\"A KÖZELBE SE.\"],\"align\":\"left\",\"caps\":true},{\"n\":9,\"kind\":\"speech\",\"lines\":[\"EZ MÚLT HÉT KEDDEN\",\"TÖRTÉNT...\"],\"align\":\"center\",\"caps\":true},{\"n\":10,\"kind\":\"none\",\"lines\":[],\"align\":\"center\",\"caps\":false},{\"n\":11,\"kind\":\"sign\",\"lines\":[\"772-683 / FELVESZEM\"],\"align\":\"left\",\"caps\":true}],\"unboxed\":[]}",
+  "json": {
+    "regions": [
+      {
+        "n": 8,
+        "kind": "speech",
+        "lines": [
+          "NEM IS JÁRTAM ARRA MA, BAZME...",
+          "A KÖZELBE SE."
+        ],
+        "align": "left",
+        "caps": true
+      },
+      {
+        "n": 9,
+        "kind": "speech",
+        "lines": [
+          "EZ MÚLT HÉT KEDDEN",
+          "TÖRTÉNT..."
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 10,
+        "kind": "none",
+        "lines": [],
+        "align": "center",
+        "caps": false
+      },
+      {
+        "n": 11,
+        "kind": "sign",
+        "lines": [
+          "772-683 / FELVESZEM"
+        ],
+        "align": "left",
+        "caps": true
+      }
+    ],
+    "unboxed": []
+  },
+  "usage": {
+    "input_tokens": 1370,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 139
+  },
+  "costUsd": 0,
+  "ms": 116267,
+  "at": "2026-10-20T07:10:40.700670909Z"
+}

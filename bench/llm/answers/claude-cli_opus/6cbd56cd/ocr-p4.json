@@ -1,0 +1,65 @@
+{
+  "spec": "claude-cli:opus",
+  "log": "../bench/llm/prompts/6cbd56cdd933343ad87de8c3e3dd772f7f771dd3f4786507d9786c71aad26a05/llm/ocr-p4.json",
+  "text": "{\"regions\":[{\"n\":8,\"kind\":\"speech\",\"lines\":[\"FÚJ!... A BELSŐ SZERVEI\",\"ITT ÁZNAK EGY AKVÁRIUMBAN!\",\"A SZÍV KÜLÖN EGY\",\"LEKVÁROS ÜVEGBEN!\",\"FÚJBAZMEG!\"],\"align\":\"left\",\"caps\":true},{\"n\":9,\"kind\":\"speech\",\"lines\":[\"FÚJ!... A BELSŐ SZERVEI\",\"ITT ÁZNAK EGY AKVÁRIUMBAN!\",\"A SZÍV KÜLÖN EGY\",\"LEKVÁROS ÜVEGBEN!\",\"FÚJBAZMEG!\"],\"align\":\"left\",\"caps\":true},{\"n\":10,\"kind\":\"speech\",\"lines\":[\"TIBOROM\",\"PRECÍZ\",\"VOLT!\"],\"align\":\"left\",\"caps\":true},{\"n\":11,\"kind\":\"speech\",\"lines\":[\"EMBER\"],\"align\":\"left\",\"caps\":true}],\"unboxed\":[]}",
+  "json": {
+    "regions": [
+      {
+        "n": 8,
+        "kind": "speech",
+        "lines": [
+          "FÚJ!... A BELSŐ SZERVEI",
+          "ITT ÁZNAK EGY AKVÁRIUMBAN!",
+          "A SZÍV KÜLÖN EGY",
+          "LEKVÁROS ÜVEGBEN!",
+          "FÚJBAZMEG!"
+        ],
+        "align": "left",
+        "caps": true
+      },
+      {
+        "n": 9,
+        "kind": "speech",
+        "lines": [
+          "FÚJ!... A BELSŐ SZERVEI",
+          "ITT ÁZNAK EGY AKVÁRIUMBAN!",
+          "A SZÍV KÜLÖN EGY",
+          "LEKVÁROS ÜVEGBEN!",
+          "FÚJBAZMEG!"
+        ],
+        "align": "left",
+        "caps": true
+      },
+      {
+        "n": 10,
+        "kind": "speech",
+        "lines": [
+          "TIBOROM",
+          "PRECÍZ",
+          "VOLT!"
+        ],
+        "align": "left",
+        "caps": true
+      },
+      {
+        "n": 11,
+        "kind": "speech",
+        "lines": [
+          "EMBER"
+        ],
+        "align": "left",
+        "caps": true
+      }
+    ],
+    "unboxed": []
+  },
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 4103,
+    "cache_read_input_tokens": 4893,
+    "output_tokens": 1712
+  },
+  "costUsd": 0.0680586,
+  "ms": 18752,
+  "at": "2026-10-20T07:09:45.245168203Z"
+}

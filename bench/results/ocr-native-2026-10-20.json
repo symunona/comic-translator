@@ -1,0 +1,2232 @@
+{
+ "date": "2026-10-20T07:15:21.637Z",
+ "cropsDir": "results/crops-multi",
+ "runs": [
+  {
+   "model": "paddle-v5-latin",
+   "where": "devbox onnxruntime-node",
+   "cpus": 12,
+   "loadMs": 630.3121800000001,
+   "msMedian": 196.73083400000178,
+   "msSum": 36982.82428799999,
+   "preds": [
+    {
+     "id": "2afc78b4/r0",
+     "text": "CNBA KA",
+     "confidence": 0.5400880128145218,
+     "ms": 292.88893199999984
+    },
+    {
+     "id": "2afc78b4/r1",
+     "text": "NA! E!\nDEJÓ, HOGY\nELJÖTTE, E!",
+     "confidence": 0.9094206477656508,
+     "ms": 440.41387399999985
+    },
+    {
+     "id": "2afc78b4/r2",
+     "text": "HIREK",
+     "confidence": 0.8996091246604919,
+     "ms": 102.12534899999991
+    },
+    {
+     "id": "2afc78b4/r3",
+     "text": "",
+     "confidence": 0,
+     "ms": 485.79951500000016
+    },
+    {
+     "id": "2afc78b4/r4",
+     "text": "MOST ARRA GONDOLSZ,\nHOGYDE KÁR,HOGY\nELKÖLTOTTEMAZ\nELOLEGET,MOST\nLEMONDHATNAM",
+     "confidence": 0.9276848385087874,
+     "ms": 838.5871049999996
+    },
+    {
+     "id": "2afc78b4/r5",
+     "text": "CAVALEIR C L",
+     "confidence": 0.8430846586823464,
+     "ms": 243.03495499999917
+    },
+    {
+     "id": "2afc78b4/r6",
+     "text": "A MELÓT!\"",
+     "confidence": 0.8661134706603156,
+     "ms": 130.27138600000035
+    },
+    {
+     "id": "2afc78b4/r7",
+     "text": "HÁT.. ÁBE.",
+     "confidence": 0.8194713056087494,
+     "ms": 50.125246000000516
+    },
+    {
+     "id": "2afc78b4/r8",
+     "text": "FASZI BÁCSI",
+     "confidence": 0.9051245992833917,
+     "ms": 87.60648599999968
+    },
+    {
+     "id": "2afc78b4/r9",
+     "text": "NA. PATTANJ FEL!",
+     "confidence": 0.9689850360155106,
+     "ms": 238.54907000000003
+    },
+    {
+     "id": "2afc78b4/r10",
+     "text": "FAS21-1",
+     "confidence": 0.7736403899533408,
+     "ms": 168.54567399999996
+    },
+    {
+     "id": "2afc78b4/r11",
+     "text": "CALAVRIE O",
+     "confidence": 0.9190157685014937,
+     "ms": 293.0933270000005
+    },
+    {
+     "id": "2afc78b4/r12",
+     "text": "NEM BAJ, AZ EMBER\nAZÉRT FIATAL, HOGY\nTANULJON.STT",
+     "confidence": 0.9216376300211305,
+     "ms": 555.8963889999995
+    },
+    {
+     "id": "2afc78b4/r13",
+     "text": "FASZI BÁCSI",
+     "confidence": 0.9259531606327404,
+     "ms": 207.55219299999953
+    },
+    {
+     "id": "2afc78b4/r14",
+     "text": "FASZI-100",
+     "confidence": 0.7690431839889951,
+     "ms": 74.22508899999957
+    },
+    {
+     "id": "2afc78b4/r15",
+     "text": "JEZUS,ATYA, URISTEN!",
+     "confidence": 0.8766789197921753,
+     "ms": 139.18828499999927
+    },
+    {
+     "id": "2afc78b4/r16",
+     "text": "IVECALAIROO",
+     "confidence": 0.8875545588406649,
+     "ms": 250.79736599999978
+    },
+    {
+     "id": "2afc78b4/r17",
+     "text": "Ö A HALOFÜLKEBEN LÓG\nEGY KRISTÁLYHOLOGRAM\nFORMÁJABAN,DE ITT\nVALÓBAN A SZENTFÖLDI\nLOVAGVÁRAK\nSTILUSAT IGYEKEZTEM HOZ\nAZ OTT EGY BEDVIN\nKEMENCE, HENNÁS KASPO\nTEVENYEREG, ASTROCABIUM",
+     "confidence": 0.9156936727921826,
+     "ms": 1309.8881110000002
+    },
+    {
+     "id": "2afc78b4/r18",
+     "text": "FASZI BACS",
+     "confidence": 0.9523959636688233,
+     "ms": 250.28331100000014
+    },
+    {
+     "id": "2afc78b4/r19",
+     "text": "CSAK MÁR GEURE\nUNOM.\nEZERT VAGYIT E!",
+     "confidence": 0.9387220772958936,
+     "ms": 411.0407070000001
+    },
+    {
+     "id": "2afc78b4/r20",
+     "text": "HÁTOO... EDDIG EGY KAMIONT...",
+     "confidence": 0.8619628795262041,
+     "ms": 174.3780999999999
+    },
+    {
+     "id": "2afc78b4/r21",
+     "text": "RELAVACO",
+     "confidence": 0.8833164796233177,
+     "ms": 305.218202
+    },
+    {
+     "id": "2afc78b4/r22",
+     "text": "",
+     "confidence": 0,
+     "ms": 139.4239200000011
+    },
+    {
+     "id": "2afc78b4/r23",
+     "text": "RELAVACI",
+     "confidence": 0.7648657597601414,
+     "ms": 307.2366409999995
+    },
+    {
+     "id": "2afc78b4/r24",
+     "text": "NYERGES VONTATÓT.",
+     "confidence": 0.9880839200580821,
+     "ms": 138.27727500000037
+    },
+    {
+     "id": "2afc78b4/r25",
+     "text": "PARDON.NYERGESVONTATOT\nCSINÁLTAM, VIII. HENRIK STILUSÁBAN,\n„TRUBADUR\" LETT A MUNKACIME.\nITT VAN A PORTFÓLIÓMBAN:",
+     "confidence": 0.9351898903478727,
+     "ms": 831.0113619999993
+    },
+    {
+     "id": "2afc78b4/r26",
+     "text": "AHA.. VÁGOM. KÁRPIT\nMÁR MESSZIRÖL.ELKAPTAD A\nBROKÁT. SOKA BOUT. FELBASZNA\nAZONNAL. MEG-EZIS ILYEN\nREGI VAGOD?\nANTIK .",
+     "confidence": 0.8545445052512773,
+     "ms": 1228.0228140000017
+    },
+    {
+     "id": "2afc78b4/r27",
+     "text": "FASZI BACSI",
+     "confidence": 0.8338389586318623,
+     "ms": 47.771381999998994
+    },
+    {
+     "id": "2afc78b4/r28",
+     "text": "FAS2I- O)",
+     "confidence": 0.773959219455719,
+     "ms": 159.0819850000007
+    },
+    {
+     "id": "2afc78b4/r29",
+     "text": "ROPI",
+     "confidence": 0.9133995175361633,
+     "ms": 56.57667500000025
+    },
+    {
+     "id": "2afc78b4/r30",
+     "text": "SZÓVAL,AMIKOR A GROBKUGELNI\nPIHENOBEN KINITAA\nURAAATOTAKKOR\ncYnmMGe AtaY\nYRANYNAK YENNLaYYOY\nART DEKOTGONDOLNEK",
+     "confidence": 0.7390857303099065,
+     "ms": 1480.1480310000006
+    },
+    {
+     "id": "2afc78b4/r31",
+     "text": "",
+     "confidence": 0,
+     "ms": 404.51362699999845
+    },
+    {
+     "id": "2afc78b4/r32",
+     "text": "RACALVIE",
+     "confidence": 0.9951600506901741,
+     "ms": 106.71210299999984
+    },
+    {
+     "id": "2afc78b4/r33",
+     "text": "FASZIBÁOS",
+     "confidence": 0.8410256769922044,
+     "ms": 96.63327899999967
+    },
+    {
+     "id": "2afc78b4/r34",
+     "text": "ERTEM. EZA DOBOZ, EZ MI?\nMARADNIA KEUL?",
+     "confidence": 0.8993062875455334,
+     "ms": 395.1517640000002
+    },
+    {
+     "id": "2afc78b4/r35",
+     "text": "AKKSIKA FÉNYHEZ. MARAD.",
+     "confidence": 0.892915287743444,
+     "ms": 239.86977300000035
+    },
+    {
+     "id": "2afc78b4/r36",
+     "text": "FENYHEZ\"?",
+     "confidence": 0.9337666498290168,
+     "ms": 120.68581400000039
+    },
+    {
+     "id": "2afc78b4/r37",
+     "text": "FASZI- 0 O",
+     "confidence": 0.6481931321322918,
+     "ms": 517.340913
+    },
+    {
+     "id": "2afc78b4/r38",
+     "text": "2 1\nB b0",
+     "confidence": 0.5381531086232927,
+     "ms": 651.3369949999997
+    },
+    {
+     "id": "2afc78b4/r39",
+     "text": "00000000",
+     "confidence": 0.6027092039585114,
+     "ms": 266.66194899999937
+    },
+    {
+     "id": "2afc78b4/r40",
+     "text": "ICAVELIAR",
+     "confidence": 0.9363030460145738,
+     "ms": 244.06037599999763
+    },
+    {
+     "id": "2afc78b4/r41",
+     "text": "TIÉD VOLTAZ\n7A SMART?",
+     "confidence": 0.9404552947692197,
+     "ms": 234.7407170000006
+    },
+    {
+     "id": "2afc78b4/r42",
+     "text": "FASZIBÁSI",
+     "confidence": 0.8879344993167453,
+     "ms": 111.57451800000126
+    },
+    {
+     "id": "2afc78b4/r43",
+     "text": "",
+     "confidence": 0,
+     "ms": 186.50807799999893
+    },
+    {
+     "id": "2afc78b4/r44",
+     "text": "",
+     "confidence": 0,
+     "ms": 95.28351299999849
+    },
+    {
+     "id": "2afc78b4/r45",
+     "text": "0 FASZI-",
+     "confidence": 0.7049135650907244,
+     "ms": 185.41809400000056
+    },
+    {
+     "id": "2afc78b4/r46",
+     "text": "TAR FIFU \nIGCAMAIIERL",
+     "confidence": 0.8094658244933401,
+     "ms": 749.5125039999984
+    },
+    {
+     "id": "2afc78b4/r47",
+     "text": "CAVALIER",
+     "confidence": 0.9973415359854698,
+     "ms": 195.6290169999993
+    },
+    {
+     "id": "2afc78b4/r48",
+     "text": "BOCsI.",
+     "confidence": 0.7728201051553091,
+     "ms": 56.311885999999504
+    },
+    {
+     "id": "2afc78b4/r49",
+     "text": "7HAZAVISZLEK. MEG",
+     "confidence": 0.9500613273718418,
+     "ms": 309.5910530000001
+    },
+    {
+     "id": "2afc78b4/r50",
+     "text": "FASZI BACSI",
+     "confidence": 0.871866063638167,
+     "ms": 196.73083400000178
+    },
+    {
+     "id": "2afc78b4/r51",
+     "text": "",
+     "confidence": 0,
+     "ms": 77.54781599999842
+    },
+    {
+     "id": "2afc78b4/r52",
+     "text": "TFASZ1- D",
+     "confidence": 0.6079418957233429,
+     "ms": 182.3458569999966
+    },
+    {
+     "id": "6cbd56cd/r0",
+     "text": "NAGYIKÁM, TIBOR PAPÁNAK \nVOLT A LEPKEGYUJTO FELSZERECESEHEZ\nEGY VIASZOSVÁSZON\nTARISZNYÁJA.",
+     "confidence": 0.9258919656975394,
+     "ms": 1153.747798999997
+    },
+    {
+     "id": "6cbd56cd/r1",
+     "text": "OTT KELL CENNCE\nA SUFNIBAN!",
+     "confidence": 0.9363207588593165,
+     "ms": 603.042347999999
+    },
+    {
+     "id": "6cbd56cd/r2",
+     "text": "Ó JAJ..",
+     "confidence": 0.7339915760925838,
+     "ms": 231.04634799999985
+    },
+    {
+     "id": "6cbd56cd/r3",
+     "text": "CSAK LÁTSZÓLAG EGY KIBASZOTT KI\nAMIBEN BOMBA ROBBANT.\nTULAJDONKEPPEN EGY ZSENIALIS\nRENDSZER. A RAHANGOLODASBAN\nSEGIT A FENYKEPE.\ni ",
+     "confidence": 0.9071277144851168,
+     "ms": 1139.888847000002
+    },
+    {
+     "id": "6cbd56cd/r4",
+     "text": "E2 EGY  HELIKOPTER\nTURBINA",
+     "confidence": 0.934600139866356,
+     "ms": 445.22159199999805
+    },
+    {
+     "id": "6cbd56cd/r5",
+     "text": "IGEN, MOGOTTE INDUL\nA LEPCSO",
+     "confidence": 0.7980351647488158,
+     "ms": 242.32117899999866
+    },
+    {
+     "id": "6cbd56cd/r6",
+     "text": "cYanmaG ntaYe \nEGY KAUKAZVSI FERFI\nSZARITOT MUMIAJA\nBAZMEG",
+     "confidence": 0.9394815721271332,
+     "ms": 372.1702289999994
+    },
+    {
+     "id": "6cbd56cd/r7",
+     "text": "TELEKVITA",
+     "confidence": 0.9950973523987664,
+     "ms": 62.9472480000004
+    },
+    {
+     "id": "6cbd56cd/r8",
+     "text": "FUJ!..A BELSO SZERVEI\nIT AZNAK EGY AKVÁRIUMBAN\nA SZIN KULON EGY\nLEKVÁROS ÜVEGBEN!\nFUJBAZMEG",
+     "confidence": 0.8901531420940276,
+     "ms": 850.5307500000017
+    },
+    {
+     "id": "6cbd56cd/r9",
+     "text": "FUJ! A BELSO SZERVEI \nTT AZNAK EGY AKVÁRIUMB\nA SZIN KULON EGY\nLEKVÁROS ÜVEGBEN!\nFUJBAZMEG",
+     "confidence": 0.8705896459249547,
+     "ms": 1069.8334209999994
+    },
+    {
+     "id": "6cbd56cd/r10",
+     "text": "TIBOROM\nPRECIZ\n(VOLT!)",
+     "confidence": 0.9415575781511882,
+     "ms": 200.4892550000004
+    },
+    {
+     "id": "6cbd56cd/r11",
+     "text": "EMBER",
+     "confidence": 0.9958622813224792,
+     "ms": 24.846011000001454
+    },
+    {
+     "id": "3b343686/r0",
+     "text": "HÁHHÁ! JESTET!\nMEGVARJUK AZ ELSO RANDOMTIBORT.\nMES FATESSZUK NEKI A KÉRDEST!\nCO",
+     "confidence": 0.7864026178172382,
+     "ms": 624.3188310000005
+    },
+    {
+     "id": "3b343686/r1",
+     "text": "a",
+     "confidence": 0.7666308283805847,
+     "ms": 119.68649799999912
+    },
+    {
+     "id": "3b343686/r2",
+     "text": "M A D AT JONAPOT URAM!",
+     "confidence": 0.6121839597821236,
+     "ms": 493.75524099999893
+    },
+    {
+     "id": "3b343686/r3",
+     "text": "SPORTKOSSI?",
+     "confidence": 0.9247010729529641,
+     "ms": 60.10749399999986
+    },
+    {
+     "id": "3b343686/r4",
+     "text": "PINAK?",
+     "confidence": 0.9908913671970367,
+     "ms": 89.4722440000005
+    },
+    {
+     "id": "3b343686/r5",
+     "text": "A\n4 LOTT ÖTÖST?\nHM...LÁSSUK CSAK..\nHEHE . IGEN !",
+     "confidence": 0.801919490956899,
+     "ms": 359.7398499999981
+    },
+    {
+     "id": "3b343686/r6",
+     "text": "YACHT?",
+     "confidence": 0.9909370839595795,
+     "ms": 46.56182500000068
+    },
+    {
+     "id": "3b343686/r7",
+     "text": "UTAZGATÁS?",
+     "confidence": 0.93022820353508,
+     "ms": 62.531135000001086
+    },
+    {
+     "id": "3b343686/r8",
+     "text": "PINAK?",
+     "confidence": 0.9739155073960623,
+     "ms": 76.41652400000021
+    },
+    {
+     "id": "3b343686/r9",
+     "text": "",
+     "confidence": 0,
+     "ms": 36.729778000000806
+    },
+    {
+     "id": "3b343686/r10",
+     "text": "VILLA?",
+     "confidence": 0.9409782290458679,
+     "ms": 63.321907000001374
+    },
+    {
+     "id": "3b343686/r11",
+     "text": "PINAK?",
+     "confidence": 0.9277330537637075,
+     "ms": 78.05656900000031
+    },
+    {
+     "id": "3b343686/r12",
+     "text": "/",
+     "confidence": 0.8212689161300659,
+     "ms": 134.59863699999914
+    },
+    {
+     "id": "3b343686/r13",
+     "text": "VENNEK EGY KURVANAGY\nDOBOZT,\nTELIS-TEUE TIZES\nVILLÁSKULCCSAL! AGYIG\nRAKVA,\nTÜBB\nVÁGOD?",
+     "confidence": 0.9089334833378695,
+     "ms": 741.1655380000011
+    },
+    {
+     "id": "3b343686/r14",
+     "text": "VENNEK EGY KURVANAGY\nDOBOZT,\nTELIS-TEUE TIZES\nVILLÁSKULCCSAL! AGYIG\nRAKVA,\np TÜBBEZER\nU VÁGOD?",
+     "confidence": 0.9081232695470727,
+     "ms": 465.82282099999793
+    },
+    {
+     "id": "3b343686/r15",
+     "text": "ES MINDENHOL, AHOL A NAP.\nMEGFORDULOK, SZORNAM SZEUEL, MINT\nA PITYPANG A SZARAIT VAGO? VADENFLE !",
+     "confidence": 0.8645191941710262,
+     "ms": 418.7572070000024
+    },
+    {
+     "id": "3b343686/r16",
+     "text": "cYa GeeGnaYl\nCSAVAR\ne BAZMEG \nMMMN",
+     "confidence": 0.6810287135292074,
+     "ms": 463.23883299999943
+    },
+    {
+     "id": "3b343686/r17",
+     "text": " AKKOR BÁRHOVA NYULOK,\nOTT LEGYEN, BAZMEG.\nNEM EGY, ÖT!",
+     "confidence": 0.9126011038546642,
+     "ms": 195.107297999999
+    },
+    {
+     "id": "0c0bd5d5/r0",
+     "text": "ÉTÓIPAI KITELEZES· 06",
+     "confidence": 0.8620526081039792,
+     "ms": 92.00931800000035
+    },
+    {
+     "id": "0c0bd5d5/r1",
+     "text": "HRAHGHR",
+     "confidence": 0.8793447698865619,
+     "ms": 39.23637500000041
+    },
+    {
+     "id": "0c0bd5d5/r2",
+     "text": "MIA FASZOM?",
+     "confidence": 0.9714113799008456,
+     "ms": 49.99478299999828
+    },
+    {
+     "id": "0c0bd5d5/r3",
+     "text": "7722.683/FELVETZEM",
+     "confidence": 0.9132730712493261,
+     "ms": 91.2239010000012
+    },
+    {
+     "id": "0c0bd5d5/r4",
+     "text": "KI VAGY,ES MI A GECIT\nKERESEL A PLATOMON,\nBAZME",
+     "confidence": 0.9594507708585351,
+     "ms": 283.19882099999813
+    },
+    {
+     "id": "0c0bd5d5/r5",
+     "text": "A GUBACS TEREZ\nÚTON ÜTÖTTEL,\nMINDKET LÁBAM\nELTÖRÖT, AZÓTA\nFAJ- FAJOGAT.",
+     "confidence": 0.8894239983388357,
+     "ms": 321.5236999999979
+    },
+    {
+     "id": "0c0bd5d5/r6",
+     "text": "FEKSZEMITT.",
+     "confidence": 0.9611678556962446,
+     "ms": 127.51058800000101
+    },
+    {
+     "id": "0c0bd5d5/r7",
+     "text": "7722.683/FEVESLEM",
+     "confidence": 0.8356517220244688,
+     "ms": 111.81338099999994
+    },
+    {
+     "id": "0c0bd5d5/r8",
+     "text": "NEM IS JÁRTAM ARRA MA, BAZME...\nA KOZELBE SE.",
+     "confidence": 0.9180162987549312,
+     "ms": 391.4380130000027
+    },
+    {
+     "id": "0c0bd5d5/r9",
+     "text": "EZ MULT HET KEDDEN\nTORTENT..",
+     "confidence": 0.9414583378367953,
+     "ms": 354.21040599999833
+    },
+    {
+     "id": "0c0bd5d5/r10",
+     "text": "",
+     "confidence": 0,
+     "ms": 27.995150000002468
+    },
+    {
+     "id": "0c0bd5d5/r11",
+     "text": "772.683/FELVESIEM",
+     "confidence": 0.8668277263641357,
+     "ms": 139.24446799999714
+    },
+    {
+     "id": "0c0bd5d5/r12",
+     "text": "MULT HET KEDD?\nNE KAMUZZA!\nHOGY NEM HALTAL EHEN?",
+     "confidence": 0.9402040025114496,
+     "ms": 373.42365300000165
+    },
+    {
+     "id": "0c0bd5d5/r13",
+     "text": "KIFELE JOTEM A BOLTBOL,\nAMIKOR TEU BE KAPOTT..\nKETNAGY\nSZATYOR..",
+     "confidence": 0.9387583443528623,
+     "ms": 809.171021999995
+    },
+    {
+     "id": "0c0bd5d5/r14",
+     "text": "7772.683/FEWESZEM",
+     "confidence": 0.8764167603324441,
+     "ms": 143.89112199999363
+    },
+    {
+     "id": "0c0bd5d5/r15",
+     "text": "AKURVAELET!",
+     "confidence": 0.9534258408979936,
+     "ms": 121.31374700000015
+    },
+    {
+     "id": "0c0bd5d5/r16",
+     "text": "7722.683/FELVESZEM",
+     "confidence": 0.912168852157063,
+     "ms": 117.93784799999412
+    },
+    {
+     "id": "0c0bd5d5/r17",
+     "text": "",
+     "confidence": 0,
+     "ms": 21.75964099999692
+    },
+    {
+     "id": "0c0bd5d5/r18",
+     "text": "",
+     "confidence": 0,
+     "ms": 73.80769700000383
+    },
+    {
+     "id": "0c0bd5d5/r19",
+     "text": "AARRGH .",
+     "confidence": 0.7503252625465393,
+     "ms": 44.81534900000406
+    },
+    {
+     "id": "0c0bd5d5/r20",
+     "text": "7722·683/FELVES2EM",
+     "confidence": 0.9159521245294147,
+     "ms": 55.71762999999919
+    },
+    {
+     "id": "0c0bd5d5/r21",
+     "text": "ITT EGY PLED, BAZME.\nEJJELENTE MAR\nHIDEGEK VANNAK.",
+     "confidence": 0.9672853229901729,
+     "ms": 248.68837700000586
+    },
+    {
+     "id": "0c0bd5d5/r22",
+     "text": "7722.683/FEWESZEM",
+     "confidence": 0.888624065062579,
+     "ms": 138.87469799999963
+    },
+    {
+     "id": "0c0bd5d5/r23",
+     "text": "",
+     "confidence": 0,
+     "ms": 59.72082999999839
+    },
+    {
+     "id": "89371298/r0",
+     "text": "Oh shoot, I fell asleep\nwith the window open,",
+     "confidence": 0.9877007980647788,
+     "ms": 310.28183100000024
+    },
+    {
+     "id": "89371298/r1",
+     "text": "...and why can I see\nKomona through\nthe window?",
+     "confidence": 0.9255145090740996,
+     "ms": 540.5885090000011
+    },
+    {
+     "id": "89371298/r2",
+     "text": "KOMONA!",
+     "confidence": 0.9987920948437282,
+     "ms": 69.50202400000126
+    },
+    {
+     "id": "89371298/r3",
+     "text": "The Potion\nContest!",
+     "confidence": 0.999932087212801,
+     "ms": 141.4064010000002
+    },
+    {
+     "id": "89371298/r4",
+     "text": "Imust've .\nmust've accidentally\nfallen asleep!",
+     "confidence": 0.7920795208538359,
+     "ms": 325.8444380000001
+    },
+    {
+     "id": "89371298/r5",
+     "text": "..but?",
+     "confidence": 0.8736444115638733,
+     "ms": 36.47128399999929
+    },
+    {
+     "id": "89371298/r6",
+     "text": "Where\nam I ?!?",
+     "confidence": 0.9779649831354618,
+     "ms": 91.80794800000149
+    },
+    {
+     "id": "35ce81ab/r0",
+     "text": "You're so cute to have\nthought of bringing me to",
+     "confidence": 0.9985392956842076,
+     "ms": 618.5528390000036
+    },
+    {
+     "id": "35ce81ab/r1",
+     "text": "Fan-tas-tic!",
+     "confidence": 0.9998573760191599,
+     "ms": 68.94542200000433
+    },
+    {
+     "id": "35ce81ab/r2",
+     "text": "You even thought of\nbringing a potion, my\nclothes, and my hat...",
+     "confidence": 0.9748964920835776,
+     "ms": 331.07989200000156
+    },
+    {
+     "id": "35ce81ab/r3",
+     "text": ".….let's see which\npotion you brought...",
+     "confidence": 0.941629469512947,
+     "ms": 353.82532199999696
+    },
+    {
+     "id": "8f3737ae/r0",
+     "text": "How do I\nexit vim ?",
+     "confidence": 0.9918555041982068,
+     "ms": 155.44682699999976
+    },
+    {
+     "id": "8f3737ae/r1",
+     "text": "Why would I\nexit vim?",
+     "confidence": 0.9627370641689108,
+     "ms": 85.94741400000203
+    },
+    {
+     "id": "246d3aa3/r0",
+     "text": "REMAIN MY PUTER\nAmBiAlenT",
+     "confidence": 0.8387687978921113,
+     "ms": 647.8558080000003
+    },
+    {
+     "id": "246d3aa3/r1",
+     "text": "ITICONTAINS MULTITUDES. FRIENDS. ENEMIES\nLOVE\" HATE. TO REDUCE IT'TO ONE OR THE OTHER\nIS AN EXERCISE IN FOOLISHNESS.",
+     "confidence": 0.94642601770283,
+     "ms": 980.0553170000057
+    }
+   ]
+  },
+  {
+   "model": "paddle-v6-small",
+   "where": "devbox onnxruntime-node",
+   "cpus": 12,
+   "loadMs": 218.9542719999954,
+   "msMedian": 165.26359700000467,
+   "msSum": 30299.645096000037,
+   "preds": [
+    {
+     "id": "2afc78b4/r0",
+     "text": "V \nV 0",
+     "confidence": 0.7583498805761337,
+     "ms": 549.367581999999
+    },
+    {
+     "id": "2afc78b4/r1",
+     "text": "NA!E!\nDEJO, HOGY\nELJOTTE,E!",
+     "confidence": 0.9099944700797398,
+     "ms": 179.42315600000438
+    },
+    {
+     "id": "2afc78b4/r2",
+     "text": "HIREK",
+     "confidence": 0.9857838988304138,
+     "ms": 64.66221600000426
+    },
+    {
+     "id": "2afc78b4/r3",
+     "text": "DOOO DUC 2\nn",
+     "confidence": 0.5779598518274724,
+     "ms": 334.1223979999995
+    },
+    {
+     "id": "2afc78b4/r4",
+     "text": "MOST ARRA GONDOLSZI\nHOGY DE KAR, HOGY\nELKÖLTÖTTEM AZ\nELÖLEGET, MOST\nLEMONDHATNAM",
+     "confidence": 0.9547585742774658,
+     "ms": 504.4114879999979
+    },
+    {
+     "id": "2afc78b4/r5",
+     "text": "GAVALEIR",
+     "confidence": 0.9482330158352852,
+     "ms": 102.65029700000014
+    },
+    {
+     "id": "2afc78b4/r6",
+     "text": "A MELOT!\"",
+     "confidence": 0.9195600483152602,
+     "ms": 104.28980700000102
+    },
+    {
+     "id": "2afc78b4/r7",
+     "text": "HAT...KABE.",
+     "confidence": 0.8470335819504478,
+     "ms": 68.96435400000337
+    },
+    {
+     "id": "2afc78b4/r8",
+     "text": "FAS21 BAC57",
+     "confidence": 0.7786869758909399,
+     "ms": 203.16129299999739
+    },
+    {
+     "id": "2afc78b4/r9",
+     "text": "NA. PATTANJ FEL!",
+     "confidence": 0.9775540605187416,
+     "ms": 272.0487639999992
+    },
+    {
+     "id": "2afc78b4/r10",
+     "text": " FAS21-AO",
+     "confidence": 0.5617522630426619,
+     "ms": 63.60877299999993
+    },
+    {
+     "id": "2afc78b4/r11",
+     "text": "CALAVRIEDO O0000000",
+     "confidence": 0.727548822015524,
+     "ms": 262.15198000000237
+    },
+    {
+     "id": "2afc78b4/r12",
+     "text": "NEM BAJ AZ EMBER\nAZERT FIATAL, HOGY\nTANULJON.",
+     "confidence": 0.9734053377200055,
+     "ms": 507.2625049999988
+    },
+    {
+     "id": "2afc78b4/r13",
+     "text": "FASZI BA",
+     "confidence": 0.8788914829492569,
+     "ms": 98.41198499999882
+    },
+    {
+     "id": "2afc78b4/r14",
+     "text": "FAS21-1 D",
+     "confidence": 0.927717000246048,
+     "ms": 128.9571649999998
+    },
+    {
+     "id": "2afc78b4/r15",
+     "text": "JEZUS,ATYA,ÚRISTEN!",
+     "confidence": 0.9492712648291337,
+     "ms": 151.37180300000182
+    },
+    {
+     "id": "2afc78b4/r16",
+     "text": "000000D001 SVECALAIR 00",
+     "confidence": 0.6621467559175058,
+     "ms": 290.312662999997
+    },
+    {
+     "id": "2afc78b4/r17",
+     "text": "Ö A HALOFULKEBEN LOG  \nEGY KRISTALYHOLOGRAM 2 \nFORMAJABANIDEITT \nVALÓBAN A SZENTFOLDI\nSTILUSAT IGYEKEZTEM HOZ LOVAGVARAK\nKEMENCE,HENNAS KASPÓ AZ OTT EGY BEDVIN T\nTEVENYEREG, ASTROLABINM..",
+     "confidence": 0.9486584140139823,
+     "ms": 596.2525410000017
+    },
+    {
+     "id": "2afc78b4/r18",
+     "text": "FAS21BAS]",
+     "confidence": 0.8292476435502371,
+     "ms": 28.057268000004115
+    },
+    {
+     "id": "2afc78b4/r19",
+     "text": "CSAK MAR GECIRE\nEZERT VAGY ITT, E! UNOM. ",
+     "confidence": 0.9379506685667568,
+     "ms": 223.63043800000014
+    },
+    {
+     "id": "2afc78b4/r20",
+     "text": "HATOO... EDIG EGY KAMIONT..",
+     "confidence": 0.8683954256552237,
+     "ms": 121.06888400000025
+    },
+    {
+     "id": "2afc78b4/r21",
+     "text": "RELAVACO",
+     "confidence": 0.9810861647129059,
+     "ms": 216.29359000000113
+    },
+    {
+     "id": "2afc78b4/r22",
+     "text": "00000000\n一\n10",
+     "confidence": 0.7311442966262499,
+     "ms": 126.78618299999653
+    },
+    {
+     "id": "2afc78b4/r23",
+     "text": "0000000\nRELAVACO 汇",
+     "confidence": 0.9091507831893901,
+     "ms": 165.26359700000467
+    },
+    {
+     "id": "2afc78b4/r24",
+     "text": "NYERGES VONTATOT.",
+     "confidence": 0.9662896359668058,
+     "ms": 127.07063500000368
+    },
+    {
+     "id": "2afc78b4/r25",
+     "text": "PARDON, NYERGESVONTATOT SA CSINALTAM VI HENRIK STILUSABAN\nAN EAANE",
+     "confidence": 0.743425197544552,
+     "ms": 467.39861300000484
+    },
+    {
+     "id": "2afc78b4/r26",
+     "text": "MAR MESSIROL ELKAPTAD A AHA...VAGOM. KARPIT\nBROKAT. SOK A BOUT. FEBASZNA\nLAZONNALMGEZISIEN LUREGIVKOD?\n\nANTIK.",
+     "confidence": 0.875551945396832,
+     "ms": 622.9586469999995
+    },
+    {
+     "id": "2afc78b4/r27",
+     "text": "FAS2I BACSI",
+     "confidence": 0.8300358084115115,
+     "ms": 64.15557799999806
+    },
+    {
+     "id": "2afc78b4/r28",
+     "text": "OD FAS21-1 0",
+     "confidence": 0.7366122305393219,
+     "ms": 188.10865899999772
+    },
+    {
+     "id": "2afc78b4/r29",
+     "text": "ROPI",
+     "confidence": 0.974153071641922,
+     "ms": 39.945449999999255
+    },
+    {
+     "id": "2afc78b4/r30",
+     "text": "SZOVALAMIKORAGROKUGELNI\nKURVA AZ AUTOT AKKOR PIHENOBEN KINYITJAA\n\nNEAZT KERDEZEMERRE VAN \nA MUZEUMSHOP, VAGOD?\nIRANYNAK ILYEN NEOLFTOS\nART DEKOT GONDOLNEK.",
+     "confidence": 0.9072975902645677,
+     "ms": 709.7832930000004
+    },
+    {
+     "id": "2afc78b4/r31",
+     "text": "CODODOOD",
+     "confidence": 0.7598608545958996,
+     "ms": 211.22872199999983
+    },
+    {
+     "id": "2afc78b4/r32",
+     "text": "RACALVIE",
+     "confidence": 0.999215692281723,
+     "ms": 131.36434699999518
+    },
+    {
+     "id": "2afc78b4/r33",
+     "text": "FASIIBÃO",
+     "confidence": 0.6653716452419758,
+     "ms": 74.5561000000016
+    },
+    {
+     "id": "2afc78b4/r34",
+     "text": "ERTEM. EZ A DOBO2,EZ MI?\nMARADNIA KEU ?",
+     "confidence": 0.9283214501432471,
+     "ms": 187.4498969999986
+    },
+    {
+     "id": "2afc78b4/r35",
+     "text": "AKKSIK A FÉNYHEZ. MARAD.",
+     "confidence": 0.9508623878161112,
+     "ms": 149.42725200000132
+    },
+    {
+     "id": "2afc78b4/r36",
+     "text": "FENYHEZ\"?",
+     "confidence": 0.8847976790534126,
+     "ms": 80.17904600000475
+    },
+    {
+     "id": "2afc78b4/r37",
+     "text": "00EAS-100",
+     "confidence": 0.7225800355275472,
+     "ms": 129.26467799999955
+    },
+    {
+     "id": "2afc78b4/r38",
+     "text": "",
+     "confidence": 0,
+     "ms": 931.9395549999972
+    },
+    {
+     "id": "2afc78b4/r39",
+     "text": "SDODODOOD",
+     "confidence": 0.7209824820359548,
+     "ms": 96.85530100000324
+    },
+    {
+     "id": "2afc78b4/r40",
+     "text": "CAVELIAR",
+     "confidence": 0.9997980520129204,
+     "ms": 143.71802800000296
+    },
+    {
+     "id": "2afc78b4/r41",
+     "text": "TIED VOLTAZ \nA SMART?",
+     "confidence": 0.9744934401277341,
+     "ms": 229.88282199999958
+    },
+    {
+     "id": "2afc78b4/r42",
+     "text": "FASZIBÁCSI",
+     "confidence": 0.8698400437831879,
+     "ms": 218.90685700000176
+    },
+    {
+     "id": "2afc78b4/r43",
+     "text": "000000000",
+     "confidence": 0.7718919383154975,
+     "ms": 120.07054400000197
+    },
+    {
+     "id": "2afc78b4/r44",
+     "text": "",
+     "confidence": 0,
+     "ms": 67.43758800000069
+    },
+    {
+     "id": "2afc78b4/r45",
+     "text": "OO FASZI-A DD",
+     "confidence": 0.7032683170758761,
+     "ms": 119.6581359999982
+    },
+    {
+     "id": "2afc78b4/r46",
+     "text": "BURUA FI\nOGAVAERO",
+     "confidence": 0.5850117971144971,
+     "ms": 547.8376659999994
+    },
+    {
+     "id": "2afc78b4/r47",
+     "text": "CAVALIER",
+     "confidence": 0.9996849745512009,
+     "ms": 54.66711299999588
+    },
+    {
+     "id": "2afc78b4/r48",
+     "text": "BOCSI.",
+     "confidence": 0.8188160459200541,
+     "ms": 81.81466399999772
+    },
+    {
+     "id": "2afc78b4/r49",
+     "text": "MEG THAZAVISZLEK.",
+     "confidence": 0.946833032018998,
+     "ms": 88.82496300000639
+    },
+    {
+     "id": "2afc78b4/r50",
+     "text": "FASI BAS]",
+     "confidence": 0.6466021587451299,
+     "ms": 108.56556199999613
+    },
+    {
+     "id": "2afc78b4/r51",
+     "text": "",
+     "confidence": 0,
+     "ms": 77.89054499999475
+    },
+    {
+     "id": "2afc78b4/r52",
+     "text": "EASL-A □□",
+     "confidence": 0.7267367020249367,
+     "ms": 69.90923300000577
+    },
+    {
+     "id": "6cbd56cd/r0",
+     "text": "NAGYIKAM, TIBOR PAPANAK\nVOLT A LEPKEGYUSTO FELSERELESEHEZ VISVAN",
+     "confidence": 0.8515133381105852,
+     "ms": 612.4412680000023
+    },
+    {
+     "id": "6cbd56cd/r1",
+     "text": "OTT KELL (ENNCE\nA SUFNIBAN!",
+     "confidence": 0.9335030221577847,
+     "ms": 259.1273280000023
+    },
+    {
+     "id": "6cbd56cd/r2",
+     "text": "O J..",
+     "confidence": 0.5323300033807754,
+     "ms": 41.35432300000684
+    },
+    {
+     "id": "6cbd56cd/r3",
+     "text": "CSAK LÁTSZOLAG EGY KIBASZOTT K\nTULAIBEN BOMEN ROBANTALI AMIBEN BOMBA ROBBANT. \n\nRENDSZER. A RAHANGOLODASBAN\nSEGIT AFENYKEPE.",
+     "confidence": 0.8793982979343282,
+     "ms": 575.0731899999955
+    },
+    {
+     "id": "6cbd56cd/r4",
+     "text": "EZ EGY HELIKOPTER\nTURBINA?",
+     "confidence": 0.9860271991175764,
+     "ms": 205.40916799999832
+    },
+    {
+     "id": "6cbd56cd/r5",
+     "text": "IGEN, MOGOTE INDUL\nA LEPCSO!",
+     "confidence": 0.9183558413275966,
+     "ms": 190.743724999993
+    },
+    {
+     "id": "6cbd56cd/r6",
+     "text": "MLUBASZAME",
+     "confidence": 0.6635090470314026,
+     "ms": 494.60840299999836
+    },
+    {
+     "id": "6cbd56cd/r7",
+     "text": "TELEKVITA",
+     "confidence": 0.9830688966645135,
+     "ms": 82.97781399999803
+    },
+    {
+     "id": "6cbd56cd/r8",
+     "text": "FU A BELSO SZERUEI IT AZNAK EGY AKVARIUMBAN\nA SZIN KULON EGY  \nLEKVAROS UVEGBEN!\nFUJBAZMEG!",
+     "confidence": 0.9509142618448176,
+     "ms": 347.5905749999947
+    },
+    {
+     "id": "6cbd56cd/r9",
+     "text": "FU A BELSO SZERUEI IT AZNAK EWT AKVARIMB\nA SZIV KULON EGY\nLEKVAROS ÜVEGBEN!\nFUJBAZMEG! ",
+     "confidence": 0.9228876756239123,
+     "ms": 291.209139999999
+    },
+    {
+     "id": "6cbd56cd/r10",
+     "text": "TIBOROMZ OP\n(VOLT!",
+     "confidence": 0.7394656995932261,
+     "ms": 187.41405900000245
+    },
+    {
+     "id": "6cbd56cd/r11",
+     "text": "EMBER",
+     "confidence": 0.9996302485466003,
+     "ms": 110.28303400000004
+    },
+    {
+     "id": "3b343686/r0",
+     "text": "HAHHA ESTET! MEGVARUKAELSRANDOTBRT\nES TESM AEES!",
+     "confidence": 0.7516122924727063,
+     "ms": 257.8268750000061
+    },
+    {
+     "id": "3b343686/r1",
+     "text": "",
+     "confidence": 0,
+     "ms": 69.52196700000059
+    },
+    {
+     "id": "3b343686/r2",
+     "text": "M E NEGNYRNEAO",
+     "confidence": 0.6947874501347542,
+     "ms": 693.5378830000045
+    },
+    {
+     "id": "3b343686/r3",
+     "text": "SPORTKOSSI?",
+     "confidence": 0.9621161114085804,
+     "ms": 98.79420100000425
+    },
+    {
+     "id": "3b343686/r4",
+     "text": "PINAK?",
+     "confidence": 0.9899197419484457,
+     "ms": 64.43415699999605
+    },
+    {
+     "id": "3b343686/r5",
+     "text": "A LOTTO OTOST?\nHM..LASSUK CSAK.\nHEHE...IGEN! ",
+     "confidence": 0.8879958286970144,
+     "ms": 286.0858020000014
+    },
+    {
+     "id": "3b343686/r6",
+     "text": "YACHT?",
+     "confidence": 0.9988946815331777,
+     "ms": 61.12456000000384
+    },
+    {
+     "id": "3b343686/r7",
+     "text": "UTAZGATÁS?",
+     "confidence": 0.8800765037536621,
+     "ms": 131.08655099999305
+    },
+    {
+     "id": "3b343686/r8",
+     "text": "PINAK?",
+     "confidence": 0.8513519018888474,
+     "ms": 117.38046300000133
+    },
+    {
+     "id": "3b343686/r9",
+     "text": "",
+     "confidence": 0,
+     "ms": 97.2325720000008
+    },
+    {
+     "id": "3b343686/r10",
+     "text": "VILLA?",
+     "confidence": 0.855772485335668,
+     "ms": 52.61031099999673
+    },
+    {
+     "id": "3b343686/r11",
+     "text": "PINAK?",
+     "confidence": 0.991099347670873,
+     "ms": 77.40020199999708
+    },
+    {
+     "id": "3b343686/r12",
+     "text": "ju\nE",
+     "confidence": 0.7061031013727188,
+     "ms": 293.1337280000007
+    },
+    {
+     "id": "3b343686/r13",
+     "text": "VENNEK EG-Y KURVANAGY\nDOBOZT\nTELIS-TEVE TIZES\n VILLÁSKULCCSAL! AGYIG  RAKVA,\n TOBB EZER. VAGOD?",
+     "confidence": 0.9322237237223557,
+     "ms": 1210.617643000005
+    },
+    {
+     "id": "3b343686/r14",
+     "text": "VENNEK EG-Y KURVANAGY\nDOBOZT\nTELIS-TEUE TIZES\nVILLÁSKULCCSAL! AGYIG \n TOBB EZER\nRAKVA,\nVAGOO?",
+     "confidence": 0.9175069803992907,
+     "ms": 1683.3918820000035
+    },
+    {
+     "id": "3b343686/r15",
+     "text": "MEGFORDULOKI SZORNAM SZEEL MINT A PITYPANG ASRAT VNDNE !! ES MINDENHOL AHOL A NAP",
+     "confidence": 0.8354558967924738,
+     "ms": 765.6751199999999
+    },
+    {
+     "id": "3b343686/r16",
+     "text": "  HOGYAMIKOROT EGYHATOS  \n\nCSAVAR \n  \n    \n    \n \n  \n\n    ",
+     "confidence": 0.8400276784713452,
+     "ms": 408.9022780000014
+    },
+    {
+     "id": "3b343686/r17",
+     "text": "KKOR BARHOVA NYULOK\nOTT LEGYEN, BAZMEG.\nNEM EGY, OT!",
+     "confidence": 0.9564712084176247,
+     "ms": 261.57389899999544
+    },
+    {
+     "id": "0c0bd5d5/r0",
+     "text": "ÉTÓIPAI KITELEZE'S · O",
+     "confidence": 0.8483543992042542,
+     "ms": 200.430511999999
+    },
+    {
+     "id": "0c0bd5d5/r1",
+     "text": "HRAHGR ..",
+     "confidence": 0.772291861474514,
+     "ms": 51.496313999996346
+    },
+    {
+     "id": "0c0bd5d5/r2",
+     "text": "MI A FASTOM?",
+     "confidence": 0.961399589975675,
+     "ms": 47.42830800000229
+    },
+    {
+     "id": "0c0bd5d5/r3",
+     "text": "7722.683/FELVESZEM",
+     "confidence": 0.9336618930101395,
+     "ms": 51.06638499999826
+    },
+    {
+     "id": "0c0bd5d5/r4",
+     "text": "KI VAGTLES MI A GECIT\nKERESEL A PLATOMON,\nBAZME?",
+     "confidence": 0.9653068497565357,
+     "ms": 270.9964129999935
+    },
+    {
+     "id": "0c0bd5d5/r5",
+     "text": "A GUBACS TEREZ\nUTON UTOTTEL\nMINDKET LABAM \nELTORÖTAZÓTA\nFAJ. FAJOGAT.",
+     "confidence": 0.9637130248441071,
+     "ms": 534.2845230000021
+    },
+    {
+     "id": "0c0bd5d5/r6",
+     "text": "FEKSZEMITT.",
+     "confidence": 0.8956605737859552,
+     "ms": 85.25604000000021
+    },
+    {
+     "id": "0c0bd5d5/r7",
+     "text": "7722.683/FEVENIEM",
+     "confidence": 0.8278792675803689,
+     "ms": 203.8742080000011
+    },
+    {
+     "id": "0c0bd5d5/r8",
+     "text": "NEM IS JARTAM ARRA MA BAZME..\nA KOZELBE SE.",
+     "confidence": 0.9509880876351415,
+     "ms": 454.61399099999835
+    },
+    {
+     "id": "0c0bd5d5/r9",
+     "text": "EZ MULT HET KEDDEN\nTORTENT...",
+     "confidence": 0.9761856211556328,
+     "ms": 146.37854599999991
+    },
+    {
+     "id": "0c0bd5d5/r10",
+     "text": "",
+     "confidence": 0,
+     "ms": 79.23024199999782
+    },
+    {
+     "id": "0c0bd5d5/r11",
+     "text": "7721-683/FELVESIEM",
+     "confidence": 0.8493411574098799,
+     "ms": 104.1663419999968
+    },
+    {
+     "id": "0c0bd5d5/r12",
+     "text": "MULT HET KEDD?\nHOGY NEM HALTAL EHEN? NE KAMUZZA!",
+     "confidence": 0.9658648323531103,
+     "ms": 209.0241559999995
+    },
+    {
+     "id": "0c0bd5d5/r13",
+     "text": "KIFELE JOTTEM A BOLTBOL\nAMIKOR TELBE KAPOTT..\nKSTNAR . KET NAGY",
+     "confidence": 0.8499878493648632,
+     "ms": 411.66191300000355
+    },
+    {
+     "id": "0c0bd5d5/r14",
+     "text": "7727.683/FEWESLEM",
+     "confidence": 0.8578371563378502,
+     "ms": 70.05638799999724
+    },
+    {
+     "id": "0c0bd5d5/r15",
+     "text": "AKURVAELET! ",
+     "confidence": 0.9914623553102667,
+     "ms": 64.48420800000167
+    },
+    {
+     "id": "0c0bd5d5/r16",
+     "text": "7722.683/FELVESZEM A",
+     "confidence": 0.940467263522901,
+     "ms": 198.45401699999638
+    },
+    {
+     "id": "0c0bd5d5/r17",
+     "text": "",
+     "confidence": 0,
+     "ms": 562.6762410000083
+    },
+    {
+     "id": "0c0bd5d5/r18",
+     "text": "",
+     "confidence": 0,
+     "ms": 161.66023900000437
+    },
+    {
+     "id": "0c0bd5d5/r19",
+     "text": "AAARRGH.",
+     "confidence": 0.8786334097385406,
+     "ms": 122.03816399999778
+    },
+    {
+     "id": "0c0bd5d5/r20",
+     "text": "7722.683/FELVESZEM A",
+     "confidence": 0.9322365883149599,
+     "ms": 118.0460149999999
+    },
+    {
+     "id": "0c0bd5d5/r21",
+     "text": "ITT EGY PLED, BAZME.\nEJJELENTE MAR\nHIDEGEK VANNAK.",
+     "confidence": 0.9673657997805849,
+     "ms": 379.3557370000053
+    },
+    {
+     "id": "0c0bd5d5/r22",
+     "text": "722.683/FEVESZEM",
+     "confidence": 0.8477782364934683,
+     "ms": 132.24984800000675
+    },
+    {
+     "id": "0c0bd5d5/r23",
+     "text": "",
+     "confidence": 0,
+     "ms": 433.1199539999943
+    },
+    {
+     "id": "89371298/r0",
+     "text": "Oh shoot, I fell asleep\nwith the window open,\nagain...",
+     "confidence": 0.9967168664123948,
+     "ms": 404.3433250000089
+    },
+    {
+     "id": "89371298/r1",
+     "text": ".….and why can I see\nKomona through\nthe window?",
+     "confidence": 0.9629609921535888,
+     "ms": 413.12662300000375
+    },
+    {
+     "id": "89371298/r2",
+     "text": "KOMONA!",
+     "confidence": 0.9989789554050991,
+     "ms": 43.44051100000797
+    },
+    {
+     "id": "89371298/r3",
+     "text": "The Potion\nContest!",
+     "confidence": 0.9983399897813797,
+     "ms": 154.23311300000933
+    },
+    {
+     "id": "89371298/r4",
+     "text": "I must've...\nmust've accidentally\nfallen asleep!",
+     "confidence": 0.9892996893515663,
+     "ms": 465.9574120000034
+    },
+    {
+     "id": "89371298/r5",
+     "text": "...but?",
+     "confidence": 0.8210870708738055,
+     "ms": 34.427226999992854
+    },
+    {
+     "id": "89371298/r6",
+     "text": "Where\nam I ?!?",
+     "confidence": 0.9839288532733917,
+     "ms": 113.87632999999914
+    },
+    {
+     "id": "35ce81ab/r0",
+     "text": "1 Carrot!\nYou're so cute to have\nthought of bringing me to\n the Contest!",
+     "confidence": 0.9625887123916788,
+     "ms": 377.0530460000009
+    },
+    {
+     "id": "35ce81ab/r1",
+     "text": "Fan-tas-tic!",
+     "confidence": 0.999903067946434,
+     "ms": 72.32596899999771
+    },
+    {
+     "id": "35ce81ab/r2",
+     "text": "You even thought of\nbringing a potion, my\nclothes, and my hat...",
+     "confidence": 0.9813453380258678,
+     "ms": 259.1379719999968
+    },
+    {
+     "id": "35ce81ab/r3",
+     "text": ".….let's see which\npotion you brought...",
+     "confidence": 0.9372495315850726,
+     "ms": 231.18225800000073
+    },
+    {
+     "id": "8f3737ae/r0",
+     "text": "How do I\nexit vim ?",
+     "confidence": 0.993822415669759,
+     "ms": 115.013626999993
+    },
+    {
+     "id": "8f3737ae/r1",
+     "text": "Why would I\nexit vim ?",
+     "confidence": 0.9973125764817903,
+     "ms": 175.41901599999983
+    },
+    {
+     "id": "246d3aa3/r0",
+     "text": "IC REMAIN M Y PUTER\nAMBIVALENT\nABOUT GAN",
+     "confidence": 0.8936687541358611,
+     "ms": 335.4257159999979
+    },
+    {
+     "id": "246d3aa3/r1",
+     "text": "IT CONTAINS MULTITUDESFRIENDS.ENEMIES.\nLOVE. HATE. TO REDUCE IT TO ONE OR THE OTHER\nIS AN EXERCISE IN FOOLISHNESS.",
+     "confidence": 0.9877638144799841,
+     "ms": 480.67190200000186
+    }
+   ]
+  },
+  {
+   "model": "paddle-v6-medium",
+   "where": "devbox onnxruntime-node",
+   "cpus": 12,
+   "loadMs": 588.0924950000044,
+   "msMedian": 607.005667999998,
+   "msSum": 121626.55231799983,
+   "preds": [
+    {
+     "id": "2afc78b4/r0",
+     "text": "UNKA!",
+     "confidence": 0.955768597126007,
+     "ms": 279.070034999997
+    },
+    {
+     "id": "2afc78b4/r1",
+     "text": "DEJÓ, HOGY NA!E!\nELJÖTE, E!",
+     "confidence": 0.9485932370026906,
+     "ms": 541.342724999995
+    },
+    {
+     "id": "2afc78b4/r2",
+     "text": "",
+     "confidence": 0,
+     "ms": 24.749958000000333
+    },
+    {
+     "id": "2afc78b4/r3",
+     "text": "Gooot SSL 1E\nNARRIR",
+     "confidence": 0.583691837762793,
+     "ms": 909.7035929999984
+    },
+    {
+     "id": "2afc78b4/r4",
+     "text": "MOST ARRA GONDOLSZ1\nHOGY,DE KAR, HOGY\nELKÖLTOTTEM AZ\nELOLEGET, MOST\nLEMONDHATNAM",
+     "confidence": 0.9708375960351198,
+     "ms": 1024.1146580000059
+    },
+    {
+     "id": "2afc78b4/r5",
+     "text": "CAVALEIR",
+     "confidence": 0.9984227120876312,
+     "ms": 190.50856699999713
+    },
+    {
+     "id": "2afc78b4/r6",
+     "text": "A MELÓT!\"",
+     "confidence": 0.9479719069268968,
+     "ms": 196.24339400000463
+    },
+    {
+     "id": "2afc78b4/r7",
+     "text": "HAT KAE.",
+     "confidence": 0.7983052262238094,
+     "ms": 148.53113600000506
+    },
+    {
+     "id": "2afc78b4/r8",
+     "text": "FAS21 BACSI",
+     "confidence": 0.902472669428045,
+     "ms": 180.1684319999913
+    },
+    {
+     "id": "2afc78b4/r9",
+     "text": "NA. PATTANJ FEL!",
+     "confidence": 0.9636663421988487,
+     "ms": 259.4146529999998
+    },
+    {
+     "id": "2afc78b4/r10",
+     "text": "O口 FAS21-1 0 口",
+     "confidence": 0.9229340932585977,
+     "ms": 299.33314000000246
+    },
+    {
+     "id": "2afc78b4/r11",
+     "text": "OOOOQO CALAVRIE00",
+     "confidence": 0.7467334792017937,
+     "ms": 484.98964200000046
+    },
+    {
+     "id": "2afc78b4/r12",
+     "text": "NEM BAJI AZ EMBER\nAZERT FIATAL, HOGY\nTANULJON.",
+     "confidence": 0.9739840992265796,
+     "ms": 725.6254829999962
+    },
+    {
+     "id": "2afc78b4/r13",
+     "text": "FASZI BACSI",
+     "confidence": 0.8718941916118969,
+     "ms": 154.91893499999424
+    },
+    {
+     "id": "2afc78b4/r14",
+     "text": "FAS21-100",
+     "confidence": 0.9694293803638883,
+     "ms": 234.83091199999035
+    },
+    {
+     "id": "2afc78b4/r15",
+     "text": "JEZUS, ATYA, URISTEN!",
+     "confidence": 0.9296554752758571,
+     "ms": 271.19709400000283
+    },
+    {
+     "id": "2afc78b4/r16",
+     "text": "D VCALAIR",
+     "confidence": 0.804564967751503,
+     "ms": 488.6619040000078
+    },
+    {
+     "id": "2afc78b4/r17",
+     "text": "O A HALOFULKEBEN LOG\nEGY KRISTALYHOLOGRAM \nFORMÁJABAN, DE ITT\nVALÓBAN A SZENTFÖLDI 1\nSTILUSAT IGYEKEZTEM HOZ LOVAGVARAK\n\nKEMENCE, HENNAS KASPO AZ OTT EGY BEDVIN \nTEVENYEREG, ASZTROLAÁBINM",
+     "confidence": 0.9369239044664999,
+     "ms": 1487.6663299999927
+    },
+    {
+     "id": "2afc78b4/r18",
+     "text": "FAS21BACS1",
+     "confidence": 0.9262600064277648,
+     "ms": 138.06846100000257
+    },
+    {
+     "id": "2afc78b4/r19",
+     "text": "CSAK MAR GECIRE\nUNOM.\nEZERT VAGY ITT, E!",
+     "confidence": 0.9564156735384906,
+     "ms": 581.5223649999971
+    },
+    {
+     "id": "2afc78b4/r20",
+     "text": "HATO...EDIG EGY KAMIONT..",
+     "confidence": 0.9169650793075561,
+     "ms": 352.98101599999063
+    },
+    {
+     "id": "2afc78b4/r21",
+     "text": "00000000\nRELAVACI",
+     "confidence": 0.773507047444582,
+     "ms": 1020.1854979999916
+    },
+    {
+     "id": "2afc78b4/r22",
+     "text": "00000000",
+     "confidence": 0.5257359407842159,
+     "ms": 409.2659009999916
+    },
+    {
+     "id": "2afc78b4/r23",
+     "text": "DOODDON RELAVACIC",
+     "confidence": 0.8108546398580074,
+     "ms": 621.4023000000016
+    },
+    {
+     "id": "2afc78b4/r24",
+     "text": "NYERGES VONTATÓT.",
+     "confidence": 0.9729367950383354,
+     "ms": 408.1568779999943
+    },
+    {
+     "id": "2afc78b4/r25",
+     "text": "PARDON.NYERGESVONTATOT CINALTA HENRIK STIL AN\nT",
+     "confidence": 0.777473074752231,
+     "ms": 1104.4180709999928
+    },
+    {
+     "id": "2afc78b4/r26",
+     "text": "AHA..VAGOM. KARPIT\nMAR MESSZIROL.ELKAPTAD A  \nBROKAT. SOK A BOJT. FELBASZNA\nAZONNAL. MEG EZIS ILYEN LIREG VAGOD?\nANTIK.",
+     "confidence": 0.956135905709323,
+     "ms": 2881.3832390000025
+    },
+    {
+     "id": "2afc78b4/r27",
+     "text": "FAS21BACS1",
+     "confidence": 0.8277134537696839,
+     "ms": 378.6440760000114
+    },
+    {
+     "id": "2afc78b4/r28",
+     "text": " FAS21-4",
+     "confidence": 0.8984579965472221,
+     "ms": 899.4766700000037
+    },
+    {
+     "id": "2afc78b4/r29",
+     "text": "ROPI",
+     "confidence": 0.9884643703699112,
+     "ms": 369.1986029999971
+    },
+    {
+     "id": "2afc78b4/r30",
+     "text": "SZOVALA RA B I\nNE AZT KERDEZZI EREVA\nA MOZUMSHOPI VAGOD?\nRANYNAK ILYEN NEOLOFTO\nART DEKOT GONDOLNEK.",
+     "confidence": 0.8427875036547139,
+     "ms": 3807.5846889999957
+    },
+    {
+     "id": "2afc78b4/r31",
+     "text": "OODOD000\n司",
+     "confidence": 0.6323919165879488,
+     "ms": 1510.2068839999993
+    },
+    {
+     "id": "2afc78b4/r32",
+     "text": "RACALVIE",
+     "confidence": 0.9997839033603668,
+     "ms": 468.02577700000256
+    },
+    {
+     "id": "2afc78b4/r33",
+     "text": "FASZ1BÁC",
+     "confidence": 0.8094274140894413,
+     "ms": 362.02718599999207
+    },
+    {
+     "id": "2afc78b4/r34",
+     "text": "ERTEM. EZA DOBOZ EZ MI? MARADNIA KELL?",
+     "confidence": 0.9046040145126549,
+     "ms": 1256.7344569999987
+    },
+    {
+     "id": "2afc78b4/r35",
+     "text": "AKKSIK A FÉNYHEZ. MARAD.",
+     "confidence": 0.9637301489710808,
+     "ms": 1207.3607920000068
+    },
+    {
+     "id": "2afc78b4/r36",
+     "text": "FENYHEZ\"?",
+     "confidence": 0.9550147387716506,
+     "ms": 517.4745359999943
+    },
+    {
+     "id": "2afc78b4/r37",
+     "text": "O FASZ-A 0O",
+     "confidence": 0.7938953881913965,
+     "ms": 655.3566839999985
+    },
+    {
+     "id": "2afc78b4/r38",
+     "text": "",
+     "confidence": 0,
+     "ms": 4799.950587999992
+    },
+    {
+     "id": "2afc78b4/r39",
+     "text": "SOODODOO0",
+     "confidence": 0.6922349366876814,
+     "ms": 1134.8035490000038
+    },
+    {
+     "id": "2afc78b4/r40",
+     "text": "CAVELIAR",
+     "confidence": 0.999936081469059,
+     "ms": 559.8164459999971
+    },
+    {
+     "id": "2afc78b4/r41",
+     "text": "TIED VOLTAZ\nA SMART?",
+     "confidence": 0.9960920671847733,
+     "ms": 1021.2912170000054
+    },
+    {
+     "id": "2afc78b4/r42",
+     "text": "FASZIBÁCSI",
+     "confidence": 0.9285485416650772,
+     "ms": 512.6256439999997
+    },
+    {
+     "id": "2afc78b4/r43",
+     "text": "000000000",
+     "confidence": 0.9411742157406278,
+     "ms": 729.335465000011
+    },
+    {
+     "id": "2afc78b4/r44",
+     "text": "",
+     "confidence": 0,
+     "ms": 782.3310490000003
+    },
+    {
+     "id": "2afc78b4/r45",
+     "text": "00 FAS21-4 D 0",
+     "confidence": 0.8290278155070084,
+     "ms": 1300.7472410000046
+    },
+    {
+     "id": "2afc78b4/r46",
+     "text": "MURUATATAR",
+     "confidence": 0.6967334866523742,
+     "ms": 4236.161181999996
+    },
+    {
+     "id": "2afc78b4/r47",
+     "text": "CAVALIER",
+     "confidence": 0.9998870640993118,
+     "ms": 641.307044000001
+    },
+    {
+     "id": "2afc78b4/r48",
+     "text": "BOCSI.",
+     "confidence": 0.9976809620857239,
+     "ms": 281.36259099999734
+    },
+    {
+     "id": "2afc78b4/r49",
+     "text": "MEG HAZAVISZLEK.\n1",
+     "confidence": 0.9623666206995646,
+     "ms": 1423.2013910000096
+    },
+    {
+     "id": "2afc78b4/r50",
+     "text": "FASZIBACSI",
+     "confidence": 0.9552751421928406,
+     "ms": 465.60757900000317
+    },
+    {
+     "id": "2afc78b4/r51",
+     "text": "",
+     "confidence": 0,
+     "ms": 334.406336
+    },
+    {
+     "id": "2afc78b4/r52",
+     "text": "FAS21-1 □□",
+     "confidence": 0.8808677434921265,
+     "ms": 620.5533720000094
+    },
+    {
+     "id": "6cbd56cd/r0",
+     "text": "VE T",
+     "confidence": 0.5209672302007675,
+     "ms": 1517.7392909999908
+    },
+    {
+     "id": "6cbd56cd/r1",
+     "text": "OTT KELL LENNCE\nA SUFNIBAN!",
+     "confidence": 0.9745871775078051,
+     "ms": 1054.5266090000077
+    },
+    {
+     "id": "6cbd56cd/r2",
+     "text": "O J...",
+     "confidence": 0.7301939477523168,
+     "ms": 282.0593050000025
+    },
+    {
+     "id": "6cbd56cd/r3",
+     "text": "CSAK LATSZOLAG EGY KIBASZOTT K\nTULAJDONKEPPEN EGY ISENIALIS AMIBEN BOMBA ROBBANT.\nRENDSZER. A RAHANGOLÓDASBAN\n SEGITAFENYKEPE.",
+     "confidence": 0.9673650570512269,
+     "ms": 4453.42598
+    },
+    {
+     "id": "6cbd56cd/r4",
+     "text": "E2 EGY HELIKOPTER\nTURBINA?",
+     "confidence": 0.9815348178586539,
+     "ms": 1415.4253880000033
+    },
+    {
+     "id": "6cbd56cd/r5",
+     "text": "IGEN, MOGOTE INDUL\nA LÉPCSO!",
+     "confidence": 0.9356625399419239,
+     "ms": 682.4065969999938
+    },
+    {
+     "id": "6cbd56cd/r6",
+     "text": "BARALUISANE\nS SZARITAMUMIA S RAZATC",
+     "confidence": 0.5772432096641172,
+     "ms": 2600.9078059999883
+    },
+    {
+     "id": "6cbd56cd/r7",
+     "text": "TELEKVITA",
+     "confidence": 0.9832369486490885,
+     "ms": 473.57764200000383
+    },
+    {
+     "id": "6cbd56cd/r8",
+     "text": "FUJ! A BELSO SZERVEL \nIT AZNAK EG-Y AKVARIUMBA\nA SZN KUWON EGY \nLEKVAROS ÜVEGBEN!\nFUJBAZMEG!",
+     "confidence": 0.9271741054809037,
+     "ms": 2215.2856039999897
+    },
+    {
+     "id": "6cbd56cd/r9",
+     "text": "FUJ A BELSO SZERUEI KE AA\nA SZN KULON EGY\nLEKVAROS UVEGBEN!\nFUJBAZMEG!",
+     "confidence": 0.8851854990361634,
+     "ms": 3421.6936469999782
+    },
+    {
+     "id": "6cbd56cd/r10",
+     "text": "VOUT",
+     "confidence": 0.6163235977292061,
+     "ms": 602.5249250000052
+    },
+    {
+     "id": "6cbd56cd/r11",
+     "text": "EMBER",
+     "confidence": 0.9999614477157592,
+     "ms": 536.8599720000057
+    },
+    {
+     "id": "3b343686/r0",
+     "text": "HAHHA!JESTET! M RUKA ELSRD RT\nES FETESSWIK NERI TESWK A KERDEST!",
+     "confidence": 0.7497784614276428,
+     "ms": 1997.581898000004
+    },
+    {
+     "id": "3b343686/r1",
+     "text": "",
+     "confidence": 0,
+     "ms": 257.99419999998645
+    },
+    {
+     "id": "3b343686/r2",
+     "text": "A MEGNYERNE A",
+     "confidence": 0.98588804098276,
+     "ms": 2133.8116919999884
+    },
+    {
+     "id": "3b343686/r3",
+     "text": "SPORTKOCSI?",
+     "confidence": 0.9707870320840315,
+     "ms": 428.1117479999957
+    },
+    {
+     "id": "3b343686/r4",
+     "text": "PINÁK?",
+     "confidence": 0.9228790998458862,
+     "ms": 358.5934840000118
+    },
+    {
+     "id": "3b343686/r5",
+     "text": "A loTTo OTOST?\nHM LÁSUK CSAK\nHEHE .. IGEN !",
+     "confidence": 0.8768864497542381,
+     "ms": 1224.0374960000045
+    },
+    {
+     "id": "3b343686/r6",
+     "text": "YACHT?",
+     "confidence": 0.9998168547948202,
+     "ms": 382.7434859999921
+    },
+    {
+     "id": "3b343686/r7",
+     "text": "UTAZGATAÁS?",
+     "confidence": 0.9174019856886431,
+     "ms": 524.3736069999868
+    },
+    {
+     "id": "3b343686/r8",
+     "text": "Pinák?",
+     "confidence": 0.8186267813046774,
+     "ms": 313.10594700000365
+    },
+    {
+     "id": "3b343686/r9",
+     "text": "",
+     "confidence": 0,
+     "ms": 373.38143800001126
+    },
+    {
+     "id": "3b343686/r10",
+     "text": "VILLA?",
+     "confidence": 0.9682785371939341,
+     "ms": 308.1213010000065
+    },
+    {
+     "id": "3b343686/r11",
+     "text": "PINáK?",
+     "confidence": 0.9220971167087555,
+     "ms": 463.17112199999974
+    },
+    {
+     "id": "3b343686/r12",
+     "text": "",
+     "confidence": 0,
+     "ms": 501.82199100000435
+    },
+    {
+     "id": "3b343686/r13",
+     "text": "VENNEK EG:Y KURVANAGY\nDOBOZT\nTELIS-TEVE TIZES\n VILCÁSKULCCSAL! AGYIG   RAKVA,\nTOBB EZER.\n VAGOD?",
+     "confidence": 0.9568024906148385,
+     "ms": 3530.077496999991
+    },
+    {
+     "id": "3b343686/r14",
+     "text": "VENNEK EGY KURVANAGY)\nDOBOZT\nTELIS-TEVE TIZES\nVILCÁSKULCCSAL! AGYIG  RAKVA,\nTÖBB EZER\nVAGOD?",
+     "confidence": 0.9556311480419294,
+     "ms": 5045.818296000012
+    },
+    {
+     "id": "3b343686/r15",
+     "text": " ES MINDENHOL AHOL A NAN",
+     "confidence": 0.8011005663353464,
+     "ms": 2339.0525170000037
+    },
+    {
+     "id": "3b343686/r16",
+     "text": "AMY\nOR i\n3",
+     "confidence": 0.5807078704237938,
+     "ms": 3658.3565339999914
+    },
+    {
+     "id": "3b343686/r17",
+     "text": "AKKOR BÁRHOVA NYÚLOK,\nOTT LEGYEN, BAZMEG.\nNEM EGY, ÖT!",
+     "confidence": 0.9583491538102765,
+     "ms": 1269.7731869999843
+    },
+    {
+     "id": "0c0bd5d5/r0",
+     "text": "ÉTOIPAI KITELEZES - ",
+     "confidence": 0.7715651661157608,
+     "ms": 607.005667999998
+    },
+    {
+     "id": "0c0bd5d5/r1",
+     "text": "HRAHGHR",
+     "confidence": 0.86271413734981,
+     "ms": 660.6504769999883
+    },
+    {
+     "id": "0c0bd5d5/r2",
+     "text": "MIA FASZOM?",
+     "confidence": 0.9691890207203951,
+     "ms": 456.3693129999738
+    },
+    {
+     "id": "0c0bd5d5/r3",
+     "text": "7722.683/FELVEIZEM",
+     "confidence": 0.9652717312177023,
+     "ms": 521.2181850000052
+    },
+    {
+     "id": "0c0bd5d5/r4",
+     "text": "KI VAGY, ES MI A GECIT\nKERESEL A PLATOMON,\nBAZME?",
+     "confidence": 0.9824453299822546,
+     "ms": 923.2391160000116
+    },
+    {
+     "id": "0c0bd5d5/r5",
+     "text": "A GUBACS TEREZ\nUTON UTOTELI\nMINDKET LÁBAM\nELTORÖIT, AZÓTA\nFAJ. FAJOGAT.",
+     "confidence": 0.9656785732311206,
+     "ms": 743.4416199999978
+    },
+    {
+     "id": "0c0bd5d5/r6",
+     "text": "FEKSZEMIT.",
+     "confidence": 0.9809530258178711,
+     "ms": 227.93870699999388
+    },
+    {
+     "id": "0c0bd5d5/r7",
+     "text": "722.683/FELVEE",
+     "confidence": 0.8600729065282005,
+     "ms": 226.02392099998542
+    },
+    {
+     "id": "0c0bd5d5/r8",
+     "text": "NEM IS JARTAM ARRA MA, BAZME...\nA KOZELBE SE.",
+     "confidence": 0.9783195679448082,
+     "ms": 1081.052697999985
+    },
+    {
+     "id": "0c0bd5d5/r9",
+     "text": "EZ MÚLT HET KEDDEN\nTORTENT...",
+     "confidence": 0.9598862419525782,
+     "ms": 1686.6373630000162
+    },
+    {
+     "id": "0c0bd5d5/r10",
+     "text": "",
+     "confidence": 0,
+     "ms": 188.48885799999698
+    },
+    {
+     "id": "0c0bd5d5/r11",
+     "text": "7772-G83/FELVESZEM",
+     "confidence": 0.9293146928151449,
+     "ms": 792.8513190000085
+    },
+    {
+     "id": "0c0bd5d5/r12",
+     "text": "MULT HET KEDD?\nNE KAMUZZA!\nHOGY NEM HALTAL EHEN?",
+     "confidence": 0.9920980277945642,
+     "ms": 1346.4998020000057
+    },
+    {
+     "id": "0c0bd5d5/r13",
+     "text": "KIFELE JOTEM A BOLTBOLI\nAMIKOR TELI BE KAPOTT\nKET NAGY\nSZATYOR ",
+     "confidence": 0.9941805850200772,
+     "ms": 1836.5358290000004
+    },
+    {
+     "id": "0c0bd5d5/r14",
+     "text": "7722.683/FEVESZEM",
+     "confidence": 0.9663872859057259,
+     "ms": 555.3341359999904
+    },
+    {
+     "id": "0c0bd5d5/r15",
+     "text": "AKURVAELET!",
+     "confidence": 0.949607486074621,
+     "ms": 723.880027999985
+    },
+    {
+     "id": "0c0bd5d5/r16",
+     "text": "7722.683/FELVESZEM",
+     "confidence": 0.9874007900555929,
+     "ms": 572.6143880000163
+    },
+    {
+     "id": "0c0bd5d5/r17",
+     "text": "",
+     "confidence": 0,
+     "ms": 210.12741899999673
+    },
+    {
+     "id": "0c0bd5d5/r18",
+     "text": "O",
+     "confidence": 0.6373217105865479,
+     "ms": 343.21867999999085
+    },
+    {
+     "id": "0c0bd5d5/r19",
+     "text": "AAARRGH",
+     "confidence": 0.8335564051355634,
+     "ms": 378.0759749999852
+    },
+    {
+     "id": "0c0bd5d5/r20",
+     "text": "7722.683/FELVESZEM",
+     "confidence": 0.9881899886661105,
+     "ms": 712.0193219999783
+    },
+    {
+     "id": "0c0bd5d5/r21",
+     "text": "ITTEGY PLED, BAZME.\nEJJELENTE MAR\nHIDEGEK VANNAK.",
+     "confidence": 0.9809711696889236,
+     "ms": 1018.2769989999942
+    },
+    {
+     "id": "0c0bd5d5/r22",
+     "text": "22.683/FEESZE",
+     "confidence": 0.7837704007442181,
+     "ms": 284.870419999992
+    },
+    {
+     "id": "0c0bd5d5/r23",
+     "text": "",
+     "confidence": 0,
+     "ms": 180.04968299999018
+    },
+    {
+     "id": "89371298/r0",
+     "text": "Oh shoot, I fell asleep\nwith the window open,\nagain...",
+     "confidence": 0.9954527420646738,
+     "ms": 840.4228589999839
+    },
+    {
+     "id": "89371298/r1",
+     "text": "...and why can I see\nKomona through\nthe window?",
+     "confidence": 0.9985743718874919,
+     "ms": 1069.1045180000074
+    },
+    {
+     "id": "89371298/r2",
+     "text": "KOMONA!",
+     "confidence": 0.9999439290591648,
+     "ms": 420.45659700001124
+    },
+    {
+     "id": "89371298/r3",
+     "text": "The Potion\nContest!",
+     "confidence": 0.9999571599066257,
+     "ms": 803.7045950000174
+    },
+    {
+     "id": "89371298/r4",
+     "text": "I must've...\nmust've accidentally\nfallen asleep!",
+     "confidence": 0.9959941437320103,
+     "ms": 1233.4826079999912
+    },
+    {
+     "id": "89371298/r5",
+     "text": "…but?",
+     "confidence": 0.9879937410354614,
+     "ms": 328.61927500000456
+    },
+    {
+     "id": "89371298/r6",
+     "text": "Where\nam I ?!?",
+     "confidence": 0.9661406509578228,
+     "ms": 416.29882799999905
+    },
+    {
+     "id": "35ce81ab/r0",
+     "text": "7 Carrot!\nYou're so cute to have\nthought of bringing me to\n the Contest!",
+     "confidence": 0.9883384057969758,
+     "ms": 2044.5439929999993
+    },
+    {
+     "id": "35ce81ab/r1",
+     "text": "Fan-tas-tic!",
+     "confidence": 0.9999346782763799,
+     "ms": 383.3281019999995
+    },
+    {
+     "id": "35ce81ab/r2",
+     "text": "You even thought of\nbringing a potion, my\nclothes, and my hat...",
+     "confidence": 0.9996885057257803,
+     "ms": 949.9510659999796
+    },
+    {
+     "id": "35ce81ab/r3",
+     "text": ". let's see which\npotion you brought...",
+     "confidence": 0.9814709956713376,
+     "ms": 1112.161472000007
+    },
+    {
+     "id": "8f3737ae/r0",
+     "text": "How do I\nexit vim?",
+     "confidence": 0.9984396940304173,
+     "ms": 431.0252000000037
+    },
+    {
+     "id": "8f3737ae/r1",
+     "text": "Why would I\nexit vim?",
+     "confidence": 0.9995660688539948,
+     "ms": 584.6973930000095
+    },
+    {
+     "id": "246d3aa3/r0",
+     "text": "小 REMAIN MY PUTER\nAMBIVALENT\nABOUT",
+     "confidence": 0.966829789876938,
+     "ms": 2017.8158530000073
+    },
+    {
+     "id": "246d3aa3/r1",
+     "text": "IT CONTAINS MULTITUDES. FRIENDS. ENEMIES. \nLOVE. HATE. TO REDUCE IT TO ONE OR THE OTHER\n IS AN EXERCISE IN FOOLISHNESS. ",
+     "confidence": 0.9758577773197438,
+     "ms": 2654.1144579999964
+    }
+   ]
+  }
+ ]
+}

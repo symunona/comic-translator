@@ -1,0 +1,49 @@
+{
+  "spec": "openrouter:google/gemini-3.8-flash?effort=low",
+  "log": "../bench/llm/prompts/893712989801daabc2a3d351e597946b61312aeb54e14e3d28aaf7f63ad64618/llm/ocr-p4.json",
+  "text": "{\"regions\":[{\"n\":2,\"kind\":\"speech\",\"lines\":[\"KOMONA!\"],\"align\":\"center\",\"caps\":true},{\"n\":3,\"kind\":\"speech\",\"lines\":[\"The Potion\",\"Contest!\"],\"align\":\"center\",\"caps\":false},{\"n\":4,\"kind\":\"speech\",\"lines\":[\"I must've...\",\"must've accidentally\",\"fallen asleep!\"],\"align\":\"center\",\"caps\":false}],\"unboxed\":[]}",
+  "json": {
+    "regions": [
+      {
+        "n": 2,
+        "kind": "speech",
+        "lines": [
+          "KOMONA!"
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 3,
+        "kind": "speech",
+        "lines": [
+          "The Potion",
+          "Contest!"
+        ],
+        "align": "center",
+        "caps": false
+      },
+      {
+        "n": 4,
+        "kind": "speech",
+        "lines": [
+          "I must've...",
+          "must've accidentally",
+          "fallen asleep!"
+        ],
+        "align": "center",
+        "caps": false
+      }
+    ],
+    "unboxed": []
+  },
+  "usage": {
+    "input_tokens": 5179,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 89
+  },
+  "costUsd": 0.004218,
+  "ms": 2333,
+  "at": "2026-10-20T07:19:33.899469045Z"
+}

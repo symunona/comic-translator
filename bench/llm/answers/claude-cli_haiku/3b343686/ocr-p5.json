@@ -1,0 +1,30 @@
+{
+  "spec": "claude-cli:haiku",
+  "log": "../bench/llm/prompts/3b3436860d742571c5a540084c396d020cb19fae9191994d00f2338e06c41d2b/llm/ocr-p5.json",
+  "text": "{\"regions\":[{\"n\":16,\"kind\":\"speech\",\"lines\":[\"HOGYAMIKOR OTT EGY HATOS\",\"CSAVAR,\",\"BAZMEG,\"],\"align\":\"center\",\"caps\":true}],\"unboxed\":[]}",
+  "json": {
+    "regions": [
+      {
+        "n": 16,
+        "kind": "speech",
+        "lines": [
+          "HOGYAMIKOR OTT EGY HATOS",
+          "CSAVAR,",
+          "BAZMEG,"
+        ],
+        "align": "center",
+        "caps": true
+      }
+    ],
+    "unboxed": []
+  },
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 3102,
+    "cache_read_input_tokens": 4527,
+    "output_tokens": 758
+  },
+  "costUsd": 0.00104507,
+  "ms": 8116,
+  "at": "2026-10-20T07:08:14.323391731Z"
+}

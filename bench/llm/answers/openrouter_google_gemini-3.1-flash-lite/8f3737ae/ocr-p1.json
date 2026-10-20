@@ -1,0 +1,29 @@
+{
+  "spec": "openrouter:google/gemini-3.1-flash-lite",
+  "log": "../bench/llm/prompts/8f3737ae2df51cb23cc27c3f81a10a426a35fc918ea31cf1eff85be4fc0df452/llm/ocr-p1.json",
+  "text": "{\"regions\":[{\"n\":1,\"kind\":\"caption\",\"lines\":[\"Why would I\",\"exit vim?\"],\"align\":\"center\",\"caps\":false}],\"unboxed\":[]}",
+  "json": {
+    "regions": [
+      {
+        "n": 1,
+        "kind": "caption",
+        "lines": [
+          "Why would I",
+          "exit vim?"
+        ],
+        "align": "center",
+        "caps": false
+      }
+    ],
+    "unboxed": []
+  },
+  "usage": {
+    "input_tokens": 2981,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 34
+  },
+  "costUsd": 0.00079625,
+  "ms": 1289,
+  "at": "2026-10-20T07:19:26.214511666Z"
+}

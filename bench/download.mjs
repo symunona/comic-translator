@@ -7,6 +7,16 @@ const HF = "https://huggingface.co";
 const PADDLE = `${HF}/snowfluke/ppu-paddle-ocr-models/resolve/main`;
 
 export const FILES = {
+  "paddle-v6-small": [
+    [`${PADDLE}/detection/ort/PP-OCRv6_small_det.ort`, "paddle/PP-OCRv6_small_det.ort"],
+    [`${PADDLE}/recognition/ort/PP-OCRv6_small_rec.ort`, "paddle/PP-OCRv6_small_rec.ort"],
+    [`${PADDLE}/recognition/ppocrv6_dict.txt`, "paddle/ppocrv6_dict.txt"],
+  ],
+  "paddle-v6-medium": [
+    [`${PADDLE}/detection/ort/PP-OCRv6_medium_det.ort`, "paddle/PP-OCRv6_medium_det.ort"],
+    [`${PADDLE}/recognition/ort/PP-OCRv6_medium_rec.ort`, "paddle/PP-OCRv6_medium_rec.ort"],
+    [`${PADDLE}/recognition/ppocrv6_dict.txt`, "paddle/ppocrv6_dict.txt"],
+  ],
   paddle: [
     [`${PADDLE}/detection/PP-OCRv5_mobile_det_infer.onnx`, "paddle/PP-OCRv5_mobile_det_infer.onnx"],
     [`${PADDLE}/recognition/multi/latin/v5/latin_PP-OCRv5_mobile_rec_infer.onnx`, "paddle/latin_PP-OCRv5_mobile_rec_infer.onnx"],

@@ -1,0 +1,40 @@
+{
+  "spec": "openrouter:z-ai/glm-5.3-flash",
+  "log": "../bench/llm/prompts/2afc78b45293acd677ffcba91f53fea50838d406d2dd965846e83408657e58c7/llm/ocr-p1.json",
+  "text": "{\"regions\":[{\"n\":1,\"kind\":\"speech\",\"lines\":[\"NA! E!\",\"DEJÓ, HOGY\",\"ELJÖTTÉ, E!\"],\"align\":\"center\",\"caps\":true},{\"n\":2,\"kind\":\"speech\",\"lines\":[\"HÍREK\"],\"align\":\"center\",\"caps\":true}],\"unboxed\":[]}",
+  "json": {
+    "regions": [
+      {
+        "n": 1,
+        "kind": "speech",
+        "lines": [
+          "NA! E!",
+          "DEJÓ, HOGY",
+          "ELJÖTTÉ, E!"
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 2,
+        "kind": "speech",
+        "lines": [
+          "HÍREK"
+        ],
+        "align": "center",
+        "caps": true
+      }
+    ],
+    "unboxed": []
+  },
+  "usage": {
+    "input_tokens": 1295,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 646,
+    "reasoning_tokens": 574
+  },
+  "costUsd": 0.000406048,
+  "ms": 3432,
+  "at": "2026-10-20T07:07:52.544867474Z"
+}

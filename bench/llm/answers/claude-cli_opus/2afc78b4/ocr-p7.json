@@ -1,0 +1,28 @@
+{
+  "spec": "claude-cli:opus",
+  "log": "../bench/llm/prompts/2afc78b45293acd677ffcba91f53fea50838d406d2dd965846e83408657e58c7/llm/ocr-p7.json",
+  "text": "{\"regions\":[{\"n\":38,\"kind\":\"sign\",\"lines\":[\"BALKON\"],\"align\":\"center\",\"caps\":true}],\"unboxed\":[]}",
+  "json": {
+    "regions": [
+      {
+        "n": 38,
+        "kind": "sign",
+        "lines": [
+          "BALKON"
+        ],
+        "align": "center",
+        "caps": true
+      }
+    ],
+    "unboxed": []
+  },
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 3425,
+    "cache_read_input_tokens": 4525,
+    "output_tokens": 289
+  },
+  "costUsd": 0.034101,
+  "ms": 6097,
+  "at": "2026-10-20T07:07:35.790757147Z"
+}

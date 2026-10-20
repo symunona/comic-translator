@@ -1,0 +1,41 @@
+{
+  "spec": "openrouter:google/gemini-3.8-flash?effort=low",
+  "log": "../bench/llm/prompts/246d3aa3e5d91deb9d2434834daf01b518f3a80b89d0b936f87cf08623cd90f7/llm/ocr-p0.json",
+  "text": "{\"regions\":[{\"n\":0,\"kind\":\"caption\",\"lines\":[\"REMAIN\",\"I AMBIVALENT MY PUTER\",\"ABOUT\"],\"align\":\"center\",\"caps\":true},{\"n\":1,\"kind\":\"caption\",\"lines\":[\"IT CONTAINS MULTITUDES. FRIENDS. ENEMIES.\",\"LOVE. HATE. TO REDUCE IT TO ONE OR THE OTHER\",\"IS AN EXERCISE IN FOOLISHNESS.\"],\"align\":\"center\",\"caps\":true}],\"unboxed\":[]}",
+  "json": {
+    "regions": [
+      {
+        "n": 0,
+        "kind": "caption",
+        "lines": [
+          "REMAIN",
+          "I AMBIVALENT MY PUTER",
+          "ABOUT"
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 1,
+        "kind": "caption",
+        "lines": [
+          "IT CONTAINS MULTITUDES. FRIENDS. ENEMIES.",
+          "LOVE. HATE. TO REDUCE IT TO ONE OR THE OTHER",
+          "IS AN EXERCISE IN FOOLISHNESS."
+        ],
+        "align": "center",
+        "caps": true
+      }
+    ],
+    "unboxed": []
+  },
+  "usage": {
+    "input_tokens": 4047,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 99
+  },
+  "costUsd": 0.0034065,
+  "ms": 7039,
+  "at": "2026-10-20T07:19:24.677533514Z"
+}

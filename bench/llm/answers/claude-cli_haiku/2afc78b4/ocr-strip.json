@@ -1,0 +1,516 @@
+{
+  "spec": "claude-cli:haiku",
+  "log": "../bench/llm/prompts/2afc78b45293acd677ffcba91f53fea50838d406d2dd965846e83408657e58c7/llm/ocr-strip.json",
+  "text": "{\"regions\":[{\"n\":0,\"kind\":\"sfx\",\"lines\":[\"UNKA!\"],\"align\":\"center\",\"caps\":true},{\"n\":1,\"kind\":\"speech\",\"lines\":[\"NA! E!\",\"DEJÓ, HOGY\",\"ELJÖTTÉ, E!\"],\"align\":\"center\",\"caps\":true},{\"n\":2,\"kind\":\"speech\",\"lines\":[\"HÍREK\"],\"align\":\"center\",\"caps\":true},{\"n\":3,\"kind\":\"none\",\"lines\":[],\"align\":\"center\",\"caps\":true},{\"n\":4,\"kind\":\"speech\",\"lines\":[\"MOST ARRA GONDOLSZ,\",\"HOGY „DE KÁR, HOGY\",\"ELKÖLTÖTTEM AZ\",\"ELŐLEGET, MOST\",\"LEMONDHATNÁM\"],\"align\":\"center\",\"caps\":true},{\"n\":5,\"kind\":\"sign\",\"lines\":[\"CAVALEIR\"],\"align\":\"center\",\"caps\":true},{\"n\":6,\"kind\":\"speech\",\"lines\":[\"A MELÓT!\\\"\"],\"align\":\"center\",\"caps\":true},{\"n\":7,\"kind\":\"speech\",\"lines\":[\"HÁT... KÁBÉ.\"],\"align\":\"center\",\"caps\":true},{\"n\":8,\"kind\":\"sign\",\"lines\":[\"FASZI BÁCSI\"],\"align\":\"center\",\"caps\":true},{\"n\":9,\"kind\":\"speech\",\"lines\":[\"NA. PATTANJ FEL!\"],\"align\":\"center\",\"caps\":true},{\"n\":10,\"kind\":\"sign\",\"lines\":[\"FASZI-1\"],\"align\":\"center\",\"caps\":true},{\"n\":11,\"kind\":\"sign\",\"lines\":[\"CALAVRIE\"],\"align\":\"center\",\"caps\":true},{\"n\":12,\"kind\":\"speech\",\"lines\":[\"NEM BAJ, AZ EMBER\",\"AZÉRT FIATAL, HOGY\",\"TANULJON.\"],\"align\":\"center\",\"caps\":true},{\"n\":13,\"kind\":\"sign\",\"lines\":[\"FASZI BÁCSI\"],\"align\":\"center\",\"caps\":true},{\"n\":14,\"kind\":\"sign\",\"lines\":[\"FASZI-1\"],\"align\":\"center\",\"caps\":true},{\"n\":15,\"kind\":\"speech\",\"lines\":[\"JÉZUS, ATYA, ÚRISTEN!\"],\"align\":\"center\",\"caps\":true},{\"n\":16,\"kind\":\"sign\",\"lines\":[\"VECALAIR\"],\"align\":\"center\",\"caps\":true},{\"n\":17,\"kind\":\"speech\",\"lines\":[\"Ő A HÁLÓFÜLKÉBEN LÓG,\",\"EGY KRISTÁLYHOLOGRAM\",\"FORMÁJÁBAN, DE ITT\",\"VALÓBAN A SZENTFÖLDI\",\"LOVAGVÁRAK\",\"STÍLUSÁT IGYEKEZTEM HOZNI.\",\"AZ OTT EGY BEDUIN\",\"KEMENCE, HENNÁS KASPÓ\",\"TEVENYEREG, ASZTROLÁBIUM...\"],\"align\":\"center\",\"caps\":true},{\"n\":18,\"kind\":\"sign\",\"lines\":[\"FASZI BÁCSI\"],\"align\":\"center\",\"caps\":true},{\"n\":19,\"kind\":\"speech\",\"lines\":[\"CSAK MÁR ÖECIRE\",\"UNOM.\",\"EZÉRT VAGY IT, E!\"],\"align\":\"center\",\"caps\":true},{\"n\":20,\"kind\":\"speech\",\"lines\":[\"HÁTŐŐ... EDDIG EGY KAMIONT...\"],\"align\":\"center\",\"caps\":true},{\"n\":21,\"kind\":\"none\",\"lines\":[],\"align\":\"center\",\"caps\":true},{\"n\":22,\"kind\":\"none\",\"lines\":[],\"align\":\"center\",\"caps\":true},{\"n\":23,\"kind\":\"sign\",\"lines\":[\"RELAVACI\"],\"align\":\"center\",\"caps\":true},{\"n\":24,\"kind\":\"speech\",\"lines\":[\"NYERGES VONTATÓT.\"],\"align\":\"center\",\"caps\":true},{\"n\":25,\"kind\":\"speech\",\"lines\":[\"PARDON. NYERGESVONTATÓT\",\"CSINÁLTAM, VIII. HENRIK STÍLUSÁBAN,\",\"„TRUBADÚR\\\" LETT A MUNKACÍME.\",\"ITT VAN A PORTFÓLIÓMBAN:\"],\"align\":\"left\",\"caps\":true},{\"n\":26,\"kind\":\"speech\",\"lines\":[\"AHA ... VÁGOM. KÁRPÍT\",\"MÁR MESSZIRŐL. ELKAPTAD A\",\"BROKÁT. SOK A BOJT. FELBASZNA\",\"AZONNAL. MEG EZ IS ILYEN\",\"„RÉGI\\\", VÁGOD?\",\"ÁNTIK.\"],\"align\":\"center\",\"caps\":true},{\"n\":27,\"kind\":\"sign\",\"lines\":[\"FASZI BÁCSI\"],\"align\":\"center\",\"caps\":true},{\"n\":28,\"kind\":\"sign\",\"lines\":[\"FASZI-1\"],\"align\":\"center\",\"caps\":true},{\"n\":29,\"kind\":\"sign\",\"lines\":[\"ROPI\"],\"align\":\"center\",\"caps\":true},{\"n\":30,\"kind\":\"speech\",\"lines\":[\"SZÓVAL, AMIKOR A GROBKUGELNI\",\"PIHENŐBEN KINYITJA A\",\"KURVA AZ AJTÓT AKKOR\",\"NE AZT KÉRDEZZE, MERRE VAN\",\"A MÚZEUMSHOP, VÁGOD?\",\"IRÁNYNAK ILYEN NEOLOFTOS\",\"ART DEKÓT GONDOLNÉK.\"],\"align\":\"center\",\"caps\":true},{\"n\":31,\"kind\":\"none\",\"lines\":[],\"align\":\"center\",\"caps\":true},{\"n\":32,\"kind\":\"sign\",\"lines\":[\"RACALVIE\"],\"align\":\"center\",\"caps\":true},{\"n\":33,\"kind\":\"sign\",\"lines\":[\"FASZI BÁCS\"],\"align\":\"center\",\"caps\":true},{\"n\":34,\"kind\":\"speech\",\"lines\":[\"ÉRTEM. EZ A DOBOZ, EZ MI?\",\"MARADNIA KELL?\"],\"align\":\"center\",\"caps\":true},{\"n\":35,\"kind\":\"speech\",\"lines\":[\"AKKSIK A FÉNYHEZ. MARAD.\"],\"align\":\"center\",\"caps\":true},{\"n\":36,\"kind\":\"speech\",\"lines\":[\"„FÉNYHEZ\\\"?\"],\"align\":\"center\",\"caps\":true},{\"n\":37,\"kind\":\"sign\",\"lines\":[\"FASZI-1\"],\"align\":\"center\",\"caps\":true},{\"n\":38,\"kind\":\"sign\",\"lines\":[\"BALKON\"],\"align\":\"center\",\"caps\":true},{\"n\":39,\"kind\":\"none\",\"lines\":[],\"align\":\"center\",\"caps\":true},{\"n\":40,\"kind\":\"sign\",\"lines\":[\"CAVELIAR\"],\"align\":\"center\",\"caps\":true},{\"n\":41,\"kind\":\"speech\",\"lines\":[\"TIÉD VOLT AZ\",\"A SMART?\"],\"align\":\"center\",\"caps\":true},{\"n\":42,\"kind\":\"sign\",\"lines\":[\"FASZI BÁCSI\"],\"align\":\"center\",\"caps\":true},{\"n\":43,\"kind\":\"none\",\"lines\":[],\"align\":\"center\",\"caps\":true},{\"n\":44,\"kind\":\"none\",\"lines\":[],\"align\":\"center\",\"caps\":true},{\"n\":45,\"kind\":\"sign\",\"lines\":[\"FASZI-1\"],\"align\":\"center\",\"caps\":true},{\"n\":46,\"kind\":\"sfx\",\"lines\":[\"FIFU!\",\"HURU HATÁRR!\"],\"align\":\"center\",\"caps\":true},{\"n\":47,\"kind\":\"sign\",\"lines\":[\"CAVALIER\"],\"align\":\"center\",\"caps\":true},{\"n\":48,\"kind\":\"speech\",\"lines\":[\"BOCSI.\"],\"align\":\"center\",\"caps\":true},{\"n\":49,\"kind\":\"speech\",\"lines\":[\"MEG\",\"HAZAVISZLEK.\"],\"align\":\"left\",\"caps\":true},{\"n\":50,\"kind\":\"sign\",\"lines\":[\"FASZI BÁCSI\"],\"align\":\"center\",\"caps\":true},{\"n\":51,\"kind\":\"none\",\"lines\":[],\"align\":\"center\",\"caps\":true},{\"n\":52,\"kind\":\"sign\",\"lines\":[\"FASZI-1\"],\"align\":\"center\",\"caps\":true}],\"unboxed\":[]}",
+  "json": {
+    "regions": [
+      {
+        "n": 0,
+        "kind": "sfx",
+        "lines": [
+          "UNKA!"
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 1,
+        "kind": "speech",
+        "lines": [
+          "NA! E!",
+          "DEJÓ, HOGY",
+          "ELJÖTTÉ, E!"
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 2,
+        "kind": "speech",
+        "lines": [
+          "HÍREK"
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 3,
+        "kind": "none",
+        "lines": [],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 4,
+        "kind": "speech",
+        "lines": [
+          "MOST ARRA GONDOLSZ,",
+          "HOGY „DE KÁR, HOGY",
+          "ELKÖLTÖTTEM AZ",
+          "ELŐLEGET, MOST",
+          "LEMONDHATNÁM"
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 5,
+        "kind": "sign",
+        "lines": [
+          "CAVALEIR"
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 6,
+        "kind": "speech",
+        "lines": [
+          "A MELÓT!\""
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 7,
+        "kind": "speech",
+        "lines": [
+          "HÁT... KÁBÉ."
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 8,
+        "kind": "sign",
+        "lines": [
+          "FASZI BÁCSI"
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 9,
+        "kind": "speech",
+        "lines": [
+          "NA. PATTANJ FEL!"
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 10,
+        "kind": "sign",
+        "lines": [
+          "FASZI-1"
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 11,
+        "kind": "sign",
+        "lines": [
+          "CALAVRIE"
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 12,
+        "kind": "speech",
+        "lines": [
+          "NEM BAJ, AZ EMBER",
+          "AZÉRT FIATAL, HOGY",
+          "TANULJON."
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 13,
+        "kind": "sign",
+        "lines": [
+          "FASZI BÁCSI"
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 14,
+        "kind": "sign",
+        "lines": [
+          "FASZI-1"
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 15,
+        "kind": "speech",
+        "lines": [
+          "JÉZUS, ATYA, ÚRISTEN!"
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 16,
+        "kind": "sign",
+        "lines": [
+          "VECALAIR"
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 17,
+        "kind": "speech",
+        "lines": [
+          "Ő A HÁLÓFÜLKÉBEN LÓG,",
+          "EGY KRISTÁLYHOLOGRAM",
+          "FORMÁJÁBAN, DE ITT",
+          "VALÓBAN A SZENTFÖLDI",
+          "LOVAGVÁRAK",
+          "STÍLUSÁT IGYEKEZTEM HOZNI.",
+          "AZ OTT EGY BEDUIN",
+          "KEMENCE, HENNÁS KASPÓ",
+          "TEVENYEREG, ASZTROLÁBIUM..."
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 18,
+        "kind": "sign",
+        "lines": [
+          "FASZI BÁCSI"
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 19,
+        "kind": "speech",
+        "lines": [
+          "CSAK MÁR ÖECIRE",
+          "UNOM.",
+          "EZÉRT VAGY IT, E!"
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 20,
+        "kind": "speech",
+        "lines": [
+          "HÁTŐŐ... EDDIG EGY KAMIONT..."
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 21,
+        "kind": "none",
+        "lines": [],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 22,
+        "kind": "none",
+        "lines": [],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 23,
+        "kind": "sign",
+        "lines": [
+          "RELAVACI"
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 24,
+        "kind": "speech",
+        "lines": [
+          "NYERGES VONTATÓT."
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 25,
+        "kind": "speech",
+        "lines": [
+          "PARDON. NYERGESVONTATÓT",
+          "CSINÁLTAM, VIII. HENRIK STÍLUSÁBAN,",
+          "„TRUBADÚR\" LETT A MUNKACÍME.",
+          "ITT VAN A PORTFÓLIÓMBAN:"
+        ],
+        "align": "left",
+        "caps": true
+      },
+      {
+        "n": 26,
+        "kind": "speech",
+        "lines": [
+          "AHA ... VÁGOM. KÁRPÍT",
+          "MÁR MESSZIRŐL. ELKAPTAD A",
+          "BROKÁT. SOK A BOJT. FELBASZNA",
+          "AZONNAL. MEG EZ IS ILYEN",
+          "„RÉGI\", VÁGOD?",
+          "ÁNTIK."
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 27,
+        "kind": "sign",
+        "lines": [
+          "FASZI BÁCSI"
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 28,
+        "kind": "sign",
+        "lines": [
+          "FASZI-1"
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 29,
+        "kind": "sign",
+        "lines": [
+          "ROPI"
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 30,
+        "kind": "speech",
+        "lines": [
+          "SZÓVAL, AMIKOR A GROBKUGELNI",
+          "PIHENŐBEN KINYITJA A",
+          "KURVA AZ AJTÓT AKKOR",
+          "NE AZT KÉRDEZZE, MERRE VAN",
+          "A MÚZEUMSHOP, VÁGOD?",
+          "IRÁNYNAK ILYEN NEOLOFTOS",
+          "ART DEKÓT GONDOLNÉK."
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 31,
+        "kind": "none",
+        "lines": [],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 32,
+        "kind": "sign",
+        "lines": [
+          "RACALVIE"
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 33,
+        "kind": "sign",
+        "lines": [
+          "FASZI BÁCS"
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 34,
+        "kind": "speech",
+        "lines": [
+          "ÉRTEM. EZ A DOBOZ, EZ MI?",
+          "MARADNIA KELL?"
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 35,
+        "kind": "speech",
+        "lines": [
+          "AKKSIK A FÉNYHEZ. MARAD."
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 36,
+        "kind": "speech",
+        "lines": [
+          "„FÉNYHEZ\"?"
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 37,
+        "kind": "sign",
+        "lines": [
+          "FASZI-1"
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 38,
+        "kind": "sign",
+        "lines": [
+          "BALKON"
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 39,
+        "kind": "none",
+        "lines": [],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 40,
+        "kind": "sign",
+        "lines": [
+          "CAVELIAR"
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 41,
+        "kind": "speech",
+        "lines": [
+          "TIÉD VOLT AZ",
+          "A SMART?"
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 42,
+        "kind": "sign",
+        "lines": [
+          "FASZI BÁCSI"
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 43,
+        "kind": "none",
+        "lines": [],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 44,
+        "kind": "none",
+        "lines": [],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 45,
+        "kind": "sign",
+        "lines": [
+          "FASZI-1"
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 46,
+        "kind": "sfx",
+        "lines": [
+          "FIFU!",
+          "HURU HATÁRR!"
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 47,
+        "kind": "sign",
+        "lines": [
+          "CAVALIER"
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 48,
+        "kind": "speech",
+        "lines": [
+          "BOCSI."
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 49,
+        "kind": "speech",
+        "lines": [
+          "MEG",
+          "HAZAVISZLEK."
+        ],
+        "align": "left",
+        "caps": true
+      },
+      {
+        "n": 50,
+        "kind": "sign",
+        "lines": [
+          "FASZI BÁCSI"
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 51,
+        "kind": "none",
+        "lines": [],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 52,
+        "kind": "sign",
+        "lines": [
+          "FASZI-1"
+        ],
+        "align": "center",
+        "caps": true
+      }
+    ],
+    "unboxed": []
+  },
+  "usage": {
+    "input_tokens": 6,
+    "cache_creation_input_tokens": 26357,
+    "cache_read_input_tokens": 26568,
+    "output_tokens": 28337
+  },
+  "costUsd": 0.01970618,
+  "ms": 113912,
+  "at": "2026-10-20T07:08:16.313738119Z"
+}

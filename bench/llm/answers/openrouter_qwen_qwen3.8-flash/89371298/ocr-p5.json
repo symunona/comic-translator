@@ -1,0 +1,41 @@
+{
+  "spec": "openrouter:qwen/qwen3.8-flash",
+  "log": "../bench/llm/prompts/893712989801daabc2a3d351e597946b61312aeb54e14e3d28aaf7f63ad64618/llm/ocr-p5.json",
+  "text": "{\"regions\":[{\"n\":5,\"kind\":\"speech\",\"lines\":[\"...but?\"],\"align\":\"left\",\"caps\":false},{\"n\":6,\"kind\":\"speech\",\"lines\":[\"Where\",\"am I ?!?\"],\"align\":\"left\",\"caps\":false}],\"unboxed\":[\"quack?\"]}",
+  "json": {
+    "regions": [
+      {
+        "n": 5,
+        "kind": "speech",
+        "lines": [
+          "...but?"
+        ],
+        "align": "left",
+        "caps": false
+      },
+      {
+        "n": 6,
+        "kind": "speech",
+        "lines": [
+          "Where",
+          "am I ?!?"
+        ],
+        "align": "left",
+        "caps": false
+      }
+    ],
+    "unboxed": [
+      "quack?"
+    ]
+  },
+  "usage": {
+    "input_tokens": 1329,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 412,
+    "reasoning_tokens": 349
+  },
+  "costUsd": 0.00039299,
+  "ms": 9596,
+  "at": "2026-10-20T07:20:03.074552559Z"
+}

@@ -1,0 +1,161 @@
+{
+  "spec": "claude-cli:opus",
+  "log": "../bench/llm/judge/0c0bd5d58b4b8bd03a1229371408586ca54a0de357a882ded2c9843589bea963/llm/judge-tr-en.json",
+  "text": "{\"candidates\":{\"H\":{\"accuracy\":9,\"naturalness\":8,\"humour\":9,\"voice\":9,\"fit\":10,\"overall\":9,\"worst\":\"r12 'HOW COME YOU AIN'T STARVED?' is a little stagey, but it suits his voice\"},\"B\":{\"accuracy\":9,\"naturalness\":9,\"humour\":9,\"voice\":9,\"fit\":10,\"overall\":9,\"worst\":\"r4 'WHAT THE FUCK DO YOU WANT' is a bit harsher than 'gecit', but 'MAN' is used consistently as his tic\"},\"A\":{\"accuracy\":9,\"naturalness\":8,\"humour\":9,\"voice\":8,\"fit\":8,\"overall\":8,\"worst\":\"r5 is 88 characters against a budget of 87, and r4 drops the 'gecit' intensifier\"},\"I\":{\"accuracy\":8,\"naturalness\":8,\"humour\":9,\"voice\":8,\"fit\":10,\"overall\":8,\"worst\":\"r12 'BULLSHIT!' is flatter than 'don't bullshit'; r5 'ACHES AND ACHES' works well\"},\"M\":{\"accuracy\":9,\"naturalness\":8,\"humour\":9,\"voice\":8,\"fit\":7,\"overall\":8,\"worst\":\"r12 is about 60 characters against a budget of 58, and r8 slightly overflows its 54\"},\"D\":{\"accuracy\":7,\"naturalness\":8,\"humour\":7,\"voice\":8,\"fit\":10,\"overall\":7,\"worst\":\"r13 names the bags before the hit, which kills the delayed '...TWO BIG SHOPPING BAGS...' reveal\"},\"E\":{\"accuracy\":7,\"naturalness\":8,\"humour\":7,\"voice\":7,\"fit\":10,\"overall\":7,\"worst\":\"r13 gives away the bag reveal and drops 'direct hit'; r4 has no intensifier\"},\"L\":{\"accuracy\":8,\"naturalness\":8,\"humour\":8,\"voice\":8,\"fit\":7,\"overall\":7,\"worst\":\"r4 is about 61 characters against a budget of 59; r13 has no reveal pause\"},\"G\":{\"accuracy\":8,\"naturalness\":6,\"humour\":7,\"voice\":7,\"fit\":10,\"overall\":6,\"worst\":\"r12 'HOW DIDN'T YOU STARVE?' is unidiomatic, and r15 'FUCKING LIFE!' is awkward\"},\"N\":{\"accuracy\":6,\"naturalness\":8,\"humour\":7,\"voice\":9,\"fit\":10,\"overall\":6,\"worst\":\"r13 adds 'YOU HIT ME', blaming the man for the bag incident\"},\"C\":{\"accuracy\":7,\"naturalness\":6,\"humour\":7,\"voice\":7,\"fit\":6,\"overall\":6,\"worst\":\"r4 overflows at about 65 characters against 59, r5 'IT HURTS SINCE' is ungrammatical, and r8 says 'AROUND HERE' and overflows\"},\"K\":{\"accuracy\":5,\"naturalness\":7,\"humour\":5,\"voice\":8,\"fit\":10,\"overall\":5,\"worst\":\"r13 'YOU HIT ME... WITH TWO BIG BAGS OF GROCERIES' changes who hit whom and breaks the gag\"},\"J\":{\"accuracy\":7,\"naturalness\":7,\"humour\":6,\"voice\":5,\"fit\":5,\"overall\":5,\"worst\":\"r4 uses 'MAN' but r8 and r21 use 'DAMMIT', so the tic is inconsistent; r4, r8 and r13 overflow; r15 'SHITTY LIFE!' is weak\"},\"F\":{\"accuracy\":7,\"naturalness\":7,\"humour\":6,\"voice\":5,\"fit\":3,\"overall\":4,\"worst\":\"r15 'FUCKING HELL, WHAT A LIFE!' is 26 characters against a budget of 15; r6, r8, r12 and r13 also overflow, and r4 drops the 'bazme' tic\"}},\"ranking\":[\"H\",\"B\",\"A\",\"I\",\"M\",\"D\",\"E\",\"L\",\"G\",\"N\",\"C\",\"K\",\"J\",\"F\"],\"notes\":\"The best candidates (H, B, A) stay within every budget, keep the man's 'bazme' tic consistent, and keep r13's pause before '...TWO BIG SHOPPING BAGS...' so the reveal lands. They also keep the whiny repetition in r5. Mid-tier candidates spoil the r13 reveal or slightly overflow r4, r8 or r12. The weakest ones invent who hit whom in r13 (K, N), overflow several bubbles (F, J, C), or use the tic inconsistently (J).\"}",
+  "json": {
+    "candidates": {
+      "H": {
+        "accuracy": 9,
+        "naturalness": 8,
+        "humour": 9,
+        "voice": 9,
+        "fit": 10,
+        "overall": 9,
+        "worst": "r12 'HOW COME YOU AIN'T STARVED?' is a little stagey, but it suits his voice"
+      },
+      "B": {
+        "accuracy": 9,
+        "naturalness": 9,
+        "humour": 9,
+        "voice": 9,
+        "fit": 10,
+        "overall": 9,
+        "worst": "r4 'WHAT THE FUCK DO YOU WANT' is a bit harsher than 'gecit', but 'MAN' is used consistently as his tic"
+      },
+      "A": {
+        "accuracy": 9,
+        "naturalness": 8,
+        "humour": 9,
+        "voice": 8,
+        "fit": 8,
+        "overall": 8,
+        "worst": "r5 is 88 characters against a budget of 87, and r4 drops the 'gecit' intensifier"
+      },
+      "I": {
+        "accuracy": 8,
+        "naturalness": 8,
+        "humour": 9,
+        "voice": 8,
+        "fit": 10,
+        "overall": 8,
+        "worst": "r12 'BULLSHIT!' is flatter than 'don't bullshit'; r5 'ACHES AND ACHES' works well"
+      },
+      "M": {
+        "accuracy": 9,
+        "naturalness": 8,
+        "humour": 9,
+        "voice": 8,
+        "fit": 7,
+        "overall": 8,
+        "worst": "r12 is about 60 characters against a budget of 58, and r8 slightly overflows its 54"
+      },
+      "D": {
+        "accuracy": 7,
+        "naturalness": 8,
+        "humour": 7,
+        "voice": 8,
+        "fit": 10,
+        "overall": 7,
+        "worst": "r13 names the bags before the hit, which kills the delayed '...TWO BIG SHOPPING BAGS...' reveal"
+      },
+      "E": {
+        "accuracy": 7,
+        "naturalness": 8,
+        "humour": 7,
+        "voice": 7,
+        "fit": 10,
+        "overall": 7,
+        "worst": "r13 gives away the bag reveal and drops 'direct hit'; r4 has no intensifier"
+      },
+      "L": {
+        "accuracy": 8,
+        "naturalness": 8,
+        "humour": 8,
+        "voice": 8,
+        "fit": 7,
+        "overall": 7,
+        "worst": "r4 is about 61 characters against a budget of 59; r13 has no reveal pause"
+      },
+      "G": {
+        "accuracy": 8,
+        "naturalness": 6,
+        "humour": 7,
+        "voice": 7,
+        "fit": 10,
+        "overall": 6,
+        "worst": "r12 'HOW DIDN'T YOU STARVE?' is unidiomatic, and r15 'FUCKING LIFE!' is awkward"
+      },
+      "N": {
+        "accuracy": 6,
+        "naturalness": 8,
+        "humour": 7,
+        "voice": 9,
+        "fit": 10,
+        "overall": 6,
+        "worst": "r13 adds 'YOU HIT ME', blaming the man for the bag incident"
+      },
+      "C": {
+        "accuracy": 7,
+        "naturalness": 6,
+        "humour": 7,
+        "voice": 7,
+        "fit": 6,
+        "overall": 6,
+        "worst": "r4 overflows at about 65 characters against 59, r5 'IT HURTS SINCE' is ungrammatical, and r8 says 'AROUND HERE' and overflows"
+      },
+      "K": {
+        "accuracy": 5,
+        "naturalness": 7,
+        "humour": 5,
+        "voice": 8,
+        "fit": 10,
+        "overall": 5,
+        "worst": "r13 'YOU HIT ME... WITH TWO BIG BAGS OF GROCERIES' changes who hit whom and breaks the gag"
+      },
+      "J": {
+        "accuracy": 7,
+        "naturalness": 7,
+        "humour": 6,
+        "voice": 5,
+        "fit": 5,
+        "overall": 5,
+        "worst": "r4 uses 'MAN' but r8 and r21 use 'DAMMIT', so the tic is inconsistent; r4, r8 and r13 overflow; r15 'SHITTY LIFE!' is weak"
+      },
+      "F": {
+        "accuracy": 7,
+        "naturalness": 7,
+        "humour": 6,
+        "voice": 5,
+        "fit": 3,
+        "overall": 4,
+        "worst": "r15 'FUCKING HELL, WHAT A LIFE!' is 26 characters against a budget of 15; r6, r8, r12 and r13 also overflow, and r4 drops the 'bazme' tic"
+      }
+    },
+    "ranking": [
+      "H",
+      "B",
+      "A",
+      "I",
+      "M",
+      "D",
+      "E",
+      "L",
+      "G",
+      "N",
+      "C",
+      "K",
+      "J",
+      "F"
+    ],
+    "notes": "The best candidates (H, B, A) stay within every budget, keep the man's 'bazme' tic consistent, and keep r13's pause before '...TWO BIG SHOPPING BAGS...' so the reveal lands. They also keep the whiny repetition in r5. Mid-tier candidates spoil the r13 reveal or slightly overflow r4, r8 or r12. The weakest ones invent who hit whom in r13 (K, N), overflow several bubbles (F, J, C), or use the tic inconsistently (J)."
+  },
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 16651,
+    "cache_read_input_tokens": 14754,
+    "output_tokens": 6238
+  },
+  "costUsd": 0.2609348,
+  "ms": 52306,
+  "at": "2026-10-20T07:32:10.58702356Z"
+}

@@ -1,0 +1,40 @@
+{
+  "spec": "openrouter:google/gemini-3.8-flash?effort=low",
+  "log": "../bench/llm/prompts/893712989801daabc2a3d351e597946b61312aeb54e14e3d28aaf7f63ad64618/llm/ocr-p5.json",
+  "text": "{\"regions\":[{\"n\":5,\"kind\":\"speech\",\"lines\":[\"...but?\"],\"align\":\"center\",\"caps\":false},{\"n\":6,\"kind\":\"speech\",\"lines\":[\"Where\",\"am I ?!?\"],\"align\":\"center\",\"caps\":false}],\"unboxed\":[\"quack?\"]}",
+  "json": {
+    "regions": [
+      {
+        "n": 5,
+        "kind": "speech",
+        "lines": [
+          "...but?"
+        ],
+        "align": "center",
+        "caps": false
+      },
+      {
+        "n": 6,
+        "kind": "speech",
+        "lines": [
+          "Where",
+          "am I ?!?"
+        ],
+        "align": "center",
+        "caps": false
+      }
+    ],
+    "unboxed": [
+      "quack?"
+    ]
+  },
+  "usage": {
+    "input_tokens": 4035,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 59
+  },
+  "costUsd": 0.0032475,
+  "ms": 3116,
+  "at": "2026-10-20T07:19:36.23350739Z"
+}

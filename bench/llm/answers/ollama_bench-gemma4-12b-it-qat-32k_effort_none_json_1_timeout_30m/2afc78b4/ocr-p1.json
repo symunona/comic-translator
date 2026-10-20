@@ -1,0 +1,38 @@
+{
+  "spec": "ollama:bench-gemma4-12b-it-qat-32k?effort=none\u0026json=1\u0026timeout=30m",
+  "log": "../bench/llm/prompts/2afc78b45293acd677ffcba91f53fea50838d406d2dd965846e83408657e58c7/llm/ocr-p1.json",
+  "text": "{\"regions\":[{\"n\":1,\"kind\":\"speech\",\"lines\":[\"NA! E!\",\"DEJÓ, HOGY\\nELJÖTTÉ, E!\"],\"align\":\"center\",\"caps\":true},{\"n\":2,\"kind\":\"sign\",\"lines\":[\"HÍREK\"],\"align\":\"center\",\"caps\":true}],\"unboxed\":[]}",
+  "json": {
+    "regions": [
+      {
+        "n": 1,
+        "kind": "speech",
+        "lines": [
+          "NA! E!",
+          "DEJÓ, HOGY\nELJÖTTÉ, E!"
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 2,
+        "kind": "sign",
+        "lines": [
+          "HÍREK"
+        ],
+        "align": "center",
+        "caps": true
+      }
+    ],
+    "unboxed": []
+  },
+  "usage": {
+    "input_tokens": 1181,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 73
+  },
+  "costUsd": 0,
+  "ms": 58104,
+  "at": "2026-10-20T07:22:24.645309875Z"
+}

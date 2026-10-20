@@ -1,0 +1,422 @@
+[
+ {
+  "step": "draft",
+  "backend": "claude-cli:haiku",
+  "usdPerStrip": 0.004167883333333334,
+  "sPerStrip": null,
+  "outTokens": 5448.833333333333,
+  "runs": 6,
+  "errors": 0,
+  "judges": {
+   "openrouter:google/gemini-3.8-flash": {
+    "mean": 5.5,
+    "n": 6
+   },
+   "claude-cli:opus": {
+    "mean": 6.166666666666667,
+    "n": 6
+   }
+  },
+  "score": 5.833333333333334
+ },
+ {
+  "step": "draft",
+  "backend": "claude-cli:opus",
+  "usdPerStrip": 0.1063936,
+  "sPerStrip": null,
+  "outTokens": 2515.8333333333335,
+  "runs": 6,
+  "errors": 0,
+  "judges": {
+   "openrouter:google/gemini-3.8-flash": {
+    "mean": 7,
+    "n": 6
+   },
+   "claude-cli:opus": {
+    "mean": 7.833333333333333,
+    "n": 6
+   }
+  },
+  "score": 7.416666666666666
+ },
+ {
+  "step": "draft",
+  "backend": "claude-cli:sonnet",
+  "usdPerStrip": 0.03910655714285714,
+  "sPerStrip": null,
+  "outTokens": 1248.142857142857,
+  "runs": 7,
+  "errors": 0,
+  "judges": {
+   "openrouter:google/gemini-3.8-flash": {
+    "mean": 6.333333333333333,
+    "n": 6
+   },
+   "claude-cli:opus": {
+    "mean": 5.833333333333333,
+    "n": 6
+   }
+  },
+  "score": 6.083333333333333
+ },
+ {
+  "step": "draft",
+  "backend": "openrouter:deepseek/deepseek-v4.1-flash",
+  "usdPerStrip": 0.005193929,
+  "sPerStrip": null,
+  "outTokens": 6977.857142857143,
+  "runs": 7,
+  "errors": 0,
+  "judges": {
+   "openrouter:google/gemini-3.8-flash": {
+    "mean": 5.5,
+    "n": 6
+   },
+   "claude-cli:opus": {
+    "mean": 6.833333333333333,
+    "n": 6
+   }
+  },
+  "score": 6.166666666666666
+ },
+ {
+  "step": "draft",
+  "backend": "openrouter:google/gemini-3.8-flash",
+  "usdPerStrip": 0.021605892857142858,
+  "sPerStrip": null,
+  "outTokens": 4267.571428571428,
+  "runs": 7,
+  "errors": 0,
+  "judges": {
+   "openrouter:google/gemini-3.8-flash": {
+    "mean": 7.166666666666667,
+    "n": 6
+   },
+   "claude-cli:opus": {
+    "mean": 6.833333333333333,
+    "n": 6
+   }
+  },
+  "score": 7.0
+ },
+ {
+  "step": "draft",
+  "backend": "openrouter:openai/gpt-5.6-luna",
+  "usdPerStrip": 0.003427307142857143,
+  "sPerStrip": null,
+  "outTokens": 2085.8571428571427,
+  "runs": 7,
+  "errors": 0,
+  "judges": {
+   "openrouter:google/gemini-3.8-flash": {
+    "mean": 6.666666666666667,
+    "n": 6
+   },
+   "claude-cli:opus": {
+    "mean": 7.333333333333333,
+    "n": 6
+   }
+  },
+  "score": 7.0
+ },
+ {
+  "step": "draft",
+  "backend": "openrouter:qwen/qwen3.7-plus",
+  "usdPerStrip": 0.0021957333333333332,
+  "sPerStrip": null,
+  "outTokens": 1671.3333333333333,
+  "runs": 9,
+  "errors": 0,
+  "judges": {
+   "openrouter:google/gemini-3.8-flash": {
+    "mean": 5.5,
+    "n": 4
+   },
+   "claude-cli:opus": {
+    "mean": 5.25,
+    "n": 4
+   }
+  },
+  "score": 5.375
+ },
+ {
+  "step": "scene",
+  "backend": "claude-cli:haiku",
+  "usdPerStrip": 0.00928587,
+  "sPerStrip": 77.756,
+  "outTokens": 15816.333333333334,
+  "runs": 3,
+  "errors": 0,
+  "judges": {
+   "openrouter:google/gemini-3.8-flash": {
+    "mean": 3.6666666666666665,
+    "n": 3
+   },
+   "claude-cli:opus": {
+    "mean": 1.6666666666666667,
+    "n": 3
+   }
+  },
+  "score": 2.6666666666666665
+ },
+ {
+  "step": "scene",
+  "backend": "claude-cli:opus",
+  "usdPerStrip": 0.14990833333333334,
+  "sPerStrip": 52.23266666666667,
+  "outTokens": 4811.333333333333,
+  "runs": 3,
+  "errors": 0,
+  "judges": {
+   "openrouter:google/gemini-3.8-flash": {
+    "mean": 10,
+    "n": 3
+   },
+   "claude-cli:opus": {
+    "mean": 10,
+    "n": 3
+   }
+  },
+  "score": 10
+ },
+ {
+  "step": "scene",
+  "backend": "claude-cli:sonnet",
+  "usdPerStrip": 0.03714513333333334,
+  "sPerStrip": 32.41533333333333,
+  "outTokens": 3592,
+  "runs": 3,
+  "errors": 0,
+  "judges": {
+   "openrouter:google/gemini-3.8-flash": {
+    "mean": 7.166666666666667,
+    "n": 3
+   },
+   "claude-cli:opus": {
+    "mean": 4.666666666666667,
+    "n": 3
+   }
+  },
+  "score": 5.916666666666667
+ },
+ {
+  "step": "scene",
+  "backend": "openrouter:deepseek/deepseek-v4.1-flash",
+  "usdPerStrip": 0.024452875,
+  "sPerStrip": 99.78766666666667,
+  "outTokens": 23118.666666666668,
+  "runs": 3,
+  "errors": 0,
+  "judges": {
+   "openrouter:google/gemini-3.8-flash": {
+    "mean": 6.166666666666667,
+    "n": 3
+   },
+   "claude-cli:opus": {
+    "mean": 4.666666666666667,
+    "n": 3
+   }
+  },
+  "score": 5.416666666666667
+ },
+ {
+  "step": "scene",
+  "backend": "openrouter:google/gemini-3.8-flash",
+  "usdPerStrip": 0.01678375,
+  "sPerStrip": 24.00166666666667,
+  "outTokens": 2737.6666666666665,
+  "runs": 3,
+  "errors": 0,
+  "judges": {
+   "openrouter:google/gemini-3.8-flash": {
+    "mean": 9.933333333333334,
+    "n": 3
+   },
+   "claude-cli:opus": {
+    "mean": 8,
+    "n": 3
+   }
+  },
+  "score": 8.966666666666667
+ },
+ {
+  "step": "scene",
+  "backend": "openrouter:openai/gpt-5.6-luna",
+  "usdPerStrip": 0.004916333333333333,
+  "sPerStrip": 42.24033333333334,
+  "outTokens": 3397,
+  "runs": 3,
+  "errors": 0,
+  "judges": {
+   "openrouter:google/gemini-3.8-flash": {
+    "mean": 3,
+    "n": 3
+   },
+   "claude-cli:opus": {
+    "mean": 2.3333333333333335,
+    "n": 3
+   }
+  },
+  "score": 2.666666666666667
+ },
+ {
+  "step": "scene",
+  "backend": "openrouter:qwen/qwen3.7-plus",
+  "usdPerStrip": 0.00778752,
+  "sPerStrip": 85.626,
+  "outTokens": 5177,
+  "runs": 1,
+  "errors": 2,
+  "judges": {
+   "openrouter:google/gemini-3.8-flash": {
+    "mean": 3,
+    "n": 1
+   },
+   "claude-cli:opus": {
+    "mean": 2,
+    "n": 1
+   }
+  },
+  "score": 2.5
+ },
+ {
+  "step": "translate+review",
+  "backend": "claude-cli:haiku",
+  "usdPerStrip": 0.009647105,
+  "sPerStrip": 58.947833333333335,
+  "outTokens": 13201,
+  "runs": 6,
+  "errors": 0,
+  "judges": {
+   "openrouter:google/gemini-3.8-flash": {
+    "mean": 5.166666666666667,
+    "n": 6
+   },
+   "claude-cli:opus": {
+    "mean": 5.833333333333333,
+    "n": 6
+   }
+  },
+  "score": 5.5
+ },
+ {
+  "step": "translate+review",
+  "backend": "claude-cli:opus",
+  "usdPerStrip": 0.2486076,
+  "sPerStrip": 67.99183333333333,
+  "outTokens": 6491.833333333333,
+  "runs": 6,
+  "errors": 0,
+  "judges": {
+   "openrouter:google/gemini-3.8-flash": {
+    "mean": 7,
+    "n": 6
+   },
+   "claude-cli:opus": {
+    "mean": 8.166666666666666,
+    "n": 6
+   }
+  },
+  "score": 7.583333333333333
+ },
+ {
+  "step": "translate+review",
+  "backend": "claude-cli:sonnet",
+  "usdPerStrip": 0.09223287142857142,
+  "sPerStrip": 30.370285714285714,
+  "outTokens": 3492.714285714286,
+  "runs": 7,
+  "errors": 0,
+  "judges": {
+   "openrouter:google/gemini-3.8-flash": {
+    "mean": 6.666666666666667,
+    "n": 6
+   },
+   "claude-cli:opus": {
+    "mean": 6.833333333333333,
+    "n": 6
+   }
+  },
+  "score": 6.75
+ },
+ {
+  "step": "translate+review",
+  "backend": "openrouter:deepseek/deepseek-v4.1-flash",
+  "usdPerStrip": 0.01763012166666667,
+  "sPerStrip": 140.19833333333335,
+  "outTokens": 21342.166666666668,
+  "runs": 6,
+  "errors": 0,
+  "judges": {
+   "openrouter:google/gemini-3.8-flash": {
+    "mean": 6.5,
+    "n": 6
+   },
+   "claude-cli:opus": {
+    "mean": 7.5,
+    "n": 6
+   }
+  },
+  "score": 7.0
+ },
+ {
+  "step": "translate+review",
+  "backend": "openrouter:google/gemini-3.8-flash",
+  "usdPerStrip": 0.055080642857142856,
+  "sPerStrip": 84.29385714285715,
+  "outTokens": 11622.142857142857,
+  "runs": 7,
+  "errors": 0,
+  "judges": {
+   "openrouter:google/gemini-3.8-flash": {
+    "mean": 8,
+    "n": 6
+   },
+   "claude-cli:opus": {
+    "mean": 7.666666666666667,
+    "n": 6
+   }
+  },
+  "score": 7.833333333333334
+ },
+ {
+  "step": "translate+review",
+  "backend": "openrouter:openai/gpt-5.6-luna",
+  "usdPerStrip": 0.0077947357142857145,
+  "sPerStrip": 57.595142857142854,
+  "outTokens": 4867.142857142857,
+  "runs": 7,
+  "errors": 0,
+  "judges": {
+   "openrouter:google/gemini-3.8-flash": {
+    "mean": 6.666666666666667,
+    "n": 6
+   },
+   "claude-cli:opus": {
+    "mean": 7,
+    "n": 6
+   }
+  },
+  "score": 6.833333333333334
+ },
+ {
+  "step": "translate+review",
+  "backend": "openrouter:qwen/qwen3.7-plus",
+  "usdPerStrip": 0.008993728,
+  "sPerStrip": 88.46239999999999,
+  "outTokens": 5314.6,
+  "runs": 5,
+  "errors": 0,
+  "judges": {
+   "openrouter:google/gemini-3.8-flash": {
+    "mean": 5.75,
+    "n": 4
+   },
+   "claude-cli:opus": {
+    "mean": 5.75,
+    "n": 4
+   }
+  },
+  "score": 5.75
+ }
+]

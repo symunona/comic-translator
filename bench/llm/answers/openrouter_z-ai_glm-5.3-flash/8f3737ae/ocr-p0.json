@@ -1,0 +1,30 @@
+{
+  "spec": "openrouter:z-ai/glm-5.3-flash",
+  "log": "../bench/llm/prompts/8f3737ae2df51cb23cc27c3f81a10a426a35fc918ea31cf1eff85be4fc0df452/llm/ocr-p0.json",
+  "text": "{\"regions\":[{\"n\":0,\"kind\":\"caption\",\"lines\":[\"How do I\",\"exit vim?\"],\"align\":\"left\",\"caps\":false}],\"unboxed\":[]}",
+  "json": {
+    "regions": [
+      {
+        "n": 0,
+        "kind": "caption",
+        "lines": [
+          "How do I",
+          "exit vim?"
+        ],
+        "align": "left",
+        "caps": false
+      }
+    ],
+    "unboxed": []
+  },
+  "usage": {
+    "input_tokens": 936,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 216,
+    "reasoning_tokens": 166
+  },
+  "costUsd": 0.0002484,
+  "ms": 1948,
+  "at": "2026-10-20T07:19:42.338000132Z"
+}

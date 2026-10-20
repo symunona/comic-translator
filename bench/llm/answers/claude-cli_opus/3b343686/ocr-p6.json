@@ -1,0 +1,30 @@
+{
+  "spec": "claude-cli:opus",
+  "log": "../bench/llm/prompts/3b3436860d742571c5a540084c396d020cb19fae9191994d00f2338e06c41d2b/llm/ocr-p6.json",
+  "text": "{\"regions\":[{\"n\":17,\"kind\":\"speech\",\"lines\":[\"... AKKOR BÁRHOVA NYÚLOK,\",\"OTT LEGYEN, BAZMEG.\",\"NEM EGY, ÖT!\"],\"align\":\"center\",\"caps\":true}],\"unboxed\":[]}",
+  "json": {
+    "regions": [
+      {
+        "n": 17,
+        "kind": "speech",
+        "lines": [
+          "... AKKOR BÁRHOVA NYÚLOK,",
+          "OTT LEGYEN, BAZMEG.",
+          "NEM EGY, ÖT!"
+        ],
+        "align": "center",
+        "caps": true
+      }
+    ],
+    "unboxed": []
+  },
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 3008,
+    "cache_read_input_tokens": 4527,
+    "output_tokens": 415
+  },
+  "costUsd": 0.0332854,
+  "ms": 9167,
+  "at": "2026-10-20T07:08:54.36901051Z"
+}

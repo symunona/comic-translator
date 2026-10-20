@@ -1,0 +1,50 @@
+{
+  "spec": "claude-cli:opus",
+  "log": "../bench/llm/prompts/6cbd56cdd933343ad87de8c3e3dd772f7f771dd3f4786507d9786c71aad26a05/llm/ocr-p0.json",
+  "text": "{\"regions\":[{\"n\":0,\"kind\":\"speech\",\"lines\":[\"NAGYIKÁM, TIBOR PAPÁNAK\",\"VOLT A LEPKEGYŰJTŐ FELSZERELÉSÉHEZ\",\"EGY VIASZOSVÁSZON\",\"TARISZNYÁJA...\"],\"align\":\"left\",\"caps\":true},{\"n\":1,\"kind\":\"speech\",\"lines\":[\"OTT KELL LENNIE\",\"A SUFNIBAN!\"],\"align\":\"left\",\"caps\":true},{\"n\":2,\"kind\":\"speech\",\"lines\":[\"Ó JAJ...\"],\"align\":\"center\",\"caps\":true}],\"unboxed\":[]}",
+  "json": {
+    "regions": [
+      {
+        "n": 0,
+        "kind": "speech",
+        "lines": [
+          "NAGYIKÁM, TIBOR PAPÁNAK",
+          "VOLT A LEPKEGYŰJTŐ FELSZERELÉSÉHEZ",
+          "EGY VIASZOSVÁSZON",
+          "TARISZNYÁJA..."
+        ],
+        "align": "left",
+        "caps": true
+      },
+      {
+        "n": 1,
+        "kind": "speech",
+        "lines": [
+          "OTT KELL LENNIE",
+          "A SUFNIBAN!"
+        ],
+        "align": "left",
+        "caps": true
+      },
+      {
+        "n": 2,
+        "kind": "speech",
+        "lines": [
+          "Ó JAJ..."
+        ],
+        "align": "center",
+        "caps": true
+      }
+    ],
+    "unboxed": []
+  },
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 3772,
+    "cache_read_input_tokens": 4767,
+    "output_tokens": 855
+  },
+  "costUsd": 0.0482454,
+  "ms": 11346,
+  "at": "2026-10-20T07:09:01.827335948Z"
+}

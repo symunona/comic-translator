@@ -1,0 +1,32 @@
+{
+  "spec": "openrouter:qwen/qwen3.8-flash",
+  "log": "../bench/llm/prompts/0c0bd5d58b4b8bd03a1229371408586ca54a0de357a882ded2c9843589bea963/llm/ocr-p0.json",
+  "text": "{\"regions\":[{\"n\":0,\"kind\":\"sign\",\"lines\":[\"ÉTTŐLPAI KITELEZÉS • 06\"],\"align\":\"left\",\"caps\":true}],\"unboxed\":[\"HLOTT!\",\"RITY!\"]}",
+  "json": {
+    "regions": [
+      {
+        "n": 0,
+        "kind": "sign",
+        "lines": [
+          "ÉTTŐLPAI KITELEZÉS • 06"
+        ],
+        "align": "left",
+        "caps": true
+      }
+    ],
+    "unboxed": [
+      "HLOTT!",
+      "RITY!"
+    ]
+  },
+  "usage": {
+    "input_tokens": 1351,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 545,
+    "reasoning_tokens": 491
+  },
+  "costUsd": 0.0004588,
+  "ms": 7939,
+  "at": "2026-10-20T07:07:37.788125989Z"
+}

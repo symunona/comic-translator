@@ -1,0 +1,77 @@
+{
+  "spec": "claude-cli:sonnet",
+  "log": "../bench/llm/prompts/2afc78b45293acd677ffcba91f53fea50838d406d2dd965846e83408657e58c7/llm/ocr-p8.json",
+  "text": "{\"regions\":[{\"n\":39,\"kind\":\"none\",\"lines\":[],\"align\":\"center\",\"caps\":true},{\"n\":40,\"kind\":\"sign\",\"lines\":[\"CAVELIAR\"],\"align\":\"center\",\"caps\":true},{\"n\":41,\"kind\":\"speech\",\"lines\":[\"TIÉD VOLT AZ\",\"A SMART?\"],\"align\":\"center\",\"caps\":true},{\"n\":42,\"kind\":\"sign\",\"lines\":[\"FASZIBÁCSI\"],\"align\":\"center\",\"caps\":true},{\"n\":43,\"kind\":\"none\",\"lines\":[],\"align\":\"center\",\"caps\":true},{\"n\":44,\"kind\":\"none\",\"lines\":[],\"align\":\"center\",\"caps\":true},{\"n\":45,\"kind\":\"sign\",\"lines\":[\"FASZI-1\"],\"align\":\"center\",\"caps\":true}],\"unboxed\":[]}",
+  "json": {
+    "regions": [
+      {
+        "n": 39,
+        "kind": "none",
+        "lines": [],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 40,
+        "kind": "sign",
+        "lines": [
+          "CAVELIAR"
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 41,
+        "kind": "speech",
+        "lines": [
+          "TIÉD VOLT AZ",
+          "A SMART?"
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 42,
+        "kind": "sign",
+        "lines": [
+          "FASZIBÁCSI"
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 43,
+        "kind": "none",
+        "lines": [],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 44,
+        "kind": "none",
+        "lines": [],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 45,
+        "kind": "sign",
+        "lines": [
+          "FASZI-1"
+        ],
+        "align": "center",
+        "caps": true
+      }
+    ],
+    "unboxed": []
+  },
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 5168,
+    "cache_read_input_tokens": 5173,
+    "output_tokens": 1214
+  },
+  "costUsd": 0.0333373,
+  "ms": 11067,
+  "at": "2026-10-20T07:08:43.841500038Z"
+}

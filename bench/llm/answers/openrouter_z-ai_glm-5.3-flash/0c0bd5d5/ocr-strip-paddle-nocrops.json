@@ -1,0 +1,16 @@
+{
+  "spec": "openrouter:z-ai/glm-5.3-flash",
+  "log": "../bench/llm/prompts/0c0bd5d58b4b8bd03a1229371408586ca54a0de357a882ded2c9843589bea963/llm/ocr-strip-paddle-nocrops.json",
+  "text": "",
+  "usage": {
+    "input_tokens": 4707,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 131072,
+    "reasoning_tokens": 99813
+  },
+  "costUsd": 0.06624205,
+  "ms": 543106,
+  "error": "hit max tokens",
+  "at": "2026-10-20T07:16:06.775407093Z"
+}

@@ -20,6 +20,7 @@ type Meta struct {
 	Width     int       `json:"width"`
 	Height    int       `json:"height"`
 	Mime      string    `json:"mime"`
+	SrcLang   string    `json:"srcLang,omitempty"`
 }
 
 // Store persists strips. JSON documents go through Load/Save so they can move

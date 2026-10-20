@@ -35,3 +35,4 @@ deploy/*.local
 .idea/
 .vscode/
 *.swp
+/data-e2e/

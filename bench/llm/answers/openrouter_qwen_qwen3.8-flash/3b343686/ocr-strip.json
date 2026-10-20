@@ -1,0 +1,210 @@
+{
+  "spec": "openrouter:qwen/qwen3.8-flash",
+  "log": "../bench/llm/prompts/3b3436860d742571c5a540084c396d020cb19fae9191994d00f2338e06c41d2b/llm/ocr-strip.json",
+  "text": "{\n  \"regions\": [\n    {\"n\": 0, \"kind\": \"thought\", \"lines\": [\"HÁHHA! JÓESTÉT!\", \"MEGVÁRJUK AZ ELSŐ RANDOMTIBORT,\", \"ÉS FELTESSZÜK NEKI\", \"A KÉRDÉST!\"], \"align\": \"left\", \"caps\": true},\n    {\"n\": 1, \"kind\": \"none\", \"lines\": [], \"align\": \"left\", \"caps\": true},\n    {\"n\": 2, \"kind\": \"speech\", \"lines\": [\"JÓNAPOТ URAM!\", \"MI LENNE AZ ELSŐ DOLOG, AMIT CSINÁLNA,\", \"HA MEGNYERNÉ A LOTTÓ ÖTÖST?\"], \"align\": \"left\", \"caps\": true},\n    {\"n\": 3, \"kind\": \"speech\", \"lines\": [\"SPORTKOCSI?\"], \"align\": \"left\", \"caps\": true},\n    {\"n\": 4, \"kind\": \"speech\", \"lines\": [\"PINÁK?\"], \"align\": \"left\", \"caps\": true},\n    {\"n\": 5, \"kind\": \"speech\", \"lines\": [\"A LOTTÓ ÖTÖST?\", \"HM... LÁSSUK CSAK...\", \"HEHE... IGEN!\"], \"align\": \"left\", \"caps\": true},\n    {\"n\": 6, \"kind\": \"speech\", \"lines\": [\"YACHT?\"], \"align\": \"left\", \"caps\": true},\n    {\"n\": 7, \"kind\": \"speech\", \"lines\": [\"UTAZGATÁS?\"], \"align\": \"left\", \"caps\": true},\n    {\"n\": 8, \"kind\": \"speech\", \"lines\": [\"PINÁK?\"], \"align\": \"left\", \"caps\": true},\n    {\"n\": 9, \"kind\": \"none\", \"lines\": [], \"align\": \"left\", \"caps\": true},\n    {\"n\": 10, \"kind\": \"speech\", \"lines\": [\"VILLA?\"], \"align\": \"left\", \"caps\": true},\n    {\"n\": 11, \"kind\": \"speech\", \"lines\": [\"PINÁK?\"], \"align\": \"left\", \"caps\": true},\n    {\"n\": 12, \"kind\": \"speech\", \"lines\": [\"VENNÉK EGY KURVANAGY\", \"DOBOZT,\", \"TELIS-TELE TIZES\", \"VILLÁSKULCCSAL! AGYIG\", \"RAKVA,\", \"TÖBB EZER\", \"VÁGOD?\"], \"align\": \"left\", \"caps\": true},\n    {\"n\": 13, \"kind\": \"speech\", \"lines\": [\"VENNÉK EGY KURVANAGY\", \"DOBOZT,\", \"TELIS-TELE TIZES\", \"VILLÁSKULCCSAL! AGYIG\", \"RAKVA,\", \"TÖBB EZER\", \"VÁGOD?\"], \"align\": \"left\", \"caps\": true},\n    {\"n\": 14, \"kind\": \"speech\", \"lines\": [\"VENNÉK EGY KURVANAGY\", \"DOBOZT,\", \"TELIS-TELE TIZES\", \"VILLÁSKULCCSAL! AGYIG\", \"RAKVA,\", \"TÖBB EZER\", \"VÁGOD?\"], \"align\": \"left\", \"caps\": true},\n    {\"n\": 15, \"kind\": \"speech\", \"lines\": [\"ÉS MINDENHOL, A HOL A NAP,\", \"MÉGFORULOK, SZÓRNÁM SZÉJEL, MINT\", \"A PITYPANG A SZÁRJAIT, VÁGOD?\", \"MINDENFÉLÉ!!!\"], \"align\": \"left\", \"caps\": true},\n    {\"n\": 16, \"kind\": \"sfx\", \"lines\": [\"HOGYAMIKOR OTT EGY HATOS\", \"CSAVAR,\", \"BAZMEG,\"], \"align\": \"left\", \"caps\": true},\n    {\"n\": 17, \"kind\": \"speech\", \"lines\": [\"... AKKOR BÁRHOVA NYÚLOK,\", \"OTT LEGYEN, BAZMEG.\", \"NEM EGY, ÖT!\"], \"align\": \"left\", \"caps\": true}\n  ],\n  \"unboxed\": []\n}",
+  "json": {
+    "regions": [
+      {
+        "n": 0,
+        "kind": "thought",
+        "lines": [
+          "HÁHHA! JÓESTÉT!",
+          "MEGVÁRJUK AZ ELSŐ RANDOMTIBORT,",
+          "ÉS FELTESSZÜK NEKI",
+          "A KÉRDÉST!"
+        ],
+        "align": "left",
+        "caps": true
+      },
+      {
+        "n": 1,
+        "kind": "none",
+        "lines": [],
+        "align": "left",
+        "caps": true
+      },
+      {
+        "n": 2,
+        "kind": "speech",
+        "lines": [
+          "JÓNAPOТ URAM!",
+          "MI LENNE AZ ELSŐ DOLOG, AMIT CSINÁLNA,",
+          "HA MEGNYERNÉ A LOTTÓ ÖTÖST?"
+        ],
+        "align": "left",
+        "caps": true
+      },
+      {
+        "n": 3,
+        "kind": "speech",
+        "lines": [
+          "SPORTKOCSI?"
+        ],
+        "align": "left",
+        "caps": true
+      },
+      {
+        "n": 4,
+        "kind": "speech",
+        "lines": [
+          "PINÁK?"
+        ],
+        "align": "left",
+        "caps": true
+      },
+      {
+        "n": 5,
+        "kind": "speech",
+        "lines": [
+          "A LOTTÓ ÖTÖST?",
+          "HM... LÁSSUK CSAK...",
+          "HEHE... IGEN!"
+        ],
+        "align": "left",
+        "caps": true
+      },
+      {
+        "n": 6,
+        "kind": "speech",
+        "lines": [
+          "YACHT?"
+        ],
+        "align": "left",
+        "caps": true
+      },
+      {
+        "n": 7,
+        "kind": "speech",
+        "lines": [
+          "UTAZGATÁS?"
+        ],
+        "align": "left",
+        "caps": true
+      },
+      {
+        "n": 8,
+        "kind": "speech",
+        "lines": [
+          "PINÁK?"
+        ],
+        "align": "left",
+        "caps": true
+      },
+      {
+        "n": 9,
+        "kind": "none",
+        "lines": [],
+        "align": "left",
+        "caps": true
+      },
+      {
+        "n": 10,
+        "kind": "speech",
+        "lines": [
+          "VILLA?"
+        ],
+        "align": "left",
+        "caps": true
+      },
+      {
+        "n": 11,
+        "kind": "speech",
+        "lines": [
+          "PINÁK?"
+        ],
+        "align": "left",
+        "caps": true
+      },
+      {
+        "n": 12,
+        "kind": "speech",
+        "lines": [
+          "VENNÉK EGY KURVANAGY",
+          "DOBOZT,",
+          "TELIS-TELE TIZES",
+          "VILLÁSKULCCSAL! AGYIG",
+          "RAKVA,",
+          "TÖBB EZER",
+          "VÁGOD?"
+        ],
+        "align": "left",
+        "caps": true
+      },
+      {
+        "n": 13,
+        "kind": "speech",
+        "lines": [
+          "VENNÉK EGY KURVANAGY",
+          "DOBOZT,",
+          "TELIS-TELE TIZES",
+          "VILLÁSKULCCSAL! AGYIG",
+          "RAKVA,",
+          "TÖBB EZER",
+          "VÁGOD?"
+        ],
+        "align": "left",
+        "caps": true
+      },
+      {
+        "n": 14,
+        "kind": "speech",
+        "lines": [
+          "VENNÉK EGY KURVANAGY",
+          "DOBOZT,",
+          "TELIS-TELE TIZES",
+          "VILLÁSKULCCSAL! AGYIG",
+          "RAKVA,",
+          "TÖBB EZER",
+          "VÁGOD?"
+        ],
+        "align": "left",
+        "caps": true
+      },
+      {
+        "n": 15,
+        "kind": "speech",
+        "lines": [
+          "ÉS MINDENHOL, A HOL A NAP,",
+          "MÉGFORULOK, SZÓRNÁM SZÉJEL, MINT",
+          "A PITYPANG A SZÁRJAIT, VÁGOD?",
+          "MINDENFÉLÉ!!!"
+        ],
+        "align": "left",
+        "caps": true
+      },
+      {
+        "n": 16,
+        "kind": "sfx",
+        "lines": [
+          "HOGYAMIKOR OTT EGY HATOS",
+          "CSAVAR,",
+          "BAZMEG,"
+        ],
+        "align": "left",
+        "caps": true
+      },
+      {
+        "n": 17,
+        "kind": "speech",
+        "lines": [
+          "... AKKOR BÁRHOVA NYÚLOK,",
+          "OTT LEGYEN, BAZMEG.",
+          "NEM EGY, ÖT!"
+        ],
+        "align": "left",
+        "caps": true
+      }
+    ],
+    "unboxed": []
+  },
+  "usage": {
+    "input_tokens": 4159,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 25515,
+    "reasoning_tokens": 24511
+  },
+  "costUsd": 0.0126159,
+  "ms": 351229,
+  "at": "2026-10-20T07:14:51.905657182Z"
+}

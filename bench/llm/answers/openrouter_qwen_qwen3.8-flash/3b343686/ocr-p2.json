@@ -1,0 +1,101 @@
+{
+  "spec": "openrouter:qwen/qwen3.8-flash",
+  "log": "../bench/llm/prompts/3b3436860d742571c5a540084c396d020cb19fae9191994d00f2338e06c41d2b/llm/ocr-p2.json",
+  "text": "{\n  \"regions\": [\n    {\n      \"n\": 3,\n      \"kind\": \"speech\",\n      \"lines\": [\n        \"SPORTKOCSI?\"\n      ],\n      \"align\": \"left\",\n      \"caps\": true\n    },\n    {\n      \"n\": 4,\n      \"kind\": \"speech\",\n      \"lines\": [\n        \"PINÁK?\"\n      ],\n      \"align\": \"left\",\n      \"caps\": true\n    },\n    {\n      \"n\": 5,\n      \"kind\": \"thought\",\n      \"lines\": [\n        \"A LOTTÓ ÖTÖST?\",\n        \"HM... LÁSSUK CSAK...\",\n        \"HEHE... IGEN!\"\n      ],\n      \"align\": \"left\",\n      \"caps\": true\n    },\n    {\n      \"n\": 6,\n      \"kind\": \"speech\",\n      \"lines\": [\n        \"YACHT?\"\n      ],\n      \"align\": \"left\",\n      \"caps\": true\n    },\n    {\n      \"n\": 7,\n      \"kind\": \"speech\",\n      \"lines\": [\n        \"UTAZGATÁS?\"\n      ],\n      \"align\": \"left\",\n      \"caps\": true\n    },\n    {\n      \"n\": 8,\n      \"kind\": \"speech\",\n      \"lines\": [\n        \"PINÁK?\"\n      ],\n      \"align\": \"left\",\n      \"caps\": true\n    },\n    {\n      \"n\": 9,\n      \"kind\": \"none\",\n      \"lines\": [],\n      \"align\": \"left\",\n      \"caps\": false\n    },\n    {\n      \"n\": 10,\n      \"kind\": \"speech\",\n      \"lines\": [\n        \"VILLA?\"\n      ],\n      \"align\": \"left\",\n      \"caps\": true\n    },\n    {\n      \"n\": 11,\n      \"kind\": \"speech\",\n      \"lines\": [\n        \"PINÁK?\"\n      ],\n      \"align\": \"left\",\n      \"caps\": true\n    }\n  ],\n  \"unboxed\": []\n}",
+  "json": {
+    "regions": [
+      {
+        "n": 3,
+        "kind": "speech",
+        "lines": [
+          "SPORTKOCSI?"
+        ],
+        "align": "left",
+        "caps": true
+      },
+      {
+        "n": 4,
+        "kind": "speech",
+        "lines": [
+          "PINÁK?"
+        ],
+        "align": "left",
+        "caps": true
+      },
+      {
+        "n": 5,
+        "kind": "thought",
+        "lines": [
+          "A LOTTÓ ÖTÖST?",
+          "HM... LÁSSUK CSAK...",
+          "HEHE... IGEN!"
+        ],
+        "align": "left",
+        "caps": true
+      },
+      {
+        "n": 6,
+        "kind": "speech",
+        "lines": [
+          "YACHT?"
+        ],
+        "align": "left",
+        "caps": true
+      },
+      {
+        "n": 7,
+        "kind": "speech",
+        "lines": [
+          "UTAZGATÁS?"
+        ],
+        "align": "left",
+        "caps": true
+      },
+      {
+        "n": 8,
+        "kind": "speech",
+        "lines": [
+          "PINÁK?"
+        ],
+        "align": "left",
+        "caps": true
+      },
+      {
+        "n": 9,
+        "kind": "none",
+        "lines": [],
+        "align": "left",
+        "caps": false
+      },
+      {
+        "n": 10,
+        "kind": "speech",
+        "lines": [
+          "VILLA?"
+        ],
+        "align": "left",
+        "caps": true
+      },
+      {
+        "n": 11,
+        "kind": "speech",
+        "lines": [
+          "PINÁK?"
+        ],
+        "align": "left",
+        "caps": true
+      }
+    ],
+    "unboxed": []
+  },
+  "usage": {
+    "input_tokens": 2047,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2723,
+    "reasoning_tokens": 2213
+  },
+  "costUsd": 0.00158686,
+  "ms": 41645,
+  "at": "2026-10-20T07:13:27.47076375Z"
+}

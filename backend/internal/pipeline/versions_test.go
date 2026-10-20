@@ -93,3 +93,15 @@ func TestFirstLLMVersionIsV1(t *testing.T) {
 		t.Fatalf("want one version v1, got %+v", vs)
 	}
 }
+
+func TestOCRReplyApply(t *testing.T) {
+	yes := true
+	reply := ocrReply{Regions: []ocrBoxReply{{N: 2, Kind: "speech", Lines: []string{" HELLO ", "THERE"}, Align: "center", Caps: &yes}}}
+	got := reply.apply(Region{ID: "r2", Order: 2})
+	if got.Kind != "speech" || got.Source == nil || got.Source.Text != "HELLO THERE" || !got.Replace {
+		t.Fatalf("apply = %+v %+v", got, got.Source)
+	}
+	if miss := reply.apply(Region{ID: "r3", Order: 3}); miss.Kind != "none" || miss.Source != nil || miss.Replace {
+		t.Fatalf("skipped box = %+v", miss)
+	}
+}

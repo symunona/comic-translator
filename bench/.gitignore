@@ -1,3 +1,7 @@
 .dist/
 node_modules/
 results/ocr-*-partial-*.json
+llm/prompts/
+llm/judge/*/llm/
+llm/smoke/
+__pycache__/

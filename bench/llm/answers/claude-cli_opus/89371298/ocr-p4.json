@@ -1,0 +1,49 @@
+{
+  "spec": "claude-cli:opus",
+  "log": "../bench/llm/prompts/893712989801daabc2a3d351e597946b61312aeb54e14e3d28aaf7f63ad64618/llm/ocr-p4.json",
+  "text": "{\"regions\":[{\"n\":2,\"kind\":\"speech\",\"lines\":[\"KOMONA!\"],\"align\":\"center\",\"caps\":true},{\"n\":3,\"kind\":\"speech\",\"lines\":[\"The Potion\",\"Contest!\"],\"align\":\"center\",\"caps\":false},{\"n\":4,\"kind\":\"speech\",\"lines\":[\"I must’ve...\",\"must’ve accidentally\",\"fallen asleep!\"],\"align\":\"center\",\"caps\":false}],\"unboxed\":[]}",
+  "json": {
+    "regions": [
+      {
+        "n": 2,
+        "kind": "speech",
+        "lines": [
+          "KOMONA!"
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 3,
+        "kind": "speech",
+        "lines": [
+          "The Potion",
+          "Contest!"
+        ],
+        "align": "center",
+        "caps": false
+      },
+      {
+        "n": 4,
+        "kind": "speech",
+        "lines": [
+          "I must’ve...",
+          "must’ve accidentally",
+          "fallen asleep!"
+        ],
+        "align": "center",
+        "caps": false
+      }
+    ],
+    "unboxed": []
+  },
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 3562,
+    "cache_read_input_tokens": 4524,
+    "output_tokens": 625
+  },
+  "costUsd": 0.041916800000000004,
+  "ms": 9067,
+  "at": "2026-10-20T07:19:56.36265543Z"
+}

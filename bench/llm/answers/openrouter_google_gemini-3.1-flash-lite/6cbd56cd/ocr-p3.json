@@ -1,0 +1,40 @@
+{
+  "spec": "openrouter:google/gemini-3.1-flash-lite",
+  "log": "../bench/llm/prompts/6cbd56cdd933343ad87de8c3e3dd772f7f771dd3f4786507d9786c71aad26a05/llm/ocr-p3.json",
+  "text": "{\"regions\":[{\"n\":6,\"kind\":\"thought\",\"lines\":[\"ÁÁÁ!!! BASSZAMEG\",\"EGY KAUKÁZUSI FÉRFI\",\"SZÁRÍTOTT MÚMIAJA,\",\"BAZMEG!!!\"],\"align\":\"left\",\"caps\":true},{\"n\":7,\"kind\":\"thought\",\"lines\":[\"TELEKVITA\"],\"align\":\"left\",\"caps\":true}],\"unboxed\":[]}",
+  "json": {
+    "regions": [
+      {
+        "n": 6,
+        "kind": "thought",
+        "lines": [
+          "ÁÁÁ!!! BASSZAMEG",
+          "EGY KAUKÁZUSI FÉRFI",
+          "SZÁRÍTOTT MÚMIAJA,",
+          "BAZMEG!!!"
+        ],
+        "align": "left",
+        "caps": true
+      },
+      {
+        "n": 7,
+        "kind": "thought",
+        "lines": [
+          "TELEKVITA"
+        ],
+        "align": "left",
+        "caps": true
+      }
+    ],
+    "unboxed": []
+  },
+  "usage": {
+    "input_tokens": 4196,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 88
+  },
+  "costUsd": 0.001181,
+  "ms": 1257,
+  "at": "2026-10-20T07:07:23.651439082Z"
+}

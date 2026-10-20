@@ -1,0 +1,95 @@
+{
+  "spec": "claude-cli:opus",
+  "log": "../data/3b3436860d742571c5a540084c396d020cb19fae9191994d00f2338e06c41d2b/llm/scene-0.json",
+  "text": "{\"summary\":\"A grinning street reporter with a microphone tells the camera he'll stop the first random passer-by and ask him 'the question': what is the first thing he'd do if he won the Hungarian lottery jackpot (the 'lottó ötös')? A bald man in a hoodie, smoking, thinks about it while the reporter's head fills with guesses: sports car, yacht, villa, travel and, again and again, 'pussy'. The man says he'd buy a huge box full of 10 mm open-end wrenches and scatter them everywhere he goes, so that whenever he runs into a size-6 bolt there's always a wrench within reach. Not one wrench, five. He gets so worked up that his roar blows the reporter flat, and he walks off with a wrench in his hand. The joke is the gap between the dream-of-wealth clichés and the guy's tiny, practical handyman fantasy, which he roars like a huge revelation.\",\"characters\":[{\"name\":\"street reporter\",\"description\":\"Lanky, bug-eyed TV/vox-pop reporter with a big grin, a collared shirt and a handheld microphone. He's over-cheerful and theatrical: he opens with the showman interjection 'Háhhá!', speaks politely to the man ('Jónapot uram!', 'Good day, sir!') and uses trendy slang ('randomtibor'). In his head he's crude: his guesses keep coming back to 'pinák' (pussy). He gets blown over and flattened by the interviewee's outburst.\"},{\"name\":\"bald man in a hoodie\",\"description\":\"Stocky, bald, heavy-lidded passer-by in a hoodie, smoking, hands in his pockets. He starts slow and sly ('Hm... lássuk csak... hehe... igen!', 'Hm... let's see... hehe... yes!'), then gets more and more excited until he's roaring. His speech is working-class and full of swearing: 'kurvanagy' (fucking huge), 'bazmeg' (fuck, clipped), and the repeated tic 'vágod?' (get it?/you know?). His grammar is loose and run-together ('hogyamikor', 'ahol a nap. megfordulok'). He's a handyman or mechanic type whose dream is a set of spanners.\"}],\"panels\":[{\"panelId\":\"p0\",\"description\":\"The street reporter faces the reader with the microphone and a big grin and announces that he'll ask the first random passer-by 'the question'. The bubble tail goes down to his mouth. r1 is just his face with no text.\"},{\"panelId\":\"p1\",\"description\":\"The reporter bounds towards the bald man in a hoodie, who walks past smoking with his hands in his pockets, and asks him the lottery question. The tail runs to the reporter's mouth.\"},{\"panelId\":\"p2\",\"description\":\"The bald man pinches his fingers thoughtfully, cigarette in his mouth, and says 'The lottery jackpot? Hm... let's see... hehe... yes!' (tail to his mouth). A cloud of small free-floating guesses surrounds the grinning reporter's head: sports car, yacht, travelling, villa and 'pussy' three times. These are the reporter's hopeful thoughts or mutterings.\"},{\"panelId\":\"p3\",\"description\":\"The man leans in towards the microphone, smug, and describes a fucking huge box full of 10 mm open-end wrenches. The tail goes to him. In the background a cigarette flies off to the left, flicked away. The reporter grins expectantly. r12 is his face with no text.\"},{\"panelId\":\"p4\",\"description\":\"The man puts his arm around the now worried-looking reporter and waves the other arm across the horizon. He says he'd scatter the wrenches everywhere he goes, the way a dandelion scatters its seeds.\"},{\"panelId\":\"p5\",\"description\":\"The man opens his mouth huge and roars about the size-6 bolt. The blast blows the reporter backwards. A nut and bolt lie on the ground.\"},{\"panelId\":\"p6\",\"description\":\"The reporter lies flattened on the ground with his microphone dropped beside him. The man, calm again and holding a wrench, steps over him and finishes: 'wherever I reach, it should be there, fuck. Not one, five!' The tail goes to the man.\"}],\"speakers\":{\"r0\":\"street reporter\",\"r1\":\"none\",\"r2\":\"street reporter\",\"r3\":\"street reporter\",\"r4\":\"street reporter\",\"r5\":\"bald man in a hoodie\",\"r6\":\"street reporter\",\"r7\":\"street reporter\",\"r8\":\"street reporter\",\"r9\":\"none\",\"r10\":\"street reporter\",\"r11\":\"street reporter\",\"r12\":\"none\",\"r13\":\"bald man in a hoodie\",\"r14\":\"none\",\"r15\":\"bald man in a hoodie\",\"r16\":\"bald man in a hoodie\",\"r17\":\"bald man in a hoodie\"},\"notes\":[\"Main joke: asked what he'd do with a lottery jackpot, the man ignores every rich-man cliché the reporter is imagining (sports car, yacht, villa, women) and wants a box of thousands of 10 mm open-end wrenches, so there's always one within reach. It's a small, practical handyman's annoyance (never having the right spanner to hand) blown up into his biggest dream, and he roars it like a revelation.\",\"Technical detail behind the joke: 'tizes villáskulcs' = 10 mm open-end (fork) wrench, and 'hatos csavar' = M6 bolt. An M6 hex bolt usually has a 10 mm head, so the 10 mm wrench is exactly the one that fits. It's also the size everyone keeps losing (in English-speaking DIY culture people joke about the 'missing 10 mm socket'). Keep the sizes consistent, e.g. '10 mm spanner' and 'M6 bolt'.\",\"'Nem egy, öt!' (r17), 'Not one, five!': the last punchline echoes 'lottó ötös', literally 'lottery five'. The Hungarian lottery jackpot is matching all 5 numbers out of 90. He wants five wrenches within reach everywhere. Try to keep the 'five' echo, e.g. 'jackpot... five of them!' or 'not one, five!'.\",\"'Lottó ötös' (r2, r5): the jackpot of the Hungarian 5-out-of-90 lottery, literally 'lottery five'. Translate it as 'the lottery jackpot' or 'won the lottery', but if possible keep a 'five' for the ending.\",\"'Randomtibor' (r0): Hungarian slang for a random person, a mash-up of English 'random' and the ordinary Hungarian first name Tibor. Roughly 'some random Joe' or 'Joe Average'. It's not the man's actual name.\",\"'Háhhá!' (r0): the reporter's showman interjection, a gleeful 'Ha-ha!' or 'Aha!' that opens his act. 'Jóestét' (r0) is written as one word ('good evening'), and in p1 he says 'Jónapot uram' ('good day, sir'). Him saying 'evening' to the camera and then 'good day' to the man is a small inconsistency in a slapdash TV patter. It can be kept.\",\"'Pinák' (r4, r8, r11): vulgar plural of 'pina', meaning pussy, or crudely 'chicks/women'. It's the reporter's own guess repeated three times among the rich-man clichés, showing what he really thinks a winner would want. Use a crude word like 'pussy', 'tits' or 'babes', the same each time.\",\"The guess list in p2 (r3 sports car, r6 yacht, r7 travelling around, r10 villa, plus 'pinák') is the reporter's imagination swirling around his head while the man thinks. The text has no tails. Keep each guess short, with a question mark.\",\"'Kurvanagy' (r13): literally 'whore-big', meaning fucking huge. Strong but very common working-class swearing.\",\"'Bazmeg' (r16, r17): a clipped, run-together form of 'baszd meg', literally 'fuck it/fuck you', used as filler punctuation like 'fuck', 'man' or 'innit'. It marks rough, everyday working-class speech. Use a matching filler swear.\",\"'Vágod?' (r13, r15): the man's verbal tic, 'get it?/you know?/you dig?' (literally 'do you cut it?'). In r15 it's misspelled 'VAGOD' without the accent. That's sloppy writing and doesn't need copying. Keep the tic the same in both places.\",\"'Szórnám széjjel, mint a pitypang a szarjait' (r15): 'I'd scatter them all over, like a dandelion scatters its crap'. 'Szarjait' (its shit/crap) is his crude word for dandelion seed fluff. It's a funny, coarse image of a mechanic sowing wrenches across the land. 'Széjjel' is a colloquial variant of 'szét' (apart/around).\",\"'Ahol a nap. megfordulok' (r15): a garbled 'ahol a nap(ban) megfordulok', meaning 'wherever I go during the day' (literally 'where I turn up in the day'). The stray dot is part of his rambling flow. Translate it as loose, run-on speech.\",\"'Hogyamikor' (r16): 'hogy amikor' ('so that when') fused into one word, in excited shouting. It shows breathless, careless speech and continues into r17 ('...akkor bárhova nyúlok, ott legyen', '...then wherever I reach, it should be there'). r16 and r17 are one sentence split across panels.\",\"Physical comedy: the man starts slow and sly ('hm... lássuk csak... hehe', r5), gets more and more worked up through p4, and in p5 his roar is so violent that it blows the reporter off his feet. In p6 he's calm again and walks off holding a wrench while the reporter lies flattened. The loose nut and bolt in p5 and the wrench in p6 back up the subject.\",\"There are no background signs or brand names in this strip. The flying cigarette in p3 and the nut and bolt in p5 are drawn details, not text.\"]}",
+  "json": {
+    "summary": "A grinning street reporter with a microphone tells the camera he'll stop the first random passer-by and ask him 'the question': what is the first thing he'd do if he won the Hungarian lottery jackpot (the 'lottó ötös')? A bald man in a hoodie, smoking, thinks about it while the reporter's head fills with guesses: sports car, yacht, villa, travel and, again and again, 'pussy'. The man says he'd buy a huge box full of 10 mm open-end wrenches and scatter them everywhere he goes, so that whenever he runs into a size-6 bolt there's always a wrench within reach. Not one wrench, five. He gets so worked up that his roar blows the reporter flat, and he walks off with a wrench in his hand. The joke is the gap between the dream-of-wealth clichés and the guy's tiny, practical handyman fantasy, which he roars like a huge revelation.",
+    "characters": [
+      {
+        "name": "street reporter",
+        "description": "Lanky, bug-eyed TV/vox-pop reporter with a big grin, a collared shirt and a handheld microphone. He's over-cheerful and theatrical: he opens with the showman interjection 'Háhhá!', speaks politely to the man ('Jónapot uram!', 'Good day, sir!') and uses trendy slang ('randomtibor'). In his head he's crude: his guesses keep coming back to 'pinák' (pussy). He gets blown over and flattened by the interviewee's outburst."
+      },
+      {
+        "name": "bald man in a hoodie",
+        "description": "Stocky, bald, heavy-lidded passer-by in a hoodie, smoking, hands in his pockets. He starts slow and sly ('Hm... lássuk csak... hehe... igen!', 'Hm... let's see... hehe... yes!'), then gets more and more excited until he's roaring. His speech is working-class and full of swearing: 'kurvanagy' (fucking huge), 'bazmeg' (fuck, clipped), and the repeated tic 'vágod?' (get it?/you know?). His grammar is loose and run-together ('hogyamikor', 'ahol a nap. megfordulok'). He's a handyman or mechanic type whose dream is a set of spanners."
+      }
+    ],
+    "panels": [
+      {
+        "panelId": "p0",
+        "description": "The street reporter faces the reader with the microphone and a big grin and announces that he'll ask the first random passer-by 'the question'. The bubble tail goes down to his mouth. r1 is just his face with no text."
+      },
+      {
+        "panelId": "p1",
+        "description": "The reporter bounds towards the bald man in a hoodie, who walks past smoking with his hands in his pockets, and asks him the lottery question. The tail runs to the reporter's mouth."
+      },
+      {
+        "panelId": "p2",
+        "description": "The bald man pinches his fingers thoughtfully, cigarette in his mouth, and says 'The lottery jackpot? Hm... let's see... hehe... yes!' (tail to his mouth). A cloud of small free-floating guesses surrounds the grinning reporter's head: sports car, yacht, travelling, villa and 'pussy' three times. These are the reporter's hopeful thoughts or mutterings."
+      },
+      {
+        "panelId": "p3",
+        "description": "The man leans in towards the microphone, smug, and describes a fucking huge box full of 10 mm open-end wrenches. The tail goes to him. In the background a cigarette flies off to the left, flicked away. The reporter grins expectantly. r12 is his face with no text."
+      },
+      {
+        "panelId": "p4",
+        "description": "The man puts his arm around the now worried-looking reporter and waves the other arm across the horizon. He says he'd scatter the wrenches everywhere he goes, the way a dandelion scatters its seeds."
+      },
+      {
+        "panelId": "p5",
+        "description": "The man opens his mouth huge and roars about the size-6 bolt. The blast blows the reporter backwards. A nut and bolt lie on the ground."
+      },
+      {
+        "panelId": "p6",
+        "description": "The reporter lies flattened on the ground with his microphone dropped beside him. The man, calm again and holding a wrench, steps over him and finishes: 'wherever I reach, it should be there, fuck. Not one, five!' The tail goes to the man."
+      }
+    ],
+    "speakers": {
+      "r0": "street reporter",
+      "r1": "none",
+      "r2": "street reporter",
+      "r3": "street reporter",
+      "r4": "street reporter",
+      "r5": "bald man in a hoodie",
+      "r6": "street reporter",
+      "r7": "street reporter",
+      "r8": "street reporter",
+      "r9": "none",
+      "r10": "street reporter",
+      "r11": "street reporter",
+      "r12": "none",
+      "r13": "bald man in a hoodie",
+      "r14": "none",
+      "r15": "bald man in a hoodie",
+      "r16": "bald man in a hoodie",
+      "r17": "bald man in a hoodie"
+    },
+    "notes": [
+      "Main joke: asked what he'd do with a lottery jackpot, the man ignores every rich-man cliché the reporter is imagining (sports car, yacht, villa, women) and wants a box of thousands of 10 mm open-end wrenches, so there's always one within reach. It's a small, practical handyman's annoyance (never having the right spanner to hand) blown up into his biggest dream, and he roars it like a revelation.",
+      "Technical detail behind the joke: 'tizes villáskulcs' = 10 mm open-end (fork) wrench, and 'hatos csavar' = M6 bolt. An M6 hex bolt usually has a 10 mm head, so the 10 mm wrench is exactly the one that fits. It's also the size everyone keeps losing (in English-speaking DIY culture people joke about the 'missing 10 mm socket'). Keep the sizes consistent, e.g. '10 mm spanner' and 'M6 bolt'.",
+      "'Nem egy, öt!' (r17), 'Not one, five!': the last punchline echoes 'lottó ötös', literally 'lottery five'. The Hungarian lottery jackpot is matching all 5 numbers out of 90. He wants five wrenches within reach everywhere. Try to keep the 'five' echo, e.g. 'jackpot... five of them!' or 'not one, five!'.",
+      "'Lottó ötös' (r2, r5): the jackpot of the Hungarian 5-out-of-90 lottery, literally 'lottery five'. Translate it as 'the lottery jackpot' or 'won the lottery', but if possible keep a 'five' for the ending.",
+      "'Randomtibor' (r0): Hungarian slang for a random person, a mash-up of English 'random' and the ordinary Hungarian first name Tibor. Roughly 'some random Joe' or 'Joe Average'. It's not the man's actual name.",
+      "'Háhhá!' (r0): the reporter's showman interjection, a gleeful 'Ha-ha!' or 'Aha!' that opens his act. 'Jóestét' (r0) is written as one word ('good evening'), and in p1 he says 'Jónapot uram' ('good day, sir'). Him saying 'evening' to the camera and then 'good day' to the man is a small inconsistency in a slapdash TV patter. It can be kept.",
+      "'Pinák' (r4, r8, r11): vulgar plural of 'pina', meaning pussy, or crudely 'chicks/women'. It's the reporter's own guess repeated three times among the rich-man clichés, showing what he really thinks a winner would want. Use a crude word like 'pussy', 'tits' or 'babes', the same each time.",
+      "The guess list in p2 (r3 sports car, r6 yacht, r7 travelling around, r10 villa, plus 'pinák') is the reporter's imagination swirling around his head while the man thinks. The text has no tails. Keep each guess short, with a question mark.",
+      "'Kurvanagy' (r13): literally 'whore-big', meaning fucking huge. Strong but very common working-class swearing.",
+      "'Bazmeg' (r16, r17): a clipped, run-together form of 'baszd meg', literally 'fuck it/fuck you', used as filler punctuation like 'fuck', 'man' or 'innit'. It marks rough, everyday working-class speech. Use a matching filler swear.",
+      "'Vágod?' (r13, r15): the man's verbal tic, 'get it?/you know?/you dig?' (literally 'do you cut it?'). In r15 it's misspelled 'VAGOD' without the accent. That's sloppy writing and doesn't need copying. Keep the tic the same in both places.",
+      "'Szórnám széjjel, mint a pitypang a szarjait' (r15): 'I'd scatter them all over, like a dandelion scatters its crap'. 'Szarjait' (its shit/crap) is his crude word for dandelion seed fluff. It's a funny, coarse image of a mechanic sowing wrenches across the land. 'Széjjel' is a colloquial variant of 'szét' (apart/around).",
+      "'Ahol a nap. megfordulok' (r15): a garbled 'ahol a nap(ban) megfordulok', meaning 'wherever I go during the day' (literally 'where I turn up in the day'). The stray dot is part of his rambling flow. Translate it as loose, run-on speech.",
+      "'Hogyamikor' (r16): 'hogy amikor' ('so that when') fused into one word, in excited shouting. It shows breathless, careless speech and continues into r17 ('...akkor bárhova nyúlok, ott legyen', '...then wherever I reach, it should be there'). r16 and r17 are one sentence split across panels.",
+      "Physical comedy: the man starts slow and sly ('hm... lássuk csak... hehe', r5), gets more and more worked up through p4, and in p5 his roar is so violent that it blows the reporter off his feet. In p6 he's calm again and walks off holding a wrench while the reporter lies flattened. The loose nut and bolt in p5 and the wrench in p6 back up the subject.",
+      "There are no background signs or brand names in this strip. The flying cigarette in p3 and the nut and bolt in p5 are drawn details, not text."
+    ]
+  },
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 6280,
+    "cache_read_input_tokens": 5607,
+    "output_tokens": 4773
+  },
+  "costUsd": 0.1468374,
+  "ms": 53192,
+  "at": "2026-10-20T07:11:01.477103955Z"
+}

@@ -1,0 +1,161 @@
+{
+  "spec": "claude-cli:opus",
+  "log": "../bench/llm/judge/8f3737ae2df51cb23cc27c3f81a10a426a35fc918ea31cf1eff85be4fc0df452/llm/judge-tr-hu.json",
+  "text": "{\"candidates\":{\"A\":{\"accuracy\":10,\"naturalness\":9,\"humour\":9,\"voice\":8,\"fit\":7,\"overall\":8,\"worst\":\"r0 'Hogy lépek ki a vimből?' is 23 chars on one line, 1 over the 22-char budget\"},\"B\":{\"accuracy\":9,\"naturalness\":7,\"humour\":8,\"voice\":8,\"fit\":9,\"overall\":7,\"worst\":\"r0 'vim-ből' has a hyphen Hungarian spelling does not use here, and the article is missing\"},\"C\":{\"accuracy\":10,\"naturalness\":9,\"humour\":9,\"voice\":8,\"fit\":7,\"overall\":8,\"worst\":\"r0 is 23 chars on one line, 1 over budget\"},\"D\":{\"accuracy\":9,\"naturalness\":7,\"humour\":8,\"voice\":7,\"fit\":9,\"overall\":7,\"worst\":\"r0/r1 'ki vimből' drops the article and reads clipped\"},\"E\":{\"accuracy\":10,\"naturalness\":9,\"humour\":10,\"voice\":10,\"fit\":7,\"overall\":8,\"worst\":\"r0 is 23 chars, 1 over budget (r1 'Minek' is nicely smug)\"},\"F\":{\"accuracy\":10,\"naturalness\":6,\"humour\":7,\"voice\":8,\"fit\":7,\"overall\":6,\"worst\":\"r0/r1 three-line break 'vim-/ből?' splits the program name awkwardly\"},\"G\":{\"accuracy\":10,\"naturalness\":9,\"humour\":9,\"voice\":9,\"fit\":10,\"overall\":9,\"worst\":\"r0 'vimből' drops the article that r1 uses, which is inconsistent\"},\"H\":{\"accuracy\":10,\"naturalness\":9,\"humour\":10,\"voice\":10,\"fit\":7,\"overall\":8,\"worst\":\"r0 is 23 chars, 1 over budget\"},\"I\":{\"accuracy\":10,\"naturalness\":9,\"humour\":9,\"voice\":9,\"fit\":9,\"overall\":9,\"worst\":\"r0 'ki vimből' has no article and is exactly at the 22-char limit\"},\"J\":{\"accuracy\":9,\"naturalness\":7,\"humour\":8,\"voice\":7,\"fit\":7,\"overall\":7,\"worst\":\"r0 'Hogyan lépek ki vimből?' is 23 chars and has no article\"},\"K\":{\"accuracy\":10,\"naturalness\":8,\"humour\":9,\"voice\":8,\"fit\":10,\"overall\":8,\"worst\":\"r0 'ki vimből' has no article, unlike r1\"},\"L\":{\"accuracy\":10,\"naturalness\":10,\"humour\":9,\"voice\":9,\"fit\":10,\"overall\":9,\"worst\":\"r1 'Miért' is less smug than 'Minek' would be\"},\"M\":{\"accuracy\":10,\"naturalness\":9,\"humour\":9,\"voice\":8,\"fit\":7,\"overall\":8,\"worst\":\"r0 is 23 chars on one line, 1 over budget\"},\"N\":{\"accuracy\":9,\"naturalness\":7,\"humour\":8,\"voice\":7,\"fit\":9,\"overall\":7,\"worst\":\"r0/r1 'ki vimből' drops the article and reads clipped\"}},\"ranking\":[\"L\",\"G\",\"I\",\"K\",\"E\",\"H\",\"A\",\"C\",\"M\",\"D\",\"N\",\"B\",\"J\",\"F\"],\"notes\":\"All candidates keep the meaning and the punchline. What separates them is small: whether r0 fits the 22-char budget, whether they keep the natural article 'a vimből', how cleanly the lines break, and whether r1 uses the smug 'Minek'. L fits with the article and a clean two-line break. G and I fit by using the natural 'lépjek' but drop the article. The 'Minek' versions (E, H) have the best voice but go 1 char over in r0. B and F lose points for the hyphenated 'vim-ből' and, in F, an ugly three-line split.\"}",
+  "json": {
+    "candidates": {
+      "A": {
+        "accuracy": 10,
+        "naturalness": 9,
+        "humour": 9,
+        "voice": 8,
+        "fit": 7,
+        "overall": 8,
+        "worst": "r0 'Hogy lépek ki a vimből?' is 23 chars on one line, 1 over the 22-char budget"
+      },
+      "B": {
+        "accuracy": 9,
+        "naturalness": 7,
+        "humour": 8,
+        "voice": 8,
+        "fit": 9,
+        "overall": 7,
+        "worst": "r0 'vim-ből' has a hyphen Hungarian spelling does not use here, and the article is missing"
+      },
+      "C": {
+        "accuracy": 10,
+        "naturalness": 9,
+        "humour": 9,
+        "voice": 8,
+        "fit": 7,
+        "overall": 8,
+        "worst": "r0 is 23 chars on one line, 1 over budget"
+      },
+      "D": {
+        "accuracy": 9,
+        "naturalness": 7,
+        "humour": 8,
+        "voice": 7,
+        "fit": 9,
+        "overall": 7,
+        "worst": "r0/r1 'ki vimből' drops the article and reads clipped"
+      },
+      "E": {
+        "accuracy": 10,
+        "naturalness": 9,
+        "humour": 10,
+        "voice": 10,
+        "fit": 7,
+        "overall": 8,
+        "worst": "r0 is 23 chars, 1 over budget (r1 'Minek' is nicely smug)"
+      },
+      "F": {
+        "accuracy": 10,
+        "naturalness": 6,
+        "humour": 7,
+        "voice": 8,
+        "fit": 7,
+        "overall": 6,
+        "worst": "r0/r1 three-line break 'vim-/ből?' splits the program name awkwardly"
+      },
+      "G": {
+        "accuracy": 10,
+        "naturalness": 9,
+        "humour": 9,
+        "voice": 9,
+        "fit": 10,
+        "overall": 9,
+        "worst": "r0 'vimből' drops the article that r1 uses, which is inconsistent"
+      },
+      "H": {
+        "accuracy": 10,
+        "naturalness": 9,
+        "humour": 10,
+        "voice": 10,
+        "fit": 7,
+        "overall": 8,
+        "worst": "r0 is 23 chars, 1 over budget"
+      },
+      "I": {
+        "accuracy": 10,
+        "naturalness": 9,
+        "humour": 9,
+        "voice": 9,
+        "fit": 9,
+        "overall": 9,
+        "worst": "r0 'ki vimből' has no article and is exactly at the 22-char limit"
+      },
+      "J": {
+        "accuracy": 9,
+        "naturalness": 7,
+        "humour": 8,
+        "voice": 7,
+        "fit": 7,
+        "overall": 7,
+        "worst": "r0 'Hogyan lépek ki vimből?' is 23 chars and has no article"
+      },
+      "K": {
+        "accuracy": 10,
+        "naturalness": 8,
+        "humour": 9,
+        "voice": 8,
+        "fit": 10,
+        "overall": 8,
+        "worst": "r0 'ki vimből' has no article, unlike r1"
+      },
+      "L": {
+        "accuracy": 10,
+        "naturalness": 10,
+        "humour": 9,
+        "voice": 9,
+        "fit": 10,
+        "overall": 9,
+        "worst": "r1 'Miért' is less smug than 'Minek' would be"
+      },
+      "M": {
+        "accuracy": 10,
+        "naturalness": 9,
+        "humour": 9,
+        "voice": 8,
+        "fit": 7,
+        "overall": 8,
+        "worst": "r0 is 23 chars on one line, 1 over budget"
+      },
+      "N": {
+        "accuracy": 9,
+        "naturalness": 7,
+        "humour": 8,
+        "voice": 7,
+        "fit": 9,
+        "overall": 7,
+        "worst": "r0/r1 'ki vimből' drops the article and reads clipped"
+      }
+    },
+    "ranking": [
+      "L",
+      "G",
+      "I",
+      "K",
+      "E",
+      "H",
+      "A",
+      "C",
+      "M",
+      "D",
+      "N",
+      "B",
+      "J",
+      "F"
+    ],
+    "notes": "All candidates keep the meaning and the punchline. What separates them is small: whether r0 fits the 22-char budget, whether they keep the natural article 'a vimből', how cleanly the lines break, and whether r1 uses the smug 'Minek'. L fits with the article and a clean two-line break. G and I fit by using the natural 'lépjek' but drop the article. The 'Minek' versions (E, H) have the best voice but go 1 char over in r0. B and F lose points for the hyphenated 'vim-ből' and, in F, an ugly three-line split."
+  },
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 3081,
+    "cache_read_input_tokens": 4676,
+    "output_tokens": 2677
+  },
+  "costUsd": 0.07913919999999999,
+  "ms": 27821,
+  "at": "2026-10-20T07:32:10.586993471Z"
+}

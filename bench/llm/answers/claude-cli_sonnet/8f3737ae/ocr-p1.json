@@ -1,0 +1,31 @@
+{
+  "spec": "claude-cli:sonnet",
+  "log": "../bench/llm/prompts/8f3737ae2df51cb23cc27c3f81a10a426a35fc918ea31cf1eff85be4fc0df452/llm/ocr-p1.json",
+  "text": "{\"regions\":[{\"n\":1,\"kind\":\"caption\",\"lines\":[\"Why would I\",\"exit vim?\"],\"align\":\"center\",\"caps\":false}],\"unboxed\":[\"ouch!\"]}",
+  "json": {
+    "regions": [
+      {
+        "n": 1,
+        "kind": "caption",
+        "lines": [
+          "Why would I",
+          "exit vim?"
+        ],
+        "align": "center",
+        "caps": false
+      }
+    ],
+    "unboxed": [
+      "ouch!"
+    ]
+  },
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 7017,
+    "output_tokens": 314
+  },
+  "costUsd": 0.0038497,
+  "ms": 6977,
+  "at": "2026-10-20T07:20:18.074544083Z"
+}

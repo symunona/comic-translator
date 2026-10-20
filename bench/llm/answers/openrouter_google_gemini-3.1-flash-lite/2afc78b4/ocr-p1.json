@@ -1,0 +1,39 @@
+{
+  "spec": "openrouter:google/gemini-3.1-flash-lite",
+  "log": "../bench/llm/prompts/2afc78b45293acd677ffcba91f53fea50838d406d2dd965846e83408657e58c7/llm/ocr-p1.json",
+  "text": "{\"regions\":[{\"n\":1,\"kind\":\"speech\",\"lines\":[\"NA! E!\",\"DEJÓ, HOGY\",\"ELJÖTTÉ, E!\"],\"align\":\"left\",\"caps\":true},{\"n\":2,\"kind\":\"sign\",\"lines\":[\"HÍREK\"],\"align\":\"left\",\"caps\":true}],\"unboxed\":[]}",
+  "json": {
+    "regions": [
+      {
+        "n": 1,
+        "kind": "speech",
+        "lines": [
+          "NA! E!",
+          "DEJÓ, HOGY",
+          "ELJÖTTÉ, E!"
+        ],
+        "align": "left",
+        "caps": true
+      },
+      {
+        "n": 2,
+        "kind": "sign",
+        "lines": [
+          "HÍREK"
+        ],
+        "align": "left",
+        "caps": true
+      }
+    ],
+    "unboxed": []
+  },
+  "usage": {
+    "input_tokens": 4226,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 71
+  },
+  "costUsd": 0.001163,
+  "ms": 1549,
+  "at": "2026-10-20T07:07:34.505938241Z"
+}

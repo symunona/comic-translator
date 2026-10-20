@@ -1,0 +1,142 @@
+{
+  "spec": "openrouter:google/gemini-3.8-flash",
+  "log": "../bench/llm/judge/3b3436860d742571c5a540084c396d020cb19fae9191994d00f2338e06c41d2b/llm/judge-tr-en.json",
+  "text": "```json\n{\n \"candidates\": {\n  \"A\": {\n   \"accuracy\": 9,\n   \"naturalness\": 9,\n   \"humour\": 9,\n   \"voice\": 9,\n   \"fit\": 9,\n   \"overall\": 9,\n   \"worst\": \"r17 slightly flattens the subjunctive 'ott legyen' into 'it's right there'\"\n  },\n  \"B\": {\n   \"accuracy\": 8,\n   \"naturalness\": 8,\n   \"humour\": 7,\n   \"voice\": 8,\n   \"fit\": 9,\n   \"overall\": 8,\n   \"worst\": \"r2 misses the 'five' pun setup by using 'jackpot' instead of setting up 'five'\"\n  },\n  \"C\": {\n   \"accuracy\": 7,\n   \"naturalness\": 6,\n   \"humour\": 6,\n   \"voice\": 6,\n   \"fit\": 8,\n   \"overall\": 6,\n   \"worst\": \"r15 literal broken phrasing 'AND EVERYWHERE THE SUN SHINES. WHEREVER I TURN'\"\n  },\n  \"D\": {\n   \"accuracy\": 6,\n   \"naturalness\": 7,\n   \"humour\": 6,\n   \"voice\": 7,\n   \"fit\": 7,\n   \"overall\": 6,\n   \"worst\": \"r13 mistranslates 'tizes villáskulcs' (10 mm spanner) as 'ten-packs of wrenches'\"\n  },\n  \"E\": {\n   \"accuracy\": 8,\n   \"naturalness\": 8,\n   \"humour\": 7,\n   \"voice\": 6,\n   \"fit\": 9,\n   \"overall\": 7,\n   \"worst\": \"r16-r17 'goddammit/dammit' severely tones down 'bazmeg'\"\n  },\n  \"F\": {\n   \"accuracy\": 9,\n   \"naturalness\": 9,\n   \"humour\": 9,\n   \"voice\": 9,\n   \"fit\": 9,\n   \"overall\": 9,\n   \"worst\": \"r2 'HELLO THERE, SIR!' is slightly less formal than 'Jónapot uram'\"\n  },\n  \"G\": {\n   \"accuracy\": 7,\n   \"naturalness\": 6,\n   \"humour\": 6,\n   \"voice\": 6,\n   \"fit\": 8,\n   \"overall\": 6,\n   \"worst\": \"r15 clunky literal translation of the sun fragment\"\n  },\n  \"H\": {\n   \"accuracy\": 6,\n   \"naturalness\": 7,\n   \"humour\": 6,\n   \"voice\": 7,\n   \"fit\": 8,\n   \"overall\": 6,\n   \"worst\": \"r13 'ten-packs of spanners' misses the 10mm mechanic reference\"\n  },\n  \"I\": {\n   \"accuracy\": 6,\n   \"naturalness\": 7,\n   \"humour\": 6,\n   \"voice\": 7,\n   \"fit\": 8,\n   \"overall\": 6,\n   \"worst\": \"r13 'ten-packs of spanners' misses the 10mm wrench meme\"\n  },\n  \"J\": {\n   \"accuracy\": 6,\n   \"naturalness\": 7,\n   \"humour\": 6,\n   \"voice\": 7,\n   \"fit\": 7,\n   \"overall\": 6,\n   \"worst\": \"r13 'ten-packs of wrenches' misunderstands 'tizes'\"\n  },\n  \"K\": {\n   \"accuracy\": 6,\n   \"naturalness\": 7,\n   \"humour\": 6,\n   \"voice\": 7,\n   \"fit\": 8,\n   \"overall\": 6,\n   \"worst\": \"r13 'ten-packs of spanners' misunderstands 'tizes'\"\n  },\n  \"L\": {\n   \"accuracy\": 6,\n   \"naturalness\": 7,\n   \"humour\": 5,\n   \"voice\": 5,\n   \"fit\": 8,\n   \"overall\": 5,\n   \"worst\": \"r16-r17 'damn it' completely neuters 'bazmeg'\"\n  }\n },\n \"ranking\": [\n  \"F\",\n  \"A\",\n  \"B\",\n  \"E\",\n  \"D\",\n  \"J\",\n  \"H\",\n  \"I\",\n  \"K\",\n  \"C\",\n  \"G\",\n  \"L\"\n ],\n \"notes\": \"F and A stand out because they correctly understand 'tízes villáskulcs' and 'hatos csavar' as the classic DIY mechanic meme (an M6 bolt takes a 10 mm spanner, which is always lost), using authentic workshop slang ('ten-mil spanners', 'six-mil bolt'), while also setting up the 'five' callback from 'lottó ötös'.\"\n}\n```",
+  "json": {
+    "candidates": {
+      "A": {
+        "accuracy": 9,
+        "naturalness": 9,
+        "humour": 9,
+        "voice": 9,
+        "fit": 9,
+        "overall": 9,
+        "worst": "r17 slightly flattens the subjunctive 'ott legyen' into 'it's right there'"
+      },
+      "B": {
+        "accuracy": 8,
+        "naturalness": 8,
+        "humour": 7,
+        "voice": 8,
+        "fit": 9,
+        "overall": 8,
+        "worst": "r2 misses the 'five' pun setup by using 'jackpot' instead of setting up 'five'"
+      },
+      "C": {
+        "accuracy": 7,
+        "naturalness": 6,
+        "humour": 6,
+        "voice": 6,
+        "fit": 8,
+        "overall": 6,
+        "worst": "r15 literal broken phrasing 'AND EVERYWHERE THE SUN SHINES. WHEREVER I TURN'"
+      },
+      "D": {
+        "accuracy": 6,
+        "naturalness": 7,
+        "humour": 6,
+        "voice": 7,
+        "fit": 7,
+        "overall": 6,
+        "worst": "r13 mistranslates 'tizes villáskulcs' (10 mm spanner) as 'ten-packs of wrenches'"
+      },
+      "E": {
+        "accuracy": 8,
+        "naturalness": 8,
+        "humour": 7,
+        "voice": 6,
+        "fit": 9,
+        "overall": 7,
+        "worst": "r16-r17 'goddammit/dammit' severely tones down 'bazmeg'"
+      },
+      "F": {
+        "accuracy": 9,
+        "naturalness": 9,
+        "humour": 9,
+        "voice": 9,
+        "fit": 9,
+        "overall": 9,
+        "worst": "r2 'HELLO THERE, SIR!' is slightly less formal than 'Jónapot uram'"
+      },
+      "G": {
+        "accuracy": 7,
+        "naturalness": 6,
+        "humour": 6,
+        "voice": 6,
+        "fit": 8,
+        "overall": 6,
+        "worst": "r15 clunky literal translation of the sun fragment"
+      },
+      "H": {
+        "accuracy": 6,
+        "naturalness": 7,
+        "humour": 6,
+        "voice": 7,
+        "fit": 8,
+        "overall": 6,
+        "worst": "r13 'ten-packs of spanners' misses the 10mm mechanic reference"
+      },
+      "I": {
+        "accuracy": 6,
+        "naturalness": 7,
+        "humour": 6,
+        "voice": 7,
+        "fit": 8,
+        "overall": 6,
+        "worst": "r13 'ten-packs of spanners' misses the 10mm wrench meme"
+      },
+      "J": {
+        "accuracy": 6,
+        "naturalness": 7,
+        "humour": 6,
+        "voice": 7,
+        "fit": 7,
+        "overall": 6,
+        "worst": "r13 'ten-packs of wrenches' misunderstands 'tizes'"
+      },
+      "K": {
+        "accuracy": 6,
+        "naturalness": 7,
+        "humour": 6,
+        "voice": 7,
+        "fit": 8,
+        "overall": 6,
+        "worst": "r13 'ten-packs of spanners' misunderstands 'tizes'"
+      },
+      "L": {
+        "accuracy": 6,
+        "naturalness": 7,
+        "humour": 5,
+        "voice": 5,
+        "fit": 8,
+        "overall": 5,
+        "worst": "r16-r17 'damn it' completely neuters 'bazmeg'"
+      }
+    },
+    "ranking": [
+      "F",
+      "A",
+      "B",
+      "E",
+      "D",
+      "J",
+      "H",
+      "I",
+      "K",
+      "C",
+      "G",
+      "L"
+    ],
+    "notes": "F and A stand out because they correctly understand 'tízes villáskulcs' and 'hatos csavar' as the classic DIY mechanic meme (an M6 bolt takes a 10 mm spanner, which is always lost), using authentic workshop slang ('ten-mil spanners', 'six-mil bolt'), while also setting up the 'five' callback from 'lottó ötös'."
+  },
+  "usage": {
+    "input_tokens": 12638,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3429,
+    "reasoning_tokens": 2240
+  },
+  "costUsd": 0.02233725,
+  "ms": 22348,
+  "at": "2026-10-20T07:35:04.951124987Z"
+}

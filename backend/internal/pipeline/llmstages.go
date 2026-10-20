@@ -14,6 +14,7 @@ import (
 	"unicode/utf8"
 
 	"comic-translator/backend/internal/llm"
+	"comic-translator/backend/internal/store"
 )
 
 //go:embed prompts/*.tmpl
@@ -55,15 +56,17 @@ type ocrBox struct {
 	Hint  string
 }
 
+type ocrBoxReply struct {
+	N     int      `json:"n"`
+	Kind  string   `json:"kind"`
+	Lines []string `json:"lines"`
+	Align string   `json:"align"`
+	Caps  *bool    `json:"caps"`
+}
+
 type ocrReply struct {
-	Regions []struct {
-		N     int      `json:"n"`
-		Kind  string   `json:"kind"`
-		Lines []string `json:"lines"`
-		Align string   `json:"align"`
-		Caps  *bool    `json:"caps"`
-	} `json:"regions"`
-	Unboxed []string `json:"unboxed"`
+	Regions []ocrBoxReply `json:"regions"`
+	Unboxed []string      `json:"unboxed"`
 }
 
 type panelOCR struct {
@@ -84,6 +87,9 @@ func defaultReplace(kind string) bool {
 }
 
 func (r *runState) runOCR(ctx context.Context) error {
+	if !r.p.OCRPerPanel {
+		return r.runOCRStrip(ctx)
+	}
 	byPanel := map[string][]int{}
 	for i, reg := range r.regions {
 		byPanel[reg.PanelID] = append(byPanel[reg.PanelID], i)
@@ -146,7 +152,7 @@ func (r *runState) ocrPanel(ctx context.Context, panel Panel, idx []int) (*panel
 		images = append(images, r.cropPath(reg.ID))
 		boxes = append(boxes, ocrBox{N: reg.Order, Image: len(images), Class: reg.DetClass, Hint: classHints[reg.DetClass]})
 	}
-	prompt, err := render("ocr", map[string]any{"Boxes": boxes})
+	prompt, err := render("ocr", r.withSrc(map[string]any{"Boxes": boxes}))
 	if err != nil {
 		return nil, err
 	}
@@ -158,35 +164,57 @@ func (r *runState) ocrPanel(ctx context.Context, panel Panel, idx []int) (*panel
 	if err := json.Unmarshal(raw, &reply); err != nil {
 		return nil, err
 	}
-	byN := map[int]int{}
-	for k, rr := range reply.Regions {
-		byN[rr.N] = k
-	}
 	res := &panelOCR{Unboxed: reply.Unboxed}
 	for _, i := range idx {
-		reg := r.regions[i]
-		reg.Kind, reg.Source = "none", nil
-		if k, ok := byN[reg.Order]; ok {
-			rr := reply.Regions[k]
-			lines := cleanLines(rr.Lines)
-			if validKinds[rr.Kind] {
-				reg.Kind = rr.Kind
-			}
-			if len(lines) == 0 {
-				reg.Kind = "none"
-			} else {
-				reg.Source = &Source{
-					Text:  strings.Join(lines, " "),
-					Lines: lines,
-					Align: normAlign(rr.Align),
-					Caps:  rr.Caps == nil || *rr.Caps,
-				}
-			}
-		}
-		reg.Replace = defaultReplace(reg.Kind)
-		res.Regions = append(res.Regions, reg)
+		res.Regions = append(res.Regions, reply.apply(r.regions[i]))
 	}
 	return res, r.p.Store.SaveStage(r.id, stageName, vOCR, res)
+}
+
+// apply sets kind, source and the replace default of reg from the reply box
+// with the same number; a box the model skipped becomes kind "none".
+func (reply *ocrReply) apply(reg Region) Region {
+	reg.Kind, reg.Source = "none", nil
+	for _, rr := range reply.Regions {
+		if rr.N != reg.Order {
+			continue
+		}
+		lines := cleanLines(rr.Lines)
+		if validKinds[rr.Kind] {
+			reg.Kind = rr.Kind
+		}
+		if len(lines) == 0 {
+			reg.Kind = "none"
+		} else {
+			reg.Source = &Source{Text: strings.Join(lines, " "), Lines: lines, Align: normAlign(rr.Align), Caps: rr.Caps == nil || *rr.Caps}
+		}
+		break
+	}
+	reg.Replace = defaultReplace(reg.Kind)
+	return reg
+}
+
+// runOCRStrip reads every region of the strip in one request.
+func (r *runState) runOCRStrip(ctx context.Context) error {
+	r.stage("ocr", StatusRunning, "", &Progress{Done: 0, Total: 1})
+	prompt, images, err := r.stripOCRRequest(nil, true)
+	if err != nil {
+		return err
+	}
+	raw, err := r.p.LLM.Call(r.llmCtx(ctx, "ocr", "ocr-strip"), prompt, images, ocrSchema)
+	if err != nil {
+		return err
+	}
+	var reply ocrReply
+	if err := json.Unmarshal(raw, &reply); err != nil {
+		return err
+	}
+	for i := range r.regions {
+		r.regions[i] = reply.apply(r.regions[i])
+		r.data("region", r.regions[i])
+	}
+	r.stage("ocr", StatusRunning, "", &Progress{Done: 1, Total: 1})
+	return r.p.Store.SaveStage(r.id, "ocr", vOCR, r.regions)
 }
 
 func (r *runState) sameRegions(cached []Region, idx []int) bool {
@@ -303,7 +331,7 @@ func budget(s *Source) (int, int) {
 
 func (r *runState) runScene(ctx context.Context) error {
 	images, list := r.panelImages()
-	prompt, err := render("scene", map[string]any{"Panels": list, "Transcript": r.transcript(nil, false)})
+	prompt, err := render("scene", r.withSrc(map[string]any{"Panels": list, "Transcript": r.transcript(nil, false)}))
 	if err != nil {
 		return err
 	}
@@ -363,11 +391,11 @@ func (r *runState) promptData(pass trPass) map[string]any {
 			cur = append(cur, fmt.Sprintf("  %s: %q", reg.ID, t.Text))
 		}
 	}
-	return map[string]any{
+	return r.withSrc(map[string]any{
 		"Lang": r.lang, "LangName": LangName(r.lang),
 		"Scene": r.sceneText(), "Transcript": r.transcript(pass.ids, true),
 		"Current": strings.Join(cur, "\n"), "Hint": pass.hint,
-	}
+	})
 }
 
 func (r *runState) translatePass(ctx context.Context, pass trPass) (map[string]TrRegion, error) {
@@ -464,6 +492,23 @@ func regionNum(id string) int {
 	var n int
 	fmt.Sscanf(id, "r%d", &n)
 	return n
+}
+
+// srcLang is the strip's source language; strips uploaded before it was
+// recorded are Hungarian.
+func srcLang(m store.Meta) string {
+	if m.SrcLang == "" {
+		return "hu"
+	}
+	return m.SrcLang
+}
+
+// withSrc adds the source language to prompt data. Napirajz style hints are
+// only given for Hungarian strips.
+func (r *runState) withSrc(data map[string]any) map[string]any {
+	src := srcLang(r.meta)
+	data["Src"], data["SrcName"], data["Napirajz"] = src, LangName(src), src == "hu"
+	return data
 }
 
 func now() string { return time.Now().UTC().Format(time.RFC3339) }

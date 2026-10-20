@@ -1,0 +1,41 @@
+{
+  "spec": "openrouter:z-ai/glm-5.3-flash",
+  "log": "../bench/llm/prompts/246d3aa3e5d91deb9d2434834daf01b518f3a80b89d0b936f87cf08623cd90f7/llm/ocr-strip-paddle-nocrops.json",
+  "text": "{\"regions\":[{\"n\":0,\"kind\":\"sfx\",\"lines\":[\"I REMAIN MY PUTER\",\"AMBIVALENT ABOUT\"],\"align\":\"center\",\"caps\":true},{\"n\":1,\"kind\":\"caption\",\"lines\":[\"IT CONTAINS MULTITUDES. FRIENDS. ENEMIES.\",\"LOVE. HATE. TO REDUCE IT TO ONE OR THE OTHER\",\"IS AN EXERCISE IN FOOLISHNESS.\"],\"align\":\"center\",\"caps\":true}],\"unboxed\":[]}",
+  "json": {
+    "regions": [
+      {
+        "n": 0,
+        "kind": "sfx",
+        "lines": [
+          "I REMAIN MY PUTER",
+          "AMBIVALENT ABOUT"
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 1,
+        "kind": "caption",
+        "lines": [
+          "IT CONTAINS MULTITUDES. FRIENDS. ENEMIES.",
+          "LOVE. HATE. TO REDUCE IT TO ONE OR THE OTHER",
+          "IS AN EXERCISE IN FOOLISHNESS."
+        ],
+        "align": "center",
+        "caps": true
+      }
+    ],
+    "unboxed": []
+  },
+  "usage": {
+    "input_tokens": 1529,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 260,
+    "reasoning_tokens": 159
+  },
+  "costUsd": 0.000165146,
+  "ms": 1931,
+  "at": "2026-10-20T07:19:19.059379492Z"
+}

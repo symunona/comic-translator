@@ -99,6 +99,9 @@ func main() {
 					status = a.Error
 				}
 				log.Printf("%-48s %-28s %6dms $%.4f (run $%.3f) %s", spec, filepath.Base(path), a.Ms, a.CostUSD, total, trim(status, 80))
+				if transient(a.Error) {
+					return
+				}
 				if err := os.MkdirAll(filepath.Dir(dst), 0o755); err != nil {
 					log.Fatal(err)
 				}
@@ -148,6 +151,11 @@ func run(b llm.Backend, spec, path string) Answer {
 		a.Error = "timeout"
 	}
 	return a
+}
+
+// transient errors are not saved, so the next run retries the call.
+func transient(err string) bool {
+	return strings.Contains(err, "http 429") || strings.Contains(err, "http 5") || err == "timeout"
 }
 
 func trim(s string, n int) string {

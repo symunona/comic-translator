@@ -1,0 +1,30 @@
+{
+  "spec": "claude-cli:opus",
+  "log": "../bench/llm/prompts/893712989801daabc2a3d351e597946b61312aeb54e14e3d28aaf7f63ad64618/llm/ocr-p2.json",
+  "text": "{\"regions\":[{\"n\":1,\"kind\":\"thought\",\"lines\":[\"...and why can I see\",\"Komona through\",\"the window?\"],\"align\":\"center\",\"caps\":false}],\"unboxed\":[]}",
+  "json": {
+    "regions": [
+      {
+        "n": 1,
+        "kind": "thought",
+        "lines": [
+          "...and why can I see",
+          "Komona through",
+          "the window?"
+        ],
+        "align": "center",
+        "caps": false
+      }
+    ],
+    "unboxed": []
+  },
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 2720,
+    "cache_read_input_tokens": 4306,
+    "output_tokens": 302
+  },
+  "costUsd": 0.0286772,
+  "ms": 7635,
+  "at": "2026-10-20T07:19:53.590343418Z"
+}

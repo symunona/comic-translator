@@ -1,0 +1,32 @@
+{
+  "spec": "openrouter:qwen/qwen3.8-flash",
+  "log": "../bench/llm/prompts/3b3436860d742571c5a540084c396d020cb19fae9191994d00f2338e06c41d2b/llm/ocr-p4.json",
+  "text": "{\"regions\":[{\"n\":15,\"kind\":\"thought\",\"lines\":[\"ÉS MINDENHOL, AHOL A NAP,\",\"MEGFORDULOK, SZORNÁM SZÉJEL, MINT\",\"A PITYPANG A SZARJAIT, VÁGOD?\",\"MINDENFÉLÉ !!!\"],\"align\":\"left\",\"caps\":true}],\"unboxed\":[]}",
+  "json": {
+    "regions": [
+      {
+        "n": 15,
+        "kind": "thought",
+        "lines": [
+          "ÉS MINDENHOL, AHOL A NAP,",
+          "MEGFORDULOK, SZORNÁM SZÉJEL, MINT",
+          "A PITYPANG A SZARJAIT, VÁGOD?",
+          "MINDENFÉLÉ !!!"
+        ],
+        "align": "left",
+        "caps": true
+      }
+    ],
+    "unboxed": []
+  },
+  "usage": {
+    "input_tokens": 1260,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 499,
+    "reasoning_tokens": 411
+  },
+  "costUsd": 0.00042353,
+  "ms": 12963,
+  "at": "2026-10-20T07:14:24.195023156Z"
+}

@@ -1,0 +1,41 @@
+{
+  "spec": "claude-cli:sonnet",
+  "log": "../bench/llm/prompts/8f3737ae2df51cb23cc27c3f81a10a426a35fc918ea31cf1eff85be4fc0df452/llm/ocr-strip-paddle-nocrops.json",
+  "text": "{\"regions\":[{\"n\":0,\"kind\":\"speech\",\"lines\":[\"How do I\",\"exit vim?\"],\"align\":\"center\",\"caps\":false},{\"n\":1,\"kind\":\"speech\",\"lines\":[\"Why would I\",\"exit vim?\"],\"align\":\"center\",\"caps\":false}],\"unboxed\":[\"OUCH!\"]}",
+  "json": {
+    "regions": [
+      {
+        "n": 0,
+        "kind": "speech",
+        "lines": [
+          "How do I",
+          "exit vim?"
+        ],
+        "align": "center",
+        "caps": false
+      },
+      {
+        "n": 1,
+        "kind": "speech",
+        "lines": [
+          "Why would I",
+          "exit vim?"
+        ],
+        "align": "center",
+        "caps": false
+      }
+    ],
+    "unboxed": [
+      "OUCH!"
+    ]
+  },
+  "usage": {
+    "input_tokens": 5,
+    "cache_creation_input_tokens": 2832,
+    "cache_read_input_tokens": 4427,
+    "output_tokens": 352
+  },
+  "costUsd": 0.0153007,
+  "ms": 8967,
+  "at": "2026-10-20T07:20:18.847052552Z"
+}

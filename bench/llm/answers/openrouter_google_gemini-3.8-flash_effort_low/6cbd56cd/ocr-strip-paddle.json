@@ -1,0 +1,144 @@
+{
+  "spec": "openrouter:google/gemini-3.8-flash?effort=low",
+  "log": "../bench/llm/prompts/6cbd56cdd933343ad87de8c3e3dd772f7f771dd3f4786507d9786c71aad26a05/llm/ocr-strip-paddle.json",
+  "text": "{\"regions\":[{\"n\":0,\"kind\":\"speech\",\"lines\":[\"NAGYIKÁM, TIBOR PAPÁNAK\",\"VOLT A LEPKEGYŰJTŐ FELSZERELÉSÉHEZ\",\"EGY VIASZOSVÁSZON\",\"TARISZNYÁJA...\"],\"align\":\"center\",\"caps\":true},{\"n\":1,\"kind\":\"speech\",\"lines\":[\"OTT KELL LENNIE\",\"A SUFNIBAN!\"],\"align\":\"center\",\"caps\":true},{\"n\":2,\"kind\":\"speech\",\"lines\":[\"Ó JAJ...\"],\"align\":\"center\",\"caps\":true},{\"n\":3,\"kind\":\"speech\",\"lines\":[\"CSAK LÁTSZÓLAG EGY KIBASZOTT KUPLERÁJ,\",\"AMIBEN BOMBA ROBBANT.\",\"TULAJDONKÉPPEN EGY ZSENIÁLIS\",\"RENDSZER. A RÁHANGOLÓDÁSBAN\",\"SEGÍT A FÉNYKÉPE.\"],\"align\":\"center\",\"caps\":true},{\"n\":4,\"kind\":\"speech\",\"lines\":[\"EZ EGY HELIKOPTER\",\"TURBINA?\"],\"align\":\"center\",\"caps\":true},{\"n\":5,\"kind\":\"speech\",\"lines\":[\"IGEN, MÖGÖTTE INDUL\",\"A LÉPCSŐ!\"],\"align\":\"center\",\"caps\":true},{\"n\":6,\"kind\":\"speech\",\"lines\":[\"ÁÁÁ!!! BASSZAMEG\",\"EGY KAUKÁZUSI FÉRFI\",\"SZÁRÍTOTT MÚMIÁJA,\",\"BAZMEG!!!\"],\"align\":\"center\",\"caps\":true},{\"n\":7,\"kind\":\"speech\",\"lines\":[\"TELEKVITA\"],\"align\":\"center\",\"caps\":true},{\"n\":8,\"kind\":\"speech\",\"lines\":[\"FÚJ!... A BELSŐ SZERVEI\",\"ITT ÁZNAK EGY AKVÁRIUMBAN!\",\"A SZÍV KÜLÖN EGY\",\"LEKVÁROS ÜVEGBEN!\",\"FÚJBAZMEG!\"],\"align\":\"center\",\"caps\":true},{\"n\":9,\"kind\":\"none\",\"lines\":[],\"align\":\"center\",\"caps\":true},{\"n\":10,\"kind\":\"speech\",\"lines\":[\"TIBOROM\",\"PRECÍZ\",\"VOLT!\"],\"align\":\"center\",\"caps\":true},{\"n\":11,\"kind\":\"speech\",\"lines\":[\"EMBER\"],\"align\":\"center\",\"caps\":true}],\"unboxed\":[]}",
+  "json": {
+    "regions": [
+      {
+        "n": 0,
+        "kind": "speech",
+        "lines": [
+          "NAGYIKÁM, TIBOR PAPÁNAK",
+          "VOLT A LEPKEGYŰJTŐ FELSZERELÉSÉHEZ",
+          "EGY VIASZOSVÁSZON",
+          "TARISZNYÁJA..."
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 1,
+        "kind": "speech",
+        "lines": [
+          "OTT KELL LENNIE",
+          "A SUFNIBAN!"
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 2,
+        "kind": "speech",
+        "lines": [
+          "Ó JAJ..."
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 3,
+        "kind": "speech",
+        "lines": [
+          "CSAK LÁTSZÓLAG EGY KIBASZOTT KUPLERÁJ,",
+          "AMIBEN BOMBA ROBBANT.",
+          "TULAJDONKÉPPEN EGY ZSENIÁLIS",
+          "RENDSZER. A RÁHANGOLÓDÁSBAN",
+          "SEGÍT A FÉNYKÉPE."
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 4,
+        "kind": "speech",
+        "lines": [
+          "EZ EGY HELIKOPTER",
+          "TURBINA?"
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 5,
+        "kind": "speech",
+        "lines": [
+          "IGEN, MÖGÖTTE INDUL",
+          "A LÉPCSŐ!"
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 6,
+        "kind": "speech",
+        "lines": [
+          "ÁÁÁ!!! BASSZAMEG",
+          "EGY KAUKÁZUSI FÉRFI",
+          "SZÁRÍTOTT MÚMIÁJA,",
+          "BAZMEG!!!"
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 7,
+        "kind": "speech",
+        "lines": [
+          "TELEKVITA"
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 8,
+        "kind": "speech",
+        "lines": [
+          "FÚJ!... A BELSŐ SZERVEI",
+          "ITT ÁZNAK EGY AKVÁRIUMBAN!",
+          "A SZÍV KÜLÖN EGY",
+          "LEKVÁROS ÜVEGBEN!",
+          "FÚJBAZMEG!"
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 9,
+        "kind": "none",
+        "lines": [],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 10,
+        "kind": "speech",
+        "lines": [
+          "TIBOROM",
+          "PRECÍZ",
+          "VOLT!"
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 11,
+        "kind": "speech",
+        "lines": [
+          "EMBER"
+        ],
+        "align": "center",
+        "caps": true
+      }
+    ],
+    "unboxed": []
+  },
+  "usage": {
+    "input_tokens": 20127,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 521
+  },
+  "costUsd": 0.017049,
+  "ms": 22099,
+  "at": "2026-10-20T07:16:20.177901578Z"
+}

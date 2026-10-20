@@ -1,0 +1,50 @@
+{
+  "spec": "openrouter:qwen/qwen3.8-flash",
+  "log": "../bench/llm/prompts/35ce81ab353eaf542a2a53f673394ba425f4a3539a4b5f05a37172d09189cae8/llm/ocr-p3.json",
+  "text": "{\"regions\":[{\"n\":1,\"kind\":\"speech\",\"lines\":[\"Fan-tas-tic!\"],\"align\":\"center\",\"caps\":false},{\"n\":2,\"kind\":\"speech\",\"lines\":[\"You even thought of\",\"bringing a potion, my\",\"clothes, and my hat...\"],\"align\":\"center\",\"caps\":false},{\"n\":3,\"kind\":\"speech\",\"lines\":[\"...let's see which\",\"potion you brought...\"],\"align\":\"center\",\"caps\":false}],\"unboxed\":[]}",
+  "json": {
+    "regions": [
+      {
+        "n": 1,
+        "kind": "speech",
+        "lines": [
+          "Fan-tas-tic!"
+        ],
+        "align": "center",
+        "caps": false
+      },
+      {
+        "n": 2,
+        "kind": "speech",
+        "lines": [
+          "You even thought of",
+          "bringing a potion, my",
+          "clothes, and my hat..."
+        ],
+        "align": "center",
+        "caps": false
+      },
+      {
+        "n": 3,
+        "kind": "speech",
+        "lines": [
+          "...let's see which",
+          "potion you brought..."
+        ],
+        "align": "center",
+        "caps": false
+      }
+    ],
+    "unboxed": []
+  },
+  "usage": {
+    "input_tokens": 1658,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 361,
+    "reasoning_tokens": 257
+  },
+  "costUsd": 0.00041837,
+  "ms": 5110,
+  "at": "2026-10-20T07:19:57.963540333Z"
+}

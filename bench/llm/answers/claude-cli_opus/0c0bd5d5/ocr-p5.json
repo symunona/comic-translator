@@ -1,0 +1,51 @@
+{
+  "spec": "claude-cli:opus",
+  "log": "../bench/llm/prompts/0c0bd5d58b4b8bd03a1229371408586ca54a0de357a882ded2c9843589bea963/llm/ocr-p5.json",
+  "text": "{\"regions\":[{\"n\":15,\"kind\":\"speech\",\"lines\":[\"AKURVAÉLET!\"],\"align\":\"center\",\"caps\":true},{\"n\":16,\"kind\":\"sign\",\"lines\":[\"7722·683/FELVESZEM\"],\"align\":\"left\",\"caps\":true},{\"n\":17,\"kind\":\"none\",\"lines\":[],\"align\":\"center\",\"caps\":true},{\"n\":18,\"kind\":\"none\",\"lines\":[],\"align\":\"center\",\"caps\":true}],\"unboxed\":[]}",
+  "json": {
+    "regions": [
+      {
+        "n": 15,
+        "kind": "speech",
+        "lines": [
+          "AKURVAÉLET!"
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 16,
+        "kind": "sign",
+        "lines": [
+          "7722·683/FELVESZEM"
+        ],
+        "align": "left",
+        "caps": true
+      },
+      {
+        "n": 17,
+        "kind": "none",
+        "lines": [],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 18,
+        "kind": "none",
+        "lines": [],
+        "align": "center",
+        "caps": true
+      }
+    ],
+    "unboxed": []
+  },
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 4063,
+    "cache_read_input_tokens": 4862,
+    "output_tokens": 765
+  },
+  "costUsd": 0.0487924,
+  "ms": 9976,
+  "at": "2026-10-20T07:09:35.268620778Z"
+}

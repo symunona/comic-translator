@@ -1,0 +1,96 @@
+{
+  "spec": "claude-cli:haiku",
+  "log": "../bench/llm/prompts/2afc78b45293acd677ffcba91f53fea50838d406d2dd965846e83408657e58c7/llm/ocr-p6.json",
+  "text": "{\"regions\":[{\"n\":30,\"kind\":\"speech\",\"lines\":[\"SZÓVAL, AMIKOR A GROBKUGELNI\",\"PIHENŐBEN KINYITJA A\",\"KURVA AZ AJTÓT AKKOR\",\"NE AZT KÉRDEZZE, MERRE VAN\",\"A MÚZEUMSHOP, VÁGOD?\",\"IRÁNYNAK ILYEN NEOLOFTOS\",\"ART DEKÓT GONDOLNÉK.\"],\"align\":\"center\",\"caps\":true},{\"n\":31,\"kind\":\"none\",\"lines\":[],\"align\":\"center\",\"caps\":true},{\"n\":32,\"kind\":\"sign\",\"lines\":[\"RACALVIE\"],\"align\":\"center\",\"caps\":true},{\"n\":33,\"kind\":\"sign\",\"lines\":[\"FASZI BÁS\"],\"align\":\"center\",\"caps\":true},{\"n\":34,\"kind\":\"speech\",\"lines\":[\"ÉRTEM. EZ A DOBOZ, EZ MI?\",\"MARADNIA KELL?\"],\"align\":\"center\",\"caps\":true},{\"n\":35,\"kind\":\"speech\",\"lines\":[\"AKKSIK A FÉNYHEZ. MARAD.\"],\"align\":\"center\",\"caps\":true},{\"n\":36,\"kind\":\"speech\",\"lines\":[\"„FÉNYHEZ\\\"?\"],\"align\":\"center\",\"caps\":true},{\"n\":37,\"kind\":\"sign\",\"lines\":[\"FASZI-1\"],\"align\":\"center\",\"caps\":true}],\"unboxed\":[]}",
+  "json": {
+    "regions": [
+      {
+        "n": 30,
+        "kind": "speech",
+        "lines": [
+          "SZÓVAL, AMIKOR A GROBKUGELNI",
+          "PIHENŐBEN KINYITJA A",
+          "KURVA AZ AJTÓT AKKOR",
+          "NE AZT KÉRDEZZE, MERRE VAN",
+          "A MÚZEUMSHOP, VÁGOD?",
+          "IRÁNYNAK ILYEN NEOLOFTOS",
+          "ART DEKÓT GONDOLNÉK."
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 31,
+        "kind": "none",
+        "lines": [],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 32,
+        "kind": "sign",
+        "lines": [
+          "RACALVIE"
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 33,
+        "kind": "sign",
+        "lines": [
+          "FASZI BÁS"
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 34,
+        "kind": "speech",
+        "lines": [
+          "ÉRTEM. EZ A DOBOZ, EZ MI?",
+          "MARADNIA KELL?"
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 35,
+        "kind": "speech",
+        "lines": [
+          "AKKSIK A FÉNYHEZ. MARAD."
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 36,
+        "kind": "speech",
+        "lines": [
+          "„FÉNYHEZ\"?"
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 37,
+        "kind": "sign",
+        "lines": [
+          "FASZI-1"
+        ],
+        "align": "center",
+        "caps": true
+      }
+    ],
+    "unboxed": []
+  },
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 5582,
+    "cache_read_input_tokens": 5285,
+    "output_tokens": 2563
+  },
+  "costUsd": 0.00245115,
+  "ms": 12763,
+  "at": "2026-10-20T07:09:28.98973424Z"
+}

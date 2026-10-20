@@ -72,6 +72,7 @@ func main() {
 	static := flag.String("static", "", "serve built frontend from this dir (SPA fallback to index.html)")
 	models := flag.String("models", "", "serve browser models (onnx) from this dir at /models/")
 	isolate := flag.Bool("isolate", false, "send COOP/COEP headers (multi-threaded WASM in the browser)")
+	ocrPerPanel := flag.Bool("ocr-per-panel", false, "one OCR request per panel instead of one for the whole strip")
 	debug := flag.Bool("debug", os.Getenv("DEBUG") == "1", "UI shows where each step ran, models, raw $ and tokens (env DEBUG=1)")
 	flag.Parse()
 
@@ -104,6 +105,7 @@ func main() {
 	defer stop()
 
 	p := pipeline.New(st, det, lm)
+	p.OCRPerPanel = *ocrPerPanel
 	var handler http.Handler = (&api.Server{
 		P: p, Jobs: pipeline.NewJobs(ctx, p), ClientDetect: det == nil,
 		Debug: *debug, DetectorModel: detName, LLMStages: lm.Specs(),

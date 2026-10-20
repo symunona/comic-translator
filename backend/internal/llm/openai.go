@@ -21,8 +21,10 @@ type OpenAI struct {
 	Model    string
 	Effort   string
 	JSONMode bool
-	Extra    map[string]any
-	HTTP     *http.Client
+	// MaxTokens caps the reply incl. reasoning; 0 leaves the provider default.
+	MaxTokens int
+	Extra     map[string]any
+	HTTP      *http.Client
 }
 
 func (o *OpenAI) Name() string { return o.Provider + ":" + o.Model }
@@ -82,6 +84,9 @@ func (o *OpenAI) Complete(ctx context.Context, req Request) (*Response, error) {
 	}
 	if o.Effort != "" {
 		body["reasoning_effort"] = o.Effort
+	}
+	if o.MaxTokens > 0 {
+		body["max_tokens"] = o.MaxTokens
 	}
 	if o.JSONMode {
 		body["response_format"] = map[string]string{"type": "json_object"}
@@ -147,6 +152,9 @@ func (o *OpenAI) Complete(ctx context.Context, req Request) (*Response, error) {
 	}
 	if out.Choices[0].FinishReason == "length" {
 		return res, errors.New("hit max tokens")
+	}
+	if strings.TrimSpace(res.Text) == "" {
+		return res, fmt.Errorf("empty reply (finish_reason %q)", out.Choices[0].FinishReason)
 	}
 	return res, nil
 }

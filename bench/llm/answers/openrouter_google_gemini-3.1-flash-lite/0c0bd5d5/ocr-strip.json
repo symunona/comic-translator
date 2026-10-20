@@ -1,0 +1,245 @@
+{
+  "spec": "openrouter:google/gemini-3.1-flash-lite",
+  "log": "../bench/llm/prompts/0c0bd5d58b4b8bd03a1229371408586ca54a0de357a882ded2c9843589bea963/llm/ocr-strip.json",
+  "text": "{\"regions\":[{\"n\":0,\"kind\":\"sign\",\"lines\":[\"ÉTTŐIRAI KITTLEZÉS · OG\"],\"align\":\"left\",\"caps\":true},{\"n\":1,\"kind\":\"sfx\",\"lines\":[\"HRAHGHHRRR....\"],\"align\":\"left\",\"caps\":true},{\"n\":2,\"kind\":\"speech\",\"lines\":[\"MI A FASZOM?\"],\"align\":\"left\",\"caps\":true},{\"n\":3,\"kind\":\"sign\",\"lines\":[\"7722·683/FELVESZEM\"],\"align\":\"left\",\"caps\":true},{\"n\":4,\"kind\":\"speech\",\"lines\":[\"KI VAGY, ÉS MI A GECIT\",\"KERESEL A PLATÓMON,\",\"BAZME?\"],\"align\":\"left\",\"caps\":true},{\"n\":5,\"kind\":\"speech\",\"lines\":[\"A GUBACS TERÉZ\",\"ÚTON ÜTÖTT EL,\",\"MIND KÉT LÁBAM\",\"ELTÖRÖTT, AZÓTA\",\"FÁJ. FÁJOGAT.\"],\"align\":\"left\",\"caps\":true},{\"n\":6,\"kind\":\"speech\",\"lines\":[\"FEKSZEM ITT.\"],\"align\":\"left\",\"caps\":true},{\"n\":7,\"kind\":\"sign\",\"lines\":[\"7722·683/FELVESZEM\"],\"align\":\"left\",\"caps\":true},{\"n\":8,\"kind\":\"speech\",\"lines\":[\"NEM IS JÁRTAM ARRA MA, BAZME...\",\"A KÖZELBE SE.\"],\"align\":\"left\",\"caps\":true},{\"n\":9,\"kind\":\"speech\",\"lines\":[\"EZ MÚLT HÉT KEDDEN\",\"TÖRTÉNT...\"],\"align\":\"left\",\"caps\":true},{\"n\":10,\"kind\":\"none\",\"lines\":[],\"align\":\"left\",\"caps\":false},{\"n\":11,\"kind\":\"sign\",\"lines\":[\"7722·683/FELVESZEM\"],\"align\":\"left\",\"caps\":true},{\"n\":12,\"kind\":\"speech\",\"lines\":[\"MÚLT HÉT KEDD?\",\"NE KAMUZZÁ!\",\"HOGY NEM HALTÁL ÉHEN?\"],\"align\":\"left\",\"caps\":true},{\"n\":13,\"kind\":\"speech\",\"lines\":[\"KIFELÉ JÖTTEM A BOLTBÓL,\",\"AMIKOR TELIBE KAPOTT...\",\"KÉT NAGY\",\"SZATYOR...\"],\"align\":\"left\",\"caps\":true},{\"n\":14,\"kind\":\"sign\",\"lines\":[\"7722·683/FELVESZEM\"],\"align\":\"left\",\"caps\":true},{\"n\":15,\"kind\":\"speech\",\"lines\":[\"AKURVA ÉLET!\"],\"align\":\"left\",\"caps\":true},{\"n\":16,\"kind\":\"sign\",\"lines\":[\"7722·683/FELVESZEM\"],\"align\":\"left\",\"caps\":true},{\"n\":17,\"kind\":\"none\",\"lines\":[],\"align\":\"left\",\"caps\":false},{\"n\":18,\"kind\":\"none\",\"lines\":[],\"align\":\"left\",\"caps\":false},{\"n\":19,\"kind\":\"sfx\",\"lines\":[\"AAARRRGH....\"],\"align\":\"left\",\"caps\":true},{\"n\":20,\"kind\":\"sign\",\"lines\":[\"7722·683/FELVESZEM\"],\"align\":\"left\",\"caps\":true},{\"n\":21,\"kind\":\"speech\",\"lines\":[\"ITT EGY PLÉD, BAZME.\",\"ÉJJELENTE MÁR\",\"HIDEGEK VANNAK.\"],\"align\":\"left\",\"caps\":true},{\"n\":22,\"kind\":\"sign\",\"lines\":[\"7722·683/FELVESZEM\"],\"align\":\"left\",\"caps\":true},{\"n\":23,\"kind\":\"none\",\"lines\":[],\"align\":\"left\",\"caps\":false}],\"unboxed\":[\"HLOTT!\",\"RITY!\"]}",
+  "json": {
+    "regions": [
+      {
+        "n": 0,
+        "kind": "sign",
+        "lines": [
+          "ÉTTŐIRAI KITTLEZÉS · OG"
+        ],
+        "align": "left",
+        "caps": true
+      },
+      {
+        "n": 1,
+        "kind": "sfx",
+        "lines": [
+          "HRAHGHHRRR...."
+        ],
+        "align": "left",
+        "caps": true
+      },
+      {
+        "n": 2,
+        "kind": "speech",
+        "lines": [
+          "MI A FASZOM?"
+        ],
+        "align": "left",
+        "caps": true
+      },
+      {
+        "n": 3,
+        "kind": "sign",
+        "lines": [
+          "7722·683/FELVESZEM"
+        ],
+        "align": "left",
+        "caps": true
+      },
+      {
+        "n": 4,
+        "kind": "speech",
+        "lines": [
+          "KI VAGY, ÉS MI A GECIT",
+          "KERESEL A PLATÓMON,",
+          "BAZME?"
+        ],
+        "align": "left",
+        "caps": true
+      },
+      {
+        "n": 5,
+        "kind": "speech",
+        "lines": [
+          "A GUBACS TERÉZ",
+          "ÚTON ÜTÖTT EL,",
+          "MIND KÉT LÁBAM",
+          "ELTÖRÖTT, AZÓTA",
+          "FÁJ. FÁJOGAT."
+        ],
+        "align": "left",
+        "caps": true
+      },
+      {
+        "n": 6,
+        "kind": "speech",
+        "lines": [
+          "FEKSZEM ITT."
+        ],
+        "align": "left",
+        "caps": true
+      },
+      {
+        "n": 7,
+        "kind": "sign",
+        "lines": [
+          "7722·683/FELVESZEM"
+        ],
+        "align": "left",
+        "caps": true
+      },
+      {
+        "n": 8,
+        "kind": "speech",
+        "lines": [
+          "NEM IS JÁRTAM ARRA MA, BAZME...",
+          "A KÖZELBE SE."
+        ],
+        "align": "left",
+        "caps": true
+      },
+      {
+        "n": 9,
+        "kind": "speech",
+        "lines": [
+          "EZ MÚLT HÉT KEDDEN",
+          "TÖRTÉNT..."
+        ],
+        "align": "left",
+        "caps": true
+      },
+      {
+        "n": 10,
+        "kind": "none",
+        "lines": [],
+        "align": "left",
+        "caps": false
+      },
+      {
+        "n": 11,
+        "kind": "sign",
+        "lines": [
+          "7722·683/FELVESZEM"
+        ],
+        "align": "left",
+        "caps": true
+      },
+      {
+        "n": 12,
+        "kind": "speech",
+        "lines": [
+          "MÚLT HÉT KEDD?",
+          "NE KAMUZZÁ!",
+          "HOGY NEM HALTÁL ÉHEN?"
+        ],
+        "align": "left",
+        "caps": true
+      },
+      {
+        "n": 13,
+        "kind": "speech",
+        "lines": [
+          "KIFELÉ JÖTTEM A BOLTBÓL,",
+          "AMIKOR TELIBE KAPOTT...",
+          "KÉT NAGY",
+          "SZATYOR..."
+        ],
+        "align": "left",
+        "caps": true
+      },
+      {
+        "n": 14,
+        "kind": "sign",
+        "lines": [
+          "7722·683/FELVESZEM"
+        ],
+        "align": "left",
+        "caps": true
+      },
+      {
+        "n": 15,
+        "kind": "speech",
+        "lines": [
+          "AKURVA ÉLET!"
+        ],
+        "align": "left",
+        "caps": true
+      },
+      {
+        "n": 16,
+        "kind": "sign",
+        "lines": [
+          "7722·683/FELVESZEM"
+        ],
+        "align": "left",
+        "caps": true
+      },
+      {
+        "n": 17,
+        "kind": "none",
+        "lines": [],
+        "align": "left",
+        "caps": false
+      },
+      {
+        "n": 18,
+        "kind": "none",
+        "lines": [],
+        "align": "left",
+        "caps": false
+      },
+      {
+        "n": 19,
+        "kind": "sfx",
+        "lines": [
+          "AAARRRGH...."
+        ],
+        "align": "left",
+        "caps": true
+      },
+      {
+        "n": 20,
+        "kind": "sign",
+        "lines": [
+          "7722·683/FELVESZEM"
+        ],
+        "align": "left",
+        "caps": true
+      },
+      {
+        "n": 21,
+        "kind": "speech",
+        "lines": [
+          "ITT EGY PLÉD, BAZME.",
+          "ÉJJELENTE MÁR",
+          "HIDEGEK VANNAK."
+        ],
+        "align": "left",
+        "caps": true
+      },
+      {
+        "n": 22,
+        "kind": "sign",
+        "lines": [
+          "7722·683/FELVESZEM"
+        ],
+        "align": "left",
+        "caps": true
+      },
+      {
+        "n": 23,
+        "kind": "none",
+        "lines": [],
+        "align": "left",
+        "caps": false
+      }
+    ],
+    "unboxed": [
+      "HLOTT!",
+      "RITY!"
+    ]
+  },
+  "usage": {
+    "input_tokens": 36222,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 822
+  },
+  "costUsd": 0.0102885,
+  "ms": 8900,
+  "at": "2026-10-20T07:07:36.850727226Z"
+}

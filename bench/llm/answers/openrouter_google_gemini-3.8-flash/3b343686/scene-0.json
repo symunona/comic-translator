@@ -1,0 +1,89 @@
+{
+  "spec": "openrouter:google/gemini-3.8-flash",
+  "log": "../data/3b3436860d742571c5a540084c396d020cb19fae9191994d00f2338e06c41d2b/llm/scene-0.json",
+  "text": "{\"characters\":[{\"description\":\"Overly enthusiastic street interviewer with a microphone and a wide manic grin. Uses media-friendly broadcast tone mixed with crude assumptions, repeatedly guessing luxury items and vulgar desires.\",\"name\":\"enthusiastic street reporter\"},{\"description\":\"A bald, working-class guy in a hoodie smoking a cigarette. Speaks in raw, conversational Hungarian slang ('vágod?', 'kurvanagy', 'bazmeg'). Calm on the surface, but harbors incandescent, suppressed mechanical frustration over lost tools.\",\"name\":\"bald smoker passerby\"}],\"notes\":[\"'Randomtibor': a blend of English 'random' and the generic Hungarian given name 'Tibor', meaning an average Joe or random guy on the street.\",\"'Lottó ötös' (lottery five): the jackpot of Hungary's classic 5/90 lottery (Ötöslottó), the quintessential Hungarian symbol of sudden massive wealth.\",\"'Pinák?': crude Hungarian slang for 'pussy / chicks / broads'. The reporter repeatedly blurts it out as the presumed default desire of any ordinary man with money (r4, r8, r11).\",\"The mechanic's punchline: in metric mechanics, a standard M6 bolt ('hatos csavar') takes a 10 mm wrench ('tízes villáskulcs'). The 10 mm wrench/socket is universally notorious among DIYers and mechanics for always going missing. Instead of luxury lifestyle fantasies, his dream is solving this hyper-specific grievance by scattering thousands of 10 mm spanners everywhere so he never lacks one.\",\"'Agyig rakva': Hungarian idiom meaning packed to the absolute brim (literally 'loaded up to the brain').\",\"'Mint a pitypang a szarjait': vulgar simile ('like a dandelion [blowing] its crap/seeds everywhere').\",\"'Vágod?': ubiquitous Hungarian slang filler equivalent to 'you feel me?' or 'get it?'.\",\"'Bazmeg': common coarse curse word ('fuck' / 'fuck's sake').\",\"Visual gag: the passerby transforms into an unhinged roaring demon in panel p5 from pure remembered rage about M6 bolts, violently blowing the reporter off his feet, then steps over the unconscious reporter in p6, calmly lighting a match and finishing his thought.\"],\"panels\":[{\"description\":\"An energetic street reporter smiles broadly at the camera with his microphone, announcing he is about to stop a random pedestrian to ask a question.\",\"panelId\":\"p0\"},{\"description\":\"The reporter approaches a bald man in a hoodie who is strolling with hands in pockets and a cigarette in his mouth, asking what he would do first if he won the lottery jackpot.\",\"panelId\":\"p1\"},{\"description\":\"The passerby pauses to consider the question, while the eager reporter peppers him with guesses like sports cars, yachts, villas, and repeatedly 'pinák' (chicks).\",\"panelId\":\"p2\"},{\"description\":\"The passerby flicks his cigarette away and explains passionately that he would buy a massive box filled to the brim with thousands of 10 mm wrenches.\",\"panelId\":\"p3\"},{\"description\":\"With an arm around the reporter, the passerby dreamily gestures toward the horizon, explaining that he would scatter the 10 mm wrenches everywhere like dandelion seeds.\",\"panelId\":\"p4\"},{\"description\":\"The passerby suddenly morphs into a roaring monster, screaming in fury at the thought of encountering an M6 bolt without the right tool, the force of his shout blasting the reporter backward.\",\"panelId\":\"p5\"},{\"description\":\"The passerby calmly walks over the knocked-out reporter lying on the ground, casually preparing to light another smoke as he concludes that anywhere he reaches, there should be five wrenches, not just one.\",\"panelId\":\"p6\"}],\"speakers\":{\"r0\":\"enthusiastic street reporter\",\"r1\":\"none\",\"r10\":\"enthusiastic street reporter\",\"r11\":\"enthusiastic street reporter\",\"r12\":\"none\",\"r13\":\"bald smoker passerby\",\"r14\":\"none\",\"r15\":\"bald smoker passerby\",\"r16\":\"bald smoker passerby\",\"r17\":\"bald smoker passerby\",\"r2\":\"enthusiastic street reporter\",\"r3\":\"enthusiastic street reporter\",\"r4\":\"enthusiastic street reporter\",\"r5\":\"bald smoker passerby\",\"r6\":\"enthusiastic street reporter\",\"r7\":\"enthusiastic street reporter\",\"r8\":\"enthusiastic street reporter\",\"r9\":\"none\"},\"summary\":\"A cheesy TV reporter does a man-on-the-street interview, asking a random pedestrian what he would do first if he won the lottery jackpot. While the reporter expects clichéd answers like sports cars, yachts, or women, the passerby reveals an intensely practical, obsessive fantasy: buying thousands of 10 mm open-end wrenches and scattering them everywhere. The joke culminates in a burst of furious rage over the relatable mechanical nightmare of never finding a 10 mm wrench when facing an M6 bolt, leaving the interviewer knocked out cold.\"}",
+  "json": {
+    "characters": [
+      {
+        "description": "Overly enthusiastic street interviewer with a microphone and a wide manic grin. Uses media-friendly broadcast tone mixed with crude assumptions, repeatedly guessing luxury items and vulgar desires.",
+        "name": "enthusiastic street reporter"
+      },
+      {
+        "description": "A bald, working-class guy in a hoodie smoking a cigarette. Speaks in raw, conversational Hungarian slang ('vágod?', 'kurvanagy', 'bazmeg'). Calm on the surface, but harbors incandescent, suppressed mechanical frustration over lost tools.",
+        "name": "bald smoker passerby"
+      }
+    ],
+    "notes": [
+      "'Randomtibor': a blend of English 'random' and the generic Hungarian given name 'Tibor', meaning an average Joe or random guy on the street.",
+      "'Lottó ötös' (lottery five): the jackpot of Hungary's classic 5/90 lottery (Ötöslottó), the quintessential Hungarian symbol of sudden massive wealth.",
+      "'Pinák?': crude Hungarian slang for 'pussy / chicks / broads'. The reporter repeatedly blurts it out as the presumed default desire of any ordinary man with money (r4, r8, r11).",
+      "The mechanic's punchline: in metric mechanics, a standard M6 bolt ('hatos csavar') takes a 10 mm wrench ('tízes villáskulcs'). The 10 mm wrench/socket is universally notorious among DIYers and mechanics for always going missing. Instead of luxury lifestyle fantasies, his dream is solving this hyper-specific grievance by scattering thousands of 10 mm spanners everywhere so he never lacks one.",
+      "'Agyig rakva': Hungarian idiom meaning packed to the absolute brim (literally 'loaded up to the brain').",
+      "'Mint a pitypang a szarjait': vulgar simile ('like a dandelion [blowing] its crap/seeds everywhere').",
+      "'Vágod?': ubiquitous Hungarian slang filler equivalent to 'you feel me?' or 'get it?'.",
+      "'Bazmeg': common coarse curse word ('fuck' / 'fuck's sake').",
+      "Visual gag: the passerby transforms into an unhinged roaring demon in panel p5 from pure remembered rage about M6 bolts, violently blowing the reporter off his feet, then steps over the unconscious reporter in p6, calmly lighting a match and finishing his thought."
+    ],
+    "panels": [
+      {
+        "description": "An energetic street reporter smiles broadly at the camera with his microphone, announcing he is about to stop a random pedestrian to ask a question.",
+        "panelId": "p0"
+      },
+      {
+        "description": "The reporter approaches a bald man in a hoodie who is strolling with hands in pockets and a cigarette in his mouth, asking what he would do first if he won the lottery jackpot.",
+        "panelId": "p1"
+      },
+      {
+        "description": "The passerby pauses to consider the question, while the eager reporter peppers him with guesses like sports cars, yachts, villas, and repeatedly 'pinák' (chicks).",
+        "panelId": "p2"
+      },
+      {
+        "description": "The passerby flicks his cigarette away and explains passionately that he would buy a massive box filled to the brim with thousands of 10 mm wrenches.",
+        "panelId": "p3"
+      },
+      {
+        "description": "With an arm around the reporter, the passerby dreamily gestures toward the horizon, explaining that he would scatter the 10 mm wrenches everywhere like dandelion seeds.",
+        "panelId": "p4"
+      },
+      {
+        "description": "The passerby suddenly morphs into a roaring monster, screaming in fury at the thought of encountering an M6 bolt without the right tool, the force of his shout blasting the reporter backward.",
+        "panelId": "p5"
+      },
+      {
+        "description": "The passerby calmly walks over the knocked-out reporter lying on the ground, casually preparing to light another smoke as he concludes that anywhere he reaches, there should be five wrenches, not just one.",
+        "panelId": "p6"
+      }
+    ],
+    "speakers": {
+      "r0": "enthusiastic street reporter",
+      "r1": "none",
+      "r10": "enthusiastic street reporter",
+      "r11": "enthusiastic street reporter",
+      "r12": "none",
+      "r13": "bald smoker passerby",
+      "r14": "none",
+      "r15": "bald smoker passerby",
+      "r16": "bald smoker passerby",
+      "r17": "bald smoker passerby",
+      "r2": "enthusiastic street reporter",
+      "r3": "enthusiastic street reporter",
+      "r4": "enthusiastic street reporter",
+      "r5": "bald smoker passerby",
+      "r6": "enthusiastic street reporter",
+      "r7": "enthusiastic street reporter",
+      "r8": "enthusiastic street reporter",
+      "r9": "none"
+    },
+    "summary": "A cheesy TV reporter does a man-on-the-street interview, asking a random pedestrian what he would do first if he won the lottery jackpot. While the reporter expects clichéd answers like sports cars, yachts, or women, the passerby reveals an intensely practical, obsessive fantasy: buying thousands of 10 mm open-end wrenches and scattering them everywhere. The joke culminates in a burst of furious rage over the relatable mechanical nightmare of never finding a 10 mm wrench when facing an M6 bolt, leaving the interviewer knocked out cold."
+  },
+  "usage": {
+    "input_tokens": 9100,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2648,
+    "reasoning_tokens": 1599
+  },
+  "costUsd": 0.016755,
+  "ms": 21652,
+  "at": "2026-10-20T07:08:36.021567233Z"
+}

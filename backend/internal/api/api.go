@@ -179,7 +179,12 @@ func (s *Server) upload(w http.ResponseWriter, r *http.Request) {
 		httpError(w, http.StatusBadRequest, err.Error())
 		return
 	}
-	id, existing, err := s.P.Ingest(data, hdr.Filename)
+	src := r.FormValue("src")
+	if src != "" && !langRe.MatchString(src) {
+		httpError(w, http.StatusBadRequest, "bad src")
+		return
+	}
+	id, existing, err := s.P.Ingest(data, hdr.Filename, src)
 	if err != nil {
 		httpError(w, http.StatusBadRequest, err.Error())
 		return

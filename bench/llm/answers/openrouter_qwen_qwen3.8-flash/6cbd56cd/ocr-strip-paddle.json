@@ -1,0 +1,151 @@
+{
+  "spec": "openrouter:qwen/qwen3.8-flash",
+  "log": "../bench/llm/prompts/6cbd56cdd933343ad87de8c3e3dd772f7f771dd3f4786507d9786c71aad26a05/llm/ocr-strip-paddle.json",
+  "text": "{\n  \"regions\": [\n    {\n      \"n\": 0,\n      \"kind\": \"speech\",\n      \"lines\": [\n        \"NAGYIKÁM, TIBOR PAPÁNAK\",\n        \"VOLT A LEPKEGYŰJTŐ FELSZERE LÉSÉHEZ\",\n        \"EGY VIASZOSVÁSZON\",\n        \"TARISZNYÁJA...\"\n      ],\n      \"align\": \"left\",\n      \"caps\": true\n    },\n    {\n      \"n\": 1,\n      \"kind\": \"speech\",\n      \"lines\": [\n        \"OTT KELL LENNIE\",\n        \"A SUFNIBAN!\"\n      ],\n      \"align\": \"left\",\n      \"caps\": true\n    },\n    {\n      \"n\": 2,\n      \"kind\": \"speech\",\n      \"lines\": [\n        \"Ó JAJ...\"\n      ],\n      \"align\": \"center\",\n      \"caps\": true\n    },\n    {\n      \"n\": 3,\n      \"kind\": \"speech\",\n      \"lines\": [\n        \"CSAK LÁTSZÓLAG EGY KIBASZOTT KUPLERÁS,\",\n        \"AMIBEN BOMBA ROBBANT.\",\n        \"TULAJDONKÉPPEN EGY ZSENIÁLIS\",\n        \"RENDSZER. A RÁHANGOLÓDÁSBAN\",\n        \"SEGÍT A FÉNYKÉPE.\"\n      ],\n      \"align\": \"left\",\n      \"caps\": true\n    },\n    {\n      \"n\": 4,\n      \"kind\": \"speech\",\n      \"lines\": [\n        \"EZ EGY HELIKOPTER\",\n        \"TURBINA?\"\n      ],\n      \"align\": \"center\",\n      \"caps\": true\n    },\n    {\n      \"n\": 5,\n      \"kind\": \"speech\",\n      \"lines\": [\n        \"IGEN, MÖGÖTTE INDUL\",\n        \"A LÉPCSŐ!\"\n      ],\n      \"align\": \"center\",\n      \"caps\": true\n    },\n    {\n      \"n\": 6,\n      \"kind\": \"speech\",\n      \"lines\": [\n        \"ÁÁÁ!!! BASSZAMEG\",\n        \"EGY KAUKÁZSI FÉRFI,\",\n        \"SZARÍTOTT MÚMIÁJA,\",\n        \"BAZMEG!!!\"\n      ],\n      \"align\": \"center\",\n      \"caps\": true\n    },\n    {\n      \"n\": 7,\n      \"kind\": \"speech\",\n      \"lines\": [\n        \"TELEVITÁ\"\n      ],\n      \"align\": \"center\",\n      \"caps\": true\n    },\n    {\n      \"n\": 8,\n      \"kind\": \"speech\",\n      \"lines\": [\n        \"FÚJ!... A BELSŐ SZERVEI\",\n        \"IT AZNAK EGY AKVÁRIUMBAN\",\n        \"A SZÍV KÜLÖN EGY\",\n        \"LEKVÁROS ÜVEGBEN!\",\n        \"FÚJBAZMEG!\"\n      ],\n      \"align\": \"left\",\n      \"caps\": true\n    },\n    {\n      \"n\": 9,\n      \"kind\": \"speech\",\n      \"lines\": [\n        \"FÚJ!... A BELSŐ SZERVEI\",\n        \"IT AZNAK EGY AKVÁRIUMBAN\",\n        \"A SZÍV KÜLÖN EGY\",\n        \"LEKVÁROS ÜVEGBEN!\",\n        \"FÚJBAZMEG!\"\n      ],\n      \"align\": \"left\",\n      \"caps\": true\n    },\n    {\n      \"n\": 10,\n      \"kind\": \"speech\",\n      \"lines\": [\n        \"TIBOROM\",\n        \"PRECÍZ\",\n        \"VOLT!\"\n      ],\n      \"align\": \"center\",\n      \"caps\": true\n    },\n    {\n      \"n\": 11,\n      \"kind\": \"speech\",\n      \"lines\": [\n        \"EMBER\"\n      ],\n      \"align\": \"center\",\n      \"caps\": true\n    }\n  ],\n  \"unboxed\": []\n}",
+  "json": {
+    "regions": [
+      {
+        "n": 0,
+        "kind": "speech",
+        "lines": [
+          "NAGYIKÁM, TIBOR PAPÁNAK",
+          "VOLT A LEPKEGYŰJTŐ FELSZERE LÉSÉHEZ",
+          "EGY VIASZOSVÁSZON",
+          "TARISZNYÁJA..."
+        ],
+        "align": "left",
+        "caps": true
+      },
+      {
+        "n": 1,
+        "kind": "speech",
+        "lines": [
+          "OTT KELL LENNIE",
+          "A SUFNIBAN!"
+        ],
+        "align": "left",
+        "caps": true
+      },
+      {
+        "n": 2,
+        "kind": "speech",
+        "lines": [
+          "Ó JAJ..."
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 3,
+        "kind": "speech",
+        "lines": [
+          "CSAK LÁTSZÓLAG EGY KIBASZOTT KUPLERÁS,",
+          "AMIBEN BOMBA ROBBANT.",
+          "TULAJDONKÉPPEN EGY ZSENIÁLIS",
+          "RENDSZER. A RÁHANGOLÓDÁSBAN",
+          "SEGÍT A FÉNYKÉPE."
+        ],
+        "align": "left",
+        "caps": true
+      },
+      {
+        "n": 4,
+        "kind": "speech",
+        "lines": [
+          "EZ EGY HELIKOPTER",
+          "TURBINA?"
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 5,
+        "kind": "speech",
+        "lines": [
+          "IGEN, MÖGÖTTE INDUL",
+          "A LÉPCSŐ!"
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 6,
+        "kind": "speech",
+        "lines": [
+          "ÁÁÁ!!! BASSZAMEG",
+          "EGY KAUKÁZSI FÉRFI,",
+          "SZARÍTOTT MÚMIÁJA,",
+          "BAZMEG!!!"
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 7,
+        "kind": "speech",
+        "lines": [
+          "TELEVITÁ"
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 8,
+        "kind": "speech",
+        "lines": [
+          "FÚJ!... A BELSŐ SZERVEI",
+          "IT AZNAK EGY AKVÁRIUMBAN",
+          "A SZÍV KÜLÖN EGY",
+          "LEKVÁROS ÜVEGBEN!",
+          "FÚJBAZMEG!"
+        ],
+        "align": "left",
+        "caps": true
+      },
+      {
+        "n": 9,
+        "kind": "speech",
+        "lines": [
+          "FÚJ!... A BELSŐ SZERVEI",
+          "IT AZNAK EGY AKVÁRIUMBAN",
+          "A SZÍV KÜLÖN EGY",
+          "LEKVÁROS ÜVEGBEN!",
+          "FÚJBAZMEG!"
+        ],
+        "align": "left",
+        "caps": true
+      },
+      {
+        "n": 10,
+        "kind": "speech",
+        "lines": [
+          "TIBOROM",
+          "PRECÍZ",
+          "VOLT!"
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 11,
+        "kind": "speech",
+        "lines": [
+          "EMBER"
+        ],
+        "align": "center",
+        "caps": true
+      }
+    ],
+    "unboxed": []
+  },
+  "usage": {
+    "input_tokens": 1653,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 2304,
+    "output_tokens": 13253,
+    "reasoning_tokens": 12243
+  },
+  "costUsd": 0.006513724,
+  "ms": 194148,
+  "at": "2026-10-20T07:16:06.775262702Z"
+}

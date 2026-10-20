@@ -1,0 +1,46 @@
+{
+  "spec": "claude-cli:haiku",
+  "log": "../bench/llm/prompts/0c0bd5d58b4b8bd03a1229371408586ca54a0de357a882ded2c9843589bea963/llm/ocr-p7.json",
+  "text": "{\"regions\":[{\"n\":21,\"kind\":\"speech\",\"lines\":[\"ITT EGY PLÉD, BAZME.\",\"ÉJJELENTE MÁR\",\"HIDEGEK VANNAK.\"],\"align\":\"center\",\"caps\":true},{\"n\":22,\"kind\":\"sign\",\"lines\":[\"7722·683 | FELVESZEM\"],\"align\":\"left\",\"caps\":true},{\"n\":23,\"kind\":\"none\",\"lines\":[],\"align\":\"center\",\"caps\":false}],\"unboxed\":[]}",
+  "json": {
+    "regions": [
+      {
+        "n": 21,
+        "kind": "speech",
+        "lines": [
+          "ITT EGY PLÉD, BAZME.",
+          "ÉJJELENTE MÁR",
+          "HIDEGEK VANNAK."
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 22,
+        "kind": "sign",
+        "lines": [
+          "7722·683 | FELVESZEM"
+        ],
+        "align": "left",
+        "caps": true
+      },
+      {
+        "n": 23,
+        "kind": "none",
+        "lines": [],
+        "align": "center",
+        "caps": false
+      }
+    ],
+    "unboxed": []
+  },
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 3881,
+    "cache_read_input_tokens": 4755,
+    "output_tokens": 1515
+  },
+  "costUsd": 0.0015816500000000002,
+  "ms": 9609,
+  "at": "2026-10-20T07:07:41.862488044Z"
+}

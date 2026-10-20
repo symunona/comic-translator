@@ -1,0 +1,61 @@
+{
+  "spec": "openrouter:google/gemini-3.1-flash-lite",
+  "log": "../bench/llm/prompts/35ce81ab353eaf542a2a53f673394ba425f4a3539a4b5f05a37172d09189cae8/llm/ocr-strip.json",
+  "text": "{\n  \"regions\": [\n    {\n      \"n\": 0,\n      \"kind\": \"thought\",\n      \"lines\": [\n        \"Carrot!\",\n        \"You're so cute to have\",\n        \"thought of bringing me to\",\n        \"the Contest!\"\n      ],\n      \"align\": \"center\",\n      \"caps\": false\n    },\n    {\n      \"n\": 1,\n      \"kind\": \"speech\",\n      \"lines\": [\n        \"Fan-tas-tic!\"\n      ],\n      \"align\": \"center\",\n      \"caps\": false\n    },\n    {\n      \"n\": 2,\n      \"kind\": \"speech\",\n      \"lines\": [\n        \"You even thought of\",\n        \"bringing a potion, my\",\n        \"clothes, and my hat...\"\n      ],\n      \"align\": \"left\",\n      \"caps\": false\n    },\n    {\n      \"n\": 3,\n      \"kind\": \"speech\",\n      \"lines\": [\n        \"...let's see which\",\n        \"potion you brought...\"\n      ],\n      \"align\": \"left\",\n      \"caps\": false\n    }\n  ],\n  \"unboxed\": []\n}",
+  "json": {
+    "regions": [
+      {
+        "n": 0,
+        "kind": "thought",
+        "lines": [
+          "Carrot!",
+          "You're so cute to have",
+          "thought of bringing me to",
+          "the Contest!"
+        ],
+        "align": "center",
+        "caps": false
+      },
+      {
+        "n": 1,
+        "kind": "speech",
+        "lines": [
+          "Fan-tas-tic!"
+        ],
+        "align": "center",
+        "caps": false
+      },
+      {
+        "n": 2,
+        "kind": "speech",
+        "lines": [
+          "You even thought of",
+          "bringing a potion, my",
+          "clothes, and my hat..."
+        ],
+        "align": "left",
+        "caps": false
+      },
+      {
+        "n": 3,
+        "kind": "speech",
+        "lines": [
+          "...let's see which",
+          "potion you brought..."
+        ],
+        "align": "left",
+        "caps": false
+      }
+    ],
+    "unboxed": []
+  },
+  "usage": {
+    "input_tokens": 7356,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 282
+  },
+  "costUsd": 0.002262,
+  "ms": 2188,
+  "at": "2026-10-20T07:19:22.38647959Z"
+}

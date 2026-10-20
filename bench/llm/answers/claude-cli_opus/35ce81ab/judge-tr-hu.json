@@ -1,0 +1,161 @@
+{
+  "spec": "claude-cli:opus",
+  "log": "../bench/llm/judge/35ce81ab353eaf542a2a53f673394ba425f4a3539a4b5f05a37172d09189cae8/llm/judge-tr-hu.json",
+  "text": "{\"candidates\":{\"C\":{\"accuracy\":9,\"naturalness\":9,\"humour\":8,\"voice\":9,\"fit\":10,\"overall\":9,\"worst\":\"r0 'elhozni' (bring here) is slightly off for a trip that is still under way; 'elvinni' (take there) would fit better\"},\"E\":{\"accuracy\":8,\"naturalness\":9,\"humour\":8,\"voice\":8,\"fit\":10,\"overall\":8,\"worst\":\"r0 leaves 'Carrot' in English, so Hungarian readers lose the link between the name and his orange fur; r1 'Ha-tal-mas' replaces 'fantastic' with another word\"},\"A\":{\"accuracy\":8,\"naturalness\":8,\"humour\":8,\"voice\":8,\"fit\":9,\"overall\":8,\"worst\":\"r2 'ruhát' (clothes) drops 'my', so it no longer says these are her clothes\"},\"G\":{\"accuracy\":8,\"naturalness\":8,\"humour\":8,\"voice\":8,\"fit\":9,\"overall\":8,\"worst\":\"r2 'egy bájitalt, ruhát, meg a kalapomat' is an unevenly built list, and 'ruhát' drops 'my'\"},\"K\":{\"accuracy\":8,\"naturalness\":7,\"humour\":8,\"voice\":9,\"fit\":9,\"overall\":8,\"worst\":\"r2 'ruháimat' (my clothes) has no article before it, which reads stiffly\"},\"H\":{\"accuracy\":8,\"naturalness\":8,\"humour\":6,\"voice\":8,\"fit\":10,\"overall\":7,\"worst\":\"r1 'Fantaszti-kus!' splits the word in the wrong place, so the drawn-out syllable emphasis is lost\"},\"J\":{\"accuracy\":7,\"naturalness\":9,\"humour\":8,\"voice\":8,\"fit\":10,\"overall\":7,\"worst\":\"r0 leaves 'Carrot' untranslated; r2 'ruhát és kalapot' drops 'my'\"},\"F\":{\"accuracy\":8,\"naturalness\":8,\"humour\":7,\"voice\":8,\"fit\":9,\"overall\":7,\"worst\":\"r0 leaves 'Carrot' untranslated; r1 swaps the source word for 'Ha-tal-mas'\"},\"D\":{\"accuracy\":8,\"naturalness\":6,\"humour\":8,\"voice\":8,\"fit\":9,\"overall\":6,\"worst\":\"r3 'melyik bájitalt hoztál' uses the wrong verb form; it should be 'hoztad' with 'melyik'\"},\"M\":{\"accuracy\":8,\"naturalness\":6,\"humour\":7,\"voice\":8,\"fit\":9,\"overall\":6,\"worst\":\"r2 'ruháimat és kalapomat' leaves out the articles, which sounds awkward\"},\"B\":{\"accuracy\":7,\"naturalness\":6,\"humour\":7,\"voice\":7,\"fit\":9,\"overall\":6,\"worst\":\"r2 'hogy hozol főzetet, ruháimat' uses the plain verb form where 'hozz' is needed and leaves out an article\"},\"L\":{\"accuracy\":7,\"naturalness\":6,\"humour\":7,\"voice\":7,\"fit\":9,\"overall\":6,\"worst\":\"r2 'hogy hozol főzetet, ruháimat' uses the plain verb form where 'hozz' is needed and leaves out an article\"},\"I\":{\"accuracy\":7,\"naturalness\":5,\"humour\":7,\"voice\":7,\"fit\":9,\"overall\":5,\"worst\":\"r3 'melyik bájitalt hoztál' has a verb-form error, and r2 'ruhát és kalapot' drops 'my'\"},\"N\":{\"accuracy\":6,\"naturalness\":4,\"humour\":6,\"voice\":6,\"fit\":9,\"overall\":4,\"worst\":\"r0 'Úgy imádlak, hogy eszedbe jutott' does not make sense in Hungarian; r2 'a kalapom is bepakoltad' is ungrammatical\"}},\"ranking\":[\"C\",\"E\",\"A\",\"G\",\"K\",\"H\",\"J\",\"F\",\"D\",\"M\",\"B\",\"L\",\"I\",\"N\"],\"notes\":\"The best candidates translate the cat's name as 'Répa' and keep the warm syllable-split exclamation in r1. They also phrase r2 as a natural list with 'my' kept, as C does with 'Még a bájitalra, a ruháimra és a kalapomra is gondoltál'. Weaker candidates lose points for four main reasons. Some leave 'Carrot' in English. Some use the wrong verb form ('hoztál' with 'melyik' in D and I, 'hozol' in B and L). Some drop articles or the word 'my'. N is odd throughout. 'Elhozni' instead of 'elvinni' is a minor slip that many candidates share.\"}",
+  "json": {
+    "candidates": {
+      "C": {
+        "accuracy": 9,
+        "naturalness": 9,
+        "humour": 8,
+        "voice": 9,
+        "fit": 10,
+        "overall": 9,
+        "worst": "r0 'elhozni' (bring here) is slightly off for a trip that is still under way; 'elvinni' (take there) would fit better"
+      },
+      "E": {
+        "accuracy": 8,
+        "naturalness": 9,
+        "humour": 8,
+        "voice": 8,
+        "fit": 10,
+        "overall": 8,
+        "worst": "r0 leaves 'Carrot' in English, so Hungarian readers lose the link between the name and his orange fur; r1 'Ha-tal-mas' replaces 'fantastic' with another word"
+      },
+      "A": {
+        "accuracy": 8,
+        "naturalness": 8,
+        "humour": 8,
+        "voice": 8,
+        "fit": 9,
+        "overall": 8,
+        "worst": "r2 'ruhát' (clothes) drops 'my', so it no longer says these are her clothes"
+      },
+      "G": {
+        "accuracy": 8,
+        "naturalness": 8,
+        "humour": 8,
+        "voice": 8,
+        "fit": 9,
+        "overall": 8,
+        "worst": "r2 'egy bájitalt, ruhát, meg a kalapomat' is an unevenly built list, and 'ruhát' drops 'my'"
+      },
+      "K": {
+        "accuracy": 8,
+        "naturalness": 7,
+        "humour": 8,
+        "voice": 9,
+        "fit": 9,
+        "overall": 8,
+        "worst": "r2 'ruháimat' (my clothes) has no article before it, which reads stiffly"
+      },
+      "H": {
+        "accuracy": 8,
+        "naturalness": 8,
+        "humour": 6,
+        "voice": 8,
+        "fit": 10,
+        "overall": 7,
+        "worst": "r1 'Fantaszti-kus!' splits the word in the wrong place, so the drawn-out syllable emphasis is lost"
+      },
+      "J": {
+        "accuracy": 7,
+        "naturalness": 9,
+        "humour": 8,
+        "voice": 8,
+        "fit": 10,
+        "overall": 7,
+        "worst": "r0 leaves 'Carrot' untranslated; r2 'ruhát és kalapot' drops 'my'"
+      },
+      "F": {
+        "accuracy": 8,
+        "naturalness": 8,
+        "humour": 7,
+        "voice": 8,
+        "fit": 9,
+        "overall": 7,
+        "worst": "r0 leaves 'Carrot' untranslated; r1 swaps the source word for 'Ha-tal-mas'"
+      },
+      "D": {
+        "accuracy": 8,
+        "naturalness": 6,
+        "humour": 8,
+        "voice": 8,
+        "fit": 9,
+        "overall": 6,
+        "worst": "r3 'melyik bájitalt hoztál' uses the wrong verb form; it should be 'hoztad' with 'melyik'"
+      },
+      "M": {
+        "accuracy": 8,
+        "naturalness": 6,
+        "humour": 7,
+        "voice": 8,
+        "fit": 9,
+        "overall": 6,
+        "worst": "r2 'ruháimat és kalapomat' leaves out the articles, which sounds awkward"
+      },
+      "B": {
+        "accuracy": 7,
+        "naturalness": 6,
+        "humour": 7,
+        "voice": 7,
+        "fit": 9,
+        "overall": 6,
+        "worst": "r2 'hogy hozol főzetet, ruháimat' uses the plain verb form where 'hozz' is needed and leaves out an article"
+      },
+      "L": {
+        "accuracy": 7,
+        "naturalness": 6,
+        "humour": 7,
+        "voice": 7,
+        "fit": 9,
+        "overall": 6,
+        "worst": "r2 'hogy hozol főzetet, ruháimat' uses the plain verb form where 'hozz' is needed and leaves out an article"
+      },
+      "I": {
+        "accuracy": 7,
+        "naturalness": 5,
+        "humour": 7,
+        "voice": 7,
+        "fit": 9,
+        "overall": 5,
+        "worst": "r3 'melyik bájitalt hoztál' has a verb-form error, and r2 'ruhát és kalapot' drops 'my'"
+      },
+      "N": {
+        "accuracy": 6,
+        "naturalness": 4,
+        "humour": 6,
+        "voice": 6,
+        "fit": 9,
+        "overall": 4,
+        "worst": "r0 'Úgy imádlak, hogy eszedbe jutott' does not make sense in Hungarian; r2 'a kalapom is bepakoltad' is ungrammatical"
+      }
+    },
+    "ranking": [
+      "C",
+      "E",
+      "A",
+      "G",
+      "K",
+      "H",
+      "J",
+      "F",
+      "D",
+      "M",
+      "B",
+      "L",
+      "I",
+      "N"
+    ],
+    "notes": "The best candidates translate the cat's name as 'Répa' and keep the warm syllable-split exclamation in r1. They also phrase r2 as a natural list with 'my' kept, as C does with 'Még a bájitalra, a ruháimra és a kalapomra is gondoltál'. Weaker candidates lose points for four main reasons. Some leave 'Carrot' in English. Some use the wrong verb form ('hoztál' with 'melyik' in D and I, 'hozol' in B and L). Some drop articles or the word 'my'. N is odd throughout. 'Elhozni' instead of 'elvinni' is a minor slip that many candidates share."
+  },
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 9178,
+    "cache_read_input_tokens": 6231,
+    "output_tokens": 3195
+  },
+  "costUsd": 0.1385862,
+  "ms": 30253,
+  "at": "2026-10-20T07:32:38.409403338Z"
+}

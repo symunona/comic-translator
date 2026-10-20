@@ -1,0 +1,40 @@
+{
+  "spec": "claude-cli:sonnet",
+  "log": "../bench/llm/prompts/893712989801daabc2a3d351e597946b61312aeb54e14e3d28aaf7f63ad64618/llm/ocr-p5.json",
+  "text": "{\"regions\":[{\"n\":5,\"kind\":\"speech\",\"lines\":[\"...but?\"],\"align\":\"center\",\"caps\":false},{\"n\":6,\"kind\":\"speech\",\"lines\":[\"Where\",\"am I ?!?\"],\"align\":\"center\",\"caps\":false}],\"unboxed\":[\"quack?\"]}",
+  "json": {
+    "regions": [
+      {
+        "n": 5,
+        "kind": "speech",
+        "lines": [
+          "...but?"
+        ],
+        "align": "center",
+        "caps": false
+      },
+      {
+        "n": 6,
+        "kind": "speech",
+        "lines": [
+          "Where",
+          "am I ?!?"
+        ],
+        "align": "center",
+        "caps": false
+      }
+    ],
+    "unboxed": [
+      "quack?"
+    ]
+  },
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 7628,
+    "output_tokens": 453
+  },
+  "costUsd": 0.0053008000000000005,
+  "ms": 11561,
+  "at": "2026-10-20T07:19:59.78980645Z"
+}

@@ -1,0 +1,31 @@
+{
+  "spec": "openrouter:qwen/qwen3.8-flash",
+  "log": "../bench/llm/prompts/893712989801daabc2a3d351e597946b61312aeb54e14e3d28aaf7f63ad64618/llm/ocr-p1.json",
+  "text": "{\"regions\":[{\"n\":0,\"kind\":\"speech\",\"lines\":[\"Oh shoot, I fell asleep\",\"with the window open,\",\"again...\"],\"align\":\"center\",\"caps\":false}],\"unboxed\":[]}",
+  "json": {
+    "regions": [
+      {
+        "n": 0,
+        "kind": "speech",
+        "lines": [
+          "Oh shoot, I fell asleep",
+          "with the window open,",
+          "again..."
+        ],
+        "align": "center",
+        "caps": false
+      }
+    ],
+    "unboxed": []
+  },
+  "usage": {
+    "input_tokens": 1026,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 186,
+    "reasoning_tokens": 141
+  },
+  "costUsd": 0.00024132,
+  "ms": 13366,
+  "at": "2026-10-20T07:19:32.32279003Z"
+}

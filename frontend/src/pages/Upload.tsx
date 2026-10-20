@@ -13,6 +13,7 @@ const fmtDate = (s: string) => {
 export default function Upload() {
   const navigate = useNavigate();
   const [lang, setLang] = createSignal("en");
+  const [src, setSrc] = createSignal("hu");
   const [drag, setDrag] = createSignal(false);
   const [busy, setBusy] = createSignal(false);
   const [error, setError] = createSignal("");
@@ -29,7 +30,7 @@ export default function Upload() {
     setBusy(true);
     setError("");
     try {
-      const { id } = await api.upload(file);
+      const { id } = await api.upload(file, src());
       go(id);
     } catch (e) {
       setError(e instanceof Error ? e.message : String(e));
@@ -76,7 +77,9 @@ export default function Upload() {
         <strong>{busy() ? "Uploading…" : "Drop a comic strip here"}</strong>
         <span>or click to pick a PNG, JPG or WebP</span>
         <div class="lang-pick" onClick={(e) => e.stopPropagation()}>
-          <span>translate to</span>
+          <span>from</span>
+          <LangPicker value={src()} translated={LANGS.map((l) => l.code)} translatedTitle="Comic language" credits={0} onSelect={setSrc} align="left" />
+          <span>to</span>
           <LangPicker value={lang()} translated={LANGS.map((l) => l.code)} translatedTitle="Translate to" credits={0} onSelect={setLang} align="left" />
         </div>
       </div>

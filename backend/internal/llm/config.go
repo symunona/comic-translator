@@ -6,6 +6,7 @@ import (
 	"net/url"
 	"os"
 	"sort"
+	"strconv"
 	"strings"
 	"time"
 )
@@ -73,7 +74,7 @@ func FromEnv(o Options) (*Router, error) {
 	return r, nil
 }
 
-// NewBackend parses "<provider>:<model>[?effort=..&json=1&timeout=30m]".
+// NewBackend parses "<provider>:<model>[?effort=..&json=1&max=16000&timeout=30m]".
 // timeout applies to OpenAI-compatible backends (slow local models).
 func NewBackend(spec string, o Options) (Backend, error) {
 	provider, rest, ok := strings.Cut(spec, ":")
@@ -111,6 +112,13 @@ func NewBackend(spec string, o Options) (Backend, error) {
 		}
 	}
 	oa := &OpenAI{Provider: provider, BaseURL: base, APIKey: key, Model: model, Effort: effort, JSONMode: q.Get("json") == "1", Extra: p.extra}
+	if v := q.Get("max"); v != "" {
+		n, err := strconv.Atoi(v)
+		if err != nil {
+			return nil, fmt.Errorf("max: %w", err)
+		}
+		oa.MaxTokens = n
+	}
 	if v := q.Get("timeout"); v != "" {
 		d, err := time.ParseDuration(v)
 		if err != nil {

@@ -1,0 +1,37 @@
+{
+  "spec": "ollama:bench-gemma4-12b-it-qat-32k?effort=none\u0026json=1\u0026timeout=30m",
+  "log": "../bench/llm/prompts/0c0bd5d58b4b8bd03a1229371408586ca54a0de357a882ded2c9843589bea963/llm/ocr-p6.json",
+  "text": "{\"regions\":[{\"n\":19,\"kind\":\"speech\",\"lines\":[\"AAARRRGH....\"],\"align\":\"center\",\"caps\":true},{\"n\":20,\"kind\":\"sign\",\"lines\":[\"7722-683/FELVESZLEM\"],\"align\":\"left\",\"caps\":true}],\"unboxed\":[]}",
+  "json": {
+    "regions": [
+      {
+        "n": 19,
+        "kind": "speech",
+        "lines": [
+          "AAARRRGH...."
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 20,
+        "kind": "sign",
+        "lines": [
+          "7722-683/FELVESZLEM"
+        ],
+        "align": "left",
+        "caps": true
+      }
+    ],
+    "unboxed": []
+  },
+  "usage": {
+    "input_tokens": 1158,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 67
+  },
+  "costUsd": 0,
+  "ms": 53014,
+  "at": "2026-10-20T07:16:26.555410156Z"
+}

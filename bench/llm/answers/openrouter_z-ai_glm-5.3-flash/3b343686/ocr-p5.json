@@ -1,0 +1,31 @@
+{
+  "spec": "openrouter:z-ai/glm-5.3-flash",
+  "log": "../bench/llm/prompts/3b3436860d742571c5a540084c396d020cb19fae9191994d00f2338e06c41d2b/llm/ocr-p5.json",
+  "text": "{\"regions\":[{\"n\":16,\"kind\":\"speech\",\"lines\":[\"HOGYAMIKOR OTT EGY HATOS\",\"CSAVAR,\",\"BAZMEG,\"],\"align\":\"center\",\"caps\":true}],\"unboxed\":[]}",
+  "json": {
+    "regions": [
+      {
+        "n": 16,
+        "kind": "speech",
+        "lines": [
+          "HOGYAMIKOR OTT EGY HATOS",
+          "CSAVAR,",
+          "BAZMEG,"
+        ],
+        "align": "center",
+        "caps": true
+      }
+    ],
+    "unboxed": []
+  },
+  "usage": {
+    "input_tokens": 1353,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 995,
+    "reasoning_tokens": 942
+  },
+  "costUsd": 0.00070045,
+  "ms": 8691,
+  "at": "2026-10-20T07:09:10.651164905Z"
+}

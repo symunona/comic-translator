@@ -1,0 +1,16 @@
+{
+ "tr-hu:A": "draft claude-cli:opus",
+ "tr-hu:B": "v4 openrouter:qwen/qwen3.7-plus",
+ "tr-hu:C": "v2 openrouter:google/gemini-3.8-flash",
+ "tr-hu:D": "v7 claude-cli:opus",
+ "tr-hu:E": "draft claude-cli:sonnet",
+ "tr-hu:F": "draft openrouter:qwen/qwen3.7-plus",
+ "tr-hu:G": "v5 openrouter:deepseek/deepseek-v4.1-flash",
+ "tr-hu:H": "v1 claude-cli:sonnet",
+ "tr-hu:I": "draft openrouter:deepseek/deepseek-v4.1-flash",
+ "tr-hu:J": "v6 claude-cli:haiku",
+ "tr-hu:K": "draft claude-cli:haiku",
+ "tr-hu:L": "v3 openrouter:openai/gpt-5.6-luna",
+ "tr-hu:M": "draft openrouter:openai/gpt-5.6-luna",
+ "tr-hu:N": "draft openrouter:google/gemini-3.8-flash"
+}

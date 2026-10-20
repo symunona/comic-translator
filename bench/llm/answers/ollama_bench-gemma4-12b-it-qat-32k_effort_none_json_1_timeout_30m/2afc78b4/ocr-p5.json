@@ -1,0 +1,107 @@
+{
+  "spec": "ollama:bench-gemma4-12b-it-qat-32k?effort=none\u0026json=1\u0026timeout=30m",
+  "log": "../bench/llm/prompts/2afc78b45293acd677ffcba91f53fea50838d406d2dd965846e83408657e58c7/llm/ocr-p5.json",
+  "text": "{\"regions\":[{\"n\":20,\"kind\":\"speech\",\"lines\":[\"HÁTÓÖ...\",\"EDDIG EGY KAMIONT...\"],\"align\":\"left\",\"caps\":true},{\"n\":21,\"kind\":\"none\",\"lines\":[],\"align\":\"center\",\"caps\":false},{\"n\":22,\"kind\":\"none\",\"lines\":[],\"align\":\"center\",\"caps\":false},{\"n\":23,\"kind\":\"sign\",\"lines\":[\"RELAVACI\"],\"align\":\"center\",\"caps\":true},{\"n\":24,\"kind\":\"speech\",\"lines\":[\"NYERGES VONTATÓT.\"],\"align\":\"left\",\"caps\":true},{\"n\":25,\"kind\":\"speech\",\"lines\":[\"PARDON NYERgesVONTATÓt\",\"CSÍNALTAM, VIII. HENRIK STÍLUSÁBAN\\n„TRUBAD一点R\\\" LETT T A MUNKACÍME.\\nITT VAN A PORTFÓLIÓMBAN:\"],\"align\":\"left\",\"caps\":false},{\"n\":26,\"kind\":\"speech\",\"lines\":[\"AHA ... VAGOM. KÁRPIT\\nMÁR MESSZŐL ELKAPTAD A\\nBROKÁT. JOK A BOIT. FELBASZNA\\nALONNÁL. MEG ELIS ILYEN\\n„REGI\\\", VAGOD?\\nANTIK.\"],\"align\":\"left\",\"caps\":true},{\"n\":27,\"kind\":\"sign\",\"lines\":[\"FASZI_BACSI\"],\"align\":\"center\",\"caps\":true},{\"n\":28,\"kind\":\"sign\",\"lines\":[\"FASZ1-1\"],\"align\":\"center\",\"caps\":true},{\"n\":29,\"kind\":\"speech\",\"lines\":[\"ROPI\"],\"align\":\"center\",\"caps\":true}],\"unboxed\":[]}",
+  "json": {
+    "regions": [
+      {
+        "n": 20,
+        "kind": "speech",
+        "lines": [
+          "HÁTÓÖ...",
+          "EDDIG EGY KAMIONT..."
+        ],
+        "align": "left",
+        "caps": true
+      },
+      {
+        "n": 21,
+        "kind": "none",
+        "lines": [],
+        "align": "center",
+        "caps": false
+      },
+      {
+        "n": 22,
+        "kind": "none",
+        "lines": [],
+        "align": "center",
+        "caps": false
+      },
+      {
+        "n": 23,
+        "kind": "sign",
+        "lines": [
+          "RELAVACI"
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 24,
+        "kind": "speech",
+        "lines": [
+          "NYERGES VONTATÓT."
+        ],
+        "align": "left",
+        "caps": true
+      },
+      {
+        "n": 25,
+        "kind": "speech",
+        "lines": [
+          "PARDON NYERgesVONTATÓt",
+          "CSÍNALTAM, VIII. HENRIK STÍLUSÁBAN\n„TRUBAD一点R\" LETT T A MUNKACÍME.\nITT VAN A PORTFÓLIÓMBAN:"
+        ],
+        "align": "left",
+        "caps": false
+      },
+      {
+        "n": 26,
+        "kind": "speech",
+        "lines": [
+          "AHA ... VAGOM. KÁRPIT\nMÁR MESSZŐL ELKAPTAD A\nBROKÁT. JOK A BOIT. FELBASZNA\nALONNÁL. MEG ELIS ILYEN\n„REGI\", VAGOD?\nANTIK."
+        ],
+        "align": "left",
+        "caps": true
+      },
+      {
+        "n": 27,
+        "kind": "sign",
+        "lines": [
+          "FASZI_BACSI"
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 28,
+        "kind": "sign",
+        "lines": [
+          "FASZ1-1"
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 29,
+        "kind": "speech",
+        "lines": [
+          "ROPI"
+        ],
+        "align": "center",
+        "caps": true
+      }
+    ],
+    "unboxed": []
+  },
+  "usage": {
+    "input_tokens": 1888,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 376
+  },
+  "costUsd": 0,
+  "ms": 264075,
+  "at": "2026-10-20T07:28:55.291938917Z"
+}

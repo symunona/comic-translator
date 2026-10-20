@@ -1,0 +1,32 @@
+{
+  "spec": "openrouter:google/gemini-3.1-flash-lite",
+  "log": "../bench/llm/prompts/6cbd56cdd933343ad87de8c3e3dd772f7f771dd3f4786507d9786c71aad26a05/llm/ocr-p1.json",
+  "text": "{\"regions\":[{\"n\":3,\"kind\":\"speech\",\"lines\":[\"CSAK LÁTSZÓLAG EGY KIBASZOTT KUPLERÁJ,\",\"AMIBEN BOMBA ROBBANT.\",\"TULAJDONKÉPPEN EGY ZSENIÁLIS\",\"RENDSZER. A RÁHANGOLÓDÁSBAN\",\"SEGÍT A FÉNYKÉPE.\"],\"align\":\"left\",\"caps\":true}],\"unboxed\":[]}",
+  "json": {
+    "regions": [
+      {
+        "n": 3,
+        "kind": "speech",
+        "lines": [
+          "CSAK LÁTSZÓLAG EGY KIBASZOTT KUPLERÁJ,",
+          "AMIBEN BOMBA ROBBANT.",
+          "TULAJDONKÉPPEN EGY ZSENIÁLIS",
+          "RENDSZER. A RÁHANGOLÓDÁSBAN",
+          "SEGÍT A FÉNYKÉPE."
+        ],
+        "align": "left",
+        "caps": true
+      }
+    ],
+    "unboxed": []
+  },
+  "usage": {
+    "input_tokens": 3106,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 100
+  },
+  "costUsd": 0.0009265,
+  "ms": 1481,
+  "at": "2026-10-20T07:07:21.454435851Z"
+}

@@ -1,0 +1,57 @@
+{
+  "spec": "ollama:bench-gemma4-12b-it-qat-32k?effort=none\u0026json=1\u0026timeout=30m",
+  "log": "../bench/llm/prompts/2afc78b45293acd677ffcba91f53fea50838d406d2dd965846e83408657e58c7/llm/ocr-p3.json",
+  "text": "{\"regions\":[{\"n\":11,\"kind\":\"sign\",\"lines\":[\"CALAVRIE\"],\"align\":\"center\",\"caps\":true},{\"n\":12,\"kind\":\"speech\",\"lines\":[\"NEM BAJ, AZ EMBER\",\"AZÉRTFIATAL, HÓGY\",\"TANULKON.\"],\"align\":\"left\",\"caps\":true},{\"n\":13,\"kind\":\"sign\",\"lines\":[\"FASZI BÁCSI\"],\"align\":\"center\",\"caps\":true},{\"n\":14,\"kind\":\"sign\",\"lines\":[\"FASZI-1\"],\"align\":\"center\",\"caps\":true}],\"unboxed\":[]}",
+  "json": {
+    "regions": [
+      {
+        "n": 11,
+        "kind": "sign",
+        "lines": [
+          "CALAVRIE"
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 12,
+        "kind": "speech",
+        "lines": [
+          "NEM BAJ, AZ EMBER",
+          "AZÉRTFIATAL, HÓGY",
+          "TANULKON."
+        ],
+        "align": "left",
+        "caps": true
+      },
+      {
+        "n": 13,
+        "kind": "sign",
+        "lines": [
+          "FASZI BÁCSI"
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 14,
+        "kind": "sign",
+        "lines": [
+          "FASZI-1"
+        ],
+        "align": "center",
+        "caps": true
+      }
+    ],
+    "unboxed": []
+  },
+  "usage": {
+    "input_tokens": 1374,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 128
+  },
+  "costUsd": 0,
+  "ms": 93353,
+  "at": "2026-10-20T07:27:21.938445095Z"
+}

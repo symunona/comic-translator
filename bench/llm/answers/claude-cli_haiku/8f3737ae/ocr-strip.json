@@ -1,0 +1,41 @@
+{
+  "spec": "claude-cli:haiku",
+  "log": "../bench/llm/prompts/8f3737ae2df51cb23cc27c3f81a10a426a35fc918ea31cf1eff85be4fc0df452/llm/ocr-strip.json",
+  "text": "{\"regions\":[{\"n\":0,\"kind\":\"caption\",\"lines\":[\"How do I\",\"exit vim?\"],\"align\":\"left\",\"caps\":false},{\"n\":1,\"kind\":\"caption\",\"lines\":[\"Why would I\",\"exit vim?\"],\"align\":\"left\",\"caps\":false}],\"unboxed\":[\"OKAY!\"]}",
+  "json": {
+    "regions": [
+      {
+        "n": 0,
+        "kind": "caption",
+        "lines": [
+          "How do I",
+          "exit vim?"
+        ],
+        "align": "left",
+        "caps": false
+      },
+      {
+        "n": 1,
+        "kind": "caption",
+        "lines": [
+          "Why would I",
+          "exit vim?"
+        ],
+        "align": "left",
+        "caps": false
+      }
+    ],
+    "unboxed": [
+      "OKAY!"
+    ]
+  },
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 3327,
+    "cache_read_input_tokens": 4522,
+    "output_tokens": 1170
+  },
+  "costUsd": 0.0012960200000000002,
+  "ms": 11270,
+  "at": "2026-10-20T07:19:19.058379893Z"
+}

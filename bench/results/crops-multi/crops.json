@@ -1,0 +1,2151 @@
+[
+ {
+  "id": "2afc78b4/r0",
+  "strip": "2afc78b4",
+  "panelId": "p0",
+  "kind": "sfx",
+  "box": [
+   326,
+   27,
+   294,
+   191
+  ],
+  "file": "2afc78b4/r0.png",
+  "gt": "UNKA!",
+  "gtLines": [
+   "UNKA!"
+  ]
+ },
+ {
+  "id": "2afc78b4/r1",
+  "strip": "2afc78b4",
+  "panelId": "p1",
+  "kind": "speech",
+  "box": [
+   302,
+   510,
+   132,
+   98
+  ],
+  "file": "2afc78b4/r1.png",
+  "gt": "NA! E! DEJÓ, HOGY ELJÖTTÉ, E!",
+  "gtLines": [
+   "NA! E!",
+   "DEJÓ, HOGY",
+   "ELJÖTTÉ, E!"
+  ]
+ },
+ {
+  "id": "2afc78b4/r2",
+  "strip": "2afc78b4",
+  "panelId": "p1",
+  "kind": "speech",
+  "box": [
+   261,
+   706,
+   55,
+   30
+  ],
+  "file": "2afc78b4/r2.png",
+  "gt": "HÍREK",
+  "gtLines": [
+   "HÍREK"
+  ]
+ },
+ {
+  "id": "2afc78b4/r3",
+  "strip": "2afc78b4",
+  "panelId": "p2",
+  "kind": "none",
+  "box": [
+   372,
+   908,
+   180,
+   34
+  ],
+  "file": "2afc78b4/r3.png",
+  "gt": "",
+  "gtLines": [
+   ""
+  ]
+ },
+ {
+  "id": "2afc78b4/r4",
+  "strip": "2afc78b4",
+  "panelId": "p2",
+  "kind": "speech",
+  "box": [
+   83,
+   943,
+   225,
+   153
+  ],
+  "file": "2afc78b4/r4.png",
+  "gt": "MOST ARRA GONDOLSZ, HOGY „DE KÁR, HOGY ELKÖLTÖTTEM AZ ELŐLEGET, MOST LEMONDHATNÁM",
+  "gtLines": [
+   "MOST ARRA GONDOLSZ,",
+   "HOGY „DE KÁR, HOGY",
+   "ELKÖLTÖTTEM AZ",
+   "ELŐLEGET, MOST",
+   "LEMONDHATNÁM"
+  ]
+ },
+ {
+  "id": "2afc78b4/r5",
+  "strip": "2afc78b4",
+  "panelId": "p2",
+  "kind": "sign",
+  "box": [
+   380,
+   922,
+   165,
+   51
+  ],
+  "file": "2afc78b4/r5.png",
+  "gt": "CAVALEIR",
+  "gtLines": [
+   "CAVALEIR"
+  ]
+ },
+ {
+  "id": "2afc78b4/r6",
+  "strip": "2afc78b4",
+  "panelId": "p2",
+  "kind": "speech",
+  "box": [
+   179,
+   1083,
+   125,
+   41
+  ],
+  "file": "2afc78b4/r6.png",
+  "gt": "A MELÓT!”",
+  "gtLines": [
+   "A MELÓT!”"
+  ]
+ },
+ {
+  "id": "2afc78b4/r7",
+  "strip": "2afc78b4",
+  "panelId": "p2",
+  "kind": "speech",
+  "box": [
+   176,
+   1129,
+   122,
+   46
+  ],
+  "file": "2afc78b4/r7.png",
+  "gt": "HÁT... KÁBÉ.",
+  "gtLines": [
+   "HÁT... KÁBÉ."
+  ]
+ },
+ {
+  "id": "2afc78b4/r8",
+  "strip": "2afc78b4",
+  "panelId": "p2",
+  "kind": "sign",
+  "box": [
+   464,
+   1115,
+   98,
+   39
+  ],
+  "file": "2afc78b4/r8.png",
+  "gt": "FASZI BÁCSI",
+  "gtLines": [
+   "FASZI BÁCSI"
+  ]
+ },
+ {
+  "id": "2afc78b4/r9",
+  "strip": "2afc78b4",
+  "panelId": "p2",
+  "kind": "speech",
+  "box": [
+   213,
+   1182,
+   180,
+   35
+  ],
+  "file": "2afc78b4/r9.png",
+  "gt": "NA. PATTANJ FEL!",
+  "gtLines": [
+   "NA. PATTANJ FEL!"
+  ]
+ },
+ {
+  "id": "2afc78b4/r10",
+  "strip": "2afc78b4",
+  "panelId": "p2",
+  "kind": "sign",
+  "box": [
+   344,
+   1303,
+   242,
+   48
+  ],
+  "file": "2afc78b4/r10.png",
+  "gt": "FASZI-1",
+  "gtLines": [
+   "FASZI-1"
+  ]
+ },
+ {
+  "id": "2afc78b4/r11",
+  "strip": "2afc78b4",
+  "panelId": "p3",
+  "kind": "sign",
+  "box": [
+   372,
+   1496,
+   230,
+   66
+  ],
+  "file": "2afc78b4/r11.png",
+  "gt": "CALAVRIE",
+  "gtLines": [
+   "CALAVRIE"
+  ]
+ },
+ {
+  "id": "2afc78b4/r12",
+  "strip": "2afc78b4",
+  "panelId": "p3",
+  "kind": "speech",
+  "box": [
+   125,
+   1615,
+   244,
+   93
+  ],
+  "file": "2afc78b4/r12.png",
+  "gt": "NEM BAJ, AZ EMBER AZÉRT FIATAL, HOGY TANULJON.",
+  "gtLines": [
+   "NEM BAJ, AZ EMBER",
+   "AZÉRT FIATAL, HOGY",
+   "TANULJON."
+  ]
+ },
+ {
+  "id": "2afc78b4/r13",
+  "strip": "2afc78b4",
+  "panelId": "p3",
+  "kind": "sign",
+  "box": [
+   468,
+   1688,
+   98,
+   39
+  ],
+  "file": "2afc78b4/r13.png",
+  "gt": "FASZI BÁCSI",
+  "gtLines": [
+   "FASZI BÁCSI"
+  ]
+ },
+ {
+  "id": "2afc78b4/r14",
+  "strip": "2afc78b4",
+  "panelId": "p3",
+  "kind": "sign",
+  "box": [
+   413,
+   1856,
+   155,
+   38
+  ],
+  "file": "2afc78b4/r14.png",
+  "gt": "FASZI-1",
+  "gtLines": [
+   "FASZI-1"
+  ]
+ },
+ {
+  "id": "2afc78b4/r15",
+  "strip": "2afc78b4",
+  "panelId": "p4",
+  "kind": "speech",
+  "box": [
+   89,
+   2023,
+   236,
+   47
+  ],
+  "file": "2afc78b4/r15.png",
+  "gt": "JÉZUS, ATYA, ÚRISTEN!",
+  "gtLines": [
+   "JÉZUS, ATYA, ÚRISTEN!"
+  ]
+ },
+ {
+  "id": "2afc78b4/r16",
+  "strip": "2afc78b4",
+  "panelId": "p4",
+  "kind": "sign",
+  "box": [
+   333,
+   2047,
+   267,
+   79
+  ],
+  "file": "2afc78b4/r16.png",
+  "gt": "VECALAIR",
+  "gtLines": [
+   "VECALAIR"
+  ]
+ },
+ {
+  "id": "2afc78b4/r17",
+  "strip": "2afc78b4",
+  "panelId": "p4",
+  "kind": "speech",
+  "box": [
+   52,
+   2097,
+   293,
+   274
+  ],
+  "file": "2afc78b4/r17.png",
+  "gt": "Ö A HÁLÓFÜLKÉBEN LÓG, EGY KRISTÁLYHOLOGRAM FORMÁJÁBAN, DE ITT VALÓBAN A SZENTFÖLDI LOVAGVÁRAK STÍLUSÁT IGYEKEZTEM HOZNI. AZ OTT EGY BEDUIN KEMENCE, HENNÁS KASPÓ TEVENYEREG, ASZTROLÁBIUM...",
+  "gtLines": [
+   "Ö A HÁLÓFÜLKÉBEN LÓG,",
+   "EGY KRISTÁLYHOLOGRAM",
+   "FORMÁJÁBAN, DE ITT",
+   "VALÓBAN A SZENTFÖLDI",
+   "LOVAGVÁRAK",
+   "STÍLUSÁT IGYEKEZTEM HOZNI.",
+   "AZ OTT EGY BEDUIN",
+   "KEMENCE, HENNÁS KASPÓ",
+   "TEVENYEREG, ASZTROLÁBIUM..."
+  ]
+ },
+ {
+  "id": "2afc78b4/r18",
+  "strip": "2afc78b4",
+  "panelId": "p4",
+  "kind": "sign",
+  "box": [
+   474,
+   2251,
+   100,
+   38
+  ],
+  "file": "2afc78b4/r18.png",
+  "gt": "FASZI BÁCSI",
+  "gtLines": [
+   "FASZI BÁCSI"
+  ]
+ },
+ {
+  "id": "2afc78b4/r19",
+  "strip": "2afc78b4",
+  "panelId": "p4",
+  "kind": "speech",
+  "box": [
+   76,
+   2372,
+   207,
+   95
+  ],
+  "file": "2afc78b4/r19.png",
+  "gt": "CSAK MÁR GECIRE UNOM. EZÉRT VAGY ITT, E!",
+  "gtLines": [
+   "CSAK MÁR GECIRE",
+   "UNOM.",
+   "EZÉRT VAGY ITT, E!"
+  ]
+ },
+ {
+  "id": "2afc78b4/r20",
+  "strip": "2afc78b4",
+  "panelId": "p5",
+  "kind": "speech",
+  "box": [
+   42,
+   2617,
+   309,
+   42
+  ],
+  "file": "2afc78b4/r20.png",
+  "gt": "HÁTŐŐ... EDDIG EGY KAMIONT...",
+  "gtLines": [
+   "HÁTŐŐ... EDDIG EGY KAMIONT..."
+  ]
+ },
+ {
+  "id": "2afc78b4/r21",
+  "strip": "2afc78b4",
+  "panelId": "p5",
+  "kind": "none",
+  "box": [
+   397,
+   2612,
+   213,
+   73
+  ],
+  "file": "2afc78b4/r21.png",
+  "gt": "",
+  "gtLines": [
+   ""
+  ]
+ },
+ {
+  "id": "2afc78b4/r22",
+  "strip": "2afc78b4",
+  "panelId": "p5",
+  "kind": "none",
+  "box": [
+   419,
+   2610,
+   191,
+   42
+  ],
+  "file": "2afc78b4/r22.png",
+  "gt": "",
+  "gtLines": [
+   ""
+  ]
+ },
+ {
+  "id": "2afc78b4/r23",
+  "strip": "2afc78b4",
+  "panelId": "p5",
+  "kind": "sign",
+  "box": [
+   420,
+   2611,
+   200,
+   71
+  ],
+  "file": "2afc78b4/r23.png",
+  "gt": "RELAVACI",
+  "gtLines": [
+   "RELAVACI"
+  ]
+ },
+ {
+  "id": "2afc78b4/r24",
+  "strip": "2afc78b4",
+  "panelId": "p5",
+  "kind": "speech",
+  "box": [
+   114,
+   2657,
+   213,
+   35
+  ],
+  "file": "2afc78b4/r24.png",
+  "gt": "NYERGES VONTATÓT.",
+  "gtLines": [
+   "NYERGES VONTATÓT."
+  ]
+ },
+ {
+  "id": "2afc78b4/r25",
+  "strip": "2afc78b4",
+  "panelId": "p5",
+  "kind": "speech",
+  "box": [
+   43,
+   2691,
+   400,
+   128
+  ],
+  "file": "2afc78b4/r25.png",
+  "gt": "PARDON. NYERGESVONTATÓT CSINÁLTAM, VIII. HENRIK STÍLUSÁBAN, „TRUBADÚR” LETT A MUNKACÍME. ITT VAN A PORTFÓLIÓMBAN:",
+  "gtLines": [
+   "PARDON. NYERGESVONTATÓT",
+   "CSINÁLTAM, VIII. HENRIK STÍLUSÁBAN,",
+   "„TRUBADÚR” LETT A MUNKACÍME.",
+   "ITT VAN A PORTFÓLIÓMBAN:"
+  ]
+ },
+ {
+  "id": "2afc78b4/r26",
+  "strip": "2afc78b4",
+  "panelId": "p5",
+  "kind": "speech",
+  "box": [
+   62,
+   2825,
+   321,
+   200
+  ],
+  "file": "2afc78b4/r26.png",
+  "gt": "AHA ... VÁGOM. KÁRPIT MÁR MESSZIRŐL. ELKAPTAD A BROKÁT. SOK A BOJT. FELBASZNA AZONNAL. MEG EZIS ILYEN „RÉGI”, VÁGOD? ÁNTIK.",
+  "gtLines": [
+   "AHA ... VÁGOM. KÁRPIT",
+   "MÁR MESSZIRŐL. ELKAPTAD A",
+   "BROKÁT. SOK A BOJT. FELBASZNA",
+   "AZONNAL. MEG EZIS ILYEN",
+   "„RÉGI”, VÁGOD?",
+   "ÁNTIK."
+  ]
+ },
+ {
+  "id": "2afc78b4/r27",
+  "strip": "2afc78b4",
+  "panelId": "p5",
+  "kind": "sign",
+  "box": [
+   529,
+   2815,
+   87,
+   36
+  ],
+  "file": "2afc78b4/r27.png",
+  "gt": "FASZI BÁCSI",
+  "gtLines": [
+   "FASZI BÁCSI"
+  ]
+ },
+ {
+  "id": "2afc78b4/r28",
+  "strip": "2afc78b4",
+  "panelId": "p5",
+  "kind": "sign",
+  "box": [
+   385,
+   3004,
+   222,
+   46
+  ],
+  "file": "2afc78b4/r28.png",
+  "gt": "FASZI-1",
+  "gtLines": [
+   "FASZI-1"
+  ]
+ },
+ {
+  "id": "2afc78b4/r29",
+  "strip": "2afc78b4",
+  "panelId": "p5",
+  "kind": "caption",
+  "box": [
+   106,
+   3081,
+   45,
+   25
+  ],
+  "file": "2afc78b4/r29.png",
+  "gt": "ROPI",
+  "gtLines": [
+   "ROPI"
+  ]
+ },
+ {
+  "id": "2afc78b4/r30",
+  "strip": "2afc78b4",
+  "panelId": "p6",
+  "kind": "speech",
+  "box": [
+   44,
+   3185,
+   351,
+   231
+  ],
+  "file": "2afc78b4/r30.png",
+  "gt": "SZÓVAL, AMIKOR A GROẞKUGELNI PIHENŐBEN KINYITJA A KURVA AZ AJTÓT AKKOR NE AZT KÉRDEZZE, MERRE VAN A MÚZEUMSHOP, VÁGOD? IRÁNYNAK ILYEN NEOLOFTOS ART DEKÓT GONDOLNÉK.",
+  "gtLines": [
+   "SZÓVAL, AMIKOR A GROẞKUGELNI",
+   "PIHENŐBEN KINYITJA A",
+   "KURVA AZ AJTÓT AKKOR",
+   "NE AZT KÉRDEZZE, MERRE VAN",
+   "A MÚZEUMSHOP, VÁGOD?",
+   "IRÁNYNAK ILYEN NEOLOFTOS",
+   "ART DEKÓT GONDOLNÉK."
+  ]
+ },
+ {
+  "id": "2afc78b4/r31",
+  "strip": "2afc78b4",
+  "panelId": "p6",
+  "kind": "none",
+  "box": [
+   409,
+   3206,
+   210,
+   41
+  ],
+  "file": "2afc78b4/r31.png",
+  "gt": "",
+  "gtLines": [
+   ""
+  ]
+ },
+ {
+  "id": "2afc78b4/r32",
+  "strip": "2afc78b4",
+  "panelId": "p6",
+  "kind": "sign",
+  "box": [
+   420,
+   3235,
+   177,
+   47
+  ],
+  "file": "2afc78b4/r32.png",
+  "gt": "RACALVIE",
+  "gtLines": [
+   "RACALVIE"
+  ]
+ },
+ {
+  "id": "2afc78b4/r33",
+  "strip": "2afc78b4",
+  "panelId": "p6",
+  "kind": "sign",
+  "box": [
+   541,
+   3384,
+   79,
+   37
+  ],
+  "file": "2afc78b4/r33.png",
+  "gt": "FASZI BÁCSI",
+  "gtLines": [
+   "FASZI BÁCSI"
+  ]
+ },
+ {
+  "id": "2afc78b4/r34",
+  "strip": "2afc78b4",
+  "panelId": "p6",
+  "kind": "speech",
+  "box": [
+   44,
+   3425,
+   316,
+   77
+  ],
+  "file": "2afc78b4/r34.png",
+  "gt": "ÉRTEM. EZ A DOBOZ, EZ MI? MARADNIA KELL?",
+  "gtLines": [
+   "ÉRTEM. EZ A DOBOZ, EZ MI?",
+   "MARADNIA KELL?"
+  ]
+ },
+ {
+  "id": "2afc78b4/r35",
+  "strip": "2afc78b4",
+  "panelId": "p6",
+  "kind": "speech",
+  "box": [
+   61,
+   3497,
+   303,
+   50
+  ],
+  "file": "2afc78b4/r35.png",
+  "gt": "AKKSIK A FÉNYHEZ. MARAD.",
+  "gtLines": [
+   "AKKSIK A FÉNYHEZ. MARAD."
+  ]
+ },
+ {
+  "id": "2afc78b4/r36",
+  "strip": "2afc78b4",
+  "panelId": "p6",
+  "kind": "speech",
+  "box": [
+   234,
+   3541,
+   138,
+   49
+  ],
+  "file": "2afc78b4/r36.png",
+  "gt": "„FÉNYHEZ”?",
+  "gtLines": [
+   "„FÉNYHEZ”?"
+  ]
+ },
+ {
+  "id": "2afc78b4/r37",
+  "strip": "2afc78b4",
+  "panelId": "p6",
+  "kind": "sign",
+  "box": [
+   384,
+   3534,
+   236,
+   47
+  ],
+  "file": "2afc78b4/r37.png",
+  "gt": "FASZI-1",
+  "gtLines": [
+   "FASZI-1"
+  ]
+ },
+ {
+  "id": "2afc78b4/r38",
+  "strip": "2afc78b4",
+  "panelId": "p7",
+  "kind": "sign",
+  "box": [
+   44,
+   3835,
+   548,
+   233
+  ],
+  "file": "2afc78b4/r38.png",
+  "gt": "BALKON",
+  "gtLines": [
+   "BALKON"
+  ]
+ },
+ {
+  "id": "2afc78b4/r39",
+  "strip": "2afc78b4",
+  "panelId": "p8",
+  "kind": "none",
+  "box": [
+   393,
+   4465,
+   227,
+   43
+  ],
+  "file": "2afc78b4/r39.png",
+  "gt": "",
+  "gtLines": [
+   ""
+  ]
+ },
+ {
+  "id": "2afc78b4/r40",
+  "strip": "2afc78b4",
+  "panelId": "p8",
+  "kind": "sign",
+  "box": [
+   412,
+   4497,
+   201,
+   44
+  ],
+  "file": "2afc78b4/r40.png",
+  "gt": "CAVELIAR",
+  "gtLines": [
+   "CAVELIAR"
+  ]
+ },
+ {
+  "id": "2afc78b4/r41",
+  "strip": "2afc78b4",
+  "panelId": "p8",
+  "kind": "speech",
+  "box": [
+   73,
+   4608,
+   160,
+   72
+  ],
+  "file": "2afc78b4/r41.png",
+  "gt": "TIÉD VOLT AZ A SMART?",
+  "gtLines": [
+   "TIÉD VOLT AZ",
+   "A SMART?"
+  ]
+ },
+ {
+  "id": "2afc78b4/r42",
+  "strip": "2afc78b4",
+  "panelId": "p8",
+  "kind": "sign",
+  "box": [
+   494,
+   4660,
+   106,
+   38
+  ],
+  "file": "2afc78b4/r42.png",
+  "gt": "FASZI BÁCSI",
+  "gtLines": [
+   "FASZI BÁCSI"
+  ]
+ },
+ {
+  "id": "2afc78b4/r43",
+  "strip": "2afc78b4",
+  "panelId": "p8",
+  "kind": "none",
+  "box": [
+   369,
+   4693,
+   240,
+   41
+  ],
+  "file": "2afc78b4/r43.png",
+  "gt": "",
+  "gtLines": [
+   ""
+  ]
+ },
+ {
+  "id": "2afc78b4/r44",
+  "strip": "2afc78b4",
+  "panelId": "p8",
+  "kind": "none",
+  "box": [
+   63,
+   4801,
+   160,
+   103
+  ],
+  "file": "2afc78b4/r44.png",
+  "gt": "",
+  "gtLines": [
+   ""
+  ]
+ },
+ {
+  "id": "2afc78b4/r45",
+  "strip": "2afc78b4",
+  "panelId": "p8",
+  "kind": "sign",
+  "box": [
+   368,
+   4817,
+   231,
+   38
+  ],
+  "file": "2afc78b4/r45.png",
+  "gt": "FASZI-1",
+  "gtLines": [
+   "FASZI-1"
+  ]
+ },
+ {
+  "id": "2afc78b4/r46",
+  "strip": "2afc78b4",
+  "panelId": "p9",
+  "kind": "sfx",
+  "box": [
+   245,
+   5140,
+   366,
+   167
+  ],
+  "file": "2afc78b4/r46.png",
+  "gt": "FIFU! HURUHATÁRR!",
+  "gtLines": [
+   "FIFU!",
+   "HURUHATÁRR!"
+  ]
+ },
+ {
+  "id": "2afc78b4/r47",
+  "strip": "2afc78b4",
+  "panelId": "p9",
+  "kind": "sign",
+  "box": [
+   383,
+   5285,
+   182,
+   43
+  ],
+  "file": "2afc78b4/r47.png",
+  "gt": "CAVALIER",
+  "gtLines": [
+   "CAVALIER"
+  ]
+ },
+ {
+  "id": "2afc78b4/r48",
+  "strip": "2afc78b4",
+  "panelId": "p9",
+  "kind": "speech",
+  "box": [
+   100,
+   5393,
+   76,
+   39
+  ],
+  "file": "2afc78b4/r48.png",
+  "gt": "BOCSI.",
+  "gtLines": [
+   "BOCSI."
+  ]
+ },
+ {
+  "id": "2afc78b4/r49",
+  "strip": "2afc78b4",
+  "panelId": "p9",
+  "kind": "speech",
+  "box": [
+   79,
+   5429,
+   166,
+   61
+  ],
+  "file": "2afc78b4/r49.png",
+  "gt": "MEG HAZAVISZLEK.",
+  "gtLines": [
+   "MEG",
+   "HAZAVISZLEK."
+  ]
+ },
+ {
+  "id": "2afc78b4/r50",
+  "strip": "2afc78b4",
+  "panelId": "p9",
+  "kind": "sign",
+  "box": [
+   502,
+   5422,
+   99,
+   41
+  ],
+  "file": "2afc78b4/r50.png",
+  "gt": "FASZI BÁCSI",
+  "gtLines": [
+   "FASZI BÁCSI"
+  ]
+ },
+ {
+  "id": "2afc78b4/r51",
+  "strip": "2afc78b4",
+  "panelId": "p9",
+  "kind": "none",
+  "box": [
+   42,
+   5570,
+   159,
+   97
+  ],
+  "file": "2afc78b4/r51.png",
+  "gt": "",
+  "gtLines": [
+   ""
+  ]
+ },
+ {
+  "id": "2afc78b4/r52",
+  "strip": "2afc78b4",
+  "panelId": "p9",
+  "kind": "sign",
+  "box": [
+   405,
+   5581,
+   175,
+   44
+  ],
+  "file": "2afc78b4/r52.png",
+  "gt": "FASZI-1",
+  "gtLines": [
+   "FASZI-1"
+  ]
+ },
+ {
+  "id": "6cbd56cd/r0",
+  "strip": "6cbd56cd",
+  "panelId": "p0",
+  "kind": "speech",
+  "box": [
+   224,
+   13,
+   394,
+   121
+  ],
+  "file": "6cbd56cd/r0.png",
+  "gt": "NAGYIKÁM, TIBOR PAPÁNAK VOLT A LEPKEGYŰJTŐ FELSZERELÉSÉHEZ EGY VIASZOSVÁSZON TARISZNYÁJA...",
+  "gtLines": [
+   "NAGYIKÁM, TIBOR PAPÁNAK",
+   "VOLT A LEPKEGYŰJTŐ FELSZERELÉSÉHEZ",
+   "EGY VIASZOSVÁSZON",
+   "TARISZNYÁJA..."
+  ]
+ },
+ {
+  "id": "6cbd56cd/r1",
+  "strip": "6cbd56cd",
+  "panelId": "p0",
+  "kind": "speech",
+  "box": [
+   227,
+   139,
+   180,
+   60
+  ],
+  "file": "6cbd56cd/r1.png",
+  "gt": "OTT KELL LENNIE A SUFNIBAN!",
+  "gtLines": [
+   "OTT KELL LENNIE",
+   "A SUFNIBAN!"
+  ]
+ },
+ {
+  "id": "6cbd56cd/r2",
+  "strip": "6cbd56cd",
+  "panelId": "p0",
+  "kind": "speech",
+  "box": [
+   311,
+   209,
+   86,
+   42
+  ],
+  "file": "6cbd56cd/r2.png",
+  "gt": "Ó JAJ...",
+  "gtLines": [
+   "Ó JAJ..."
+  ]
+ },
+ {
+  "id": "6cbd56cd/r3",
+  "strip": "6cbd56cd",
+  "panelId": "p1",
+  "kind": "speech",
+  "box": [
+   63,
+   517,
+   399,
+   147
+  ],
+  "file": "6cbd56cd/r3.png",
+  "gt": "CSAK LÁTSZÓLAG EGY KIBASZOTT KUPLERÁJ, AMIBEN BOMBA ROBBANT. TULAJDONKÉPPEN EGY ZSENIÁLIS RENDSZER. A RÁHANGOLÓDÁSBAN SEGÍT A FÉNYKÉPE.",
+  "gtLines": [
+   "CSAK LÁTSZÓLAG EGY KIBASZOTT KUPLERÁJ,",
+   "AMIBEN BOMBA ROBBANT.",
+   "TULAJDONKÉPPEN EGY ZSENIÁLIS",
+   "RENDSZER. A RÁHANGOLÓDÁSBAN",
+   "SEGÍT A FÉNYKÉPE."
+  ]
+ },
+ {
+  "id": "6cbd56cd/r4",
+  "strip": "6cbd56cd",
+  "panelId": "p2",
+  "kind": "speech",
+  "box": [
+   317,
+   1031,
+   217,
+   61
+  ],
+  "file": "6cbd56cd/r4.png",
+  "gt": "EZ EGY HELIKOPTER TURBINA?",
+  "gtLines": [
+   "EZ EGY HELIKOPTER",
+   "TURBINA?"
+  ]
+ },
+ {
+  "id": "6cbd56cd/r5",
+  "strip": "6cbd56cd",
+  "panelId": "p2",
+  "kind": "speech",
+  "box": [
+   274,
+   1105,
+   241,
+   73
+  ],
+  "file": "6cbd56cd/r5.png",
+  "gt": "IGEN, MÖGÖTTE INDUL A LÉPCSÖ!",
+  "gtLines": [
+   "IGEN, MÖGÖTTE INDUL",
+   "A LÉPCSÖ!"
+  ]
+ },
+ {
+  "id": "6cbd56cd/r6",
+  "strip": "6cbd56cd",
+  "panelId": "p3",
+  "kind": "speech",
+  "box": [
+   181,
+   1455,
+   439,
+   214
+  ],
+  "file": "6cbd56cd/r6.png",
+  "gt": "ÁÁÁ!!! BASSZAMEG EGY KAUKÁZUSI FÉRFI SZÁRÍTOTT MÚMIÁJA, BAZMEG!!!",
+  "gtLines": [
+   "ÁÁÁ!!! BASSZAMEG",
+   "EGY KAUKÁZUSI FÉRFI",
+   "SZÁRÍTOTT MÚMIÁJA,",
+   "BAZMEG!!!"
+  ]
+ },
+ {
+  "id": "6cbd56cd/r7",
+  "strip": "6cbd56cd",
+  "panelId": "p3",
+  "kind": "speech",
+  "box": [
+   378,
+   1723,
+   129,
+   41
+  ],
+  "file": "6cbd56cd/r7.png",
+  "gt": "TELEKVITA",
+  "gtLines": [
+   "TELEKVITA"
+  ]
+ },
+ {
+  "id": "6cbd56cd/r8",
+  "strip": "6cbd56cd",
+  "panelId": "p4",
+  "kind": "none",
+  "box": [
+   311,
+   1992,
+   308,
+   175
+  ],
+  "file": "6cbd56cd/r8.png",
+  "gt": "",
+  "gtLines": [
+   ""
+  ]
+ },
+ {
+  "id": "6cbd56cd/r9",
+  "strip": "6cbd56cd",
+  "panelId": "p4",
+  "kind": "speech",
+  "box": [
+   315,
+   1991,
+   289,
+   180
+  ],
+  "file": "6cbd56cd/r9.png",
+  "gt": "FÚJ!... A BELSŐ SZERVEI ITT ÁZNAK EGY AKVÁRIUMBAN A SZÍV KÜLÖN EGY LEKVÁROS ÜVEGBEN! FÚJBAZMEG!",
+  "gtLines": [
+   "FÚJ!... A BELSŐ SZERVEI",
+   "ITT ÁZNAK EGY AKVÁRIUMBAN",
+   "A SZÍV KÜLÖN EGY",
+   "LEKVÁROS ÜVEGBEN!",
+   "FÚJBAZMEG!"
+  ]
+ },
+ {
+  "id": "6cbd56cd/r10",
+  "strip": "6cbd56cd",
+  "panelId": "p4",
+  "kind": "speech",
+  "box": [
+   322,
+   2191,
+   126,
+   89
+  ],
+  "file": "6cbd56cd/r10.png",
+  "gt": "TIBOROM PRECÍZ VOLT!",
+  "gtLines": [
+   "TIBOROM",
+   "PRECÍZ",
+   "VOLT!"
+  ]
+ },
+ {
+  "id": "6cbd56cd/r11",
+  "strip": "6cbd56cd",
+  "panelId": "p4",
+  "kind": "speech",
+  "box": [
+   440,
+   2210,
+   86,
+   40
+  ],
+  "file": "6cbd56cd/r11.png",
+  "gt": "EMBER",
+  "gtLines": [
+   "EMBER"
+  ]
+ },
+ {
+  "id": "3b343686/r0",
+  "strip": "3b343686",
+  "panelId": "p0",
+  "kind": "speech",
+  "box": [
+   136,
+   54,
+   332,
+   116
+  ],
+  "file": "3b343686/r0.png",
+  "gt": "HÁHHÁ! JÓESTÉT! MEGVÁRJUK AZ ELSŐ RANDOMTIBORT, ÉS FELTESSZÜK NEKI A KÉRDÉST!",
+  "gtLines": [
+   "HÁHHÁ! JÓESTÉT!",
+   "MEGVÁRJUK AZ ELSŐ RANDOMTIBORT,",
+   "ÉS FELTESSZÜK NEKI",
+   "A KÉRDÉST!"
+  ]
+ },
+ {
+  "id": "3b343686/r1",
+  "strip": "3b343686",
+  "panelId": "p0",
+  "kind": "none",
+  "box": [
+   145,
+   169,
+   155,
+   104
+  ],
+  "file": "3b343686/r1.png",
+  "gt": "",
+  "gtLines": [
+   ""
+  ]
+ },
+ {
+  "id": "3b343686/r2",
+  "strip": "3b343686",
+  "panelId": "p1",
+  "kind": "speech",
+  "box": [
+   127,
+   518,
+   417,
+   88
+  ],
+  "file": "3b343686/r2.png",
+  "gt": "JÓNAPOT URAM! MI LENNE AZ ELSŐ DOLOG, AMIT CSINÁLNA, HA MEGNYERNÉ A LOTTÓ ÖTÖST?",
+  "gtLines": [
+   "JÓNAPOT URAM!",
+   "MI LENNE AZ ELSŐ DOLOG, AMIT CSINÁLNA,",
+   "HA MEGNYERNÉ A LOTTÓ ÖTÖST?"
+  ]
+ },
+ {
+  "id": "3b343686/r3",
+  "strip": "3b343686",
+  "panelId": "p2",
+  "kind": "speech",
+  "box": [
+   114,
+   1021,
+   102,
+   35
+  ],
+  "file": "3b343686/r3.png",
+  "gt": "SPORTKOCSI ?",
+  "gtLines": [
+   "SPORTKOCSI ?"
+  ]
+ },
+ {
+  "id": "3b343686/r4",
+  "strip": "3b343686",
+  "panelId": "p2",
+  "kind": "speech",
+  "box": [
+   157,
+   983,
+   73,
+   35
+  ],
+  "file": "3b343686/r4.png",
+  "gt": "PINÁK ?",
+  "gtLines": [
+   "PINÁK ?"
+  ]
+ },
+ {
+  "id": "3b343686/r5",
+  "strip": "3b343686",
+  "panelId": "p2",
+  "kind": "speech",
+  "box": [
+   318,
+   950,
+   188,
+   98
+  ],
+  "file": "3b343686/r5.png",
+  "gt": "A LOTTÓ ÖTÖST ? HM... LÁSSUK CSAK... HEHE... IGEN !",
+  "gtLines": [
+   "A LOTTÓ ÖTÖST ?",
+   "HM... LÁSSUK CSAK...",
+   "HEHE... IGEN !"
+  ]
+ },
+ {
+  "id": "3b343686/r6",
+  "strip": "3b343686",
+  "panelId": "p2",
+  "kind": "speech",
+  "box": [
+   35,
+   1039,
+   67,
+   35
+  ],
+  "file": "3b343686/r6.png",
+  "gt": "YACHT ?",
+  "gtLines": [
+   "YACHT ?"
+  ]
+ },
+ {
+  "id": "3b343686/r7",
+  "strip": "3b343686",
+  "panelId": "p2",
+  "kind": "speech",
+  "box": [
+   210,
+   1031,
+   96,
+   35
+  ],
+  "file": "3b343686/r7.png",
+  "gt": "UTAZGATÁS ?",
+  "gtLines": [
+   "UTAZGATÁS ?"
+  ]
+ },
+ {
+  "id": "3b343686/r8",
+  "strip": "3b343686",
+  "panelId": "p2",
+  "kind": "speech",
+  "box": [
+   64,
+   1067,
+   68,
+   35
+  ],
+  "file": "3b343686/r8.png",
+  "gt": "PINÁK ?",
+  "gtLines": [
+   "PINÁK ?"
+  ]
+ },
+ {
+  "id": "3b343686/r9",
+  "strip": "3b343686",
+  "panelId": "p2",
+  "kind": "none",
+  "box": [
+   131,
+   1077,
+   110,
+   123
+  ],
+  "file": "3b343686/r9.png",
+  "gt": "",
+  "gtLines": [
+   ""
+  ]
+ },
+ {
+  "id": "3b343686/r10",
+  "strip": "3b343686",
+  "panelId": "p2",
+  "kind": "speech",
+  "box": [
+   227,
+   1071,
+   65,
+   31
+  ],
+  "file": "3b343686/r10.png",
+  "gt": "VILLA ?",
+  "gtLines": [
+   "VILLA ?"
+  ]
+ },
+ {
+  "id": "3b343686/r11",
+  "strip": "3b343686",
+  "panelId": "p2",
+  "kind": "speech",
+  "box": [
+   235,
+   1100,
+   70,
+   33
+  ],
+  "file": "3b343686/r11.png",
+  "gt": "PINÁK ?",
+  "gtLines": [
+   "PINÁK ?"
+  ]
+ },
+ {
+  "id": "3b343686/r12",
+  "strip": "3b343686",
+  "panelId": "p3",
+  "kind": "none",
+  "box": [
+   206,
+   1478,
+   104,
+   139
+  ],
+  "file": "3b343686/r12.png",
+  "gt": "",
+  "gtLines": [
+   ""
+  ]
+ },
+ {
+  "id": "3b343686/r13",
+  "strip": "3b343686",
+  "panelId": "p3",
+  "kind": "speech",
+  "box": [
+   303,
+   1403,
+   262,
+   184
+  ],
+  "file": "3b343686/r13.png",
+  "gt": "VENNÉK EGY KURVANAGY DOBOZT, TELIS-TELE TIZES VILLÁSKULCCSAL! AGYIG RAKVA, TÖBB EZER VÁGOD?",
+  "gtLines": [
+   "VENNÉK EGY KURVANAGY",
+   "DOBOZT,",
+   "TELIS-TELE TIZES",
+   "VILLÁSKULCCSAL! AGYIG",
+   "RAKVA,",
+   "TÖBB EZER",
+   "VÁGOD?"
+  ]
+ },
+ {
+  "id": "3b343686/r14",
+  "strip": "3b343686",
+  "panelId": "p3",
+  "kind": "none",
+  "box": [
+   305,
+   1394,
+   250,
+   201
+  ],
+  "file": "3b343686/r14.png",
+  "gt": "",
+  "gtLines": [
+   ""
+  ]
+ },
+ {
+  "id": "3b343686/r15",
+  "strip": "3b343686",
+  "panelId": "p4",
+  "kind": "speech",
+  "box": [
+   86,
+   1858,
+   421,
+   108
+  ],
+  "file": "3b343686/r15.png",
+  "gt": "ÉS MINDENHOL, AHOL A NAP. MEGFORDULOK, SZÓRNÁM SZÉJJEL, MINT A PITYPANG A SZARJAIT, VAGOD? MINDENFELÉ !!!",
+  "gtLines": [
+   "ÉS MINDENHOL, AHOL A NAP.",
+   "MEGFORDULOK, SZÓRNÁM SZÉJJEL, MINT",
+   "A PITYPANG A SZARJAIT, VAGOD?",
+   "MINDENFELÉ !!!"
+  ]
+ },
+ {
+  "id": "3b343686/r16",
+  "strip": "3b343686",
+  "panelId": "p5",
+  "kind": "speech",
+  "box": [
+   109,
+   2296,
+   413,
+   209
+  ],
+  "file": "3b343686/r16.png",
+  "gt": "HOGYAMIKOR OTT EGY HATOS CSAVAR, BAZMEG,",
+  "gtLines": [
+   "HOGYAMIKOR OTT EGY HATOS",
+   "CSAVAR,",
+   "BAZMEG,"
+  ]
+ },
+ {
+  "id": "3b343686/r17",
+  "strip": "3b343686",
+  "panelId": "p6",
+  "kind": "speech",
+  "box": [
+   165,
+   2775,
+   266,
+   108
+  ],
+  "file": "3b343686/r17.png",
+  "gt": "... AKKOR BÁRHOVA NYÚLOK, OTT LEGYEN, BAZMEG. NEM EGY, ÖT!",
+  "gtLines": [
+   "... AKKOR BÁRHOVA NYÚLOK,",
+   "OTT LEGYEN, BAZMEG.",
+   "NEM EGY, ÖT!"
+  ]
+ },
+ {
+  "id": "0c0bd5d5/r0",
+  "strip": "0c0bd5d5",
+  "panelId": "p0",
+  "kind": "sign",
+  "box": [
+   354,
+   308,
+   266,
+   48
+  ],
+  "file": "0c0bd5d5/r0.png",
+  "gt": "ÉPÖIPAI KITTELEZÉS • OG",
+  "gtLines": [
+   "ÉPÖIPAI KITTELEZÉS • OG"
+  ]
+ },
+ {
+  "id": "0c0bd5d5/r1",
+  "strip": "0c0bd5d5",
+  "panelId": "p1",
+  "kind": "speech",
+  "box": [
+   51,
+   613,
+   162,
+   51
+  ],
+  "file": "0c0bd5d5/r1.png",
+  "gt": "HRAHGHHRRR....",
+  "gtLines": [
+   "HRAHGHHRRR...."
+  ]
+ },
+ {
+  "id": "0c0bd5d5/r2",
+  "strip": "0c0bd5d5",
+  "panelId": "p1",
+  "kind": "speech",
+  "box": [
+   455,
+   672,
+   156,
+   42
+  ],
+  "file": "0c0bd5d5/r2.png",
+  "gt": "MI A FASZOM?",
+  "gtLines": [
+   "MI A FASZOM?"
+  ]
+ },
+ {
+  "id": "0c0bd5d5/r3",
+  "strip": "0c0bd5d5",
+  "panelId": "p1",
+  "kind": "sign",
+  "box": [
+   2,
+   798,
+   222,
+   39
+  ],
+  "file": "0c0bd5d5/r3.png",
+  "gt": "7722.683/FELVESZEM",
+  "gtLines": [
+   "7722.683/FELVESZEM"
+  ]
+ },
+ {
+  "id": "0c0bd5d5/r4",
+  "strip": "0c0bd5d5",
+  "panelId": "p2",
+  "kind": "speech",
+  "box": [
+   240,
+   1111,
+   296,
+   100
+  ],
+  "file": "0c0bd5d5/r4.png",
+  "gt": "KI VAGY, ÉS MI A GECIT KERESEL A PLATÓMON, BAZME?",
+  "gtLines": [
+   "KI VAGY, ÉS MI A GECIT",
+   "KERESEL A PLATÓMON,",
+   "BAZME?"
+  ]
+ },
+ {
+  "id": "0c0bd5d5/r5",
+  "strip": "0c0bd5d5",
+  "panelId": "p2",
+  "kind": "speech",
+  "box": [
+   0,
+   1208,
+   187,
+   158
+  ],
+  "file": "0c0bd5d5/r5.png",
+  "gt": "A GUBACS TERÉZ ÚTON ÜTÖTTEL, MINDKÉT LÁBAM ELTÖRÖTT, AZÓTA FÁJ. FÁJOGAT.",
+  "gtLines": [
+   "A GUBACS TERÉZ",
+   "ÚTON ÜTÖTTEL,",
+   "MINDKÉT LÁBAM",
+   "ELTÖRÖTT, AZÓTA",
+   "FÁJ. FÁJOGAT."
+  ]
+ },
+ {
+  "id": "0c0bd5d5/r6",
+  "strip": "0c0bd5d5",
+  "panelId": "p2",
+  "kind": "sign",
+  "box": [
+   178,
+   1305,
+   126,
+   37
+  ],
+  "file": "0c0bd5d5/r6.png",
+  "gt": "FEKSZEM ITT.",
+  "gtLines": [
+   "FEKSZEM ITT."
+  ]
+ },
+ {
+  "id": "0c0bd5d5/r7",
+  "strip": "0c0bd5d5",
+  "panelId": "p2",
+  "kind": "sign",
+  "box": [
+   0,
+   1464,
+   197,
+   44
+  ],
+  "file": "0c0bd5d5/r7.png",
+  "gt": "7722.683/FELVESZEM",
+  "gtLines": [
+   "7722.683/FELVESZEM"
+  ]
+ },
+ {
+  "id": "0c0bd5d5/r8",
+  "strip": "0c0bd5d5",
+  "panelId": "p3",
+  "kind": "speech",
+  "box": [
+   200,
+   1712,
+   385,
+   63
+  ],
+  "file": "0c0bd5d5/r8.png",
+  "gt": "NEM IS JÁRTAM ARRA MA, BAZME... A KÖZELBE SE.",
+  "gtLines": [
+   "NEM IS JÁRTAM ARRA MA, BAZME...",
+   "A KÖZELBE SE."
+  ]
+ },
+ {
+  "id": "0c0bd5d5/r9",
+  "strip": "0c0bd5d5",
+  "panelId": "p3",
+  "kind": "speech",
+  "box": [
+   44,
+   1779,
+   269,
+   65
+  ],
+  "file": "0c0bd5d5/r9.png",
+  "gt": "EZ MÚLT HÉT KEDDEN TÖRTÉNT...",
+  "gtLines": [
+   "EZ MÚLT HÉT KEDDEN",
+   "TÖRTÉNT..."
+  ]
+ },
+ {
+  "id": "0c0bd5d5/r10",
+  "strip": "0c0bd5d5",
+  "panelId": "p3",
+  "kind": "none",
+  "box": [
+   360,
+   1825,
+   99,
+   123
+  ],
+  "file": "0c0bd5d5/r10.png",
+  "gt": "",
+  "gtLines": [
+   ""
+  ]
+ },
+ {
+  "id": "0c0bd5d5/r11",
+  "strip": "0c0bd5d5",
+  "panelId": "p3",
+  "kind": "speech",
+  "box": [
+   6,
+   1954,
+   249,
+   38
+  ],
+  "file": "0c0bd5d5/r11.png",
+  "gt": "7722.683/FELVESZEM",
+  "gtLines": [
+   "7722.683/FELVESZEM"
+  ]
+ },
+ {
+  "id": "0c0bd5d5/r12",
+  "strip": "0c0bd5d5",
+  "panelId": "p4",
+  "kind": "speech",
+  "box": [
+   261,
+   2201,
+   316,
+   107
+  ],
+  "file": "0c0bd5d5/r12.png",
+  "gt": "MÚLT HÉT KEDD? NE KAMUZZÁ! HOGY NEM HALTÁL ÉHEN?",
+  "gtLines": [
+   "MÚLT HÉT KEDD?",
+   "NE KAMUZZÁ!",
+   "HOGY NEM HALTÁL ÉHEN?"
+  ]
+ },
+ {
+  "id": "0c0bd5d5/r13",
+  "strip": "0c0bd5d5",
+  "panelId": "p4",
+  "kind": "speech",
+  "box": [
+   91,
+   2309,
+   338,
+   128
+  ],
+  "file": "0c0bd5d5/r13.png",
+  "gt": "KIFELÉ JÖTTEM A BOLTBÓL, AMIKOR TELIBE KAPOTT... KÉT NAGY SZATYOR...",
+  "gtLines": [
+   "KIFELÉ JÖTTEM A BOLTBÓL,",
+   "AMIKOR TELIBE KAPOTT...",
+   "KÉT NAGY",
+   "SZATYOR..."
+  ]
+ },
+ {
+  "id": "0c0bd5d5/r14",
+  "strip": "0c0bd5d5",
+  "panelId": "p4",
+  "kind": "sign",
+  "box": [
+   0,
+   2493,
+   206,
+   45
+  ],
+  "file": "0c0bd5d5/r14.png",
+  "gt": "7722·683/FELVESZEM",
+  "gtLines": [
+   "7722·683/FELVESZEM"
+  ]
+ },
+ {
+  "id": "0c0bd5d5/r15",
+  "strip": "0c0bd5d5",
+  "panelId": "p5",
+  "kind": "speech",
+  "box": [
+   445,
+   2780,
+   152,
+   47
+  ],
+  "file": "0c0bd5d5/r15.png",
+  "gt": "AKURVA ÉLET!",
+  "gtLines": [
+   "AKURVA ÉLET!"
+  ]
+ },
+ {
+  "id": "0c0bd5d5/r16",
+  "strip": "0c0bd5d5",
+  "panelId": "p5",
+  "kind": "sign",
+  "box": [
+   0,
+   2941,
+   217,
+   42
+  ],
+  "file": "0c0bd5d5/r16.png",
+  "gt": "7722 · 683/FELVESZEM",
+  "gtLines": [
+   "7722 · 683/FELVESZEM"
+  ]
+ },
+ {
+  "id": "0c0bd5d5/r17",
+  "strip": "0c0bd5d5",
+  "panelId": "p5",
+  "kind": "none",
+  "box": [
+   373,
+   2857,
+   160,
+   133
+  ],
+  "file": "0c0bd5d5/r17.png",
+  "gt": "",
+  "gtLines": [
+   ""
+  ]
+ },
+ {
+  "id": "0c0bd5d5/r18",
+  "strip": "0c0bd5d5",
+  "panelId": "p5",
+  "kind": "none",
+  "box": [
+   0,
+   3003,
+   242,
+   113
+  ],
+  "file": "0c0bd5d5/r18.png",
+  "gt": "",
+  "gtLines": [
+   ""
+  ]
+ },
+ {
+  "id": "0c0bd5d5/r19",
+  "strip": "0c0bd5d5",
+  "panelId": "p6",
+  "kind": "speech",
+  "box": [
+   13,
+   3261,
+   150,
+   47
+  ],
+  "file": "0c0bd5d5/r19.png",
+  "gt": "AAAARRRGH....",
+  "gtLines": [
+   "AAAARRRGH...."
+  ]
+ },
+ {
+  "id": "0c0bd5d5/r20",
+  "strip": "0c0bd5d5",
+  "panelId": "p6",
+  "kind": "sign",
+  "box": [
+   0,
+   3417,
+   218,
+   42
+  ],
+  "file": "0c0bd5d5/r20.png",
+  "gt": "7722 · 683/FELVESZEM",
+  "gtLines": [
+   "7722 · 683/FELVESZEM"
+  ]
+ },
+ {
+  "id": "0c0bd5d5/r21",
+  "strip": "0c0bd5d5",
+  "panelId": "p7",
+  "kind": "speech",
+  "box": [
+   306,
+   3745,
+   260,
+   118
+  ],
+  "file": "0c0bd5d5/r21.png",
+  "gt": "ITT EGY PLÉD, BAZME. ÉJJELENTE MÁR HIDEGEK VANNAK.",
+  "gtLines": [
+   "ITT EGY PLÉD, BAZME.",
+   "ÉJJELENTE MÁR",
+   "HIDEGEK VANNAK."
+  ]
+ },
+ {
+  "id": "0c0bd5d5/r22",
+  "strip": "0c0bd5d5",
+  "panelId": "p7",
+  "kind": "sign",
+  "box": [
+   0,
+   4011,
+   224,
+   52
+  ],
+  "file": "0c0bd5d5/r22.png",
+  "gt": "7722.683/FELVESZEM",
+  "gtLines": [
+   "7722.683/FELVESZEM"
+  ]
+ },
+ {
+  "id": "0c0bd5d5/r23",
+  "strip": "0c0bd5d5",
+  "panelId": "p7",
+  "kind": "none",
+  "box": [
+   305,
+   3912,
+   211,
+   134
+  ],
+  "file": "0c0bd5d5/r23.png",
+  "gt": "",
+  "gtLines": [
+   ""
+  ]
+ },
+ {
+  "id": "89371298/r0",
+  "strip": "89371298",
+  "panelId": "p1",
+  "box": [
+   49,
+   417,
+   230,
+   90
+  ],
+  "file": "89371298/r0.png",
+  "gt": "",
+  "gtLines": [
+   ""
+  ]
+ },
+ {
+  "id": "89371298/r1",
+  "strip": "89371298",
+  "panelId": "p2",
+  "box": [
+   150,
+   761,
+   225,
+   93
+  ],
+  "file": "89371298/r1.png",
+  "gt": "",
+  "gtLines": [
+   ""
+  ]
+ },
+ {
+  "id": "89371298/r2",
+  "strip": "89371298",
+  "panelId": "p4",
+  "box": [
+   407,
+   1005,
+   108,
+   41
+  ],
+  "file": "89371298/r2.png",
+  "gt": "",
+  "gtLines": [
+   ""
+  ]
+ },
+ {
+  "id": "89371298/r3",
+  "strip": "89371298",
+  "panelId": "p4",
+  "box": [
+   563,
+   992,
+   130,
+   62
+  ],
+  "file": "89371298/r3.png",
+  "gt": "",
+  "gtLines": [
+   ""
+  ]
+ },
+ {
+  "id": "89371298/r4",
+  "strip": "89371298",
+  "panelId": "p4",
+  "box": [
+   759,
+   995,
+   217,
+   92
+  ],
+  "file": "89371298/r4.png",
+  "gt": "",
+  "gtLines": [
+   ""
+  ]
+ },
+ {
+  "id": "89371298/r5",
+  "strip": "89371298",
+  "panelId": "p5",
+  "box": [
+   578,
+   1333,
+   91,
+   36
+  ],
+  "file": "89371298/r5.png",
+  "gt": "",
+  "gtLines": [
+   ""
+  ]
+ },
+ {
+  "id": "89371298/r6",
+  "strip": "89371298",
+  "panelId": "p5",
+  "box": [
+   774,
+   1334,
+   110,
+   63
+  ],
+  "file": "89371298/r6.png",
+  "gt": "",
+  "gtLines": [
+   ""
+  ]
+ },
+ {
+  "id": "35ce81ab/r0",
+  "strip": "35ce81ab",
+  "panelId": "p1",
+  "box": [
+   324,
+   827,
+   270,
+   123
+  ],
+  "file": "35ce81ab/r0.png",
+  "gt": "",
+  "gtLines": [
+   ""
+  ]
+ },
+ {
+  "id": "35ce81ab/r1",
+  "strip": "35ce81ab",
+  "panelId": "p3",
+  "box": [
+   770,
+   1168,
+   161,
+   41
+  ],
+  "file": "35ce81ab/r1.png",
+  "gt": "",
+  "gtLines": [
+   ""
+  ]
+ },
+ {
+  "id": "35ce81ab/r2",
+  "strip": "35ce81ab",
+  "panelId": "p3",
+  "box": [
+   853,
+   1271,
+   252,
+   102
+  ],
+  "file": "35ce81ab/r2.png",
+  "gt": "",
+  "gtLines": [
+   ""
+  ]
+ },
+ {
+  "id": "35ce81ab/r3",
+  "strip": "35ce81ab",
+  "panelId": "p3",
+  "box": [
+   874,
+   1454,
+   235,
+   71
+  ],
+  "file": "35ce81ab/r3.png",
+  "gt": "",
+  "gtLines": [
+   ""
+  ]
+ },
+ {
+  "id": "8f3737ae/r0",
+  "strip": "8f3737ae",
+  "panelId": "p0",
+  "box": [
+   28,
+   104,
+   101,
+   56
+  ],
+  "file": "8f3737ae/r0.png",
+  "gt": "",
+  "gtLines": [
+   ""
+  ]
+ },
+ {
+  "id": "8f3737ae/r1",
+  "strip": "8f3737ae",
+  "panelId": "p1",
+  "box": [
+   308,
+   58,
+   141,
+   60
+  ],
+  "file": "8f3737ae/r1.png",
+  "gt": "",
+  "gtLines": [
+   ""
+  ]
+ },
+ {
+  "id": "246d3aa3/r0",
+  "strip": "246d3aa3",
+  "panelId": "p0",
+  "box": [
+   19,
+   11,
+   774,
+   137
+  ],
+  "file": "246d3aa3/r0.png",
+  "gt": "",
+  "gtLines": [
+   ""
+  ]
+ },
+ {
+  "id": "246d3aa3/r1",
+  "strip": "246d3aa3",
+  "panelId": "p0",
+  "box": [
+   75,
+   428,
+   681,
+   132
+  ],
+  "file": "246d3aa3/r1.png",
+  "gt": "",
+  "gtLines": [
+   ""
+  ]
+ }
+]

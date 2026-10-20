@@ -19,6 +19,8 @@ const VERBOSE = !!process.env.OCR_BENCH_VERBOSE;
 
 const RUNS = [
   { engine: "paddle", label: "paddle-v5-latin", files: ["paddle"] },
+  { engine: "paddle", model: "v6-small", label: "paddle-v6-small", files: ["paddle-v6-small"] },
+  { engine: "paddle", model: "v6-medium", label: "paddle-v6-medium", files: ["paddle-v6-medium"], singleOnly: false },
   { engine: "transformers", model: "trocr-handwritten", label: "trocr-small-handwritten", files: ["trocr-handwritten"] },
   { engine: "transformers", model: "trocr-printed", label: "trocr-small-printed", files: ["trocr-printed"], singleOnly: true },
   { engine: "transformers", model: "florence", label: "florence-2-base-ft", files: ["florence"] },
@@ -129,9 +131,16 @@ function median(xs) {
   return s.length ? s[Math.floor(s.length / 2)] : null;
 }
 
-const strip = await findStrip(join(HERE, "..", "data"));
-const cropsDir = join(HERE, "results", "crops");
-const crops = await extractCrops(strip, cropsDir);
+const STRIPS = (process.env.OCR_BENCH_STRIPS ?? "").split(",").filter(Boolean);
+const strip = await findStrip(join(HERE, "..", "data"), STRIPS[0]);
+const cropsDir = join(HERE, "results", STRIPS.length ? "crops-multi" : "crops");
+const crops = [];
+if (STRIPS.length) {
+  for (const prefix of STRIPS) crops.push(...(await extractCrops(await findStrip(join(HERE, "..", "data"), prefix), cropsDir, prefix)));
+  await writeFile(join(cropsDir, "crops.json"), JSON.stringify(crops, null, 1));
+} else {
+  crops.push(...(await extractCrops(strip, cropsDir)));
+}
 const sizes = await download([...new Set(runs.flatMap((r) => r.files))]);
 
 await build({
@@ -201,7 +210,7 @@ for (const run of runs) {
 server.close();
 
 const date = new Date().toISOString().slice(0, 10);
-const partial = only.length || LIMIT ? `-partial-${[...only, LIMIT ? `n${LIMIT}` : ""].filter(Boolean).join("-")}` : "";
+const partial = STRIPS.length ? `-strips-${STRIPS.length}` : only.length || LIMIT ? `-partial-${[...only, LIMIT ? `n${LIMIT}` : ""].filter(Boolean).join("-")}` : "";
 const outFile = join(HERE, "results", `ocr-${date}${partial}.json`);
 await mkdir(dirname(outFile), { recursive: true });
 await writeFile(outFile, JSON.stringify({
