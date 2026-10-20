@@ -1,6 +1,6 @@
 # BYOK, browser pipeline, serverless, credit proxy: plan (2026-10-20)
 
-Status: **plan only. No code until approved.**
+Status: **approved 2026-10-21** with decisions below. Phase 2 prompts done (`frontend/src/lib/pipeline/pipeline.ts`).
 Inputs: `docs/llm.md` (Q3, billing), `docs/cost-opt.md` (model picks, ~$0.08/strip), `docs/browser.md` (browser detect).
 
 Goal: whole pipeline runs in the browser. User brings LLM key. Site = static files. Server optional: share links + paid credits later.
@@ -204,9 +204,9 @@ Two designs.
 | 1 | TS LLM transport + OpenRouter PKCE + paste key + settings (models per stage) | browser runs ocr/scene/translate/review vs current Go server for storage |
 | 2 | Prompts + `llmstages` port, OPFS store, local pipeline runner | full run with server down, same JSON as Go on 10 strips |
 | 3 | CV port (panels, regions, order, erase, fitBox, annotate) with Go golden tests | pixel-exact clean on 10 strips; replace toggle re-erases client side |
-| 4 | Static build + Cloudflare Pages + CSP/COOP/COEP `_headers`, models from HF pinned | public URL, no backend, works in Chrome, Firefox, Safari 26, iOS |
+| 4 | Static build + CSP + COOP/COEP; serve from server Caddy (decision 3), models from HF pinned. Cloudflare Pages later | works with Go backend off, Chrome, Firefox, Safari 26, iOS |
 | 5 | Share links (R2 + Worker) | optional |
-| 6 | Credit proxy P1 + MoR payments + ToS/privacy pages | only if phase 4 gets users (see opinion) |
+| 6 | Credit proxy P1 + MoR payments + ToS/privacy pages | **deferred** (decision 5: BYOK only) |
 
 Phase 1-3 each shippable alone. Server mode (server) keeps working the whole time.
 
@@ -285,10 +285,19 @@ Not legal or tax advice. Hungarian/EU facts from memory, not re-checked today. A
   - Model churn: provider model names change every few months. Settings must let user pick; defaults need a yearly review.
 - Recommended order: phases 1-4, release FOSS + BYOK, write up the browser-only pipeline (good blog/HN material), approach Napirajz authors + Pepper&Carrot community. Decide on phase 6 only with real usage numbers.
 
-## Open questions for user
+## Decisions (2026-10-21)
 
-1. OK to drop Go pipeline to dev-only once TS pipeline matches (one pipeline, not two)?
-2. Prompts move to TS as source of truth: OK?
-3. Static host: Cloudflare Pages OK, or stay on server only?
-4. License: AGPL-3.0 OK?
-5. Credits: build at all, or BYOK only until users show up?
+| # | question | decision |
+|---|---|---|
+| 1 | Go pipeline after TS port | **archive**: branch `go-pipeline-archive` (= `0d07b22`). Reference for parity tests now, dropped from main line once TS matches |
+| 2 | prompts source of truth | **TS**: `frontend/src/lib/pipeline/pipeline.ts`. One file: per-stage box diagrams (in/out/where/model), bench numbers, prompts between stages |
+| 3 | hosting | **server for now**. Static host (section 4) = later |
+| 4 | license | **AGPL-3.0** |
+| 5 | credits | **BYOK only for now**. Section 5 = later |
+
+### Prompt parity (done 2026-10-21)
+
+- `pipeline.ts` prompts render **99/99 byte-identical** to Go templates on 11 strips x 9 variants (ocr strip +/- crops +/- draft, scene, translate/review full + single-region retranslate with current + hint containing `< > &`).
+- Method: throwaway Go test dumped `stripOCRRequest`, `render(scene|translate|review)` + inputs to JSON; node 24 (native TS strip) rendered same inputs via `pipeline.ts`, compared. Test not committed.
+- Go-isms kept on purpose: `%q` = `JSON.stringify`; `json.MarshalIndent` HTML-escapes `< > &` (`goJSON`); speakers map keys sorted; nil slices -> `null`; whitespace from `{{-` trims (e.g. 3 newlines before `Boxes:` when no crops, no draft).
+- Per-panel OCR prompt (`ocr.tmpl`) not ported: TS pipeline uses whole-strip OCR only. Per-panel stays in Go archive.
