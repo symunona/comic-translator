@@ -64,7 +64,7 @@ func immutable(h http.Handler) http.Handler {
 func main() {
 	addr := flag.String("addr", "127.0.0.1:4720", "listen address")
 	dataDir := flag.String("data", defaultData, "data directory")
-	model := flag.String("model", "opus", "claude CLI model when env LLM is unset")
+	model := flag.String("model", "sonnet", "claude CLI model when env LLM is unset")
 	detModel := flag.String("detector", defaultModel, "detector onnx path; empty = detect runs in the browser")
 	claudeBin := flag.String("claude", "claude", "claude CLI binary")
 	concurrency := flag.Int("llm-concurrency", 4, "max concurrent LLM calls")

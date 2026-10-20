@@ -486,10 +486,9 @@ func (r *runState) runReview(ctx context.Context) error {
 	if err := r.p.Store.SaveStage(r.id, "review:"+r.lang, vReview, reviewResult{Critique: critique}); err != nil {
 		return err
 	}
-	t := Translation{Lang: r.lang, Final: true, UpdatedAt: now(), Regions: final}
-	if err := r.p.Store.SaveTranslation(r.id, r.lang, vReview, t); err != nil {
+	if _, err := r.p.addVersion(r.id, r.lang, r.llmVersion("", final)); err != nil {
 		return err
 	}
-	_, err = r.p.addVersion(r.id, r.lang, r.llmVersion("", final))
-	return err
+	t := Translation{Lang: r.lang, Final: true, UpdatedAt: now(), Regions: final}
+	return r.p.Store.SaveTranslation(r.id, r.lang, vReview, t)
 }

@@ -1,6 +1,6 @@
 import { For, Show, createMemo, createSignal } from "solid-js";
 import { creditLabel, isPaid } from "../lib/credits";
-import { STAGES, type Config, type LLMCall, type StageName, type UsageReport } from "../lib/types";
+import { STAGES, type Config, type LLMCall, type StageName, type StageStat, type UsageReport } from "../lib/types";
 import type { StageState } from "../lib/work";
 
 const LABELS: Record<StageName, string> = {
@@ -26,7 +26,33 @@ const CV_WHAT: Partial<Record<StageName, string>> = {
 
 type Where = { where: string; what: string; local: boolean };
 
-type Row = { key: string; label: string; state: StageState; calls: LLMCall[]; where?: Where };
+type Row = { key: string; label: string; state: StageState; calls: LLMCall[]; where?: Where; stat?: StageStat };
+
+const COUNT_LABEL: Record<string, string> = { text_bubble: "text in bubble", text_free: "free text", bubble: "bubble only" };
+
+const countText = (c: Record<string, number>) =>
+  Object.entries(c)
+    .filter(([k]) => k !== "width" && k !== "height")
+    .map(([k, v]) => `${v} ${COUNT_LABEL[k] ?? k}`)
+    .join(" · ");
+
+function StatLine(p: { stat: StageStat; calls: LLMCall[] }) {
+  const c = () => p.stat.counts ?? {};
+  const llmMs = () => p.calls.reduce((n, x) => n + x.durationMs, 0);
+  return (
+    <span class="step-stat">
+      <span>
+        <b>{secs(p.stat.ms)}</b> wall
+        <Show when={p.calls.length > 1}> · {secs(llmMs())} in {p.calls.length} calls</Show>
+        <Show when={c().width}> · {c().width}×{c().height} px</Show>
+        <Show when={countText(c())}> · {countText(c())}</Show>
+      </span>
+      <Show when={p.stat.detail}>
+        <span class="step-detail">{p.stat.detail}</span>
+      </Show>
+    </span>
+  );
+}
 
 const kTok = (n: number) => (n >= 1000 ? `${(n / 1000).toFixed(1)}k` : String(n));
 const secs = (ms: number) => (ms >= 60000 ? `${Math.floor(ms / 60000)}m${Math.round((ms % 60000) / 1000)}s` : `${(ms / 1000).toFixed(1)}s`);
@@ -129,7 +155,8 @@ function StepRow(p: { row: Row; debug: boolean }) {
           </span>
         )}
       </Show>
-      <Show when={st().message}>
+      <Show when={p.debug && p.row.stat}>{(stat) => <StatLine stat={stat()} calls={p.row.calls} />}</Show>
+      <Show when={st().message && !(p.debug && p.row.stat)}>
         <span class="step-msg">{st().message}</span>
       </Show>
       <Show when={p.row.calls.length}>
@@ -181,7 +208,7 @@ export default function Checklist(p: {
         else if (LLM_STAGES.has(name)) where = llmWhere(name, calls, p.config);
         else where = { where: "server", what: CV_WHAT[name] ?? "", local: true };
       }
-      return { key, label: LABELS[name], state: p.stages[name], calls, where };
+      return { key, label: LABELS[name], state: p.stages[name], calls, where, stat: p.usage?.stats?.[key] };
     });
     const re = callsBy().get(`retranslate:${p.lang}`);
     if (re?.length) out.push({ key: `retranslate:${p.lang}`, label: "Retranslate (editor)", state: { status: "done" }, calls: re, where: llmWhere("translate", re, p.config) });

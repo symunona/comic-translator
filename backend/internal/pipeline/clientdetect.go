@@ -77,9 +77,11 @@ func (p *Pipeline) Panels(id string) (*PanelsResult, error) {
 		return nil, err
 	}
 	if !ok {
+		start := time.Now()
 		if err := r.runPanels(context.Background()); err != nil {
 			return nil, err
 		}
+		p.recordStat(id, "panels", StageStat{Ms: time.Since(start).Milliseconds(), Where: "server", Counts: r.counts("panels")})
 	}
 	var regs []Region
 	detected, _ := p.Store.LoadStage(id, "detect", vDetect, &regs)
@@ -138,5 +140,13 @@ func (p *Pipeline) SaveClientDetect(id string, in ClientDetect) ([]Region, error
 		log.Printf("%s detect-run: %v", id[:8], err)
 	}
 	log.Printf("%s detect: browser %s on %s, %d panels, %.0f ms, %d regions", id[:8], in.Model, in.Device, len(panels), in.Ms, len(regions))
+	counts := map[string]int{"regions": len(regions), "panels": len(panels)}
+	for _, reg := range regions {
+		counts[reg.DetClass]++
+	}
+	p.recordStat(id, "detect", StageStat{
+		Ms: int64(in.Ms), Where: "browser", Counts: counts,
+		Detail: fmt.Sprintf("%s on %s, %.1f MB, conf>=0.35, NMS IoU 0.5", in.Model, in.Device, float64(in.Bytes)/1e6),
+	})
 	return regions, nil
 }

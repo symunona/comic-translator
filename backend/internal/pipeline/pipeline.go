@@ -191,7 +191,9 @@ func (r *runState) runStages(ctx context.Context, stages []stage, dirty *bool) e
 		if !s.streams {
 			s.publish()
 		}
-		r.stage(s.name, StatusDone, time.Since(start).Round(time.Millisecond).String(), nil)
+		took := time.Since(start)
+		r.p.recordStat(r.id, s.name, StageStat{Ms: took.Milliseconds(), Where: "server", Counts: r.counts(s.name)})
+		r.stage(s.name, StatusDone, took.Round(time.Millisecond).String(), nil)
 	}
 	return nil
 }

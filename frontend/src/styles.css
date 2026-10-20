@@ -614,6 +614,10 @@ button:disabled { opacity: 0.45; cursor: default; }
 .version-label { flex: 1; min-width: 0; height: 32px; padding: 0 8px; border: 1px solid var(--line); border-radius: 8px; background: var(--paper); }
 .version-note { margin: 6px 0 0; color: var(--muted); font-size: 12px; }
 
+.step-stat { grid-column: 2 / 4; display: grid; gap: 1px; font-size: 11.5px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.step-stat b { color: var(--ink); font-weight: 600; }
+.step-detail { font-size: 11px; opacity: 0.85; }
+
 @media (max-width: 860px) {
   .columns { grid-template-columns: 1fr; grid-template-rows: 55% 45%; }
   .sidebar { border-left: 0; border-top: 1.5px solid var(--ink); padding: 16px 16px 40px; }

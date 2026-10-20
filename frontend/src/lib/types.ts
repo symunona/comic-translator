@@ -180,7 +180,9 @@ export type DetectRun = {
   at: string;
 };
 
-export type UsageReport = { stages: StageUsage[]; total: StageUsage; calls: LLMCall[]; detect?: DetectRun };
+export type StageStat = { ms: number; at: string; where?: string; detail?: string; counts?: Record<string, number> };
+
+export type UsageReport = { stages: StageUsage[]; total: StageUsage; calls: LLMCall[]; detect?: DetectRun; stats?: Record<string, StageStat> };
 
 export type Config = {
   clientDetect: boolean;
