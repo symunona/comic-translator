@@ -1,0 +1,28 @@
+{
+  "spec": "ollama:bench-gemma4-12b-it-qat-32k?effort=none\u0026json=1\u0026timeout=30m",
+  "log": "../bench/llm/prompts/2afc78b45293acd677ffcba91f53fea50838d406d2dd965846e83408657e58c7/llm/ocr-p7.json",
+  "text": "{\"regions\":[{\"n\":38,\"kind\":\"sfx\",\"lines\":[\"BOLKOW\"],\"align\":\"center\",\"caps\":true}],\"unboxed\":[]}",
+  "json": {
+    "regions": [
+      {
+        "n": 38,
+        "kind": "sfx",
+        "lines": [
+          "BOLKOW"
+        ],
+        "align": "center",
+        "caps": true
+      }
+    ],
+    "unboxed": []
+  },
+  "usage": {
+    "input_tokens": 1208,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 33
+  },
+  "costUsd": 0,
+  "ms": 34079,
+  "at": "2026-10-20T07:37:49.48266221Z"
+}

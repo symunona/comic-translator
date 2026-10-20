@@ -1,0 +1,51 @@
+{
+  "spec": "claude-cli:opus",
+  "log": "../bench/llm/judge/e3d568cafffeeb3263f8572c19b288c32c7cee9b1eff81d834bf7ec29b0a9a2e/llm/judge-tr-en.json",
+  "text": "{\"candidates\":{\"A\":{\"accuracy\":6,\"naturalness\":6,\"humour\":3,\"voice\":5,\"fit\":9,\"overall\":4,\"worst\":\"r0/r1/r5: the parody names SZAKADT PATENT and ELVONT SÖRÉNY are left in Hungarian. English readers lose the absurd name joke, and the stammer in r5 means nothing to them. r4 'THIS IS MY BODY' also sounds like the Eucharist.\"},\"B\":{\"accuracy\":8,\"naturalness\":6,\"humour\":7,\"voice\":7,\"fit\":9,\"overall\":7,\"worst\":\"r3: 'SAY A BUCKET! ... AND DON'T GET ANGRY' is a word-for-word rendering of 'már ne is haragudj'. It should read as a sly 'no offense'. r6 'LET THAT BE ENOUGH' is also stiff.\"},\"C\":{\"accuracy\":8,\"naturalness\":8,\"humour\":7,\"voice\":7,\"fit\":8,\"overall\":8,\"worst\":\"r4: 'WELL, THIS IS THE BODY I HAVE.' is 30 characters against a 29-character budget. r3 also loses the 'no offense' jab, and dropping 'RIPPED' from the name weakens the address.\"}},\"ranking\":[\"C\",\"B\",\"A\"],\"notes\":\"B and C translate the parody names, so the name joke and the 'RI...RIPPED' stammer still work. A keeps the names in Hungarian and kills that humour. A is the only one that reads r3 correctly as 'no offense', and its 'healer' in r6 is a defensible reading of 'javas ember'. Those strengths don't make up for the lost names. C beats B because its English is more idiomatic ('MAKE IT A BUCKET', 'THAT'LL DO', 'WELL, THIS IS THE BODY I HAVE'). C's only real flaw is going one character over budget in r4.\"}",
+  "json": {
+    "candidates": {
+      "A": {
+        "accuracy": 6,
+        "naturalness": 6,
+        "humour": 3,
+        "voice": 5,
+        "fit": 9,
+        "overall": 4,
+        "worst": "r0/r1/r5: the parody names SZAKADT PATENT and ELVONT SÖRÉNY are left in Hungarian. English readers lose the absurd name joke, and the stammer in r5 means nothing to them. r4 'THIS IS MY BODY' also sounds like the Eucharist."
+      },
+      "B": {
+        "accuracy": 8,
+        "naturalness": 6,
+        "humour": 7,
+        "voice": 7,
+        "fit": 9,
+        "overall": 7,
+        "worst": "r3: 'SAY A BUCKET! ... AND DON'T GET ANGRY' is a word-for-word rendering of 'már ne is haragudj'. It should read as a sly 'no offense'. r6 'LET THAT BE ENOUGH' is also stiff."
+      },
+      "C": {
+        "accuracy": 8,
+        "naturalness": 8,
+        "humour": 7,
+        "voice": 7,
+        "fit": 8,
+        "overall": 8,
+        "worst": "r4: 'WELL, THIS IS THE BODY I HAVE.' is 30 characters against a 29-character budget. r3 also loses the 'no offense' jab, and dropping 'RIPPED' from the name weakens the address."
+      }
+    },
+    "ranking": [
+      "C",
+      "B",
+      "A"
+    ],
+    "notes": "B and C translate the parody names, so the name joke and the 'RI...RIPPED' stammer still work. A keeps the names in Hungarian and kills that humour. A is the only one that reads r3 correctly as 'no offense', and its 'healer' in r6 is a defensible reading of 'javas ember'. Those strengths don't make up for the lost names. C beats B because its English is more idiomatic ('MAKE IT A BUCKET', 'THAT'LL DO', 'WELL, THIS IS THE BODY I HAVE'). C's only real flaw is going one character over budget in r4."
+  },
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 5663,
+    "cache_read_input_tokens": 6163,
+    "output_tokens": 2194
+  },
+  "costUsd": 0.0904326,
+  "ms": 24654,
+  "at": "2026-10-20T07:40:28.156495279Z"
+}

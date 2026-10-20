@@ -89,7 +89,7 @@ def build(prefix, lang, refs):
     key = {}
 
     vers = load(os.path.join(sd, "tr", f"{lang}.versions.json"), {"versions": []})["versions"]
-    cands = [(f"{v['id']} {v['label']}", {k: (v["regions"].get(k) or {}).get("text", "") for k in [r["id"] for r in regs]}) for v in vers if v["source"] != "user"]
+    cands = [(f"{v['id']} {v['label']}", {k: (v["regions"].get(k) or {}).get("text", "") for k in [r["id"] for r in regs]}) for v in vers if v["source"] != "user" or v["label"].startswith("e2e ")]
     for model, d in drafts(sd, lang).items():
         cands.append((f"draft {model}", d))
     rng.shuffle(cands)

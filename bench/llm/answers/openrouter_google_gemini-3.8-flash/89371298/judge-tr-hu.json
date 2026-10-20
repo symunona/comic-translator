@@ -1,0 +1,162 @@
+{
+  "spec": "openrouter:google/gemini-3.8-flash",
+  "log": "../bench/llm/judge/893712989801daabc2a3d351e597946b61312aeb54e14e3d28aaf7f63ad64618/llm/judge-tr-hu.json",
+  "text": "{\"candidates\":{\"A\":{\"accuracy\":6,\"naturalness\":6,\"humour\":5,\"voice\":5,\"fit\":6,\"overall\":5,\"worst\":\"r4: phrasing is slightly stiff\"},\"B\":{\"accuracy\":7,\"naturalness\":7,\"humour\":6,\"voice\":6,\"fit\":7,\"overall\":7,\"worst\":\"r0: slightly wordy phrasing\"},\"C\":{\"accuracy\":6,\"naturalness\":6,\"humour\":6,\"voice\":6,\"fit\":7,\"overall\":6,\"worst\":\"r4: formal wording\"},\"D\":{\"accuracy\":6,\"naturalness\":6,\"humour\":6,\"voice\":6,\"fit\":7,\"overall\":6,\"worst\":\"r4: formal wording\"},\"E\":{\"accuracy\":6,\"naturalness\":6,\"humour\":5,\"voice\":5,\"fit\":6,\"overall\":5,\"worst\":\"r3: unnatural terminology\"},\"F\":{\"accuracy\":6,\"naturalness\":6,\"humour\":6,\"voice\":5,\"fit\":7,\"overall\":6,\"worst\":\"r0: overly harsh register\"},\"G\":{\"accuracy\":7,\"naturalness\":7,\"humour\":6,\"voice\":7,\"fit\":7,\"overall\":7,\"worst\":\"r0: slightly softened exclamation\"},\"H\":{\"accuracy\":6,\"naturalness\":6,\"humour\":6,\"voice\":6,\"fit\":6,\"overall\":6,\"worst\":\"r1: slightly clunky phrasing\"},\"I\":{\"accuracy\":5,\"naturalness\":5,\"humour\":5,\"voice\":5,\"fit\":6,\"overall\":4,\"worst\":\"r1: definite article before city name\"},\"J\":{\"accuracy\":6,\"naturalness\":6,\"humour\":5,\"voice\":5,\"fit\":6,\"overall\":5,\"worst\":\"r0: register slightly too strong\"},\"K\":{\"accuracy\":5,\"naturalness\":5,\"humour\":5,\"voice\":4,\"fit\":5,\"overall\":4,\"worst\":\"r3: awkward hyphenation\"},\"L\":{\"accuracy\":4,\"naturalness\":4,\"humour\":5,\"voice\":4,\"fit\":6,\"overall\":4,\"worst\":\"r1: incorrect article before proper noun\"},\"M\":{\"accuracy\":7,\"naturalness\":7,\"humour\":6,\"voice\":7,\"fit\":7,\"overall\":7,\"worst\":\"r0: slightly softened exclamation\"},\"N\":{\"accuracy\":7,\"naturalness\":7,\"humour\":6,\"voice\":6,\"fit\":7,\"overall\":7,\"worst\":\"r0: slightly wordy phrasing\"}},\"ranking\":[\"G\",\"M\",\"B\",\"N\",\"C\",\"D\",\"H\",\"F\",\"J\",\"A\",\"E\",\"K\",\"I\",\"L\"],\"notes\":\"Top versions match character voice cleanly; weaker ones add awkward articles or stiff syntax.\"}",
+  "json": {
+    "candidates": {
+      "A": {
+        "accuracy": 6,
+        "naturalness": 6,
+        "humour": 5,
+        "voice": 5,
+        "fit": 6,
+        "overall": 5,
+        "worst": "r4: phrasing is slightly stiff"
+      },
+      "B": {
+        "accuracy": 7,
+        "naturalness": 7,
+        "humour": 6,
+        "voice": 6,
+        "fit": 7,
+        "overall": 7,
+        "worst": "r0: slightly wordy phrasing"
+      },
+      "C": {
+        "accuracy": 6,
+        "naturalness": 6,
+        "humour": 6,
+        "voice": 6,
+        "fit": 7,
+        "overall": 6,
+        "worst": "r4: formal wording"
+      },
+      "D": {
+        "accuracy": 6,
+        "naturalness": 6,
+        "humour": 6,
+        "voice": 6,
+        "fit": 7,
+        "overall": 6,
+        "worst": "r4: formal wording"
+      },
+      "E": {
+        "accuracy": 6,
+        "naturalness": 6,
+        "humour": 5,
+        "voice": 5,
+        "fit": 6,
+        "overall": 5,
+        "worst": "r3: unnatural terminology"
+      },
+      "F": {
+        "accuracy": 6,
+        "naturalness": 6,
+        "humour": 6,
+        "voice": 5,
+        "fit": 7,
+        "overall": 6,
+        "worst": "r0: overly harsh register"
+      },
+      "G": {
+        "accuracy": 7,
+        "naturalness": 7,
+        "humour": 6,
+        "voice": 7,
+        "fit": 7,
+        "overall": 7,
+        "worst": "r0: slightly softened exclamation"
+      },
+      "H": {
+        "accuracy": 6,
+        "naturalness": 6,
+        "humour": 6,
+        "voice": 6,
+        "fit": 6,
+        "overall": 6,
+        "worst": "r1: slightly clunky phrasing"
+      },
+      "I": {
+        "accuracy": 5,
+        "naturalness": 5,
+        "humour": 5,
+        "voice": 5,
+        "fit": 6,
+        "overall": 4,
+        "worst": "r1: definite article before city name"
+      },
+      "J": {
+        "accuracy": 6,
+        "naturalness": 6,
+        "humour": 5,
+        "voice": 5,
+        "fit": 6,
+        "overall": 5,
+        "worst": "r0: register slightly too strong"
+      },
+      "K": {
+        "accuracy": 5,
+        "naturalness": 5,
+        "humour": 5,
+        "voice": 4,
+        "fit": 5,
+        "overall": 4,
+        "worst": "r3: awkward hyphenation"
+      },
+      "L": {
+        "accuracy": 4,
+        "naturalness": 4,
+        "humour": 5,
+        "voice": 4,
+        "fit": 6,
+        "overall": 4,
+        "worst": "r1: incorrect article before proper noun"
+      },
+      "M": {
+        "accuracy": 7,
+        "naturalness": 7,
+        "humour": 6,
+        "voice": 7,
+        "fit": 7,
+        "overall": 7,
+        "worst": "r0: slightly softened exclamation"
+      },
+      "N": {
+        "accuracy": 7,
+        "naturalness": 7,
+        "humour": 6,
+        "voice": 6,
+        "fit": 7,
+        "overall": 7,
+        "worst": "r0: slightly wordy phrasing"
+      }
+    },
+    "ranking": [
+      "G",
+      "M",
+      "B",
+      "N",
+      "C",
+      "D",
+      "H",
+      "F",
+      "J",
+      "A",
+      "E",
+      "K",
+      "I",
+      "L"
+    ],
+    "notes": "Top versions match character voice cleanly; weaker ones add awkward articles or stiff syntax."
+  },
+  "usage": {
+    "input_tokens": 9910,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 1111,
+    "reasoning_tokens": 520
+  },
+  "costUsd": 0.01159875,
+  "ms": 14979,
+  "at": "2026-10-20T07:40:28.156689609Z"
+}

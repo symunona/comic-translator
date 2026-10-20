@@ -12,6 +12,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(os.path.dirname(HERE))
 DATA = os.path.join(ROOT, "data")
 STRIPS_TR = {"6cbd56cd": "en", "3b343686": "en", "0c0bd5d5": "en", "89371298": "hu", "35ce81ab": "hu", "8f3737ae": "hu", "246d3aa3": "hu"}
+E2E = ["7f454423", "e3d568ca"]
 SCENE_STRIPS = ["6cbd56cd", "3b343686", "0c0bd5d5"]
 
 
@@ -33,7 +34,7 @@ def main():
     judge = latest("judge-*.json") or []
     scores = {}
     for r in judge:
-        if not r.get("candidate"):
+        if not r.get("candidate") or r["strip"] in E2E:
             continue
         name = r["candidate"]
         if r["kind"] == "scene":

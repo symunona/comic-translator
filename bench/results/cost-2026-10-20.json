@@ -2,42 +2,42 @@
  {
   "step": "draft",
   "backend": "claude-cli:haiku",
-  "usdPerStrip": 0.004167883333333334,
+  "usdPerStrip": 0.00398422,
   "sPerStrip": null,
-  "outTokens": 5448.833333333333,
-  "runs": 6,
+  "outTokens": 5083.142857142857,
+  "runs": 7,
   "errors": 0,
   "judges": {
    "openrouter:google/gemini-3.8-flash": {
-    "mean": 5.5,
-    "n": 6
+    "mean": 5.285714285714286,
+    "n": 7
    },
    "claude-cli:opus": {
-    "mean": 6.166666666666667,
-    "n": 6
+    "mean": 6.142857142857143,
+    "n": 7
    }
   },
-  "score": 5.833333333333334
+  "score": 5.714285714285714
  },
  {
   "step": "draft",
   "backend": "claude-cli:opus",
-  "usdPerStrip": 0.1063936,
+  "usdPerStrip": 0.10351714285714286,
   "sPerStrip": null,
-  "outTokens": 2515.8333333333335,
-  "runs": 6,
+  "outTokens": 2373.285714285714,
+  "runs": 7,
   "errors": 0,
   "judges": {
    "openrouter:google/gemini-3.8-flash": {
     "mean": 7,
-    "n": 6
+    "n": 7
    },
    "claude-cli:opus": {
-    "mean": 7.833333333333333,
-    "n": 6
+    "mean": 7.857142857142857,
+    "n": 7
    }
   },
-  "score": 7.416666666666666
+  "score": 7.428571428571429
  },
  {
   "step": "draft",
@@ -49,15 +49,15 @@
   "errors": 0,
   "judges": {
    "openrouter:google/gemini-3.8-flash": {
-    "mean": 6.333333333333333,
-    "n": 6
+    "mean": 6,
+    "n": 7
    },
    "claude-cli:opus": {
-    "mean": 5.833333333333333,
-    "n": 6
+    "mean": 5.714285714285714,
+    "n": 7
    }
   },
-  "score": 6.083333333333333
+  "score": 5.857142857142858
  },
  {
   "step": "draft",
@@ -69,15 +69,15 @@
   "errors": 0,
   "judges": {
    "openrouter:google/gemini-3.8-flash": {
-    "mean": 5.5,
-    "n": 6
+    "mean": 5.571428571428571,
+    "n": 7
    },
    "claude-cli:opus": {
-    "mean": 6.833333333333333,
-    "n": 6
+    "mean": 7,
+    "n": 7
    }
   },
-  "score": 6.166666666666666
+  "score": 6.285714285714286
  },
  {
   "step": "draft",
@@ -89,15 +89,15 @@
   "errors": 0,
   "judges": {
    "openrouter:google/gemini-3.8-flash": {
-    "mean": 7.166666666666667,
-    "n": 6
+    "mean": 7.142857142857143,
+    "n": 7
    },
    "claude-cli:opus": {
-    "mean": 6.833333333333333,
-    "n": 6
+    "mean": 7.142857142857143,
+    "n": 7
    }
   },
-  "score": 7.0
+  "score": 7.142857142857143
  },
  {
   "step": "draft",
@@ -109,12 +109,12 @@
   "errors": 0,
   "judges": {
    "openrouter:google/gemini-3.8-flash": {
-    "mean": 6.666666666666667,
-    "n": 6
+    "mean": 6.571428571428571,
+    "n": 7
    },
    "claude-cli:opus": {
-    "mean": 7.333333333333333,
-    "n": 6
+    "mean": 7.428571428571429,
+    "n": 7
    }
   },
   "score": 7.0
@@ -129,15 +129,15 @@
   "errors": 0,
   "judges": {
    "openrouter:google/gemini-3.8-flash": {
-    "mean": 5.5,
-    "n": 4
+    "mean": 5.6,
+    "n": 5
    },
    "claude-cli:opus": {
-    "mean": 5.25,
-    "n": 4
+    "mean": 5.8,
+    "n": 5
    }
   },
-  "score": 5.375
+  "score": 5.699999999999999
  },
  {
   "step": "scene",
@@ -282,42 +282,42 @@
  {
   "step": "translate+review",
   "backend": "claude-cli:haiku",
-  "usdPerStrip": 0.009647105,
-  "sPerStrip": 58.947833333333335,
-  "outTokens": 13201,
-  "runs": 6,
+  "usdPerStrip": 0.009191767142857143,
+  "sPerStrip": 55.78642857142857,
+  "outTokens": 12316.714285714286,
+  "runs": 7,
   "errors": 0,
   "judges": {
    "openrouter:google/gemini-3.8-flash": {
-    "mean": 5.166666666666667,
-    "n": 6
+    "mean": 5,
+    "n": 7
    },
    "claude-cli:opus": {
-    "mean": 5.833333333333333,
-    "n": 6
+    "mean": 5.857142857142857,
+    "n": 7
    }
   },
-  "score": 5.5
+  "score": 5.428571428571429
  },
  {
   "step": "translate+review",
   "backend": "claude-cli:opus",
-  "usdPerStrip": 0.2486076,
-  "sPerStrip": 67.99183333333333,
-  "outTokens": 6491.833333333333,
-  "runs": 6,
+  "usdPerStrip": 0.2393989142857143,
+  "sPerStrip": 64.08471428571428,
+  "outTokens": 6060.714285714285,
+  "runs": 7,
   "errors": 0,
   "judges": {
    "openrouter:google/gemini-3.8-flash": {
     "mean": 7,
-    "n": 6
+    "n": 7
    },
    "claude-cli:opus": {
-    "mean": 8.166666666666666,
-    "n": 6
+    "mean": 8.285714285714286,
+    "n": 7
    }
   },
-  "score": 7.583333333333333
+  "score": 7.642857142857143
  },
  {
   "step": "translate+review",
@@ -329,32 +329,32 @@
   "errors": 0,
   "judges": {
    "openrouter:google/gemini-3.8-flash": {
-    "mean": 6.666666666666667,
-    "n": 6
+    "mean": 6.428571428571429,
+    "n": 7
    },
    "claude-cli:opus": {
-    "mean": 6.833333333333333,
-    "n": 6
+    "mean": 6.857142857142857,
+    "n": 7
    }
   },
-  "score": 6.75
+  "score": 6.642857142857142
  },
  {
   "step": "translate+review",
   "backend": "openrouter:deepseek/deepseek-v4.1-flash",
-  "usdPerStrip": 0.01763012166666667,
-  "sPerStrip": 140.19833333333335,
-  "outTokens": 21342.166666666668,
-  "runs": 6,
-  "errors": 0,
+  "usdPerStrip": 0.01576099,
+  "sPerStrip": 254.4382857142857,
+  "outTokens": 18990.285714285714,
+  "runs": 7,
+  "errors": 1,
   "judges": {
    "openrouter:google/gemini-3.8-flash": {
-    "mean": 6.5,
-    "n": 6
+    "mean": 6.428571428571429,
+    "n": 7
    },
    "claude-cli:opus": {
-    "mean": 7.5,
-    "n": 6
+    "mean": 7.571428571428571,
+    "n": 7
    }
   },
   "score": 7.0
@@ -369,15 +369,15 @@
   "errors": 0,
   "judges": {
    "openrouter:google/gemini-3.8-flash": {
-    "mean": 8,
-    "n": 6
+    "mean": 7.857142857142857,
+    "n": 7
    },
    "claude-cli:opus": {
-    "mean": 7.666666666666667,
-    "n": 6
+    "mean": 7.857142857142857,
+    "n": 7
    }
   },
-  "score": 7.833333333333334
+  "score": 7.857142857142857
  },
  {
   "step": "translate+review",
@@ -389,15 +389,15 @@
   "errors": 0,
   "judges": {
    "openrouter:google/gemini-3.8-flash": {
-    "mean": 6.666666666666667,
-    "n": 6
+    "mean": 6.428571428571429,
+    "n": 7
    },
    "claude-cli:opus": {
     "mean": 7,
-    "n": 6
+    "n": 7
    }
   },
-  "score": 6.833333333333334
+  "score": 6.714285714285714
  },
  {
   "step": "translate+review",
@@ -409,14 +409,14 @@
   "errors": 0,
   "judges": {
    "openrouter:google/gemini-3.8-flash": {
-    "mean": 5.75,
-    "n": 4
+    "mean": 5.6,
+    "n": 5
    },
    "claude-cli:opus": {
-    "mean": 5.75,
-    "n": 4
+    "mean": 6.2,
+    "n": 5
    }
   },
-  "score": 5.75
+  "score": 5.9
  }
 ]

@@ -1,0 +1,43 @@
+{
+  "spec": "ollama:bench-gemma4-12b-it-qat-32k?effort=none\u0026json=1\u0026timeout=30m",
+  "log": "../bench/llm/prompts/3b3436860d742571c5a540084c396d020cb19fae9191994d00f2338e06c41d2b/llm/ocr-p4.json",
+  "text": "{\"regions\":[{\"n\":15,\"kind\":\"speech\",\"lines\":[\"ÉS MINDENHOL, AHOL A NAP,\"],\"align\":\"center\",\"caps\":true,\"lines\":[\"MEGFORDULOK, SZÓNÁM SZÜEL, MINT\"],\"align\":\"center\",\"caps\":true,\"lines\":[\"A ΠITYPANG A SZARJAIT, VÁGOD?\"],\"align\":\"center\",\"caps\":true,\"lines\":[\"MINDENFELÉ !!!\"],\"align\":\"right\",\"caps\":true}],\"unboxed\":[]}",
+  "json": {
+    "regions": [
+      {
+        "n": 15,
+        "kind": "speech",
+        "lines": [
+          "ÉS MINDENHOL, AHOL A NAP,"
+        ],
+        "align": "center",
+        "caps": true,
+        "lines": [
+          "MEGFORDULOK, SZÓNÁM SZÜEL, MINT"
+        ],
+        "align": "center",
+        "caps": true,
+        "lines": [
+          "A ΠITYPANG A SZARJAIT, VÁGOD?"
+        ],
+        "align": "center",
+        "caps": true,
+        "lines": [
+          "MINDENFELÉ !!!"
+        ],
+        "align": "right",
+        "caps": true
+      }
+    ],
+    "unboxed": []
+  },
+  "usage": {
+    "input_tokens": 1091,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 111
+  },
+  "costUsd": 0,
+  "ms": 60959,
+  "at": "2026-10-20T07:44:49.41031155Z"
+}

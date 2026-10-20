@@ -21489,6 +21489,1720 @@
   },
   {
    "model": "paddle-v5-latin",
+   "method": "browser wasm×1",
+   "strips": 8,
+   "costPerStrip": 0.0,
+   "msPerStrip": 10587.169999927282,
+   "cost": 0.0,
+   "ms": 84697.35999941826,
+   "calls": 0,
+   "errors": 0,
+   "load": 8095.200000047684,
+   "mb": 12.817904,
+   "chars": 3397,
+   "err": 562,
+   "exact": 24,
+   "acc_tot": 191,
+   "acc_hit": 63,
+   "n": 104,
+   "missed": 0,
+   "invented": 3,
+   "cer": 0.1654400942007654,
+   "accent": 0.3298429319371728,
+   "per": {
+    "2afc78b4/r0": {
+     "pred": "UNBA! \n",
+     "chars": 5,
+     "err": 1,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r1": {
+     "pred": "NA! E!\nDEJÓ, HOGY\nELJÖTTE, E!",
+     "chars": 29,
+     "err": 1,
+     "exact": false,
+     "acc_tot": 3,
+     "acc_hit": 2
+    },
+    "2afc78b4/r2": {
+     "pred": "HIREK",
+     "chars": 5,
+     "err": 1,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 0
+    },
+    "2afc78b4/r4": {
+     "pred": "MOST ARRA GONDOLSZ,\nHOGYDE KÁR,HOGY\nELKOLTOTTEMAZ\nELOLEGET,MOST\nLEMONDHATNAM",
+     "chars": 81,
+     "err": 9,
+     "exact": false,
+     "acc_tot": 5,
+     "acc_hit": 1
+    },
+    "2afc78b4/r5": {
+     "pred": "CAVALEIR C L",
+     "chars": 8,
+     "err": 4,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r6": {
+     "pred": "A MELÓT!\"",
+     "chars": 9,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 1,
+     "acc_hit": 1
+    },
+    "2afc78b4/r7": {
+     "pred": "HÁT.. ÁBE.",
+     "chars": 12,
+     "err": 3,
+     "exact": false,
+     "acc_tot": 3,
+     "acc_hit": 2
+    },
+    "2afc78b4/r8": {
+     "pred": "FASZI BÁCSI",
+     "chars": 11,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 1,
+     "acc_hit": 1
+    },
+    "2afc78b4/r9": {
+     "pred": "NA. PATTANJ FEL!",
+     "chars": 16,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r10": {
+     "pred": "FAS21-1",
+     "chars": 7,
+     "err": 2,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r11": {
+     "pred": "CALAVRIE O",
+     "chars": 8,
+     "err": 2,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r12": {
+     "pred": "NEM BAJ, AZ EMBER\nAZÉRT FIATAL, HOGY\nTANULJON.STT",
+     "chars": 46,
+     "err": 3,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 1
+    },
+    "2afc78b4/r13": {
+     "pred": "FASZI BÁCSI",
+     "chars": 11,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 1,
+     "acc_hit": 1
+    },
+    "2afc78b4/r14": {
+     "pred": "FASZI-100",
+     "chars": 7,
+     "err": 2,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r15": {
+     "pred": "JEZUS ATYA, URISTEN!",
+     "chars": 21,
+     "err": 3,
+     "exact": false,
+     "acc_tot": 2,
+     "acc_hit": 0
+    },
+    "2afc78b4/r16": {
+     "pred": "IVECALAIROO",
+     "chars": 8,
+     "err": 3,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r17": {
+     "pred": "Ö A HALÓFÜLKEBEN LÓG\nEGY KRISTÁLYHOLOGRAM\nFORMÁJABAN,DE ITT\nVALÓBAN A SZENTFÖLDI\nLOVAGVÁRAK\nSTILUSAT IGYEKEZTEM HOZ\nAZ OTT EGY BEDVIN\nKEMENCE, HENNÁS KASPO\nTEVENYEREG, ASTROLABINM",
+     "chars": 188,
+     "err": 17,
+     "exact": false,
+     "acc_tot": 17,
+     "acc_hit": 10
+    },
+    "2afc78b4/r18": {
+     "pred": "FASZI BACSI",
+     "chars": 11,
+     "err": 1,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 0
+    },
+    "2afc78b4/r19": {
+     "pred": "CSAK MÁR GEURE\nUNOM.\nEZERT VAGYIT E!",
+     "chars": 40,
+     "err": 6,
+     "exact": false,
+     "acc_tot": 2,
+     "acc_hit": 1
+    },
+    "2afc78b4/r20": {
+     "pred": "HÁTOO... EDDIG EGY KAMIONT...",
+     "chars": 29,
+     "err": 2,
+     "exact": false,
+     "acc_tot": 3,
+     "acc_hit": 1
+    },
+    "2afc78b4/r23": {
+     "pred": "RELAVACI",
+     "chars": 8,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r24": {
+     "pred": "NYERGES VONTATÓT.",
+     "chars": 17,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 1,
+     "acc_hit": 1
+    },
+    "2afc78b4/r25": {
+     "pred": "PARDON. NYERGESVONTATOT\nCSINÁLTAM, VIII. HENRIK STILUSÁBAN,\n„TRUBADUR\" LETT A MUNKACIME.\nITT VAN A PORTFÓLIÓMBAN:",
+     "chars": 113,
+     "err": 4,
+     "exact": false,
+     "acc_tot": 8,
+     "acc_hit": 4
+    },
+    "2afc78b4/r26": {
+     "pred": "AHA.. VÁGOM. KÁRPIT\nMÁR MESSZIRÖL.ELKAPTAD A\nBROKÁT. SOKA BOUT. FELBASZNA\nAZONNAL. MEG-EZIS ILYEN\nREGI , VAGOD?\nANTIK .",
+     "chars": 122,
+     "err": 12,
+     "exact": false,
+     "acc_tot": 9,
+     "acc_hit": 4
+    },
+    "2afc78b4/r27": {
+     "pred": "FASZI BACSI",
+     "chars": 11,
+     "err": 1,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 0
+    },
+    "2afc78b4/r28": {
+     "pred": "FAS2I- O",
+     "chars": 7,
+     "err": 3,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r29": {
+     "pred": "ROPI",
+     "chars": 4,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r30": {
+     "pred": "SZÓVAL,AMIKOR A GROBKUGELNI\nPIHENOBEN KINITAA\nURVAAATOTAKKOR\ncYnmMGeetaY\nYRANYNAK YEN LaYYOY\nART DEKOTGONDOLNEK",
+     "chars": 165,
+     "err": 73,
+     "exact": false,
+     "acc_tot": 9,
+     "acc_hit": 1
+    },
+    "2afc78b4/r32": {
+     "pred": "RACALVIE",
+     "chars": 8,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r33": {
+     "pred": "FASZIBÁOS",
+     "chars": 11,
+     "err": 3,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 1
+    },
+    "2afc78b4/r34": {
+     "pred": "ERTEM. EZA DOBOZ, EZ MI?\nMARADNIA KEUL?",
+     "chars": 40,
+     "err": 3,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 0
+    },
+    "2afc78b4/r35": {
+     "pred": "AKKSIKA FÉNYHEZ. MARAD.",
+     "chars": 24,
+     "err": 1,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 1
+    },
+    "2afc78b4/r36": {
+     "pred": "FENYHEZ\"?",
+     "chars": 10,
+     "err": 2,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 0
+    },
+    "2afc78b4/r37": {
+     "pred": "FASZI- 0 O",
+     "chars": 7,
+     "err": 4,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r38": {
+     "pred": "2 1\nB b0",
+     "chars": 6,
+     "err": 8,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r40": {
+     "pred": "ICAVELIAR",
+     "chars": 8,
+     "err": 1,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r41": {
+     "pred": "TIÉD VOLTAZ\nA SMART?",
+     "chars": 21,
+     "err": 1,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 1
+    },
+    "2afc78b4/r42": {
+     "pred": "FASZIBÁSI",
+     "chars": 10,
+     "err": 1,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 1
+    },
+    "2afc78b4/r45": {
+     "pred": "0 FASZI-",
+     "chars": 7,
+     "err": 3,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r46": {
+     "pred": "TAR FIFU \nIGCAMAIIERL",
+     "chars": 17,
+     "err": 14,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 0
+    },
+    "2afc78b4/r47": {
+     "pred": "CAVALIER",
+     "chars": 8,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r48": {
+     "pred": "BOCsI.",
+     "chars": 6,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r49": {
+     "pred": "7HAZAVISZLEK. MEG",
+     "chars": 16,
+     "err": 8,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r50": {
+     "pred": "FASZI BACSI",
+     "chars": 11,
+     "err": 1,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 0
+    },
+    "2afc78b4/r52": {
+     "pred": "TFASZ1- D",
+     "chars": 7,
+     "err": 4,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "6cbd56cd/r0": {
+     "pred": "NAGYIKÁM, TIBOR PAPÁNAK \nVOLT A LEPKEGYUJTO FELSZERECESEHEZ\nEGYVIASZOSVÁSZON\nTARISZNYÁJA.",
+     "chars": 91,
+     "err": 8,
+     "exact": false,
+     "acc_tot": 8,
+     "acc_hit": 4
+    },
+    "6cbd56cd/r1": {
+     "pred": "OTT KELL CENNCE\nA SUFNIBAN!",
+     "chars": 27,
+     "err": 2,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "6cbd56cd/r2": {
+     "pred": "Ó JAJ..",
+     "chars": 8,
+     "err": 1,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 1
+    },
+    "6cbd56cd/r3": {
+     "pred": "CSAK LÁTSZÓLAG EGY KIBASZOTT KI\nAMIBEN BOMBA ROBBANT.\nTULAJDONKEPPEN EGY ZSENIALIS\nRENDSZER. A RAHANGOLODASBAN\nSEGIT A FENYKEPE.\ni ",
+     "chars": 135,
+     "err": 18,
+     "exact": false,
+     "acc_tot": 11,
+     "acc_hit": 2
+    },
+    "6cbd56cd/r4": {
+     "pred": "E2 EGY  HELIKOPTER\nTURBINA",
+     "chars": 26,
+     "err": 2,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "6cbd56cd/r5": {
+     "pred": "IGEN, MOGOTTE INDUL\nA LEPCSO",
+     "chars": 29,
+     "err": 5,
+     "exact": false,
+     "acc_tot": 4,
+     "acc_hit": 0
+    },
+    "6cbd56cd/r6": {
+     "pred": "cYanmaG ntaYe \nEGY KAUKAZVSI FERFI\nSZARITOT MUMIAJA\nBAZMEG",
+     "chars": 65,
+     "err": 26,
+     "exact": false,
+     "acc_tot": 9,
+     "acc_hit": 0
+    },
+    "6cbd56cd/r7": {
+     "pred": "TELEKVITA",
+     "chars": 9,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "6cbd56cd/r8": {
+     "pred": "FUJ!..A BELSO SZERVEI\nIT AZNAK EGY AKVÁRIUMBAN\nA SZIN KULON EGY\nLEKVÁROS ÜVEGBEN!\nFUJBAZMEG",
+     "chars": 96,
+     "err": 13,
+     "exact": false,
+     "acc_tot": 10,
+     "acc_hit": 3
+    },
+    "6cbd56cd/r10": {
+     "pred": "TIBOROM\nPRECIZ\n(VOLT!)",
+     "chars": 20,
+     "err": 3,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 0
+    },
+    "6cbd56cd/r11": {
+     "pred": "EMBER",
+     "chars": 5,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "3b343686/r0": {
+     "pred": "HÁHHÁ! JESTET!\nMEGVARJUK AZ ELSÖ RANDOMTIBORT.\nMES FATESSZUK NEKI A KÉRDEST!\nCO",
+     "chars": 77,
+     "err": 14,
+     "exact": false,
+     "acc_tot": 10,
+     "acc_hit": 3
+    },
+    "3b343686/r2": {
+     "pred": "M A DGAMT JONAPOT URAM !",
+     "chars": 80,
+     "err": 65,
+     "exact": false,
+     "acc_tot": 7,
+     "acc_hit": 0
+    },
+    "3b343686/r3": {
+     "pred": "SPORTKOSSI?",
+     "chars": 11,
+     "err": 1,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "3b343686/r4": {
+     "pred": "PINAK?",
+     "chars": 6,
+     "err": 1,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 0
+    },
+    "3b343686/r5": {
+     "pred": "A\n4 lOTT ÖTÖST?\nHM...LÁSSUK CSAK..\nHEHE . IGEN !",
+     "chars": 49,
+     "err": 7,
+     "exact": false,
+     "acc_tot": 4,
+     "acc_hit": 3
+    },
+    "3b343686/r6": {
+     "pred": "YACHT?",
+     "chars": 6,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "3b343686/r7": {
+     "pred": "UTAZGATÁS?",
+     "chars": 10,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 1,
+     "acc_hit": 1
+    },
+    "3b343686/r8": {
+     "pred": "PINAK?",
+     "chars": 6,
+     "err": 1,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 0
+    },
+    "3b343686/r10": {
+     "pred": "VILLA?",
+     "chars": 6,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "3b343686/r11": {
+     "pred": "PINAK?",
+     "chars": 6,
+     "err": 1,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 0
+    },
+    "3b343686/r13": {
+     "pred": "VENNEK EGY KURVANAGY\nDOBOZT,\nTELIS-TEUE TIZES\nVILLÁSKULCCSAL! AGYIG\nRAKVA,\nTÜBB\nVÁGOD?",
+     "chars": 91,
+     "err": 8,
+     "exact": false,
+     "acc_tot": 4,
+     "acc_hit": 2
+    },
+    "3b343686/r15": {
+     "pred": "ES MINDENHOL, AHOL A NAP.\nMEGFORDULOK, SZORNAM SZEUEL, MINT\nA PITYPANG A SZARAIT VAGO? VADENFLE !",
+     "chars": 104,
+     "err": 17,
+     "exact": false,
+     "acc_tot": 6,
+     "acc_hit": 0
+    },
+    "3b343686/r16": {
+     "pred": "cYa GeeGnaYl\nCSAVAR\ne BAZMEG \nMMMN",
+     "chars": 40,
+     "err": 25,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "3b343686/r17": {
+     "pred": " AKKOR BÁRHOVA NYULOK,\nOTT LEGYEN, BAZMEG.\nNEM EGY, ÖT!",
+     "chars": 58,
+     "err": 5,
+     "exact": false,
+     "acc_tot": 3,
+     "acc_hit": 2
+    },
+    "0c0bd5d5/r1": {
+     "pred": "HRAHGHR",
+     "chars": 14,
+     "err": 7,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "0c0bd5d5/r2": {
+     "pred": "MIA FASZOM?",
+     "chars": 12,
+     "err": 1,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "0c0bd5d5/r3": {
+     "pred": "7722.683/FELVEIZEM",
+     "chars": 18,
+     "err": 2,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "0c0bd5d5/r4": {
+     "pred": "KI VAGY,ES MI A GECIT\nKERESEL A PLATOMON,\nBAZME",
+     "chars": 49,
+     "err": 4,
+     "exact": false,
+     "acc_tot": 2,
+     "acc_hit": 0
+    },
+    "0c0bd5d5/r5": {
+     "pred": "A GUBACS TEREZ\nÚTON ÜTOTTEL,\nMINDKET LÁBAM\nELTÖRÖTT, AZÓTA\nFAJ- FAJOGAT.",
+     "chars": 73,
+     "err": 7,
+     "exact": false,
+     "acc_tot": 11,
+     "acc_hit": 6
+    },
+    "0c0bd5d5/r6": {
+     "pred": "FEKSZEMITT.",
+     "chars": 12,
+     "err": 1,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "0c0bd5d5/r7": {
+     "pred": "7722.683/FEVESLEM",
+     "chars": 18,
+     "err": 3,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "0c0bd5d5/r8": {
+     "pred": "NEM IS JÁRTAM ARRA MA, BAZME...\nA KOZELBE SE.",
+     "chars": 45,
+     "err": 1,
+     "exact": false,
+     "acc_tot": 2,
+     "acc_hit": 1
+    },
+    "0c0bd5d5/r9": {
+     "pred": "EZ MULT HET KEDDEN\nTORTENT..",
+     "chars": 29,
+     "err": 5,
+     "exact": false,
+     "acc_tot": 4,
+     "acc_hit": 0
+    },
+    "0c0bd5d5/r11": {
+     "pred": "7722.683/FELVESIEM",
+     "chars": 18,
+     "err": 2,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "0c0bd5d5/r12": {
+     "pred": "MULT HET KEDD?\nNE KAMUZZA!\nHOGY NEM HALTAL EHEN?",
+     "chars": 48,
+     "err": 5,
+     "exact": false,
+     "acc_tot": 5,
+     "acc_hit": 0
+    },
+    "0c0bd5d5/r13": {
+     "pred": "KIFELE JOTEM A BOLTBOL,\nAMIKOR TEU BE KAPOTT..\nKETNAGY\nSZATYOR..",
+     "chars": 68,
+     "err": 10,
+     "exact": false,
+     "acc_tot": 4,
+     "acc_hit": 0
+    },
+    "0c0bd5d5/r14": {
+     "pred": "7772.683/FEWESZEM",
+     "chars": 18,
+     "err": 4,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "0c0bd5d5/r15": {
+     "pred": "AKURVAELET!",
+     "chars": 11,
+     "err": 1,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 0
+    },
+    "0c0bd5d5/r16": {
+     "pred": "7722.683/FELVESZEM",
+     "chars": 18,
+     "err": 1,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "0c0bd5d5/r19": {
+     "pred": "AARRGH .",
+     "chars": 13,
+     "err": 6,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "0c0bd5d5/r20": {
+     "pred": "7722·683/FELVESZEM",
+     "chars": 18,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "0c0bd5d5/r21": {
+     "pred": "ITT EGY PLED, BAZME.\nEJJELENTE MAR\nHIDEGEK VANNAK.",
+     "chars": 50,
+     "err": 3,
+     "exact": false,
+     "acc_tot": 3,
+     "acc_hit": 0
+    },
+    "0c0bd5d5/r22": {
+     "pred": "7722.683/FEWESZEM",
+     "chars": 18,
+     "err": 3,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "89371298/r0": {
+     "pred": "Oh shoot, I fell asleep\nwith the window open,",
+     "chars": 54,
+     "err": 9,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "89371298/r1": {
+     "pred": "...and why can I see\nKomona through\nthe window?",
+     "chars": 47,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "89371298/r2": {
+     "pred": "KOMONA!",
+     "chars": 7,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "89371298/r3": {
+     "pred": "The Potion\nContest!",
+     "chars": 19,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "89371298/r4": {
+     "pred": "Imust've .\nmust've accidentally\nfallen asleep!",
+     "chars": 48,
+     "err": 3,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "89371298/r5": {
+     "pred": "..but?",
+     "chars": 7,
+     "err": 1,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "89371298/r6": {
+     "pred": "Where\nam I ?!?",
+     "chars": 13,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "35ce81ab/r0": {
+     "pred": "Carot!\nYou're so cute to have\nthought of bringing me to",
+     "chars": 69,
+     "err": 14,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "35ce81ab/r1": {
+     "pred": "Fan-tas-tic!",
+     "chars": 12,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "35ce81ab/r2": {
+     "pred": "You even thought of\nbringing a potion, my\nclothes, and my hat...",
+     "chars": 64,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "35ce81ab/r3": {
+     "pred": ".….let's see which\npotion you brought...",
+     "chars": 40,
+     "err": 2,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "8f3737ae/r0": {
+     "pred": "How do I\nexit vim ?",
+     "chars": 18,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "8f3737ae/r1": {
+     "pred": "Why would I\nexit vim?",
+     "chars": 21,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "246d3aa3/r0": {
+     "pred": "REMAIN MY PUTER\nAmBiVAlenT",
+     "chars": 34,
+     "err": 22,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "246d3aa3/r1": {
+     "pred": "ITICONTAINS MULTITUDES. FRIENDS. ENEMIES\nLOVE\" HATE, TO REDUCE IT'TO ONE OR THE OTHER\nIS AN EXERCISE IN FOOLISHNESS.",
+     "chars": 117,
+     "err": 5,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    }
+   }
+  },
+  {
+   "model": "paddle-v5-latin",
+   "method": "browser wasm×4",
+   "strips": 8,
+   "costPerStrip": 0.0,
+   "msPerStrip": 6345.420000016689,
+   "cost": 0.0,
+   "ms": 50763.360000133514,
+   "calls": 0,
+   "errors": 0,
+   "load": 4939.889999866486,
+   "mb": 12.817904,
+   "chars": 3397,
+   "err": 562,
+   "exact": 24,
+   "acc_tot": 191,
+   "acc_hit": 63,
+   "n": 104,
+   "missed": 0,
+   "invented": 3,
+   "cer": 0.1654400942007654,
+   "accent": 0.3298429319371728,
+   "per": {
+    "2afc78b4/r0": {
+     "pred": "UNBA! \n",
+     "chars": 5,
+     "err": 1,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r1": {
+     "pred": "NA! E!\nDEJÓ, HOGY\nELJÖTTE, E!",
+     "chars": 29,
+     "err": 1,
+     "exact": false,
+     "acc_tot": 3,
+     "acc_hit": 2
+    },
+    "2afc78b4/r2": {
+     "pred": "HIREK",
+     "chars": 5,
+     "err": 1,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 0
+    },
+    "2afc78b4/r4": {
+     "pred": "MOST ARRA GONDOLSZ,\nHOGYDE KÁR,HOGY\nELKOLTOTTEMAZ\nELOLEGET,MOST\nLEMONDHATNAM",
+     "chars": 81,
+     "err": 9,
+     "exact": false,
+     "acc_tot": 5,
+     "acc_hit": 1
+    },
+    "2afc78b4/r5": {
+     "pred": "CAVALEIR C L",
+     "chars": 8,
+     "err": 4,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r6": {
+     "pred": "A MELÓT!\"",
+     "chars": 9,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 1,
+     "acc_hit": 1
+    },
+    "2afc78b4/r7": {
+     "pred": "HÁT.. ÁBE.",
+     "chars": 12,
+     "err": 3,
+     "exact": false,
+     "acc_tot": 3,
+     "acc_hit": 2
+    },
+    "2afc78b4/r8": {
+     "pred": "FASZI BÁCSI",
+     "chars": 11,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 1,
+     "acc_hit": 1
+    },
+    "2afc78b4/r9": {
+     "pred": "NA. PATTANJ FEL!",
+     "chars": 16,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r10": {
+     "pred": "FAS21-1",
+     "chars": 7,
+     "err": 2,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r11": {
+     "pred": "CALAVRIE O",
+     "chars": 8,
+     "err": 2,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r12": {
+     "pred": "NEM BAJ, AZ EMBER\nAZÉRT FIATAL, HOGY\nTANULJON.STT",
+     "chars": 46,
+     "err": 3,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 1
+    },
+    "2afc78b4/r13": {
+     "pred": "FASZI BÁCSI",
+     "chars": 11,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 1,
+     "acc_hit": 1
+    },
+    "2afc78b4/r14": {
+     "pred": "FASZI-100",
+     "chars": 7,
+     "err": 2,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r15": {
+     "pred": "JEZUS ATYA, URISTEN!",
+     "chars": 21,
+     "err": 3,
+     "exact": false,
+     "acc_tot": 2,
+     "acc_hit": 0
+    },
+    "2afc78b4/r16": {
+     "pred": "IVECALAIROO",
+     "chars": 8,
+     "err": 3,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r17": {
+     "pred": "Ö A HALÓFÜLKEBEN LÓG\nEGY KRISTÁLYHOLOGRAM\nFORMÁJABAN,DE ITT\nVALÓBAN A SZENTFÖLDI\nLOVAGVÁRAK\nSTILUSAT IGYEKEZTEM HOZ\nAZ OTT EGY BEDVIN\nKEMENCE, HENNÁS KASPO\nTEVENYEREG, ASTROLABINM",
+     "chars": 188,
+     "err": 17,
+     "exact": false,
+     "acc_tot": 17,
+     "acc_hit": 10
+    },
+    "2afc78b4/r18": {
+     "pred": "FASZI BACSI",
+     "chars": 11,
+     "err": 1,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 0
+    },
+    "2afc78b4/r19": {
+     "pred": "CSAK MÁR GEURE\nUNOM.\nEZERT VAGYIT E!",
+     "chars": 40,
+     "err": 6,
+     "exact": false,
+     "acc_tot": 2,
+     "acc_hit": 1
+    },
+    "2afc78b4/r20": {
+     "pred": "HÁTOO... EDDIG EGY KAMIONT...",
+     "chars": 29,
+     "err": 2,
+     "exact": false,
+     "acc_tot": 3,
+     "acc_hit": 1
+    },
+    "2afc78b4/r23": {
+     "pred": "RELAVACI",
+     "chars": 8,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r24": {
+     "pred": "NYERGES VONTATÓT.",
+     "chars": 17,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 1,
+     "acc_hit": 1
+    },
+    "2afc78b4/r25": {
+     "pred": "PARDON. NYERGESVONTATOT\nCSINÁLTAM, VIII. HENRIK STILUSÁBAN,\n„TRUBADUR\" LETT A MUNKACIME.\nITT VAN A PORTFÓLIÓMBAN:",
+     "chars": 113,
+     "err": 4,
+     "exact": false,
+     "acc_tot": 8,
+     "acc_hit": 4
+    },
+    "2afc78b4/r26": {
+     "pred": "AHA.. VÁGOM. KÁRPIT\nMÁR MESSZIRÖL.ELKAPTAD A\nBROKÁT. SOKA BOUT. FELBASZNA\nAZONNAL. MEG-EZIS ILYEN\nREGI , VAGOD?\nANTIK .",
+     "chars": 122,
+     "err": 12,
+     "exact": false,
+     "acc_tot": 9,
+     "acc_hit": 4
+    },
+    "2afc78b4/r27": {
+     "pred": "FASZI BACSI",
+     "chars": 11,
+     "err": 1,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 0
+    },
+    "2afc78b4/r28": {
+     "pred": "FAS2I- O",
+     "chars": 7,
+     "err": 3,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r29": {
+     "pred": "ROPI",
+     "chars": 4,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r30": {
+     "pred": "SZÓVAL,AMIKOR A GROBKUGELNI\nPIHENOBEN KINITAA\nURVAAATOTAKKOR\ncYnmMGeetaY\nYRANYNAK YEN LaYYOY\nART DEKOTGONDOLNEK",
+     "chars": 165,
+     "err": 73,
+     "exact": false,
+     "acc_tot": 9,
+     "acc_hit": 1
+    },
+    "2afc78b4/r32": {
+     "pred": "RACALVIE",
+     "chars": 8,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r33": {
+     "pred": "FASZIBÁOS",
+     "chars": 11,
+     "err": 3,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 1
+    },
+    "2afc78b4/r34": {
+     "pred": "ERTEM. EZA DOBOZ, EZ MI?\nMARADNIA KEUL?",
+     "chars": 40,
+     "err": 3,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 0
+    },
+    "2afc78b4/r35": {
+     "pred": "AKKSIKA FÉNYHEZ. MARAD.",
+     "chars": 24,
+     "err": 1,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 1
+    },
+    "2afc78b4/r36": {
+     "pred": "FENYHEZ\"?",
+     "chars": 10,
+     "err": 2,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 0
+    },
+    "2afc78b4/r37": {
+     "pred": "FASZI- 0 O",
+     "chars": 7,
+     "err": 4,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r38": {
+     "pred": "2 1\nB b0",
+     "chars": 6,
+     "err": 8,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r40": {
+     "pred": "ICAVELIAR",
+     "chars": 8,
+     "err": 1,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r41": {
+     "pred": "TIÉD VOLTAZ\nA SMART?",
+     "chars": 21,
+     "err": 1,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 1
+    },
+    "2afc78b4/r42": {
+     "pred": "FASZIBÁSI",
+     "chars": 10,
+     "err": 1,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 1
+    },
+    "2afc78b4/r45": {
+     "pred": "0 FASZI-",
+     "chars": 7,
+     "err": 3,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r46": {
+     "pred": "TAR FIFU \nIGCAMAIIERL",
+     "chars": 17,
+     "err": 14,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 0
+    },
+    "2afc78b4/r47": {
+     "pred": "CAVALIER",
+     "chars": 8,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r48": {
+     "pred": "BOCsI.",
+     "chars": 6,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r49": {
+     "pred": "7HAZAVISZLEK. MEG",
+     "chars": 16,
+     "err": 8,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r50": {
+     "pred": "FASZI BACSI",
+     "chars": 11,
+     "err": 1,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 0
+    },
+    "2afc78b4/r52": {
+     "pred": "TFASZ1- D",
+     "chars": 7,
+     "err": 4,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "6cbd56cd/r0": {
+     "pred": "NAGYIKÁM, TIBOR PAPÁNAK \nVOLT A LEPKEGYUJTO FELSZERECESEHEZ\nEGYVIASZOSVÁSZON\nTARISZNYÁJA.",
+     "chars": 91,
+     "err": 8,
+     "exact": false,
+     "acc_tot": 8,
+     "acc_hit": 4
+    },
+    "6cbd56cd/r1": {
+     "pred": "OTT KELL CENNCE\nA SUFNIBAN!",
+     "chars": 27,
+     "err": 2,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "6cbd56cd/r2": {
+     "pred": "Ó JAJ..",
+     "chars": 8,
+     "err": 1,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 1
+    },
+    "6cbd56cd/r3": {
+     "pred": "CSAK LÁTSZÓLAG EGY KIBASZOTT KI\nAMIBEN BOMBA ROBBANT.\nTULAJDONKEPPEN EGY ZSENIALIS\nRENDSZER. A RAHANGOLODASBAN\nSEGIT A FENYKEPE.\ni ",
+     "chars": 135,
+     "err": 18,
+     "exact": false,
+     "acc_tot": 11,
+     "acc_hit": 2
+    },
+    "6cbd56cd/r4": {
+     "pred": "E2 EGY  HELIKOPTER\nTURBINA",
+     "chars": 26,
+     "err": 2,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "6cbd56cd/r5": {
+     "pred": "IGEN, MOGOTTE INDUL\nA LEPCSO",
+     "chars": 29,
+     "err": 5,
+     "exact": false,
+     "acc_tot": 4,
+     "acc_hit": 0
+    },
+    "6cbd56cd/r6": {
+     "pred": "cYanmaG ntaYe \nEGY KAUKAZVSI FERFI\nSZARITOT MUMIAJA\nBAZMEG",
+     "chars": 65,
+     "err": 26,
+     "exact": false,
+     "acc_tot": 9,
+     "acc_hit": 0
+    },
+    "6cbd56cd/r7": {
+     "pred": "TELEKVITA",
+     "chars": 9,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "6cbd56cd/r8": {
+     "pred": "FUJ!..A BELSO SZERVEI\nIT AZNAK EGY AKVÁRIUMBAN\nA SZIN KULON EGY\nLEKVÁROS ÜVEGBEN!\nFUJBAZMEG",
+     "chars": 96,
+     "err": 13,
+     "exact": false,
+     "acc_tot": 10,
+     "acc_hit": 3
+    },
+    "6cbd56cd/r10": {
+     "pred": "TIBOROM\nPRECIZ\n(VOLT!)",
+     "chars": 20,
+     "err": 3,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 0
+    },
+    "6cbd56cd/r11": {
+     "pred": "EMBER",
+     "chars": 5,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "3b343686/r0": {
+     "pred": "HÁHHÁ! JESTET!\nMEGVARJUK AZ ELSÖ RANDOMTIBORT.\nMES FATESSZUK NEKI A KÉRDEST!\nCO",
+     "chars": 77,
+     "err": 14,
+     "exact": false,
+     "acc_tot": 10,
+     "acc_hit": 3
+    },
+    "3b343686/r2": {
+     "pred": "M A DGAMT JONAPOT URAM !",
+     "chars": 80,
+     "err": 65,
+     "exact": false,
+     "acc_tot": 7,
+     "acc_hit": 0
+    },
+    "3b343686/r3": {
+     "pred": "SPORTKOSSI?",
+     "chars": 11,
+     "err": 1,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "3b343686/r4": {
+     "pred": "PINAK?",
+     "chars": 6,
+     "err": 1,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 0
+    },
+    "3b343686/r5": {
+     "pred": "A\n4 lOTT ÖTÖST?\nHM...LÁSSUK CSAK..\nHEHE . IGEN !",
+     "chars": 49,
+     "err": 7,
+     "exact": false,
+     "acc_tot": 4,
+     "acc_hit": 3
+    },
+    "3b343686/r6": {
+     "pred": "YACHT?",
+     "chars": 6,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "3b343686/r7": {
+     "pred": "UTAZGATÁS?",
+     "chars": 10,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 1,
+     "acc_hit": 1
+    },
+    "3b343686/r8": {
+     "pred": "PINAK?",
+     "chars": 6,
+     "err": 1,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 0
+    },
+    "3b343686/r10": {
+     "pred": "VILLA?",
+     "chars": 6,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "3b343686/r11": {
+     "pred": "PINAK?",
+     "chars": 6,
+     "err": 1,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 0
+    },
+    "3b343686/r13": {
+     "pred": "VENNEK EGY KURVANAGY\nDOBOZT,\nTELIS-TEUE TIZES\nVILLÁSKULCCSAL! AGYIG\nRAKVA,\nTÜBB\nVÁGOD?",
+     "chars": 91,
+     "err": 8,
+     "exact": false,
+     "acc_tot": 4,
+     "acc_hit": 2
+    },
+    "3b343686/r15": {
+     "pred": "ES MINDENHOL, AHOL A NAP.\nMEGFORDULOK, SZORNAM SZEUEL, MINT\nA PITYPANG A SZARAIT VAGO? VADENFLE !",
+     "chars": 104,
+     "err": 17,
+     "exact": false,
+     "acc_tot": 6,
+     "acc_hit": 0
+    },
+    "3b343686/r16": {
+     "pred": "cYa GeeGnaYl\nCSAVAR\ne BAZMEG \nMMMN",
+     "chars": 40,
+     "err": 25,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "3b343686/r17": {
+     "pred": " AKKOR BÁRHOVA NYULOK,\nOTT LEGYEN, BAZMEG.\nNEM EGY, ÖT!",
+     "chars": 58,
+     "err": 5,
+     "exact": false,
+     "acc_tot": 3,
+     "acc_hit": 2
+    },
+    "0c0bd5d5/r1": {
+     "pred": "HRAHGHR",
+     "chars": 14,
+     "err": 7,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "0c0bd5d5/r2": {
+     "pred": "MIA FASZOM?",
+     "chars": 12,
+     "err": 1,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "0c0bd5d5/r3": {
+     "pred": "7722.683/FELVEIZEM",
+     "chars": 18,
+     "err": 2,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "0c0bd5d5/r4": {
+     "pred": "KI VAGY,ES MI A GECIT\nKERESEL A PLATOMON,\nBAZME",
+     "chars": 49,
+     "err": 4,
+     "exact": false,
+     "acc_tot": 2,
+     "acc_hit": 0
+    },
+    "0c0bd5d5/r5": {
+     "pred": "A GUBACS TEREZ\nÚTON ÜTOTTEL,\nMINDKET LÁBAM\nELTÖRÖTT, AZÓTA\nFAJ- FAJOGAT.",
+     "chars": 73,
+     "err": 7,
+     "exact": false,
+     "acc_tot": 11,
+     "acc_hit": 6
+    },
+    "0c0bd5d5/r6": {
+     "pred": "FEKSZEMITT.",
+     "chars": 12,
+     "err": 1,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "0c0bd5d5/r7": {
+     "pred": "7722.683/FEVESLEM",
+     "chars": 18,
+     "err": 3,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "0c0bd5d5/r8": {
+     "pred": "NEM IS JÁRTAM ARRA MA, BAZME...\nA KOZELBE SE.",
+     "chars": 45,
+     "err": 1,
+     "exact": false,
+     "acc_tot": 2,
+     "acc_hit": 1
+    },
+    "0c0bd5d5/r9": {
+     "pred": "EZ MULT HET KEDDEN\nTORTENT..",
+     "chars": 29,
+     "err": 5,
+     "exact": false,
+     "acc_tot": 4,
+     "acc_hit": 0
+    },
+    "0c0bd5d5/r11": {
+     "pred": "7722.683/FELVESIEM",
+     "chars": 18,
+     "err": 2,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "0c0bd5d5/r12": {
+     "pred": "MULT HET KEDD?\nNE KAMUZZA!\nHOGY NEM HALTAL EHEN?",
+     "chars": 48,
+     "err": 5,
+     "exact": false,
+     "acc_tot": 5,
+     "acc_hit": 0
+    },
+    "0c0bd5d5/r13": {
+     "pred": "KIFELE JOTEM A BOLTBOL,\nAMIKOR TEU BE KAPOTT..\nKETNAGY\nSZATYOR..",
+     "chars": 68,
+     "err": 10,
+     "exact": false,
+     "acc_tot": 4,
+     "acc_hit": 0
+    },
+    "0c0bd5d5/r14": {
+     "pred": "7772.683/FEWESZEM",
+     "chars": 18,
+     "err": 4,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "0c0bd5d5/r15": {
+     "pred": "AKURVAELET!",
+     "chars": 11,
+     "err": 1,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 0
+    },
+    "0c0bd5d5/r16": {
+     "pred": "7722.683/FELVESZEM",
+     "chars": 18,
+     "err": 1,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "0c0bd5d5/r19": {
+     "pred": "AARRGH .",
+     "chars": 13,
+     "err": 6,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "0c0bd5d5/r20": {
+     "pred": "7722·683/FELVESZEM",
+     "chars": 18,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "0c0bd5d5/r21": {
+     "pred": "ITT EGY PLED, BAZME.\nEJJELENTE MAR\nHIDEGEK VANNAK.",
+     "chars": 50,
+     "err": 3,
+     "exact": false,
+     "acc_tot": 3,
+     "acc_hit": 0
+    },
+    "0c0bd5d5/r22": {
+     "pred": "7722.683/FEWESZEM",
+     "chars": 18,
+     "err": 3,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "89371298/r0": {
+     "pred": "Oh shoot, I fell asleep\nwith the window open,",
+     "chars": 54,
+     "err": 9,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "89371298/r1": {
+     "pred": "...and why can I see\nKomona through\nthe window?",
+     "chars": 47,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "89371298/r2": {
+     "pred": "KOMONA!",
+     "chars": 7,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "89371298/r3": {
+     "pred": "The Potion\nContest!",
+     "chars": 19,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "89371298/r4": {
+     "pred": "Imust've .\nmust've accidentally\nfallen asleep!",
+     "chars": 48,
+     "err": 3,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "89371298/r5": {
+     "pred": "..but?",
+     "chars": 7,
+     "err": 1,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "89371298/r6": {
+     "pred": "Where\nam I ?!?",
+     "chars": 13,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "35ce81ab/r0": {
+     "pred": "Carot!\nYou're so cute to have\nthought of bringing me to",
+     "chars": 69,
+     "err": 14,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "35ce81ab/r1": {
+     "pred": "Fan-tas-tic!",
+     "chars": 12,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "35ce81ab/r2": {
+     "pred": "You even thought of\nbringing a potion, my\nclothes, and my hat...",
+     "chars": 64,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "35ce81ab/r3": {
+     "pred": ".….let's see which\npotion you brought...",
+     "chars": 40,
+     "err": 2,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "8f3737ae/r0": {
+     "pred": "How do I\nexit vim ?",
+     "chars": 18,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "8f3737ae/r1": {
+     "pred": "Why would I\nexit vim?",
+     "chars": 21,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "246d3aa3/r0": {
+     "pred": "REMAIN MY PUTER\nAmBiVAlenT",
+     "chars": 34,
+     "err": 22,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "246d3aa3/r1": {
+     "pred": "ITICONTAINS MULTITUDES. FRIENDS. ENEMIES\nLOVE\" HATE, TO REDUCE IT'TO ONE OR THE OTHER\nIS AN EXERCISE IN FOOLISHNESS.",
+     "chars": 117,
+     "err": 5,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    }
+   }
+  },
+  {
+   "model": "paddle-v5-latin",
    "method": "devbox native",
    "strips": 8,
    "costPerStrip": 0.0,
@@ -22347,25 +24061,25 @@
   {
    "model": "openrouter_z-ai_glm-5.3-flash",
    "method": "fix paddle-nocrops",
-   "strips": 7,
-   "costPerStrip": 0.01676176442857143,
-   "msPerStrip": 162689.42857142858,
-   "cost": 0.117332351,
-   "ms": 1138826,
-   "calls": 7,
+   "strips": 8,
+   "costPerStrip": 0.016265028375000004,
+   "msPerStrip": 163054.25,
+   "cost": 0.13012022700000003,
+   "ms": 1304434,
+   "calls": 8,
    "errors": 1,
    "load": null,
    "mb": null,
-   "chars": 2886,
-   "err": 619,
-   "exact": 56,
-   "acc_tot": 147,
-   "acc_hit": 110,
-   "n": 93,
+   "chars": 3397,
+   "err": 626,
+   "exact": 62,
+   "acc_tot": 191,
+   "acc_hit": 152,
+   "n": 104,
    "missed": 19,
    "invented": 0,
-   "cer": 0.21448371448371448,
-   "accent": 0.7482993197278912,
+   "cer": 0.18428024727700912,
+   "accent": 0.7958115183246073,
    "per": {
     "2afc78b4/r0": {
      "pred": "UNKA! E!",
@@ -22722,6 +24436,94 @@
     "2afc78b4/r52": {
      "pred": "FASZI-1",
      "chars": 7,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "6cbd56cd/r0": {
+     "pred": "NAGYIKÁM, TIBOR PAPÁNAK VOLT A LEPKEGYŰJTŐ FELSZERE-LÉSÉHEZ EGY VIASZOSVÁSZON TARISZNYÁJA...",
+     "chars": 91,
+     "err": 1,
+     "exact": false,
+     "acc_tot": 8,
+     "acc_hit": 8
+    },
+    "6cbd56cd/r1": {
+     "pred": "OTT KELLENNIE A SUFNIBAN!",
+     "chars": 27,
+     "err": 2,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "6cbd56cd/r2": {
+     "pred": "Ó JAJ...",
+     "chars": 8,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 1,
+     "acc_hit": 1
+    },
+    "6cbd56cd/r3": {
+     "pred": "CSAK LÁTSZÓLAG EGY KIBASZOTT KUPLERÁJ, AMIBEN BOMBA ROBBANT. TULAJDONKÉPPEN EGY ZSENIÁLIS RENDSZER. A RÁHANGOLÓDÁSBAN SEGÍT A FÉNYKÉPE.",
+     "chars": 135,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 11,
+     "acc_hit": 11
+    },
+    "6cbd56cd/r4": {
+     "pred": "EZ EGY HELIKOPTER TURBINA?",
+     "chars": 26,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "6cbd56cd/r5": {
+     "pred": "IGEN, MÖGÖTTE INDUL A LÉPCSŐ!",
+     "chars": 29,
+     "err": 1,
+     "exact": false,
+     "acc_tot": 4,
+     "acc_hit": 3
+    },
+    "6cbd56cd/r6": {
+     "pred": "ÁÁÁ!!! BASSZAMEG EGY KAUKÁZUSI FÉRFI SZÁRÍTOTT MÚMIAJA, BAZMEG!!!",
+     "chars": 65,
+     "err": 1,
+     "exact": false,
+     "acc_tot": 9,
+     "acc_hit": 8
+    },
+    "6cbd56cd/r7": {
+     "pred": "TELEKVITA",
+     "chars": 9,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "6cbd56cd/r8": {
+     "pred": "FÚJ!.. A BELSŐ SZERVEI ITT ÁZNAK EGY AKVÁRIUMBAN! A SZÍN KÜLÖN EGY LEKVÁROS ÜVEGBEN! FÚJBAZMEG!",
+     "chars": 96,
+     "err": 2,
+     "exact": false,
+     "acc_tot": 10,
+     "acc_hit": 10
+    },
+    "6cbd56cd/r10": {
+     "pred": "TIBOROM PRECÍZ VOLT!",
+     "chars": 20,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 1,
+     "acc_hit": 1
+    },
+    "6cbd56cd/r11": {
+     "pred": "EMBER",
+     "chars": 5,
      "err": 0,
      "exact": true,
      "acc_tot": 0,
@@ -24828,27 +26630,3455 @@
    }
   },
   {
+   "model": "paddle-v6-small",
+   "method": "browser wasm×1",
+   "strips": 8,
+   "costPerStrip": 0.0,
+   "msPerStrip": 18257.461250066757,
+   "cost": 0.0,
+   "ms": 146059.69000053406,
+   "calls": 0,
+   "errors": 0,
+   "load": 6270.214999914169,
+   "mb": 31.348116,
+   "chars": 3397,
+   "err": 1043,
+   "exact": 23,
+   "acc_tot": 191,
+   "acc_hit": 13,
+   "n": 104,
+   "missed": 1,
+   "invented": 7,
+   "cer": 0.3070356196644098,
+   "accent": 0.06806282722513089,
+   "per": {
+    "2afc78b4/r0": {
+     "pred": "V \nE O",
+     "chars": 5,
+     "err": 5,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r1": {
+     "pred": "NA!E!\nDEJOÓ, HOGY\nELJOTTE,E!",
+     "chars": 29,
+     "err": 5,
+     "exact": false,
+     "acc_tot": 3,
+     "acc_hit": 1
+    },
+    "2afc78b4/r2": {
+     "pred": "HIREK",
+     "chars": 5,
+     "err": 1,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 0
+    },
+    "2afc78b4/r4": {
+     "pred": "MOST ARRA GONDOLSZI\nHOGY DE KAR, HOGY\nELKÖLTÖTTEM AZ\nELÖLEGET, MOST\nLEMONDHATNAM",
+     "chars": 81,
+     "err": 5,
+     "exact": false,
+     "acc_tot": 5,
+     "acc_hit": 2
+    },
+    "2afc78b4/r5": {
+     "pred": "GAVALEIR",
+     "chars": 8,
+     "err": 1,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r6": {
+     "pred": "A MELOT!\"",
+     "chars": 9,
+     "err": 1,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 0
+    },
+    "2afc78b4/r7": {
+     "pred": "HAT...KABE.",
+     "chars": 12,
+     "err": 4,
+     "exact": false,
+     "acc_tot": 3,
+     "acc_hit": 0
+    },
+    "2afc78b4/r8": {
+     "pred": "FAS21 BAC57",
+     "chars": 11,
+     "err": 5,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 0
+    },
+    "2afc78b4/r9": {
+     "pred": "NA. PATTANJ FEL!",
+     "chars": 16,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r10": {
+     "pred": " FAS21-AO",
+     "chars": 7,
+     "err": 4,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r11": {
+     "pred": "CALAVRIEDO O0000000",
+     "chars": 8,
+     "err": 11,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r12": {
+     "pred": "NEM BAJ AZ EMBER\nAZERT FIATAL, HOGY\nTANULJON.",
+     "chars": 46,
+     "err": 2,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 0
+    },
+    "2afc78b4/r13": {
+     "pred": "FASZI BA",
+     "chars": 11,
+     "err": 4,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 0
+    },
+    "2afc78b4/r14": {
+     "pred": "FAS21-1 D",
+     "chars": 7,
+     "err": 4,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r15": {
+     "pred": "JEZUS,ATYA,URISTEN!",
+     "chars": 21,
+     "err": 4,
+     "exact": false,
+     "acc_tot": 2,
+     "acc_hit": 0
+    },
+    "2afc78b4/r16": {
+     "pred": "000000D001 SVECALAIR 00",
+     "chars": 8,
+     "err": 15,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r17": {
+     "pred": "O A HALOFULKEBEN LOG EGY KRISTALYHOLOGRAM \nFORMAJABANDE ITT \nVALÓBAN A SZENTFOLDI\nSTILUSAT IGYEKEZTEM HOZ LOVAGVARAK\nKEMENCE HENNAS KASPO AZ OTT EGY BEDVIN\nTEVENYEREG, ASZTROLABINM .",
+     "chars": 188,
+     "err": 69,
+     "exact": false,
+     "acc_tot": 17,
+     "acc_hit": 1
+    },
+    "2afc78b4/r18": {
+     "pred": "FAS21BAS]",
+     "chars": 11,
+     "err": 6,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 0
+    },
+    "2afc78b4/r19": {
+     "pred": "CSAK MAR GECIRE\nEZERT VAGY ITT, E! UNOM.",
+     "chars": 40,
+     "err": 14,
+     "exact": false,
+     "acc_tot": 2,
+     "acc_hit": 0
+    },
+    "2afc78b4/r20": {
+     "pred": "HATOO... EDIG EGY KAMIONT..",
+     "chars": 29,
+     "err": 5,
+     "exact": false,
+     "acc_tot": 3,
+     "acc_hit": 0
+    },
+    "2afc78b4/r23": {
+     "pred": "0000000\nRELAVACO 汇",
+     "chars": 8,
+     "err": 11,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r24": {
+     "pred": "NYERGES VONTATOT.",
+     "chars": 17,
+     "err": 1,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 0
+    },
+    "2afc78b4/r25": {
+     "pred": "PARDON, NYERGESVONTATOT SA CSINALTAM VI HENRIK STILUSABAN\nAN EANANE",
+     "chars": 113,
+     "err": 59,
+     "exact": false,
+     "acc_tot": 8,
+     "acc_hit": 0
+    },
+    "2afc78b4/r26": {
+     "pred": "MAR MESSIROL ELKAPTAD A AHA...VAGOM. KARPIT\nBROKAT. SOK A BOUT. FEBASZNA\nLAZONNAL.MGEZISIEN LREGI VKOD?\nM\nANTIK.",
+     "chars": 122,
+     "err": 59,
+     "exact": false,
+     "acc_tot": 9,
+     "acc_hit": 0
+    },
+    "2afc78b4/r27": {
+     "pred": "FAS2I BACSI",
+     "chars": 11,
+     "err": 2,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 0
+    },
+    "2afc78b4/r28": {
+     "pred": "OD FAS21-1 0",
+     "chars": 7,
+     "err": 7,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r29": {
+     "pred": "ROPI",
+     "chars": 4,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r30": {
+     "pred": "SZOVALAMIKORAGROKUGELNI\nKURVA AZ AUTOT AKKOR PIHENOBEN KINYITJAA\n\nNEAZT KERDEZEMERRE VAN\nA MUZEUMSHOP, VAGOD?\nIRANYNAK ILYEN NEOLFTOS\nART DEKOT GONDOLNEK.",
+     "chars": 165,
+     "err": 56,
+     "exact": false,
+     "acc_tot": 9,
+     "acc_hit": 0
+    },
+    "2afc78b4/r32": {
+     "pred": "RACALVIE)",
+     "chars": 8,
+     "err": 1,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r33": {
+     "pred": "FASIIBÃO",
+     "chars": 11,
+     "err": 6,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 0
+    },
+    "2afc78b4/r34": {
+     "pred": "ERTEM. EZ A DOBO2,EZ MI?\nMARADNIA KEU ?",
+     "chars": 40,
+     "err": 5,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 0
+    },
+    "2afc78b4/r35": {
+     "pred": "AKKSIK A FÉNYHEZ. MARAD.",
+     "chars": 24,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 1,
+     "acc_hit": 1
+    },
+    "2afc78b4/r36": {
+     "pred": "FENYHEZ\"?",
+     "chars": 10,
+     "err": 2,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 0
+    },
+    "2afc78b4/r37": {
+     "pred": "00EAS-100",
+     "chars": 7,
+     "err": 7,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r38": {
+     "pred": "0 0 0\n10 0\n0\nB 0\n0\n6\n0\n0\n0 0 0 0\n0\n0 0\n0 0 0 0\n0",
+     "chars": 6,
+     "err": 47,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r40": {
+     "pred": "CAVELIAR",
+     "chars": 8,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r41": {
+     "pred": "TIED VOLTAZ\nA SMART?",
+     "chars": 21,
+     "err": 2,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 0
+    },
+    "2afc78b4/r42": {
+     "pred": "FASZIBÁCSI",
+     "chars": 10,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 1,
+     "acc_hit": 1
+    },
+    "2afc78b4/r45": {
+     "pred": "OO FASZI-A DD",
+     "chars": 7,
+     "err": 7,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r46": {
+     "pred": "0060000DL\nOGAVALERO",
+     "chars": 17,
+     "err": 17,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 0
+    },
+    "2afc78b4/r47": {
+     "pred": "CAVALIER",
+     "chars": 8,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r48": {
+     "pred": "BOCSI.",
+     "chars": 6,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r49": {
+     "pred": "MEG THAZAVISZLEK.",
+     "chars": 16,
+     "err": 1,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r50": {
+     "pred": "F4SI BAS]",
+     "chars": 11,
+     "err": 5,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 0
+    },
+    "2afc78b4/r52": {
+     "pred": "EASLI-A □□",
+     "chars": 7,
+     "err": 6,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "6cbd56cd/r0": {
+     "pred": "NAGYIKAM, TIBOR PAPANAK\nVOLT A LEPKEGYUSTO FELSERELESEHEZ VISVAAN",
+     "chars": 91,
+     "err": 34,
+     "exact": false,
+     "acc_tot": 8,
+     "acc_hit": 0
+    },
+    "6cbd56cd/r1": {
+     "pred": "OTT KELL (ENNCE\nA SUFNIBAN!",
+     "chars": 27,
+     "err": 2,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "6cbd56cd/r2": {
+     "pred": "O J..",
+     "chars": 8,
+     "err": 4,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 0
+    },
+    "6cbd56cd/r3": {
+     "pred": "CSAK LÁTSZOLAG EGY KIBASZOTT K\nTULAIBEN BOMEN ROYBANTAL AMIBEN BOMBA ROBBANT.\nRENDSZER. A RAHANGOLODASBAN\nSEGIT AFENYKEPE.",
+     "chars": 135,
+     "err": 48,
+     "exact": false,
+     "acc_tot": 11,
+     "acc_hit": 1
+    },
+    "6cbd56cd/r4": {
+     "pred": "EZ EGY HELIKOPTER\nTURBINA?",
+     "chars": 26,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "6cbd56cd/r5": {
+     "pred": "IGEN, MOGOTE INDUL\nA LEPCSO!",
+     "chars": 29,
+     "err": 5,
+     "exact": false,
+     "acc_tot": 4,
+     "acc_hit": 0
+    },
+    "6cbd56cd/r6": {
+     "pred": "M UBASAE",
+     "chars": 65,
+     "err": 59,
+     "exact": false,
+     "acc_tot": 9,
+     "acc_hit": 0
+    },
+    "6cbd56cd/r7": {
+     "pred": "TELEKVITA",
+     "chars": 9,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "6cbd56cd/r8": {
+     "pred": "FU A BELSO SZERUEI AZNAK EGYAKVARIUMBAN\nA SZIN KULON EGY \nLEKVAROS ÜVEGBEN!\nFUJBAZMEG!",
+     "chars": 96,
+     "err": 22,
+     "exact": false,
+     "acc_tot": 10,
+     "acc_hit": 1
+    },
+    "6cbd56cd/r10": {
+     "pred": "TIBOROM\n(VOLT!",
+     "chars": 20,
+     "err": 7,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 0
+    },
+    "6cbd56cd/r11": {
+     "pred": "EMBER",
+     "chars": 5,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "3b343686/r0": {
+     "pred": "HAHHA ESTET! MEGVARUK ELSORANDOTIBORT\nES TE AERE",
+     "chars": 77,
+     "err": 37,
+     "exact": false,
+     "acc_tot": 10,
+     "acc_hit": 0
+    },
+    "3b343686/r2": {
+     "pred": "",
+     "chars": 80,
+     "err": 80,
+     "exact": false,
+     "acc_tot": 7,
+     "acc_hit": 0
+    },
+    "3b343686/r3": {
+     "pred": "SPORTKOSSI?",
+     "chars": 11,
+     "err": 1,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "3b343686/r4": {
+     "pred": "PINAK?",
+     "chars": 6,
+     "err": 1,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 0
+    },
+    "3b343686/r5": {
+     "pred": "A LOTTO OTOST?\nHM..LASSUK CSAK.\nHEHE...IGEN! ",
+     "chars": 49,
+     "err": 9,
+     "exact": false,
+     "acc_tot": 4,
+     "acc_hit": 0
+    },
+    "3b343686/r6": {
+     "pred": "YACHT?",
+     "chars": 6,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "3b343686/r7": {
+     "pred": "UTAZGATÁS?",
+     "chars": 10,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 1,
+     "acc_hit": 1
+    },
+    "3b343686/r8": {
+     "pred": "PINAK?",
+     "chars": 6,
+     "err": 1,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 0
+    },
+    "3b343686/r10": {
+     "pred": "VILLA?",
+     "chars": 6,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "3b343686/r11": {
+     "pred": "PINAK?",
+     "chars": 6,
+     "err": 1,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 0
+    },
+    "3b343686/r13": {
+     "pred": "VENNEK EG-Y KURVANAGY\nDOBOZT\nTELIS-TEVE TIZES\n VILLÁSKULCCSAL! AGYIG  RAKVA,\n TOBB EZER. VAGOD?",
+     "chars": 91,
+     "err": 7,
+     "exact": false,
+     "acc_tot": 4,
+     "acc_hit": 1
+    },
+    "3b343686/r15": {
+     "pred": "MEGFORDULOK STORNAM SZEUELMINT A PIYPANG ASARAT, VND E !! ES MINDENHOL AHOL ANAP",
+     "chars": 104,
+     "err": 61,
+     "exact": false,
+     "acc_tot": 6,
+     "acc_hit": 0
+    },
+    "3b343686/r16": {
+     "pred": "  HOGYAMIKOROTTEGYHATOS  \n\nCSAVAR \n \n        \n\n\n   ",
+     "chars": 40,
+     "err": 12,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "3b343686/r17": {
+     "pred": "KKOR BARHOVA NYULOK\nOTT LEGYEN, BAZMEG.\nNEM EGY, OT!",
+     "chars": 58,
+     "err": 9,
+     "exact": false,
+     "acc_tot": 3,
+     "acc_hit": 0
+    },
+    "0c0bd5d5/r1": {
+     "pred": "HRAHG ..",
+     "chars": 14,
+     "err": 7,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "0c0bd5d5/r2": {
+     "pred": "MI A FASTOM?",
+     "chars": 12,
+     "err": 1,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "0c0bd5d5/r3": {
+     "pred": "7722.683/FELVESZEM",
+     "chars": 18,
+     "err": 1,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "0c0bd5d5/r4": {
+     "pred": "KI VAGTLES MI A GECIT\nKERESEL A PLATOMON,\nBAZME?",
+     "chars": 49,
+     "err": 5,
+     "exact": false,
+     "acc_tot": 2,
+     "acc_hit": 0
+    },
+    "0c0bd5d5/r5": {
+     "pred": "A GUBACS TEREZ\nUTON UTOTTEL,\nMINDKET LÁBAM\nELTORÖTT, AZÓTA\nFAJ. FAJOGAT.",
+     "chars": 73,
+     "err": 9,
+     "exact": false,
+     "acc_tot": 11,
+     "acc_hit": 3
+    },
+    "0c0bd5d5/r6": {
+     "pred": "FEKSZEMITT.",
+     "chars": 12,
+     "err": 1,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "0c0bd5d5/r7": {
+     "pred": "7722.683/FEVENEM",
+     "chars": 18,
+     "err": 4,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "0c0bd5d5/r8": {
+     "pred": "NEM IS JARTAM ARRA MA BAZME..\nA KOZELBE SE.",
+     "chars": 45,
+     "err": 4,
+     "exact": false,
+     "acc_tot": 2,
+     "acc_hit": 0
+    },
+    "0c0bd5d5/r9": {
+     "pred": "EZ MULT HET KEDDEN\nTORTENT...",
+     "chars": 29,
+     "err": 4,
+     "exact": false,
+     "acc_tot": 4,
+     "acc_hit": 0
+    },
+    "0c0bd5d5/r11": {
+     "pred": "7721-683/FELVESIEM",
+     "chars": 18,
+     "err": 3,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "0c0bd5d5/r12": {
+     "pred": "MULT HET KEDD?\nHOGY NEM HALTAL EHEN? NE KAMUZZA!",
+     "chars": 48,
+     "err": 28,
+     "exact": false,
+     "acc_tot": 5,
+     "acc_hit": 0
+    },
+    "0c0bd5d5/r13": {
+     "pred": "KIFELE JOTTEM A BOLTBOL\nAMIKOR TELBE KAPOTT..\nKSTNAR . KET NAGY",
+     "chars": 68,
+     "err": 19,
+     "exact": false,
+     "acc_tot": 4,
+     "acc_hit": 0
+    },
+    "0c0bd5d5/r14": {
+     "pred": "7727.683/FEWESLEM",
+     "chars": 18,
+     "err": 5,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "0c0bd5d5/r15": {
+     "pred": "AKURVAELET!",
+     "chars": 11,
+     "err": 1,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 0
+    },
+    "0c0bd5d5/r16": {
+     "pred": "7722.683/FELVESZEM",
+     "chars": 18,
+     "err": 1,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "0c0bd5d5/r19": {
+     "pred": "AAARRGH.",
+     "chars": 13,
+     "err": 5,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "0c0bd5d5/r20": {
+     "pred": "7722.683/FELVESTEM",
+     "chars": 18,
+     "err": 2,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "0c0bd5d5/r21": {
+     "pred": "ITT EGY PLED, BAZME.\nEJJELENTE MAR\nHIDEGEK VANNAK.",
+     "chars": 50,
+     "err": 3,
+     "exact": false,
+     "acc_tot": 3,
+     "acc_hit": 0
+    },
+    "0c0bd5d5/r22": {
+     "pred": "722.683/FEVESZEM",
+     "chars": 18,
+     "err": 3,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "89371298/r0": {
+     "pred": "Oh shoot, I fell asleep\nwith the window open,\nagain...",
+     "chars": 54,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "89371298/r1": {
+     "pred": ".….and why can I see\nKomona through\nthe window?",
+     "chars": 47,
+     "err": 2,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "89371298/r2": {
+     "pred": "KOMONA!",
+     "chars": 7,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "89371298/r3": {
+     "pred": "The Potion\nContest!",
+     "chars": 19,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "89371298/r4": {
+     "pred": "I must've...\nmust've accidentally\nfallen asleep!",
+     "chars": 48,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "89371298/r5": {
+     "pred": "...but?",
+     "chars": 7,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "89371298/r6": {
+     "pred": "Where\nam I ?!?",
+     "chars": 13,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "35ce81ab/r0": {
+     "pred": "1 Carrot!\nYou're so cute to have\nthought of bringing me to\n the Contest!",
+     "chars": 69,
+     "err": 2,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "35ce81ab/r1": {
+     "pred": "Fan-tas-tic!",
+     "chars": 12,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "35ce81ab/r2": {
+     "pred": "You even thought of\nbringing a potion, my\nclothes, and my hat...",
+     "chars": 64,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "35ce81ab/r3": {
+     "pred": ".….let's see which\npotion you brought...",
+     "chars": 40,
+     "err": 2,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "8f3737ae/r0": {
+     "pred": "How do I\nexit vim ?",
+     "chars": 18,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "8f3737ae/r1": {
+     "pred": "Why would I\nexit vim ?",
+     "chars": 21,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "246d3aa3/r0": {
+     "pred": "IC REMAN M Y PUTER\nAMBIVALENT\nABOUT GAVN",
+     "chars": 34,
+     "err": 20,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "246d3aa3/r1": {
+     "pred": "IT CONTAINS MULTITUDESFRIENDS.ENEMIES.\nLOVE. HATE. TO REDUCE IT TO ONE OR THE OTHER\nIS AN EXERCISE IN FOOLISHNESS.",
+     "chars": 117,
+     "err": 3,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    }
+   }
+  },
+  {
+   "model": "paddle-v6-small",
+   "method": "browser wasm×4",
+   "strips": 8,
+   "costPerStrip": 0.0,
+   "msPerStrip": 6569.056249856949,
+   "cost": 0.0,
+   "ms": 52552.44999885559,
+   "calls": 0,
+   "errors": 0,
+   "load": 1893.2200000286102,
+   "mb": 31.348116,
+   "chars": 3397,
+   "err": 1043,
+   "exact": 23,
+   "acc_tot": 191,
+   "acc_hit": 13,
+   "n": 104,
+   "missed": 1,
+   "invented": 7,
+   "cer": 0.3070356196644098,
+   "accent": 0.06806282722513089,
+   "per": {
+    "2afc78b4/r0": {
+     "pred": "V \nE O",
+     "chars": 5,
+     "err": 5,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r1": {
+     "pred": "NA!E!\nDEJOÓ, HOGY\nELJOTTE,E!",
+     "chars": 29,
+     "err": 5,
+     "exact": false,
+     "acc_tot": 3,
+     "acc_hit": 1
+    },
+    "2afc78b4/r2": {
+     "pred": "HIREK",
+     "chars": 5,
+     "err": 1,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 0
+    },
+    "2afc78b4/r4": {
+     "pred": "MOST ARRA GONDOLSZI\nHOGY DE KAR, HOGY\nELKÖLTÖTTEM AZ\nELÖLEGET, MOST\nLEMONDHATNAM",
+     "chars": 81,
+     "err": 5,
+     "exact": false,
+     "acc_tot": 5,
+     "acc_hit": 2
+    },
+    "2afc78b4/r5": {
+     "pred": "GAVALEIR",
+     "chars": 8,
+     "err": 1,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r6": {
+     "pred": "A MELOT!\"",
+     "chars": 9,
+     "err": 1,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 0
+    },
+    "2afc78b4/r7": {
+     "pred": "HAT...KABE.",
+     "chars": 12,
+     "err": 4,
+     "exact": false,
+     "acc_tot": 3,
+     "acc_hit": 0
+    },
+    "2afc78b4/r8": {
+     "pred": "FAS21 BAC57",
+     "chars": 11,
+     "err": 5,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 0
+    },
+    "2afc78b4/r9": {
+     "pred": "NA. PATTANJ FEL!",
+     "chars": 16,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r10": {
+     "pred": " FAS21-AO",
+     "chars": 7,
+     "err": 4,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r11": {
+     "pred": "CALAVRIEDO O0000000",
+     "chars": 8,
+     "err": 11,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r12": {
+     "pred": "NEM BAJ AZ EMBER\nAZERT FIATAL, HOGY\nTANULJON.",
+     "chars": 46,
+     "err": 2,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 0
+    },
+    "2afc78b4/r13": {
+     "pred": "FASZI BA",
+     "chars": 11,
+     "err": 4,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 0
+    },
+    "2afc78b4/r14": {
+     "pred": "FAS21-1 D",
+     "chars": 7,
+     "err": 4,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r15": {
+     "pred": "JEZUS,ATYA,URISTEN!",
+     "chars": 21,
+     "err": 4,
+     "exact": false,
+     "acc_tot": 2,
+     "acc_hit": 0
+    },
+    "2afc78b4/r16": {
+     "pred": "000000D001 SVECALAIR 00",
+     "chars": 8,
+     "err": 15,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r17": {
+     "pred": "O A HALOFULKEBEN LOG EGY KRISTALYHOLOGRAM \nFORMAJABANDE ITT \nVALÓBAN A SZENTFOLDI\nSTILUSAT IGYEKEZTEM HOZ LOVAGVARAK\nKEMENCE HENNAS KASPO AZ OTT EGY BEDVIN\nTEVENYEREG, ASZTROLABINM .",
+     "chars": 188,
+     "err": 69,
+     "exact": false,
+     "acc_tot": 17,
+     "acc_hit": 1
+    },
+    "2afc78b4/r18": {
+     "pred": "FAS21BAS]",
+     "chars": 11,
+     "err": 6,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 0
+    },
+    "2afc78b4/r19": {
+     "pred": "CSAK MAR GECIRE\nEZERT VAGY ITT, E! UNOM.",
+     "chars": 40,
+     "err": 14,
+     "exact": false,
+     "acc_tot": 2,
+     "acc_hit": 0
+    },
+    "2afc78b4/r20": {
+     "pred": "HATOO... EDIG EGY KAMIONT..",
+     "chars": 29,
+     "err": 5,
+     "exact": false,
+     "acc_tot": 3,
+     "acc_hit": 0
+    },
+    "2afc78b4/r23": {
+     "pred": "0000000\nRELAVACO 汇",
+     "chars": 8,
+     "err": 11,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r24": {
+     "pred": "NYERGES VONTATOT.",
+     "chars": 17,
+     "err": 1,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 0
+    },
+    "2afc78b4/r25": {
+     "pred": "PARDON, NYERGESVONTATOT SA CSINALTAM VI HENRIK STILUSABAN\nAN EANANE",
+     "chars": 113,
+     "err": 59,
+     "exact": false,
+     "acc_tot": 8,
+     "acc_hit": 0
+    },
+    "2afc78b4/r26": {
+     "pred": "MAR MESSIROL ELKAPTAD A AHA...VAGOM. KARPIT\nBROKAT. SOK A BOUT. FEBASZNA\nLAZONNAL.MGEZISIEN LREGI VKOD?\nM\nANTIK.",
+     "chars": 122,
+     "err": 59,
+     "exact": false,
+     "acc_tot": 9,
+     "acc_hit": 0
+    },
+    "2afc78b4/r27": {
+     "pred": "FAS2I BACSI",
+     "chars": 11,
+     "err": 2,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 0
+    },
+    "2afc78b4/r28": {
+     "pred": "OD FAS21-1 0",
+     "chars": 7,
+     "err": 7,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r29": {
+     "pred": "ROPI",
+     "chars": 4,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r30": {
+     "pred": "SZOVALAMIKORAGROKUGELNI\nKURVA AZ AUTOT AKKOR PIHENOBEN KINYITJAA\n\nNEAZT KERDEZEMERRE VAN\nA MUZEUMSHOP, VAGOD?\nIRANYNAK ILYEN NEOLFTOS\nART DEKOT GONDOLNEK.",
+     "chars": 165,
+     "err": 56,
+     "exact": false,
+     "acc_tot": 9,
+     "acc_hit": 0
+    },
+    "2afc78b4/r32": {
+     "pred": "RACALVIE)",
+     "chars": 8,
+     "err": 1,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r33": {
+     "pred": "FASIIBÃO",
+     "chars": 11,
+     "err": 6,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 0
+    },
+    "2afc78b4/r34": {
+     "pred": "ERTEM. EZ A DOBO2,EZ MI?\nMARADNIA KEU ?",
+     "chars": 40,
+     "err": 5,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 0
+    },
+    "2afc78b4/r35": {
+     "pred": "AKKSIK A FÉNYHEZ. MARAD.",
+     "chars": 24,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 1,
+     "acc_hit": 1
+    },
+    "2afc78b4/r36": {
+     "pred": "FENYHEZ\"?",
+     "chars": 10,
+     "err": 2,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 0
+    },
+    "2afc78b4/r37": {
+     "pred": "00EAS-100",
+     "chars": 7,
+     "err": 7,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r38": {
+     "pred": "0 0 0\n10 0\n0\nB 0\n0\n6\n0\n0\n0 0 0 0\n0\n0 0\n0 0 0 0\n0",
+     "chars": 6,
+     "err": 47,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r40": {
+     "pred": "CAVELIAR",
+     "chars": 8,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r41": {
+     "pred": "TIED VOLTAZ\nA SMART?",
+     "chars": 21,
+     "err": 2,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 0
+    },
+    "2afc78b4/r42": {
+     "pred": "FASZIBÁCSI",
+     "chars": 10,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 1,
+     "acc_hit": 1
+    },
+    "2afc78b4/r45": {
+     "pred": "OO FASZI-A DD",
+     "chars": 7,
+     "err": 7,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r46": {
+     "pred": "0060000DL\nOGAVALERO",
+     "chars": 17,
+     "err": 17,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 0
+    },
+    "2afc78b4/r47": {
+     "pred": "CAVALIER",
+     "chars": 8,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r48": {
+     "pred": "BOCSI.",
+     "chars": 6,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r49": {
+     "pred": "MEG THAZAVISZLEK.",
+     "chars": 16,
+     "err": 1,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r50": {
+     "pred": "F4SI BAS]",
+     "chars": 11,
+     "err": 5,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 0
+    },
+    "2afc78b4/r52": {
+     "pred": "EASLI-A □□",
+     "chars": 7,
+     "err": 6,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "6cbd56cd/r0": {
+     "pred": "NAGYIKAM, TIBOR PAPANAK\nVOLT A LEPKEGYUSTO FELSERELESEHEZ VISVAAN",
+     "chars": 91,
+     "err": 34,
+     "exact": false,
+     "acc_tot": 8,
+     "acc_hit": 0
+    },
+    "6cbd56cd/r1": {
+     "pred": "OTT KELL (ENNCE\nA SUFNIBAN!",
+     "chars": 27,
+     "err": 2,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "6cbd56cd/r2": {
+     "pred": "O J..",
+     "chars": 8,
+     "err": 4,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 0
+    },
+    "6cbd56cd/r3": {
+     "pred": "CSAK LÁTSZOLAG EGY KIBASZOTT K\nTULAIBEN BOMEN ROYBANTAL AMIBEN BOMBA ROBBANT.\nRENDSZER. A RAHANGOLODASBAN\nSEGIT AFENYKEPE.",
+     "chars": 135,
+     "err": 48,
+     "exact": false,
+     "acc_tot": 11,
+     "acc_hit": 1
+    },
+    "6cbd56cd/r4": {
+     "pred": "EZ EGY HELIKOPTER\nTURBINA?",
+     "chars": 26,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "6cbd56cd/r5": {
+     "pred": "IGEN, MOGOTE INDUL\nA LEPCSO!",
+     "chars": 29,
+     "err": 5,
+     "exact": false,
+     "acc_tot": 4,
+     "acc_hit": 0
+    },
+    "6cbd56cd/r6": {
+     "pred": "M UBASAE",
+     "chars": 65,
+     "err": 59,
+     "exact": false,
+     "acc_tot": 9,
+     "acc_hit": 0
+    },
+    "6cbd56cd/r7": {
+     "pred": "TELEKVITA",
+     "chars": 9,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "6cbd56cd/r8": {
+     "pred": "FU A BELSO SZERUEI AZNAK EGYAKVARIUMBAN\nA SZIN KULON EGY \nLEKVAROS ÜVEGBEN!\nFUJBAZMEG!",
+     "chars": 96,
+     "err": 22,
+     "exact": false,
+     "acc_tot": 10,
+     "acc_hit": 1
+    },
+    "6cbd56cd/r10": {
+     "pred": "TIBOROM\n(VOLT!",
+     "chars": 20,
+     "err": 7,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 0
+    },
+    "6cbd56cd/r11": {
+     "pred": "EMBER",
+     "chars": 5,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "3b343686/r0": {
+     "pred": "HAHHA ESTET! MEGVARUK ELSORANDOTIBORT\nES TE AERE",
+     "chars": 77,
+     "err": 37,
+     "exact": false,
+     "acc_tot": 10,
+     "acc_hit": 0
+    },
+    "3b343686/r2": {
+     "pred": "",
+     "chars": 80,
+     "err": 80,
+     "exact": false,
+     "acc_tot": 7,
+     "acc_hit": 0
+    },
+    "3b343686/r3": {
+     "pred": "SPORTKOSSI?",
+     "chars": 11,
+     "err": 1,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "3b343686/r4": {
+     "pred": "PINAK?",
+     "chars": 6,
+     "err": 1,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 0
+    },
+    "3b343686/r5": {
+     "pred": "A LOTTO OTOST?\nHM..LASSUK CSAK.\nHEHE...IGEN! ",
+     "chars": 49,
+     "err": 9,
+     "exact": false,
+     "acc_tot": 4,
+     "acc_hit": 0
+    },
+    "3b343686/r6": {
+     "pred": "YACHT?",
+     "chars": 6,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "3b343686/r7": {
+     "pred": "UTAZGATÁS?",
+     "chars": 10,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 1,
+     "acc_hit": 1
+    },
+    "3b343686/r8": {
+     "pred": "PINAK?",
+     "chars": 6,
+     "err": 1,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 0
+    },
+    "3b343686/r10": {
+     "pred": "VILLA?",
+     "chars": 6,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "3b343686/r11": {
+     "pred": "PINAK?",
+     "chars": 6,
+     "err": 1,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 0
+    },
+    "3b343686/r13": {
+     "pred": "VENNEK EG-Y KURVANAGY\nDOBOZT\nTELIS-TEVE TIZES\n VILLÁSKULCCSAL! AGYIG  RAKVA,\n TOBB EZER. VAGOD?",
+     "chars": 91,
+     "err": 7,
+     "exact": false,
+     "acc_tot": 4,
+     "acc_hit": 1
+    },
+    "3b343686/r15": {
+     "pred": "MEGFORDULOK STORNAM SZEUELMINT A PIYPANG ASARAT, VND E !! ES MINDENHOL AHOL ANAP",
+     "chars": 104,
+     "err": 61,
+     "exact": false,
+     "acc_tot": 6,
+     "acc_hit": 0
+    },
+    "3b343686/r16": {
+     "pred": "  HOGYAMIKOROTTEGYHATOS  \n\nCSAVAR \n \n        \n\n\n   ",
+     "chars": 40,
+     "err": 12,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "3b343686/r17": {
+     "pred": "KKOR BARHOVA NYULOK\nOTT LEGYEN, BAZMEG.\nNEM EGY, OT!",
+     "chars": 58,
+     "err": 9,
+     "exact": false,
+     "acc_tot": 3,
+     "acc_hit": 0
+    },
+    "0c0bd5d5/r1": {
+     "pred": "HRAHG ..",
+     "chars": 14,
+     "err": 7,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "0c0bd5d5/r2": {
+     "pred": "MI A FASTOM?",
+     "chars": 12,
+     "err": 1,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "0c0bd5d5/r3": {
+     "pred": "7722.683/FELVESZEM",
+     "chars": 18,
+     "err": 1,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "0c0bd5d5/r4": {
+     "pred": "KI VAGTLES MI A GECIT\nKERESEL A PLATOMON,\nBAZME?",
+     "chars": 49,
+     "err": 5,
+     "exact": false,
+     "acc_tot": 2,
+     "acc_hit": 0
+    },
+    "0c0bd5d5/r5": {
+     "pred": "A GUBACS TEREZ\nUTON UTOTTEL,\nMINDKET LÁBAM\nELTORÖTT, AZÓTA\nFAJ. FAJOGAT.",
+     "chars": 73,
+     "err": 9,
+     "exact": false,
+     "acc_tot": 11,
+     "acc_hit": 3
+    },
+    "0c0bd5d5/r6": {
+     "pred": "FEKSZEMITT.",
+     "chars": 12,
+     "err": 1,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "0c0bd5d5/r7": {
+     "pred": "7722.683/FEVENEM",
+     "chars": 18,
+     "err": 4,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "0c0bd5d5/r8": {
+     "pred": "NEM IS JARTAM ARRA MA BAZME..\nA KOZELBE SE.",
+     "chars": 45,
+     "err": 4,
+     "exact": false,
+     "acc_tot": 2,
+     "acc_hit": 0
+    },
+    "0c0bd5d5/r9": {
+     "pred": "EZ MULT HET KEDDEN\nTORTENT...",
+     "chars": 29,
+     "err": 4,
+     "exact": false,
+     "acc_tot": 4,
+     "acc_hit": 0
+    },
+    "0c0bd5d5/r11": {
+     "pred": "7721-683/FELVESIEM",
+     "chars": 18,
+     "err": 3,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "0c0bd5d5/r12": {
+     "pred": "MULT HET KEDD?\nHOGY NEM HALTAL EHEN? NE KAMUZZA!",
+     "chars": 48,
+     "err": 28,
+     "exact": false,
+     "acc_tot": 5,
+     "acc_hit": 0
+    },
+    "0c0bd5d5/r13": {
+     "pred": "KIFELE JOTTEM A BOLTBOL\nAMIKOR TELBE KAPOTT..\nKSTNAR . KET NAGY",
+     "chars": 68,
+     "err": 19,
+     "exact": false,
+     "acc_tot": 4,
+     "acc_hit": 0
+    },
+    "0c0bd5d5/r14": {
+     "pred": "7727.683/FEWESLEM",
+     "chars": 18,
+     "err": 5,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "0c0bd5d5/r15": {
+     "pred": "AKURVAELET!",
+     "chars": 11,
+     "err": 1,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 0
+    },
+    "0c0bd5d5/r16": {
+     "pred": "7722.683/FELVESZEM",
+     "chars": 18,
+     "err": 1,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "0c0bd5d5/r19": {
+     "pred": "AAARRGH.",
+     "chars": 13,
+     "err": 5,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "0c0bd5d5/r20": {
+     "pred": "7722.683/FELVESTEM",
+     "chars": 18,
+     "err": 2,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "0c0bd5d5/r21": {
+     "pred": "ITT EGY PLED, BAZME.\nEJJELENTE MAR\nHIDEGEK VANNAK.",
+     "chars": 50,
+     "err": 3,
+     "exact": false,
+     "acc_tot": 3,
+     "acc_hit": 0
+    },
+    "0c0bd5d5/r22": {
+     "pred": "722.683/FEVESZEM",
+     "chars": 18,
+     "err": 3,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "89371298/r0": {
+     "pred": "Oh shoot, I fell asleep\nwith the window open,\nagain...",
+     "chars": 54,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "89371298/r1": {
+     "pred": ".….and why can I see\nKomona through\nthe window?",
+     "chars": 47,
+     "err": 2,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "89371298/r2": {
+     "pred": "KOMONA!",
+     "chars": 7,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "89371298/r3": {
+     "pred": "The Potion\nContest!",
+     "chars": 19,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "89371298/r4": {
+     "pred": "I must've...\nmust've accidentally\nfallen asleep!",
+     "chars": 48,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "89371298/r5": {
+     "pred": "...but?",
+     "chars": 7,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "89371298/r6": {
+     "pred": "Where\nam I ?!?",
+     "chars": 13,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "35ce81ab/r0": {
+     "pred": "1 Carrot!\nYou're so cute to have\nthought of bringing me to\n the Contest!",
+     "chars": 69,
+     "err": 2,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "35ce81ab/r1": {
+     "pred": "Fan-tas-tic!",
+     "chars": 12,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "35ce81ab/r2": {
+     "pred": "You even thought of\nbringing a potion, my\nclothes, and my hat...",
+     "chars": 64,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "35ce81ab/r3": {
+     "pred": ".….let's see which\npotion you brought...",
+     "chars": 40,
+     "err": 2,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "8f3737ae/r0": {
+     "pred": "How do I\nexit vim ?",
+     "chars": 18,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "8f3737ae/r1": {
+     "pred": "Why would I\nexit vim ?",
+     "chars": 21,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "246d3aa3/r0": {
+     "pred": "IC REMAN M Y PUTER\nAMBIVALENT\nABOUT GAVN",
+     "chars": 34,
+     "err": 20,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "246d3aa3/r1": {
+     "pred": "IT CONTAINS MULTITUDESFRIENDS.ENEMIES.\nLOVE. HATE. TO REDUCE IT TO ONE OR THE OTHER\nIS AN EXERCISE IN FOOLISHNESS.",
+     "chars": 117,
+     "err": 3,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    }
+   }
+  },
+  {
+   "model": "paddle-v6-medium",
+   "method": "browser wasm×1",
+   "strips": 8,
+   "costPerStrip": 0.0,
+   "msPerStrip": 53604.90937486291,
+   "cost": 0.0,
+   "ms": 428839.2749989033,
+   "calls": 0,
+   "errors": 0,
+   "load": 9147.775000095367,
+   "mb": 138.926836,
+   "chars": 3397,
+   "err": 1059,
+   "exact": 33,
+   "acc_tot": 191,
+   "acc_hit": 30,
+   "n": 104,
+   "missed": 7,
+   "invented": 6,
+   "cer": 0.3117456579334707,
+   "accent": 0.15706806282722513,
+   "per": {
+    "2afc78b4/r0": {
+     "pred": "UNKA!",
+     "chars": 5,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r1": {
+     "pred": "DEJÓ, HOGY NA!E!\nELJÖTE, E!",
+     "chars": 29,
+     "err": 15,
+     "exact": false,
+     "acc_tot": 3,
+     "acc_hit": 2
+    },
+    "2afc78b4/r2": {
+     "pred": "",
+     "chars": 5,
+     "err": 5,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 0
+    },
+    "2afc78b4/r4": {
+     "pred": "MOST ARRA GONDOLSZI\nHOGY,DE KAR, HOGY\nELKÖLTOTTEM AZ\nELOLEGET, MOST\nLEMONDHATNAM",
+     "chars": 81,
+     "err": 7,
+     "exact": false,
+     "acc_tot": 5,
+     "acc_hit": 1
+    },
+    "2afc78b4/r5": {
+     "pred": "CAVALEIR",
+     "chars": 8,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r6": {
+     "pred": "A MELÓT!\"",
+     "chars": 9,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 1,
+     "acc_hit": 1
+    },
+    "2afc78b4/r7": {
+     "pred": "HAT KAE.",
+     "chars": 12,
+     "err": 7,
+     "exact": false,
+     "acc_tot": 3,
+     "acc_hit": 0
+    },
+    "2afc78b4/r8": {
+     "pred": "FAS21 BACSI",
+     "chars": 11,
+     "err": 3,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 0
+    },
+    "2afc78b4/r9": {
+     "pred": "NA. PATTANJ FEL!",
+     "chars": 16,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r10": {
+     "pred": "O口 FAS21-1 0 口",
+     "chars": 7,
+     "err": 9,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r11": {
+     "pred": "OOOOQO CALAVRIE00",
+     "chars": 8,
+     "err": 9,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r12": {
+     "pred": "NEM BAJI AZ EMBER\nAZERT FIATAL, HOGY\nTANULJON.",
+     "chars": 46,
+     "err": 2,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 0
+    },
+    "2afc78b4/r13": {
+     "pred": "FASZI BACSI",
+     "chars": 11,
+     "err": 1,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 0
+    },
+    "2afc78b4/r14": {
+     "pred": "FAS21-100",
+     "chars": 7,
+     "err": 4,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r15": {
+     "pred": "JEZUS, ATYA, URISTEN!",
+     "chars": 21,
+     "err": 2,
+     "exact": false,
+     "acc_tot": 2,
+     "acc_hit": 0
+    },
+    "2afc78b4/r16": {
+     "pred": "D VCALAIR",
+     "chars": 8,
+     "err": 3,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r17": {
+     "pred": "ÖA HALOFULKEBEN LOG\nEGY KRISTALYHOLOGRAM \nFORMÁJABAN, DE ITT\nVALÓBAN A SZENTFÖLDI\nSTILUSAT IGYEKEZTEMHOZ LOVAGVARAK\nKEMENCE, HENNAS KASPO AZ OTT EGY BEDVIN\n\n\nTEVENYEREG, ASZTROLAÁBINM",
+     "chars": 188,
+     "err": 66,
+     "exact": false,
+     "acc_tot": 17,
+     "acc_hit": 5
+    },
+    "2afc78b4/r18": {
+     "pred": "FAS21BACS1",
+     "chars": 11,
+     "err": 5,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 0
+    },
+    "2afc78b4/r19": {
+     "pred": "CSAK MAR GECIRE\nUNOM.\nEZERT VAGY ITT, E!",
+     "chars": 40,
+     "err": 2,
+     "exact": false,
+     "acc_tot": 2,
+     "acc_hit": 0
+    },
+    "2afc78b4/r20": {
+     "pred": "HATO...EDIG EGY KAMIONT..",
+     "chars": 29,
+     "err": 6,
+     "exact": false,
+     "acc_tot": 3,
+     "acc_hit": 0
+    },
+    "2afc78b4/r23": {
+     "pred": "DOODDON RELAVACIC",
+     "chars": 8,
+     "err": 9,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r24": {
+     "pred": "NYERGES VONTATÓT.",
+     "chars": 17,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 1,
+     "acc_hit": 1
+    },
+    "2afc78b4/r25": {
+     "pred": "PARDON.NYERGESVONTATOT CINALTA, HENRIK STIL AN\nT",
+     "chars": 113,
+     "err": 68,
+     "exact": false,
+     "acc_tot": 8,
+     "acc_hit": 0
+    },
+    "2afc78b4/r26": {
+     "pred": "AHA..VAGOM. KARPIT\nMAR MESSZIROL.ELKAPTAD A  \nBROKAT. SOK A BOJT. FELBASZNA\nAZONNAL. MEG EZIS ILYEN LIREG VAGOD?\nANTIK.",
+     "chars": 122,
+     "err": 17,
+     "exact": false,
+     "acc_tot": 9,
+     "acc_hit": 0
+    },
+    "2afc78b4/r27": {
+     "pred": "FAS21BACS1",
+     "chars": 11,
+     "err": 5,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 0
+    },
+    "2afc78b4/r28": {
+     "pred": " FAS21-4",
+     "chars": 7,
+     "err": 3,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r29": {
+     "pred": "ROPI",
+     "chars": 4,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r30": {
+     "pred": "SZOVALA RA B I \nNE AZT KERDEZZI EREVA\nA MOZUMSHOPI VAGOD?\nRANYNAK ILYEN NEOLOFTO\nART DEKOT GONDOLNEK.",
+     "chars": 165,
+     "err": 75,
+     "exact": false,
+     "acc_tot": 9,
+     "acc_hit": 0
+    },
+    "2afc78b4/r32": {
+     "pred": "RACALVIE",
+     "chars": 8,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r33": {
+     "pred": "FASZ1BÁC",
+     "chars": 11,
+     "err": 4,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 1
+    },
+    "2afc78b4/r34": {
+     "pred": "ERTEM. EZA DOBOZ EZ MI? MARADNIA KELL?",
+     "chars": 40,
+     "err": 3,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 0
+    },
+    "2afc78b4/r35": {
+     "pred": "AKKSIK A FÉNYHEZ. MARAD.",
+     "chars": 24,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 1,
+     "acc_hit": 1
+    },
+    "2afc78b4/r36": {
+     "pred": "FENYHEZ\"?",
+     "chars": 10,
+     "err": 2,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 0
+    },
+    "2afc78b4/r37": {
+     "pred": "O FASZ-A 0O",
+     "chars": 7,
+     "err": 7,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r38": {
+     "pred": "",
+     "chars": 6,
+     "err": 6,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r40": {
+     "pred": "CAVELIAR",
+     "chars": 8,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r41": {
+     "pred": "TIED VOLTAZ\nA SMART?",
+     "chars": 21,
+     "err": 2,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 0
+    },
+    "2afc78b4/r42": {
+     "pred": "FASZIBÁCSI",
+     "chars": 10,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 1,
+     "acc_hit": 1
+    },
+    "2afc78b4/r45": {
+     "pred": "00 FAS21-4 D 0",
+     "chars": 7,
+     "err": 10,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r46": {
+     "pred": "",
+     "chars": 17,
+     "err": 17,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 0
+    },
+    "2afc78b4/r47": {
+     "pred": "CAVALIER",
+     "chars": 8,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r48": {
+     "pred": "BOCSI.",
+     "chars": 6,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r49": {
+     "pred": "MEG HAZAVISZLEK.",
+     "chars": 16,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r50": {
+     "pred": "FASZIBACSI",
+     "chars": 11,
+     "err": 2,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 0
+    },
+    "2afc78b4/r52": {
+     "pred": "FAS21-1 □□",
+     "chars": 7,
+     "err": 5,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "6cbd56cd/r0": {
+     "pred": "",
+     "chars": 91,
+     "err": 91,
+     "exact": false,
+     "acc_tot": 8,
+     "acc_hit": 0
+    },
+    "6cbd56cd/r1": {
+     "pred": "OTT KELL LENNCE\nA SUFNIBAN!",
+     "chars": 27,
+     "err": 1,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "6cbd56cd/r2": {
+     "pred": "Ó J...",
+     "chars": 8,
+     "err": 2,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 1
+    },
+    "6cbd56cd/r3": {
+     "pred": "CSAK LATSZOLAG EGY KIBASZOTT K\nTULAJDONKEPPEN EGY ISENIALIS AMIBEN BOMBA ROBBANT.\nRENDSZER. A RAHANGOLÓDASBAN\n SEGITAFENYKEPE.",
+     "chars": 135,
+     "err": 60,
+     "exact": false,
+     "acc_tot": 11,
+     "acc_hit": 1
+    },
+    "6cbd56cd/r4": {
+     "pred": "E2 EGY HELIKOPTER\nTURBINA?",
+     "chars": 26,
+     "err": 1,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "6cbd56cd/r5": {
+     "pred": "IGEN, MOGOTE INDUL\nA LÉPCSO!",
+     "chars": 29,
+     "err": 4,
+     "exact": false,
+     "acc_tot": 4,
+     "acc_hit": 1
+    },
+    "6cbd56cd/r6": {
+     "pred": "E",
+     "chars": 65,
+     "err": 64,
+     "exact": false,
+     "acc_tot": 9,
+     "acc_hit": 0
+    },
+    "6cbd56cd/r7": {
+     "pred": "TELEKVITA",
+     "chars": 9,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "6cbd56cd/r8": {
+     "pred": "FUJ! A BELSO SZERVEL \nIT AZNAK EG-Y AKVARIUMBA\nA SZN KUWON EGY \nLEKVAROS ÜVEGBEN!\nFUJBAZMEG!",
+     "chars": 96,
+     "err": 19,
+     "exact": false,
+     "acc_tot": 10,
+     "acc_hit": 1
+    },
+    "6cbd56cd/r10": {
+     "pred": "",
+     "chars": 20,
+     "err": 20,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 0
+    },
+    "6cbd56cd/r11": {
+     "pred": "EMBER",
+     "chars": 5,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "3b343686/r0": {
+     "pred": "HAHHA!JESTET! M ARUKA ELSRD RT\nES FELESSWIK NERI TESWK A KERDEST!",
+     "chars": 77,
+     "err": 36,
+     "exact": false,
+     "acc_tot": 10,
+     "acc_hit": 0
+    },
+    "3b343686/r2": {
+     "pred": "",
+     "chars": 80,
+     "err": 80,
+     "exact": false,
+     "acc_tot": 7,
+     "acc_hit": 0
+    },
+    "3b343686/r3": {
+     "pred": "SPORTKOCSI?",
+     "chars": 11,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "3b343686/r4": {
+     "pred": "PINÁK?",
+     "chars": 6,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 1,
+     "acc_hit": 1
+    },
+    "3b343686/r5": {
+     "pred": "A loTTo OTOST?\nHM LÁSUK CSAK\nHEHE .. IGE N!",
+     "chars": 49,
+     "err": 12,
+     "exact": false,
+     "acc_tot": 4,
+     "acc_hit": 1
+    },
+    "3b343686/r6": {
+     "pred": "YACHT?",
+     "chars": 6,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "3b343686/r7": {
+     "pred": "UTAZGATAÁS?",
+     "chars": 10,
+     "err": 1,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 1
+    },
+    "3b343686/r8": {
+     "pred": "PiNák?",
+     "chars": 6,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 1,
+     "acc_hit": 1
+    },
+    "3b343686/r10": {
+     "pred": "VILLA?",
+     "chars": 6,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "3b343686/r11": {
+     "pred": "PINáK?",
+     "chars": 6,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 1,
+     "acc_hit": 1
+    },
+    "3b343686/r13": {
+     "pred": "VENNEK EG:Y KURVANAGY\nDOBOZT\nTELIS-TEVE TIZES\n VILCÁSKULCCSAL! AGYIG   RAKVA,\nTOBB EZER.\n VAGOD?",
+     "chars": 91,
+     "err": 8,
+     "exact": false,
+     "acc_tot": 4,
+     "acc_hit": 1
+    },
+    "3b343686/r15": {
+     "pred": " ES MINDENHOL AHOL A NAN",
+     "chars": 104,
+     "err": 82,
+     "exact": false,
+     "acc_tot": 6,
+     "acc_hit": 0
+    },
+    "3b343686/r16": {
+     "pred": "",
+     "chars": 40,
+     "err": 40,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "3b343686/r17": {
+     "pred": "AKKOR BÁRHOVA NYÚLOK,\nOTT LEGYEN, BAZMEG.\nNEM EGY, ÖT!",
+     "chars": 58,
+     "err": 4,
+     "exact": false,
+     "acc_tot": 3,
+     "acc_hit": 3
+    },
+    "0c0bd5d5/r1": {
+     "pred": "HRAHGHR",
+     "chars": 14,
+     "err": 7,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "0c0bd5d5/r2": {
+     "pred": "MIA FASZOM?",
+     "chars": 12,
+     "err": 1,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "0c0bd5d5/r3": {
+     "pred": "7722.683/FELVEIZEM",
+     "chars": 18,
+     "err": 2,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "0c0bd5d5/r4": {
+     "pred": "KI VAGY, ES MI A GECIT\nKERESEL A PLATOMON,\nBAZME?",
+     "chars": 49,
+     "err": 2,
+     "exact": false,
+     "acc_tot": 2,
+     "acc_hit": 0
+    },
+    "0c0bd5d5/r5": {
+     "pred": "A GUBACS TEREZ\nUTON UTOTELI\nMINDKET LÁBAM\nELTORÖIT, AZÓTA\nFAJ. FAJOGAT.",
+     "chars": 73,
+     "err": 12,
+     "exact": false,
+     "acc_tot": 11,
+     "acc_hit": 3
+    },
+    "0c0bd5d5/r6": {
+     "pred": "FEKSZEMIT.",
+     "chars": 12,
+     "err": 2,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "0c0bd5d5/r7": {
+     "pred": "722.683/FELVEE",
+     "chars": 18,
+     "err": 5,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "0c0bd5d5/r8": {
+     "pred": "NEM IS JARTAM ARRA MA, BAZME...\nA KOZELBE SE.",
+     "chars": 45,
+     "err": 2,
+     "exact": false,
+     "acc_tot": 2,
+     "acc_hit": 0
+    },
+    "0c0bd5d5/r9": {
+     "pred": "EZ MÚLT HET KEDDEN\nTORTENT...",
+     "chars": 29,
+     "err": 3,
+     "exact": false,
+     "acc_tot": 4,
+     "acc_hit": 1
+    },
+    "0c0bd5d5/r11": {
+     "pred": "7772-G83/FELVESZEM",
+     "chars": 18,
+     "err": 3,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "0c0bd5d5/r12": {
+     "pred": "MULT HET KEDD?\nNE KAMUZZA!\nHOGY NEM HALTAL EHEN?",
+     "chars": 48,
+     "err": 5,
+     "exact": false,
+     "acc_tot": 5,
+     "acc_hit": 0
+    },
+    "0c0bd5d5/r13": {
+     "pred": "KIFELE JOTEM A BOLTBOLI\nAMIKOR TELI BE KAPOTT\nKET NAGY\nSZATYOR ",
+     "chars": 68,
+     "err": 13,
+     "exact": false,
+     "acc_tot": 4,
+     "acc_hit": 0
+    },
+    "0c0bd5d5/r14": {
+     "pred": "7722.683/FEVESZEM",
+     "chars": 18,
+     "err": 2,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "0c0bd5d5/r15": {
+     "pred": "AKURVAELET!",
+     "chars": 11,
+     "err": 1,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 0
+    },
+    "0c0bd5d5/r16": {
+     "pred": "7722.683/FELVESZEM",
+     "chars": 18,
+     "err": 1,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "0c0bd5d5/r19": {
+     "pred": "AAARRGH",
+     "chars": 13,
+     "err": 6,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "0c0bd5d5/r20": {
+     "pred": "7722.683/FELVESZEM",
+     "chars": 18,
+     "err": 1,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "0c0bd5d5/r21": {
+     "pred": "ITT EGY PLED, BAZME.\nEJJELENTE MAR\nHIDEGEK VANNAK.",
+     "chars": 50,
+     "err": 3,
+     "exact": false,
+     "acc_tot": 3,
+     "acc_hit": 0
+    },
+    "0c0bd5d5/r22": {
+     "pred": "22.683/FEESZE",
+     "chars": 18,
+     "err": 6,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "89371298/r0": {
+     "pred": "Oh shoot, I fell asleep\nwith the window open,\nagain...",
+     "chars": 54,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "89371298/r1": {
+     "pred": "...and why can I see\nKomona through\nthe window?",
+     "chars": 47,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "89371298/r2": {
+     "pred": "KOMONA!",
+     "chars": 7,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "89371298/r3": {
+     "pred": "The Potion\nContest!",
+     "chars": 19,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "89371298/r4": {
+     "pred": "I must've...\nmust've accidentally\nfallen asleep!",
+     "chars": 48,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "89371298/r5": {
+     "pred": "…but?",
+     "chars": 7,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "89371298/r6": {
+     "pred": "Where\nam I ?!?",
+     "chars": 13,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "35ce81ab/r0": {
+     "pred": "7 Carrot!\nYou're so cute to have\nthought of bringing me to\n the Contest!",
+     "chars": 69,
+     "err": 2,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "35ce81ab/r1": {
+     "pred": "Fan-tas-tic!",
+     "chars": 12,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "35ce81ab/r2": {
+     "pred": "You even thought of\nbringing a potion, my\nclothes, and my hat...",
+     "chars": 64,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "35ce81ab/r3": {
+     "pred": ". let's see which\npotion you brought...",
+     "chars": 40,
+     "err": 2,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "8f3737ae/r0": {
+     "pred": "How do I\nexit vim?",
+     "chars": 18,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "8f3737ae/r1": {
+     "pred": "Why would I\nexit vim?",
+     "chars": 21,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "246d3aa3/r0": {
+     "pred": "小 REMAIN MY PUTER\nAMBIVALENT\nABOUT",
+     "chars": 34,
+     "err": 19,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "246d3aa3/r1": {
+     "pred": "IT CONTAINS MULTITUDES. FRIENDS. ENEMIES. \nLOVE. HATE. TO REDUCE IT TO ONE OR THE OTHER\n IS AN EXERCISE IN FOOLISHNESS. ",
+     "chars": 117,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    }
+   }
+  },
+  {
+   "model": "paddle-v6-medium",
+   "method": "browser wasm×4",
+   "strips": 8,
+   "costPerStrip": 0.0,
+   "msPerStrip": 24468.510000228882,
+   "cost": 0.0,
+   "ms": 195748.08000183105,
+   "calls": 0,
+   "errors": 0,
+   "load": 3441.2200000286102,
+   "mb": 138.926836,
+   "chars": 3397,
+   "err": 1059,
+   "exact": 33,
+   "acc_tot": 191,
+   "acc_hit": 30,
+   "n": 104,
+   "missed": 7,
+   "invented": 6,
+   "cer": 0.3117456579334707,
+   "accent": 0.15706806282722513,
+   "per": {
+    "2afc78b4/r0": {
+     "pred": "UNKA!",
+     "chars": 5,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r1": {
+     "pred": "DEJÓ, HOGY NA!E!\nELJÖTE, E!",
+     "chars": 29,
+     "err": 15,
+     "exact": false,
+     "acc_tot": 3,
+     "acc_hit": 2
+    },
+    "2afc78b4/r2": {
+     "pred": "",
+     "chars": 5,
+     "err": 5,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 0
+    },
+    "2afc78b4/r4": {
+     "pred": "MOST ARRA GONDOLSZI\nHOGY,DE KAR, HOGY\nELKÖLTOTTEM AZ\nELOLEGET, MOST\nLEMONDHATNAM",
+     "chars": 81,
+     "err": 7,
+     "exact": false,
+     "acc_tot": 5,
+     "acc_hit": 1
+    },
+    "2afc78b4/r5": {
+     "pred": "CAVALEIR",
+     "chars": 8,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r6": {
+     "pred": "A MELÓT!\"",
+     "chars": 9,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 1,
+     "acc_hit": 1
+    },
+    "2afc78b4/r7": {
+     "pred": "HAT KAE.",
+     "chars": 12,
+     "err": 7,
+     "exact": false,
+     "acc_tot": 3,
+     "acc_hit": 0
+    },
+    "2afc78b4/r8": {
+     "pred": "FAS21 BACSI",
+     "chars": 11,
+     "err": 3,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 0
+    },
+    "2afc78b4/r9": {
+     "pred": "NA. PATTANJ FEL!",
+     "chars": 16,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r10": {
+     "pred": "O口 FAS21-1 0 口",
+     "chars": 7,
+     "err": 9,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r11": {
+     "pred": "OOOOQO CALAVRIE00",
+     "chars": 8,
+     "err": 9,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r12": {
+     "pred": "NEM BAJI AZ EMBER\nAZERT FIATAL, HOGY\nTANULJON.",
+     "chars": 46,
+     "err": 2,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 0
+    },
+    "2afc78b4/r13": {
+     "pred": "FASZI BACSI",
+     "chars": 11,
+     "err": 1,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 0
+    },
+    "2afc78b4/r14": {
+     "pred": "FAS21-100",
+     "chars": 7,
+     "err": 4,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r15": {
+     "pred": "JEZUS, ATYA, URISTEN!",
+     "chars": 21,
+     "err": 2,
+     "exact": false,
+     "acc_tot": 2,
+     "acc_hit": 0
+    },
+    "2afc78b4/r16": {
+     "pred": "D VCALAIR",
+     "chars": 8,
+     "err": 3,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r17": {
+     "pred": "ÖA HALOFULKEBEN LOG\nEGY KRISTALYHOLOGRAM \nFORMÁJABAN, DE ITT\nVALÓBAN A SZENTFÖLDI\nSTILUSAT IGYEKEZTEMHOZ LOVAGVARAK\nKEMENCE, HENNAS KASPO AZ OTT EGY BEDVIN\n\n\nTEVENYEREG, ASZTROLAÁBINM",
+     "chars": 188,
+     "err": 66,
+     "exact": false,
+     "acc_tot": 17,
+     "acc_hit": 5
+    },
+    "2afc78b4/r18": {
+     "pred": "FAS21BACS1",
+     "chars": 11,
+     "err": 5,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 0
+    },
+    "2afc78b4/r19": {
+     "pred": "CSAK MAR GECIRE\nUNOM.\nEZERT VAGY ITT, E!",
+     "chars": 40,
+     "err": 2,
+     "exact": false,
+     "acc_tot": 2,
+     "acc_hit": 0
+    },
+    "2afc78b4/r20": {
+     "pred": "HATO...EDIG EGY KAMIONT..",
+     "chars": 29,
+     "err": 6,
+     "exact": false,
+     "acc_tot": 3,
+     "acc_hit": 0
+    },
+    "2afc78b4/r23": {
+     "pred": "DOODDON RELAVACIC",
+     "chars": 8,
+     "err": 9,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r24": {
+     "pred": "NYERGES VONTATÓT.",
+     "chars": 17,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 1,
+     "acc_hit": 1
+    },
+    "2afc78b4/r25": {
+     "pred": "PARDON.NYERGESVONTATOT CINALTA, HENRIK STIL AN\nT",
+     "chars": 113,
+     "err": 68,
+     "exact": false,
+     "acc_tot": 8,
+     "acc_hit": 0
+    },
+    "2afc78b4/r26": {
+     "pred": "AHA..VAGOM. KARPIT\nMAR MESSZIROL.ELKAPTAD A  \nBROKAT. SOK A BOJT. FELBASZNA\nAZONNAL. MEG EZIS ILYEN LIREG VAGOD?\nANTIK.",
+     "chars": 122,
+     "err": 17,
+     "exact": false,
+     "acc_tot": 9,
+     "acc_hit": 0
+    },
+    "2afc78b4/r27": {
+     "pred": "FAS21BACS1",
+     "chars": 11,
+     "err": 5,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 0
+    },
+    "2afc78b4/r28": {
+     "pred": " FAS21-4",
+     "chars": 7,
+     "err": 3,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r29": {
+     "pred": "ROPI",
+     "chars": 4,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r30": {
+     "pred": "SZOVALA RA B I \nNE AZT KERDEZZI EREVA\nA MOZUMSHOPI VAGOD?\nRANYNAK ILYEN NEOLOFTO\nART DEKOT GONDOLNEK.",
+     "chars": 165,
+     "err": 75,
+     "exact": false,
+     "acc_tot": 9,
+     "acc_hit": 0
+    },
+    "2afc78b4/r32": {
+     "pred": "RACALVIE",
+     "chars": 8,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r33": {
+     "pred": "FASZ1BÁC",
+     "chars": 11,
+     "err": 4,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 1
+    },
+    "2afc78b4/r34": {
+     "pred": "ERTEM. EZA DOBOZ EZ MI? MARADNIA KELL?",
+     "chars": 40,
+     "err": 3,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 0
+    },
+    "2afc78b4/r35": {
+     "pred": "AKKSIK A FÉNYHEZ. MARAD.",
+     "chars": 24,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 1,
+     "acc_hit": 1
+    },
+    "2afc78b4/r36": {
+     "pred": "FENYHEZ\"?",
+     "chars": 10,
+     "err": 2,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 0
+    },
+    "2afc78b4/r37": {
+     "pred": "O FASZ-A 0O",
+     "chars": 7,
+     "err": 7,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r38": {
+     "pred": "",
+     "chars": 6,
+     "err": 6,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r40": {
+     "pred": "CAVELIAR",
+     "chars": 8,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r41": {
+     "pred": "TIED VOLTAZ\nA SMART?",
+     "chars": 21,
+     "err": 2,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 0
+    },
+    "2afc78b4/r42": {
+     "pred": "FASZIBÁCSI",
+     "chars": 10,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 1,
+     "acc_hit": 1
+    },
+    "2afc78b4/r45": {
+     "pred": "00 FAS21-4 D 0",
+     "chars": 7,
+     "err": 10,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r46": {
+     "pred": "",
+     "chars": 17,
+     "err": 17,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 0
+    },
+    "2afc78b4/r47": {
+     "pred": "CAVALIER",
+     "chars": 8,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r48": {
+     "pred": "BOCSI.",
+     "chars": 6,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r49": {
+     "pred": "MEG HAZAVISZLEK.",
+     "chars": 16,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r50": {
+     "pred": "FASZIBACSI",
+     "chars": 11,
+     "err": 2,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 0
+    },
+    "2afc78b4/r52": {
+     "pred": "FAS21-1 □□",
+     "chars": 7,
+     "err": 5,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "6cbd56cd/r0": {
+     "pred": "",
+     "chars": 91,
+     "err": 91,
+     "exact": false,
+     "acc_tot": 8,
+     "acc_hit": 0
+    },
+    "6cbd56cd/r1": {
+     "pred": "OTT KELL LENNCE\nA SUFNIBAN!",
+     "chars": 27,
+     "err": 1,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "6cbd56cd/r2": {
+     "pred": "Ó J...",
+     "chars": 8,
+     "err": 2,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 1
+    },
+    "6cbd56cd/r3": {
+     "pred": "CSAK LATSZOLAG EGY KIBASZOTT K\nTULAJDONKEPPEN EGY ISENIALIS AMIBEN BOMBA ROBBANT.\nRENDSZER. A RAHANGOLÓDASBAN\n SEGITAFENYKEPE.",
+     "chars": 135,
+     "err": 60,
+     "exact": false,
+     "acc_tot": 11,
+     "acc_hit": 1
+    },
+    "6cbd56cd/r4": {
+     "pred": "E2 EGY HELIKOPTER\nTURBINA?",
+     "chars": 26,
+     "err": 1,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "6cbd56cd/r5": {
+     "pred": "IGEN, MOGOTE INDUL\nA LÉPCSO!",
+     "chars": 29,
+     "err": 4,
+     "exact": false,
+     "acc_tot": 4,
+     "acc_hit": 1
+    },
+    "6cbd56cd/r6": {
+     "pred": "E",
+     "chars": 65,
+     "err": 64,
+     "exact": false,
+     "acc_tot": 9,
+     "acc_hit": 0
+    },
+    "6cbd56cd/r7": {
+     "pred": "TELEKVITA",
+     "chars": 9,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "6cbd56cd/r8": {
+     "pred": "FUJ! A BELSO SZERVEL \nIT AZNAK EG-Y AKVARIUMBA\nA SZN KUWON EGY \nLEKVAROS ÜVEGBEN!\nFUJBAZMEG!",
+     "chars": 96,
+     "err": 19,
+     "exact": false,
+     "acc_tot": 10,
+     "acc_hit": 1
+    },
+    "6cbd56cd/r10": {
+     "pred": "",
+     "chars": 20,
+     "err": 20,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 0
+    },
+    "6cbd56cd/r11": {
+     "pred": "EMBER",
+     "chars": 5,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "3b343686/r0": {
+     "pred": "HAHHA!JESTET! M ARUKA ELSRD RT\nES FELESSWIK NERI TESWK A KERDEST!",
+     "chars": 77,
+     "err": 36,
+     "exact": false,
+     "acc_tot": 10,
+     "acc_hit": 0
+    },
+    "3b343686/r2": {
+     "pred": "",
+     "chars": 80,
+     "err": 80,
+     "exact": false,
+     "acc_tot": 7,
+     "acc_hit": 0
+    },
+    "3b343686/r3": {
+     "pred": "SPORTKOCSI?",
+     "chars": 11,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "3b343686/r4": {
+     "pred": "PINÁK?",
+     "chars": 6,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 1,
+     "acc_hit": 1
+    },
+    "3b343686/r5": {
+     "pred": "A loTTo OTOST?\nHM LÁSUK CSAK\nHEHE .. IGE N!",
+     "chars": 49,
+     "err": 12,
+     "exact": false,
+     "acc_tot": 4,
+     "acc_hit": 1
+    },
+    "3b343686/r6": {
+     "pred": "YACHT?",
+     "chars": 6,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "3b343686/r7": {
+     "pred": "UTAZGATAÁS?",
+     "chars": 10,
+     "err": 1,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 1
+    },
+    "3b343686/r8": {
+     "pred": "PiNák?",
+     "chars": 6,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 1,
+     "acc_hit": 1
+    },
+    "3b343686/r10": {
+     "pred": "VILLA?",
+     "chars": 6,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "3b343686/r11": {
+     "pred": "PINáK?",
+     "chars": 6,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 1,
+     "acc_hit": 1
+    },
+    "3b343686/r13": {
+     "pred": "VENNEK EG:Y KURVANAGY\nDOBOZT\nTELIS-TEVE TIZES\n VILCÁSKULCCSAL! AGYIG   RAKVA,\nTOBB EZER.\n VAGOD?",
+     "chars": 91,
+     "err": 8,
+     "exact": false,
+     "acc_tot": 4,
+     "acc_hit": 1
+    },
+    "3b343686/r15": {
+     "pred": " ES MINDENHOL AHOL A NAN",
+     "chars": 104,
+     "err": 82,
+     "exact": false,
+     "acc_tot": 6,
+     "acc_hit": 0
+    },
+    "3b343686/r16": {
+     "pred": "",
+     "chars": 40,
+     "err": 40,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "3b343686/r17": {
+     "pred": "AKKOR BÁRHOVA NYÚLOK,\nOTT LEGYEN, BAZMEG.\nNEM EGY, ÖT!",
+     "chars": 58,
+     "err": 4,
+     "exact": false,
+     "acc_tot": 3,
+     "acc_hit": 3
+    },
+    "0c0bd5d5/r1": {
+     "pred": "HRAHGHR",
+     "chars": 14,
+     "err": 7,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "0c0bd5d5/r2": {
+     "pred": "MIA FASZOM?",
+     "chars": 12,
+     "err": 1,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "0c0bd5d5/r3": {
+     "pred": "7722.683/FELVEIZEM",
+     "chars": 18,
+     "err": 2,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "0c0bd5d5/r4": {
+     "pred": "KI VAGY, ES MI A GECIT\nKERESEL A PLATOMON,\nBAZME?",
+     "chars": 49,
+     "err": 2,
+     "exact": false,
+     "acc_tot": 2,
+     "acc_hit": 0
+    },
+    "0c0bd5d5/r5": {
+     "pred": "A GUBACS TEREZ\nUTON UTOTELI\nMINDKET LÁBAM\nELTORÖIT, AZÓTA\nFAJ. FAJOGAT.",
+     "chars": 73,
+     "err": 12,
+     "exact": false,
+     "acc_tot": 11,
+     "acc_hit": 3
+    },
+    "0c0bd5d5/r6": {
+     "pred": "FEKSZEMIT.",
+     "chars": 12,
+     "err": 2,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "0c0bd5d5/r7": {
+     "pred": "722.683/FELVEE",
+     "chars": 18,
+     "err": 5,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "0c0bd5d5/r8": {
+     "pred": "NEM IS JARTAM ARRA MA, BAZME...\nA KOZELBE SE.",
+     "chars": 45,
+     "err": 2,
+     "exact": false,
+     "acc_tot": 2,
+     "acc_hit": 0
+    },
+    "0c0bd5d5/r9": {
+     "pred": "EZ MÚLT HET KEDDEN\nTORTENT...",
+     "chars": 29,
+     "err": 3,
+     "exact": false,
+     "acc_tot": 4,
+     "acc_hit": 1
+    },
+    "0c0bd5d5/r11": {
+     "pred": "7772-G83/FELVESZEM",
+     "chars": 18,
+     "err": 3,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "0c0bd5d5/r12": {
+     "pred": "MULT HET KEDD?\nNE KAMUZZA!\nHOGY NEM HALTAL EHEN?",
+     "chars": 48,
+     "err": 5,
+     "exact": false,
+     "acc_tot": 5,
+     "acc_hit": 0
+    },
+    "0c0bd5d5/r13": {
+     "pred": "KIFELE JOTEM A BOLTBOLI\nAMIKOR TELI BE KAPOTT\nKET NAGY\nSZATYOR ",
+     "chars": 68,
+     "err": 13,
+     "exact": false,
+     "acc_tot": 4,
+     "acc_hit": 0
+    },
+    "0c0bd5d5/r14": {
+     "pred": "7722.683/FEVESZEM",
+     "chars": 18,
+     "err": 2,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "0c0bd5d5/r15": {
+     "pred": "AKURVAELET!",
+     "chars": 11,
+     "err": 1,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 0
+    },
+    "0c0bd5d5/r16": {
+     "pred": "7722.683/FELVESZEM",
+     "chars": 18,
+     "err": 1,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "0c0bd5d5/r19": {
+     "pred": "AAARRGH",
+     "chars": 13,
+     "err": 6,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "0c0bd5d5/r20": {
+     "pred": "7722.683/FELVESZEM",
+     "chars": 18,
+     "err": 1,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "0c0bd5d5/r21": {
+     "pred": "ITT EGY PLED, BAZME.\nEJJELENTE MAR\nHIDEGEK VANNAK.",
+     "chars": 50,
+     "err": 3,
+     "exact": false,
+     "acc_tot": 3,
+     "acc_hit": 0
+    },
+    "0c0bd5d5/r22": {
+     "pred": "22.683/FEESZE",
+     "chars": 18,
+     "err": 6,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "89371298/r0": {
+     "pred": "Oh shoot, I fell asleep\nwith the window open,\nagain...",
+     "chars": 54,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "89371298/r1": {
+     "pred": "...and why can I see\nKomona through\nthe window?",
+     "chars": 47,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "89371298/r2": {
+     "pred": "KOMONA!",
+     "chars": 7,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "89371298/r3": {
+     "pred": "The Potion\nContest!",
+     "chars": 19,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "89371298/r4": {
+     "pred": "I must've...\nmust've accidentally\nfallen asleep!",
+     "chars": 48,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "89371298/r5": {
+     "pred": "…but?",
+     "chars": 7,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "89371298/r6": {
+     "pred": "Where\nam I ?!?",
+     "chars": 13,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "35ce81ab/r0": {
+     "pred": "7 Carrot!\nYou're so cute to have\nthought of bringing me to\n the Contest!",
+     "chars": 69,
+     "err": 2,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "35ce81ab/r1": {
+     "pred": "Fan-tas-tic!",
+     "chars": 12,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "35ce81ab/r2": {
+     "pred": "You even thought of\nbringing a potion, my\nclothes, and my hat...",
+     "chars": 64,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "35ce81ab/r3": {
+     "pred": ". let's see which\npotion you brought...",
+     "chars": 40,
+     "err": 2,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "8f3737ae/r0": {
+     "pred": "How do I\nexit vim?",
+     "chars": 18,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "8f3737ae/r1": {
+     "pred": "Why would I\nexit vim?",
+     "chars": 21,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "246d3aa3/r0": {
+     "pred": "小 REMAIN MY PUTER\nAMBIVALENT\nABOUT",
+     "chars": 34,
+     "err": 19,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "246d3aa3/r1": {
+     "pred": "IT CONTAINS MULTITUDES. FRIENDS. ENEMIES. \nLOVE. HATE. TO REDUCE IT TO ONE OR THE OTHER\n IS AN EXERCISE IN FOOLISHNESS. ",
+     "chars": 117,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    }
+   }
+  },
+  {
    "model": "ollama_bench-gemma4-12b-it-qat-32k_effort_none_json_1_timeout_30m",
    "method": "per panel",
-   "strips": 2,
+   "strips": 3,
    "costPerStrip": 0.0,
-   "msPerStrip": 645458.5,
+   "msPerStrip": 768653.6666666666,
    "cost": 0.0,
-   "ms": 1290917,
-   "calls": 12,
+   "ms": 2305961,
+   "calls": 22,
    "errors": 0,
    "load": null,
    "mb": null,
-   "chars": 1766,
-   "err": 1090,
-   "exact": 11,
-   "acc_tot": 109,
-   "acc_hit": 41,
-   "n": 64,
-   "missed": 30,
-   "invented": 1,
-   "cer": 0.6172140430351076,
-   "accent": 0.3761467889908257,
+   "chars": 2316,
+   "err": 745,
+   "exact": 21,
+   "acc_tot": 147,
+   "acc_hit": 87,
+   "n": 78,
+   "missed": 10,
+   "invented": 3,
+   "cer": 0.3216753022452504,
+   "accent": 0.5918367346938775,
    "per": {
     "2afc78b4/r0": {
      "pred": "UNKA! !",
@@ -25003,182 +30233,254 @@
      "acc_hit": 1
     },
     "2afc78b4/r20": {
-     "pred": "",
+     "pred": "HÁTÓÖ... EDDIG EGY KAMIONT...",
      "chars": 29,
-     "err": 29,
+     "err": 2,
      "exact": false,
      "acc_tot": 3,
-     "acc_hit": 0
+     "acc_hit": 1
     },
     "2afc78b4/r23": {
-     "pred": "",
+     "pred": "RELAVACI",
      "chars": 8,
-     "err": 8,
-     "exact": false,
+     "err": 0,
+     "exact": true,
      "acc_tot": 0,
      "acc_hit": 0
     },
     "2afc78b4/r24": {
-     "pred": "",
+     "pred": "NYERGES VONTATÓT.",
      "chars": 17,
-     "err": 17,
-     "exact": false,
+     "err": 0,
+     "exact": true,
      "acc_tot": 1,
-     "acc_hit": 0
+     "acc_hit": 1
     },
     "2afc78b4/r25": {
-     "pred": "",
+     "pred": "PARDON NYERgesVONTATÓt CSÍNALTAM, VIII. HENRIK STÍLUSÁBAN\n„TRUBAD一点R\" LETT T A MUNKACÍME.\nITT VAN A PORTFÓLIÓMBAN:",
      "chars": 113,
-     "err": 113,
+     "err": 8,
      "exact": false,
      "acc_tot": 8,
-     "acc_hit": 0
+     "acc_hit": 6
     },
     "2afc78b4/r26": {
-     "pred": "",
+     "pred": "AHA ... VAGOM. KÁRPIT\nMÁR MESSZŐL ELKAPTAD A\nBROKÁT. JOK A BOIT. FELBASZNA\nALONNÁL. MEG ELIS ILYEN\n„REGI\", VAGOD?\nANTIK.",
      "chars": 122,
-     "err": 122,
+     "err": 13,
      "exact": false,
      "acc_tot": 9,
-     "acc_hit": 0
+     "acc_hit": 4
     },
     "2afc78b4/r27": {
-     "pred": "",
+     "pred": "FASZI_BACSI",
      "chars": 11,
-     "err": 11,
+     "err": 2,
      "exact": false,
      "acc_tot": 1,
      "acc_hit": 0
     },
     "2afc78b4/r28": {
-     "pred": "",
+     "pred": "FASZ1-1",
      "chars": 7,
-     "err": 7,
+     "err": 1,
      "exact": false,
      "acc_tot": 0,
      "acc_hit": 0
     },
     "2afc78b4/r29": {
-     "pred": "",
+     "pred": "ROPI",
      "chars": 4,
-     "err": 4,
-     "exact": false,
+     "err": 0,
+     "exact": true,
      "acc_tot": 0,
      "acc_hit": 0
     },
     "2afc78b4/r30": {
-     "pred": "",
+     "pred": "SZÓVAL, AKIMOR A GROBKUGELNI PIHENŐBÉN KINITJA A KURVA AZ AJTÓT AKKOR NE AZI INTEZREDJE, MERKE VAN A MÜZEUMSHOP, VÁGOD? IRÁNYNAK JLYEN NEFOLTOS",
      "chars": 165,
-     "err": 165,
+     "err": 42,
      "exact": false,
      "acc_tot": 9,
-     "acc_hit": 0
+     "acc_hit": 5
     },
     "2afc78b4/r32": {
-     "pred": "",
+     "pred": "RACALVIE",
      "chars": 8,
-     "err": 8,
-     "exact": false,
+     "err": 0,
+     "exact": true,
      "acc_tot": 0,
      "acc_hit": 0
     },
     "2afc78b4/r33": {
-     "pred": "",
+     "pred": "FASZIBÁCI",
      "chars": 11,
-     "err": 11,
+     "err": 2,
      "exact": false,
      "acc_tot": 1,
-     "acc_hit": 0
+     "acc_hit": 1
     },
     "2afc78b4/r34": {
-     "pred": "",
+     "pred": "ÉRTEM. EZ A DOBOZ, EZ MI? MARADNIA KEL?",
      "chars": 40,
-     "err": 40,
+     "err": 1,
      "exact": false,
      "acc_tot": 1,
-     "acc_hit": 0
+     "acc_hit": 1
     },
     "2afc78b4/r35": {
-     "pred": "",
+     "pred": "AKKSIK A FÉNYHEZ. MARAD.",
      "chars": 24,
-     "err": 24,
-     "exact": false,
+     "err": 0,
+     "exact": true,
      "acc_tot": 1,
-     "acc_hit": 0
+     "acc_hit": 1
     },
     "2afc78b4/r36": {
-     "pred": "",
+     "pred": "„FÉNYHEZ\"?",
      "chars": 10,
-     "err": 10,
-     "exact": false,
+     "err": 0,
+     "exact": true,
      "acc_tot": 1,
-     "acc_hit": 0
+     "acc_hit": 1
     },
     "2afc78b4/r37": {
-     "pred": "",
+     "pred": "FASZI-1",
      "chars": 7,
-     "err": 7,
-     "exact": false,
+     "err": 0,
+     "exact": true,
      "acc_tot": 0,
      "acc_hit": 0
     },
     "2afc78b4/r38": {
-     "pred": "",
+     "pred": "BOLKOW",
      "chars": 6,
-     "err": 6,
+     "err": 2,
      "exact": false,
      "acc_tot": 0,
      "acc_hit": 0
     },
     "2afc78b4/r40": {
-     "pred": "",
+     "pred": "CAVELIAR",
      "chars": 8,
-     "err": 8,
-     "exact": false,
+     "err": 0,
+     "exact": true,
      "acc_tot": 0,
      "acc_hit": 0
     },
     "2afc78b4/r41": {
-     "pred": "",
+     "pred": "TIED VOLT AZ\nA SMART?",
      "chars": 21,
-     "err": 21,
+     "err": 1,
      "exact": false,
      "acc_tot": 1,
      "acc_hit": 0
     },
     "2afc78b4/r42": {
-     "pred": "",
+     "pred": "FASZI BÁCSI",
      "chars": 10,
-     "err": 10,
+     "err": 1,
      "exact": false,
      "acc_tot": 1,
-     "acc_hit": 0
+     "acc_hit": 1
     },
     "2afc78b4/r45": {
-     "pred": "",
+     "pred": "FASZI-1",
      "chars": 7,
-     "err": 7,
-     "exact": false,
+     "err": 0,
+     "exact": true,
      "acc_tot": 0,
      "acc_hit": 0
     },
     "2afc78b4/r46": {
-     "pred": "",
+     "pred": "FIFU! HURUHATÅRR!",
      "chars": 17,
-     "err": 17,
+     "err": 1,
      "exact": false,
      "acc_tot": 1,
      "acc_hit": 0
     },
     "2afc78b4/r47": {
-     "pred": "",
+     "pred": "CAVALIER",
      "chars": 8,
-     "err": 8,
-     "exact": false,
+     "err": 0,
+     "exact": true,
      "acc_tot": 0,
      "acc_hit": 0
     },
     "2afc78b4/r48": {
+     "pred": "BOCS!",
+     "chars": 6,
+     "err": 2,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r49": {
+     "pred": "MEG HAZAVISZLÉK.",
+     "chars": 16,
+     "err": 1,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r50": {
+     "pred": "FASZI BACSI",
+     "chars": 11,
+     "err": 1,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 0
+    },
+    "2afc78b4/r52": {
+     "pred": "FASZI -A",
+     "chars": 7,
+     "err": 2,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "3b343686/r0": {
+     "pred": "HAHÁ! JÓESTÉT! MEGVÁRUK AZ ELSŐ „RANDOMTIBORT, ÉS FELTESSESSION NEKI",
+     "chars": 77,
+     "err": 21,
+     "exact": false,
+     "acc_tot": 10,
+     "acc_hit": 6
+    },
+    "3b343686/r2": {
+     "pred": "JÉSNAROT URAM! MI LENNE AZ ELSŐ DOLOG, AMIT CSINÁLNA,\nHA MEGNYERNÉ A LOTO ÖTÖST?",
+     "chars": 80,
+     "err": 5,
+     "exact": false,
+     "acc_tot": 7,
+     "acc_hit": 5
+    },
+    "3b343686/r3": {
+     "pred": "",
+     "chars": 11,
+     "err": 11,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "3b343686/r4": {
+     "pred": "",
+     "chars": 6,
+     "err": 6,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 0
+    },
+    "3b343686/r5": {
+     "pred": "",
+     "chars": 49,
+     "err": 49,
+     "exact": false,
+     "acc_tot": 4,
+     "acc_hit": 0
+    },
+    "3b343686/r6": {
      "pred": "",
      "chars": 6,
      "err": 6,
@@ -25186,28 +30488,68 @@
      "acc_tot": 0,
      "acc_hit": 0
     },
-    "2afc78b4/r49": {
+    "3b343686/r7": {
      "pred": "",
-     "chars": 16,
-     "err": 16,
-     "exact": false,
-     "acc_tot": 0,
-     "acc_hit": 0
-    },
-    "2afc78b4/r50": {
-     "pred": "",
-     "chars": 11,
-     "err": 11,
+     "chars": 10,
+     "err": 10,
      "exact": false,
      "acc_tot": 1,
      "acc_hit": 0
     },
-    "2afc78b4/r52": {
+    "3b343686/r8": {
      "pred": "",
-     "chars": 7,
-     "err": 7,
+     "chars": 6,
+     "err": 6,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 0
+    },
+    "3b343686/r10": {
+     "pred": "",
+     "chars": 6,
+     "err": 6,
      "exact": false,
      "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "3b343686/r11": {
+     "pred": "",
+     "chars": 6,
+     "err": 6,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 0
+    },
+    "3b343686/r13": {
+     "pred": "VENNEK EGY KURVANAGY",
+     "chars": 91,
+     "err": 72,
+     "exact": false,
+     "acc_tot": 4,
+     "acc_hit": 0
+    },
+    "3b343686/r15": {
+     "pred": "MINDENFELÉ !!!",
+     "chars": 104,
+     "err": 91,
+     "exact": false,
+     "acc_tot": 6,
+     "acc_hit": 1
+    },
+    "3b343686/r16": {
+     "pred": "",
+     "chars": 40,
+     "err": 40,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "3b343686/r17": {
+     "pred": "",
+     "chars": 58,
+     "err": 58,
+     "exact": false,
+     "acc_tot": 3,
      "acc_hit": 0
     },
     "0c0bd5d5/r1": {
@@ -25235,33 +30577,33 @@
      "acc_hit": 0
     },
     "0c0bd5d5/r4": {
-     "pred": "",
+     "pred": "KI VAGI,ÉS MI A GECIT KERESEL A PLATÓMON, BAZME ?",
      "chars": 49,
-     "err": 49,
+     "err": 2,
      "exact": false,
      "acc_tot": 2,
-     "acc_hit": 0
+     "acc_hit": 2
     },
     "0c0bd5d5/r5": {
-     "pred": "",
+     "pred": "A GUBACS TERÉZ ÚTON ÜTÖT EL. MINDKÉT LÁBAM ELTÖRŐT, ALÓTA BE FÁJ. FÁJOGAT.",
      "chars": 73,
-     "err": 73,
+     "err": 8,
      "exact": false,
      "acc_tot": 11,
-     "acc_hit": 0
+     "acc_hit": 10
     },
     "0c0bd5d5/r6": {
-     "pred": "",
+     "pred": "FEKSZEM İTT.",
      "chars": 12,
-     "err": 12,
+     "err": 1,
      "exact": false,
      "acc_tot": 0,
      "acc_hit": 0
     },
     "0c0bd5d5/r7": {
-     "pred": "",
+     "pred": "77 22. 683 /FELVÉZLEM",
      "chars": 18,
-     "err": 18,
+     "err": 7,
      "exact": false,
      "acc_tot": 0,
      "acc_hit": 0
@@ -25358,6 +30700,863 @@
      "pred": "77-22-683 / FEVESZEM",
      "chars": 18,
      "err": 5,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    }
+   }
+  },
+  {
+   "model": "tesseract-hun",
+   "method": "browser wasm×1",
+   "strips": 8,
+   "costPerStrip": 0.0,
+   "msPerStrip": 3354.213125050068,
+   "cost": 0.0,
+   "ms": 26833.705000400543,
+   "calls": 0,
+   "errors": 0,
+   "load": 773.0299999713898,
+   "mb": 2.854466,
+   "chars": 3397,
+   "err": 1519,
+   "exact": 11,
+   "acc_tot": 191,
+   "acc_hit": 134,
+   "n": 104,
+   "missed": 7,
+   "invented": 13,
+   "cer": 0.4471592581689726,
+   "accent": 0.7015706806282722,
+   "per": {
+    "2afc78b4/r0": {
+     "pred": "VÉNA!",
+     "chars": 5,
+     "err": 3,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r1": {
+     "pred": "[NAL E! A—\nDeEJó, HOGT\nELJÖTE, €!\n\n: 29",
+     "chars": 29,
+     "err": 14,
+     "exact": false,
+     "acc_tot": 3,
+     "acc_hit": 2
+    },
+    "2afc78b4/r2": {
+     "pred": "",
+     "chars": 5,
+     "err": 5,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 0
+    },
+    "2afc78b4/r4": {
+     "pred": "sacc ACDA fail 5 I\nMoST ARRA GONDOLSZ,\n HoGY, DE KÁR, HOGY\nELKÖLTÖTTEM AT\nELŐLEGET, MOST, [ ,\nLEMONDHATNAM",
+     "chars": 81,
+     "err": 27,
+     "exact": false,
+     "acc_tot": 5,
+     "acc_hit": 4
+    },
+    "2afc78b4/r5": {
+     "pred": "Ld L—— mo]\n(GÁVAÁLÉIR",
+     "chars": 8,
+     "err": 16,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r6": {
+     "pred": "(A MELŐT!\"",
+     "chars": 9,
+     "err": 2,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 0
+    },
+    "2afc78b4/r7": {
+     "pred": "HÁT... KÁBÉ.",
+     "chars": 12,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 3,
+     "acc_hit": 3
+    },
+    "2afc78b4/r8": {
+     "pred": "",
+     "chars": 11,
+     "err": 11,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 0
+    },
+    "2afc78b4/r9": {
+     "pred": "(NA . PATANY Feul)",
+     "chars": 16,
+     "err": 5,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r10": {
+     "pred": "OO ELYJOCO",
+     "chars": 7,
+     "err": 10,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r11": {
+     "pred": "fa\n(CALAVAIE DO\nyV 1",
+     "chars": 8,
+     "err": 13,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r12": {
+     "pred": "NEM BAJ, Az EMBER\nAtégT FIATAL, HOGY\nTANULJON. TTT",
+     "chars": 46,
+     "err": 6,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 1
+    },
+    "2afc78b4/r13": {
+     "pred": "FASZ! Bács",
+     "chars": 11,
+     "err": 2,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 1
+    },
+    "2afc78b4/r14": {
+     "pred": "JEL AYJODE",
+     "chars": 7,
+     "err": 9,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r15": {
+     "pred": "AZA ! !\n JÉZVS, ATYA , ÚRISTEN",
+     "chars": 21,
+     "err": 8,
+     "exact": false,
+     "acc_tot": 2,
+     "acc_hit": 2
+    },
+    "2afc78b4/r16": {
+     "pred": "[VEGALAIRJOS\nFv",
+     "chars": 8,
+     "err": 8,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r17": {
+     "pred": "0 A HÁLÓFÜLKÉBEN LŐ; ír\nEGY KALSTÁLYHOLOGRAM\nFORMÁJÁBAN , DE ITT\nVALÓBAN A SZENTFÖLDI\nLOVAGVÁRAK\nSrúLVSÁT IGTEKEZTEM HOZ\nAz ot E6Y BEDVIN — ,\nKEMENCE, KENNÁS FASPO TF\nTENENYEREG;, ASTIROLÁGIUM..",
+     "chars": 188,
+     "err": 32,
+     "exact": false,
+     "acc_tot": 17,
+     "acc_hit": 13
+    },
+    "2afc78b4/r18": {
+     "pred": "",
+     "chars": 11,
+     "err": 11,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 0
+    },
+    "2afc78b4/r19": {
+     "pred": "CSAK. MÁR. 0EURE)\n2 UNOM.\nSZERT VAGY AT, €!",
+     "chars": 40,
+     "err": 13,
+     "exact": false,
+     "acc_tot": 2,
+     "acc_hit": 1
+    },
+    "2afc78b4/r20": {
+     "pred": "zt , mv bá e\n. HATÓ... EDPIG EGY KAMIONT...",
+     "chars": 29,
+     "err": 17,
+     "exact": false,
+     "acc_tot": 3,
+     "acc_hit": 1
+    },
+    "2afc78b4/r23": {
+     "pred": "[RELAVAGTIC",
+     "chars": 8,
+     "err": 4,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r24": {
+     "pred": ". NYERGES VONTATÓT.",
+     "chars": 17,
+     "err": 2,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 1
+    },
+    "2afc78b4/r25": {
+     "pred": "PARDON . NYERGESVONTATÓT —\nCSINÁLTAM, VII. HENKIK STŰUSÁBAN,\nTRUGADÚR\" LETT A MUNKACÍMG.\n\nITT VAN A PORTFÓLIÓMBAN:Y NYA",
+     "chars": 113,
+     "err": 14,
+     "exact": false,
+     "acc_tot": 8,
+     "acc_hit": 7
+    },
+    "2afc78b4/r26": {
+     "pred": "AAD ... VÁGOM. KÁRPÁT 1!\nMÁG. MESSZIKÖL. ELCAPTAD A\nGROKÁT. Sog A G0JT. FELGASZNA\n\nNIONNAL , MEG EZ 15 ILYEN\n\nu RÉGI\", VAGOD?\n[7] ÁNTIK : !",
+     "chars": 122,
+     "err": 31,
+     "exact": false,
+     "acc_tot": 9,
+     "acc_hit": 6
+    },
+    "2afc78b4/r27": {
+     "pred": "",
+     "chars": 11,
+     "err": 11,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 0
+    },
+    "2afc78b4/r28": {
+     "pred": "OD (FU IO",
+     "chars": 7,
+     "err": 9,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r29": {
+     "pred": "ort",
+     "chars": 4,
+     "err": 3,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r30": {
+     "pred": "alan áll\nSZGVAL, AMIKOR A SVY e!\nPIHENŐBEN KINTJA A\n\nKURVA AZ AövóT AKKO\nNE AZT KÉRVE, MERRE VAN\nA MűzEUmSHoP, VÁGOD?\nIRÁNYNAK ILYEN NEOGLOFTOS\nART DEKŐT GONDOLNÉK.\n\nfa",
+     "chars": 165,
+     "err": 35,
+     "exact": false,
+     "acc_tot": 9,
+     "acc_hit": 6
+    },
+    "2afc78b4/r32": {
+     "pred": "RAGALYIE",
+     "chars": 8,
+     "err": 2,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r33": {
+     "pred": "ERSZ, LBÁG",
+     "chars": 11,
+     "err": 7,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 1
+    },
+    "2afc78b4/r34": {
+     "pred": "fi d——uu7 E\n\nÉRTEM. €Z A p0602, €2 MI?\n\n— MARADNIA KÉU?\nhadi 235 HON",
+     "chars": 40,
+     "err": 38,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 1
+    },
+    "2afc78b4/r35": {
+     "pred": "EaLLL————— 0\nCAKKSIK A FÉNYHEZ . MARAD .",
+     "chars": 24,
+     "err": 14,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 1
+    },
+    "2afc78b4/r36": {
+     "pred": "(, FÉNYKEZ\"?\nA",
+     "chars": 10,
+     "err": 6,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 1
+    },
+    "2afc78b4/r37": {
+     "pred": "OG ED",
+     "chars": 7,
+     "err": 7,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r38": {
+     "pred": "S500N ÁG X6GY. Ő 5 ÁRY HA E)\nFPJOTA KAANÁN\n: 5 94b4. Pl Új NI\n9288 59 PAIN : BZ ol ot 021\n: 66809 b LAKY: : 004 SIÓ\n00] J00] CSS bb 1 PIN\n: Jó9) Jos PSA BRM\ni c; t 99 09 57 /\n, 0409 5, e PA LY 0 NN\nVAsZÖZŐ TEA",
+     "chars": 6,
+     "err": 197,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r40": {
+     "pred": "IGAVELIARI",
+     "chars": 8,
+     "err": 3,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r41": {
+     "pred": "Tiév VOLT AZ\nA SMART? ,",
+     "chars": 21,
+     "err": 2,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 1
+    },
+    "2afc78b4/r42": {
+     "pred": "",
+     "chars": 10,
+     "err": 10,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 0
+    },
+    "2afc78b4/r45": {
+     "pred": "F — S —\n00 íEsz ) DO",
+     "chars": 7,
+     "err": 17,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r46": {
+     "pred": "e\" 4 KATÁDN!\nUs",
+     "chars": 17,
+     "err": 15,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 1
+    },
+    "2afc78b4/r47": {
+     "pred": "(CAVALUER",
+     "chars": 8,
+     "err": 2,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r48": {
+     "pred": "K18",
+     "chars": 6,
+     "err": 6,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r49": {
+     "pred": "MEG —\n1 HAZAVISULEK :",
+     "chars": 16,
+     "err": 6,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "2afc78b4/r50": {
+     "pred": "",
+     "chars": 11,
+     "err": 11,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 0
+    },
+    "2afc78b4/r52": {
+     "pred": "tGSLLEDOD",
+     "chars": 7,
+     "err": 8,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "6cbd56cd/r0": {
+     "pred": "NAGYIURÁM, Ti6oR. FAPÁNAK MI\nVorr A LEPKEGYŰSTŐ FELSZERELÉSÉRE.\nEGY VIASZOSVÁSZON,\nTERI SZNYÁJA -. 4",
+     "chars": 91,
+     "err": 20,
+     "exact": false,
+     "acc_tot": 8,
+     "acc_hit": 8
+    },
+    "6cbd56cd/r1": {
+     "pred": "OTT KEU (ENNIE\nA SUFNIBAN ! Y",
+     "chars": 27,
+     "err": 5,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "6cbd56cd/r2": {
+     "pred": "(Xan\n(Ő JA)...\"",
+     "chars": 8,
+     "err": 9,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 0
+    },
+    "6cbd56cd/r3": {
+     "pred": "[csak LÁTSZÓLAG EGT KISASTOTT ki\nAMIBEN BOMBA KOÉBANT. A\nTULAJDONKÉPPEN EGT 7SENIALIS\n— RENDSZER. A RÁHANICOLÓDASBAN\nET TA SEGÍT A FÉNYKÉPE,",
+     "chars": 135,
+     "err": 31,
+     "exact": false,
+     "acc_tot": 11,
+     "acc_hit": 8
+    },
+    "6cbd56cd/r4": {
+     "pred": "€2 E HELIKOPTER\nS, TORRINA? ,",
+     "chars": 26,
+     "err": 10,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "6cbd56cd/r5": {
+     "pred": "IGEN, MOGE INDUL\nc A VÉPCSŐ[ r—",
+     "chars": 29,
+     "err": 12,
+     "exact": false,
+     "acc_tot": 4,
+     "acc_hit": 1
+    },
+    "6cbd56cd/r6": {
+     "pred": "IE] \", [fí.GAP:BIFÉ\nRARLBASSZAIER\nEG/ KAUKÁZUSI FÉRFI — c\n\n1 SRÁRTOT MÓLÁM S",
+     "chars": 65,
+     "err": 50,
+     "exact": false,
+     "acc_tot": 9,
+     "acc_hit": 4
+    },
+    "6cbd56cd/r7": {
+     "pred": "TELERVITA",
+     "chars": 9,
+     "err": 1,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "6cbd56cd/r8": {
+     "pred": "7, \"\nFŐJI..A BELSO szegyet VILL.\nIT ÁzNAK €077 AKVÁRIUMBAN\nA Szúr FÖLÖN EGY S\nVEGNÁROS ÜVEGBEN !\nA FóssAzmeEG :",
+     "chars": 96,
+     "err": 40,
+     "exact": false,
+     "acc_tot": 10,
+     "acc_hit": 5
+    },
+    "6cbd56cd/r10": {
+     "pred": "TIBoRoM 7\nWa\nNoLT! ,",
+     "chars": 20,
+     "err": 8,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 0
+    },
+    "6cbd56cd/r11": {
+     "pred": ". EMBER)",
+     "chars": 5,
+     "err": 3,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "3b343686/r0": {
+     "pred": "É. ús\nJ Bányá! kesrér \"1 esK\nMmeGvÁRIWE At ELSŐ RANDOMTIBOÉT:\nÉL FATESSNiK NEL!\nAA 2 A kÉRVÉGT!",
+     "chars": 77,
+     "err": 43,
+     "exact": false,
+     "acc_tot": 10,
+     "acc_hit": 8
+    },
+    "3b343686/r2": {
+     "pred": "[ JánpoT RAM: e 06, AMIT CSIrIÁUNA,\n\nMi VENNE Az Elo DOLOG; AMIT CSINALNA;\n\nmA MEGNYERNÉ A Votó ÖTÖST Ő\ne,",
+     "chars": 80,
+     "err": 42,
+     "exact": false,
+     "acc_tot": 7,
+     "acc_hit": 4
+    },
+    "3b343686/r3": {
+     "pred": "SPoRTKOCSI 1",
+     "chars": 11,
+     "err": 2,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "3b343686/r4": {
+     "pred": "PINÁK?",
+     "chars": 6,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 1,
+     "acc_hit": 1
+    },
+    "3b343686/r5": {
+     "pred": "p lomó örösr? )\nHM... LÁSSUK. CSAK...\nHERE... IGEN! A",
+     "chars": 49,
+     "err": 11,
+     "exact": false,
+     "acc_tot": 4,
+     "acc_hit": 4
+    },
+    "3b343686/r6": {
+     "pred": "yait?",
+     "chars": 6,
+     "err": 2,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "3b343686/r7": {
+     "pred": "( AP\nUTAZGATAS?",
+     "chars": 10,
+     "err": 6,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 0
+    },
+    "3b343686/r8": {
+     "pred": "pivár?",
+     "chars": 6,
+     "err": 2,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 1
+    },
+    "3b343686/r10": {
+     "pred": "vIuA?",
+     "chars": 6,
+     "err": 2,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "3b343686/r11": {
+     "pred": "Fwwág?",
+     "chars": 6,
+     "err": 4,
+     "exact": false,
+     "acc_tot": 1,
+     "acc_hit": 1
+    },
+    "3b343686/r13": {
+     "pred": "NexkéL. €6/ KURVAJAGY\n) Pogo?T,\n. TELIS-TELE TIZES\nVIULÁSKULCCSAL ! AGYIG\nma FALVA,\nK€ 19588 EZEF .\ns VÁGOD? 1",
+     "chars": 91,
+     "err": 35,
+     "exact": false,
+     "acc_tot": 4,
+     "acc_hit": 3
+    },
+    "3b343686/r15": {
+     "pred": "Vak: ÉS MINDENHOL, AHOL A KAP, \"7\nMeéGFORDULOK, SZÓENÁM SZÉVEL, MINT\nA PITYPANG A SZALJATT, VAGY? — Agy?\n\nA pee MINDENFELÉ :?:",
+     "chars": 104,
+     "err": 34,
+     "exact": false,
+     "acc_tot": 6,
+     "acc_hit": 5
+    },
+    "3b343686/r16": {
+     "pred": "\"1 ad ta\nMKK\nYAMIKOR OIT EGY HATog 2.\n2 Hogy ,. . ÉSAVAR,\n- ek 4. PAZMÉG,:\nS PT 2 man",
+     "chars": 40,
+     "err": 51,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "3b343686/r17": {
+     "pred": "[ petot BÁRHOVA NYÚLOK,\nOT VEGelén , BAZMEG.\nMEM E61, ÖT!\n! —",
+     "chars": 58,
+     "err": 18,
+     "exact": false,
+     "acc_tot": 3,
+     "acc_hit": 3
+    },
+    "0c0bd5d5/r1": {
+     "pred": "AD ratikkR.\ní KRAK AAN",
+     "chars": 14,
+     "err": 18,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "0c0bd5d5/r2": {
+     "pred": "1\nMi A FASLOM?",
+     "chars": 12,
+     "err": 3,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "0c0bd5d5/r3": {
+     "pred": "FT11- €33 [Fewenen",
+     "chars": 18,
+     "err": 15,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "0c0bd5d5/r4": {
+     "pred": "dok sPRÉéS ÉP úri Á Báni —\nFi VAGILES Mi A GECIT\n\nKERSSEL A PLATÓMON ,\nBAZME ?",
+     "chars": 49,
+     "err": 32,
+     "exact": false,
+     "acc_tot": 2,
+     "acc_hit": 1
+    },
+    "0c0bd5d5/r5": {
+     "pred": "\"A GVBACS TERÉZ\nÚTON ÜTÖTEL,\nMINDKÉT LÁBAM\nELTSRÖTT, AZÓTA !\n\nFAJ. FAJOGAT. I",
+     "chars": 73,
+     "err": 10,
+     "exact": false,
+     "acc_tot": 11,
+     "acc_hit": 8
+    },
+    "0c0bd5d5/r6": {
+     "pred": "FEKSUEM ITT.)",
+     "chars": 12,
+     "err": 2,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "0c0bd5d5/r7": {
+     "pred": "A 683 [favenem",
+     "chars": 18,
+     "err": 11,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "0c0bd5d5/r8": {
+     "pred": "Nem 1$ JÁRTAM ARRA MA, BAZMC...\nA közege SE.",
+     "chars": 45,
+     "err": 5,
+     "exact": false,
+     "acc_tot": 2,
+     "acc_hit": 2
+    },
+    "0c0bd5d5/r9": {
+     "pred": "€z MŰUI KÉT KEDDEN\nTÖRTÉNT. [—",
+     "chars": 29,
+     "err": 8,
+     "exact": false,
+     "acc_tot": 4,
+     "acc_hit": 3
+    },
+    "0c0bd5d5/r11": {
+     "pred": "HA- 633  FELVESZM",
+     "chars": 18,
+     "err": 8,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "0c0bd5d5/r12": {
+     "pred": "ir --egpye-—— SA\n MóÚt HÉT KEOD?\n\nNE KAMVZRA !\n. HOGY NEM HALTÁL ÉHEN? !",
+     "chars": 48,
+     "err": 25,
+     "exact": false,
+     "acc_tot": 5,
+     "acc_hit": 3
+    },
+    "0c0bd5d5/r13": {
+     "pred": "KIFELÉ JÖTTEM A BOLTBÓL,\nAMiKoR. TEUBE LAPOT...\nKET NAGY\nKA! SZATYAR.. Í V72",
+     "chars": 68,
+     "err": 17,
+     "exact": false,
+     "acc_tot": 4,
+     "acc_hit": 3
+    },
+    "0c0bd5d5/r14": {
+     "pred": "111 683 (Fewettem",
+     "chars": 18,
+     "err": 11,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "0c0bd5d5/r15": {
+     "pred": "AKURVAÉLET!",
+     "chars": 11,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 1,
+     "acc_hit": 1
+    },
+    "0c0bd5d5/r16": {
+     "pred": "FH. 683 /fevvEYVEM",
+     "chars": 18,
+     "err": 9,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "0c0bd5d5/r19": {
+     "pred": "/ ON\nADA RA Gy... !",
+     "chars": 13,
+     "err": 11,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "0c0bd5d5/r20": {
+     "pred": "kzt . 683/FELVEVYEM",
+     "chars": 18,
+     "err": 7,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "0c0bd5d5/r21": {
+     "pred": "11 €GY PtÉD, BAZME.\nÉJJELENTE MÁR\nHiDeGErF VANNAK .",
+     "chars": 50,
+     "err": 7,
+     "exact": false,
+     "acc_tot": 3,
+     "acc_hit": 3
+    },
+    "0c0bd5d5/r22": {
+     "pred": "",
+     "chars": 18,
+     "err": 18,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "89371298/r0": {
+     "pred": "Oh shoot, I fell asleep\nwith the window open,\nagain...",
+     "chars": 54,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "89371298/r1": {
+     "pred": "...and why can I see\nKomona through\nthe window?",
+     "chars": 47,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "89371298/r2": {
+     "pred": "KOMONA!",
+     "chars": 7,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "89371298/r3": {
+     "pred": "The Potion\nContest!",
+     "chars": 19,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "89371298/r4": {
+     "pred": "7! 4\nI must\"ve...\nmust\"ve accidentally\nfallen asleep!",
+     "chars": 48,
+     "err": 7,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "89371298/r5": {
+     "pred": "shut?",
+     "chars": 7,
+     "err": 4,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "89371298/r6": {
+     "pred": "Where\nam I ?!?",
+     "chars": 13,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "35ce81ab/r0": {
+     "pred": "ál Carrot!\n\nVYou\"re so cute to have\nthought of bringing me to\nv the Contest!",
+     "chars": 69,
+     "err": 7,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "35ce81ab/r1": {
+     "pred": "Fan-tas-tic!",
+     "chars": 12,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "35ce81ab/r2": {
+     "pred": "You even thought of\nbringing a potion, my\nclothes, and my hat...",
+     "chars": 64,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "35ce81ab/r3": {
+     "pred": "—— ...letősseewhich\n! potion yov brought...",
+     "chars": 40,
+     "err": 7,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "8f3737ae/r0": {
+     "pred": "How dol\nexit vim?",
+     "chars": 18,
+     "err": 2,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "8f3737ae/r1": {
+     "pred": "Why would I\nexit vim?",
+     "chars": 21,
+     "err": 0,
+     "exact": true,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "246d3aa3/r0": {
+     "pred": "y -\nREMAIN\nNIR manito ÍMIYVÁPÚUJTE R!\nb ABOUTE — ÜL 4525",
+     "chars": 34,
+     "err": 37,
+     "exact": false,
+     "acc_tot": 0,
+     "acc_hit": 0
+    },
+    "246d3aa3/r1": {
+     "pred": "IT CONTAINS MULTITUDESÉFRIENDSSENEMIESŐ\nLOVE: HATE. TO REDUGE IT T0 ONE OR THE OTHER\n7 1S AN EKERCISE IN FOOLISHNESS.",
+     "chars": 117,
+     "err": 12,
      "exact": false,
      "acc_tot": 0,
      "acc_hit": 0

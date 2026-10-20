@@ -1,0 +1,52 @@
+{
+  "spec": "openrouter:google/gemini-3.8-flash",
+  "log": "../bench/llm/judge/7f4544238091a9ba5e2b2bd258ae655758fe9317720756e10e930930652af90e/llm/judge-tr-en.json",
+  "text": "{\"candidates\":{\"A\":{\"accuracy\":9,\"naturalness\":9,\"humour\":9,\"voice\":9,\"fit\":9,\"overall\":9,\"worst\":\"r3: 'bőrös gally' ('skin-covered twig') became 'limp twig', which loses the leathery skin gag\"},\"B\":{\"accuracy\":6,\"naturalness\":7,\"humour\":6,\"voice\":7,\"fit\":6,\"overall\":6,\"worst\":\"r4: 'shootin'' completely misunderstands 'tegelni' (graffiti tagging)\"},\"C\":{\"accuracy\":6,\"naturalness\":7,\"humour\":6,\"voice\":6,\"fit\":8,\"overall\":6,\"worst\":\"r4: mistranslated 'tegelni' as 'shootin''\"}},\"ranking\":[\"A\",\"C\",\"B\"],\"notes\":\"Candidate A actually read the text correctly: 'tegelni' refers to graffiti tagging the wall (the X's), and 'bűvkör' is a magic circle (which B and C mistranslated based on flawed notes). Candidate A also kept all character limits and delivered punchy comic insults.\"}",
+  "json": {
+    "candidates": {
+      "A": {
+        "accuracy": 9,
+        "naturalness": 9,
+        "humour": 9,
+        "voice": 9,
+        "fit": 9,
+        "overall": 9,
+        "worst": "r3: 'bőrös gally' ('skin-covered twig') became 'limp twig', which loses the leathery skin gag"
+      },
+      "B": {
+        "accuracy": 6,
+        "naturalness": 7,
+        "humour": 6,
+        "voice": 7,
+        "fit": 6,
+        "overall": 6,
+        "worst": "r4: 'shootin'' completely misunderstands 'tegelni' (graffiti tagging)"
+      },
+      "C": {
+        "accuracy": 6,
+        "naturalness": 7,
+        "humour": 6,
+        "voice": 6,
+        "fit": 8,
+        "overall": 6,
+        "worst": "r4: mistranslated 'tegelni' as 'shootin''"
+      }
+    },
+    "ranking": [
+      "A",
+      "C",
+      "B"
+    ],
+    "notes": "Candidate A actually read the text correctly: 'tegelni' refers to graffiti tagging the wall (the X's), and 'bűvkör' is a magic circle (which B and C mistranslated based on flawed notes). Candidate A also kept all character limits and delivered punchy comic insults."
+  },
+  "usage": {
+    "input_tokens": 10435,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 1535,
+    "reasoning_tokens": 1297
+  },
+  "costUsd": 0.0135825,
+  "ms": 12673,
+  "at": "2026-10-20T07:40:28.156573125Z"
+}
