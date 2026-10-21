@@ -273,6 +273,34 @@ User insight (2026-10-21): teachers grab whatever pages they find (textbooks, ot
 - Habits: free first; pay $5-15/mo if it saves prep hours; share tools inside groups fast; prep evenings/weekends; mix of print (school) and screen share (online tutors).
 - Positioning gap: "AI worksheet generators" make **new text with no visuals**. Generic PDF editors swap text **without understanding** (no level, no localization). Ours: keep visual, rewrite meaningfully, re-letter to fit.
 
+#### Worksheet-sharing platforms: how teachers solve this today
+
+The user remembers (2026-10-21) a Hungarian-founded site, ~10 years ago, where indie teachers shared worksheets; the founder was surprised by the user's "make a video a questionnaire" demo (videojemmy). **Most likely iSLCollective**: co-founder Peter Laszlo ("Kisdobos", Hungarian nickname), community of teachers sharing home-made worksheets, later shipped a **Video Quiz Creator** (gap-fill, MCQ, unscramble over YouTube). Nationality/location not confirmed by search; confirm with the user's contact.
+
+| platform | model | how teachers use it | fit for us |
+|---|---|---|---|
+| iSLCollective | free downloads, ads; upload rule: you must own the material | share/download Word/PDF/PPT sheets; video quizzes | **best partner**: Hungarian, already makes creator tools, 2M+ teacher claim, 3.65M visits/mo. Our page adapter = their next creator tool |
+| ESL Printables / Liveworksheets | free, registered users 1.1M | Liveworksheets turns a static PDF/image into an interactive sheet (teacher draws answer boxes over the page) | closest workflow to ours: **start from an existing page image**. They add boxes; we rewrite the text |
+| TPT (IXL) | paid marketplace, top 1% sellers = 81% of sales | buy/sell polished packs | sales channel for packs made with our tool (seller must own source) |
+| Wordwall | freemium, ~46M visits/mo | interactive games from word lists | no page images; adjacent |
+| Twinkl, BusyTeacher | subscription / free + ads | ready-made sheets | adjacent, did not check |
+| Canva, Google Docs | free | rebuild page from scratch | the workaround we replace |
+
+Today's workarounds for "adapt this page" (opinion, from practice):
+
+- retype everything in Word/Canva, paste screenshots of the pictures.
+- white-out text in Paint / PDF editor, type over it, fonts don't match.
+- ChatGPT to rewrite text, then manual layout.
+- Liveworksheets: keep page, only add answer boxes; text unchanged.
+- pay Fiverr / just use the page as-is.
+
+How it fits (opinion):
+
+- The platforms solve **distribution** (find + share sheets) and **interactivity** (boxes, quizzes). Nobody solves **in-place rewrite of an existing page**. That's the missing step between "found a page" and "upload my version".
+- Upload rule ("you must be the creator") pushes adapted copyrighted pages out. Our tool lets teachers start from own/CC/public-domain pages and remix safely; or adapt for private class use only.
+- Partnership path: pitch iSLCollective founder (user has prior contact): embed the browser engine (AGPL, runs client side, ~$0 hosting) as "Adapt this worksheet" button; LLM credits billed through us or them. Video quiz precedent = they already ship creator tools on top of existing media.
+- Fallback: free tier + "made with" footer on uploaded sheets = viral loop inside these platforms.
+
 #### Legal (from memory, not checked today)
 
 - Teachers copying textbook pages: often infringement (HK EDB explicitly excludes workbooks/worksheets from school licence). In-class use may fall under EU DSM Art. 5 teaching exception under conditions; sharing adapted textbook pages on ISLCollective/TPT = infringement.
@@ -382,3 +410,4 @@ Missing for free tier: printed-text detection, click-to-blank UI, PDF export, pr
 - Language tutoring market: https://meticulousresearch.com/reports/online-language-tutoring-market-5691, https://www.ibisworld.com/united-states/industry/language-instruction/1543/
 - Mantra / Orange: https://www.pixivision.net/en/a/7427, https://www.afpbb.com/articles/-/3518256
 - Corporate comics (vendor content): https://www.adobe.com/express/learn/blog/comic-strip-maker
+- iSLCollective founder + video quiz: https://wiki.creativecommons.org/wiki/The_Internet_Second_Language_Collective_(iSLCollective), https://www.slj.com/story/isl-internet-second-language-collective, https://www.educatorstechnology.com/2022/10/islcollective-easily-create-esl-popup.html, https://alternativeto.net/software/islcollective/about
