@@ -9,6 +9,7 @@ Product recap: browser-only. Detect bubbles (ONNX) -> OCR (Paddle + cheap LLM) -
 - Manga readers = crowded, free tools, pirate-adjacent. Not the payer.
 - Payers = people who **own or license the text** and need **finished pages**: creators, pro translators/letterers, small publishers, syndicated cartoonists, marketing teams.
 - Surprise segment with reach: **language teachers**. Same pipeline (OCR + erase + re-letter) makes cloze worksheets. Huge, findable audience (TPT, ISLCollective, FB groups). Low price, high volume.
+- Bigger version (§3.4): teachers + **private tutors** adapt **any page**, not just comics: textbook pages, worksheets, menus, ads, signs. "Keep the picture, change the words." AI worksheet tools (MagicSchool, Diffit, Twee) generate new text; none edits an existing visual page in place. Gap = ours. Needs printed-text detection + PDF input.
 - Top 3 to test: **1. webcomic creators**, **2. pro comic translators/letterers**, **3. ESL / foreign-language teachers**.
 - Biggest risk across creator segments: **anti-AI sentiment among artists**. Pitch = "we touch text only, never art; you review every line".
 
@@ -107,6 +108,7 @@ Scores 1-5 (5 = best). WTP = willingness to pay. Reach = how cheap to find them.
 | 4 | small publishers / indie imprints | backlist into new language, pitch rights abroad (sample chapter) | 5 | 2 | 5 | 3 | **15** | print res, CMYK/PDF, bleed, project review workflow, font licensing |
 | 5 | marketing / corporate comics | localize brand comics, HR/compliance comics, onboarding strips | 4 | 2 | 5 | 3 | **14** | batch to N languages, brand font upload, SVG/PDF, team account, invoice |
 | 6 | ESL / foreign-language teachers | cloze worksheets, vocab lists, graded reading, "write the dialogue" tasks | 3 | 4 | 3 | 3 | **13** | blank-bubble mode, cloze generator, answer key, PDF A4/Letter, level control |
+| 6b | teachers + private tutors: **page adapter** (any image/PDF page) | rewrite/level-down/localize/blank text in place on textbook pages, worksheets, authentic materials | 3 | 4 | 2 | 2 | **11** now, **14** once printed text works | printed-text detection, PDF in/out, printed font matching, tables/columns |
 | 7 | language learners (self-study) | read comic in target lang with gloss, side-by-side, tap to reveal | 2 | 4 | 3 | 3 | **12** | bilingual toggle, word gloss, Anki export, keep original text visible |
 | 8 | accessibility | alt text / transcript for screen readers; re-letter same language in dyslexia-friendly font, larger text | 2 | 2 | 4 | 4 | **12** | same-language re-letter, alt-text/transcript export (OCR + scene already = 80% there) |
 | 9 | kids' / picture books | bilingual editions, heritage-language kids | 3 | 2 | 4 | 2 | **11** | non-bubble text blocks, long text layout, print |
@@ -200,6 +202,130 @@ All reuse: detect -> OCR -> erase -> re-letter.
   - Measure: downloads/week, waitlist signups, paid sales. Go if > 100 downloads in 4 weeks or > 30 signups.
 - **Missing features**: worksheet mode (choose words to blank, by POS/CEFR level), answer key page, PDF export with header (name/date lines), empty-bubble mode one-click, vocab list, simplify-text (graded), CC/public-domain comic library to pick from (teachers lack source material), classroom-safe filter.
 
+### 3.4 Teachers + private tutors: page adapter (beyond bubbles)
+
+User insight (2026-10-21): teachers grab whatever pages they find (textbooks, other teachers' sheets, scans, screenshots), then rewrite them into handouts. They change **all** text, not just speech bubbles. That is a far bigger job-to-be-done than comic worksheets.
+
+- **What they do to a page** (opinion, from practice + Malaysian ESL study: teachers "add, modify, simplify" textbook content, extra workload):
+  - level down / level up text (CEFR A2 -> B1).
+  - localize: swap names, places, prices, currency, culture refs (UK textbook -> Hungarian kid's town).
+  - personalize for one student: tutor's student loves football -> rewrite reading text around football, keep the picture.
+  - blank out: cloze, remove answers from an answer-filled sheet, remove instructions to make a speaking task.
+  - translate instructions to L1 for beginners, or remove L1.
+  - fix: typos, outdated content (prices, tech), US <-> UK spelling.
+  - reuse visuals: menus, ads, timetables, signs, infographics = "authentic materials" with new text.
+- **Why we fit**: pipeline = detect text -> OCR -> LLM rewrite with context -> erase -> re-letter. Same as comics. Scene call = "what is on this page" context for the rewrite.
+- **Why private tutors > school teachers** (opinion):
+  - Pay out of own pocket, no procurement. Decide alone, same day.
+  - 1:1 lessons -> material must be personalized per student -> many adaptations/week.
+  - Prep time unpaid -> time saved = money.
+  - Online lessons: share PNG on screen / whiteboard -> PNG export already enough. Print PDF second.
+
+#### Size
+
+| proxy | value | note |
+|---|---|---|
+| Preply tutors | 32k (own profile) vs 100k+ (Wikipedia, 2026) | sources disagree; English tutors 25k+ |
+| italki English tutors | ~8,000 | one review; platform total unknown |
+| Twee (AI ESL lesson tool) | "500k+ teachers" claim; ~170k visits/mo, 93k unique (Dec 2025) | marketing claim vs traffic |
+| ISLCollective | "2M+ ESL teachers" claim; ~3.65M visits/mo (Mar 2025, Semrush) | |
+| Wordwall | ~46M visits/mo (Mar 2025, Semrush) | interactive activities, huge |
+| ESL Printables (Liveworksheets parent) | 1.11M registered (2025-10) | |
+| online language tutoring market | ~$5.9B (2025) | Meticulous Research, internally inconsistent |
+| US language instruction businesses | 13,732 (2025) | IBISWorld, US only |
+| freelance tutors worldwide | unknown | no source found |
+| % teachers adapting copied pages | unknown | no survey found; HK EDB runs biennial copying survey (results not found) |
+
+- Rough SAM (opinion): online platform tutors ~50k-150k (Preply + italki + Cambly, did not check Cambly) + offline private tutors (unknown, likely several x) + school teachers who self-make materials (ISLCollective/Wordwall user base, millions). Even 0.1% paying at $5-10/mo = 50-150+ payers from tutors alone: better than creators.
+
+#### Where they hang out
+
+| place | what | size | note |
+|---|---|---|---|
+| Preply Tutor Community | official, approved tutors only | unknown | need a tutor account to post |
+| r/Preply | unofficial | ~5k | |
+| r/PreplyTutors | tutors vent anonymously | ~2k | |
+| r/iTalki | teachers + students | ~10k | |
+| r/TEFL, r/ESL_Teachers, r/Teachers | classroom + TEFL | did not check | |
+| r/EnglishLearning, r/languagelearning | learners (tutors lurk to find students) | 550-700k, 3.4M | |
+| Facebook groups | main teacher hangout | only small ones found (3-17k); big ones unknown | search FB directly: "ESL teachers", "online English teachers", "Preply tutors" |
+| ISLCollective, Liveworksheets, TPT | share/sell worksheets | millions (claims) | upload free adapted sheets = discovery channel |
+| YouTube / Instagram / TikTok teacher creators | lesson-hack videos, "teacher tools" reviews | did not check | 1 demo short "adapt any textbook page in 30 s" = test |
+| educatorstechnology.com, weareteachers.com, chalkie/monsha blog lists | "best AI tools for teachers" listicles | | get listed: free backlinks, teachers read these |
+| IATEFL, IATEFL-Hungary (conferences, webinars, newsletter) | PD | | workshop talk = credibility |
+| Hungarian | no angoltanár/magántanár FB group found by search | unknown | search FB with "angol magántanár", "nyelvtanárok"; érettségi FB groups have tutors offering lessons |
+
+#### What they use otherwise (competitors + habits)
+
+| tool | does | price | edits existing page in place? |
+|---|---|---|---|
+| Canva (Edu free) | design handouts, flashcards, templates | free edu / Pro | no (rebuild from scratch; "Magic" edit on photos, did not check text) |
+| Google Docs / Slides / Forms | plain sheets, quizzes | free | no |
+| MagicSchool | 60+ AI tools, worksheet gen (cloze, MCQ) | ~$8-10/mo, $99/yr | no, text only |
+| Diffit | rewrite text at reading levels + questions | ~$14.99/mo | no, text only |
+| Twee | AI ESL lessons from YouTube/text | freemium | no |
+| Chalkie | AI worksheets | ~$6.65/mo yearly | no |
+| Wordwall, Quizlet, Kahoot, Liveworksheets | interactive activities | freemium | no |
+| ChatGPT / Claude / Gemini | rewrite text, make tasks | free-$20/mo | partly: image gen can redraw, but mangles layout/text |
+| WPS Office AI text edit, PDF Reader Pro | edit text in scanned image/PDF | freemium | **yes, generic** (no level/rewrite, no LLM context) |
+| Fiverr "edit text in scan" | human | per job | yes, slow |
+
+- Habits: free first; pay $5-15/mo if it saves prep hours; share tools inside groups fast; prep evenings/weekends; mix of print (school) and screen share (online tutors).
+- Positioning gap: "AI worksheet generators" make **new text with no visuals**. Generic PDF editors swap text **without understanding** (no level, no localization). Ours: keep visual, rewrite meaningfully, re-letter to fit.
+
+#### Legal (from memory, not checked today)
+
+- Teachers copying textbook pages: often infringement (HK EDB explicitly excludes workbooks/worksheets from school licence). In-class use may fall under EU DSM Art. 5 teaching exception under conditions; sharing adapted textbook pages on ISLCollective/TPT = infringement.
+- Tool stays neutral (like a photocopier, PDF editor). We host nothing in local mode.
+- **Market "adapt your materials / authentic materials / your own sheets"**. Never "copy any textbook". Demos with own or CC/public-domain pages.
+
+#### First experiment (cheap)
+
+1. Concierge: post in r/PreplyTutors, r/iTalki, r/TEFL, 2-3 FB groups: "Send me one page you'd like adapted (level, topic, blanks). I'll do it free with a tool I'm building." Cap 20.
+   - Do it with current pipeline + manual fixes. Log what text types break (dense print, tables).
+   - Ask: "How long would this take you? Would you pay $5/mo / $1/page?"
+2. 30 s screen recording: textbook-style page (own-made) -> A2 football version. Post as YouTube Short / TikTok / Reel. Measure views + comments asking "where".
+3. Fake door on site: "Adapt a worksheet (beta)" -> email waitlist.
+- Go if >= 10 of 20 requests come in within 2 weeks, >= 5 say they'd pay, or > 50 waitlist.
+
+#### Missing features
+
+- printed-text detection for dense pages (current detector = comic bubbles + `text_free`; did not check how it does on textbook pages. Likely add PaddleOCR text-det for print).
+- PDF input (multi-page) + PDF output (A4/Letter).
+- printed font matching (sans/serif/weight) instead of comic hand font.
+- block-level rewrite with length budget (text must fit original box).
+- rewrite presets: level (CEFR), localize (country), personalize (topic), cloze, remove answers, translate instructions.
+- tables / columns / numbered lists layout.
+- image-region keep-out (don't erase text in photos unless chosen).
+
+## 3.5 Pricing shape: free browser tool, paid automation (user idea 2026-10-21)
+
+Rule: **everything that runs in the browser without an LLM = free forever**. Costs us $0 (static host, user's CPU/GPU). **Anything that calls an LLM = paid** (credits) or BYOK.
+
+| tier | what | runs | cost to us | price |
+|---|---|---|---|---|
+| Free | detect text/bubbles (ONNX), OCR (Paddle), erase/infill, manual edit + re-letter, click-a-word-to-blank, empty-bubble mode, font pick, PNG/PDF export | browser | $0 | free |
+| BYOK | all LLM features with user's own OpenRouter key | browser -> provider | $0 | free |
+| Credits | same LLM features, no key setup | browser -> our proxy | ~$0.08/strip-page | ~2x cost (see `byok-plan.md` O1) |
+| Pro (later) | batch "auto make X for printing": whole chapter/worksheet pack, presets, glossary, series memory | proxy | per job | $5-15/mo or per pack |
+
+Paid automation examples ("auto make X"):
+
+- **Teachers/tutors**: "make A2 cloze worksheet + answer key from this page", "level this page down to B1", "rewrite reading around football", "5-page vocab pack from this comic", "print-ready class set (A4, name/date header)".
+- **Creators**: "translate chapter 3 into ES/FR/DE, keep glossary", "print-ready PDF with bleed".
+- **Accessibility**: "alt text + transcript for whole archive".
+- **Marketing**: "this comic in 8 languages, brand font".
+
+Why this split works (opinion):
+
+- Free tier is genuinely useful alone: manual cloze + erase + re-letter = worksheet tool with no account, no key. Teachers share free tools -> reach. FOSS stars.
+- Free tier has zero marginal cost -> no abuse/cost risk. Passive (`byok-plan.md` O4).
+- Paid = time saved (one click vs 20 min of manual edits). Easy upsell: button "Do this automatically (3 credits)" right next to the manual tool.
+- **Teachers will not set up an OpenRouter key.** BYOK covers devs/nerds; teachers/tutors need credits (or school-paid). So teacher segment is the main reason to build the credit proxy (stage 3 in `byok-plan.md` O2).
+- Open question: free LLM taster (e.g. 3 auto pages on signup) needs accounts + abuse control. Alternative: no taster, show before/after demos instead.
+
+Missing for free tier: printed-text detection, click-to-blank UI, PDF export, print fonts. All non-LLM.
+
 ## 4. Segments not to target (opinion)
 
 - **Scanlation groups / manga readers**: free competitors (manga-image-translator 10.5k stars, Koharu), infringement, hosting liability, bad press with creators (= our real payers).
@@ -220,6 +346,8 @@ All reuse: detect -> OCR -> erase -> re-letter.
 | long-strip (vertical Webtoon) support | creators | M |
 | print export (CMYK, bleed, PDF) | publishers, museums, kids' books | L |
 | batch to N languages | marketing, cartoonists | M |
+| printed-text detection + PDF in/out + print font match | teachers/tutors page adapter | M-L |
+| rewrite presets (level, localize, personalize, cloze) | teachers/tutors | S (prompts) |
 
 ## Sources
 
@@ -240,5 +368,17 @@ All reuse: detect -> OCR -> erase -> re-letter.
 - Storyboard That pricing: https://www.storyboardthat.com/education-plans, https://help.storyboardthat.com/subscription-types/account-types-education-edition
 - Lettering rates: https://jimkeefe.com/?p=3644, https://adityab.substack.com/p/strange-animals-27jun2020-money-matters, https://www.animenewsnetwork.com/bbs/phpBB2/viewtopic.php?p=5267550
 - Comic translation pricing: https://bel.proz.com/forum/money_matters/358087-translating_graphic_novels.html
+- Preply / italki tutors: https://en.wikipedia.org/wiki/Preply, https://www.leonardoenglish.com/blog/italki-vs-preply-vs-cambly-vs-verbling-review, https://storylearning.com/blog/italki-vs-preply
+- Tutor subreddits + Preply community: https://gummysearch.com/r/PreplyTutors/, https://gummysearch.com/r/Preply, https://gummysearch.com/r/iTalki, https://preply.com/en/blog/how-the-preply-tutor-community-powers-learner-progress
+- Twee: https://twee.com/about, https://aitools-main-fajlzj.laravel.cloud/tools/twee/statistics
+- ISLCollective / Wordwall / ESL Printables: https://pdu.itu.edu.tr/educational-technologies/SFL-picks/islcollective, https://fr.semrush.com/website/liveworksheets.com/competitors, https://www.eslprintables.com/?page=18
+- AI worksheet tools pricing: https://chalkie.ai/en/blog/ai-worksheet-generator-tools, https://chalkie.ai/en/blog/diffit-alternatives-teachers, https://www.weareteachers.com/ai-worksheet-generators/, https://www.educatorstechnology.com/2026/02/ai-worksheet-generators.html, https://monsha.ai/blog/7-best-ai-worksheet-generator-tools-for-teachers
+- Canva for tutors: https://brendacadman.com/how-language-tutors-can-use-canva/
+- Edit text in scans: https://www.wps.com/academy/edit-text-in-image-wps-guide-quick-tutorials-1898060/, https://www.pdfreaderpro.com/blog/edit-scanned-pdf, https://www.fiverr.com/hadouch/edit-text-in-scanned-documents-and-screenshots
+- Teachers adapting textbooks (Malaysia 2024): https://repo.uum.edu.my/id/eprint/32236/
+- HK EDB copying policy: https://www.edb.gov.hk/attachment/en/edu-system/primary-secondary/applicable-to-primary-secondary/it-in-edu/CM/EDBCM18019E-Copyright.pdf
+- Teacher FB groups / forums: https://thehiveindex.com/communities/teacher-discussion-forums/, https://thehiveindex.com/communities/foreign-language-teaching/, https://callej.org/index.php/journal/article/view/316
+- IATEFL-Hungary: https://digital-skills-jobs.europa.eu/en/community/networking/organisations/angoltanarok-nemzetkozi-egyesulete-magyarorszag
+- Language tutoring market: https://meticulousresearch.com/reports/online-language-tutoring-market-5691, https://www.ibisworld.com/united-states/industry/language-instruction/1543/
 - Mantra / Orange: https://www.pixivision.net/en/a/7427, https://www.afpbb.com/articles/-/3518256
 - Corporate comics (vendor content): https://www.adobe.com/express/learn/blog/comic-strip-maker
