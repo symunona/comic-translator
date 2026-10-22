@@ -1,0 +1,30 @@
+{
+  "spec": "openrouter:qwen/qwen3.8-flash",
+  "log": "../bench/llm/prompts/2afc78b45293acd677ffcba91f53fea50838d406d2dd965846e83408657e58c7/llm/ocr-p6.json",
+  "text": "{\n  \"regions\": [\n    {\n      \"n\": 30,\n      \"kind\": \"speech\",\n      \"lines\": [\n        \"SZÓVAL, AMIKOR A GROBKUGELNI\",\n        \"PIHENŐBEN KINYITJA A\",\n        \"KURVA AZ AJTÓT AKKOR\",\n        \"NE AZT KÉRDEZZE, MERRE VAN\",\n        \"A MÚZEUMSHOP, VÁGOD?\",\n        \"IRÁNYNAK ILYEN NEOLOFTOS\",\n        \"ART DEKÓT GONDOLNÉK.\"\n      ],\n      \"align\": \"left\",\n      \"caps\": true\n    },\n    {\n      \"n\": 31,\n      \"kind\": \"none\",\n      \"lines\": [],\n      \"align\": \"left\",\n      \"caps\": false\n    },\n    {\n      \"n\": 32,\n      \"kind\": \"sign\",\n      \"lines\": [\n        \"RACALVIE\"\n      ],\n      \"align\": \"center\",\n      \"caps\": true\n    },\n    {\n      \"n\": 33,\n      \"kind\": \"sign\",\n      \"lines\": [\n        \"FASZI BÁCS\"\n      ],\n      \"align\": \"center\",\n      \"caps\": true\n    },\n    {\n      \"n\": 34,\n      \"kind\": \"speech\",\n      \"lines\": [\n        \"ÉRTEM. EZ A DOBOZ, EZ MI?\",\n        \"MARADNIA KELL?\"\n      ],\n      \"align\": \"left\",\n      \"caps\": true\n    },\n    {\n      \"n\": 35,\n      \"kind\": \"speech\",\n      \"lines\": [\n        \"AKKSIK A FÉNYHEZ. MARAD.\"\n      ],\n      \"align\": \"left\",\n      \"caps\": true\n    },\n    {\n      \"n\": 36,\n      \"kind\": \"speech\",\n      \"lines\": [\n        \"„FÉNYHEZ\"?\"\n      ],\n      \"align\": \"center\",\n      \"caps\": true\n    },\n    {\n      \"n\": 37,\n      \"kind\": \"sign\",\n      \"lines\": [\n        \"FASZI-1\"\n      ],\n      \"align\": \"center\",\n      \"caps\": true\n    }\n  ],\n  \"unboxed\": []\n}",
+  "json": {
+    "n": 30,
+    "kind": "speech",
+    "lines": [
+      "SZÓVAL, AMIKOR A GROBKUGELNI",
+      "PIHENŐBEN KINYITJA A",
+      "KURVA AZ AJTÓT AKKOR",
+      "NE AZT KÉRDEZZE, MERRE VAN",
+      "A MÚZEUMSHOP, VÁGOD?",
+      "IRÁNYNAK ILYEN NEOLOFTOS",
+      "ART DEKÓT GONDOLNÉK."
+    ],
+    "align": "left",
+    "caps": true
+  },
+  "usage": {
+    "input_tokens": 2093,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 1346,
+    "reasoning_tokens": 770
+  },
+  "costUsd": 0.00094657,
+  "ms": 25466,
+  "at": "2026-10-20T07:10:17.173417403Z"
+}

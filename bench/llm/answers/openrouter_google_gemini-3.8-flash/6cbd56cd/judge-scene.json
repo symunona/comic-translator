@@ -1,0 +1,70 @@
+{
+  "spec": "openrouter:google/gemini-3.8-flash",
+  "log": "../bench/llm/judge/6cbd56cdd933343ad87de8c3e3dd772f7f771dd3f4786507d9786c71aad26a05/llm/judge-scene.json",
+  "text": "{\"candidates\":{\"A\":{\"speakers\":4,\"jokes\":3,\"notes\":4,\"overall\":3,\"errors\":\"Hallucinates an off-screen television documentary for r6, r9, and r11; completely misses the core plot where the grandson enters the shed and discovers the corpse.\"},\"B\":{\"speakers\":10,\"jokes\":10,\"notes\":10,\"overall\":10,\"errors\":\"None. Correctly identifies all speakers, off-panel dialogue, and explains the dark telekvita/butterfly collector punchline perfectly.\"},\"C\":{\"speakers\":8,\"jokes\":6,\"notes\":6,\"overall\":6,\"errors\":\"Misattributes r1 and r2; misses the meaning of 'telekvita' (guesses it might be a brand name) and fails to connect it to the murdered neighbor punchline.\"},\"D\":{\"speakers\":6,\"jokes\":4,\"notes\":5,\"overall\":5,\"errors\":\"Misattributes r6 and r9 to the grandmother instead of the grandson shouting from off-panel; claims 'telekvita' is not a recognized Hungarian word.\"},\"E\":{\"speakers\":10,\"jokes\":10,\"notes\":10,\"overall\":10,\"errors\":\"None. Flawless identification of all speakers, brilliant cultural explanations of 'sufni', 'kupleráj', 'telekvita', and the dark comedy punchline.\"},\"F\":{\"speakers\":6,\"jokes\":4,\"notes\":5,\"overall\":5,\"errors\":\"Misattributes r1, r2, r6, and r9 (thinks grandma is shouting the screams and disgust from the shed); fails to understand 'telekvita'.\"}},\"ranking\":[\"B\",\"E\",\"C\",\"D\",\"F\",\"A\"],\"notes\":\"B and E are both outstanding sheets that correctly follow the bubble tails off-panel into the shed, catch the split sentence in r10–r11, and accurately explain the dark 'telekvita' (boundary feud) punchline.\"}",
+  "json": {
+    "candidates": {
+      "A": {
+        "speakers": 4,
+        "jokes": 3,
+        "notes": 4,
+        "overall": 3,
+        "errors": "Hallucinates an off-screen television documentary for r6, r9, and r11; completely misses the core plot where the grandson enters the shed and discovers the corpse."
+      },
+      "B": {
+        "speakers": 10,
+        "jokes": 10,
+        "notes": 10,
+        "overall": 10,
+        "errors": "None. Correctly identifies all speakers, off-panel dialogue, and explains the dark telekvita/butterfly collector punchline perfectly."
+      },
+      "C": {
+        "speakers": 8,
+        "jokes": 6,
+        "notes": 6,
+        "overall": 6,
+        "errors": "Misattributes r1 and r2; misses the meaning of 'telekvita' (guesses it might be a brand name) and fails to connect it to the murdered neighbor punchline."
+      },
+      "D": {
+        "speakers": 6,
+        "jokes": 4,
+        "notes": 5,
+        "overall": 5,
+        "errors": "Misattributes r6 and r9 to the grandmother instead of the grandson shouting from off-panel; claims 'telekvita' is not a recognized Hungarian word."
+      },
+      "E": {
+        "speakers": 10,
+        "jokes": 10,
+        "notes": 10,
+        "overall": 10,
+        "errors": "None. Flawless identification of all speakers, brilliant cultural explanations of 'sufni', 'kupleráj', 'telekvita', and the dark comedy punchline."
+      },
+      "F": {
+        "speakers": 6,
+        "jokes": 4,
+        "notes": 5,
+        "overall": 5,
+        "errors": "Misattributes r1, r2, r6, and r9 (thinks grandma is shouting the screams and disgust from the shed); fails to understand 'telekvita'."
+      }
+    },
+    "ranking": [
+      "B",
+      "E",
+      "C",
+      "D",
+      "F",
+      "A"
+    ],
+    "notes": "B and E are both outstanding sheets that correctly follow the bubble tails off-panel into the shed, catch the split sentence in r10–r11, and accurately explain the dark 'telekvita' (boundary feud) punchline."
+  },
+  "usage": {
+    "input_tokens": 12832,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 1869,
+    "reasoning_tokens": 1457
+  },
+  "costUsd": 0.01663275,
+  "ms": 15787,
+  "at": "2026-10-20T07:35:01.326648826Z"
+}

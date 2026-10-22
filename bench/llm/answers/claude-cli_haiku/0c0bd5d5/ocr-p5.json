@@ -1,0 +1,51 @@
+{
+  "spec": "claude-cli:haiku",
+  "log": "../bench/llm/prompts/0c0bd5d58b4b8bd03a1229371408586ca54a0de357a882ded2c9843589bea963/llm/ocr-p5.json",
+  "text": "{\"regions\":[{\"n\":15,\"kind\":\"speech\",\"lines\":[\"AKURVA ÉLET!\"],\"align\":\"center\",\"caps\":true},{\"n\":16,\"kind\":\"sign\",\"lines\":[\"7722 · 683/FELVESZEM\"],\"align\":\"center\",\"caps\":true},{\"n\":17,\"kind\":\"none\",\"lines\":[],\"align\":\"center\",\"caps\":true},{\"n\":18,\"kind\":\"none\",\"lines\":[],\"align\":\"center\",\"caps\":true}],\"unboxed\":[]}",
+  "json": {
+    "regions": [
+      {
+        "n": 15,
+        "kind": "speech",
+        "lines": [
+          "AKURVA ÉLET!"
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 16,
+        "kind": "sign",
+        "lines": [
+          "7722 · 683/FELVESZEM"
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 17,
+        "kind": "none",
+        "lines": [],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 18,
+        "kind": "none",
+        "lines": [],
+        "align": "center",
+        "caps": true
+      }
+    ],
+    "unboxed": []
+  },
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 4095,
+    "cache_read_input_tokens": 4864,
+    "output_tokens": 1569
+  },
+  "costUsd": 0.00165254,
+  "ms": 9185,
+  "at": "2026-10-20T07:07:32.676733147Z"
+}

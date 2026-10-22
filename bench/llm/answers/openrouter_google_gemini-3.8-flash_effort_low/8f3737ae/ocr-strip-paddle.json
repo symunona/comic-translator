@@ -1,0 +1,39 @@
+{
+  "spec": "openrouter:google/gemini-3.8-flash?effort=low",
+  "log": "../bench/llm/prompts/8f3737ae2df51cb23cc27c3f81a10a426a35fc918ea31cf1eff85be4fc0df452/llm/ocr-strip-paddle.json",
+  "text": "{\"regions\":[{\"n\":0,\"kind\":\"caption\",\"lines\":[\"How do I\",\"exit vim?\"],\"align\":\"center\",\"caps\":false},{\"n\":1,\"kind\":\"caption\",\"lines\":[\"Why would I\",\"exit vim?\"],\"align\":\"center\",\"caps\":false}],\"unboxed\":[]}",
+  "json": {
+    "regions": [
+      {
+        "n": 0,
+        "kind": "caption",
+        "lines": [
+          "How do I",
+          "exit vim?"
+        ],
+        "align": "center",
+        "caps": false
+      },
+      {
+        "n": 1,
+        "kind": "caption",
+        "lines": [
+          "Why would I",
+          "exit vim?"
+        ],
+        "align": "center",
+        "caps": false
+      }
+    ],
+    "unboxed": []
+  },
+  "usage": {
+    "input_tokens": 5298,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 60
+  },
+  "costUsd": 0.0041985,
+  "ms": 2983,
+  "at": "2026-10-20T07:19:24.554538221Z"
+}

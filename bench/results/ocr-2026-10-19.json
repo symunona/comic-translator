@@ -1,0 +1,8370 @@
+{
+ "date": "2026-10-19T21:34:18.938Z",
+ "strip": "2afc78b45293acd677ffcba91f53fea50838d406d2dd965846e83408657e58c7",
+ "groundTruth": "stages/ocr@v1.json source.text (Claude Opus via claude CLI)",
+ "chromium": "/data/cache/playwright/chromium-1234/chrome-linux64/chrome",
+ "execution": "onnxruntime-web WASM EP only, WebGPU disabled; threads=1 vs threads=4 (COOP/COEP served)",
+ "crops": 45,
+ "summary": [
+  {
+   "model": "paddle-v5-latin",
+   "threads": 1,
+   "sizeMB": 12.817904,
+   "loadMs": 3175.350000143051,
+   "msPerCropMean": 412.2691111087799,
+   "msPerCropMedian": 206.79500007629395,
+   "msPerCropWarmMean": 409.53261363506317,
+   "crops": 45,
+   "errors": 0,
+   "cer": 0.17173377156943304,
+   "wer": 0.601063829787234,
+   "cerNoPunct": 0.1675531914893617,
+   "exact": 10,
+   "accentAcc": 0.4605263157894737,
+   "accentTotal": 76,
+   "speechOnly": {
+    "cer": 0.1485148514851485,
+    "wer": 0.5256410256410257,
+    "cerNoPunct": 0.14086021505376345,
+    "exact": 4,
+    "accentAcc": 0.45588235294117646,
+    "accentTotal": 68
+   },
+   "pssPeakMB": 830.2158203125,
+   "pssDeltaMB": 446.439453125,
+   "uaMemAfterLoadMB": 51.342198,
+   "uaMemEndMB": 103.087616,
+   "crossOriginIsolated": true,
+   "webgpu": true,
+   "info": {
+    "ort": "1.30.0",
+    "numThreads": 1
+   },
+   "fatal": null
+  },
+  {
+   "model": "paddle-v5-latin",
+   "threads": 4,
+   "sizeMB": 12.817904,
+   "loadMs": 3195.319999933243,
+   "msPerCropMean": 226.8532222482893,
+   "msPerCropMedian": 101.4300000667572,
+   "msPerCropWarmMean": 216.40522729808634,
+   "crops": 45,
+   "errors": 0,
+   "cer": 0.17173377156943304,
+   "wer": 0.601063829787234,
+   "cerNoPunct": 0.1675531914893617,
+   "exact": 10,
+   "accentAcc": 0.4605263157894737,
+   "accentTotal": 76,
+   "speechOnly": {
+    "cer": 0.1485148514851485,
+    "wer": 0.5256410256410257,
+    "cerNoPunct": 0.14086021505376345,
+    "exact": 4,
+    "accentAcc": 0.45588235294117646,
+    "accentTotal": 68
+   },
+   "pssPeakMB": 850.1171875,
+   "pssDeltaMB": 466.1767578125,
+   "uaMemAfterLoadMB": 52.33787,
+   "uaMemEndMB": 105.133696,
+   "crossOriginIsolated": true,
+   "webgpu": true,
+   "info": {
+    "ort": "1.30.0",
+    "numThreads": 4
+   },
+   "fatal": null
+  },
+  {
+   "model": "trocr-small-handwritten",
+   "threads": 1,
+   "sizeMB": 68.111197,
+   "loadMs": 4395.860000133514,
+   "msPerCropMean": 2491.3533333301543,
+   "msPerCropMedian": 2180.0950000286102,
+   "msPerCropWarmMean": 2499.7261363593016,
+   "crops": 45,
+   "errors": 0,
+   "cer": 0.8036154478225144,
+   "wer": 1.074468085106383,
+   "cerNoPunct": 0.8093971631205674,
+   "exact": 1,
+   "accentAcc": 0,
+   "accentTotal": 76,
+   "speechOnly": {
+    "cer": 0.7633663366336634,
+    "wer": 0.9871794871794872,
+    "cerNoPunct": 0.7623655913978494,
+    "exact": 0,
+    "accentAcc": 0,
+    "accentTotal": 68
+   },
+   "pssPeakMB": 958.458984375,
+   "pssDeltaMB": 583.5546875,
+   "uaMemAfterLoadMB": 177.701037,
+   "uaMemEndMB": 178.925922,
+   "crossOriginIsolated": true,
+   "webgpu": true,
+   "info": {
+    "repo": "Xenova/trocr-small-handwritten",
+    "dtype": "q8",
+    "numThreads": 1
+   },
+   "fatal": null
+  },
+  {
+   "model": "trocr-small-handwritten",
+   "threads": 4,
+   "sizeMB": 68.111197,
+   "loadMs": 4539.475000143051,
+   "msPerCropMean": 1169.8231111102634,
+   "msPerCropMedian": 1009.0750000476837,
+   "msPerCropWarmMean": 1165.6340909058397,
+   "crops": 45,
+   "errors": 0,
+   "cer": 0.8036154478225144,
+   "wer": 1.074468085106383,
+   "cerNoPunct": 0.8093971631205674,
+   "exact": 1,
+   "accentAcc": 0,
+   "accentTotal": 76,
+   "speechOnly": {
+    "cer": 0.7633663366336634,
+    "wer": 0.9871794871794872,
+    "cerNoPunct": 0.7623655913978494,
+    "exact": 0,
+    "accentAcc": 0,
+    "accentTotal": 68
+   },
+   "pssPeakMB": 878.580078125,
+   "pssDeltaMB": 545.9697265625,
+   "uaMemAfterLoadMB": 183.403722,
+   "uaMemEndMB": 184.639003,
+   "crossOriginIsolated": true,
+   "webgpu": true,
+   "info": {
+    "repo": "Xenova/trocr-small-handwritten",
+    "dtype": "q8",
+    "numThreads": 4
+   },
+   "fatal": null
+  },
+  {
+   "model": "trocr-small-printed",
+   "threads": 1,
+   "sizeMB": 68.111191,
+   "loadMs": 5086.625,
+   "msPerCropMean": 2523.175555531184,
+   "msPerCropMedian": 2192.369999885559,
+   "msPerCropWarmMean": 2527.5301136103544,
+   "crops": 45,
+   "errors": 0,
+   "cer": 0.9252259654889071,
+   "wer": 0.9946808510638298,
+   "cerNoPunct": 0.7712765957446809,
+   "exact": 0,
+   "accentAcc": 0,
+   "accentTotal": 76,
+   "speechOnly": {
+    "cer": 0.9554455445544554,
+    "wer": 0.9423076923076923,
+    "cerNoPunct": 0.8032258064516129,
+    "exact": 0,
+    "accentAcc": 0,
+    "accentTotal": 68
+   },
+   "pssPeakMB": 901.0302734375,
+   "pssDeltaMB": 568.4462890625,
+   "uaMemAfterLoadMB": 177.699673,
+   "uaMemEndMB": 178.959884,
+   "crossOriginIsolated": true,
+   "webgpu": true,
+   "info": {
+    "repo": "Xenova/trocr-small-printed",
+    "dtype": "q8",
+    "numThreads": 1
+   },
+   "fatal": null
+  },
+  {
+   "model": "florence-2-base-ft",
+   "threads": 1,
+   "sizeMB": 279.195418,
+   "loadMs": 8511.55999994278,
+   "msPerCropMean": 25434.74311111768,
+   "msPerCropMedian": 25202.63000011444,
+   "msPerCropWarmMean": 25398.03863637014,
+   "crops": 45,
+   "errors": 0,
+   "cer": 0.228430566967954,
+   "wer": 0.6968085106382979,
+   "cerNoPunct": 0.21719858156028368,
+   "exact": 0,
+   "accentAcc": 0.039473684210526314,
+   "accentTotal": 76,
+   "speechOnly": {
+    "cer": 0.16930693069306932,
+    "wer": 0.6346153846153846,
+    "cerNoPunct": 0.15698924731182795,
+    "exact": 0,
+    "accentAcc": 0.04411764705882353,
+    "accentTotal": 68
+   },
+   "pssPeakMB": 1274.8369140625,
+   "pssDeltaMB": 942.9423828125,
+   "uaMemAfterLoadMB": 499.027102,
+   "uaMemEndMB": 824.05017,
+   "crossOriginIsolated": true,
+   "webgpu": true,
+   "info": {
+    "repo": "onnx-community/Florence-2-base-ft",
+    "dtype": "q8",
+    "numThreads": 1
+   },
+   "fatal": null
+  },
+  {
+   "model": "florence-2-base-ft",
+   "threads": 4,
+   "sizeMB": 279.195418,
+   "loadMs": 6906.535000085831,
+   "msPerCropMean": 12117.580111138026,
+   "msPerCropMedian": 11648.634999990463,
+   "msPerCropWarmMean": 12161.3278409351,
+   "crops": 45,
+   "errors": 0,
+   "cer": 0.228430566967954,
+   "wer": 0.6968085106382979,
+   "cerNoPunct": 0.21719858156028368,
+   "exact": 0,
+   "accentAcc": 0.039473684210526314,
+   "accentTotal": 76,
+   "speechOnly": {
+    "cer": 0.16930693069306932,
+    "wer": 0.6346153846153846,
+    "cerNoPunct": 0.15698924731182795,
+    "exact": 0,
+    "accentAcc": 0.04411764705882353,
+    "accentTotal": 68
+   },
+   "pssPeakMB": 1233.294921875,
+   "pssDeltaMB": 892.08203125,
+   "uaMemAfterLoadMB": 499.695466,
+   "uaMemEndMB": 824.579014,
+   "crossOriginIsolated": true,
+   "webgpu": true,
+   "info": {
+    "repo": "onnx-community/Florence-2-base-ft",
+    "dtype": "q8",
+    "numThreads": 4
+   },
+   "fatal": null
+  },
+  {
+   "model": "tesseract-hun",
+   "threads": 1,
+   "sizeMB": 2.854466,
+   "loadMs": 590.4449999332428,
+   "msPerCropMean": 201.02522222201029,
+   "msPerCropMedian": 106.75499987602234,
+   "msPerCropWarmMean": 200.39340908960864,
+   "crops": 45,
+   "errors": 0,
+   "cer": 0.5735414954806902,
+   "wer": 1.3563829787234043,
+   "cerNoPunct": 0.5150709219858156,
+   "exact": 1,
+   "accentAcc": 0.7105263157894737,
+   "accentTotal": 76,
+   "speechOnly": {
+    "cer": 0.299009900990099,
+    "wer": 0.9166666666666666,
+    "cerNoPunct": 0.24301075268817204,
+    "exact": 1,
+    "accentAcc": 0.75,
+    "accentTotal": 68
+   },
+   "pssPeakMB": 410.9404296875,
+   "pssDeltaMB": 58.306640625,
+   "uaMemAfterLoadMB": 43.851786,
+   "uaMemEndMB": 44.198796,
+   "crossOriginIsolated": true,
+   "webgpu": true,
+   "info": {
+    "lang": "hun",
+    "oem": "LSTM"
+   },
+   "fatal": null
+  }
+ ],
+ "runs": [
+  {
+   "summary": {
+    "model": "paddle-v5-latin",
+    "threads": 1,
+    "sizeMB": 12.817904,
+    "loadMs": 3175.350000143051,
+    "msPerCropMean": 412.2691111087799,
+    "msPerCropMedian": 206.79500007629395,
+    "msPerCropWarmMean": 409.53261363506317,
+    "crops": 45,
+    "errors": 0,
+    "cer": 0.17173377156943304,
+    "wer": 0.601063829787234,
+    "cerNoPunct": 0.1675531914893617,
+    "exact": 10,
+    "accentAcc": 0.4605263157894737,
+    "accentTotal": 76,
+    "speechOnly": {
+     "cer": 0.1485148514851485,
+     "wer": 0.5256410256410257,
+     "cerNoPunct": 0.14086021505376345,
+     "exact": 4,
+     "accentAcc": 0.45588235294117646,
+     "accentTotal": 68
+    },
+    "pssPeakMB": 830.2158203125,
+    "pssDeltaMB": 446.439453125,
+    "uaMemAfterLoadMB": 51.342198,
+    "uaMemEndMB": 103.087616,
+    "crossOriginIsolated": true,
+    "webgpu": true,
+    "info": {
+     "ort": "1.30.0",
+     "numThreads": 1
+    },
+    "fatal": null
+   },
+   "preds": [
+    {
+     "id": "r0",
+     "text": "UNBA! \n",
+     "confidence": 0.8480924467245737,
+     "lines": 2,
+     "ms": 532.6749999523163,
+     "gt": "UNKA!",
+     "kind": "sfx",
+     "score": {
+      "chars": 5,
+      "charErr": 1,
+      "words": 1,
+      "wordErr": 1,
+      "charsNoPunct": 4,
+      "charErrNoPunct": 1,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r1",
+     "text": "NA! E!\nDEJÓ, HOGY\nELJÖTTE, E!",
+     "confidence": 0.9070369918539066,
+     "lines": 3,
+     "ms": 428.3949999809265,
+     "gt": "NA! E! DEJÓ, HOGY ELJÖTTÉ, E!",
+     "kind": "speech",
+     "score": {
+      "chars": 29,
+      "charErr": 1,
+      "words": 6,
+      "wordErr": 1,
+      "charsNoPunct": 24,
+      "charErrNoPunct": 1,
+      "exact": false,
+      "accents": {
+       "total": 3,
+       "hit": 2
+      }
+     }
+    },
+    {
+     "id": "r2",
+     "text": "HIREK",
+     "confidence": 0.9049609184265137,
+     "lines": 1,
+     "ms": 92.89499998092651,
+     "gt": "HÍREK",
+     "kind": "speech",
+     "score": {
+      "chars": 5,
+      "charErr": 1,
+      "words": 1,
+      "wordErr": 1,
+      "charsNoPunct": 5,
+      "charErrNoPunct": 1,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r4",
+     "text": "MOST ARRA GONDOLSZ,\nHOGYDE KÁR,HOGY\nELKOLTOTTEMAZ\nELOLEGET,MOST\nLEMONDHATNAM",
+     "confidence": 0.9305983204502164,
+     "lines": 5,
+     "ms": 1338.0899999141693,
+     "gt": "MOST ARRA GONDOLSZ, HOGY „DE KÁR, HOGY ELKÖLTÖTTEM AZ ELŐLEGET, MOST LEMONDHATNÁM",
+     "kind": "speech",
+     "score": {
+      "chars": 81,
+      "charErr": 9,
+      "words": 12,
+      "wordErr": 9,
+      "charsNoPunct": 77,
+      "charErrNoPunct": 8,
+      "exact": false,
+      "accents": {
+       "total": 5,
+       "hit": 1
+      }
+     }
+    },
+    {
+     "id": "r5",
+     "text": "CAVALEIR C L",
+     "confidence": 0.864184108376503,
+     "lines": 1,
+     "ms": 347.1099998950958,
+     "gt": "CAVALEIR",
+     "kind": "sign",
+     "score": {
+      "chars": 8,
+      "charErr": 4,
+      "words": 1,
+      "wordErr": 2,
+      "charsNoPunct": 8,
+      "charErrNoPunct": 4,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r6",
+     "text": "A MELÓT!\"",
+     "confidence": 0.8481682274076674,
+     "lines": 1,
+     "ms": 92.09000015258789,
+     "gt": "A MELÓT!”",
+     "kind": "speech",
+     "score": {
+      "chars": 9,
+      "charErr": 0,
+      "words": 2,
+      "wordErr": 0,
+      "charsNoPunct": 7,
+      "charErrNoPunct": 0,
+      "exact": true,
+      "accents": {
+       "total": 1,
+       "hit": 1
+      }
+     }
+    },
+    {
+     "id": "r7",
+     "text": "HÁT.. ÁBE.",
+     "confidence": 0.8212615668773651,
+     "lines": 1,
+     "ms": 106.80999994277954,
+     "gt": "HÁT... KÁBÉ.",
+     "kind": "speech",
+     "score": {
+      "chars": 12,
+      "charErr": 3,
+      "words": 2,
+      "wordErr": 2,
+      "charsNoPunct": 8,
+      "charErrNoPunct": 2,
+      "exact": false,
+      "accents": {
+       "total": 3,
+       "hit": 2
+      }
+     }
+    },
+    {
+     "id": "r8",
+     "text": "FASZI BÁCSI",
+     "confidence": 0.9038212353532965,
+     "lines": 1,
+     "ms": 105.3199999332428,
+     "gt": "FASZI BÁCSI",
+     "kind": "sign",
+     "score": {
+      "chars": 11,
+      "charErr": 0,
+      "words": 2,
+      "wordErr": 0,
+      "charsNoPunct": 11,
+      "charErrNoPunct": 0,
+      "exact": true,
+      "accents": {
+       "total": 1,
+       "hit": 1
+      }
+     }
+    },
+    {
+     "id": "r9",
+     "text": "NA. PATTANJ FEL!",
+     "confidence": 0.9676361568272114,
+     "lines": 1,
+     "ms": 178.70499992370605,
+     "gt": "NA. PATTANJ FEL!",
+     "kind": "speech",
+     "score": {
+      "chars": 16,
+      "charErr": 0,
+      "words": 3,
+      "wordErr": 0,
+      "charsNoPunct": 14,
+      "charErrNoPunct": 0,
+      "exact": true,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r10",
+     "text": "FAS21-1",
+     "confidence": 0.7848971486091614,
+     "lines": 1,
+     "ms": 213.31500005722046,
+     "gt": "FASZI-1",
+     "kind": "sign",
+     "score": {
+      "chars": 7,
+      "charErr": 2,
+      "words": 1,
+      "wordErr": 1,
+      "charsNoPunct": 6,
+      "charErrNoPunct": 2,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r11",
+     "text": "CALAVRIE O",
+     "confidence": 0.9158782528506385,
+     "lines": 1,
+     "ms": 359.34999990463257,
+     "gt": "CALAVRIE",
+     "kind": "sign",
+     "score": {
+      "chars": 8,
+      "charErr": 2,
+      "words": 1,
+      "wordErr": 1,
+      "charsNoPunct": 8,
+      "charErrNoPunct": 2,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r12",
+     "text": "NEM BAJ, AZ EMBER\nAZÉRT FIATAL, HOGY\nTANULJON.STT",
+     "confidence": 0.9202916063449482,
+     "lines": 3,
+     "ms": 639.7300000190735,
+     "gt": "NEM BAJ, AZ EMBER AZÉRT FIATAL, HOGY TANULJON.",
+     "kind": "speech",
+     "score": {
+      "chars": 46,
+      "charErr": 3,
+      "words": 8,
+      "wordErr": 1,
+      "charsNoPunct": 43,
+      "charErrNoPunct": 3,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 1
+      }
+     }
+    },
+    {
+     "id": "r13",
+     "text": "FASZI BÁCSI",
+     "confidence": 0.9255922111597928,
+     "lines": 1,
+     "ms": 105.09000015258789,
+     "gt": "FASZI BÁCSI",
+     "kind": "sign",
+     "score": {
+      "chars": 11,
+      "charErr": 0,
+      "words": 2,
+      "wordErr": 0,
+      "charsNoPunct": 11,
+      "charErrNoPunct": 0,
+      "exact": true,
+      "accents": {
+       "total": 1,
+       "hit": 1
+      }
+     }
+    },
+    {
+     "id": "r14",
+     "text": "FASZI-100",
+     "confidence": 0.7595569094022115,
+     "lines": 1,
+     "ms": 173.34500002861023,
+     "gt": "FASZI-1",
+     "kind": "sign",
+     "score": {
+      "chars": 7,
+      "charErr": 2,
+      "words": 1,
+      "wordErr": 1,
+      "charsNoPunct": 6,
+      "charErrNoPunct": 2,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r15",
+     "text": "JEZUS ATYA, URISTEN!",
+     "confidence": 0.8814408197999001,
+     "lines": 1,
+     "ms": 181.7150001525879,
+     "gt": "JÉZUS, ATYA, ÚRISTEN!",
+     "kind": "speech",
+     "score": {
+      "chars": 21,
+      "charErr": 3,
+      "words": 3,
+      "wordErr": 2,
+      "charsNoPunct": 18,
+      "charErrNoPunct": 2,
+      "exact": false,
+      "accents": {
+       "total": 2,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r16",
+     "text": "IVECALAIROO",
+     "confidence": 0.8909654238007285,
+     "lines": 1,
+     "ms": 350.7449998855591,
+     "gt": "VECALAIR",
+     "kind": "sign",
+     "score": {
+      "chars": 8,
+      "charErr": 3,
+      "words": 1,
+      "wordErr": 1,
+      "charsNoPunct": 8,
+      "charErrNoPunct": 3,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r17",
+     "text": "Ö A HALÓFÜLKEBEN LÓG\nEGY KRISTÁLYHOLOGRAM\nFORMÁJABAN,DE ITT\nVALÓBAN A SZENTFÖLDI\nLOVAGVÁRAK\nSTILUSAT IGYEKEZTEM HOZ\nAZ OTT EGY BEDVIN\nKEMENCE, HENNÁS KASPO\nTEVENYEREG, ASTROLABINM",
+     "confidence": 0.9166735195009917,
+     "lines": 9,
+     "ms": 1861.914999961853,
+     "gt": "Ö A HÁLÓFÜLKÉBEN LÓG, EGY KRISTÁLYHOLOGRAM FORMÁJÁBAN, DE ITT VALÓBAN A SZENTFÖLDI LOVAGVÁRAK STÍLUSÁT IGYEKEZTEM HOZNI. AZ OTT EGY BEDUIN KEMENCE, HENNÁS KASPÓ TEVENYEREG, ASZTROLÁBIUM...",
+     "kind": "speech",
+     "score": {
+      "chars": 188,
+      "charErr": 18,
+      "words": 25,
+      "wordErr": 9,
+      "charsNoPunct": 180,
+      "charErrNoPunct": 13,
+      "exact": false,
+      "accents": {
+       "total": 17,
+       "hit": 10
+      }
+     }
+    },
+    {
+     "id": "r18",
+     "text": "FASZI BACSI",
+     "confidence": 0.8614860285412181,
+     "lines": 1,
+     "ms": 144.8550000190735,
+     "gt": "FASZI BÁCSI",
+     "kind": "sign",
+     "score": {
+      "chars": 11,
+      "charErr": 1,
+      "words": 2,
+      "wordErr": 1,
+      "charsNoPunct": 11,
+      "charErrNoPunct": 1,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r19",
+     "text": "CSAK MÁR GEURE\nUNOM.\nEZERT VAGYIT E!",
+     "confidence": 0.9338892628749211,
+     "lines": 3,
+     "ms": 571.3499999046326,
+     "gt": "CSAK MÁR GECIRE UNOM. EZÉRT VAGY ITT, E!",
+     "kind": "speech",
+     "score": {
+      "chars": 40,
+      "charErr": 6,
+      "words": 8,
+      "wordErr": 4,
+      "charsNoPunct": 37,
+      "charErrNoPunct": 5,
+      "exact": false,
+      "accents": {
+       "total": 2,
+       "hit": 1
+      }
+     }
+    },
+    {
+     "id": "r20",
+     "text": "HÁTOO... EDDIG EGY KAMIONT...",
+     "confidence": 0.8659346319478134,
+     "lines": 1,
+     "ms": 244.74000000953674,
+     "gt": "HÁTŐŐ... EDDIG EGY KAMIONT...",
+     "kind": "speech",
+     "score": {
+      "chars": 29,
+      "charErr": 2,
+      "words": 4,
+      "wordErr": 1,
+      "charsNoPunct": 23,
+      "charErrNoPunct": 2,
+      "exact": false,
+      "accents": {
+       "total": 3,
+       "hit": 1
+      }
+     }
+    },
+    {
+     "id": "r23",
+     "text": "RELAVACI",
+     "confidence": 0.7195291221141815,
+     "lines": 1,
+     "ms": 280.75,
+     "gt": "RELAVACI",
+     "kind": "sign",
+     "score": {
+      "chars": 8,
+      "charErr": 0,
+      "words": 1,
+      "wordErr": 0,
+      "charsNoPunct": 8,
+      "charErrNoPunct": 0,
+      "exact": true,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r24",
+     "text": "NYERGES VONTATÓT.",
+     "confidence": 0.9885032983387217,
+     "lines": 1,
+     "ms": 200.54499983787537,
+     "gt": "NYERGES VONTATÓT.",
+     "kind": "speech",
+     "score": {
+      "chars": 17,
+      "charErr": 0,
+      "words": 2,
+      "wordErr": 0,
+      "charsNoPunct": 16,
+      "charErrNoPunct": 0,
+      "exact": true,
+      "accents": {
+       "total": 1,
+       "hit": 1
+      }
+     }
+    },
+    {
+     "id": "r25",
+     "text": "PARDON. NYERGESVONTATOT\nCSINÁLTAM, VIII. HENRIK STILUSÁBAN,\n„TRUBADUR\" LETT A MUNKACIME.\nITT VAN A PORTFÓLIÓMBAN:",
+     "confidence": 0.9318072721115304,
+     "lines": 4,
+     "ms": 1183.9199998378754,
+     "gt": "PARDON. NYERGESVONTATÓT CSINÁLTAM, VIII. HENRIK STÍLUSÁBAN, „TRUBADÚR” LETT A MUNKACÍME. ITT VAN A PORTFÓLIÓMBAN:",
+     "kind": "speech",
+     "score": {
+      "chars": 113,
+      "charErr": 4,
+      "words": 14,
+      "wordErr": 4,
+      "charsNoPunct": 105,
+      "charErrNoPunct": 4,
+      "exact": false,
+      "accents": {
+       "total": 8,
+       "hit": 4
+      }
+     }
+    },
+    {
+     "id": "r26",
+     "text": "AHA.. VÁGOM. KÁRPIT\nMÁR MESSZIRÖL.ELKAPTAD A\nBROKÁT. SOKA BOUT. FELBASZNA\nAZONNAL. MEG-EZIS ILYEN\nREGI , VAGOD?\nANTIK .",
+     "confidence": 0.8457957079021038,
+     "lines": 6,
+     "ms": 1754.5599999427795,
+     "gt": "AHA ... VÁGOM. KÁRPIT MÁR MESSZIRŐL. ELKAPTAD A BROKÁT. SOK A BOJT. FELBASZNA AZONNAL. MEG EZIS ILYEN „RÉGI”, VÁGOD? ÁNTIK.",
+     "kind": "speech",
+     "score": {
+      "chars": 123,
+      "charErr": 13,
+      "words": 20,
+      "wordErr": 14,
+      "charsNoPunct": 109,
+      "charErrNoPunct": 8,
+      "exact": false,
+      "accents": {
+       "total": 8,
+       "hit": 4
+      }
+     }
+    },
+    {
+     "id": "r27",
+     "text": "FASZI BACSI",
+     "confidence": 0.8511074673045765,
+     "lines": 1,
+     "ms": 122.93999981880188,
+     "gt": "FASZI BÁCSI",
+     "kind": "sign",
+     "score": {
+      "chars": 11,
+      "charErr": 1,
+      "words": 2,
+      "wordErr": 1,
+      "charsNoPunct": 11,
+      "charErrNoPunct": 1,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r28",
+     "text": "FAS2I- O",
+     "confidence": 0.8107869369643075,
+     "lines": 1,
+     "ms": 293.04500007629395,
+     "gt": "FASZI-1",
+     "kind": "sign",
+     "score": {
+      "chars": 7,
+      "charErr": 3,
+      "words": 1,
+      "wordErr": 2,
+      "charsNoPunct": 6,
+      "charErrNoPunct": 3,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r29",
+     "text": "ROPI",
+     "confidence": 0.9144020527601242,
+     "lines": 1,
+     "ms": 58.69500017166138,
+     "gt": "ROPI",
+     "kind": "caption",
+     "score": {
+      "chars": 4,
+      "charErr": 0,
+      "words": 1,
+      "wordErr": 0,
+      "charsNoPunct": 4,
+      "charErrNoPunct": 0,
+      "exact": true,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r30",
+     "text": "SZÓVAL,AMIKOR A GROBKUGELNI\nPIHENOBEN KINITAA\nURVAAATOTAKKOR\ncYnmMGeetaY\nYRANYNAK YEN LaYYOY\nART DEKOTGONDOLNEK",
+     "confidence": 0.7400031761813638,
+     "lines": 6,
+     "ms": 2045.3550000190735,
+     "gt": "SZÓVAL, AMIKOR A GROẞKUGELNI PIHENŐBEN KINYITJA A KURVA AZ AJTÓT AKKOR NE AZT KÉRDEZZE, MERRE VAN A MÚZEUMSHOP, VÁGOD? IRÁNYNAK ILYEN NEOLOFTOS ART DEKÓT GONDOLNÉK.",
+     "kind": "speech",
+     "score": {
+      "chars": 164,
+      "charErr": 72,
+      "words": 25,
+      "wordErr": 23,
+      "charsNoPunct": 159,
+      "charErrNoPunct": 68,
+      "exact": false,
+      "accents": {
+       "total": 9,
+       "hit": 1
+      }
+     }
+    },
+    {
+     "id": "r32",
+     "text": "RACALVIE",
+     "confidence": 0.9950377494096756,
+     "lines": 1,
+     "ms": 124.14499998092651,
+     "gt": "RACALVIE",
+     "kind": "sign",
+     "score": {
+      "chars": 8,
+      "charErr": 0,
+      "words": 1,
+      "wordErr": 0,
+      "charsNoPunct": 8,
+      "charErrNoPunct": 0,
+      "exact": true,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r33",
+     "text": "FASZIBÁOS",
+     "confidence": 0.8422482344839308,
+     "lines": 1,
+     "ms": 116.49500012397766,
+     "gt": "FASZI BÁCSI",
+     "kind": "sign",
+     "score": {
+      "chars": 11,
+      "charErr": 3,
+      "words": 2,
+      "wordErr": 2,
+      "charsNoPunct": 11,
+      "charErrNoPunct": 3,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 1
+      }
+     }
+    },
+    {
+     "id": "r34",
+     "text": "ERTEM. EZA DOBOZ, EZ MI?\nMARADNIA KEUL?",
+     "confidence": 0.9069311237406164,
+     "lines": 2,
+     "ms": 344.7999999523163,
+     "gt": "ÉRTEM. EZ A DOBOZ, EZ MI? MARADNIA KELL?",
+     "kind": "speech",
+     "score": {
+      "chars": 40,
+      "charErr": 3,
+      "words": 8,
+      "wordErr": 4,
+      "charsNoPunct": 36,
+      "charErrNoPunct": 3,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r35",
+     "text": "AKKSIKA FÉNYHEZ. MARAD.",
+     "confidence": 0.8912273114142211,
+     "lines": 1,
+     "ms": 206.79500007629395,
+     "gt": "AKKSIK A FÉNYHEZ. MARAD.",
+     "kind": "speech",
+     "score": {
+      "chars": 24,
+      "charErr": 1,
+      "words": 4,
+      "wordErr": 2,
+      "charsNoPunct": 22,
+      "charErrNoPunct": 1,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 1
+      }
+     }
+    },
+    {
+     "id": "r36",
+     "text": "FENYHEZ\"?",
+     "confidence": 0.9337670471933153,
+     "lines": 1,
+     "ms": 116.05000019073486,
+     "gt": "„FÉNYHEZ”?",
+     "kind": "speech",
+     "score": {
+      "chars": 10,
+      "charErr": 2,
+      "words": 1,
+      "wordErr": 1,
+      "charsNoPunct": 7,
+      "charErrNoPunct": 1,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r37",
+     "text": "FASZI- 0 O",
+     "confidence": 0.7167911678552628,
+     "lines": 1,
+     "ms": 191.42000007629395,
+     "gt": "FASZI-1",
+     "kind": "sign",
+     "score": {
+      "chars": 7,
+      "charErr": 4,
+      "words": 1,
+      "wordErr": 3,
+      "charsNoPunct": 6,
+      "charErrNoPunct": 4,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r38",
+     "text": "2 1\nB b0",
+     "confidence": 0.5599954506116254,
+     "lines": 2,
+     "ms": 871.0099999904633,
+     "gt": "BALKON",
+     "kind": "sign",
+     "score": {
+      "chars": 6,
+      "charErr": 8,
+      "words": 1,
+      "wordErr": 4,
+      "charsNoPunct": 6,
+      "charErrNoPunct": 8,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r40",
+     "text": "ICAVELIAR",
+     "confidence": 0.9446753660837809,
+     "lines": 1,
+     "ms": 126.88499999046326,
+     "gt": "CAVELIAR",
+     "kind": "sign",
+     "score": {
+      "chars": 8,
+      "charErr": 1,
+      "words": 1,
+      "wordErr": 1,
+      "charsNoPunct": 8,
+      "charErrNoPunct": 1,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r41",
+     "text": "TIÉD VOLTAZ\nA SMART?",
+     "confidence": 0.9681477668610485,
+     "lines": 2,
+     "ms": 328.7649998664856,
+     "gt": "TIÉD VOLT AZ A SMART?",
+     "kind": "speech",
+     "score": {
+      "chars": 21,
+      "charErr": 1,
+      "words": 5,
+      "wordErr": 2,
+      "charsNoPunct": 20,
+      "charErrNoPunct": 1,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 1
+      }
+     }
+    },
+    {
+     "id": "r42",
+     "text": "FASZIBÁSI",
+     "confidence": 0.8766256305906508,
+     "lines": 1,
+     "ms": 79.125,
+     "gt": "FASZI BÁCSI",
+     "kind": "sign",
+     "score": {
+      "chars": 11,
+      "charErr": 2,
+      "words": 2,
+      "wordErr": 2,
+      "charsNoPunct": 11,
+      "charErrNoPunct": 2,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 1
+      }
+     }
+    },
+    {
+     "id": "r45",
+     "text": "0 FASZI-",
+     "confidence": 0.7116761718477521,
+     "lines": 1,
+     "ms": 198.74000000953674,
+     "gt": "FASZI-1",
+     "kind": "sign",
+     "score": {
+      "chars": 7,
+      "charErr": 3,
+      "words": 1,
+      "wordErr": 2,
+      "charsNoPunct": 6,
+      "charErrNoPunct": 3,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r46",
+     "text": "TAR FIFU \nIGCAMAIIERL",
+     "confidence": 0.81006339260123,
+     "lines": 2,
+     "ms": 997.2650001049042,
+     "gt": "FIFU! HURUHATÁRR!",
+     "kind": "sfx",
+     "score": {
+      "chars": 17,
+      "charErr": 14,
+      "words": 2,
+      "wordErr": 3,
+      "charsNoPunct": 15,
+      "charErrNoPunct": 13,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r47",
+     "text": "CAVALIER",
+     "confidence": 0.9974404200911522,
+     "lines": 1,
+     "ms": 158.96000003814697,
+     "gt": "CAVALIER",
+     "kind": "sign",
+     "score": {
+      "chars": 8,
+      "charErr": 0,
+      "words": 1,
+      "wordErr": 0,
+      "charsNoPunct": 8,
+      "charErrNoPunct": 0,
+      "exact": true,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r48",
+     "text": "BOCsI.",
+     "confidence": 0.7694493134816488,
+     "lines": 1,
+     "ms": 66.25999999046326,
+     "gt": "BOCSI.",
+     "kind": "speech",
+     "score": {
+      "chars": 6,
+      "charErr": 0,
+      "words": 1,
+      "wordErr": 0,
+      "charsNoPunct": 5,
+      "charErrNoPunct": 0,
+      "exact": true,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r49",
+     "text": "7HAZAVISZLEK. MEG",
+     "confidence": 0.9478197732032874,
+     "lines": 1,
+     "ms": 232.38499999046326,
+     "gt": "MEG HAZAVISZLEK.",
+     "kind": "speech",
+     "score": {
+      "chars": 16,
+      "charErr": 8,
+      "words": 2,
+      "wordErr": 2,
+      "charsNoPunct": 15,
+      "charErrNoPunct": 8,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r50",
+     "text": "FASZI BACSI",
+     "confidence": 0.8692746514623816,
+     "lines": 1,
+     "ms": 163.56500005722046,
+     "gt": "FASZI BÁCSI",
+     "kind": "sign",
+     "score": {
+      "chars": 11,
+      "charErr": 1,
+      "words": 2,
+      "wordErr": 1,
+      "charsNoPunct": 11,
+      "charErrNoPunct": 1,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r52",
+     "text": "TFASZ1- D",
+     "confidence": 0.6095351427793503,
+     "lines": 1,
+     "ms": 221.3949999809265,
+     "gt": "FASZI-1",
+     "kind": "sign",
+     "score": {
+      "chars": 7,
+      "charErr": 4,
+      "words": 1,
+      "wordErr": 2,
+      "charsNoPunct": 6,
+      "charErrNoPunct": 4,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    }
+   ]
+  },
+  {
+   "summary": {
+    "model": "paddle-v5-latin",
+    "threads": 4,
+    "sizeMB": 12.817904,
+    "loadMs": 3195.319999933243,
+    "msPerCropMean": 226.8532222482893,
+    "msPerCropMedian": 101.4300000667572,
+    "msPerCropWarmMean": 216.40522729808634,
+    "crops": 45,
+    "errors": 0,
+    "cer": 0.17173377156943304,
+    "wer": 0.601063829787234,
+    "cerNoPunct": 0.1675531914893617,
+    "exact": 10,
+    "accentAcc": 0.4605263157894737,
+    "accentTotal": 76,
+    "speechOnly": {
+     "cer": 0.1485148514851485,
+     "wer": 0.5256410256410257,
+     "cerNoPunct": 0.14086021505376345,
+     "exact": 4,
+     "accentAcc": 0.45588235294117646,
+     "accentTotal": 68
+    },
+    "pssPeakMB": 850.1171875,
+    "pssDeltaMB": 466.1767578125,
+    "uaMemAfterLoadMB": 52.33787,
+    "uaMemEndMB": 105.133696,
+    "crossOriginIsolated": true,
+    "webgpu": true,
+    "info": {
+     "ort": "1.30.0",
+     "numThreads": 4
+    },
+    "fatal": null
+   },
+   "preds": [
+    {
+     "id": "r0",
+     "text": "UNBA! \n",
+     "confidence": 0.8480924467245737,
+     "lines": 2,
+     "ms": 686.5650000572205,
+     "gt": "UNKA!",
+     "kind": "sfx",
+     "score": {
+      "chars": 5,
+      "charErr": 1,
+      "words": 1,
+      "wordErr": 1,
+      "charsNoPunct": 4,
+      "charErrNoPunct": 1,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r1",
+     "text": "NA! E!\nDEJÓ, HOGY\nELJÖTTE, E!",
+     "confidence": 0.9070369634363386,
+     "lines": 3,
+     "ms": 368.47000002861023,
+     "gt": "NA! E! DEJÓ, HOGY ELJÖTTÉ, E!",
+     "kind": "speech",
+     "score": {
+      "chars": 29,
+      "charErr": 1,
+      "words": 6,
+      "wordErr": 1,
+      "charsNoPunct": 24,
+      "charErrNoPunct": 1,
+      "exact": false,
+      "accents": {
+       "total": 3,
+       "hit": 2
+      }
+     }
+    },
+    {
+     "id": "r2",
+     "text": "HIREK",
+     "confidence": 0.9049609184265137,
+     "lines": 1,
+     "ms": 48.295000076293945,
+     "gt": "HÍREK",
+     "kind": "speech",
+     "score": {
+      "chars": 5,
+      "charErr": 1,
+      "words": 1,
+      "wordErr": 1,
+      "charsNoPunct": 5,
+      "charErrNoPunct": 1,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r4",
+     "text": "MOST ARRA GONDOLSZ,\nHOGYDE KÁR,HOGY\nELKOLTOTTEMAZ\nELOLEGET,MOST\nLEMONDHATNAM",
+     "confidence": 0.9305983204502164,
+     "lines": 5,
+     "ms": 806.75,
+     "gt": "MOST ARRA GONDOLSZ, HOGY „DE KÁR, HOGY ELKÖLTÖTTEM AZ ELŐLEGET, MOST LEMONDHATNÁM",
+     "kind": "speech",
+     "score": {
+      "chars": 81,
+      "charErr": 9,
+      "words": 12,
+      "wordErr": 9,
+      "charsNoPunct": 77,
+      "charErrNoPunct": 8,
+      "exact": false,
+      "accents": {
+       "total": 5,
+       "hit": 1
+      }
+     }
+    },
+    {
+     "id": "r5",
+     "text": "CAVALEIR C L",
+     "confidence": 0.864184108376503,
+     "lines": 1,
+     "ms": 124.6949999332428,
+     "gt": "CAVALEIR",
+     "kind": "sign",
+     "score": {
+      "chars": 8,
+      "charErr": 4,
+      "words": 1,
+      "wordErr": 2,
+      "charsNoPunct": 8,
+      "charErrNoPunct": 4,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r6",
+     "text": "A MELÓT!\"",
+     "confidence": 0.8481682274076674,
+     "lines": 1,
+     "ms": 74.38000011444092,
+     "gt": "A MELÓT!”",
+     "kind": "speech",
+     "score": {
+      "chars": 9,
+      "charErr": 0,
+      "words": 2,
+      "wordErr": 0,
+      "charsNoPunct": 7,
+      "charErrNoPunct": 0,
+      "exact": true,
+      "accents": {
+       "total": 1,
+       "hit": 1
+      }
+     }
+    },
+    {
+     "id": "r7",
+     "text": "HÁT.. ÁBE.",
+     "confidence": 0.8212615668773651,
+     "lines": 1,
+     "ms": 65.54500007629395,
+     "gt": "HÁT... KÁBÉ.",
+     "kind": "speech",
+     "score": {
+      "chars": 12,
+      "charErr": 3,
+      "words": 2,
+      "wordErr": 2,
+      "charsNoPunct": 8,
+      "charErrNoPunct": 2,
+      "exact": false,
+      "accents": {
+       "total": 3,
+       "hit": 2
+      }
+     }
+    },
+    {
+     "id": "r8",
+     "text": "FASZI BÁCSI",
+     "confidence": 0.9038212353532965,
+     "lines": 1,
+     "ms": 47.09500002861023,
+     "gt": "FASZI BÁCSI",
+     "kind": "sign",
+     "score": {
+      "chars": 11,
+      "charErr": 0,
+      "words": 2,
+      "wordErr": 0,
+      "charsNoPunct": 11,
+      "charErrNoPunct": 0,
+      "exact": true,
+      "accents": {
+       "total": 1,
+       "hit": 1
+      }
+     }
+    },
+    {
+     "id": "r9",
+     "text": "NA. PATTANJ FEL!",
+     "confidence": 0.9676361568272114,
+     "lines": 1,
+     "ms": 98.875,
+     "gt": "NA. PATTANJ FEL!",
+     "kind": "speech",
+     "score": {
+      "chars": 16,
+      "charErr": 0,
+      "words": 3,
+      "wordErr": 0,
+      "charsNoPunct": 14,
+      "charErrNoPunct": 0,
+      "exact": true,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r10",
+     "text": "FAS21-1",
+     "confidence": 0.7848971486091614,
+     "lines": 1,
+     "ms": 125.39999985694885,
+     "gt": "FASZI-1",
+     "kind": "sign",
+     "score": {
+      "chars": 7,
+      "charErr": 2,
+      "words": 1,
+      "wordErr": 1,
+      "charsNoPunct": 6,
+      "charErrNoPunct": 2,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r11",
+     "text": "CALAVRIE O",
+     "confidence": 0.9158782429165311,
+     "lines": 1,
+     "ms": 251.02500009536743,
+     "gt": "CALAVRIE",
+     "kind": "sign",
+     "score": {
+      "chars": 8,
+      "charErr": 2,
+      "words": 1,
+      "wordErr": 1,
+      "charsNoPunct": 8,
+      "charErrNoPunct": 2,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r12",
+     "text": "NEM BAJ, AZ EMBER\nAZÉRT FIATAL, HOGY\nTANULJON.STT",
+     "confidence": 0.9202916063449482,
+     "lines": 3,
+     "ms": 287.89999985694885,
+     "gt": "NEM BAJ, AZ EMBER AZÉRT FIATAL, HOGY TANULJON.",
+     "kind": "speech",
+     "score": {
+      "chars": 46,
+      "charErr": 3,
+      "words": 8,
+      "wordErr": 1,
+      "charsNoPunct": 43,
+      "charErrNoPunct": 3,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 1
+      }
+     }
+    },
+    {
+     "id": "r13",
+     "text": "FASZI BÁCSI",
+     "confidence": 0.9255922111597928,
+     "lines": 1,
+     "ms": 97.81500005722046,
+     "gt": "FASZI BÁCSI",
+     "kind": "sign",
+     "score": {
+      "chars": 11,
+      "charErr": 0,
+      "words": 2,
+      "wordErr": 0,
+      "charsNoPunct": 11,
+      "charErrNoPunct": 0,
+      "exact": true,
+      "accents": {
+       "total": 1,
+       "hit": 1
+      }
+     }
+    },
+    {
+     "id": "r14",
+     "text": "FASZI-100",
+     "confidence": 0.7595569094022115,
+     "lines": 1,
+     "ms": 76.53500008583069,
+     "gt": "FASZI-1",
+     "kind": "sign",
+     "score": {
+      "chars": 7,
+      "charErr": 2,
+      "words": 1,
+      "wordErr": 1,
+      "charsNoPunct": 6,
+      "charErrNoPunct": 2,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r15",
+     "text": "JEZUS ATYA, URISTEN!",
+     "confidence": 0.8814408197999001,
+     "lines": 1,
+     "ms": 89.88499999046326,
+     "gt": "JÉZUS, ATYA, ÚRISTEN!",
+     "kind": "speech",
+     "score": {
+      "chars": 21,
+      "charErr": 3,
+      "words": 3,
+      "wordErr": 2,
+      "charsNoPunct": 18,
+      "charErrNoPunct": 2,
+      "exact": false,
+      "accents": {
+       "total": 2,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r16",
+     "text": "IVECALAIROO",
+     "confidence": 0.8909654129635204,
+     "lines": 1,
+     "ms": 255.97000002861023,
+     "gt": "VECALAIR",
+     "kind": "sign",
+     "score": {
+      "chars": 8,
+      "charErr": 3,
+      "words": 1,
+      "wordErr": 1,
+      "charsNoPunct": 8,
+      "charErrNoPunct": 3,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r17",
+     "text": "Ö A HALÓFÜLKEBEN LÓG\nEGY KRISTÁLYHOLOGRAM\nFORMÁJABAN,DE ITT\nVALÓBAN A SZENTFÖLDI\nLOVAGVÁRAK\nSTILUSAT IGYEKEZTEM HOZ\nAZ OTT EGY BEDVIN\nKEMENCE, HENNÁS KASPO\nTEVENYEREG, ASTROLABINM",
+     "confidence": 0.9166735271171409,
+     "lines": 9,
+     "ms": 899.6449999809265,
+     "gt": "Ö A HÁLÓFÜLKÉBEN LÓG, EGY KRISTÁLYHOLOGRAM FORMÁJÁBAN, DE ITT VALÓBAN A SZENTFÖLDI LOVAGVÁRAK STÍLUSÁT IGYEKEZTEM HOZNI. AZ OTT EGY BEDUIN KEMENCE, HENNÁS KASPÓ TEVENYEREG, ASZTROLÁBIUM...",
+     "kind": "speech",
+     "score": {
+      "chars": 188,
+      "charErr": 18,
+      "words": 25,
+      "wordErr": 9,
+      "charsNoPunct": 180,
+      "charErrNoPunct": 13,
+      "exact": false,
+      "accents": {
+       "total": 17,
+       "hit": 10
+      }
+     }
+    },
+    {
+     "id": "r18",
+     "text": "FASZI BACSI",
+     "confidence": 0.8614860285412181,
+     "lines": 1,
+     "ms": 96.2099997997284,
+     "gt": "FASZI BÁCSI",
+     "kind": "sign",
+     "score": {
+      "chars": 11,
+      "charErr": 1,
+      "words": 2,
+      "wordErr": 1,
+      "charsNoPunct": 11,
+      "charErrNoPunct": 1,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r19",
+     "text": "CSAK MÁR GEURE\nUNOM.\nEZERT VAGYIT E!",
+     "confidence": 0.9338892699707122,
+     "lines": 3,
+     "ms": 344.00999999046326,
+     "gt": "CSAK MÁR GECIRE UNOM. EZÉRT VAGY ITT, E!",
+     "kind": "speech",
+     "score": {
+      "chars": 40,
+      "charErr": 6,
+      "words": 8,
+      "wordErr": 4,
+      "charsNoPunct": 37,
+      "charErrNoPunct": 5,
+      "exact": false,
+      "accents": {
+       "total": 2,
+       "hit": 1
+      }
+     }
+    },
+    {
+     "id": "r20",
+     "text": "HÁTOO... EDDIG EGY KAMIONT...",
+     "confidence": 0.8659346319478134,
+     "lines": 1,
+     "ms": 127.35000014305115,
+     "gt": "HÁTŐŐ... EDDIG EGY KAMIONT...",
+     "kind": "speech",
+     "score": {
+      "chars": 29,
+      "charErr": 2,
+      "words": 4,
+      "wordErr": 1,
+      "charsNoPunct": 23,
+      "charErrNoPunct": 2,
+      "exact": false,
+      "accents": {
+       "total": 3,
+       "hit": 1
+      }
+     }
+    },
+    {
+     "id": "r23",
+     "text": "RELAVACI",
+     "confidence": 0.7195291221141815,
+     "lines": 1,
+     "ms": 207.08500003814697,
+     "gt": "RELAVACI",
+     "kind": "sign",
+     "score": {
+      "chars": 8,
+      "charErr": 0,
+      "words": 1,
+      "wordErr": 0,
+      "charsNoPunct": 8,
+      "charErrNoPunct": 0,
+      "exact": true,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r24",
+     "text": "NYERGES VONTATÓT.",
+     "confidence": 0.9885032983387217,
+     "lines": 1,
+     "ms": 90.29500007629395,
+     "gt": "NYERGES VONTATÓT.",
+     "kind": "speech",
+     "score": {
+      "chars": 17,
+      "charErr": 0,
+      "words": 2,
+      "wordErr": 0,
+      "charsNoPunct": 16,
+      "charErrNoPunct": 0,
+      "exact": true,
+      "accents": {
+       "total": 1,
+       "hit": 1
+      }
+     }
+    },
+    {
+     "id": "r25",
+     "text": "PARDON. NYERGESVONTATOT\nCSINÁLTAM, VIII. HENRIK STILUSÁBAN,\n„TRUBADUR\" LETT A MUNKACIME.\nITT VAN A PORTFÓLIÓMBAN:",
+     "confidence": 0.9318072721115304,
+     "lines": 4,
+     "ms": 473.1300001144409,
+     "gt": "PARDON. NYERGESVONTATÓT CSINÁLTAM, VIII. HENRIK STÍLUSÁBAN, „TRUBADÚR” LETT A MUNKACÍME. ITT VAN A PORTFÓLIÓMBAN:",
+     "kind": "speech",
+     "score": {
+      "chars": 113,
+      "charErr": 4,
+      "words": 14,
+      "wordErr": 4,
+      "charsNoPunct": 105,
+      "charErrNoPunct": 4,
+      "exact": false,
+      "accents": {
+       "total": 8,
+       "hit": 4
+      }
+     }
+    },
+    {
+     "id": "r26",
+     "text": "AHA.. VÁGOM. KÁRPIT\nMÁR MESSZIRÖL.ELKAPTAD A\nBROKÁT. SOKA BOUT. FELBASZNA\nAZONNAL. MEG-EZIS ILYEN\nREGI , VAGOD?\nANTIK .",
+     "confidence": 0.8457957079021038,
+     "lines": 6,
+     "ms": 717.0499999523163,
+     "gt": "AHA ... VÁGOM. KÁRPIT MÁR MESSZIRŐL. ELKAPTAD A BROKÁT. SOK A BOJT. FELBASZNA AZONNAL. MEG EZIS ILYEN „RÉGI”, VÁGOD? ÁNTIK.",
+     "kind": "speech",
+     "score": {
+      "chars": 123,
+      "charErr": 13,
+      "words": 20,
+      "wordErr": 14,
+      "charsNoPunct": 109,
+      "charErrNoPunct": 8,
+      "exact": false,
+      "accents": {
+       "total": 8,
+       "hit": 4
+      }
+     }
+    },
+    {
+     "id": "r27",
+     "text": "FASZI BACSI",
+     "confidence": 0.8511074673045765,
+     "lines": 1,
+     "ms": 52.69000005722046,
+     "gt": "FASZI BÁCSI",
+     "kind": "sign",
+     "score": {
+      "chars": 11,
+      "charErr": 1,
+      "words": 2,
+      "wordErr": 1,
+      "charsNoPunct": 11,
+      "charErrNoPunct": 1,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r28",
+     "text": "FAS2I- O",
+     "confidence": 0.8107869369643075,
+     "lines": 1,
+     "ms": 137.13499999046326,
+     "gt": "FASZI-1",
+     "kind": "sign",
+     "score": {
+      "chars": 7,
+      "charErr": 3,
+      "words": 1,
+      "wordErr": 2,
+      "charsNoPunct": 6,
+      "charErrNoPunct": 3,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r29",
+     "text": "ROPI",
+     "confidence": 0.9144022017717361,
+     "lines": 1,
+     "ms": 53.28500008583069,
+     "gt": "ROPI",
+     "kind": "caption",
+     "score": {
+      "chars": 4,
+      "charErr": 0,
+      "words": 1,
+      "wordErr": 0,
+      "charsNoPunct": 4,
+      "charErrNoPunct": 0,
+      "exact": true,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r30",
+     "text": "SZÓVAL,AMIKOR A GROBKUGELNI\nPIHENOBEN KINITAA\nURVAAATOTAKKOR\ncYnmMGeetaY\nYRANYNAK YEN LaYYOY\nART DEKOTGONDOLNEK",
+     "confidence": 0.7400031761813638,
+     "lines": 6,
+     "ms": 1167.5,
+     "gt": "SZÓVAL, AMIKOR A GROẞKUGELNI PIHENŐBEN KINYITJA A KURVA AZ AJTÓT AKKOR NE AZT KÉRDEZZE, MERRE VAN A MÚZEUMSHOP, VÁGOD? IRÁNYNAK ILYEN NEOLOFTOS ART DEKÓT GONDOLNÉK.",
+     "kind": "speech",
+     "score": {
+      "chars": 164,
+      "charErr": 72,
+      "words": 25,
+      "wordErr": 23,
+      "charsNoPunct": 159,
+      "charErrNoPunct": 68,
+      "exact": false,
+      "accents": {
+       "total": 9,
+       "hit": 1
+      }
+     }
+    },
+    {
+     "id": "r32",
+     "text": "RACALVIE",
+     "confidence": 0.9950377494096756,
+     "lines": 1,
+     "ms": 93.64000010490417,
+     "gt": "RACALVIE",
+     "kind": "sign",
+     "score": {
+      "chars": 8,
+      "charErr": 0,
+      "words": 1,
+      "wordErr": 0,
+      "charsNoPunct": 8,
+      "charErrNoPunct": 0,
+      "exact": true,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r33",
+     "text": "FASZIBÁOS",
+     "confidence": 0.8422482344839308,
+     "lines": 1,
+     "ms": 49.96000003814697,
+     "gt": "FASZI BÁCSI",
+     "kind": "sign",
+     "score": {
+      "chars": 11,
+      "charErr": 3,
+      "words": 2,
+      "wordErr": 2,
+      "charsNoPunct": 11,
+      "charErrNoPunct": 3,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 1
+      }
+     }
+    },
+    {
+     "id": "r34",
+     "text": "ERTEM. EZA DOBOZ, EZ MI?\nMARADNIA KEUL?",
+     "confidence": 0.9069310822302387,
+     "lines": 2,
+     "ms": 238.10000014305115,
+     "gt": "ÉRTEM. EZ A DOBOZ, EZ MI? MARADNIA KELL?",
+     "kind": "speech",
+     "score": {
+      "chars": 40,
+      "charErr": 3,
+      "words": 8,
+      "wordErr": 4,
+      "charsNoPunct": 36,
+      "charErrNoPunct": 3,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r35",
+     "text": "AKKSIKA FÉNYHEZ. MARAD.",
+     "confidence": 0.8912273114142211,
+     "lines": 1,
+     "ms": 101.5550000667572,
+     "gt": "AKKSIK A FÉNYHEZ. MARAD.",
+     "kind": "speech",
+     "score": {
+      "chars": 24,
+      "charErr": 1,
+      "words": 4,
+      "wordErr": 2,
+      "charsNoPunct": 22,
+      "charErrNoPunct": 1,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 1
+      }
+     }
+    },
+    {
+     "id": "r36",
+     "text": "FENYHEZ\"?",
+     "confidence": 0.9337670471933153,
+     "lines": 1,
+     "ms": 50.12999987602234,
+     "gt": "„FÉNYHEZ”?",
+     "kind": "speech",
+     "score": {
+      "chars": 10,
+      "charErr": 2,
+      "words": 1,
+      "wordErr": 1,
+      "charsNoPunct": 7,
+      "charErrNoPunct": 1,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r37",
+     "text": "FASZI- 0 O",
+     "confidence": 0.7167911678552628,
+     "lines": 1,
+     "ms": 91.64499998092651,
+     "gt": "FASZI-1",
+     "kind": "sign",
+     "score": {
+      "chars": 7,
+      "charErr": 4,
+      "words": 1,
+      "wordErr": 3,
+      "charsNoPunct": 6,
+      "charErrNoPunct": 4,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r38",
+     "text": "2 1\nB b0",
+     "confidence": 0.5599954075046948,
+     "lines": 2,
+     "ms": 415.50999999046326,
+     "gt": "BALKON",
+     "kind": "sign",
+     "score": {
+      "chars": 6,
+      "charErr": 8,
+      "words": 1,
+      "wordErr": 4,
+      "charsNoPunct": 6,
+      "charErrNoPunct": 8,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r40",
+     "text": "ICAVELIAR",
+     "confidence": 0.9446753660837809,
+     "lines": 1,
+     "ms": 75.04500007629395,
+     "gt": "CAVELIAR",
+     "kind": "sign",
+     "score": {
+      "chars": 8,
+      "charErr": 1,
+      "words": 1,
+      "wordErr": 1,
+      "charsNoPunct": 8,
+      "charErrNoPunct": 1,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r41",
+     "text": "TIÉD VOLTAZ\nA SMART?",
+     "confidence": 0.968147723512216,
+     "lines": 2,
+     "ms": 183.39999985694885,
+     "gt": "TIÉD VOLT AZ A SMART?",
+     "kind": "speech",
+     "score": {
+      "chars": 21,
+      "charErr": 1,
+      "words": 5,
+      "wordErr": 2,
+      "charsNoPunct": 20,
+      "charErrNoPunct": 1,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 1
+      }
+     }
+    },
+    {
+     "id": "r42",
+     "text": "FASZIBÁSI",
+     "confidence": 0.8766256305906508,
+     "lines": 1,
+     "ms": 63.74000000953674,
+     "gt": "FASZI BÁCSI",
+     "kind": "sign",
+     "score": {
+      "chars": 11,
+      "charErr": 2,
+      "words": 2,
+      "wordErr": 2,
+      "charsNoPunct": 11,
+      "charErrNoPunct": 2,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 1
+      }
+     }
+    },
+    {
+     "id": "r45",
+     "text": "0 FASZI-",
+     "confidence": 0.7116761718477521,
+     "lines": 1,
+     "ms": 101.4300000667572,
+     "gt": "FASZI-1",
+     "kind": "sign",
+     "score": {
+      "chars": 7,
+      "charErr": 3,
+      "words": 1,
+      "wordErr": 2,
+      "charsNoPunct": 6,
+      "charErrNoPunct": 3,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r46",
+     "text": "TAR FIFU \nIGCAMAIIERL",
+     "confidence": 0.8100633576705859,
+     "lines": 2,
+     "ms": 475.04500007629395,
+     "gt": "FIFU! HURUHATÁRR!",
+     "kind": "sfx",
+     "score": {
+      "chars": 17,
+      "charErr": 14,
+      "words": 2,
+      "wordErr": 3,
+      "charsNoPunct": 15,
+      "charErrNoPunct": 13,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r47",
+     "text": "CAVALIER",
+     "confidence": 0.9974404200911522,
+     "lines": 1,
+     "ms": 74.88000011444092,
+     "gt": "CAVALIER",
+     "kind": "sign",
+     "score": {
+      "chars": 8,
+      "charErr": 0,
+      "words": 1,
+      "wordErr": 0,
+      "charsNoPunct": 8,
+      "charErrNoPunct": 0,
+      "exact": true,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r48",
+     "text": "BOCsI.",
+     "confidence": 0.7694496611754099,
+     "lines": 1,
+     "ms": 43.980000019073486,
+     "gt": "BOCSI.",
+     "kind": "speech",
+     "score": {
+      "chars": 6,
+      "charErr": 0,
+      "words": 1,
+      "wordErr": 0,
+      "charsNoPunct": 5,
+      "charErrNoPunct": 0,
+      "exact": true,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r49",
+     "text": "7HAZAVISZLEK. MEG",
+     "confidence": 0.9478197732032874,
+     "lines": 1,
+     "ms": 143.17499995231628,
+     "gt": "MEG HAZAVISZLEK.",
+     "kind": "speech",
+     "score": {
+      "chars": 16,
+      "charErr": 8,
+      "words": 2,
+      "wordErr": 2,
+      "charsNoPunct": 15,
+      "charErrNoPunct": 8,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r50",
+     "text": "FASZI BACSI",
+     "confidence": 0.8692746514623816,
+     "lines": 1,
+     "ms": 50.110000133514404,
+     "gt": "FASZI BÁCSI",
+     "kind": "sign",
+     "score": {
+      "chars": 11,
+      "charErr": 1,
+      "words": 2,
+      "wordErr": 1,
+      "charsNoPunct": 11,
+      "charErrNoPunct": 1,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r52",
+     "text": "TFASZ1- D",
+     "confidence": 0.6095351427793503,
+     "lines": 1,
+     "ms": 86.46500015258789,
+     "gt": "FASZI-1",
+     "kind": "sign",
+     "score": {
+      "chars": 7,
+      "charErr": 4,
+      "words": 1,
+      "wordErr": 2,
+      "charsNoPunct": 6,
+      "charErrNoPunct": 4,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    }
+   ]
+  },
+  {
+   "summary": {
+    "model": "trocr-small-handwritten",
+    "threads": 1,
+    "sizeMB": 68.111197,
+    "loadMs": 4395.860000133514,
+    "msPerCropMean": 2491.3533333301543,
+    "msPerCropMedian": 2180.0950000286102,
+    "msPerCropWarmMean": 2499.7261363593016,
+    "crops": 45,
+    "errors": 0,
+    "cer": 0.8036154478225144,
+    "wer": 1.074468085106383,
+    "cerNoPunct": 0.8093971631205674,
+    "exact": 1,
+    "accentAcc": 0,
+    "accentTotal": 76,
+    "speechOnly": {
+     "cer": 0.7633663366336634,
+     "wer": 0.9871794871794872,
+     "cerNoPunct": 0.7623655913978494,
+     "exact": 0,
+     "accentAcc": 0,
+     "accentTotal": 68
+    },
+    "pssPeakMB": 958.458984375,
+    "pssDeltaMB": 583.5546875,
+    "uaMemAfterLoadMB": 177.701037,
+    "uaMemEndMB": 178.925922,
+    "crossOriginIsolated": true,
+    "webgpu": true,
+    "info": {
+     "repo": "Xenova/trocr-small-handwritten",
+     "dtype": "q8",
+     "numThreads": 1
+    },
+    "fatal": null
+   },
+   "preds": [
+    {
+     "id": "r0",
+     "text": "unless are",
+     "lines": 1,
+     "ms": 2122.9500000476837,
+     "gt": "UNKA!",
+     "kind": "sfx",
+     "score": {
+      "chars": 5,
+      "charErr": 7,
+      "words": 1,
+      "wordErr": 2,
+      "charsNoPunct": 4,
+      "charErrNoPunct": 7,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r1",
+     "text": "maleill\neducation.",
+     "lines": 2,
+     "ms": 4081.2300000190735,
+     "gt": "NA! E! DEJÓ, HOGY ELJÖTTÉ, E!",
+     "kind": "speech",
+     "score": {
+      "chars": 29,
+      "charErr": 24,
+      "words": 6,
+      "wordErr": 6,
+      "charsNoPunct": 24,
+      "charErrNoPunct": 19,
+      "exact": false,
+      "accents": {
+       "total": 3,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r2",
+     "text": "chirery",
+     "lines": 1,
+     "ms": 2122.024999856949,
+     "gt": "HÍREK",
+     "kind": "speech",
+     "score": {
+      "chars": 5,
+      "charErr": 4,
+      "words": 1,
+      "wordErr": 1,
+      "charsNoPunct": 5,
+      "charErrNoPunct": 4,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r4",
+     "text": "the first",
+     "lines": 1,
+     "ms": 2155.1349999904633,
+     "gt": "MOST ARRA GONDOLSZ, HOGY „DE KÁR, HOGY ELKÖLTÖTTEM AZ ELŐLEGET, MOST LEMONDHATNÁM",
+     "kind": "speech",
+     "score": {
+      "chars": 81,
+      "charErr": 74,
+      "words": 12,
+      "wordErr": 12,
+      "charsNoPunct": 77,
+      "charErrNoPunct": 70,
+      "exact": false,
+      "accents": {
+       "total": 5,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r5",
+     "text": "footwear",
+     "lines": 1,
+     "ms": 2004.2099997997284,
+     "gt": "CAVALEIR",
+     "kind": "sign",
+     "score": {
+      "chars": 8,
+      "charErr": 6,
+      "words": 1,
+      "wordErr": 1,
+      "charsNoPunct": 8,
+      "charErrNoPunct": 6,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r6",
+     "text": "la newmill",
+     "lines": 1,
+     "ms": 2149.390000104904,
+     "gt": "A MELÓT!”",
+     "kind": "speech",
+     "score": {
+      "chars": 9,
+      "charErr": 7,
+      "words": 2,
+      "wordErr": 2,
+      "charsNoPunct": 7,
+      "charErrNoPunct": 7,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r7",
+     "text": "hat-Kasey",
+     "lines": 1,
+     "ms": 2268.0299999713898,
+     "gt": "HÁT... KÁBÉ.",
+     "kind": "speech",
+     "score": {
+      "chars": 12,
+      "charErr": 9,
+      "words": 2,
+      "wordErr": 2,
+      "charsNoPunct": 8,
+      "charErrNoPunct": 6,
+      "exact": false,
+      "accents": {
+       "total": 3,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r8",
+     "text": "massabil",
+     "lines": 1,
+     "ms": 2434.289999961853,
+     "gt": "FASZI BÁCSI",
+     "kind": "sign",
+     "score": {
+      "chars": 11,
+      "charErr": 8,
+      "words": 2,
+      "wordErr": 2,
+      "charsNoPunct": 11,
+      "charErrNoPunct": 8,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r9",
+     "text": "na. patronsfully",
+     "lines": 1,
+     "ms": 2054.409999847412,
+     "gt": "NA. PATTANJ FEL!",
+     "kind": "speech",
+     "score": {
+      "chars": 16,
+      "charErr": 7,
+      "words": 3,
+      "wordErr": 2,
+      "charsNoPunct": 14,
+      "charErrNoPunct": 7,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r10",
+     "text": "Operation",
+     "lines": 1,
+     "ms": 1992.4800000190735,
+     "gt": "FASZI-1",
+     "kind": "sign",
+     "score": {
+      "chars": 7,
+      "charErr": 8,
+      "words": 1,
+      "wordErr": 1,
+      "charsNoPunct": 6,
+      "charErrNoPunct": 8,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r11",
+     "text": "to a large job",
+     "lines": 1,
+     "ms": 2121.085000038147,
+     "gt": "CALAVRIE",
+     "kind": "sign",
+     "score": {
+      "chars": 8,
+      "charErr": 10,
+      "words": 1,
+      "wordErr": 4,
+      "charsNoPunct": 8,
+      "charErrNoPunct": 10,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r12",
+     "text": "made the first time",
+     "lines": 1,
+     "ms": 2108.8600001335144,
+     "gt": "NEM BAJ, AZ EMBER AZÉRT FIATAL, HOGY TANULJON.",
+     "kind": "speech",
+     "score": {
+      "chars": 46,
+      "charErr": 37,
+      "words": 8,
+      "wordErr": 8,
+      "charsNoPunct": 43,
+      "charErrNoPunct": 34,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r13",
+     "text": "fraszibasy",
+     "lines": 1,
+     "ms": 2113.0499999523163,
+     "gt": "FASZI BÁCSI",
+     "kind": "sign",
+     "score": {
+      "chars": 11,
+      "charErr": 5,
+      "words": 2,
+      "wordErr": 2,
+      "charsNoPunct": 11,
+      "charErrNoPunct": 5,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r14",
+     "text": "jeanridge",
+     "lines": 1,
+     "ms": 2054.6349999904633,
+     "gt": "FASZI-1",
+     "kind": "sign",
+     "score": {
+      "chars": 7,
+      "charErr": 7,
+      "words": 1,
+      "wordErr": 1,
+      "charsNoPunct": 6,
+      "charErrNoPunct": 7,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r15",
+     "text": "jezus, Atya, Uristeni )",
+     "lines": 1,
+     "ms": 2257.9800000190735,
+     "gt": "JÉZUS, ATYA, ÚRISTEN!",
+     "kind": "speech",
+     "score": {
+      "chars": 21,
+      "charErr": 5,
+      "words": 3,
+      "wordErr": 3,
+      "charsNoPunct": 18,
+      "charErrNoPunct": 3,
+      "exact": false,
+      "accents": {
+       "total": 2,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r16",
+     "text": "strategic training to",
+     "lines": 1,
+     "ms": 2234.5350000858307,
+     "gt": "VECALAIR",
+     "kind": "sign",
+     "score": {
+      "chars": 8,
+      "charErr": 17,
+      "words": 1,
+      "wordErr": 3,
+      "charsNoPunct": 8,
+      "charErrNoPunct": 17,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r17",
+     "text": "a b c d e f. It is a successful success in the U SPORT",
+     "lines": 1,
+     "ms": 2539.5049998760223,
+     "gt": "Ö A HÁLÓFÜLKÉBEN LÓG, EGY KRISTÁLYHOLOGRAM FORMÁJÁBAN, DE ITT VALÓBAN A SZENTFÖLDI LOVAGVÁRAK STÍLUSÁT IGYEKEZTEM HOZNI. AZ OTT EGY BEDUIN KEMENCE, HENNÁS KASPÓ TEVENYEREG, ASZTROLÁBIUM...",
+     "kind": "speech",
+     "score": {
+      "chars": 188,
+      "charErr": 155,
+      "words": 25,
+      "wordErr": 23,
+      "charsNoPunct": 180,
+      "charErrNoPunct": 147,
+      "exact": false,
+      "accents": {
+       "total": 17,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r18",
+     "text": "leaser-based",
+     "lines": 1,
+     "ms": 2180.0950000286102,
+     "gt": "FASZI BÁCSI",
+     "kind": "sign",
+     "score": {
+      "chars": 11,
+      "charErr": 9,
+      "words": 2,
+      "wordErr": 2,
+      "charsNoPunct": 11,
+      "charErrNoPunct": 9,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r19",
+     "text": "CSAK MR. REUREI\never thought..",
+     "lines": 2,
+     "ms": 4375.735000133514,
+     "gt": "CSAK MÁR GECIRE UNOM. EZÉRT VAGY ITT, E!",
+     "kind": "speech",
+     "score": {
+      "chars": 40,
+      "charErr": 25,
+      "words": 8,
+      "wordErr": 7,
+      "charsNoPunct": 37,
+      "charErrNoPunct": 21,
+      "exact": false,
+      "accents": {
+       "total": 2,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r20",
+     "text": "HARDO.__ Eddie Guy Kamion.",
+     "lines": 1,
+     "ms": 2413.5299999713898,
+     "gt": "HÁTŐŐ... EDDIG EGY KAMIONT...",
+     "kind": "speech",
+     "score": {
+      "chars": 29,
+      "charErr": 12,
+      "words": 4,
+      "wordErr": 4,
+      "charsNoPunct": 23,
+      "charErrNoPunct": 8,
+      "exact": false,
+      "accents": {
+       "total": 3,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r23",
+     "text": "rate taxor.",
+     "lines": 1,
+     "ms": 2203.4049999713898,
+     "gt": "RELAVACI",
+     "kind": "sign",
+     "score": {
+      "chars": 8,
+      "charErr": 8,
+      "words": 1,
+      "wordErr": 2,
+      "charsNoPunct": 8,
+      "charErrNoPunct": 8,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r24",
+     "text": "hypergesvantation",
+     "lines": 1,
+     "ms": 2192.1349999904633,
+     "gt": "NYERGES VONTATÓT.",
+     "kind": "speech",
+     "score": {
+      "chars": 17,
+      "charErr": 7,
+      "words": 2,
+      "wordErr": 2,
+      "charsNoPunct": 16,
+      "charErrNoPunct": 7,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r25",
+     "text": "What links hereRelated changesUpload fileSpecial pagesPermanent linkPage informationCite this pageWikidata item",
+     "lines": 1,
+     "ms": 2978.354999780655,
+     "gt": "PARDON. NYERGESVONTATÓT CSINÁLTAM, VIII. HENRIK STÍLUSÁBAN, „TRUBADÚR” LETT A MUNKACÍME. ITT VAN A PORTFÓLIÓMBAN:",
+     "kind": "speech",
+     "score": {
+      "chars": 113,
+      "charErr": 94,
+      "words": 14,
+      "wordErr": 14,
+      "charsNoPunct": 105,
+      "charErrNoPunct": 89,
+      "exact": false,
+      "accents": {
+       "total": 8,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r26",
+     "text": "a b c d e f g h. It is very important to be able to",
+     "lines": 1,
+     "ms": 2679.4000000953674,
+     "gt": "AHA ... VÁGOM. KÁRPIT MÁR MESSZIRŐL. ELKAPTAD A BROKÁT. SOK A BOJT. FELBASZNA AZONNAL. MEG EZIS ILYEN „RÉGI”, VÁGOD? ÁNTIK.",
+     "kind": "speech",
+     "score": {
+      "chars": 123,
+      "charErr": 98,
+      "words": 20,
+      "wordErr": 20,
+      "charsNoPunct": 109,
+      "charErrNoPunct": 86,
+      "exact": false,
+      "accents": {
+       "total": 8,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r27",
+     "text": "grass-based",
+     "lines": 1,
+     "ms": 1994.8500001430511,
+     "gt": "FASZI BÁCSI",
+     "kind": "sign",
+     "score": {
+      "chars": 11,
+      "charErr": 9,
+      "words": 2,
+      "wordErr": 2,
+      "charsNoPunct": 11,
+      "charErrNoPunct": 9,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r28",
+     "text": "a b c\nappeaser-old\norganizing",
+     "lines": 3,
+     "ms": 6095.47000002861,
+     "gt": "FASZI-1",
+     "kind": "sign",
+     "score": {
+      "chars": 7,
+      "charErr": 25,
+      "words": 1,
+      "wordErr": 5,
+      "charsNoPunct": 6,
+      "charErrNoPunct": 24,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r29",
+     "text": "mg\npropi",
+     "lines": 2,
+     "ms": 4347.960000038147,
+     "gt": "ROPI",
+     "kind": "caption",
+     "score": {
+      "chars": 4,
+      "charErr": 4,
+      "words": 1,
+      "wordErr": 2,
+      "charsNoPunct": 4,
+      "charErrNoPunct": 4,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r30",
+     "text": "a b c d e f g h. It is a very low than the most of the",
+     "lines": 1,
+     "ms": 2640.6600000858307,
+     "gt": "SZÓVAL, AMIKOR A GROẞKUGELNI PIHENŐBEN KINYITJA A KURVA AZ AJTÓT AKKOR NE AZT KÉRDEZZE, MERRE VAN A MÚZEUMSHOP, VÁGOD? IRÁNYNAK ILYEN NEOLOFTOS ART DEKÓT GONDOLNÉK.",
+     "kind": "speech",
+     "score": {
+      "chars": 164,
+      "charErr": 134,
+      "words": 25,
+      "wordErr": 23,
+      "charsNoPunct": 159,
+      "charErrNoPunct": 129,
+      "exact": false,
+      "accents": {
+       "total": 9,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r32",
+     "text": "gracefully",
+     "lines": 1,
+     "ms": 2004.1449999809265,
+     "gt": "RACALVIE",
+     "kind": "sign",
+     "score": {
+      "chars": 8,
+      "charErr": 7,
+      "words": 1,
+      "wordErr": 1,
+      "charsNoPunct": 8,
+      "charErrNoPunct": 7,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r33",
+     "text": "fraszibaoi",
+     "lines": 1,
+     "ms": 2138.079999923706,
+     "gt": "FASZI BÁCSI",
+     "kind": "sign",
+     "score": {
+      "chars": 11,
+      "charErr": 5,
+      "words": 2,
+      "wordErr": 2,
+      "charsNoPunct": 11,
+      "charErrNoPunct": 5,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r34",
+     "text": "establishment",
+     "lines": 1,
+     "ms": 2056.710000038147,
+     "gt": "ÉRTEM. EZ A DOBOZ, EZ MI? MARADNIA KELL?",
+     "kind": "speech",
+     "score": {
+      "chars": 40,
+      "charErr": 34,
+      "words": 8,
+      "wordErr": 8,
+      "charsNoPunct": 36,
+      "charErrNoPunct": 31,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r35",
+     "text": "akksika fenydez. Marad.",
+     "lines": 1,
+     "ms": 2225.5750000476837,
+     "gt": "AKKSIK A FÉNYHEZ. MARAD.",
+     "kind": "speech",
+     "score": {
+      "chars": 24,
+      "charErr": 3,
+      "words": 4,
+      "wordErr": 3,
+      "charsNoPunct": 22,
+      "charErrNoPunct": 3,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r36",
+     "text": "( jen,hez \" 2",
+     "lines": 1,
+     "ms": 2278.4450001716614,
+     "gt": "„FÉNYHEZ”?",
+     "kind": "speech",
+     "score": {
+      "chars": 10,
+      "charErr": 8,
+      "words": 1,
+      "wordErr": 4,
+      "charsNoPunct": 7,
+      "charErrNoPunct": 5,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r37",
+     "text": "Grassusoo",
+     "lines": 1,
+     "ms": 2162.819999933243,
+     "gt": "FASZI-1",
+     "kind": "sign",
+     "score": {
+      "chars": 7,
+      "charErr": 7,
+      "words": 1,
+      "wordErr": 1,
+      "charsNoPunct": 6,
+      "charErrNoPunct": 7,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r38",
+     "text": "Personal tools",
+     "lines": 1,
+     "ms": 2152.1549999713898,
+     "gt": "BALKON",
+     "kind": "sign",
+     "score": {
+      "chars": 6,
+      "charErr": 11,
+      "words": 1,
+      "wordErr": 2,
+      "charsNoPunct": 6,
+      "charErrNoPunct": 11,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r40",
+     "text": "cave hair",
+     "lines": 1,
+     "ms": 2111.8650000095367,
+     "gt": "CAVELIAR",
+     "kind": "sign",
+     "score": {
+      "chars": 8,
+      "charErr": 3,
+      "words": 1,
+      "wordErr": 2,
+      "charsNoPunct": 8,
+      "charErrNoPunct": 3,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r41",
+     "text": "Green-Out-Up-",
+     "lines": 1,
+     "ms": 2242.0199999809265,
+     "gt": "TIÉD VOLT AZ A SMART?",
+     "kind": "speech",
+     "score": {
+      "chars": 21,
+      "charErr": 19,
+      "words": 5,
+      "wordErr": 5,
+      "charsNoPunct": 20,
+      "charErrNoPunct": 18,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r42",
+     "text": "PRESIDENT",
+     "lines": 1,
+     "ms": 2147.5549998283386,
+     "gt": "FASZI BÁCSI",
+     "kind": "sign",
+     "score": {
+      "chars": 11,
+      "charErr": 10,
+      "words": 2,
+      "wordErr": 2,
+      "charsNoPunct": 11,
+      "charErrNoPunct": 10,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r45",
+     "text": "appeared to",
+     "lines": 1,
+     "ms": 2107.8450000286102,
+     "gt": "FASZI-1",
+     "kind": "sign",
+     "score": {
+      "chars": 7,
+      "charErr": 10,
+      "words": 1,
+      "wordErr": 2,
+      "charsNoPunct": 6,
+      "charErrNoPunct": 10,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r46",
+     "text": "viewer #",
+     "lines": 1,
+     "ms": 2154.5199999809265,
+     "gt": "FIFU! HURUHATÁRR!",
+     "kind": "sfx",
+     "score": {
+      "chars": 17,
+      "charErr": 15,
+      "words": 2,
+      "wordErr": 2,
+      "charsNoPunct": 15,
+      "charErrNoPunct": 13,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r47",
+     "text": "cavalier",
+     "lines": 1,
+     "ms": 2175.454999923706,
+     "gt": "CAVALIER",
+     "kind": "sign",
+     "score": {
+      "chars": 8,
+      "charErr": 0,
+      "words": 1,
+      "wordErr": 0,
+      "charsNoPunct": 8,
+      "charErrNoPunct": 0,
+      "exact": true,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r48",
+     "text": "0 0\nhoossi.",
+     "lines": 2,
+     "ms": 4499.84500002861,
+     "gt": "BOCSI.",
+     "kind": "speech",
+     "score": {
+      "chars": 6,
+      "charErr": 7,
+      "words": 1,
+      "wordErr": 3,
+      "charsNoPunct": 5,
+      "charErrNoPunct": 7,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r49",
+     "text": "Khazaviszewski",
+     "lines": 1,
+     "ms": 2217.75,
+     "gt": "MEG HAZAVISZLEK.",
+     "kind": "speech",
+     "score": {
+      "chars": 16,
+      "charErr": 8,
+      "words": 2,
+      "wordErr": 2,
+      "charsNoPunct": 15,
+      "charErrNoPunct": 8,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r50",
+     "text": "Fraser bassy",
+     "lines": 1,
+     "ms": 2249.5499999523163,
+     "gt": "FASZI BÁCSI",
+     "kind": "sign",
+     "score": {
+      "chars": 11,
+      "charErr": 6,
+      "words": 2,
+      "wordErr": 2,
+      "charsNoPunct": 11,
+      "charErrNoPunct": 6,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r52",
+     "text": "easier to be",
+     "lines": 1,
+     "ms": 2271.170000076294,
+     "gt": "FASZI-1",
+     "kind": "sign",
+     "score": {
+      "chars": 7,
+      "charErr": 10,
+      "words": 1,
+      "wordErr": 3,
+      "charsNoPunct": 6,
+      "charErrNoPunct": 10,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    }
+   ]
+  },
+  {
+   "summary": {
+    "model": "trocr-small-handwritten",
+    "threads": 4,
+    "sizeMB": 68.111197,
+    "loadMs": 4539.475000143051,
+    "msPerCropMean": 1169.8231111102634,
+    "msPerCropMedian": 1009.0750000476837,
+    "msPerCropWarmMean": 1165.6340909058397,
+    "crops": 45,
+    "errors": 0,
+    "cer": 0.8036154478225144,
+    "wer": 1.074468085106383,
+    "cerNoPunct": 0.8093971631205674,
+    "exact": 1,
+    "accentAcc": 0,
+    "accentTotal": 76,
+    "speechOnly": {
+     "cer": 0.7633663366336634,
+     "wer": 0.9871794871794872,
+     "cerNoPunct": 0.7623655913978494,
+     "exact": 0,
+     "accentAcc": 0,
+     "accentTotal": 68
+    },
+    "pssPeakMB": 878.580078125,
+    "pssDeltaMB": 545.9697265625,
+    "uaMemAfterLoadMB": 183.403722,
+    "uaMemEndMB": 184.639003,
+    "crossOriginIsolated": true,
+    "webgpu": true,
+    "info": {
+     "repo": "Xenova/trocr-small-handwritten",
+     "dtype": "q8",
+     "numThreads": 4
+    },
+    "fatal": null
+   },
+   "preds": [
+    {
+     "id": "r0",
+     "text": "unless are",
+     "lines": 1,
+     "ms": 1354.1400001049042,
+     "gt": "UNKA!",
+     "kind": "sfx",
+     "score": {
+      "chars": 5,
+      "charErr": 7,
+      "words": 1,
+      "wordErr": 2,
+      "charsNoPunct": 4,
+      "charErrNoPunct": 7,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r1",
+     "text": "maleill\neducation.",
+     "lines": 2,
+     "ms": 2116.3300001621246,
+     "gt": "NA! E! DEJÓ, HOGY ELJÖTTÉ, E!",
+     "kind": "speech",
+     "score": {
+      "chars": 29,
+      "charErr": 24,
+      "words": 6,
+      "wordErr": 6,
+      "charsNoPunct": 24,
+      "charErrNoPunct": 19,
+      "exact": false,
+      "accents": {
+       "total": 3,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r2",
+     "text": "chirery",
+     "lines": 1,
+     "ms": 1004.2150001525879,
+     "gt": "HÍREK",
+     "kind": "speech",
+     "score": {
+      "chars": 5,
+      "charErr": 4,
+      "words": 1,
+      "wordErr": 1,
+      "charsNoPunct": 5,
+      "charErrNoPunct": 4,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r4",
+     "text": "the first",
+     "lines": 1,
+     "ms": 1000.6199998855591,
+     "gt": "MOST ARRA GONDOLSZ, HOGY „DE KÁR, HOGY ELKÖLTÖTTEM AZ ELŐLEGET, MOST LEMONDHATNÁM",
+     "kind": "speech",
+     "score": {
+      "chars": 81,
+      "charErr": 74,
+      "words": 12,
+      "wordErr": 12,
+      "charsNoPunct": 77,
+      "charErrNoPunct": 70,
+      "exact": false,
+      "accents": {
+       "total": 5,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r5",
+     "text": "footwear",
+     "lines": 1,
+     "ms": 1009.0750000476837,
+     "gt": "CAVALEIR",
+     "kind": "sign",
+     "score": {
+      "chars": 8,
+      "charErr": 6,
+      "words": 1,
+      "wordErr": 1,
+      "charsNoPunct": 8,
+      "charErrNoPunct": 6,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r6",
+     "text": "la newmill",
+     "lines": 1,
+     "ms": 993.7000000476837,
+     "gt": "A MELÓT!”",
+     "kind": "speech",
+     "score": {
+      "chars": 9,
+      "charErr": 7,
+      "words": 2,
+      "wordErr": 2,
+      "charsNoPunct": 7,
+      "charErrNoPunct": 7,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r7",
+     "text": "hat-Kasey",
+     "lines": 1,
+     "ms": 1062.2750000953674,
+     "gt": "HÁT... KÁBÉ.",
+     "kind": "speech",
+     "score": {
+      "chars": 12,
+      "charErr": 9,
+      "words": 2,
+      "wordErr": 2,
+      "charsNoPunct": 8,
+      "charErrNoPunct": 6,
+      "exact": false,
+      "accents": {
+       "total": 3,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r8",
+     "text": "massabil",
+     "lines": 1,
+     "ms": 997.4950001239777,
+     "gt": "FASZI BÁCSI",
+     "kind": "sign",
+     "score": {
+      "chars": 11,
+      "charErr": 8,
+      "words": 2,
+      "wordErr": 2,
+      "charsNoPunct": 11,
+      "charErrNoPunct": 8,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r9",
+     "text": "na. patronsfully",
+     "lines": 1,
+     "ms": 1037.6499998569489,
+     "gt": "NA. PATTANJ FEL!",
+     "kind": "speech",
+     "score": {
+      "chars": 16,
+      "charErr": 7,
+      "words": 3,
+      "wordErr": 2,
+      "charsNoPunct": 14,
+      "charErrNoPunct": 7,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r10",
+     "text": "Operation",
+     "lines": 1,
+     "ms": 1030.505000114441,
+     "gt": "FASZI-1",
+     "kind": "sign",
+     "score": {
+      "chars": 7,
+      "charErr": 8,
+      "words": 1,
+      "wordErr": 1,
+      "charsNoPunct": 6,
+      "charErrNoPunct": 8,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r11",
+     "text": "to a large job",
+     "lines": 1,
+     "ms": 1266.0499999523163,
+     "gt": "CALAVRIE",
+     "kind": "sign",
+     "score": {
+      "chars": 8,
+      "charErr": 10,
+      "words": 1,
+      "wordErr": 4,
+      "charsNoPunct": 8,
+      "charErrNoPunct": 10,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r12",
+     "text": "made the first time",
+     "lines": 1,
+     "ms": 1094.5,
+     "gt": "NEM BAJ, AZ EMBER AZÉRT FIATAL, HOGY TANULJON.",
+     "kind": "speech",
+     "score": {
+      "chars": 46,
+      "charErr": 37,
+      "words": 8,
+      "wordErr": 8,
+      "charsNoPunct": 43,
+      "charErrNoPunct": 34,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r13",
+     "text": "fraszibasy",
+     "lines": 1,
+     "ms": 1014.579999923706,
+     "gt": "FASZI BÁCSI",
+     "kind": "sign",
+     "score": {
+      "chars": 11,
+      "charErr": 5,
+      "words": 2,
+      "wordErr": 2,
+      "charsNoPunct": 11,
+      "charErrNoPunct": 5,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r14",
+     "text": "jeanridge",
+     "lines": 1,
+     "ms": 953.5899999141693,
+     "gt": "FASZI-1",
+     "kind": "sign",
+     "score": {
+      "chars": 7,
+      "charErr": 7,
+      "words": 1,
+      "wordErr": 1,
+      "charsNoPunct": 6,
+      "charErrNoPunct": 7,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r15",
+     "text": "jezus, Atya, Uristeni )",
+     "lines": 1,
+     "ms": 1193.6099998950958,
+     "gt": "JÉZUS, ATYA, ÚRISTEN!",
+     "kind": "speech",
+     "score": {
+      "chars": 21,
+      "charErr": 5,
+      "words": 3,
+      "wordErr": 3,
+      "charsNoPunct": 18,
+      "charErrNoPunct": 3,
+      "exact": false,
+      "accents": {
+       "total": 2,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r16",
+     "text": "strategic training to",
+     "lines": 1,
+     "ms": 1116.1750001907349,
+     "gt": "VECALAIR",
+     "kind": "sign",
+     "score": {
+      "chars": 8,
+      "charErr": 17,
+      "words": 1,
+      "wordErr": 3,
+      "charsNoPunct": 8,
+      "charErrNoPunct": 17,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r17",
+     "text": "a b c d e f. It is a successful success in the U SPORT",
+     "lines": 1,
+     "ms": 1208.7599999904633,
+     "gt": "Ö A HÁLÓFÜLKÉBEN LÓG, EGY KRISTÁLYHOLOGRAM FORMÁJÁBAN, DE ITT VALÓBAN A SZENTFÖLDI LOVAGVÁRAK STÍLUSÁT IGYEKEZTEM HOZNI. AZ OTT EGY BEDUIN KEMENCE, HENNÁS KASPÓ TEVENYEREG, ASZTROLÁBIUM...",
+     "kind": "speech",
+     "score": {
+      "chars": 188,
+      "charErr": 155,
+      "words": 25,
+      "wordErr": 23,
+      "charsNoPunct": 180,
+      "charErrNoPunct": 147,
+      "exact": false,
+      "accents": {
+       "total": 17,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r18",
+     "text": "leaser-based",
+     "lines": 1,
+     "ms": 1006.7549998760223,
+     "gt": "FASZI BÁCSI",
+     "kind": "sign",
+     "score": {
+      "chars": 11,
+      "charErr": 9,
+      "words": 2,
+      "wordErr": 2,
+      "charsNoPunct": 11,
+      "charErrNoPunct": 9,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r19",
+     "text": "CSAK MR. REUREI\never thought..",
+     "lines": 2,
+     "ms": 2122.1399998664856,
+     "gt": "CSAK MÁR GECIRE UNOM. EZÉRT VAGY ITT, E!",
+     "kind": "speech",
+     "score": {
+      "chars": 40,
+      "charErr": 25,
+      "words": 8,
+      "wordErr": 7,
+      "charsNoPunct": 37,
+      "charErrNoPunct": 21,
+      "exact": false,
+      "accents": {
+       "total": 2,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r20",
+     "text": "HARDO.__ Eddie Guy Kamion.",
+     "lines": 1,
+     "ms": 1092.3949999809265,
+     "gt": "HÁTŐŐ... EDDIG EGY KAMIONT...",
+     "kind": "speech",
+     "score": {
+      "chars": 29,
+      "charErr": 12,
+      "words": 4,
+      "wordErr": 4,
+      "charsNoPunct": 23,
+      "charErrNoPunct": 8,
+      "exact": false,
+      "accents": {
+       "total": 3,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r23",
+     "text": "rate taxor.",
+     "lines": 1,
+     "ms": 1042.6849999427795,
+     "gt": "RELAVACI",
+     "kind": "sign",
+     "score": {
+      "chars": 8,
+      "charErr": 8,
+      "words": 1,
+      "wordErr": 2,
+      "charsNoPunct": 8,
+      "charErrNoPunct": 8,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r24",
+     "text": "hypergesvantation",
+     "lines": 1,
+     "ms": 977.0350000858307,
+     "gt": "NYERGES VONTATÓT.",
+     "kind": "speech",
+     "score": {
+      "chars": 17,
+      "charErr": 7,
+      "words": 2,
+      "wordErr": 2,
+      "charsNoPunct": 16,
+      "charErrNoPunct": 7,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r25",
+     "text": "What links hereRelated changesUpload fileSpecial pagesPermanent linkPage informationCite this pageWikidata item",
+     "lines": 1,
+     "ms": 1340.954999923706,
+     "gt": "PARDON. NYERGESVONTATÓT CSINÁLTAM, VIII. HENRIK STÍLUSÁBAN, „TRUBADÚR” LETT A MUNKACÍME. ITT VAN A PORTFÓLIÓMBAN:",
+     "kind": "speech",
+     "score": {
+      "chars": 113,
+      "charErr": 94,
+      "words": 14,
+      "wordErr": 14,
+      "charsNoPunct": 105,
+      "charErrNoPunct": 89,
+      "exact": false,
+      "accents": {
+       "total": 8,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r26",
+     "text": "a b c d e f g h. It is very important to be able to",
+     "lines": 1,
+     "ms": 1219.4849998950958,
+     "gt": "AHA ... VÁGOM. KÁRPIT MÁR MESSZIRŐL. ELKAPTAD A BROKÁT. SOK A BOJT. FELBASZNA AZONNAL. MEG EZIS ILYEN „RÉGI”, VÁGOD? ÁNTIK.",
+     "kind": "speech",
+     "score": {
+      "chars": 123,
+      "charErr": 98,
+      "words": 20,
+      "wordErr": 20,
+      "charsNoPunct": 109,
+      "charErrNoPunct": 86,
+      "exact": false,
+      "accents": {
+       "total": 8,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r27",
+     "text": "grass-based",
+     "lines": 1,
+     "ms": 969.5899999141693,
+     "gt": "FASZI BÁCSI",
+     "kind": "sign",
+     "score": {
+      "chars": 11,
+      "charErr": 9,
+      "words": 2,
+      "wordErr": 2,
+      "charsNoPunct": 11,
+      "charErrNoPunct": 9,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r28",
+     "text": "a b c\nappeaser-old\norganizing",
+     "lines": 3,
+     "ms": 2938.130000114441,
+     "gt": "FASZI-1",
+     "kind": "sign",
+     "score": {
+      "chars": 7,
+      "charErr": 25,
+      "words": 1,
+      "wordErr": 5,
+      "charsNoPunct": 6,
+      "charErrNoPunct": 24,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r29",
+     "text": "mg\npropi",
+     "lines": 2,
+     "ms": 1872.289999961853,
+     "gt": "ROPI",
+     "kind": "caption",
+     "score": {
+      "chars": 4,
+      "charErr": 4,
+      "words": 1,
+      "wordErr": 2,
+      "charsNoPunct": 4,
+      "charErrNoPunct": 4,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r30",
+     "text": "a b c d e f g h. It is a very low than the most of the",
+     "lines": 1,
+     "ms": 1144.5550000667572,
+     "gt": "SZÓVAL, AMIKOR A GROẞKUGELNI PIHENŐBEN KINYITJA A KURVA AZ AJTÓT AKKOR NE AZT KÉRDEZZE, MERRE VAN A MÚZEUMSHOP, VÁGOD? IRÁNYNAK ILYEN NEOLOFTOS ART DEKÓT GONDOLNÉK.",
+     "kind": "speech",
+     "score": {
+      "chars": 164,
+      "charErr": 134,
+      "words": 25,
+      "wordErr": 23,
+      "charsNoPunct": 159,
+      "charErrNoPunct": 129,
+      "exact": false,
+      "accents": {
+       "total": 9,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r32",
+     "text": "gracefully",
+     "lines": 1,
+     "ms": 928.3450000286102,
+     "gt": "RACALVIE",
+     "kind": "sign",
+     "score": {
+      "chars": 8,
+      "charErr": 7,
+      "words": 1,
+      "wordErr": 1,
+      "charsNoPunct": 8,
+      "charErrNoPunct": 7,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r33",
+     "text": "fraszibaoi",
+     "lines": 1,
+     "ms": 1099.1050000190735,
+     "gt": "FASZI BÁCSI",
+     "kind": "sign",
+     "score": {
+      "chars": 11,
+      "charErr": 5,
+      "words": 2,
+      "wordErr": 2,
+      "charsNoPunct": 11,
+      "charErrNoPunct": 5,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r34",
+     "text": "establishment",
+     "lines": 1,
+     "ms": 984.1699998378754,
+     "gt": "ÉRTEM. EZ A DOBOZ, EZ MI? MARADNIA KELL?",
+     "kind": "speech",
+     "score": {
+      "chars": 40,
+      "charErr": 34,
+      "words": 8,
+      "wordErr": 8,
+      "charsNoPunct": 36,
+      "charErrNoPunct": 31,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r35",
+     "text": "akksika fenydez. Marad.",
+     "lines": 1,
+     "ms": 1105.539999961853,
+     "gt": "AKKSIK A FÉNYHEZ. MARAD.",
+     "kind": "speech",
+     "score": {
+      "chars": 24,
+      "charErr": 3,
+      "words": 4,
+      "wordErr": 3,
+      "charsNoPunct": 22,
+      "charErrNoPunct": 3,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r36",
+     "text": "( jen,hez \" 2",
+     "lines": 1,
+     "ms": 1006.7000000476837,
+     "gt": "„FÉNYHEZ”?",
+     "kind": "speech",
+     "score": {
+      "chars": 10,
+      "charErr": 8,
+      "words": 1,
+      "wordErr": 4,
+      "charsNoPunct": 7,
+      "charErrNoPunct": 5,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r37",
+     "text": "Grassusoo",
+     "lines": 1,
+     "ms": 901.7949998378754,
+     "gt": "FASZI-1",
+     "kind": "sign",
+     "score": {
+      "chars": 7,
+      "charErr": 7,
+      "words": 1,
+      "wordErr": 1,
+      "charsNoPunct": 6,
+      "charErrNoPunct": 7,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r38",
+     "text": "Personal tools",
+     "lines": 1,
+     "ms": 1004.9749999046326,
+     "gt": "BALKON",
+     "kind": "sign",
+     "score": {
+      "chars": 6,
+      "charErr": 11,
+      "words": 1,
+      "wordErr": 2,
+      "charsNoPunct": 6,
+      "charErrNoPunct": 11,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r40",
+     "text": "cave hair",
+     "lines": 1,
+     "ms": 931.085000038147,
+     "gt": "CAVELIAR",
+     "kind": "sign",
+     "score": {
+      "chars": 8,
+      "charErr": 3,
+      "words": 1,
+      "wordErr": 2,
+      "charsNoPunct": 8,
+      "charErrNoPunct": 3,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r41",
+     "text": "Green-Out-Up-",
+     "lines": 1,
+     "ms": 981.920000076294,
+     "gt": "TIÉD VOLT AZ A SMART?",
+     "kind": "speech",
+     "score": {
+      "chars": 21,
+      "charErr": 19,
+      "words": 5,
+      "wordErr": 5,
+      "charsNoPunct": 20,
+      "charErrNoPunct": 18,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r42",
+     "text": "PRESIDENT",
+     "lines": 1,
+     "ms": 909.7200000286102,
+     "gt": "FASZI BÁCSI",
+     "kind": "sign",
+     "score": {
+      "chars": 11,
+      "charErr": 10,
+      "words": 2,
+      "wordErr": 2,
+      "charsNoPunct": 11,
+      "charErrNoPunct": 10,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r45",
+     "text": "appeared to",
+     "lines": 1,
+     "ms": 951.3150000572205,
+     "gt": "FASZI-1",
+     "kind": "sign",
+     "score": {
+      "chars": 7,
+      "charErr": 10,
+      "words": 1,
+      "wordErr": 2,
+      "charsNoPunct": 6,
+      "charErrNoPunct": 10,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r46",
+     "text": "viewer #",
+     "lines": 1,
+     "ms": 985.4800000190735,
+     "gt": "FIFU! HURUHATÁRR!",
+     "kind": "sfx",
+     "score": {
+      "chars": 17,
+      "charErr": 15,
+      "words": 2,
+      "wordErr": 2,
+      "charsNoPunct": 15,
+      "charErrNoPunct": 13,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r47",
+     "text": "cavalier",
+     "lines": 1,
+     "ms": 959.2200000286102,
+     "gt": "CAVALIER",
+     "kind": "sign",
+     "score": {
+      "chars": 8,
+      "charErr": 0,
+      "words": 1,
+      "wordErr": 0,
+      "charsNoPunct": 8,
+      "charErrNoPunct": 0,
+      "exact": true,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r48",
+     "text": "0 0\nhoossi.",
+     "lines": 2,
+     "ms": 1870.0099999904633,
+     "gt": "BOCSI.",
+     "kind": "speech",
+     "score": {
+      "chars": 6,
+      "charErr": 7,
+      "words": 1,
+      "wordErr": 3,
+      "charsNoPunct": 5,
+      "charErrNoPunct": 7,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r49",
+     "text": "Khazaviszewski",
+     "lines": 1,
+     "ms": 937.3650000095367,
+     "gt": "MEG HAZAVISZLEK.",
+     "kind": "speech",
+     "score": {
+      "chars": 16,
+      "charErr": 8,
+      "words": 2,
+      "wordErr": 2,
+      "charsNoPunct": 15,
+      "charErrNoPunct": 8,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r50",
+     "text": "Fraser bassy",
+     "lines": 1,
+     "ms": 946.329999923706,
+     "gt": "FASZI BÁCSI",
+     "kind": "sign",
+     "score": {
+      "chars": 11,
+      "charErr": 6,
+      "words": 2,
+      "wordErr": 2,
+      "charsNoPunct": 11,
+      "charErrNoPunct": 6,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r52",
+     "text": "easier to be",
+     "lines": 1,
+     "ms": 959.6800000667572,
+     "gt": "FASZI-1",
+     "kind": "sign",
+     "score": {
+      "chars": 7,
+      "charErr": 10,
+      "words": 1,
+      "wordErr": 3,
+      "charsNoPunct": 6,
+      "charErrNoPunct": 10,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    }
+   ]
+  },
+  {
+   "summary": {
+    "model": "trocr-small-printed",
+    "threads": 1,
+    "sizeMB": 68.111191,
+    "loadMs": 5086.625,
+    "msPerCropMean": 2523.175555531184,
+    "msPerCropMedian": 2192.369999885559,
+    "msPerCropWarmMean": 2527.5301136103544,
+    "crops": 45,
+    "errors": 0,
+    "cer": 0.9252259654889071,
+    "wer": 0.9946808510638298,
+    "cerNoPunct": 0.7712765957446809,
+    "exact": 0,
+    "accentAcc": 0,
+    "accentTotal": 76,
+    "speechOnly": {
+     "cer": 0.9554455445544554,
+     "wer": 0.9423076923076923,
+     "cerNoPunct": 0.8032258064516129,
+     "exact": 0,
+     "accentAcc": 0,
+     "accentTotal": 68
+    },
+    "pssPeakMB": 901.0302734375,
+    "pssDeltaMB": 568.4462890625,
+    "uaMemAfterLoadMB": 177.699673,
+    "uaMemEndMB": 178.959884,
+    "crossOriginIsolated": true,
+    "webgpu": true,
+    "info": {
+     "repo": "Xenova/trocr-small-printed",
+     "dtype": "q8",
+     "numThreads": 1
+    },
+    "fatal": null
+   },
+   "preds": [
+    {
+     "id": "r0",
+     "text": "UNTAS",
+     "lines": 1,
+     "ms": 2331.5750000476837,
+     "gt": "UNKA!",
+     "kind": "sfx",
+     "score": {
+      "chars": 5,
+      "charErr": 2,
+      "words": 1,
+      "wordErr": 1,
+      "charsNoPunct": 4,
+      "charErrNoPunct": 2,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r1",
+     "text": "NALE!\nDESCRIPTION",
+     "lines": 2,
+     "ms": 4202,
+     "gt": "NA! E! DEJÓ, HOGY ELJÖTTÉ, E!",
+     "kind": "speech",
+     "score": {
+      "chars": 29,
+      "charErr": 21,
+      "words": 6,
+      "wordErr": 6,
+      "charsNoPunct": 24,
+      "charErrNoPunct": 17,
+      "exact": false,
+      "accents": {
+       "total": 3,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r2",
+     "text": "(HEEK)",
+     "lines": 1,
+     "ms": 2052.7149999141693,
+     "gt": "HÍREK",
+     "kind": "speech",
+     "score": {
+      "chars": 5,
+      "charErr": 4,
+      "words": 1,
+      "wordErr": 1,
+      "charsNoPunct": 5,
+      "charErrNoPunct": 2,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r4",
+     "text": "***",
+     "lines": 1,
+     "ms": 2015.659999847412,
+     "gt": "MOST ARRA GONDOLSZ, HOGY „DE KÁR, HOGY ELKÖLTÖTTEM AZ ELŐLEGET, MOST LEMONDHATNÁM",
+     "kind": "speech",
+     "score": {
+      "chars": 81,
+      "charErr": 81,
+      "words": 12,
+      "wordErr": 12,
+      "charsNoPunct": 77,
+      "charErrNoPunct": 77,
+      "exact": false,
+      "accents": {
+       "total": 5,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r5",
+     "text": "(CAVEJR)",
+     "lines": 1,
+     "ms": 2131.4700000286102,
+     "gt": "CAVALEIR",
+     "kind": "sign",
+     "score": {
+      "chars": 8,
+      "charErr": 5,
+      "words": 1,
+      "wordErr": 1,
+      "charsNoPunct": 8,
+      "charErrNoPunct": 3,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r6",
+     "text": "A MELOT!\"",
+     "lines": 1,
+     "ms": 2081.585000038147,
+     "gt": "A MELÓT!”",
+     "kind": "speech",
+     "score": {
+      "chars": 9,
+      "charErr": 1,
+      "words": 2,
+      "wordErr": 1,
+      "charsNoPunct": 7,
+      "charErrNoPunct": 1,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r7",
+     "text": "HAT... KABE.",
+     "lines": 1,
+     "ms": 2104.024999856949,
+     "gt": "HÁT... KÁBÉ.",
+     "kind": "speech",
+     "score": {
+      "chars": 12,
+      "charErr": 3,
+      "words": 2,
+      "wordErr": 2,
+      "charsNoPunct": 8,
+      "charErrNoPunct": 3,
+      "exact": false,
+      "accents": {
+       "total": 3,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r8",
+     "text": "(AS21 B4C8)",
+     "lines": 1,
+     "ms": 2172.1150000095367,
+     "gt": "FASZI BÁCSI",
+     "kind": "sign",
+     "score": {
+      "chars": 11,
+      "charErr": 6,
+      "words": 2,
+      "wordErr": 2,
+      "charsNoPunct": 11,
+      "charErrNoPunct": 6,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r9",
+     "text": "(NA.PATANJ FEU",
+     "lines": 1,
+     "ms": 2113.0899999141693,
+     "gt": "NA. PATTANJ FEL!",
+     "kind": "speech",
+     "score": {
+      "chars": 16,
+      "charErr": 5,
+      "words": 3,
+      "wordErr": 3,
+      "charsNoPunct": 14,
+      "charErrNoPunct": 3,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r10",
+     "text": "00@*4000",
+     "lines": 1,
+     "ms": 2280.960000038147,
+     "gt": "FASZI-1",
+     "kind": "sign",
+     "score": {
+      "chars": 7,
+      "charErr": 8,
+      "words": 1,
+      "wordErr": 1,
+      "charsNoPunct": 6,
+      "charErrNoPunct": 6,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r11",
+     "text": "(CALAVENE)00",
+     "lines": 1,
+     "ms": 2338.819999933243,
+     "gt": "CALAVRIE",
+     "kind": "sign",
+     "score": {
+      "chars": 8,
+      "charErr": 6,
+      "words": 1,
+      "wordErr": 1,
+      "charsNoPunct": 8,
+      "charErrNoPunct": 4,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r12",
+     "text": "NASEST TOTAL NOSY",
+     "lines": 1,
+     "ms": 2188.3949999809265,
+     "gt": "NEM BAJ, AZ EMBER AZÉRT FIATAL, HOGY TANULJON.",
+     "kind": "speech",
+     "score": {
+      "chars": 46,
+      "charErr": 35,
+      "words": 8,
+      "wordErr": 8,
+      "charsNoPunct": 43,
+      "charErrNoPunct": 32,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r13",
+     "text": "(FASZI BA(S):",
+     "lines": 1,
+     "ms": 2162.409999847412,
+     "gt": "FASZI BÁCSI",
+     "kind": "sign",
+     "score": {
+      "chars": 11,
+      "charErr": 5,
+      "words": 2,
+      "wordErr": 2,
+      "charsNoPunct": 11,
+      "charErrNoPunct": 3,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r14",
+     "text": "JFASI-100S",
+     "lines": 1,
+     "ms": 1958.0999999046326,
+     "gt": "FASZI-1",
+     "kind": "sign",
+     "score": {
+      "chars": 7,
+      "charErr": 5,
+      "words": 1,
+      "wordErr": 1,
+      "charsNoPunct": 6,
+      "charErrNoPunct": 5,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r15",
+     "text": "JEZUS,ATYA, URISTEN!",
+     "lines": 1,
+     "ms": 2237.140000104904,
+     "gt": "JÉZUS, ATYA, ÚRISTEN!",
+     "kind": "speech",
+     "score": {
+      "chars": 21,
+      "charErr": 3,
+      "words": 3,
+      "wordErr": 3,
+      "charsNoPunct": 18,
+      "charErrNoPunct": 3,
+      "exact": false,
+      "accents": {
+       "total": 2,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r16",
+     "text": "PRECAUMPROO",
+     "lines": 1,
+     "ms": 2179.204999923706,
+     "gt": "VECALAIR",
+     "kind": "sign",
+     "score": {
+      "chars": 8,
+      "charErr": 7,
+      "words": 1,
+      "wordErr": 1,
+      "charsNoPunct": 8,
+      "charErrNoPunct": 7,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r17",
+     "text": "***",
+     "lines": 1,
+     "ms": 2060.0250000953674,
+     "gt": "Ö A HÁLÓFÜLKÉBEN LÓG, EGY KRISTÁLYHOLOGRAM FORMÁJÁBAN, DE ITT VALÓBAN A SZENTFÖLDI LOVAGVÁRAK STÍLUSÁT IGYEKEZTEM HOZNI. AZ OTT EGY BEDUIN KEMENCE, HENNÁS KASPÓ TEVENYEREG, ASZTROLÁBIUM...",
+     "kind": "speech",
+     "score": {
+      "chars": 188,
+      "charErr": 188,
+      "words": 25,
+      "wordErr": 25,
+      "charsNoPunct": 180,
+      "charErrNoPunct": 180,
+      "exact": false,
+      "accents": {
+       "total": 17,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r18",
+     "text": "(FAS21 84CL)",
+     "lines": 1,
+     "ms": 2247.835000038147,
+     "gt": "FASZI BÁCSI",
+     "kind": "sign",
+     "score": {
+      "chars": 11,
+      "charErr": 7,
+      "words": 2,
+      "wordErr": 2,
+      "charsNoPunct": 11,
+      "charErrNoPunct": 6,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r19",
+     "text": "CSAK MAR GEURE\n652RT VANINT, E!",
+     "lines": 2,
+     "ms": 4645.424999952316,
+     "gt": "CSAK MÁR GECIRE UNOM. EZÉRT VAGY ITT, E!",
+     "kind": "speech",
+     "score": {
+      "chars": 40,
+      "charErr": 16,
+      "words": 8,
+      "wordErr": 6,
+      "charsNoPunct": 37,
+      "charErrNoPunct": 15,
+      "exact": false,
+      "accents": {
+       "total": 2,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r20",
+     "text": "HATOO... EDPIG EGY KAMIONT...",
+     "lines": 1,
+     "ms": 2484.579999923706,
+     "gt": "HÁTŐŐ... EDDIG EGY KAMIONT...",
+     "kind": "speech",
+     "score": {
+      "chars": 29,
+      "charErr": 4,
+      "words": 4,
+      "wordErr": 2,
+      "charsNoPunct": 23,
+      "charErrNoPunct": 4,
+      "exact": false,
+      "accents": {
+       "total": 3,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r23",
+     "text": "CRELIAVANIC",
+     "lines": 1,
+     "ms": 2104.4500000476837,
+     "gt": "RELAVACI",
+     "kind": "sign",
+     "score": {
+      "chars": 8,
+      "charErr": 4,
+      "words": 1,
+      "wordErr": 1,
+      "charsNoPunct": 8,
+      "charErrNoPunct": 4,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r24",
+     "text": "NYERGES VONTATOT.",
+     "lines": 1,
+     "ms": 2394.5350000858307,
+     "gt": "NYERGES VONTATÓT.",
+     "kind": "speech",
+     "score": {
+      "chars": 17,
+      "charErr": 1,
+      "words": 2,
+      "wordErr": 1,
+      "charsNoPunct": 16,
+      "charErrNoPunct": 1,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r25",
+     "text": "PROMOTION AND ADJUSTMENTS",
+     "lines": 1,
+     "ms": 2437.7850000858307,
+     "gt": "PARDON. NYERGESVONTATÓT CSINÁLTAM, VIII. HENRIK STÍLUSÁBAN, „TRUBADÚR” LETT A MUNKACÍME. ITT VAN A PORTFÓLIÓMBAN:",
+     "kind": "speech",
+     "score": {
+      "chars": 113,
+      "charErr": 95,
+      "words": 14,
+      "wordErr": 14,
+      "charsNoPunct": 105,
+      "charErrNoPunct": 87,
+      "exact": false,
+      "accents": {
+       "total": 8,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r26",
+     "text": "*********************************************************************************************************************************************************************************************************************************************************************************************",
+     "lines": 1,
+     "ms": 3289,
+     "gt": "AHA ... VÁGOM. KÁRPIT MÁR MESSZIRŐL. ELKAPTAD A BROKÁT. SOK A BOJT. FELBASZNA AZONNAL. MEG EZIS ILYEN „RÉGI”, VÁGOD? ÁNTIK.",
+     "kind": "speech",
+     "score": {
+      "chars": 123,
+      "charErr": 285,
+      "words": 20,
+      "wordErr": 20,
+      "charsNoPunct": 109,
+      "charErrNoPunct": 109,
+      "exact": false,
+      "accents": {
+       "total": 8,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r27",
+     "text": "(FAS21 BACSL)",
+     "lines": 1,
+     "ms": 2371.1549999713898,
+     "gt": "FASZI BÁCSI",
+     "kind": "sign",
+     "score": {
+      "chars": 11,
+      "charErr": 6,
+      "words": 2,
+      "wordErr": 2,
+      "charsNoPunct": 11,
+      "charErrNoPunct": 4,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r28",
+     "text": "--\nOO @$21-400\n---",
+     "lines": 3,
+     "ms": 6860.535000085831,
+     "gt": "FASZI-1",
+     "kind": "sign",
+     "score": {
+      "chars": 7,
+      "charErr": 17,
+      "words": 1,
+      "wordErr": 4,
+      "charsNoPunct": 6,
+      "charErrNoPunct": 8,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r29",
+     "text": ":\nROPS",
+     "lines": 2,
+     "ms": 4240.119999885559,
+     "gt": "ROPI",
+     "kind": "caption",
+     "score": {
+      "chars": 4,
+      "charErr": 3,
+      "words": 1,
+      "wordErr": 2,
+      "charsNoPunct": 4,
+      "charErrNoPunct": 1,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r30",
+     "text": "***",
+     "lines": 1,
+     "ms": 1990.0449998378754,
+     "gt": "SZÓVAL, AMIKOR A GROẞKUGELNI PIHENŐBEN KINYITJA A KURVA AZ AJTÓT AKKOR NE AZT KÉRDEZZE, MERRE VAN A MÚZEUMSHOP, VÁGOD? IRÁNYNAK ILYEN NEOLOFTOS ART DEKÓT GONDOLNÉK.",
+     "kind": "speech",
+     "score": {
+      "chars": 164,
+      "charErr": 164,
+      "words": 25,
+      "wordErr": 25,
+      "charsNoPunct": 159,
+      "charErrNoPunct": 159,
+      "exact": false,
+      "accents": {
+       "total": 9,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r32",
+     "text": "(RAKALVIE)",
+     "lines": 1,
+     "ms": 2086.4100000858307,
+     "gt": "RACALVIE",
+     "kind": "sign",
+     "score": {
+      "chars": 8,
+      "charErr": 3,
+      "words": 1,
+      "wordErr": 1,
+      "charsNoPunct": 8,
+      "charErrNoPunct": 1,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r33",
+     "text": "FASZI BAG",
+     "lines": 1,
+     "ms": 2203.255000114441,
+     "gt": "FASZI BÁCSI",
+     "kind": "sign",
+     "score": {
+      "chars": 11,
+      "charErr": 4,
+      "words": 2,
+      "wordErr": 1,
+      "charsNoPunct": 11,
+      "charErrNoPunct": 4,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r34",
+     "text": "FRTEMARAPOA KELL 2, MI?",
+     "lines": 1,
+     "ms": 2296.4249999523163,
+     "gt": "ÉRTEM. EZ A DOBOZ, EZ MI? MARADNIA KELL?",
+     "kind": "speech",
+     "score": {
+      "chars": 40,
+      "charErr": 29,
+      "words": 8,
+      "wordErr": 7,
+      "charsNoPunct": 36,
+      "charErrNoPunct": 26,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r35",
+     "text": "AKKSIK A FENYHEZ. MARAD.",
+     "lines": 1,
+     "ms": 2329.609999895096,
+     "gt": "AKKSIK A FÉNYHEZ. MARAD.",
+     "kind": "speech",
+     "score": {
+      "chars": 24,
+      "charErr": 1,
+      "words": 4,
+      "wordErr": 1,
+      "charsNoPunct": 22,
+      "charErrNoPunct": 1,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r36",
+     "text": "(FENYHEZ\"?",
+     "lines": 1,
+     "ms": 2265.2750000953674,
+     "gt": "„FÉNYHEZ”?",
+     "kind": "speech",
+     "score": {
+      "chars": 10,
+      "charErr": 2,
+      "words": 1,
+      "wordErr": 1,
+      "charsNoPunct": 7,
+      "charErrNoPunct": 1,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r37",
+     "text": "00(@$4000",
+     "lines": 1,
+     "ms": 2080.670000076294,
+     "gt": "FASZI-1",
+     "kind": "sign",
+     "score": {
+      "chars": 7,
+      "charErr": 9,
+      "words": 1,
+      "wordErr": 1,
+      "charsNoPunct": 6,
+      "charErrNoPunct": 6,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r38",
+     "text": "TOTAL 8099",
+     "lines": 1,
+     "ms": 2192.369999885559,
+     "gt": "BALKON",
+     "kind": "sign",
+     "score": {
+      "chars": 6,
+      "charErr": 8,
+      "words": 1,
+      "wordErr": 2,
+      "charsNoPunct": 6,
+      "charErrNoPunct": 8,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r40",
+     "text": "(CAVELIAR)",
+     "lines": 1,
+     "ms": 2190.8650000095367,
+     "gt": "CAVELIAR",
+     "kind": "sign",
+     "score": {
+      "chars": 8,
+      "charErr": 2,
+      "words": 1,
+      "wordErr": 1,
+      "charsNoPunct": 8,
+      "charErrNoPunct": 0,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r41",
+     "text": "TIED A LOT ADJ",
+     "lines": 1,
+     "ms": 2300.7699999809265,
+     "gt": "TIÉD VOLT AZ A SMART?",
+     "kind": "speech",
+     "score": {
+      "chars": 21,
+      "charErr": 14,
+      "words": 5,
+      "wordErr": 5,
+      "charsNoPunct": 20,
+      "charErrNoPunct": 13,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r42",
+     "text": "(FASZI BAGI)",
+     "lines": 1,
+     "ms": 2154.954999923706,
+     "gt": "FASZI BÁCSI",
+     "kind": "sign",
+     "score": {
+      "chars": 11,
+      "charErr": 5,
+      "words": 2,
+      "wordErr": 2,
+      "charsNoPunct": 11,
+      "charErrNoPunct": 3,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r45",
+     "text": "(00 @421-4:00",
+     "lines": 1,
+     "ms": 2170.9699997901917,
+     "gt": "FASZI-1",
+     "kind": "sign",
+     "score": {
+      "chars": 7,
+      "charErr": 12,
+      "words": 1,
+      "wordErr": 2,
+      "charsNoPunct": 6,
+      "charErrNoPunct": 8,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r46",
+     "text": "SR VORROR BALL FABLE RD",
+     "lines": 1,
+     "ms": 2390.704999923706,
+     "gt": "FIFU! HURUHATÁRR!",
+     "kind": "sfx",
+     "score": {
+      "chars": 17,
+      "charErr": 20,
+      "words": 2,
+      "wordErr": 5,
+      "charsNoPunct": 15,
+      "charErrNoPunct": 20,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r47",
+     "text": "(CAVALER",
+     "lines": 1,
+     "ms": 2064.8049998283386,
+     "gt": "CAVALIER",
+     "kind": "sign",
+     "score": {
+      "chars": 8,
+      "charErr": 2,
+      "words": 1,
+      "wordErr": 1,
+      "charsNoPunct": 8,
+      "charErrNoPunct": 1,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r48",
+     "text": "CASH\nIGOCST.",
+     "lines": 2,
+     "ms": 4459.789999961853,
+     "gt": "BOCSI.",
+     "kind": "speech",
+     "score": {
+      "chars": 6,
+      "charErr": 8,
+      "words": 1,
+      "wordErr": 2,
+      "charsNoPunct": 5,
+      "charErrNoPunct": 8,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r49",
+     "text": "MAZAVISZLK.",
+     "lines": 1,
+     "ms": 2188.4800000190735,
+     "gt": "MEG HAZAVISZLEK.",
+     "kind": "speech",
+     "score": {
+      "chars": 16,
+      "charErr": 5,
+      "words": 2,
+      "wordErr": 2,
+      "charsNoPunct": 15,
+      "charErrNoPunct": 5,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r50",
+     "text": "F4521 BAGI",
+     "lines": 1,
+     "ms": 2062.039999961853,
+     "gt": "FASZI BÁCSI",
+     "kind": "sign",
+     "score": {
+      "chars": 11,
+      "charErr": 7,
+      "words": 2,
+      "wordErr": 2,
+      "charsNoPunct": 11,
+      "charErrNoPunct": 7,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r52",
+     "text": "(5A31-000",
+     "lines": 1,
+     "ms": 2430.75,
+     "gt": "FASZI-1",
+     "kind": "sign",
+     "score": {
+      "chars": 7,
+      "charErr": 8,
+      "words": 1,
+      "wordErr": 1,
+      "charsNoPunct": 6,
+      "charErrNoPunct": 6,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    }
+   ]
+  },
+  {
+   "summary": {
+    "model": "florence-2-base-ft",
+    "threads": 1,
+    "sizeMB": 279.195418,
+    "loadMs": 8511.55999994278,
+    "msPerCropMean": 25434.74311111768,
+    "msPerCropMedian": 25202.63000011444,
+    "msPerCropWarmMean": 25398.03863637014,
+    "crops": 45,
+    "errors": 0,
+    "cer": 0.228430566967954,
+    "wer": 0.6968085106382979,
+    "cerNoPunct": 0.21719858156028368,
+    "exact": 0,
+    "accentAcc": 0.039473684210526314,
+    "accentTotal": 76,
+    "speechOnly": {
+     "cer": 0.16930693069306932,
+     "wer": 0.6346153846153846,
+     "cerNoPunct": 0.15698924731182795,
+     "exact": 0,
+     "accentAcc": 0.04411764705882353,
+     "accentTotal": 68
+    },
+    "pssPeakMB": 1274.8369140625,
+    "pssDeltaMB": 942.9423828125,
+    "uaMemAfterLoadMB": 499.027102,
+    "uaMemEndMB": 824.05017,
+    "crossOriginIsolated": true,
+    "webgpu": true,
+    "info": {
+     "repo": "onnx-community/Florence-2-base-ft",
+     "dtype": "q8",
+     "numThreads": 1
+    },
+    "fatal": null
+   },
+   "preds": [
+    {
+     "id": "r0",
+     "text": "CKNOI",
+     "lines": 1,
+     "task": "<OCR_WITH_REGION>",
+     "ms": 27049.740000009537,
+     "gt": "UNKA!",
+     "kind": "sfx",
+     "score": {
+      "chars": 5,
+      "charErr": 5,
+      "words": 1,
+      "wordErr": 1,
+      "charsNoPunct": 4,
+      "charErrNoPunct": 4,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r1",
+     "text": "NA! E!!\nDEJÖ, HOGY\nELJÓTTE, E!",
+     "lines": 3,
+     "task": "<OCR_WITH_REGION>",
+     "ms": 29887.704999923706,
+     "gt": "NA! E! DEJÓ, HOGY ELJÖTTÉ, E!",
+     "kind": "speech",
+     "score": {
+      "chars": 29,
+      "charErr": 4,
+      "words": 6,
+      "wordErr": 3,
+      "charsNoPunct": 24,
+      "charErrNoPunct": 3,
+      "exact": false,
+      "accents": {
+       "total": 3,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r2",
+     "text": "Hirex",
+     "lines": 1,
+     "task": "<OCR_WITH_REGION>",
+     "ms": 24571.91000008583,
+     "gt": "HÍREK",
+     "kind": "speech",
+     "score": {
+      "chars": 5,
+      "charErr": 2,
+      "words": 1,
+      "wordErr": 1,
+      "charsNoPunct": 5,
+      "charErrNoPunct": 2,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r4",
+     "text": "MOST ARRA GONDOLS2!\nHOGY, DE KAR, HOGY\nELKÖLOTTOTTEM AZ\nELÖLEGET, MOST\nLEMONDHATNAM",
+     "lines": 5,
+     "task": "<OCR_WITH_REGION>",
+     "ms": 30599.52499985695,
+     "gt": "MOST ARRA GONDOLSZ, HOGY „DE KÁR, HOGY ELKÖLTÖTTEM AZ ELŐLEGET, MOST LEMONDHATNÁM",
+     "kind": "speech",
+     "score": {
+      "chars": 81,
+      "charErr": 10,
+      "words": 12,
+      "wordErr": 7,
+      "charsNoPunct": 77,
+      "charErrNoPunct": 7,
+      "exact": false,
+      "accents": {
+       "total": 5,
+       "hit": 1
+      }
+     }
+    },
+    {
+     "id": "r5",
+     "text": "GAVALLEIR",
+     "lines": 1,
+     "task": "<OCR_WITH_REGION>",
+     "ms": 25202.63000011444,
+     "gt": "CAVALEIR",
+     "kind": "sign",
+     "score": {
+      "chars": 8,
+      "charErr": 2,
+      "words": 1,
+      "wordErr": 1,
+      "charsNoPunct": 8,
+      "charErrNoPunct": 2,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r6",
+     "text": "A MeIOTI!",
+     "lines": 1,
+     "task": "<OCR_WITH_REGION>",
+     "ms": 26323.27499985695,
+     "gt": "A MELÓT!”",
+     "kind": "speech",
+     "score": {
+      "chars": 9,
+      "charErr": 4,
+      "words": 2,
+      "wordErr": 1,
+      "charsNoPunct": 7,
+      "charErrNoPunct": 3,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r7",
+     "text": "HAT. KABE.",
+     "lines": 1,
+     "task": "<OCR_WITH_REGION>",
+     "ms": 26397.74499988556,
+     "gt": "HÁT... KÁBÉ.",
+     "kind": "speech",
+     "score": {
+      "chars": 12,
+      "charErr": 5,
+      "words": 2,
+      "wordErr": 2,
+      "charsNoPunct": 8,
+      "charErrNoPunct": 3,
+      "exact": false,
+      "accents": {
+       "total": 3,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r8",
+     "text": "FAS21 BICI",
+     "lines": 1,
+     "task": "<OCR_WITH_REGION>",
+     "ms": 27320.70999979973,
+     "gt": "FASZI BÁCSI",
+     "kind": "sign",
+     "score": {
+      "chars": 11,
+      "charErr": 4,
+      "words": 2,
+      "wordErr": 2,
+      "charsNoPunct": 11,
+      "charErrNoPunct": 4,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r9",
+     "text": "N. PATRANN FELLI",
+     "lines": 1,
+     "task": "<OCR_WITH_REGION>",
+     "ms": 26448.39999985695,
+     "gt": "NA. PATTANJ FEL!",
+     "kind": "speech",
+     "score": {
+      "chars": 16,
+      "charErr": 5,
+      "words": 3,
+      "wordErr": 3,
+      "charsNoPunct": 14,
+      "charErrNoPunct": 5,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r10",
+     "text": "00",
+     "lines": 1,
+     "task": "<OCR_WITH_REGION>",
+     "ms": 24951.925000190735,
+     "gt": "FASZI-1",
+     "kind": "sign",
+     "score": {
+      "chars": 7,
+      "charErr": 7,
+      "words": 1,
+      "wordErr": 1,
+      "charsNoPunct": 6,
+      "charErrNoPunct": 6,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r11",
+     "text": "CALAVRIE 00",
+     "lines": 1,
+     "task": "<OCR_WITH_REGION>",
+     "ms": 24814.609999895096,
+     "gt": "CALAVRIE",
+     "kind": "sign",
+     "score": {
+      "chars": 8,
+      "charErr": 3,
+      "words": 1,
+      "wordErr": 1,
+      "charsNoPunct": 8,
+      "charErrNoPunct": 3,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r12",
+     "text": "NEM BAJ, AZ EMBER\nAZERT FIATAL, HOGY\nTANULION.T",
+     "lines": 3,
+     "task": "<OCR_WITH_REGION>",
+     "ms": 27663.435000181198,
+     "gt": "NEM BAJ, AZ EMBER AZÉRT FIATAL, HOGY TANULJON.",
+     "kind": "speech",
+     "score": {
+      "chars": 46,
+      "charErr": 3,
+      "words": 8,
+      "wordErr": 2,
+      "charsNoPunct": 43,
+      "charErrNoPunct": 3,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r13",
+     "text": "FASZY BASI",
+     "lines": 1,
+     "task": "<OCR_WITH_REGION>",
+     "ms": 24738.389999866486,
+     "gt": "FASZI BÁCSI",
+     "kind": "sign",
+     "score": {
+      "chars": 11,
+      "charErr": 3,
+      "words": 2,
+      "wordErr": 2,
+      "charsNoPunct": 11,
+      "charErrNoPunct": 3,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r14",
+     "text": "D",
+     "lines": 1,
+     "task": "<OCR_WITH_REGION>",
+     "ms": 25140.634999990463,
+     "gt": "FASZI-1",
+     "kind": "sign",
+     "score": {
+      "chars": 7,
+      "charErr": 7,
+      "words": 1,
+      "wordErr": 1,
+      "charsNoPunct": 6,
+      "charErrNoPunct": 6,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r15",
+     "text": "JEZUS AYA URISTENU",
+     "lines": 1,
+     "task": "<OCR_WITH_REGION>",
+     "ms": 26439.855000019073,
+     "gt": "JÉZUS, ATYA, ÚRISTEN!",
+     "kind": "speech",
+     "score": {
+      "chars": 21,
+      "charErr": 6,
+      "words": 3,
+      "wordErr": 3,
+      "charsNoPunct": 18,
+      "charErrNoPunct": 4,
+      "exact": false,
+      "accents": {
+       "total": 2,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r16",
+     "text": "VECALAIROOO",
+     "lines": 1,
+     "task": "<OCR_WITH_REGION>",
+     "ms": 23938.509999990463,
+     "gt": "VECALAIR",
+     "kind": "sign",
+     "score": {
+      "chars": 8,
+      "charErr": 3,
+      "words": 1,
+      "wordErr": 1,
+      "charsNoPunct": 8,
+      "charErrNoPunct": 3,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r17",
+     "text": "O A HALOFÜKÉBEN LOG,\nEGY KRISTÜLYHOLOGRAM\nFORMAJABAN, DE IT\nVALOBAN A SENTFÜDI\nLOVAGVARAK\nSTIUSAT IGEKEKEZTEM HOZ\nAZ OTT EY BEDVIN\nKEMENCE, HENNAŞ KASPO\nTEVENYEREG, ASTROUABIUM...",
+     "lines": 9,
+     "task": "<OCR_WITH_REGION>",
+     "ms": 24688.00500011444,
+     "gt": "Ö A HÁLÓFÜLKÉBEN LÓG, EGY KRISTÁLYHOLOGRAM FORMÁJÁBAN, DE ITT VALÓBAN A SZENTFÖLDI LOVAGVÁRAK STÍLUSÁT IGYEKEZTEM HOZNI. AZ OTT EGY BEDUIN KEMENCE, HENNÁS KASPÓ TEVENYEREG, ASZTROLÁBIUM...",
+     "kind": "speech",
+     "score": {
+      "chars": 188,
+      "charErr": 30,
+      "words": 25,
+      "wordErr": 17,
+      "charsNoPunct": 180,
+      "charErrNoPunct": 29,
+      "exact": false,
+      "accents": {
+       "total": 17,
+       "hit": 2
+      }
+     }
+    },
+    {
+     "id": "r18",
+     "text": "FAZI BHSI",
+     "lines": 1,
+     "task": "<OCR_WITH_REGION>",
+     "ms": 18736.06500005722,
+     "gt": "FASZI BÁCSI",
+     "kind": "sign",
+     "score": {
+      "chars": 11,
+      "charErr": 3,
+      "words": 2,
+      "wordErr": 2,
+      "charsNoPunct": 11,
+      "charErrNoPunct": 3,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r19",
+     "text": "CSAK MAR (ECURE\nUNOM.\nEERT VAGYIT, E!",
+     "lines": 3,
+     "task": "<OCR_WITH_REGION>",
+     "ms": 20624.849999904633,
+     "gt": "CSAK MÁR GECIRE UNOM. EZÉRT VAGY ITT, E!",
+     "kind": "speech",
+     "score": {
+      "chars": 40,
+      "charErr": 7,
+      "words": 8,
+      "wordErr": 5,
+      "charsNoPunct": 37,
+      "charErrNoPunct": 7,
+      "exact": false,
+      "accents": {
+       "total": 2,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r20",
+     "text": "Hate. Enig EfEk Kahont.",
+     "lines": 1,
+     "task": "<OCR_WITH_REGION>",
+     "ms": 19652.63000011444,
+     "gt": "HÁTŐŐ... EDDIG EGY KAMIONT...",
+     "kind": "speech",
+     "score": {
+      "chars": 29,
+      "charErr": 14,
+      "words": 4,
+      "wordErr": 4,
+      "charsNoPunct": 23,
+      "charErrNoPunct": 10,
+      "exact": false,
+      "accents": {
+       "total": 3,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r23",
+     "text": "RELAVACI)",
+     "lines": 1,
+     "task": "<OCR_WITH_REGION>",
+     "ms": 19423.480000019073,
+     "gt": "RELAVACI",
+     "kind": "sign",
+     "score": {
+      "chars": 8,
+      "charErr": 1,
+      "words": 1,
+      "wordErr": 1,
+      "charsNoPunct": 8,
+      "charErrNoPunct": 0,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r24",
+     "text": "NEREE VONTAIOT",
+     "lines": 1,
+     "task": "<OCR_WITH_REGION>",
+     "ms": 20453.43499994278,
+     "gt": "NYERGES VONTATÓT.",
+     "kind": "speech",
+     "score": {
+      "chars": 17,
+      "charErr": 6,
+      "words": 2,
+      "wordErr": 2,
+      "charsNoPunct": 16,
+      "charErrNoPunct": 5,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r25",
+     "text": "PARDON. NYERGESVONTATOT\nCSINALATAM, VIL. HENRIK STIUSABAN,\nTRUBADUR' LETT A MUNKACIME.\nIT VAN A PORTFOLIOMBAN.",
+     "lines": 4,
+     "task": "<OCR_WITH_REGION>",
+     "ms": 25785.88000011444,
+     "gt": "PARDON. NYERGESVONTATÓT CSINÁLTAM, VIII. HENRIK STÍLUSÁBAN, „TRUBADÚR” LETT A MUNKACÍME. ITT VAN A PORTFÓLIÓMBAN:",
+     "kind": "speech",
+     "score": {
+      "chars": 113,
+      "charErr": 16,
+      "words": 14,
+      "wordErr": 8,
+      "charsNoPunct": 105,
+      "charErrNoPunct": 13,
+      "exact": false,
+      "accents": {
+       "total": 8,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r26",
+     "text": "AHA... VAGOM. KARPIT\nMAR MESSZIROL. ELKAPTAD A\nBROKAT. SOK A BOJT. FEBASZNA\nAIONNAL. MEG-EZIS ILYEN\nREGI\" VAGOD?\nANTIK.",
+     "lines": 6,
+     "task": "<OCR_WITH_REGION>",
+     "ms": 33301.829999923706,
+     "gt": "AHA ... VÁGOM. KÁRPIT MÁR MESSZIRŐL. ELKAPTAD A BROKÁT. SOK A BOJT. FELBASZNA AZONNAL. MEG EZIS ILYEN „RÉGI”, VÁGOD? ÁNTIK.",
+     "kind": "speech",
+     "score": {
+      "chars": 123,
+      "charErr": 14,
+      "words": 20,
+      "wordErr": 14,
+      "charsNoPunct": 109,
+      "charErrNoPunct": 11,
+      "exact": false,
+      "accents": {
+       "total": 8,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r27",
+     "text": "AVIZBASSI",
+     "lines": 1,
+     "task": "<OCR_WITH_REGION>",
+     "ms": 27474.54000020027,
+     "gt": "FASZI BÁCSI",
+     "kind": "sign",
+     "score": {
+      "chars": 11,
+      "charErr": 6,
+      "words": 2,
+      "wordErr": 2,
+      "charsNoPunct": 11,
+      "charErrNoPunct": 6,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r28",
+     "text": "FAS2-A-O",
+     "lines": 1,
+     "task": "<OCR_WITH_REGION>",
+     "ms": 27575.22500014305,
+     "gt": "FASZI-1",
+     "kind": "sign",
+     "score": {
+      "chars": 7,
+      "charErr": 4,
+      "words": 1,
+      "wordErr": 1,
+      "charsNoPunct": 6,
+      "charErrNoPunct": 3,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r29",
+     "text": "payl",
+     "lines": 1,
+     "task": "<OCR_WITH_REGION>",
+     "ms": 24960.330000162125,
+     "gt": "ROPI",
+     "kind": "caption",
+     "score": {
+      "chars": 4,
+      "charErr": 4,
+      "words": 1,
+      "wordErr": 1,
+      "charsNoPunct": 4,
+      "charErrNoPunct": 4,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r30",
+     "text": "SZOVAL, AMIKOR A GROBKUGELNI\nPIHENÑBEN KINYITJA A\nKURVA A2 AJTOT AKKOR\nNE AZT KERDEEZLE, MERRE VAN\nA MÜZEUMSHOP, VAGOD?\nIRANYNAK ILYEN NEOLOFTOS\nART DEKOT GONDOLNEK.",
+     "lines": 7,
+     "task": "<OCR_WITH_REGION>",
+     "ms": 36439.81999993324,
+     "gt": "SZÓVAL, AMIKOR A GROẞKUGELNI PIHENŐBEN KINYITJA A KURVA AZ AJTÓT AKKOR NE AZT KÉRDEZZE, MERRE VAN A MÚZEUMSHOP, VÁGOD? IRÁNYNAK ILYEN NEOLOFTOS ART DEKÓT GONDOLNÉK.",
+     "kind": "speech",
+     "score": {
+      "chars": 164,
+      "charErr": 13,
+      "words": 25,
+      "wordErr": 11,
+      "charsNoPunct": 159,
+      "charErrNoPunct": 13,
+      "exact": false,
+      "accents": {
+       "total": 9,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r32",
+     "text": "RACHLIVIE",
+     "lines": 1,
+     "task": "<OCR_WITH_REGION>",
+     "ms": 25013.99499988556,
+     "gt": "RACALVIE",
+     "kind": "sign",
+     "score": {
+      "chars": 8,
+      "charErr": 2,
+      "words": 1,
+      "wordErr": 1,
+      "charsNoPunct": 8,
+      "charErrNoPunct": 2,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r33",
+     "text": "ABIR",
+     "lines": 1,
+     "task": "<OCR_WITH_REGION>",
+     "ms": 25108.15499997139,
+     "gt": "FASZI BÁCSI",
+     "kind": "sign",
+     "score": {
+      "chars": 11,
+      "charErr": 9,
+      "words": 2,
+      "wordErr": 2,
+      "charsNoPunct": 11,
+      "charErrNoPunct": 9,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r34",
+     "text": "ERTEM. EZA DOŞZ, EZ M.\nMARADNIA keU?",
+     "lines": 2,
+     "task": "<OCR_WITH_REGION>",
+     "ms": 27275.519999980927,
+     "gt": "ÉRTEM. EZ A DOBOZ, EZ MI? MARADNIA KELL?",
+     "kind": "speech",
+     "score": {
+      "chars": 40,
+      "charErr": 8,
+      "words": 8,
+      "wordErr": 6,
+      "charsNoPunct": 36,
+      "charErrNoPunct": 7,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r35",
+     "text": "AKSKI A FENHET.MARD.",
+     "lines": 1,
+     "task": "<OCR_WITH_REGION>",
+     "ms": 25574.80999994278,
+     "gt": "AKKSIK A FÉNYHEZ. MARAD.",
+     "kind": "speech",
+     "score": {
+      "chars": 24,
+      "charErr": 8,
+      "words": 4,
+      "wordErr": 3,
+      "charsNoPunct": 22,
+      "charErrNoPunct": 8,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r36",
+     "text": "FENWHEZ.7.",
+     "lines": 1,
+     "task": "<OCR_WITH_REGION>",
+     "ms": 24399.264999866486,
+     "gt": "„FÉNYHEZ”?",
+     "kind": "speech",
+     "score": {
+      "chars": 10,
+      "charErr": 6,
+      "words": 1,
+      "wordErr": 1,
+      "charsNoPunct": 7,
+      "charErrNoPunct": 3,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r37",
+     "text": "OuFasas-A-Du",
+     "lines": 1,
+     "task": "<OCR_WITH_REGION>",
+     "ms": 26119.950000047684,
+     "gt": "FASZI-1",
+     "kind": "sign",
+     "score": {
+      "chars": 7,
+      "charErr": 8,
+      "words": 1,
+      "wordErr": 1,
+      "charsNoPunct": 6,
+      "charErrNoPunct": 7,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r38",
+     "text": "-",
+     "lines": 1,
+     "task": "<OCR_WITH_REGION>",
+     "ms": 25121.144999980927,
+     "gt": "BALKON",
+     "kind": "sign",
+     "score": {
+      "chars": 6,
+      "charErr": 6,
+      "words": 1,
+      "wordErr": 1,
+      "charsNoPunct": 6,
+      "charErrNoPunct": 6,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r40",
+     "text": "CAVELLAR",
+     "lines": 1,
+     "task": "<OCR_WITH_REGION>",
+     "ms": 24322.31500005722,
+     "gt": "CAVELIAR",
+     "kind": "sign",
+     "score": {
+      "chars": 8,
+      "charErr": 1,
+      "words": 1,
+      "wordErr": 1,
+      "charsNoPunct": 8,
+      "charErrNoPunct": 1,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r41",
+     "text": "TIED VOIT A2\nA SMART?",
+     "lines": 2,
+     "task": "<OCR_WITH_REGION>",
+     "ms": 26123.715000152588,
+     "gt": "TIÉD VOLT AZ A SMART?",
+     "kind": "speech",
+     "score": {
+      "chars": 21,
+      "charErr": 3,
+      "words": 5,
+      "wordErr": 3,
+      "charsNoPunct": 20,
+      "charErrNoPunct": 3,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r42",
+     "text": "FANZIBASI",
+     "lines": 1,
+     "task": "<OCR_WITH_REGION>",
+     "ms": 25875.05999994278,
+     "gt": "FASZI BÁCSI",
+     "kind": "sign",
+     "score": {
+      "chars": 11,
+      "charErr": 4,
+      "words": 2,
+      "wordErr": 2,
+      "charsNoPunct": 11,
+      "charErrNoPunct": 4,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r45",
+     "text": "O",
+     "lines": 1,
+     "task": "<OCR_WITH_REGION>",
+     "ms": 24945.03000020981,
+     "gt": "FASZI-1",
+     "kind": "sign",
+     "score": {
+      "chars": 7,
+      "charErr": 7,
+      "words": 1,
+      "wordErr": 1,
+      "charsNoPunct": 6,
+      "charErrNoPunct": 6,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r46",
+     "text": "FIFV!\nHURUHAIARR",
+     "lines": 2,
+     "task": "<OCR_WITH_REGION>",
+     "ms": 26915.68499994278,
+     "gt": "FIFU! HURUHATÁRR!",
+     "kind": "sfx",
+     "score": {
+      "chars": 17,
+      "charErr": 4,
+      "words": 2,
+      "wordErr": 2,
+      "charsNoPunct": 15,
+      "charErrNoPunct": 3,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r47",
+     "text": "CAVAILER",
+     "lines": 1,
+     "task": "<OCR_WITH_REGION>",
+     "ms": 26746.46499991417,
+     "gt": "CAVALIER",
+     "kind": "sign",
+     "score": {
+      "chars": 8,
+      "charErr": 2,
+      "words": 1,
+      "wordErr": 1,
+      "charsNoPunct": 8,
+      "charErrNoPunct": 2,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r48",
+     "text": "6o3sl.",
+     "lines": 1,
+     "task": "<OCR_WITH_REGION>",
+     "ms": 24070.170000076294,
+     "gt": "BOCSI.",
+     "kind": "speech",
+     "score": {
+      "chars": 6,
+      "charErr": 3,
+      "words": 1,
+      "wordErr": 1,
+      "charsNoPunct": 5,
+      "charErrNoPunct": 3,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r49",
+     "text": "MEI\nHAVAISZUEK.",
+     "lines": 2,
+     "task": "<OCR_WITH_REGION>",
+     "ms": 25545.215000152588,
+     "gt": "MEG HAZAVISZLEK.",
+     "kind": "speech",
+     "score": {
+      "chars": 16,
+      "charErr": 4,
+      "words": 2,
+      "wordErr": 2,
+      "charsNoPunct": 15,
+      "charErrNoPunct": 4,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r50",
+     "text": "ASC BASI",
+     "lines": 1,
+     "task": "<OCR_WITH_REGION>",
+     "ms": 21387.420000076294,
+     "gt": "FASZI BÁCSI",
+     "kind": "sign",
+     "score": {
+      "chars": 11,
+      "charErr": 5,
+      "words": 2,
+      "wordErr": 2,
+      "charsNoPunct": 11,
+      "charErrNoPunct": 5,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r52",
+     "text": "TEASTICADO",
+     "lines": 1,
+     "task": "<OCR_WITH_REGION>",
+     "ms": 19414.43499994278,
+     "gt": "FASZI-1",
+     "kind": "sign",
+     "score": {
+      "chars": 7,
+      "charErr": 7,
+      "words": 1,
+      "wordErr": 1,
+      "charsNoPunct": 6,
+      "charErrNoPunct": 7,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    }
+   ]
+  },
+  {
+   "summary": {
+    "model": "florence-2-base-ft",
+    "threads": 4,
+    "sizeMB": 279.195418,
+    "loadMs": 6906.535000085831,
+    "msPerCropMean": 12117.580111138026,
+    "msPerCropMedian": 11648.634999990463,
+    "msPerCropWarmMean": 12161.3278409351,
+    "crops": 45,
+    "errors": 0,
+    "cer": 0.228430566967954,
+    "wer": 0.6968085106382979,
+    "cerNoPunct": 0.21719858156028368,
+    "exact": 0,
+    "accentAcc": 0.039473684210526314,
+    "accentTotal": 76,
+    "speechOnly": {
+     "cer": 0.16930693069306932,
+     "wer": 0.6346153846153846,
+     "cerNoPunct": 0.15698924731182795,
+     "exact": 0,
+     "accentAcc": 0.04411764705882353,
+     "accentTotal": 68
+    },
+    "pssPeakMB": 1233.294921875,
+    "pssDeltaMB": 892.08203125,
+    "uaMemAfterLoadMB": 499.695466,
+    "uaMemEndMB": 824.579014,
+    "crossOriginIsolated": true,
+    "webgpu": true,
+    "info": {
+     "repo": "onnx-community/Florence-2-base-ft",
+     "dtype": "q8",
+     "numThreads": 4
+    },
+    "fatal": null
+   },
+   "preds": [
+    {
+     "id": "r0",
+     "text": "CKNOI",
+     "lines": 1,
+     "task": "<OCR_WITH_REGION>",
+     "ms": 10192.680000066757,
+     "gt": "UNKA!",
+     "kind": "sfx",
+     "score": {
+      "chars": 5,
+      "charErr": 5,
+      "words": 1,
+      "wordErr": 1,
+      "charsNoPunct": 4,
+      "charErrNoPunct": 4,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r1",
+     "text": "NA! E!!\nDEJÖ, HOGY\nELJÓTTE, E!",
+     "lines": 3,
+     "task": "<OCR_WITH_REGION>",
+     "ms": 10176.019999980927,
+     "gt": "NA! E! DEJÓ, HOGY ELJÖTTÉ, E!",
+     "kind": "speech",
+     "score": {
+      "chars": 29,
+      "charErr": 4,
+      "words": 6,
+      "wordErr": 3,
+      "charsNoPunct": 24,
+      "charErrNoPunct": 3,
+      "exact": false,
+      "accents": {
+       "total": 3,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r2",
+     "text": "Hirex",
+     "lines": 1,
+     "task": "<OCR_WITH_REGION>",
+     "ms": 8897.5,
+     "gt": "HÍREK",
+     "kind": "speech",
+     "score": {
+      "chars": 5,
+      "charErr": 2,
+      "words": 1,
+      "wordErr": 1,
+      "charsNoPunct": 5,
+      "charErrNoPunct": 2,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r4",
+     "text": "MOST ARRA GONDOLS2!\nHOGY, DE KAR, HOGY\nELKÖLOTTOTTEM AZ\nELÖLEGET, MOST\nLEMONDHATNAM",
+     "lines": 5,
+     "task": "<OCR_WITH_REGION>",
+     "ms": 13269.909999847412,
+     "gt": "MOST ARRA GONDOLSZ, HOGY „DE KÁR, HOGY ELKÖLTÖTTEM AZ ELŐLEGET, MOST LEMONDHATNÁM",
+     "kind": "speech",
+     "score": {
+      "chars": 81,
+      "charErr": 10,
+      "words": 12,
+      "wordErr": 7,
+      "charsNoPunct": 77,
+      "charErrNoPunct": 7,
+      "exact": false,
+      "accents": {
+       "total": 5,
+       "hit": 1
+      }
+     }
+    },
+    {
+     "id": "r5",
+     "text": "GAVALLEIR",
+     "lines": 1,
+     "task": "<OCR_WITH_REGION>",
+     "ms": 12574.894999980927,
+     "gt": "CAVALEIR",
+     "kind": "sign",
+     "score": {
+      "chars": 8,
+      "charErr": 2,
+      "words": 1,
+      "wordErr": 1,
+      "charsNoPunct": 8,
+      "charErrNoPunct": 2,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r6",
+     "text": "A MeIOTI!",
+     "lines": 1,
+     "task": "<OCR_WITH_REGION>",
+     "ms": 12720.145000219345,
+     "gt": "A MELÓT!”",
+     "kind": "speech",
+     "score": {
+      "chars": 9,
+      "charErr": 4,
+      "words": 2,
+      "wordErr": 1,
+      "charsNoPunct": 7,
+      "charErrNoPunct": 3,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r7",
+     "text": "HAT. KABE.",
+     "lines": 1,
+     "task": "<OCR_WITH_REGION>",
+     "ms": 12979.560000181198,
+     "gt": "HÁT... KÁBÉ.",
+     "kind": "speech",
+     "score": {
+      "chars": 12,
+      "charErr": 5,
+      "words": 2,
+      "wordErr": 2,
+      "charsNoPunct": 8,
+      "charErrNoPunct": 3,
+      "exact": false,
+      "accents": {
+       "total": 3,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r8",
+     "text": "FAS21 BICI",
+     "lines": 1,
+     "task": "<OCR_WITH_REGION>",
+     "ms": 13071.100000143051,
+     "gt": "FASZI BÁCSI",
+     "kind": "sign",
+     "score": {
+      "chars": 11,
+      "charErr": 4,
+      "words": 2,
+      "wordErr": 2,
+      "charsNoPunct": 11,
+      "charErrNoPunct": 4,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r9",
+     "text": "N. PATRANN FELLI",
+     "lines": 1,
+     "task": "<OCR_WITH_REGION>",
+     "ms": 11817.734999895096,
+     "gt": "NA. PATTANJ FEL!",
+     "kind": "speech",
+     "score": {
+      "chars": 16,
+      "charErr": 5,
+      "words": 3,
+      "wordErr": 3,
+      "charsNoPunct": 14,
+      "charErrNoPunct": 5,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r10",
+     "text": "00",
+     "lines": 1,
+     "task": "<OCR_WITH_REGION>",
+     "ms": 11268.555000066757,
+     "gt": "FASZI-1",
+     "kind": "sign",
+     "score": {
+      "chars": 7,
+      "charErr": 7,
+      "words": 1,
+      "wordErr": 1,
+      "charsNoPunct": 6,
+      "charErrNoPunct": 6,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r11",
+     "text": "CALAVRIE 00",
+     "lines": 1,
+     "task": "<OCR_WITH_REGION>",
+     "ms": 11423.06500005722,
+     "gt": "CALAVRIE",
+     "kind": "sign",
+     "score": {
+      "chars": 8,
+      "charErr": 3,
+      "words": 1,
+      "wordErr": 1,
+      "charsNoPunct": 8,
+      "charErrNoPunct": 3,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r12",
+     "text": "NEM BAJ, AZ EMBER\nAZERT FIATAL, HOGY\nTANULION.T",
+     "lines": 3,
+     "task": "<OCR_WITH_REGION>",
+     "ms": 14748.710000038147,
+     "gt": "NEM BAJ, AZ EMBER AZÉRT FIATAL, HOGY TANULJON.",
+     "kind": "speech",
+     "score": {
+      "chars": 46,
+      "charErr": 3,
+      "words": 8,
+      "wordErr": 2,
+      "charsNoPunct": 43,
+      "charErrNoPunct": 3,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r13",
+     "text": "FASZY BASI",
+     "lines": 1,
+     "task": "<OCR_WITH_REGION>",
+     "ms": 11365.329999923706,
+     "gt": "FASZI BÁCSI",
+     "kind": "sign",
+     "score": {
+      "chars": 11,
+      "charErr": 3,
+      "words": 2,
+      "wordErr": 2,
+      "charsNoPunct": 11,
+      "charErrNoPunct": 3,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r14",
+     "text": "D",
+     "lines": 1,
+     "task": "<OCR_WITH_REGION>",
+     "ms": 11172.06500005722,
+     "gt": "FASZI-1",
+     "kind": "sign",
+     "score": {
+      "chars": 7,
+      "charErr": 7,
+      "words": 1,
+      "wordErr": 1,
+      "charsNoPunct": 6,
+      "charErrNoPunct": 6,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r15",
+     "text": "JEZUS AYA URISTENU",
+     "lines": 1,
+     "task": "<OCR_WITH_REGION>",
+     "ms": 11454.200000047684,
+     "gt": "JÉZUS, ATYA, ÚRISTEN!",
+     "kind": "speech",
+     "score": {
+      "chars": 21,
+      "charErr": 6,
+      "words": 3,
+      "wordErr": 3,
+      "charsNoPunct": 18,
+      "charErrNoPunct": 4,
+      "exact": false,
+      "accents": {
+       "total": 2,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r16",
+     "text": "VECALAIROOO",
+     "lines": 1,
+     "task": "<OCR_WITH_REGION>",
+     "ms": 11264.319999933243,
+     "gt": "VECALAIR",
+     "kind": "sign",
+     "score": {
+      "chars": 8,
+      "charErr": 3,
+      "words": 1,
+      "wordErr": 1,
+      "charsNoPunct": 8,
+      "charErrNoPunct": 3,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r17",
+     "text": "O A HALOFÜKÉBEN LOG,\nEGY KRISTÜLYHOLOGRAM\nFORMAJABAN, DE IT\nVALOBAN A SENTFÜDI\nLOVAGVARAK\nSTIUSAT IGEKEKEZTEM HOZ\nAZ OTT EY BEDVIN\nKEMENCE, HENNAŞ KASPO\nTEVENYEREG, ASTROUABIUM...",
+     "lines": 9,
+     "task": "<OCR_WITH_REGION>",
+     "ms": 18711.269999980927,
+     "gt": "Ö A HÁLÓFÜLKÉBEN LÓG, EGY KRISTÁLYHOLOGRAM FORMÁJÁBAN, DE ITT VALÓBAN A SZENTFÖLDI LOVAGVÁRAK STÍLUSÁT IGYEKEZTEM HOZNI. AZ OTT EGY BEDUIN KEMENCE, HENNÁS KASPÓ TEVENYEREG, ASZTROLÁBIUM...",
+     "kind": "speech",
+     "score": {
+      "chars": 188,
+      "charErr": 30,
+      "words": 25,
+      "wordErr": 17,
+      "charsNoPunct": 180,
+      "charErrNoPunct": 29,
+      "exact": false,
+      "accents": {
+       "total": 17,
+       "hit": 2
+      }
+     }
+    },
+    {
+     "id": "r18",
+     "text": "FAZI BHSI",
+     "lines": 1,
+     "task": "<OCR_WITH_REGION>",
+     "ms": 11863.185000181198,
+     "gt": "FASZI BÁCSI",
+     "kind": "sign",
+     "score": {
+      "chars": 11,
+      "charErr": 3,
+      "words": 2,
+      "wordErr": 2,
+      "charsNoPunct": 11,
+      "charErrNoPunct": 3,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r19",
+     "text": "CSAK MAR (ECURE\nUNOM.\nEERT VAGYIT, E!",
+     "lines": 3,
+     "task": "<OCR_WITH_REGION>",
+     "ms": 12409.765000104904,
+     "gt": "CSAK MÁR GECIRE UNOM. EZÉRT VAGY ITT, E!",
+     "kind": "speech",
+     "score": {
+      "chars": 40,
+      "charErr": 7,
+      "words": 8,
+      "wordErr": 5,
+      "charsNoPunct": 37,
+      "charErrNoPunct": 7,
+      "exact": false,
+      "accents": {
+       "total": 2,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r20",
+     "text": "Hate. Enig EfEk Kahont.",
+     "lines": 1,
+     "task": "<OCR_WITH_REGION>",
+     "ms": 11648.634999990463,
+     "gt": "HÁTŐŐ... EDDIG EGY KAMIONT...",
+     "kind": "speech",
+     "score": {
+      "chars": 29,
+      "charErr": 14,
+      "words": 4,
+      "wordErr": 4,
+      "charsNoPunct": 23,
+      "charErrNoPunct": 10,
+      "exact": false,
+      "accents": {
+       "total": 3,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r23",
+     "text": "RELAVACI)",
+     "lines": 1,
+     "task": "<OCR_WITH_REGION>",
+     "ms": 11694.384999990463,
+     "gt": "RELAVACI",
+     "kind": "sign",
+     "score": {
+      "chars": 8,
+      "charErr": 1,
+      "words": 1,
+      "wordErr": 1,
+      "charsNoPunct": 8,
+      "charErrNoPunct": 0,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r24",
+     "text": "NEREE VONTAIOT",
+     "lines": 1,
+     "task": "<OCR_WITH_REGION>",
+     "ms": 11975.539999961853,
+     "gt": "NYERGES VONTATÓT.",
+     "kind": "speech",
+     "score": {
+      "chars": 17,
+      "charErr": 6,
+      "words": 2,
+      "wordErr": 2,
+      "charsNoPunct": 16,
+      "charErrNoPunct": 5,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r25",
+     "text": "PARDON. NYERGESVONTATOT\nCSINALATAM, VIL. HENRIK STIUSABAN,\nTRUBADUR' LETT A MUNKACIME.\nIT VAN A PORTFOLIOMBAN.",
+     "lines": 4,
+     "task": "<OCR_WITH_REGION>",
+     "ms": 14691.81500005722,
+     "gt": "PARDON. NYERGESVONTATÓT CSINÁLTAM, VIII. HENRIK STÍLUSÁBAN, „TRUBADÚR” LETT A MUNKACÍME. ITT VAN A PORTFÓLIÓMBAN:",
+     "kind": "speech",
+     "score": {
+      "chars": 113,
+      "charErr": 16,
+      "words": 14,
+      "wordErr": 8,
+      "charsNoPunct": 105,
+      "charErrNoPunct": 13,
+      "exact": false,
+      "accents": {
+       "total": 8,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r26",
+     "text": "AHA... VAGOM. KARPIT\nMAR MESSZIROL. ELKAPTAD A\nBROKAT. SOK A BOJT. FEBASZNA\nAIONNAL. MEG-EZIS ILYEN\nREGI\" VAGOD?\nANTIK.",
+     "lines": 6,
+     "task": "<OCR_WITH_REGION>",
+     "ms": 15308.644999980927,
+     "gt": "AHA ... VÁGOM. KÁRPIT MÁR MESSZIRŐL. ELKAPTAD A BROKÁT. SOK A BOJT. FELBASZNA AZONNAL. MEG EZIS ILYEN „RÉGI”, VÁGOD? ÁNTIK.",
+     "kind": "speech",
+     "score": {
+      "chars": 123,
+      "charErr": 14,
+      "words": 20,
+      "wordErr": 14,
+      "charsNoPunct": 109,
+      "charErrNoPunct": 11,
+      "exact": false,
+      "accents": {
+       "total": 8,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r27",
+     "text": "AVIZBASSI",
+     "lines": 1,
+     "task": "<OCR_WITH_REGION>",
+     "ms": 11373.41000008583,
+     "gt": "FASZI BÁCSI",
+     "kind": "sign",
+     "score": {
+      "chars": 11,
+      "charErr": 6,
+      "words": 2,
+      "wordErr": 2,
+      "charsNoPunct": 11,
+      "charErrNoPunct": 6,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r28",
+     "text": "FAS2-A-O",
+     "lines": 1,
+     "task": "<OCR_WITH_REGION>",
+     "ms": 11516.680000066757,
+     "gt": "FASZI-1",
+     "kind": "sign",
+     "score": {
+      "chars": 7,
+      "charErr": 4,
+      "words": 1,
+      "wordErr": 1,
+      "charsNoPunct": 6,
+      "charErrNoPunct": 3,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r29",
+     "text": "payl",
+     "lines": 1,
+     "task": "<OCR_WITH_REGION>",
+     "ms": 11312.694999933243,
+     "gt": "ROPI",
+     "kind": "caption",
+     "score": {
+      "chars": 4,
+      "charErr": 4,
+      "words": 1,
+      "wordErr": 1,
+      "charsNoPunct": 4,
+      "charErrNoPunct": 4,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r30",
+     "text": "SZOVAL, AMIKOR A GROBKUGELNI\nPIHENÑBEN KINYITJA A\nKURVA A2 AJTOT AKKOR\nNE AZT KERDEEZLE, MERRE VAN\nA MÜZEUMSHOP, VAGOD?\nIRANYNAK ILYEN NEOLOFTOS\nART DEKOT GONDOLNEK.",
+     "lines": 7,
+     "task": "<OCR_WITH_REGION>",
+     "ms": 17142.625,
+     "gt": "SZÓVAL, AMIKOR A GROẞKUGELNI PIHENŐBEN KINYITJA A KURVA AZ AJTÓT AKKOR NE AZT KÉRDEZZE, MERRE VAN A MÚZEUMSHOP, VÁGOD? IRÁNYNAK ILYEN NEOLOFTOS ART DEKÓT GONDOLNÉK.",
+     "kind": "speech",
+     "score": {
+      "chars": 164,
+      "charErr": 13,
+      "words": 25,
+      "wordErr": 11,
+      "charsNoPunct": 159,
+      "charErrNoPunct": 13,
+      "exact": false,
+      "accents": {
+       "total": 9,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r32",
+     "text": "RACHLIVIE",
+     "lines": 1,
+     "task": "<OCR_WITH_REGION>",
+     "ms": 11453.870000123978,
+     "gt": "RACALVIE",
+     "kind": "sign",
+     "score": {
+      "chars": 8,
+      "charErr": 2,
+      "words": 1,
+      "wordErr": 1,
+      "charsNoPunct": 8,
+      "charErrNoPunct": 2,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r33",
+     "text": "ABIR",
+     "lines": 1,
+     "task": "<OCR_WITH_REGION>",
+     "ms": 11422.615000009537,
+     "gt": "FASZI BÁCSI",
+     "kind": "sign",
+     "score": {
+      "chars": 11,
+      "charErr": 9,
+      "words": 2,
+      "wordErr": 2,
+      "charsNoPunct": 11,
+      "charErrNoPunct": 9,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r34",
+     "text": "ERTEM. EZA DOŞZ, EZ M.\nMARADNIA keU?",
+     "lines": 2,
+     "task": "<OCR_WITH_REGION>",
+     "ms": 12423.060000181198,
+     "gt": "ÉRTEM. EZ A DOBOZ, EZ MI? MARADNIA KELL?",
+     "kind": "speech",
+     "score": {
+      "chars": 40,
+      "charErr": 8,
+      "words": 8,
+      "wordErr": 6,
+      "charsNoPunct": 36,
+      "charErrNoPunct": 7,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r35",
+     "text": "AKSKI A FENHET.MARD.",
+     "lines": 1,
+     "task": "<OCR_WITH_REGION>",
+     "ms": 11638.955000162125,
+     "gt": "AKKSIK A FÉNYHEZ. MARAD.",
+     "kind": "speech",
+     "score": {
+      "chars": 24,
+      "charErr": 8,
+      "words": 4,
+      "wordErr": 3,
+      "charsNoPunct": 22,
+      "charErrNoPunct": 8,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r36",
+     "text": "FENWHEZ.7.",
+     "lines": 1,
+     "task": "<OCR_WITH_REGION>",
+     "ms": 11516.145000219345,
+     "gt": "„FÉNYHEZ”?",
+     "kind": "speech",
+     "score": {
+      "chars": 10,
+      "charErr": 6,
+      "words": 1,
+      "wordErr": 1,
+      "charsNoPunct": 7,
+      "charErrNoPunct": 3,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r37",
+     "text": "OuFasas-A-Du",
+     "lines": 1,
+     "task": "<OCR_WITH_REGION>",
+     "ms": 11826.150000095367,
+     "gt": "FASZI-1",
+     "kind": "sign",
+     "score": {
+      "chars": 7,
+      "charErr": 8,
+      "words": 1,
+      "wordErr": 1,
+      "charsNoPunct": 6,
+      "charErrNoPunct": 7,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r38",
+     "text": "-",
+     "lines": 1,
+     "task": "<OCR_WITH_REGION>",
+     "ms": 11160.41000008583,
+     "gt": "BALKON",
+     "kind": "sign",
+     "score": {
+      "chars": 6,
+      "charErr": 6,
+      "words": 1,
+      "wordErr": 1,
+      "charsNoPunct": 6,
+      "charErrNoPunct": 6,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r40",
+     "text": "CAVELLAR",
+     "lines": 1,
+     "task": "<OCR_WITH_REGION>",
+     "ms": 11974.609999895096,
+     "gt": "CAVELIAR",
+     "kind": "sign",
+     "score": {
+      "chars": 8,
+      "charErr": 1,
+      "words": 1,
+      "wordErr": 1,
+      "charsNoPunct": 8,
+      "charErrNoPunct": 1,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r41",
+     "text": "TIED VOIT A2\nA SMART?",
+     "lines": 2,
+     "task": "<OCR_WITH_REGION>",
+     "ms": 12657.509999990463,
+     "gt": "TIÉD VOLT AZ A SMART?",
+     "kind": "speech",
+     "score": {
+      "chars": 21,
+      "charErr": 3,
+      "words": 5,
+      "wordErr": 3,
+      "charsNoPunct": 20,
+      "charErrNoPunct": 3,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r42",
+     "text": "FANZIBASI",
+     "lines": 1,
+     "task": "<OCR_WITH_REGION>",
+     "ms": 11784.509999990463,
+     "gt": "FASZI BÁCSI",
+     "kind": "sign",
+     "score": {
+      "chars": 11,
+      "charErr": 4,
+      "words": 2,
+      "wordErr": 2,
+      "charsNoPunct": 11,
+      "charErrNoPunct": 4,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r45",
+     "text": "O",
+     "lines": 1,
+     "task": "<OCR_WITH_REGION>",
+     "ms": 11222.879999876022,
+     "gt": "FASZI-1",
+     "kind": "sign",
+     "score": {
+      "chars": 7,
+      "charErr": 7,
+      "words": 1,
+      "wordErr": 1,
+      "charsNoPunct": 6,
+      "charErrNoPunct": 6,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r46",
+     "text": "FIFV!\nHURUHAIARR",
+     "lines": 2,
+     "task": "<OCR_WITH_REGION>",
+     "ms": 11813.080000162125,
+     "gt": "FIFU! HURUHATÁRR!",
+     "kind": "sfx",
+     "score": {
+      "chars": 17,
+      "charErr": 4,
+      "words": 2,
+      "wordErr": 2,
+      "charsNoPunct": 15,
+      "charErrNoPunct": 3,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r47",
+     "text": "CAVAILER",
+     "lines": 1,
+     "task": "<OCR_WITH_REGION>",
+     "ms": 10855.139999866486,
+     "gt": "CAVALIER",
+     "kind": "sign",
+     "score": {
+      "chars": 8,
+      "charErr": 2,
+      "words": 1,
+      "wordErr": 1,
+      "charsNoPunct": 8,
+      "charErrNoPunct": 2,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r48",
+     "text": "6o3sl.",
+     "lines": 1,
+     "task": "<OCR_WITH_REGION>",
+     "ms": 10941.574999809265,
+     "gt": "BOCSI.",
+     "kind": "speech",
+     "score": {
+      "chars": 6,
+      "charErr": 3,
+      "words": 1,
+      "wordErr": 1,
+      "charsNoPunct": 5,
+      "charErrNoPunct": 3,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r49",
+     "text": "MEI\nHAVAISZUEK.",
+     "lines": 2,
+     "task": "<OCR_WITH_REGION>",
+     "ms": 11802.230000019073,
+     "gt": "MEG HAZAVISZLEK.",
+     "kind": "speech",
+     "score": {
+      "chars": 16,
+      "charErr": 4,
+      "words": 2,
+      "wordErr": 2,
+      "charsNoPunct": 15,
+      "charErrNoPunct": 4,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r50",
+     "text": "ASC BASI",
+     "lines": 1,
+     "task": "<OCR_WITH_REGION>",
+     "ms": 11353.855000019073,
+     "gt": "FASZI BÁCSI",
+     "kind": "sign",
+     "score": {
+      "chars": 11,
+      "charErr": 5,
+      "words": 2,
+      "wordErr": 2,
+      "charsNoPunct": 11,
+      "charErrNoPunct": 5,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r52",
+     "text": "TEASTICADO",
+     "lines": 1,
+     "task": "<OCR_WITH_REGION>",
+     "ms": 11400.069999933243,
+     "gt": "FASZI-1",
+     "kind": "sign",
+     "score": {
+      "chars": 7,
+      "charErr": 7,
+      "words": 1,
+      "wordErr": 1,
+      "charsNoPunct": 6,
+      "charErrNoPunct": 7,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    }
+   ]
+  },
+  {
+   "summary": {
+    "model": "tesseract-hun",
+    "threads": 1,
+    "sizeMB": 2.854466,
+    "loadMs": 590.4449999332428,
+    "msPerCropMean": 201.02522222201029,
+    "msPerCropMedian": 106.75499987602234,
+    "msPerCropWarmMean": 200.39340908960864,
+    "crops": 45,
+    "errors": 0,
+    "cer": 0.5735414954806902,
+    "wer": 1.3563829787234043,
+    "cerNoPunct": 0.5150709219858156,
+    "exact": 1,
+    "accentAcc": 0.7105263157894737,
+    "accentTotal": 76,
+    "speechOnly": {
+     "cer": 0.299009900990099,
+     "wer": 0.9166666666666666,
+     "cerNoPunct": 0.24301075268817204,
+     "exact": 1,
+     "accentAcc": 0.75,
+     "accentTotal": 68
+    },
+    "pssPeakMB": 410.9404296875,
+    "pssDeltaMB": 58.306640625,
+    "uaMemAfterLoadMB": 43.851786,
+    "uaMemEndMB": 44.198796,
+    "crossOriginIsolated": true,
+    "webgpu": true,
+    "info": {
+     "lang": "hun",
+     "oem": "LSTM"
+    },
+    "fatal": null
+   },
+   "preds": [
+    {
+     "id": "r0",
+     "text": "VÉNA!",
+     "confidence": 0.03,
+     "ms": 228.82500004768372,
+     "gt": "UNKA!",
+     "kind": "sfx",
+     "score": {
+      "chars": 5,
+      "charErr": 3,
+      "words": 1,
+      "wordErr": 1,
+      "charsNoPunct": 4,
+      "charErrNoPunct": 3,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r1",
+     "text": "[NAL E! A—\nDeEJó, HOGT\nELJÖTE, €!\n\n: 29",
+     "confidence": 0.41,
+     "ms": 181.3550000190735,
+     "gt": "NA! E! DEJÓ, HOGY ELJÖTTÉ, E!",
+     "kind": "speech",
+     "score": {
+      "chars": 29,
+      "charErr": 15,
+      "words": 6,
+      "wordErr": 8,
+      "charsNoPunct": 24,
+      "charErrNoPunct": 9,
+      "exact": false,
+      "accents": {
+       "total": 3,
+       "hit": 2
+      }
+     }
+    },
+    {
+     "id": "r2",
+     "text": "",
+     "confidence": 0,
+     "ms": 4.570000171661377,
+     "gt": "HÍREK",
+     "kind": "speech",
+     "score": {
+      "chars": 5,
+      "charErr": 5,
+      "words": 1,
+      "wordErr": 1,
+      "charsNoPunct": 5,
+      "charErrNoPunct": 5,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r4",
+     "text": "sacc ACDA fail 5 I\nMoST ARRA GONDOLSZ,\n HoGY, DE KÁR, HOGY\nELKÖLTÖTTEM AT\nELŐLEGET, MOST, [ ,\nLEMONDHATNAM",
+     "confidence": 0.62,
+     "ms": 398.59499979019165,
+     "gt": "MOST ARRA GONDOLSZ, HOGY „DE KÁR, HOGY ELKÖLTÖTTEM AZ ELŐLEGET, MOST LEMONDHATNÁM",
+     "kind": "speech",
+     "score": {
+      "chars": 81,
+      "charErr": 28,
+      "words": 12,
+      "wordErr": 12,
+      "charsNoPunct": 77,
+      "charErrNoPunct": 21,
+      "exact": false,
+      "accents": {
+       "total": 5,
+       "hit": 4
+      }
+     }
+    },
+    {
+     "id": "r5",
+     "text": "Ld L—— mo]\n(GÁVAÁLÉIR",
+     "confidence": 0.09,
+     "ms": 236.15000009536743,
+     "gt": "CAVALEIR",
+     "kind": "sign",
+     "score": {
+      "chars": 8,
+      "charErr": 16,
+      "words": 1,
+      "wordErr": 4,
+      "charsNoPunct": 8,
+      "charErrNoPunct": 12,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r6",
+     "text": "(A MELŐT!\"",
+     "confidence": 0.72,
+     "ms": 37.584999799728394,
+     "gt": "A MELÓT!”",
+     "kind": "speech",
+     "score": {
+      "chars": 9,
+      "charErr": 2,
+      "words": 2,
+      "wordErr": 2,
+      "charsNoPunct": 7,
+      "charErrNoPunct": 1,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r7",
+     "text": "HÁT... KÁBÉ.",
+     "confidence": 0.32,
+     "ms": 53.02499985694885,
+     "gt": "HÁT... KÁBÉ.",
+     "kind": "speech",
+     "score": {
+      "chars": 12,
+      "charErr": 0,
+      "words": 2,
+      "wordErr": 0,
+      "charsNoPunct": 8,
+      "charErrNoPunct": 0,
+      "exact": true,
+      "accents": {
+       "total": 3,
+       "hit": 3
+      }
+     }
+    },
+    {
+     "id": "r8",
+     "text": "",
+     "confidence": 0,
+     "ms": 10.394999980926514,
+     "gt": "FASZI BÁCSI",
+     "kind": "sign",
+     "score": {
+      "chars": 11,
+      "charErr": 11,
+      "words": 2,
+      "wordErr": 2,
+      "charsNoPunct": 11,
+      "charErrNoPunct": 11,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r9",
+     "text": "(NA . PATANY Feul)",
+     "confidence": 0.71,
+     "ms": 78.22000002861023,
+     "gt": "NA. PATTANJ FEL!",
+     "kind": "speech",
+     "score": {
+      "chars": 16,
+      "charErr": 6,
+      "words": 3,
+      "wordErr": 4,
+      "charsNoPunct": 14,
+      "charErrNoPunct": 3,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r10",
+     "text": "OO ELYJOCO",
+     "confidence": 0,
+     "ms": 89.94000005722046,
+     "gt": "FASZI-1",
+     "kind": "sign",
+     "score": {
+      "chars": 7,
+      "charErr": 10,
+      "words": 1,
+      "wordErr": 2,
+      "charsNoPunct": 6,
+      "charErrNoPunct": 10,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r11",
+     "text": "fa\n(CALAVAIE DO\nyV 1",
+     "confidence": 0.53,
+     "ms": 184.1949999332428,
+     "gt": "CALAVRIE",
+     "kind": "sign",
+     "score": {
+      "chars": 8,
+      "charErr": 13,
+      "words": 1,
+      "wordErr": 5,
+      "charsNoPunct": 8,
+      "charErrNoPunct": 12,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r12",
+     "text": "NEM BAJ, Az EMBER\nAtégT FIATAL, HOGY\nTANULJON. TTT",
+     "confidence": 0.61,
+     "ms": 137.70500016212463,
+     "gt": "NEM BAJ, AZ EMBER AZÉRT FIATAL, HOGY TANULJON.",
+     "kind": "speech",
+     "score": {
+      "chars": 46,
+      "charErr": 6,
+      "words": 8,
+      "wordErr": 2,
+      "charsNoPunct": 43,
+      "charErrNoPunct": 6,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 1
+      }
+     }
+    },
+    {
+     "id": "r13",
+     "text": "FASZ! Bács",
+     "confidence": 0.31,
+     "ms": 29.90499997138977,
+     "gt": "FASZI BÁCSI",
+     "kind": "sign",
+     "score": {
+      "chars": 11,
+      "charErr": 2,
+      "words": 2,
+      "wordErr": 2,
+      "charsNoPunct": 11,
+      "charErrNoPunct": 2,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 1
+      }
+     }
+    },
+    {
+     "id": "r14",
+     "text": "JEL AYJODE",
+     "confidence": 0.03,
+     "ms": 105.1399998664856,
+     "gt": "FASZI-1",
+     "kind": "sign",
+     "score": {
+      "chars": 7,
+      "charErr": 9,
+      "words": 1,
+      "wordErr": 2,
+      "charsNoPunct": 6,
+      "charErrNoPunct": 9,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r15",
+     "text": "AZA ! !\n JÉZVS, ATYA , ÚRISTEN",
+     "confidence": 0.37,
+     "ms": 161.5400002002716,
+     "gt": "JÉZUS, ATYA, ÚRISTEN!",
+     "kind": "speech",
+     "score": {
+      "chars": 21,
+      "charErr": 11,
+      "words": 3,
+      "wordErr": 7,
+      "charsNoPunct": 18,
+      "charErrNoPunct": 5,
+      "exact": false,
+      "accents": {
+       "total": 2,
+       "hit": 2
+      }
+     }
+    },
+    {
+     "id": "r16",
+     "text": "[VEGALAIRJOS\nFv",
+     "confidence": 0.46,
+     "ms": 81.5,
+     "gt": "VECALAIR",
+     "kind": "sign",
+     "score": {
+      "chars": 8,
+      "charErr": 8,
+      "words": 1,
+      "wordErr": 2,
+      "charsNoPunct": 8,
+      "charErrNoPunct": 7,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r17",
+     "text": "0 A HÁLÓFÜLKÉBEN LŐ; ír\nEGY KALSTÁLYHOLOGRAM\nFORMÁJÁBAN , DE ITT\nVALÓBAN A SZENTFÖLDI\nLOVAGVÁRAK\nSrúLVSÁT IGTEKEZTEM HOZ\nAz ot E6Y BEDVIN — ,\nKEMENCE, KENNÁS FASPO TF\nTENENYEREG;, ASTIROLÁGIUM..",
+     "confidence": 0.57,
+     "ms": 550.8400001525879,
+     "gt": "Ö A HÁLÓFÜLKÉBEN LÓG, EGY KRISTÁLYHOLOGRAM FORMÁJÁBAN, DE ITT VALÓBAN A SZENTFÖLDI LOVAGVÁRAK STÍLUSÁT IGYEKEZTEM HOZNI. AZ OTT EGY BEDUIN KEMENCE, HENNÁS KASPÓ TEVENYEREG, ASZTROLÁBIUM...",
+     "kind": "speech",
+     "score": {
+      "chars": 188,
+      "charErr": 35,
+      "words": 25,
+      "wordErr": 19,
+      "charsNoPunct": 180,
+      "charErrNoPunct": 26,
+      "exact": false,
+      "accents": {
+       "total": 17,
+       "hit": 13
+      }
+     }
+    },
+    {
+     "id": "r18",
+     "text": "",
+     "confidence": 0,
+     "ms": 6.455000162124634,
+     "gt": "FASZI BÁCSI",
+     "kind": "sign",
+     "score": {
+      "chars": 11,
+      "charErr": 11,
+      "words": 2,
+      "wordErr": 2,
+      "charsNoPunct": 11,
+      "charErrNoPunct": 11,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r19",
+     "text": "CSAK. MÁR. 0EURE)\n2 UNOM.\nSZERT VAGY AT, €!",
+     "confidence": 0.42,
+     "ms": 146.41999983787537,
+     "gt": "CSAK MÁR GECIRE UNOM. EZÉRT VAGY ITT, E!",
+     "kind": "speech",
+     "score": {
+      "chars": 40,
+      "charErr": 13,
+      "words": 8,
+      "wordErr": 7,
+      "charsNoPunct": 37,
+      "charErrNoPunct": 11,
+      "exact": false,
+      "accents": {
+       "total": 2,
+       "hit": 1
+      }
+     }
+    },
+    {
+     "id": "r20",
+     "text": "zt , mv bá e\n. HATÓ... EDPIG EGY KAMIONT...",
+     "confidence": 0.4,
+     "ms": 367.62999987602234,
+     "gt": "HÁTŐŐ... EDDIG EGY KAMIONT...",
+     "kind": "speech",
+     "score": {
+      "chars": 29,
+      "charErr": 19,
+      "words": 4,
+      "wordErr": 8,
+      "charsNoPunct": 23,
+      "charErrNoPunct": 15,
+      "exact": false,
+      "accents": {
+       "total": 3,
+       "hit": 1
+      }
+     }
+    },
+    {
+     "id": "r23",
+     "text": "[RELAVAGTIC",
+     "confidence": 0.2,
+     "ms": 49.74500012397766,
+     "gt": "RELAVACI",
+     "kind": "sign",
+     "score": {
+      "chars": 8,
+      "charErr": 4,
+      "words": 1,
+      "wordErr": 1,
+      "charsNoPunct": 8,
+      "charErrNoPunct": 3,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r24",
+     "text": ". NYERGES VONTATÓT.",
+     "confidence": 0.58,
+     "ms": 106.75499987602234,
+     "gt": "NYERGES VONTATÓT.",
+     "kind": "speech",
+     "score": {
+      "chars": 17,
+      "charErr": 2,
+      "words": 2,
+      "wordErr": 1,
+      "charsNoPunct": 16,
+      "charErrNoPunct": 0,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 1
+      }
+     }
+    },
+    {
+     "id": "r25",
+     "text": "PARDON . NYERGESVONTATÓT —\nCSINÁLTAM, VII. HENKIK STŰUSÁBAN,\nTRUGADÚR\" LETT A MUNKACÍMG.\n\nITT VAN A PORTFÓLIÓMBAN:Y NYA",
+     "confidence": 0.65,
+     "ms": 376.89999985694885,
+     "gt": "PARDON. NYERGESVONTATÓT CSINÁLTAM, VIII. HENRIK STÍLUSÁBAN, „TRUBADÚR” LETT A MUNKACÍME. ITT VAN A PORTFÓLIÓMBAN:",
+     "kind": "speech",
+     "score": {
+      "chars": 113,
+      "charErr": 15,
+      "words": 14,
+      "wordErr": 10,
+      "charsNoPunct": 105,
+      "charErrNoPunct": 11,
+      "exact": false,
+      "accents": {
+       "total": 8,
+       "hit": 7
+      }
+     }
+    },
+    {
+     "id": "r26",
+     "text": "AAD ... VÁGOM. KÁRPÁT 1!\nMÁG. MESSZIKÖL. ELCAPTAD A\nGROKÁT. Sog A G0JT. FELGASZNA\n\nNIONNAL , MEG EZ 15 ILYEN\n\nu RÉGI\", VAGOD?\n[7] ÁNTIK : !",
+     "confidence": 0.47,
+     "ms": 545.9099998474121,
+     "gt": "AHA ... VÁGOM. KÁRPIT MÁR MESSZIRŐL. ELKAPTAD A BROKÁT. SOK A BOJT. FELBASZNA AZONNAL. MEG EZIS ILYEN „RÉGI”, VÁGOD? ÁNTIK.",
+     "kind": "speech",
+     "score": {
+      "chars": 123,
+      "charErr": 34,
+      "words": 20,
+      "wordErr": 21,
+      "charsNoPunct": 109,
+      "charErrNoPunct": 24,
+      "exact": false,
+      "accents": {
+       "total": 8,
+       "hit": 6
+      }
+     }
+    },
+    {
+     "id": "r27",
+     "text": "",
+     "confidence": 0,
+     "ms": 7.454999923706055,
+     "gt": "FASZI BÁCSI",
+     "kind": "sign",
+     "score": {
+      "chars": 11,
+      "charErr": 11,
+      "words": 2,
+      "wordErr": 2,
+      "charsNoPunct": 11,
+      "charErrNoPunct": 11,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r28",
+     "text": "OD (FU IO",
+     "confidence": 0.13,
+     "ms": 145.52499985694885,
+     "gt": "FASZI-1",
+     "kind": "sign",
+     "score": {
+      "chars": 7,
+      "charErr": 9,
+      "words": 1,
+      "wordErr": 3,
+      "charsNoPunct": 6,
+      "charErrNoPunct": 7,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r29",
+     "text": "ort",
+     "confidence": 0.32,
+     "ms": 24.925000190734863,
+     "gt": "ROPI",
+     "kind": "caption",
+     "score": {
+      "chars": 4,
+      "charErr": 3,
+      "words": 1,
+      "wordErr": 1,
+      "charsNoPunct": 4,
+      "charErrNoPunct": 3,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r30",
+     "text": "alan áll\nSZGVAL, AMIKOR A SVY e!\nPIHENŐBEN KINTJA A\n\nKURVA AZ AövóT AKKO\nNE AZT KÉRVE, MERRE VAN\nA MűzEUmSHoP, VÁGOD?\nIRÁNYNAK ILYEN NEOGLOFTOS\nART DEKŐT GONDOLNÉK.\n\nfa",
+     "confidence": 0.56,
+     "ms": 759.0199999809265,
+     "gt": "SZÓVAL, AMIKOR A GROẞKUGELNI PIHENŐBEN KINYITJA A KURVA AZ AJTÓT AKKOR NE AZT KÉRDEZZE, MERRE VAN A MÚZEUMSHOP, VÁGOD? IRÁNYNAK ILYEN NEOLOFTOS ART DEKÓT GONDOLNÉK.",
+     "kind": "speech",
+     "score": {
+      "chars": 164,
+      "charErr": 35,
+      "words": 25,
+      "wordErr": 13,
+      "charsNoPunct": 159,
+      "charErrNoPunct": 35,
+      "exact": false,
+      "accents": {
+       "total": 9,
+       "hit": 6
+      }
+     }
+    },
+    {
+     "id": "r32",
+     "text": "RAGALYIE",
+     "confidence": 0.48,
+     "ms": 52.37000012397766,
+     "gt": "RACALVIE",
+     "kind": "sign",
+     "score": {
+      "chars": 8,
+      "charErr": 2,
+      "words": 1,
+      "wordErr": 1,
+      "charsNoPunct": 8,
+      "charErrNoPunct": 2,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r33",
+     "text": "ERSZ, LBÁG",
+     "confidence": 0.13,
+     "ms": 40.019999980926514,
+     "gt": "FASZI BÁCSI",
+     "kind": "sign",
+     "score": {
+      "chars": 11,
+      "charErr": 7,
+      "words": 2,
+      "wordErr": 2,
+      "charsNoPunct": 11,
+      "charErrNoPunct": 7,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 1
+      }
+     }
+    },
+    {
+     "id": "r34",
+     "text": "fi d——uu7 E\n\nÉRTEM. €Z A p0602, €2 MI?\n\n— MARADNIA KÉU?\nhadi 235 HON",
+     "confidence": 0.35,
+     "ms": 318.2649998664856,
+     "gt": "ÉRTEM. EZ A DOBOZ, EZ MI? MARADNIA KELL?",
+     "kind": "speech",
+     "score": {
+      "chars": 40,
+      "charErr": 38,
+      "words": 8,
+      "wordErr": 11,
+      "charsNoPunct": 36,
+      "charErrNoPunct": 33,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 1
+      }
+     }
+    },
+    {
+     "id": "r35",
+     "text": "EaLLL————— 0\nCAKKSIK A FÉNYHEZ . MARAD .",
+     "confidence": 0.4,
+     "ms": 256.1050000190735,
+     "gt": "AKKSIK A FÉNYHEZ. MARAD.",
+     "kind": "speech",
+     "score": {
+      "chars": 24,
+      "charErr": 16,
+      "words": 4,
+      "wordErr": 7,
+      "charsNoPunct": 22,
+      "charErrNoPunct": 9,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 1
+      }
+     }
+    },
+    {
+     "id": "r36",
+     "text": "(, FÉNYKEZ\"?\nA",
+     "confidence": 0.32,
+     "ms": 166.93499994277954,
+     "gt": "„FÉNYHEZ”?",
+     "kind": "speech",
+     "score": {
+      "chars": 10,
+      "charErr": 6,
+      "words": 1,
+      "wordErr": 3,
+      "charsNoPunct": 7,
+      "charErrNoPunct": 3,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 1
+      }
+     }
+    },
+    {
+     "id": "r37",
+     "text": "OG ED",
+     "confidence": 0.34,
+     "ms": 127.15000009536743,
+     "gt": "FASZI-1",
+     "kind": "sign",
+     "score": {
+      "chars": 7,
+      "charErr": 7,
+      "words": 1,
+      "wordErr": 2,
+      "charsNoPunct": 6,
+      "charErrNoPunct": 6,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r38",
+     "text": "S500N ÁG X6GY. Ő 5 ÁRY HA E)\nFPJOTA KAANÁN\n: 5 94b4. Pl Új NI\n9288 59 PAIN : BZ ol ot 021\n: 66809 b LAKY: : 004 SIÓ\n00] J00] CSS bb 1 PIN\n: Jó9) Jos PSA BRM\ni c; t 99 09 57 /\n, 0409 5, e PA LY 0 NN\nVAsZÖZŐ TEA",
+     "confidence": 0.31,
+     "ms": 2033.4450001716614,
+     "gt": "BALKON",
+     "kind": "sign",
+     "score": {
+      "chars": 6,
+      "charErr": 203,
+      "words": 1,
+      "wordErr": 59,
+      "charsNoPunct": 6,
+      "charErrNoPunct": 180,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r40",
+     "text": "IGAVELIARI",
+     "confidence": 0.66,
+     "ms": 82.25499987602234,
+     "gt": "CAVELIAR",
+     "kind": "sign",
+     "score": {
+      "chars": 8,
+      "charErr": 3,
+      "words": 1,
+      "wordErr": 1,
+      "charsNoPunct": 8,
+      "charErrNoPunct": 3,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r41",
+     "text": "Tiév VOLT AZ\nA SMART? ,",
+     "confidence": 0.61,
+     "ms": 99.24500012397766,
+     "gt": "TIÉD VOLT AZ A SMART?",
+     "kind": "speech",
+     "score": {
+      "chars": 21,
+      "charErr": 3,
+      "words": 5,
+      "wordErr": 2,
+      "charsNoPunct": 20,
+      "charErrNoPunct": 1,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 1
+      }
+     }
+    },
+    {
+     "id": "r42",
+     "text": "",
+     "confidence": 0,
+     "ms": 6.4750001430511475,
+     "gt": "FASZI BÁCSI",
+     "kind": "sign",
+     "score": {
+      "chars": 11,
+      "charErr": 11,
+      "words": 2,
+      "wordErr": 2,
+      "charsNoPunct": 11,
+      "charErrNoPunct": 11,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r45",
+     "text": "F — S —\n00 íEsz ) DO",
+     "confidence": 0.34,
+     "ms": 167.58500003814697,
+     "gt": "FASZI-1",
+     "kind": "sign",
+     "score": {
+      "chars": 7,
+      "charErr": 17,
+      "words": 1,
+      "wordErr": 8,
+      "charsNoPunct": 6,
+      "charErrNoPunct": 11,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r46",
+     "text": "e\" 4 KATÁDN!\nUs",
+     "confidence": 0.18,
+     "ms": 273.7350001335144,
+     "gt": "FIFU! HURUHATÁRR!",
+     "kind": "sfx",
+     "score": {
+      "chars": 17,
+      "charErr": 15,
+      "words": 2,
+      "wordErr": 4,
+      "charsNoPunct": 15,
+      "charErrNoPunct": 14,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 1
+      }
+     }
+    },
+    {
+     "id": "r47",
+     "text": "(CAVALUER",
+     "confidence": 0.61,
+     "ms": 61.47000002861023,
+     "gt": "CAVALIER",
+     "kind": "sign",
+     "score": {
+      "chars": 8,
+      "charErr": 2,
+      "words": 1,
+      "wordErr": 1,
+      "charsNoPunct": 8,
+      "charErrNoPunct": 1,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r48",
+     "text": "K18",
+     "confidence": 0.22,
+     "ms": 65.3199999332428,
+     "gt": "BOCSI.",
+     "kind": "speech",
+     "score": {
+      "chars": 6,
+      "charErr": 6,
+      "words": 1,
+      "wordErr": 1,
+      "charsNoPunct": 5,
+      "charErrNoPunct": 5,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r49",
+     "text": "MEG —\n1 HAZAVISULEK :",
+     "confidence": 0.37,
+     "ms": 132.00999999046326,
+     "gt": "MEG HAZAVISZLEK.",
+     "kind": "speech",
+     "score": {
+      "chars": 16,
+      "charErr": 7,
+      "words": 2,
+      "wordErr": 4,
+      "charsNoPunct": 15,
+      "charErrNoPunct": 3,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r50",
+     "text": "",
+     "confidence": 0,
+     "ms": 7.419999837875366,
+     "gt": "FASZI BÁCSI",
+     "kind": "sign",
+     "score": {
+      "chars": 11,
+      "charErr": 11,
+      "words": 2,
+      "wordErr": 2,
+      "charsNoPunct": 11,
+      "charErrNoPunct": 11,
+      "exact": false,
+      "accents": {
+       "total": 1,
+       "hit": 0
+      }
+     }
+    },
+    {
+     "id": "r52",
+     "text": "tGSLLEDOD",
+     "confidence": 0.01,
+     "ms": 50.105000019073486,
+     "gt": "FASZI-1",
+     "kind": "sign",
+     "score": {
+      "chars": 7,
+      "charErr": 8,
+      "words": 1,
+      "wordErr": 1,
+      "charsNoPunct": 6,
+      "charErrNoPunct": 8,
+      "exact": false,
+      "accents": {
+       "total": 0,
+       "hit": 0
+      }
+     }
+    }
+   ]
+  }
+ ]
+}

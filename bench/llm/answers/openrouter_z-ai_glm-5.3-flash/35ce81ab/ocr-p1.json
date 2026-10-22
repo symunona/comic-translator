@@ -1,0 +1,32 @@
+{
+  "spec": "openrouter:z-ai/glm-5.3-flash",
+  "log": "../bench/llm/prompts/35ce81ab353eaf542a2a53f673394ba425f4a3539a4b5f05a37172d09189cae8/llm/ocr-p1.json",
+  "text": "{\"regions\":[{\"n\":0,\"kind\":\"speech\",\"lines\":[\"Carrot!\",\"You're so cute to have\",\"thought of bringing me to\",\"the Contest!\"],\"align\":\"center\",\"caps\":false}],\"unboxed\":[]}",
+  "json": {
+    "regions": [
+      {
+        "n": 0,
+        "kind": "speech",
+        "lines": [
+          "Carrot!",
+          "You're so cute to have",
+          "thought of bringing me to",
+          "the Contest!"
+        ],
+        "align": "center",
+        "caps": false
+      }
+    ],
+    "unboxed": []
+  },
+  "usage": {
+    "input_tokens": 1065,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 196,
+    "reasoning_tokens": 147
+  },
+  "costUsd": 0.00025775,
+  "ms": 2166,
+  "at": "2026-10-20T07:19:26.100346258Z"
+}

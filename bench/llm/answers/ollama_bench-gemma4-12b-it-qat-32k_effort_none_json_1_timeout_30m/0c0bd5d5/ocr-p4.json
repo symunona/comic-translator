@@ -1,0 +1,50 @@
+{
+  "spec": "ollama:bench-gemma4-12b-it-qat-32k?effort=none\u0026json=1\u0026timeout=30m",
+  "log": "../bench/llm/prompts/0c0bd5d58b4b8bd03a1229371408586ca54a0de357a882ded2c9843589bea963/llm/ocr-p4.json",
+  "text": "{\"regions\":[{\"n\":12,\"kind\":\"speech\",\"lines\":[\"MÚLT HÉT KEDD?\",\"NE KAMUZZÁ!\",\"HÓGY NEM HALTÁL ÉHEN?\"],\"align\":\"center\",\"caps\":true},{\"n\":13,\"kind\":\"speech\",\"lines\":[\"KIFELÉ JÖTTEM A BOLTBÓL,\",\"AMIKOR TELI BE KAPOTT...\",\"KÉT NAGY_SZATYTOR...\"],\"align\":\"left\",\"caps\":true},{\"n\":14,\"kind\":\"sign\",\"lines\":[\"472.683 / FEVESZSEM\"],\"align\":\"left\",\"caps\":true}],\"unboxed\":[]}",
+  "json": {
+    "regions": [
+      {
+        "n": 12,
+        "kind": "speech",
+        "lines": [
+          "MÚLT HÉT KEDD?",
+          "NE KAMUZZÁ!",
+          "HÓGY NEM HALTÁL ÉHEN?"
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 13,
+        "kind": "speech",
+        "lines": [
+          "KIFELÉ JÖTTEM A BOLTBÓL,",
+          "AMIKOR TELI BE KAPOTT...",
+          "KÉT NAGY_SZATYTOR..."
+        ],
+        "align": "left",
+        "caps": true
+      },
+      {
+        "n": 14,
+        "kind": "sign",
+        "lines": [
+          "472.683 / FEVESZSEM"
+        ],
+        "align": "left",
+        "caps": true
+      }
+    ],
+    "unboxed": []
+  },
+  "usage": {
+    "input_tokens": 1309,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 144
+  },
+  "costUsd": 0,
+  "ms": 98939,
+  "at": "2026-10-20T07:09:01.760700216Z"
+}

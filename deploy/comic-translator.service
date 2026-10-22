@@ -1,5 +1,5 @@
 [Unit]
-Description=comic-translator API + web (comic.tmpx.space)
+Description=comic-translator API + web (comic.tmpx.space): detect in the browser, LLM claude-cli sonnet
 Documentation=https://github.com/symunona/comic-translator
 After=network-online.target
 Wants=network-online.target
@@ -8,19 +8,21 @@ Wants=network-online.target
 Type=simple
 WorkingDirectory=%h/comic-translator
 Environment=TMPDIR=%h/comic-translator/tmp
-Environment=ORT_LIB=%h/comic-translator/vendor/onnxruntime/lib/libonnxruntime.so
+Environment=LLM=claude-cli:sonnet
 Environment=PATH=%h/.local/bin:/usr/local/bin:/usr/bin:/bin
 ExecStart=%h/comic-translator/bin/server \
   -addr 127.0.0.1:4720 \
   -data %h/comic-translator/data \
   -static %h/comic-translator/web \
-  -detector %h/comic-translator/vendor/detector.onnx \
-  -llm-concurrency 2 \
-  -ort-threads 2
+  -models %h/comic-translator/vendor/models \
+  -detector "" \
+  -debug \
+  -ocr-per-panel \
+  -llm-concurrency 2
 Restart=always
 RestartSec=5
-MemoryHigh=1400M
-MemoryMax=1800M
+MemoryHigh=600M
+MemoryMax=900M
 # deploy.sh swaps bin/server by rename(2), so a restart never sees a half-copied binary.
 
 [Install]

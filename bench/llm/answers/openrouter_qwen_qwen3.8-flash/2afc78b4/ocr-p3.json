@@ -1,0 +1,58 @@
+{
+  "spec": "openrouter:qwen/qwen3.8-flash",
+  "log": "../bench/llm/prompts/2afc78b45293acd677ffcba91f53fea50838d406d2dd965846e83408657e58c7/llm/ocr-p3.json",
+  "text": "{\n  \"regions\": [\n    {\n      \"n\": 11,\n      \"kind\": \"sign\",\n      \"lines\": [\n        \"CALAVRIE\"\n      ],\n      \"align\": \"center\",\n      \"caps\": true\n    },\n    {\n      \"n\": 12,\n      \"kind\": \"speech\",\n      \"lines\": [\n        \"NEM BAJ, AZ EMBER\",\n        \"AZÉRT FIATAL, HOGY\",\n        \"TANULJON.\"\n      ],\n      \"align\": \"center\",\n      \"caps\": true\n    },\n    {\n      \"n\": 13,\n      \"kind\": \"sign\",\n      \"lines\": [\n        \"FASZI BÁCSI\"\n      ],\n      \"align\": \"center\",\n      \"caps\": true\n    },\n    {\n      \"n\": 14,\n      \"kind\": \"sign\",\n      \"lines\": [\n        \"FASZI-1\"\n      ],\n      \"align\": \"center\",\n      \"caps\": true\n    }\n  ],\n  \"unboxed\": []\n}",
+  "json": {
+    "regions": [
+      {
+        "n": 11,
+        "kind": "sign",
+        "lines": [
+          "CALAVRIE"
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 12,
+        "kind": "speech",
+        "lines": [
+          "NEM BAJ, AZ EMBER",
+          "AZÉRT FIATAL, HOGY",
+          "TANULJON."
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 13,
+        "kind": "sign",
+        "lines": [
+          "FASZI BÁCSI"
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 14,
+        "kind": "sign",
+        "lines": [
+          "FASZI-1"
+        ],
+        "align": "center",
+        "caps": true
+      }
+    ],
+    "unboxed": []
+  },
+  "usage": {
+    "input_tokens": 1645,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 1083,
+    "reasoning_tokens": 816
+  },
+  "costUsd": 0.00075576,
+  "ms": 19328,
+  "at": "2026-10-20T07:09:20.66302881Z"
+}

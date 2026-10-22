@@ -1,0 +1,29 @@
+{
+  "spec": "claude-cli:haiku",
+  "log": "../bench/llm/prompts/8f3737ae2df51cb23cc27c3f81a10a426a35fc918ea31cf1eff85be4fc0df452/llm/ocr-p1.json",
+  "text": "{\"regions\":[{\"n\":1,\"kind\":\"caption\",\"lines\":[\"Why would I\",\"exit vim?\"],\"align\":\"center\",\"caps\":false}],\"unboxed\":[]}",
+  "json": {
+    "regions": [
+      {
+        "n": 1,
+        "kind": "caption",
+        "lines": [
+          "Why would I",
+          "exit vim?"
+        ],
+        "align": "center",
+        "caps": false
+      }
+    ],
+    "unboxed": []
+  },
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 2695,
+    "cache_read_input_tokens": 4318,
+    "output_tokens": 309
+  },
+  "costUsd": 0.0007370800000000001,
+  "ms": 8464,
+  "at": "2026-10-20T07:20:19.622291764Z"
+}

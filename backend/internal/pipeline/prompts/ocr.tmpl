@@ -1,4 +1,4 @@
-You are transcribing the lettering of one panel of a Hungarian comic strip for a translation team. The style is Napirajz: black ink, hand-lettered ALL CAPS text, white speech bubbles with long wavy tails, signs and plates drawn into the art.
+You are transcribing the lettering of one panel of a {{.SrcName}} comic for a translation team.{{if .Napirajz}} The style is Napirajz: black ink, hand-lettered ALL CAPS text, white speech bubbles with long wavy tails, signs and plates drawn into the art.{{end}}
 
 Image 1 is the whole panel. Every detected text area has a red outline and a red tag with its box number. The red marks are ours, not part of the comic.
 The other images are clean close-ups of each box (no red marks), enlarged. Use them to read letters and accents; use the panel image for layout and context.
@@ -6,27 +6,4 @@ The other images are clean close-ups of each box (no red marks), enlarged. Use t
 Boxes in this panel:
 {{range .Boxes}}- box {{.N}}: close-up is image {{.Image}}; detector class {{.Class}}{{if .Hint}} ({{.Hint}}){{end}}
 {{end}}
-Transcribe every box. These rules matter more than anything else:
-
-1. COPY, NEVER CORRECT. Write the letters exactly as drawn. Keep dialect, slang, colloquial contractions, dropped letters, odd spellings and typos. Hungarian casual speech often drops a final consonant: "ELJÖTTÉ" stays "ELJÖTTÉ" (do NOT write "ELJÖTTÉL"); "DEJÓ" stays one word if it is lettered as one word. If you notice you are "fixing" a word towards standard Hungarian, undo it. The translators need the exact form because the deviation is often the joke or the voice of the character.
-2. ACCENTS. Hungarian has Á É Í Ó Ö Ő Ú Ü Ű. Check each vowel in the close-up: two dots (Ö Ü), double acute strokes (Ő Ű), one acute stroke (Á É Í Ó Ú), or nothing. Hand-drawn accents are small and slanted; do not drop them and do not add ones that are not there.
-3. PUNCTUATION exactly as drawn: commas (often a small tick at the baseline), periods, "...", "!", "?", "„" and "”" quotes, hyphens, dashes.
-4. LINE BREAKS exactly as lettered: one entry in "lines" per lettered line, top to bottom. Do not re-flow.
-5. CASE: the lettering is capitals. Transcribe in capitals and set "caps": true. Only if the lettering is genuinely lower case, write it so and set "caps": false.
-6. SCOPE: transcribe the text that sits inside that box. If a box clips a bubble's text, include the whole lines that belong to that bubble and are mostly inside the box. Never copy text from a neighbouring box.
-7. NO TEXT: if a box holds no readable lettering (art, an empty bubble, a window, a wheel, hatching, a stray mark), use kind "none" and empty lines.
-8. SIGNS: brand names, plates, name boards and labels drawn on objects are kind "sign". Spell them letter by letter as drawn even if they look misspelled or scrambled: scrambled signs are usually intentional jokes.
-
-kind values:
-- "speech": spoken words in a bubble or a lettered block attached to a speaker by a tail line
-- "thought": thought bubble (cloud outline or trail of small circles)
-- "caption": narration or a text box not spoken by anyone in the scene
-- "sfx": sound effects, onomatopoeia, or shouts drawn as large stylised or outlined lettering that is part of the art
-- "sign": text that exists physically in the scene (signs, plates, labels, screens, logos)
-- "none": no readable text
-
-align: "center" when the lines are centred on each other, "left" when they share a left edge, "right" when they share a right edge.
-
-Also list in "unboxed" any lettering you can see in the panel image that is NOT inside any red box (for example a tiny bubble the detector missed), transcribed with the same rules. Use [] if there is none.
-
-Reply with JSON only.
+{{template "ocr-rules" .}}

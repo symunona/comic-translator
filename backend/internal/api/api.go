@@ -179,7 +179,12 @@ func (s *Server) upload(w http.ResponseWriter, r *http.Request) {
 		httpError(w, http.StatusBadRequest, err.Error())
 		return
 	}
-	id, existing, err := s.P.Ingest(data, hdr.Filename)
+	src := r.FormValue("src")
+	if src != "" && !langRe.MatchString(src) {
+		httpError(w, http.StatusBadRequest, "bad src")
+		return
+	}
+	id, existing, err := s.P.Ingest(data, hdr.Filename, src)
 	if err != nil {
 		httpError(w, http.StatusBadRequest, err.Error())
 		return
@@ -208,8 +213,9 @@ func (s *Server) usage(w http.ResponseWriter, r *http.Request) {
 	}
 	writeJSON(w, http.StatusOK, struct {
 		*llm.Report
-		Detect *pipeline.DetectRun `json:"detect,omitempty"`
-	}{rep, s.P.DetectRun(id)})
+		Detect *pipeline.DetectRun           `json:"detect,omitempty"`
+		Stats  map[string]pipeline.StageStat `json:"stats"`
+	}{rep, s.P.DetectRun(id), s.P.Stats(id)})
 }
 
 func (s *Server) events(w http.ResponseWriter, r *http.Request) {

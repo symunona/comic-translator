@@ -1,0 +1,141 @@
+{
+  "spec": "claude-cli:opus",
+  "log": "../bench/llm/judge/6cbd56cdd933343ad87de8c3e3dd772f7f771dd3f4786507d9786c71aad26a05/llm/judge-tr-en.json",
+  "text": "{\"candidates\":{\"A\":{\"accuracy\":9,\"naturalness\":8,\"humour\":8,\"voice\":8,\"fit\":10,\"overall\":8,\"worst\":\"r3 'THE PHOTO' loses 'his' and starts without a subject ('ONLY LOOKS LIKE'), so it reads a bit clipped\"},\"B\":{\"accuracy\":9,\"naturalness\":6,\"humour\":7,\"voice\":7,\"fit\":9,\"overall\":7,\"worst\":\"r3 'FUCKING BROTHEL A BOMB WENT OFF IN' is a literal calque that doesn't read as English slang for a mess\"},\"C\":{\"accuracy\":2,\"naturalness\":5,\"humour\":5,\"voice\":6,\"fit\":8,\"overall\":2,\"worst\":\"r0 is left untranslated and broken ('NAGYIKÁM... no'), so the whole setup is missing\"},\"D\":{\"accuracy\":8,\"naturalness\":7,\"humour\":7,\"voice\":7,\"fit\":10,\"overall\":7,\"worst\":\"r3 'FUCKING BROTHEL' is a literal calque; r9 'CHILLING' also replaces 'soaking'\"},\"E\":{\"accuracy\":8,\"naturalness\":8,\"humour\":8,\"voice\":8,\"fit\":10,\"overall\":8,\"worst\":\"r9 'FUCKING GROSS!' drops the repeated 'yuck' from the opening, so the bookend tic is lost\"},\"F\":{\"accuracy\":8,\"naturalness\":8,\"humour\":7,\"voice\":7,\"fit\":10,\"overall\":7,\"worst\":\"r9 'CHILLING IN AN AQUARIUM' is a flippant slang shift that loses the literal 'soaking' horror image\"},\"G\":{\"accuracy\":8,\"naturalness\":8,\"humour\":8,\"voice\":8,\"fit\":10,\"overall\":8,\"worst\":\"r0 drops 'grandpa' ('TIBOR HAD...'), which loses the family relationship\"},\"H\":{\"accuracy\":9,\"naturalness\":9,\"humour\":9,\"voice\":9,\"fit\":10,\"overall\":9,\"worst\":\"r7 'LAND FEUD' translates the odd word; it is accurate but slightly less opaque than the original\"},\"I\":{\"accuracy\":9,\"naturalness\":9,\"humour\":8,\"voice\":9,\"fit\":10,\"overall\":9,\"worst\":\"r7 'LAND FEUD' is less cryptic than the original non-answer\"},\"J\":{\"accuracy\":9,\"naturalness\":6,\"humour\":7,\"voice\":7,\"fit\":8,\"overall\":6,\"worst\":\"r3 'FUCKING BROTHEL WITH A BOMB GOING OFF IN IT' is clunky and literal; r9 hits the 114-char limit exactly\"},\"K\":{\"accuracy\":8,\"naturalness\":9,\"humour\":8,\"voice\":8,\"fit\":10,\"overall\":8,\"worst\":\"r9 'FUCKING GROSS!' loses the 'yuck... yuck, fuck' bookend\"},\"L\":{\"accuracy\":7,\"naturalness\":5,\"humour\":6,\"voice\":6,\"fit\":10,\"overall\":5,\"worst\":\"r3 'ONLY LOOKS LIKE A FUCKING BROTHEL, A BOMB WENT OFF IN IT' is fragmented and literal\"}},\"ranking\":[\"H\",\"I\",\"K\",\"A\",\"E\",\"G\",\"F\",\"D\",\"B\",\"J\",\"L\",\"C\"],\"notes\":\"All candidates handle the r4/r5 nonsense and the r10/r11 punchline the same way, and all fit their bubbles. The best ones render 'kibaszott kupleráj' in r3 as natural English slang (dump, shithole, mess) rather than the literal 'brothel', and keep the jam-jar image in r9 vivid. H and I also add nice touches: 'FUUUCK', 'get on his wavelength' and 'a jam jar of its own'. The 'brothel' calques (B, D, J, L) hurt naturalness, and C is unusable because r0 is untranslated.\"}",
+  "json": {
+    "candidates": {
+      "A": {
+        "accuracy": 9,
+        "naturalness": 8,
+        "humour": 8,
+        "voice": 8,
+        "fit": 10,
+        "overall": 8,
+        "worst": "r3 'THE PHOTO' loses 'his' and starts without a subject ('ONLY LOOKS LIKE'), so it reads a bit clipped"
+      },
+      "B": {
+        "accuracy": 9,
+        "naturalness": 6,
+        "humour": 7,
+        "voice": 7,
+        "fit": 9,
+        "overall": 7,
+        "worst": "r3 'FUCKING BROTHEL A BOMB WENT OFF IN' is a literal calque that doesn't read as English slang for a mess"
+      },
+      "C": {
+        "accuracy": 2,
+        "naturalness": 5,
+        "humour": 5,
+        "voice": 6,
+        "fit": 8,
+        "overall": 2,
+        "worst": "r0 is left untranslated and broken ('NAGYIKÁM... no'), so the whole setup is missing"
+      },
+      "D": {
+        "accuracy": 8,
+        "naturalness": 7,
+        "humour": 7,
+        "voice": 7,
+        "fit": 10,
+        "overall": 7,
+        "worst": "r3 'FUCKING BROTHEL' is a literal calque; r9 'CHILLING' also replaces 'soaking'"
+      },
+      "E": {
+        "accuracy": 8,
+        "naturalness": 8,
+        "humour": 8,
+        "voice": 8,
+        "fit": 10,
+        "overall": 8,
+        "worst": "r9 'FUCKING GROSS!' drops the repeated 'yuck' from the opening, so the bookend tic is lost"
+      },
+      "F": {
+        "accuracy": 8,
+        "naturalness": 8,
+        "humour": 7,
+        "voice": 7,
+        "fit": 10,
+        "overall": 7,
+        "worst": "r9 'CHILLING IN AN AQUARIUM' is a flippant slang shift that loses the literal 'soaking' horror image"
+      },
+      "G": {
+        "accuracy": 8,
+        "naturalness": 8,
+        "humour": 8,
+        "voice": 8,
+        "fit": 10,
+        "overall": 8,
+        "worst": "r0 drops 'grandpa' ('TIBOR HAD...'), which loses the family relationship"
+      },
+      "H": {
+        "accuracy": 9,
+        "naturalness": 9,
+        "humour": 9,
+        "voice": 9,
+        "fit": 10,
+        "overall": 9,
+        "worst": "r7 'LAND FEUD' translates the odd word; it is accurate but slightly less opaque than the original"
+      },
+      "I": {
+        "accuracy": 9,
+        "naturalness": 9,
+        "humour": 8,
+        "voice": 9,
+        "fit": 10,
+        "overall": 9,
+        "worst": "r7 'LAND FEUD' is less cryptic than the original non-answer"
+      },
+      "J": {
+        "accuracy": 9,
+        "naturalness": 6,
+        "humour": 7,
+        "voice": 7,
+        "fit": 8,
+        "overall": 6,
+        "worst": "r3 'FUCKING BROTHEL WITH A BOMB GOING OFF IN IT' is clunky and literal; r9 hits the 114-char limit exactly"
+      },
+      "K": {
+        "accuracy": 8,
+        "naturalness": 9,
+        "humour": 8,
+        "voice": 8,
+        "fit": 10,
+        "overall": 8,
+        "worst": "r9 'FUCKING GROSS!' loses the 'yuck... yuck, fuck' bookend"
+      },
+      "L": {
+        "accuracy": 7,
+        "naturalness": 5,
+        "humour": 6,
+        "voice": 6,
+        "fit": 10,
+        "overall": 5,
+        "worst": "r3 'ONLY LOOKS LIKE A FUCKING BROTHEL, A BOMB WENT OFF IN IT' is fragmented and literal"
+      }
+    },
+    "ranking": [
+      "H",
+      "I",
+      "K",
+      "A",
+      "E",
+      "G",
+      "F",
+      "D",
+      "B",
+      "J",
+      "L",
+      "C"
+    ],
+    "notes": "All candidates handle the r4/r5 nonsense and the r10/r11 punchline the same way, and all fit their bubbles. The best ones render 'kibaszott kupleráj' in r3 as natural English slang (dump, shithole, mess) rather than the literal 'brothel', and keep the jam-jar image in r9 vivid. H and I also add nice touches: 'FUUUCK', 'get on his wavelength' and 'a jam jar of its own'. The 'brothel' calques (B, D, J, L) hurt naturalness, and C is unusable because r0 is untranslated."
+  },
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 10649,
+    "cache_read_input_tokens": 10289,
+    "output_tokens": 3867
+  },
+  "costUsd": 0.16460579999999997,
+  "ms": 34475,
+  "at": "2026-10-20T07:33:08.663629974Z"
+}

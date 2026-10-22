@@ -1,0 +1,142 @@
+{
+  "spec": "openrouter:google/gemini-3.8-flash",
+  "log": "../bench/llm/judge/6cbd56cdd933343ad87de8c3e3dd772f7f771dd3f4786507d9786c71aad26a05/llm/judge-tr-en.json",
+  "text": "{\"candidates\":{\"A\":{\"accuracy\":7,\"naturalness\":7,\"humour\":7,\"voice\":7,\"fit\":7,\"overall\":7,\"worst\":\"r9 slight phrasing awkwardness\"},\"B\":{\"accuracy\":6,\"naturalness\":6,\"humour\":6,\"voice\":6,\"fit\":4,\"overall\":5,\"worst\":\"r9 length exceeds budget\"},\"C\":{\"accuracy\":3,\"naturalness\":4,\"humour\":4,\"voice\":4,\"fit\":6,\"overall\":3,\"worst\":\"r0 contains untranslated placeholder text\"},\"D\":{\"accuracy\":5,\"naturalness\":6,\"humour\":5,\"voice\":5,\"fit\":6,\"overall\":5,\"worst\":\"r9 awkward slang with 'chilling'\"},\"E\":{\"accuracy\":6,\"naturalness\":6,\"humour\":6,\"voice\":6,\"fit\":6,\"overall\":6,\"worst\":\"r3 shithole weakens the kupleráj joke\"},\"F\":{\"accuracy\":5,\"naturalness\":5,\"humour\":5,\"voice\":5,\"fit\":6,\"overall\":5,\"worst\":\"r0 translated as a question\"},\"G\":{\"accuracy\":6,\"naturalness\":6,\"humour\":6,\"voice\":6,\"fit\":7,\"overall\":6,\"worst\":\"r0 missing grandpa designation for Tibor\"},\"H\":{\"accuracy\":5,\"naturalness\":6,\"humour\":5,\"voice\":5,\"fit\":5,\"overall\":5,\"worst\":\"r7 overtranslates nonsense word as 'land feud'\"},\"I\":{\"accuracy\":5,\"naturalness\":6,\"humour\":5,\"voice\":5,\"fit\":5,\"overall\":5,\"worst\":\"r7 overtranslation of nonsense word\"},\"J\":{\"accuracy\":6,\"naturalness\":6,\"humour\":6,\"voice\":6,\"fit\":5,\"overall\":6,\"worst\":\"r9 slightly long for bubble\"},\"K\":{\"accuracy\":6,\"naturalness\":7,\"humour\":6,\"voice\":6,\"fit\":6,\"overall\":6,\"worst\":\"r9 'fucking gross' slightly alters tone\"},\"L\":{\"accuracy\":5,\"naturalness\":5,\"humour\":5,\"voice\":5,\"fit\":6,\"overall\":5,\"worst\":\"r0 turns statement into a question\"}},\"ranking\":[\"A\",\"K\",\"G\",\"E\",\"J\",\"D\",\"B\",\"F\",\"H\",\"I\",\"L\",\"C\"],\"notes\":\"Top versions preserved character budget constraints and absurd tone without over-explaining non-sequiturs or leaving regions unfinished.\"}",
+  "json": {
+    "candidates": {
+      "A": {
+        "accuracy": 7,
+        "naturalness": 7,
+        "humour": 7,
+        "voice": 7,
+        "fit": 7,
+        "overall": 7,
+        "worst": "r9 slight phrasing awkwardness"
+      },
+      "B": {
+        "accuracy": 6,
+        "naturalness": 6,
+        "humour": 6,
+        "voice": 6,
+        "fit": 4,
+        "overall": 5,
+        "worst": "r9 length exceeds budget"
+      },
+      "C": {
+        "accuracy": 3,
+        "naturalness": 4,
+        "humour": 4,
+        "voice": 4,
+        "fit": 6,
+        "overall": 3,
+        "worst": "r0 contains untranslated placeholder text"
+      },
+      "D": {
+        "accuracy": 5,
+        "naturalness": 6,
+        "humour": 5,
+        "voice": 5,
+        "fit": 6,
+        "overall": 5,
+        "worst": "r9 awkward slang with 'chilling'"
+      },
+      "E": {
+        "accuracy": 6,
+        "naturalness": 6,
+        "humour": 6,
+        "voice": 6,
+        "fit": 6,
+        "overall": 6,
+        "worst": "r3 shithole weakens the kupleráj joke"
+      },
+      "F": {
+        "accuracy": 5,
+        "naturalness": 5,
+        "humour": 5,
+        "voice": 5,
+        "fit": 6,
+        "overall": 5,
+        "worst": "r0 translated as a question"
+      },
+      "G": {
+        "accuracy": 6,
+        "naturalness": 6,
+        "humour": 6,
+        "voice": 6,
+        "fit": 7,
+        "overall": 6,
+        "worst": "r0 missing grandpa designation for Tibor"
+      },
+      "H": {
+        "accuracy": 5,
+        "naturalness": 6,
+        "humour": 5,
+        "voice": 5,
+        "fit": 5,
+        "overall": 5,
+        "worst": "r7 overtranslates nonsense word as 'land feud'"
+      },
+      "I": {
+        "accuracy": 5,
+        "naturalness": 6,
+        "humour": 5,
+        "voice": 5,
+        "fit": 5,
+        "overall": 5,
+        "worst": "r7 overtranslation of nonsense word"
+      },
+      "J": {
+        "accuracy": 6,
+        "naturalness": 6,
+        "humour": 6,
+        "voice": 6,
+        "fit": 5,
+        "overall": 6,
+        "worst": "r9 slightly long for bubble"
+      },
+      "K": {
+        "accuracy": 6,
+        "naturalness": 7,
+        "humour": 6,
+        "voice": 6,
+        "fit": 6,
+        "overall": 6,
+        "worst": "r9 'fucking gross' slightly alters tone"
+      },
+      "L": {
+        "accuracy": 5,
+        "naturalness": 5,
+        "humour": 5,
+        "voice": 5,
+        "fit": 6,
+        "overall": 5,
+        "worst": "r0 turns statement into a question"
+      }
+    },
+    "ranking": [
+      "A",
+      "K",
+      "G",
+      "E",
+      "J",
+      "D",
+      "B",
+      "F",
+      "H",
+      "I",
+      "L",
+      "C"
+    ],
+    "notes": "Top versions preserved character budget constraints and absurd tone without over-explaining non-sequiturs or leaving regions unfinished."
+  },
+  "usage": {
+    "input_tokens": 9492,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 1077,
+    "reasoning_tokens": 541
+  },
+  "costUsd": 0.01115775,
+  "ms": 9133,
+  "at": "2026-10-20T07:35:08.458075074Z"
+}

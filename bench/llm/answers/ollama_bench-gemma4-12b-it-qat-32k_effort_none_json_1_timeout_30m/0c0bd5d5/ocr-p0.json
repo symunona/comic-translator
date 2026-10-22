@@ -1,0 +1,31 @@
+{
+  "spec": "ollama:bench-gemma4-12b-it-qat-32k?effort=none\u0026json=1\u0026timeout=30m",
+  "log": "../bench/llm/prompts/0c0bd5d58b4b8bd03a1229371408586ca54a0de357a882ded2c9843589bea963/llm/ocr-p0.json",
+  "text": "{\"regions\":[{\"n\":0,\"kind\":\"sign\",\"lines\":[\"ÉTŐI PAI KITTLEZÉS - ÖC\"],\"align\":\"center\",\"caps\":true}],\"unboxed\":[\"HLOTT!\",\"||ITY!\"]}",
+  "json": {
+    "regions": [
+      {
+        "n": 0,
+        "kind": "sign",
+        "lines": [
+          "ÉTŐI PAI KITTLEZÉS - ÖC"
+        ],
+        "align": "center",
+        "caps": true
+      }
+    ],
+    "unboxed": [
+      "HLOTT!",
+      "||ITY!"
+    ]
+  },
+  "usage": {
+    "input_tokens": 1127,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 47
+  },
+  "costUsd": 0,
+  "ms": 54050,
+  "at": "2026-10-20T07:17:19.570505533Z"
+}

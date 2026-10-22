@@ -1,0 +1,95 @@
+{
+  "spec": "openrouter:google/gemini-3.8-flash",
+  "log": "../data/0c0bd5d58b4b8bd03a1229371408586ca54a0de357a882ded2c9843589bea963/llm/scene-0.json",
+  "text": "{\"summary\":\"A construction truck driver parks his flatbed truck, only to hear groaning coming from the truck bed. When he investigates, an unseen pedestrian reveals that the driver ran him over and broke both his legs on Gubacs Teréz Street, landing him in the flatbed where he has been lying ever since. When the driver points out that he hasn't been anywhere near that street today, the victim clarifies that the accident happened last Tuesday, and he only survived because he was hit right outside a grocery store carrying two huge bags of food. Instead of calling an ambulance or rushing him to the hospital, the driver merely tosses him a blanket because the nights are getting cold.\",\"characters\":[{\"name\":\"truck driver\",\"description\":\"A burly, balding tradesman with sideburns and a stubbly mustache, wearing a work vest. He speaks in crude, aggressive Hungarian working-class slang with frequent cursing ('bazme', 'faszom', 'gecit'), showing an absurd, deadpan lack of empathy.\"},{\"name\":\"injured pedestrian\",\"description\":\"An unseen hit-and-run victim lying injured in the flatbed of the truck with two broken legs. Despite terrible pain and surviving over a week on groceries, he speaks in a surprisingly calm, factual, polite manner, punctuated by guttural groans.\"}],\"panels\":[{\"panelId\":\"p0\",\"description\":\"The truck driver walks away from his flatbed truck, locking it remotely with a key fob. The truck has a broom standing in the bed and misspelled contractor signage on the side.\"},{\"panelId\":\"p1\",\"description\":\"The driver stops and turns back with hands on hips, bewildered by loud groans coming from the cargo bed.\"},{\"panelId\":\"p2\",\"description\":\"The driver aggressively demands to know who is on his flatbed. A voice from the bed calmly explains that the driver hit him on Gubacs Teréz Street, broke both his legs, and he has been lying there in pain ever since.\"},{\"panelId\":\"p3\",\"description\":\"Leaning against the truck, the driver denies being near that street today; the voice clarifies that the crash took place last week Tuesday.\"},{\"panelId\":\"p4\",\"description\":\"The driver skeptically asks how he didn't starve over a week; the victim explains he was hit while exiting a grocery store with two full shopping bags.\"},{\"panelId\":\"p5\",\"description\":\"The driver holds his temple in exasperation and walks off, swearing to himself.\"},{\"panelId\":\"p6\",\"description\":\"The rear of the truck stands alone as another loud groan emanates from the flatbed.\"},{\"panelId\":\"p7\",\"description\":\"The driver returns and casually tosses a blanket onto the flatbed, offering practical advice that the nights are turning cold.\"}],\"speakers\":{\"r0\":\"sign\",\"r1\":\"injured pedestrian\",\"r2\":\"truck driver\",\"r3\":\"sign\",\"r4\":\"truck driver\",\"r5\":\"injured pedestrian\",\"r6\":\"injured pedestrian\",\"r7\":\"sign\",\"r8\":\"truck driver\",\"r9\":\"injured pedestrian\",\"r10\":\"none\",\"r11\":\"sign\",\"r12\":\"truck driver\",\"r13\":\"injured pedestrian\",\"r14\":\"sign\",\"r15\":\"truck driver\",\"r16\":\"sign\",\"r17\":\"none\",\"r18\":\"none\",\"r19\":\"injured pedestrian\",\"r20\":\"sign\",\"r21\":\"truck driver\",\"r22\":\"sign\",\"r23\":\"none\"},\"notes\":[\"Absurd pragmatism punchline: Instead of calling an ambulance, reporting the hit-and-run, or taking the severely injured man to a hospital after leaving him on a truck bed for over a week, the driver's only response is to bring him a blanket (r21: 'ITT EGY PLÉD, BAZME') because autumn nights are getting chilly.\",\"Sign running gag: The sign on the truck panel in p0 reads 'ÉPÖIPAI KITTELEZÉS' (a mangled misspelling of 'Építőipari kivitelezés', meaning 'Building construction contracting'). On the rear panels (r3, r7, r11, r14, r16, r20, r22), the contact number is displayed as '7722.683/FELVESZEM'. 'Felveszem' literally means 'I will answer [the phone]', a humorous parody of Hungarian tradesmen who notoriously never answer customer calls.\",\"Profanity and vulgarities: The driver uses standard Hungarian coarse swear words: 'MI A FASZOM?' (r2, lit. 'What my dick?', i.e., 'What the fuck?'), 'MI A GECIT' (r4, lit. 'what the jizz/spunk', i.e., 'what the fuck'), 'BAZME' (r4, r8, r21, clipped vernacular for 'basszameg', meaning 'fuck it / dammit'), and 'AKURVA ÉLET!' (r15, lit. 'the whore life!', i.e., 'fucking hell! / fuck my life!').\",\"Colloquial grammar and phrasing: In r12, 'NE KAMUZZÁ!' is slang for 'Don't bullshit me / Don't lie!' with an informal prolonged imperative. In r5, 'FÁJOGAT' is a frequentative/diminutive form of 'fáj' (to hurt), meaning 'it aches on and off / it sort of hurts', creating comic contrast with the fact that both his legs are shattered.\",\"Street name: 'GUBACS TERÉZ ÚT' (r5) is a fictional, jumbled Budapest-sounding street name, comically fusing elements like Gubacsi út and Teréz körút.\"]}",
+  "json": {
+    "summary": "A construction truck driver parks his flatbed truck, only to hear groaning coming from the truck bed. When he investigates, an unseen pedestrian reveals that the driver ran him over and broke both his legs on Gubacs Teréz Street, landing him in the flatbed where he has been lying ever since. When the driver points out that he hasn't been anywhere near that street today, the victim clarifies that the accident happened last Tuesday, and he only survived because he was hit right outside a grocery store carrying two huge bags of food. Instead of calling an ambulance or rushing him to the hospital, the driver merely tosses him a blanket because the nights are getting cold.",
+    "characters": [
+      {
+        "name": "truck driver",
+        "description": "A burly, balding tradesman with sideburns and a stubbly mustache, wearing a work vest. He speaks in crude, aggressive Hungarian working-class slang with frequent cursing ('bazme', 'faszom', 'gecit'), showing an absurd, deadpan lack of empathy."
+      },
+      {
+        "name": "injured pedestrian",
+        "description": "An unseen hit-and-run victim lying injured in the flatbed of the truck with two broken legs. Despite terrible pain and surviving over a week on groceries, he speaks in a surprisingly calm, factual, polite manner, punctuated by guttural groans."
+      }
+    ],
+    "panels": [
+      {
+        "panelId": "p0",
+        "description": "The truck driver walks away from his flatbed truck, locking it remotely with a key fob. The truck has a broom standing in the bed and misspelled contractor signage on the side."
+      },
+      {
+        "panelId": "p1",
+        "description": "The driver stops and turns back with hands on hips, bewildered by loud groans coming from the cargo bed."
+      },
+      {
+        "panelId": "p2",
+        "description": "The driver aggressively demands to know who is on his flatbed. A voice from the bed calmly explains that the driver hit him on Gubacs Teréz Street, broke both his legs, and he has been lying there in pain ever since."
+      },
+      {
+        "panelId": "p3",
+        "description": "Leaning against the truck, the driver denies being near that street today; the voice clarifies that the crash took place last week Tuesday."
+      },
+      {
+        "panelId": "p4",
+        "description": "The driver skeptically asks how he didn't starve over a week; the victim explains he was hit while exiting a grocery store with two full shopping bags."
+      },
+      {
+        "panelId": "p5",
+        "description": "The driver holds his temple in exasperation and walks off, swearing to himself."
+      },
+      {
+        "panelId": "p6",
+        "description": "The rear of the truck stands alone as another loud groan emanates from the flatbed."
+      },
+      {
+        "panelId": "p7",
+        "description": "The driver returns and casually tosses a blanket onto the flatbed, offering practical advice that the nights are turning cold."
+      }
+    ],
+    "speakers": {
+      "r0": "sign",
+      "r1": "injured pedestrian",
+      "r2": "truck driver",
+      "r3": "sign",
+      "r4": "truck driver",
+      "r5": "injured pedestrian",
+      "r6": "injured pedestrian",
+      "r7": "sign",
+      "r8": "truck driver",
+      "r9": "injured pedestrian",
+      "r10": "none",
+      "r11": "sign",
+      "r12": "truck driver",
+      "r13": "injured pedestrian",
+      "r14": "sign",
+      "r15": "truck driver",
+      "r16": "sign",
+      "r17": "none",
+      "r18": "none",
+      "r19": "injured pedestrian",
+      "r20": "sign",
+      "r21": "truck driver",
+      "r22": "sign",
+      "r23": "none"
+    },
+    "notes": [
+      "Absurd pragmatism punchline: Instead of calling an ambulance, reporting the hit-and-run, or taking the severely injured man to a hospital after leaving him on a truck bed for over a week, the driver's only response is to bring him a blanket (r21: 'ITT EGY PLÉD, BAZME') because autumn nights are getting chilly.",
+      "Sign running gag: The sign on the truck panel in p0 reads 'ÉPÖIPAI KITTELEZÉS' (a mangled misspelling of 'Építőipari kivitelezés', meaning 'Building construction contracting'). On the rear panels (r3, r7, r11, r14, r16, r20, r22), the contact number is displayed as '7722.683/FELVESZEM'. 'Felveszem' literally means 'I will answer [the phone]', a humorous parody of Hungarian tradesmen who notoriously never answer customer calls.",
+      "Profanity and vulgarities: The driver uses standard Hungarian coarse swear words: 'MI A FASZOM?' (r2, lit. 'What my dick?', i.e., 'What the fuck?'), 'MI A GECIT' (r4, lit. 'what the jizz/spunk', i.e., 'what the fuck'), 'BAZME' (r4, r8, r21, clipped vernacular for 'basszameg', meaning 'fuck it / dammit'), and 'AKURVA ÉLET!' (r15, lit. 'the whore life!', i.e., 'fucking hell! / fuck my life!').",
+      "Colloquial grammar and phrasing: In r12, 'NE KAMUZZÁ!' is slang for 'Don't bullshit me / Don't lie!' with an informal prolonged imperative. In r5, 'FÁJOGAT' is a frequentative/diminutive form of 'fáj' (to hurt), meaning 'it aches on and off / it sort of hurts', creating comic contrast with the fact that both his legs are shattered.",
+      "Street name: 'GUBACS TERÉZ ÚT' (r5) is a fictional, jumbled Budapest-sounding street name, comically fusing elements like Gubacsi út and Teréz körút."
+    ]
+  },
+  "usage": {
+    "input_tokens": 10250,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2660,
+    "reasoning_tokens": 1450
+  },
+  "costUsd": 0.0176625,
+  "ms": 22179,
+  "at": "2026-10-20T07:08:36.020943871Z"
+}

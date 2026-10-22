@@ -1,0 +1,39 @@
+{
+  "spec": "openrouter:google/gemini-3.8-flash?effort=low",
+  "log": "../bench/llm/prompts/6cbd56cdd933343ad87de8c3e3dd772f7f771dd3f4786507d9786c71aad26a05/llm/ocr-p2.json",
+  "text": "{\"regions\":[{\"n\":4,\"kind\":\"speech\",\"lines\":[\"EZ EGY HELIKOPTER\",\"TURBINA?\"],\"align\":\"center\",\"caps\":true},{\"n\":5,\"kind\":\"speech\",\"lines\":[\"IGEN, MÖGÖTTE INDUL\",\"A LÉPCSŐ!\"],\"align\":\"center\",\"caps\":true}],\"unboxed\":[]}",
+  "json": {
+    "regions": [
+      {
+        "n": 4,
+        "kind": "speech",
+        "lines": [
+          "EZ EGY HELIKOPTER",
+          "TURBINA?"
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 5,
+        "kind": "speech",
+        "lines": [
+          "IGEN, MÖGÖTTE INDUL",
+          "A LÉPCSŐ!"
+        ],
+        "align": "center",
+        "caps": true
+      }
+    ],
+    "unboxed": []
+  },
+  "usage": {
+    "input_tokens": 4194,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 76
+  },
+  "costUsd": 0.0034305,
+  "ms": 6417,
+  "at": "2026-10-20T07:07:53.687373402Z"
+}

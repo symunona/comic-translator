@@ -1,0 +1,161 @@
+{
+  "spec": "claude-cli:opus",
+  "log": "../bench/llm/judge/246d3aa3e5d91deb9d2434834daf01b518f3a80b89d0b936f87cf08623cd90f7/llm/judge-tr-hu.json",
+  "text": "{\"candidates\":{\"A\":{\"accuracy\":8,\"naturalness\":8,\"humour\":7,\"voice\":7,\"fit\":9,\"overall\":7,\"worst\":\"r0: 'GÉPIM' is only mildly cutesy, so the clash with the formal 'AMBIVALENS' is weaker than with 'puter'\"},\"B\":{\"accuracy\":5,\"naturalness\":6,\"humour\":6,\"voice\":6,\"fit\":8,\"overall\":5,\"worst\":\"r0: 'MÉG' means 'still/yet', which adds a meaning that isn't in the source; r1: 'AZ OSTOBASÁG GYAKORLATA' is a literal calque\"},\"C\":{\"accuracy\":7,\"naturalness\":8,\"humour\":7,\"voice\":7,\"fit\":9,\"overall\":7,\"worst\":\"r1: 'CSAK AZ EGYIKRE' drops the 'one or the other' pairing; r0 'GÉPIM' is a weak substitute for baby-talk\"},\"D\":{\"accuracy\":6,\"naturalness\":4,\"humour\":5,\"voice\":5,\"fit\":9,\"overall\":4,\"worst\":\"r1: 'BOLONDSÁGI GYAKORLAT' is ungrammatical and awkward; r0 'PUTEREMHEZ' is not a real Hungarian word\"},\"E\":{\"accuracy\":8,\"naturalness\":6,\"humour\":6,\"voice\":6,\"fit\":8,\"overall\":6,\"worst\":\"r0: 'PUTEREM' is a borrowed non-word with no cutesy meaning in Hungarian; r1: 'BALGASÁG GYAKORLATA' is a calque\"},\"F\":{\"accuracy\":7,\"naturalness\":7,\"humour\":7,\"voice\":7,\"fit\":9,\"overall\":6,\"worst\":\"r1: 'SZERELMET' narrows love to romantic love, and the 'exercise in' framing is lost\"},\"G\":{\"accuracy\":6,\"naturalness\":5,\"humour\":5,\"voice\":5,\"fit\":9,\"overall\":4,\"worst\":\"r1: the misspelling 'GYÜLÖLET' and the calque 'BOLONDSÁG GYAKORLATA'; r0 'GÉPEMHEZ' has no baby-talk\"},\"H\":{\"accuracy\":6,\"naturalness\":3,\"humour\":4,\"voice\":4,\"fit\":9,\"overall\":3,\"worst\":\"r0: in 'ÉN MARADOK AMBIVALENS' the word order wrongly stresses 'I'; r1 'TARTALMAZ SOKASÁGOKAT' also reads unnaturally\"},\"I\":{\"accuracy\":7,\"naturalness\":6,\"humour\":5,\"voice\":5,\"fit\":9,\"overall\":5,\"worst\":\"r1: 'BOLOND DOLOG' is too casual and kills the solemn verdict\"},\"J\":{\"accuracy\":8,\"naturalness\":9,\"humour\":9,\"voice\":9,\"fit\":9,\"overall\":9,\"worst\":\"r1: the nominative list 'BARÁTOK. ELLENSÉGEK.' loosens the grammatical link to 'REJT/MAGÁBAN', though it is acceptable\"},\"K\":{\"accuracy\":8,\"naturalness\":6,\"humour\":6,\"voice\":6,\"fit\":8,\"overall\":6,\"worst\":\"r0: 'PUTEREMHEZ' is a non-word in Hungarian; r1: 'A BOLONDSÁG GYAKORLATA' is a calque\"},\"L\":{\"accuracy\":7,\"naturalness\":7,\"humour\":5,\"voice\":5,\"fit\":9,\"overall\":5,\"worst\":\"r0: 'GÉPEM' loses the baby-talk entirely; r1: 'BUTASÁG' flattens the grand verdict\"},\"M\":{\"accuracy\":8,\"naturalness\":8,\"humour\":9,\"voice\":9,\"fit\":9,\"overall\":8,\"worst\":\"r1: 'A BALGASÁG GYAKORLATA' is a slightly calqued phrase\"},\"N\":{\"accuracy\":5,\"naturalness\":5,\"humour\":5,\"voice\":6,\"fit\":6,\"overall\":4,\"worst\":\"r0: 'MÉG' adds 'still', which isn't in the source; r1 is about 141 chars, right at the budget limit, and 'AZ EGÉSZET' is padding\"}},\"ranking\":[\"J\",\"M\",\"A\",\"C\",\"F\",\"K\",\"E\",\"I\",\"L\",\"B\",\"D\",\"G\",\"N\",\"H\"],\"notes\":\"J and M are the best because 'KOMPICÁM' is real Hungarian baby-talk, so it clashes properly with the stiff 'AMBIVALENSEN VISZONYULOK'. J also ends r1 with the idiomatic, solemn 'MERŐ BALGASÁG'. A and C have strong r1 lines, but 'GÉPIM' is a weaker joke. The 'PUTER' borrowings don't land in Hungarian. 'BOLONDSÁG/OSTOBASÁG GYAKORLATA' is a literal calque, and the added 'MÉG' in B and N is a meaning error. G has a spelling mistake, and H's word order is wrong.\"}",
+  "json": {
+    "candidates": {
+      "A": {
+        "accuracy": 8,
+        "naturalness": 8,
+        "humour": 7,
+        "voice": 7,
+        "fit": 9,
+        "overall": 7,
+        "worst": "r0: 'GÉPIM' is only mildly cutesy, so the clash with the formal 'AMBIVALENS' is weaker than with 'puter'"
+      },
+      "B": {
+        "accuracy": 5,
+        "naturalness": 6,
+        "humour": 6,
+        "voice": 6,
+        "fit": 8,
+        "overall": 5,
+        "worst": "r0: 'MÉG' means 'still/yet', which adds a meaning that isn't in the source; r1: 'AZ OSTOBASÁG GYAKORLATA' is a literal calque"
+      },
+      "C": {
+        "accuracy": 7,
+        "naturalness": 8,
+        "humour": 7,
+        "voice": 7,
+        "fit": 9,
+        "overall": 7,
+        "worst": "r1: 'CSAK AZ EGYIKRE' drops the 'one or the other' pairing; r0 'GÉPIM' is a weak substitute for baby-talk"
+      },
+      "D": {
+        "accuracy": 6,
+        "naturalness": 4,
+        "humour": 5,
+        "voice": 5,
+        "fit": 9,
+        "overall": 4,
+        "worst": "r1: 'BOLONDSÁGI GYAKORLAT' is ungrammatical and awkward; r0 'PUTEREMHEZ' is not a real Hungarian word"
+      },
+      "E": {
+        "accuracy": 8,
+        "naturalness": 6,
+        "humour": 6,
+        "voice": 6,
+        "fit": 8,
+        "overall": 6,
+        "worst": "r0: 'PUTEREM' is a borrowed non-word with no cutesy meaning in Hungarian; r1: 'BALGASÁG GYAKORLATA' is a calque"
+      },
+      "F": {
+        "accuracy": 7,
+        "naturalness": 7,
+        "humour": 7,
+        "voice": 7,
+        "fit": 9,
+        "overall": 6,
+        "worst": "r1: 'SZERELMET' narrows love to romantic love, and the 'exercise in' framing is lost"
+      },
+      "G": {
+        "accuracy": 6,
+        "naturalness": 5,
+        "humour": 5,
+        "voice": 5,
+        "fit": 9,
+        "overall": 4,
+        "worst": "r1: the misspelling 'GYÜLÖLET' and the calque 'BOLONDSÁG GYAKORLATA'; r0 'GÉPEMHEZ' has no baby-talk"
+      },
+      "H": {
+        "accuracy": 6,
+        "naturalness": 3,
+        "humour": 4,
+        "voice": 4,
+        "fit": 9,
+        "overall": 3,
+        "worst": "r0: in 'ÉN MARADOK AMBIVALENS' the word order wrongly stresses 'I'; r1 'TARTALMAZ SOKASÁGOKAT' also reads unnaturally"
+      },
+      "I": {
+        "accuracy": 7,
+        "naturalness": 6,
+        "humour": 5,
+        "voice": 5,
+        "fit": 9,
+        "overall": 5,
+        "worst": "r1: 'BOLOND DOLOG' is too casual and kills the solemn verdict"
+      },
+      "J": {
+        "accuracy": 8,
+        "naturalness": 9,
+        "humour": 9,
+        "voice": 9,
+        "fit": 9,
+        "overall": 9,
+        "worst": "r1: the nominative list 'BARÁTOK. ELLENSÉGEK.' loosens the grammatical link to 'REJT/MAGÁBAN', though it is acceptable"
+      },
+      "K": {
+        "accuracy": 8,
+        "naturalness": 6,
+        "humour": 6,
+        "voice": 6,
+        "fit": 8,
+        "overall": 6,
+        "worst": "r0: 'PUTEREMHEZ' is a non-word in Hungarian; r1: 'A BOLONDSÁG GYAKORLATA' is a calque"
+      },
+      "L": {
+        "accuracy": 7,
+        "naturalness": 7,
+        "humour": 5,
+        "voice": 5,
+        "fit": 9,
+        "overall": 5,
+        "worst": "r0: 'GÉPEM' loses the baby-talk entirely; r1: 'BUTASÁG' flattens the grand verdict"
+      },
+      "M": {
+        "accuracy": 8,
+        "naturalness": 8,
+        "humour": 9,
+        "voice": 9,
+        "fit": 9,
+        "overall": 8,
+        "worst": "r1: 'A BALGASÁG GYAKORLATA' is a slightly calqued phrase"
+      },
+      "N": {
+        "accuracy": 5,
+        "naturalness": 5,
+        "humour": 5,
+        "voice": 6,
+        "fit": 6,
+        "overall": 4,
+        "worst": "r0: 'MÉG' adds 'still', which isn't in the source; r1 is about 141 chars, right at the budget limit, and 'AZ EGÉSZET' is padding"
+      }
+    },
+    "ranking": [
+      "J",
+      "M",
+      "A",
+      "C",
+      "F",
+      "K",
+      "E",
+      "I",
+      "L",
+      "B",
+      "D",
+      "G",
+      "N",
+      "H"
+    ],
+    "notes": "J and M are the best because 'KOMPICÁM' is real Hungarian baby-talk, so it clashes properly with the stiff 'AMBIVALENSEN VISZONYULOK'. J also ends r1 with the idiomatic, solemn 'MERŐ BALGASÁG'. A and C have strong r1 lines, but 'GÉPIM' is a weaker joke. The 'PUTER' borrowings don't land in Hungarian. 'BOLONDSÁG/OSTOBASÁG GYAKORLATA' is a literal calque, and the added 'MÉG' in B and N is a meaning error. G has a spelling mistake, and H's word order is wrong."
+  },
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 4901,
+    "cache_read_input_tokens": 6290,
+    "output_tokens": 3201
+  },
+  "costUsd": 0.10450200000000001,
+  "ms": 30693,
+  "at": "2026-10-20T07:32:40.724897735Z"
+}

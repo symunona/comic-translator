@@ -1,0 +1,40 @@
+{
+  "spec": "openrouter:qwen/qwen3.8-flash",
+  "log": "../bench/llm/prompts/2afc78b45293acd677ffcba91f53fea50838d406d2dd965846e83408657e58c7/llm/ocr-p1.json",
+  "text": "{\n  \"regions\": [\n    {\n      \"n\": 1,\n      \"kind\": \"speech\",\n      \"lines\": [\n        \"NA! E!\",\n        \"DEJÓ, HOGY\",\n        \"ELJÖTTÉ, E!\"\n      ],\n      \"align\": \"center\",\n      \"caps\": true\n    },\n    {\n      \"n\": 2,\n      \"kind\": \"speech\",\n      \"lines\": [\n        \"HÍREK\"\n      ],\n      \"align\": \"center\",\n      \"caps\": true\n    }\n  ],\n  \"unboxed\": []\n}",
+  "json": {
+    "regions": [
+      {
+        "n": 1,
+        "kind": "speech",
+        "lines": [
+          "NA! E!",
+          "DEJÓ, HOGY",
+          "ELJÖTTÉ, E!"
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 2,
+        "kind": "speech",
+        "lines": [
+          "HÍREK"
+        ],
+        "align": "center",
+        "caps": true
+      }
+    ],
+    "unboxed": []
+  },
+  "usage": {
+    "input_tokens": 1372,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 1181,
+    "reasoning_tokens": 1031
+  },
+  "costUsd": 0.00076087,
+  "ms": 22891,
+  "at": "2026-10-20T07:08:38.915969182Z"
+}

@@ -1,0 +1,127 @@
+{
+  "spec": "ollama:bench-gemma4-12b-it-qat-32k?effort=none\u0026json=1\u0026timeout=30m",
+  "log": "../bench/llm/prompts/2afc78b45293acd677ffcba91f53fea50838d406d2dd965846e83408657e58c7/llm/ocr-p2.json",
+  "text": "{\"regions\":[{\"n\":3,\"kind\":\"sign\",\"lines\":[\"CAVALEIR\"],\"align\":\"center\",\"caps\":true},{\"n\":4,\"kind\":\"speech\",\"lines\":[\"MOST ARRA GONDOLSZ,\"],\"align\":\"left\",\"caps\":true},{\"n\":4,\"kind\":\"speech\",\"lines\":[\"HOGY „DE KÁR, HOGY\"],\"align\":\"left\",\"caps\":true},{\"n\":4,\"kind\":\"speech\",\"lines\":[\"ELKÖTÖTTEM AZ\"],\"align\":\"left\",\"caps\":true},{\"n\":4,\"kind\":\"speech\",\"lines\":[\"ELÜLÉGET, MOST\"],\"align\":\"left\",\"caps\":true},{\"n\":4,\"kind\":\"speech\",\"lines\":[\"LEMONDHATNAM\\\"\"],\"align\":\"left\",\"caps\":true},{\"n\":5,\"kind\":\"speech\",\"lines\":[\"A MELŐT!\\\"\"],\"align\":\"center\",\"caps\":true},{\"n\":6,\"kind\":\"speech\",\"lines\":[\"HÁT... KÁBÉ.\"],\"align\":\"left\",\"caps\":false},{\"n\":7,\"kind\":\"speech\",\"lines\":[\"NA. PATTANJ FEL!\"],\"align\":\"center\",\"caps\":true},{\"n\":8,\"kind\":\"sign\",\"lines\":[\"FASZI BÁCSI\"],\"align\":\"center\",\"caps\":true},{\"n\":9,\"kind\":\"speech\",\"lines\":[\"...\\\"\"],\"align\":\"right\",\"caps\":false},{\"n\":10,\"kind\":\"sign\",\"lines\":[\"FASZ1-A\"],\"align\":\"center\",\"caps\":true}],\"unboxed\":[]}",
+  "json": {
+    "regions": [
+      {
+        "n": 3,
+        "kind": "sign",
+        "lines": [
+          "CAVALEIR"
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 4,
+        "kind": "speech",
+        "lines": [
+          "MOST ARRA GONDOLSZ,"
+        ],
+        "align": "left",
+        "caps": true
+      },
+      {
+        "n": 4,
+        "kind": "speech",
+        "lines": [
+          "HOGY „DE KÁR, HOGY"
+        ],
+        "align": "left",
+        "caps": true
+      },
+      {
+        "n": 4,
+        "kind": "speech",
+        "lines": [
+          "ELKÖTÖTTEM AZ"
+        ],
+        "align": "left",
+        "caps": true
+      },
+      {
+        "n": 4,
+        "kind": "speech",
+        "lines": [
+          "ELÜLÉGET, MOST"
+        ],
+        "align": "left",
+        "caps": true
+      },
+      {
+        "n": 4,
+        "kind": "speech",
+        "lines": [
+          "LEMONDHATNAM\""
+        ],
+        "align": "left",
+        "caps": true
+      },
+      {
+        "n": 5,
+        "kind": "speech",
+        "lines": [
+          "A MELŐT!\""
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 6,
+        "kind": "speech",
+        "lines": [
+          "HÁT... KÁBÉ."
+        ],
+        "align": "left",
+        "caps": false
+      },
+      {
+        "n": 7,
+        "kind": "speech",
+        "lines": [
+          "NA. PATTANJ FEL!"
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 8,
+        "kind": "sign",
+        "lines": [
+          "FASZI BÁCSI"
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 9,
+        "kind": "speech",
+        "lines": [
+          "...\""
+        ],
+        "align": "right",
+        "caps": false
+      },
+      {
+        "n": 10,
+        "kind": "sign",
+        "lines": [
+          "FASZ1-A"
+        ],
+        "align": "center",
+        "caps": true
+      }
+    ],
+    "unboxed": []
+  },
+  "usage": {
+    "input_tokens": 1667,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 324
+  },
+  "costUsd": 0,
+  "ms": 213609,
+  "at": "2026-10-20T07:18:13.621121207Z"
+}

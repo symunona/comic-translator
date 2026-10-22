@@ -1,0 +1,83 @@
+{
+  "spec": "openrouter:qwen/qwen3.8-flash",
+  "log": "../bench/llm/prompts/2afc78b45293acd677ffcba91f53fea50838d406d2dd965846e83408657e58c7/llm/ocr-p9.json",
+  "text": "{\n  \"regions\": [\n    {\n      \"n\": 46,\n      \"kind\": \"sfx\",\n      \"lines\": [\n        \"FIFU!\",\n        \"HURUHATÁRR!\"\n      ],\n      \"align\": \"left\",\n      \"caps\": true\n    },\n    {\n      \"n\": 47,\n      \"kind\": \"sign\",\n      \"lines\": [\n        \"CAVALIER\"\n      ],\n      \"align\": \"center\",\n      \"caps\": true\n    },\n    {\n      \"n\": 48,\n      \"kind\": \"speech\",\n      \"lines\": [\n        \"BOCSI.\"\n      ],\n      \"align\": \"left\",\n      \"caps\": true\n    },\n    {\n      \"n\": 49,\n      \"kind\": \"speech\",\n      \"lines\": [\n        \"MEG\",\n        \"HÁZA VISZLEK.\"\n      ],\n      \"align\": \"left\",\n      \"caps\": true\n    },\n    {\n      \"n\": 50,\n      \"kind\": \"sign\",\n      \"lines\": [\n        \"FASZI BÁCSI\"\n      ],\n      \"align\": \"center\",\n      \"caps\": true\n    },\n    {\n      \"n\": 51,\n      \"kind\": \"none\",\n      \"lines\": [],\n      \"align\": \"center\",\n      \"caps\": false\n    },\n    {\n      \"n\": 52,\n      \"kind\": \"sign\",\n      \"lines\": [\n        \"FASZI-A\"\n      ],\n      \"align\": \"center\",\n      \"caps\": true\n    }\n  ],\n  \"unboxed\": []\n}",
+  "json": {
+    "regions": [
+      {
+        "n": 46,
+        "kind": "sfx",
+        "lines": [
+          "FIFU!",
+          "HURUHATÁRR!"
+        ],
+        "align": "left",
+        "caps": true
+      },
+      {
+        "n": 47,
+        "kind": "sign",
+        "lines": [
+          "CAVALIER"
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 48,
+        "kind": "speech",
+        "lines": [
+          "BOCSI."
+        ],
+        "align": "left",
+        "caps": true
+      },
+      {
+        "n": 49,
+        "kind": "speech",
+        "lines": [
+          "MEG",
+          "HÁZA VISZLEK."
+        ],
+        "align": "left",
+        "caps": true
+      },
+      {
+        "n": 50,
+        "kind": "sign",
+        "lines": [
+          "FASZI BÁCSI"
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 51,
+        "kind": "none",
+        "lines": [],
+        "align": "center",
+        "caps": false
+      },
+      {
+        "n": 52,
+        "kind": "sign",
+        "lines": [
+          "FASZI-A"
+        ],
+        "align": "center",
+        "caps": true
+      }
+    ],
+    "unboxed": []
+  },
+  "usage": {
+    "input_tokens": 1988,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3137,
+    "reasoning_tokens": 2731
+  },
+  "costUsd": 0.00177259,
+  "ms": 48003,
+  "at": "2026-10-20T07:07:45.728317233Z"
+}

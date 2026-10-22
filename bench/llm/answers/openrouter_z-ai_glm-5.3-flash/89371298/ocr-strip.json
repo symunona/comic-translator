@@ -1,0 +1,93 @@
+{
+  "spec": "openrouter:z-ai/glm-5.3-flash",
+  "log": "../bench/llm/prompts/893712989801daabc2a3d351e597946b61312aeb54e14e3d28aaf7f63ad64618/llm/ocr-strip.json",
+  "text": "```json\n{\n  \"regions\": [\n    {\n      \"n\": 0,\n      \"kind\": \"thought\",\n      \"lines\": [\n        \"Oh shoot, I fell asleep\",\n        \"with the window open,\",\n        \"again...\"\n      ],\n      \"align\": \"center\",\n      \"caps\": false\n    },\n    {\n      \"n\": 1,\n      \"kind\": \"thought\",\n      \"lines\": [\n        \"...and why can I see\",\n        \"Komona through\",\n        \"the window?\"\n      ],\n      \"align\": \"center\",\n      \"caps\": false\n    },\n    {\n      \"n\": 2,\n      \"kind\": \"speech\",\n      \"lines\": [\n        \"KOMONA!\"\n      ],\n      \"align\": \"center\",\n      \"caps\": true\n    },\n    {\n      \"n\": 3,\n      \"kind\": \"thought\",\n      \"lines\": [\n        \"The Potion\",\n        \"Contest!\"\n      ],\n      \"align\": \"center\",\n      \"caps\": false\n    },\n    {\n      \"n\": 4,\n      \"kind\": \"thought\",\n      \"lines\": [\n        \"I must've...\",\n        \"must've accidentally\",\n        \"fallen asleep!\"\n      ],\n      \"align\": \"center\",\n      \"caps\": false\n    },\n    {\n      \"n\": 5,\n      \"kind\": \"speech\",\n      \"lines\": [\n        \"...but?\"\n      ],\n      \"align\": \"center\",\n      \"caps\": false\n    },\n    {\n      \"n\": 6,\n      \"kind\": \"thought\",\n      \"lines\": [\n        \"Where\",\n        \"am I ?!?\"\n      ],\n      \"align\": \"center\",\n      \"caps\": false\n    }\n  ],\n  \"unboxed\": [\n    \"quack?\"\n  ]\n}\n```",
+  "json": {
+    "regions": [
+      {
+        "n": 0,
+        "kind": "thought",
+        "lines": [
+          "Oh shoot, I fell asleep",
+          "with the window open,",
+          "again..."
+        ],
+        "align": "center",
+        "caps": false
+      },
+      {
+        "n": 1,
+        "kind": "thought",
+        "lines": [
+          "...and why can I see",
+          "Komona through",
+          "the window?"
+        ],
+        "align": "center",
+        "caps": false
+      },
+      {
+        "n": 2,
+        "kind": "speech",
+        "lines": [
+          "KOMONA!"
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 3,
+        "kind": "thought",
+        "lines": [
+          "The Potion",
+          "Contest!"
+        ],
+        "align": "center",
+        "caps": false
+      },
+      {
+        "n": 4,
+        "kind": "thought",
+        "lines": [
+          "I must've...",
+          "must've accidentally",
+          "fallen asleep!"
+        ],
+        "align": "center",
+        "caps": false
+      },
+      {
+        "n": 5,
+        "kind": "speech",
+        "lines": [
+          "...but?"
+        ],
+        "align": "center",
+        "caps": false
+      },
+      {
+        "n": 6,
+        "kind": "thought",
+        "lines": [
+          "Where",
+          "am I ?!?"
+        ],
+        "align": "center",
+        "caps": false
+      }
+    ],
+    "unboxed": [
+      "quack?"
+    ]
+  },
+  "usage": {
+    "input_tokens": 2371,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2227,
+    "reasoning_tokens": 1845
+  },
+  "costUsd": 0.00128550625,
+  "ms": 12075,
+  "at": "2026-10-20T07:19:36.029019594Z"
+}

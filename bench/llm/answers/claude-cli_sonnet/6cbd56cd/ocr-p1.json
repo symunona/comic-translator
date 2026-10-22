@@ -1,0 +1,32 @@
+{
+  "spec": "claude-cli:sonnet",
+  "log": "../bench/llm/prompts/6cbd56cdd933343ad87de8c3e3dd772f7f771dd3f4786507d9786c71aad26a05/llm/ocr-p1.json",
+  "text": "{\"regions\":[{\"n\":3,\"kind\":\"speech\",\"lines\":[\"CSAK LÁTSZÓLAG EGY KIBASZOTT KUPLERÁJ,\",\"AMIBEN BOMBA ROBBANT.\",\"TULAJDONKÉPPEN EGY ZSENIÁLIS\",\"RENDSZER. A RÁHANGOLÓDÁSBAN\",\"SEGÍT A FÉNYKÉPE.\"],\"align\":\"center\",\"caps\":true}],\"unboxed\":[]}",
+  "json": {
+    "regions": [
+      {
+        "n": 3,
+        "kind": "speech",
+        "lines": [
+          "CSAK LÁTSZÓLAG EGY KIBASZOTT KUPLERÁJ,",
+          "AMIBEN BOMBA ROBBANT.",
+          "TULAJDONKÉPPEN EGY ZSENIÁLIS",
+          "RENDSZER. A RÁHANGOLÓDÁSBAN",
+          "SEGÍT A FÉNYKÉPE."
+        ],
+        "align": "center",
+        "caps": true
+      }
+    ],
+    "unboxed": []
+  },
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 3183,
+    "cache_read_input_tokens": 4543,
+    "output_tokens": 423
+  },
+  "costUsd": 0.0174243,
+  "ms": 7102,
+  "at": "2026-10-20T07:08:56.969319938Z"
+}

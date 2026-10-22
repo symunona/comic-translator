@@ -1,0 +1,31 @@
+{
+  "spec": "claude-cli:haiku",
+  "log": "../bench/llm/prompts/0c0bd5d58b4b8bd03a1229371408586ca54a0de357a882ded2c9843589bea963/llm/ocr-p0.json",
+  "text": "{\"regions\":[{\"n\":0,\"kind\":\"sign\",\"lines\":[\"ÉTŐÍPAI KITELEZÉS · 06\"],\"align\":\"left\",\"caps\":true}],\"unboxed\":[\"HLOTT!\",\"RITY!\"]}",
+  "json": {
+    "regions": [
+      {
+        "n": 0,
+        "kind": "sign",
+        "lines": [
+          "ÉTŐÍPAI KITELEZÉS · 06"
+        ],
+        "align": "left",
+        "caps": true
+      }
+    ],
+    "unboxed": [
+      "HLOTT!",
+      "RITY!"
+    ]
+  },
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 3215,
+    "cache_read_input_tokens": 4533,
+    "output_tokens": 938
+  },
+  "costUsd": 0.00115773,
+  "ms": 7850,
+  "at": "2026-10-20T07:10:01.039076149Z"
+}

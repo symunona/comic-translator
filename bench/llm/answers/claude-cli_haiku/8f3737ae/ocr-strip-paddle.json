@@ -1,0 +1,39 @@
+{
+  "spec": "claude-cli:haiku",
+  "log": "../bench/llm/prompts/8f3737ae2df51cb23cc27c3f81a10a426a35fc918ea31cf1eff85be4fc0df452/llm/ocr-strip-paddle.json",
+  "text": "{\"regions\":[{\"n\":0,\"kind\":\"caption\",\"lines\":[\"How do I\",\"exit vim?\"],\"align\":\"left\",\"caps\":false},{\"n\":1,\"kind\":\"caption\",\"lines\":[\"Why would I\",\"exit vim?\"],\"align\":\"left\",\"caps\":false}],\"unboxed\":[]}",
+  "json": {
+    "regions": [
+      {
+        "n": 0,
+        "kind": "caption",
+        "lines": [
+          "How do I",
+          "exit vim?"
+        ],
+        "align": "left",
+        "caps": false
+      },
+      {
+        "n": 1,
+        "kind": "caption",
+        "lines": [
+          "Why would I",
+          "exit vim?"
+        ],
+        "align": "left",
+        "caps": false
+      }
+    ],
+    "unboxed": []
+  },
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 3462,
+    "cache_read_input_tokens": 4657,
+    "output_tokens": 596
+  },
+  "costUsd": 0.0010373700000000001,
+  "ms": 7485,
+  "at": "2026-10-20T07:20:21.005862264Z"
+}

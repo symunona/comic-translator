@@ -1,0 +1,83 @@
+[
+ {
+  "key": "2afc78b4/r14",
+  "crop": "/data/dev/comic-translator-ocr/data/2afc78b45293acd677ffcba91f53fea50838d406d2dd965846e83408657e58c7/debug/crops/r14.png",
+  "opus": "FASZI-1",
+  "claude-cli_opus:strip": "FASZI-1",
+  "claude-cli_sonnet": "FASZI-1",
+  "openrouter_google_gemini-3.8-flash_effort_low": "FAS21-1",
+  "claude-cli_sonnet:strip": "FASZI-1"
+ },
+ {
+  "key": "2afc78b4/r23",
+  "crop": "/data/dev/comic-translator-ocr/data/2afc78b45293acd677ffcba91f53fea50838d406d2dd965846e83408657e58c7/debug/crops/r23.png",
+  "opus": "RELAVACI",
+  "claude-cli_opus:strip": "RELAVACI",
+  "claude-cli_sonnet": "RELAVACI",
+  "openrouter_google_gemini-3.8-flash_effort_low": "RELAVAC I",
+  "claude-cli_sonnet:strip": "RELAVACI"
+ },
+ {
+  "key": "2afc78b4/r30",
+  "crop": "/data/dev/comic-translator-ocr/data/2afc78b45293acd677ffcba91f53fea50838d406d2dd965846e83408657e58c7/debug/crops/r30.png",
+  "opus": "SZÓVAL, AMIKOR A GROßKUGELNI PIHENŐBEN KINYITJA A KURVA AZ AJTÓT AKKOR NE AZT KÉRDEZZE, MERRE VAN A MÚZEUMSHOP, VÁGOD? IRÁNYNAK ILYEN NEOLOFTOS ART DEKÓT GONDOLNÉK.",
+  "claude-cli_opus:strip": "SZÓVAL, AMIKOR A GROßKUGELNI PIHENŐBEN KINYITJA A KURVA AZ AJTÓT AKKOR NE AZT KÉRDEZZE, MERRE VAN A MÚZEUMSHOP, VÁGOD? IRÁNYNAK ILYEN NEOLOFTOS ART DEKÓT GONDOLNÉK.",
+  "claude-cli_sonnet": "SZÓVAL, AMIKOR A GROBKUGELNI PIHENŐBEN KINYITJA A KURVA AZ AJTÓT AKKOR NE AZT KÉRDEZZE, MERRE VAN A MÚZEUMSHOP, VÁGOD? IRÁNYNAK ILYEN NEOLOFTOS ART DEKÓT GONDOLNÉK.",
+  "openrouter_google_gemini-3.8-flash_effort_low": "SZÓVAL, AMIKOR A GROßKUGELNI PIHENŐBEN KINYITJA A KURVA AZ AJTÓT AKKOR NE AZT KÉRDEZZE, MERRE VAN A MÚZEUM SHOP, VÁGOD? IRÁNYNAK ILYEN NEOLOFTOS ART DEKÓT GONDOLNÉK.",
+  "claude-cli_sonnet:strip": "SZÓVAL, AMIKOR A GROBKUGELNI PIHENŐBEN KINYITJA A KURVA AZ AJTÓT AKKOR NE AZT KÉRDEZZE, MERRE VAN A MÚZEUMSHOP, VÁGOD? IRÁNYNAK ILYEN NEOLOFTOS ART DEKÓT GONDOLNÉK."
+ },
+ {
+  "key": "2afc78b4/r32",
+  "crop": "/data/dev/comic-translator-ocr/data/2afc78b45293acd677ffcba91f53fea50838d406d2dd965846e83408657e58c7/debug/crops/r32.png",
+  "opus": "RACALVIE",
+  "claude-cli_opus:strip": "RACALVIE",
+  "claude-cli_sonnet": "RACALVIE",
+  "openrouter_google_gemini-3.8-flash_effort_low": "RÁCÁLVI E",
+  "claude-cli_sonnet:strip": "RACALVIE"
+ },
+ {
+  "key": "2afc78b4/r37",
+  "crop": "/data/dev/comic-translator-ocr/data/2afc78b45293acd677ffcba91f53fea50838d406d2dd965846e83408657e58c7/debug/crops/r37.png",
+  "opus": "FASZI-1",
+  "claude-cli_opus:strip": "FASZI-1",
+  "claude-cli_sonnet": "FASZI-1",
+  "openrouter_google_gemini-3.8-flash_effort_low": "FASZI-1",
+  "claude-cli_sonnet:strip": ""
+ },
+ {
+  "key": "2afc78b4/r46",
+  "crop": "/data/dev/comic-translator-ocr/data/2afc78b45293acd677ffcba91f53fea50838d406d2dd965846e83408657e58c7/debug/crops/r46.png",
+  "opus": "FIFU! HURUHATÁRR!",
+  "claude-cli_opus:strip": "FIFU! HURUHATÁRR!",
+  "claude-cli_sonnet": "HURUHATÁRR!",
+  "openrouter_google_gemini-3.8-flash_effort_low": "FIFU! HURUHATÁRR!",
+  "claude-cli_sonnet:strip": "HURUHATÁRR!"
+ },
+ {
+  "key": "6cbd56cd/r8",
+  "crop": "/data/dev/comic-translator-ocr/data/6cbd56cdd933343ad87de8c3e3dd772f7f771dd3f4786507d9786c71aad26a05/debug/crops/r8.png",
+  "opus": "FÚJ!... A BELSŐ SZERVEI ITT ÁZNAK EGY AKVÁRIUMBAN! A SZÍV KÜLÖN EGY LEKVÁROS ÜVEGBEN! FÚJBAZMEG!",
+  "claude-cli_opus:strip": "FÚJ!... A BELSŐ SZERVEI ITT ÁZNAK EGY AKVÁRIUMBAN! A SZÍV KÜLÖN EGY LEKVÁROS ÜVEGBEN! FÚJBAZMEG!",
+  "claude-cli_sonnet": "FÚJ!... A BELSŐ SZERVEI ITT ÁZNAK EGY AKVÁRIUMBAN, A SZÍV KÜLÖN EGY LEKVÁROS ÜVEGBEN! FÚJBAZMEG!",
+  "openrouter_google_gemini-3.8-flash_effort_low": "FÚJ!... A BELSŐ SZERVEI ITT ÁZNAK EGY AKVÁRIUMBAN! A SZÍV KÜLÖN EGY LEKVÁROS ÜVEGBEN! FÚJBAZMEG!",
+  "claude-cli_sonnet:strip": "FÚJ!... A BELSŐ SZERVEI ITT ÁZNAK EGY AKVÁRIUMBAN A SZÍV KÜLÖN EGY LEKVÁROS ÜVEGBEN! FÚJBAZMEG!"
+ },
+ {
+  "key": "3b343686/r13",
+  "crop": "/data/dev/comic-translator-ocr/data/3b3436860d742571c5a540084c396d020cb19fae9191994d00f2338e06c41d2b/debug/crops/r13.png",
+  "opus": "VENNÉK EGY KURVANAGY DOBOZT, TELIS-TELE TIZES VILLÁSKULCCSAL! AGYIG RAKVA, TÖBB EZER VÁGOD?",
+  "claude-cli_opus:strip": "VENNÉK EGY KURVANAGY DOBOZT, TELIS-TELE TIZES VILLÁSKULCCSAL! AGYIG RAKVA, TÖBB EZER VÁGOD?",
+  "claude-cli_sonnet": "VENNÉK EGY KURVANAGY DOBOZT, TELIS-TELE TIZES VILLÁSKULCCSAL! AGYIG RAKVA, TÖBB EZER VÁGOD?",
+  "openrouter_google_gemini-3.8-flash_effort_low": "VENNÉK EGY KURVANAGY DOBOZT, TELIS-TELE TIZES VILLÁSKULCCSAL! AGYIG RAKVA, TÖBB EZER. VÁGOD?",
+  "claude-cli_sonnet:strip": "VENNÉK EGY KURVANAGY DOBOZT, TELIS-TELE TIZES VILLÁSKULCCSAL! AGYIG RAKVA, TÖBB EZER VÁGOD?"
+ },
+ {
+  "key": "246d3aa3/r0",
+  "crop": "/data/dev/comic-translator-ocr/data/246d3aa3e5d91deb9d2434834daf01b518f3a80b89d0b936f87cf08623cd90f7/debug/crops/r0.png",
+  "opus": "I REMAIN AMBIVALENT ABOUT MY PUTER",
+  "claude-cli_opus:strip": "I REMAIN AMBIVALENT ABOUT MY PUTER",
+  "claude-cli_sonnet": "I REMAIN AMBIVALENT ABOUT MY PUTER",
+  "openrouter_google_gemini-3.8-flash_effort_low": "REMAIN I AMBIVALENT MY PUTER ABOUT",
+  "claude-cli_sonnet:strip": "I REMAIN AMBIVALENT ABOUT MY PUTER"
+ }
+]

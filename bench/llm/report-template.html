@@ -1,0 +1,239 @@
+<title>Comic Pipeline Model Bench</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: one reading column; wide tables and charts scroll in their own boxes. Comic-shop paper, ink, lettering yellow; green = recommended, blue = what prod runs now. */
+:root {
+  --paper: #f5f2e9; --card: #fffdf6; --ink: #1d1b16; --muted: #6b6658; --line: #ddd5c1;
+  --accent: #f2c230; --pick: #2d6a27; --pick-bg: #e4f3e1; --now: #2b56a3; --now-bg: #e6eefc;
+  --bad: #c2391b; --bad-bg: #fde3da; --acc: #9a6400; --acc-bg: #fff0c2; --bar: #cbc2a9; --cer: #d0674d;
+  --hand: "Patrick Hand", "Comic Neue", "Segoe Print", cursive;
+  --body: "Atkinson Hyperlegible", "Segoe UI", system-ui, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #16150f; --card: #201e16; --ink: #eee8d6; --muted: #a39c88; --line: #3a3629; --accent: #f2c230;
+    --pick: #8fd486; --pick-bg: #1f3a1c; --now: #9dbcf5; --now-bg: #1c2a45; --bad: #ff8a6b; --bad-bg: #4a2017;
+    --acc: #f3c35b; --acc-bg: #45360f; --bar: #5a5442; --cer: #e07d63; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #16150f; --card: #201e16; --ink: #eee8d6; --muted: #a39c88; --line: #3a3629; --accent: #f2c230;
+  --pick: #8fd486; --pick-bg: #1f3a1c; --now: #9dbcf5; --now-bg: #1c2a45; --bad: #ff8a6b; --bad-bg: #4a2017;
+  --acc: #f3c35b; --acc-bg: #45360f; --bar: #5a5442; --cer: #e07d63; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--paper); color: var(--ink); font: 16px/1.55 var(--body); }
+.wrap { max-width: 1120px; margin: 0 auto; padding-block: 40px 80px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); display: grid; gap: 56px; }
+h1, h2, h3 { font-family: var(--hand); font-weight: 400; line-height: 1.05; text-wrap: balance; margin: 0; }
+h1 { font-size: clamp(42px, 7vw, 68px); }
+h1 em { font-style: normal; background: var(--accent); color: #1d1b16; padding: 0 .16em; border-radius: 6px; }
+h2 { font-size: 38px; }
+h3 { font-size: 24px; }
+p { margin: 0; }
+.lede { max-width: 68ch; color: var(--muted); font-size: 18px; }
+.eyebrow { font: 600 12px/1 var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+header.top, section, section > header { display: grid; gap: 14px; min-width: 0; }
+section { gap: 20px; }
+section > header { max-width: 74ch; gap: 8px; }
+section > header p, .note { color: var(--muted); }
+.findings { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+.finding { background: var(--card); border: 1.5px solid var(--ink); border-radius: 14px; padding: 16px 18px; box-shadow: 4px 4px 0 var(--ink); display: grid; gap: 6px; align-content: start; }
+.finding .big { font: 600 26px/1.1 var(--mono); }
+.finding h3 { font-size: 21px; }
+.finding p { color: var(--muted); font-size: 14.5px; }
+.scroll { overflow-x: auto; border: 1px solid var(--line); border-radius: 12px; background: var(--card); }
+table { border-collapse: collapse; width: 100%; font-size: 14px; }
+th, td { padding: 9px 12px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--line); }
+thead th { font: 600 11px/1.3 var(--mono); letter-spacing: .06em; text-transform: uppercase; color: var(--muted); white-space: nowrap; background: var(--card); }
+tbody tr:last-child > * { border-bottom: 0; }
+th[scope="row"] { font-weight: 400; min-width: 170px; }
+th[scope="row"] b { display: block; }
+th small, td small { display: block; color: var(--muted); font-size: 12px; }
+.n { font-family: var(--mono); font-variant-numeric: tabular-nums; text-align: right; white-space: nowrap; }
+tr.pick > * { background: var(--pick-bg); }
+tr.pick th { box-shadow: inset 4px 0 0 var(--pick); }
+tr.now > * { background: var(--now-bg); }
+tr.now th { box-shadow: inset 4px 0 0 var(--now); }
+.bar { display: block; height: 5px; margin-top: 5px; background: var(--line); border-radius: 3px; min-width: 64px; overflow: hidden; }
+.bar i { display: block; height: 100%; background: var(--bar); border-radius: 3px; }
+.bar.cer i { background: var(--cer); }
+.where { font: 600 11px var(--mono); padding: 1px 7px; border-radius: 9px; border: 1px solid var(--line); }
+.w-browser { background: var(--pick-bg); color: var(--pick); border-color: transparent; }
+.w-devbox { background: var(--acc-bg); color: var(--acc); border-color: transparent; }
+.w-api { background: var(--now-bg); color: var(--now); border-color: transparent; }
+.dim { color: var(--muted); font-style: normal; }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 13px; color: var(--muted); align-items: center; }
+.sw { display: inline-block; width: 12px; height: 12px; border-radius: 3px; vertical-align: -1px; margin-right: 6px; }
+.sw.pick { background: var(--pick-bg); box-shadow: inset 3px 0 0 var(--pick); }
+.sw.now { background: var(--now-bg); box-shadow: inset 3px 0 0 var(--now); }
+mark { border-radius: 3px; padding: 0 1px; }
+mark.bad { background: var(--bad-bg); color: var(--bad); }
+mark.acc { background: var(--acc-bg); color: var(--acc); font-weight: 700; }
+mark.miss { background: none; color: var(--bad); font-weight: 700; }
+.samples { display: grid; grid-template-columns: repeat(auto-fill, minmax(330px, 1fr)); gap: 16px; }
+.sample { margin: 0; min-width: 0; background: var(--card); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; display: grid; grid-template-rows: auto 1fr; }
+.sample .crop { background: #fff; display: grid; place-items: center; padding: 10px; border-bottom: 1px solid var(--line); }
+.sample .crop img { max-height: 170px; max-width: 100%; width: auto; }
+.sample figcaption { padding: 12px 14px; display: grid; gap: 6px; font-size: 13px; }
+.sample ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 5px; }
+.sample li, .sample .gt { display: grid; grid-template-columns: 112px minmax(0, 1fr); gap: 8px; align-items: baseline; }
+.sample .gt { padding-bottom: 6px; border-bottom: 1px dashed var(--line); font-weight: 700; }
+.who { font: 600 10.5px/1.35 var(--mono); text-transform: uppercase; letter-spacing: .03em; color: var(--muted); }
+.txt { font-family: var(--mono); font-size: 12px; word-break: break-word; }
+.chart { margin: 0; background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 10px; }
+.chart svg { display: block; width: 100%; height: auto; max-width: 640px; }
+.chart .grid { stroke: var(--line); stroke-width: 1; }
+.chart .tick { font: 11px var(--mono); fill: var(--muted); }
+.chart .axis { font: 12px var(--body); fill: var(--muted); }
+.chart .pt circle { fill: var(--bar); stroke: var(--card); stroke-width: 2; }
+.chart .pt.pick circle { fill: var(--pick); }
+.chart .pt.now circle { fill: var(--now); }
+.chart .lab { font: 12px var(--body); fill: var(--ink); paint-order: stroke; stroke: var(--card); stroke-width: 3px; }
+.chart .pt:hover circle, .chart .pt:focus circle { r: 8; }
+.two { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; align-items: start; }
+.two > * { min-width: 0; }
+.tr td { font-family: var(--hand); font-size: 18px; line-height: 1.15; min-width: 160px; }
+.tr td.ref { background: var(--acc-bg); }
+.tr th.src { font-family: var(--hand); font-size: 17px; line-height: 1.15; min-width: 190px; color: var(--muted); }
+.up { color: var(--pick); font-weight: 600; }
+.down { color: var(--bad); font-weight: 600; }
+.warnc { color: var(--bad) !important; }
+.reco td, .reco th { font-size: 14.5px; }
+.method { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; font-size: 14.5px; }
+.method ul { margin: 6px 0 0; padding-left: 18px; display: grid; gap: 4px; color: var(--muted); }
+code { font-family: var(--mono); font-size: .9em; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+@media (max-width: 640px) { .wrap { gap: 44px; padding-block: 24px 56px; } h2 { font-size: 31px; } .samples { grid-template-columns: 1fr; } }
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <span class="eyebrow">comic-translator · cost pass · 2026-10-20 · 11 strips · $2.29 of $4 OpenRouter budget used</span>
+    <h1>Same jokes, <em>a third</em> of the price</h1>
+    <p class="lede">Every LLM step of the pipeline, re-run on real strips with cheaper models, scored against hand-checked OCR ground truth and by two blind judges from different model families. Bubble detection already runs in the browser on comic.tmpx.space; this page decides what the server-side LLM calls should be.</p>
+    <div class="findings">
+      <div class="finding"><span class="big">$0.007</span><h3>OCR: Paddle in the browser + one cheap call</h3><p>PaddleOCR's draft plus Gemini Flash-Lite reading the close-ups: CER 0.009, Sonnet-level, at 1/14 of today's cost. Paddle alone loses two of three accents.</p></div>
+      <div class="finding"><span class="big">9.0 vs 5.9</span><h3>Scene sheet: Gemini Flash beats Sonnet</h3><p>Who says what and why it is funny. Gemini 3.8 Flash scores near Opus for $0.017 a strip; Sonnet, Haiku and the budget models misattribute speakers.</p></div>
+      <div class="finding"><span class="big">7.9 vs 6.6</span><h3>Translation: Gemini Flash ≥ Sonnet</h3><p>Both judges put Gemini 3.8 Flash at or above Sonnet and close to Opus, at $0.055 a strip. GPT-5.6 Luna matches Sonnet for $0.008.</p></div>
+      <div class="finding"><span class="big">~$0.08</span><h3>Whole strip, recommended mix</h3><p>Against ~$0.23 for the Sonnet pipeline in prod today and ~$1.45 for the old Opus one. End to end on two unseen strips it went 1–1 against Sonnet.</p></div>
+    </div>
+  </header>
+
+  <section id="reco">
+    <header><span class="eyebrow">Recommendation</span><h2>Model per step</h2>
+      <p>Prod now runs Sonnet everywhere through the Claude CLI (no Opus left). Switching to this mix needs an API key on server; nothing here has been switched yet.</p></header>
+    <div class="scroll"><table class="reco">
+      <thead><tr><th scope="col">step</th><th scope="col">pick</th><th scope="col" class="n">$/strip</th><th scope="col">budget option</th><th scope="col">premium option</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">detect bubbles</th><td>browser, RT-DETR v4-s on WASM (live)</td><td class="n">free</td><td></td><td></td></tr>
+        <tr class="pick"><th scope="row">read text (OCR)</th><td>browser PaddleOCR v5 draft → Gemini 3.1 Flash-Lite, 1 call</td><td class="n">$0.007</td><td>Haiku, 1 call ($0.006)</td><td>Gemini 3.8 Flash, 1 call ($0.022)</td></tr>
+        <tr class="pick"><th scope="row">scene sheet</th><td>Gemini 3.8 Flash</td><td class="n">$0.017</td><td>none good enough</td><td>Opus ($0.150)</td></tr>
+        <tr class="pick"><th scope="row">translate + review</th><td>Gemini 3.8 Flash</td><td class="n">$0.055</td><td>GPT-5.6 Luna ($0.008), DeepSeek V4.1 Flash ($0.016)</td><td>Opus ($0.239)</td></tr>
+        <tr><th scope="row"><b>whole strip</b></th><td></td><td class="n"><b>~$0.08</b></td><td class="n">~$0.03</td><td class="n">~$0.40</td></tr>
+      </tbody></table></div>
+    <p class="note">Costs are provider list prices. Claude CLI figures are the CLI's list-price equivalent (it runs on the subscription and includes its cache writes), so the Claude rows read slightly high against a direct API call.</p>
+  </section>
+
+  <section id="ocr">
+    <header><span class="eyebrow">Step 1 · read the text</span><h2>OCR, every way we could run it</h2>
+      <p>{{NBOX}} lettered boxes on 8 strips: 4 hand-lettered Hungarian Napirajz strips, 2 Pepper&amp;Carrot pages in English, 2 English memes. Ground truth started from Opus and every box where strong readers disagreed (32) was checked by eye against the crop. CER = character error rate, case-insensitive. Accents = share of Hungarian accented letters read right.</p></header>
+    <p class="legend"><span><i class="sw pick"></i>recommended</span><span><i class="sw now"></i>prod today</span><span><span class="where w-browser">browser</span> in the reader's tab, free</span><span><span class="where w-devbox">devbox</span> local CPU, free</span><span><span class="where w-api">API</span> paid per call</span></p>
+    <div class="scroll"><table>
+      <thead><tr><th scope="col">model · how</th><th scope="col">runs where</th><th scope="col" class="n">CER ↓</th><th scope="col" class="n">accents</th><th scope="col" class="n">exact</th><th scope="col" class="n">missed</th><th scope="col" class="n">$/strip</th><th scope="col" class="n">time/strip</th></tr></thead>
+      <tbody>
+{{OCR_ROWS}}
+      </tbody></table></div>
+    <p class="note">Times are wall time per strip with the machine busy (local LLMs ran in parallel), so read them as upper bounds. Idle, PaddleOCR v5 takes about 45 ms per bubble natively on devbox and about 100 ms in the browser on 4 WASM threads; both give the same text. Gemma 4 12B on ollama finished 2 of 8 strips (about 10 minutes per strip on this CPU).</p>
+  </section>
+
+  <section id="paddle">
+    <header><span class="eyebrow">Your question</span><h2>Is PaddleOCR plus one Sonnet-class call enough?</h2>
+      <p>Yes. Paddle alone is not usable for Hungarian: CER 0.17 and only a third of the accents survive. Give its draft to one model call that also sees the close-ups and the errors disappear. The draft matters most for weak models: Gemini Flash-Lite drops from 0.070 to 0.009 with it. Strong models read the close-ups fine without it. Without the close-ups (panel images only), every model gets worse, because accents are small.</p></header>
+    <p class="legend"><span><mark class="bad">ABC</mark> wrong letters</span><span><mark class="acc">E</mark> accent lost</span><span><mark class="miss">·</mark> letters missing</span></p>
+    <div class="samples">
+{{SAMPLES}}
+    </div>
+  </section>
+
+  <section id="batching">
+    <header><span class="eyebrow">Your question</span><h2>Batching: one call or many?</h2>
+      <p>Scene, translate and review were already one call per strip with every bubble in it; that is how the translator keeps running jokes and voices consistent. OCR was one call per panel. Reading the whole strip in one call is cheaper (images and rules are sent once) and for most models more accurate, so it is now the default (<code>-ocr-per-panel</code> keeps the old way). Sonnet is the exception (one box skipped), so prod keeps per-panel while it runs Sonnet.</p></header>
+    <div class="scroll"><table>
+      <thead><tr><th scope="col">model</th><th scope="col" class="n">CER per panel</th><th scope="col" class="n">CER whole strip</th><th scope="col" class="n">$ per panel</th><th scope="col" class="n">$ whole strip</th><th scope="col" class="n">time</th><th scope="col">better</th></tr></thead>
+      <tbody>
+{{BATCH_ROWS}}
+      </tbody></table></div>
+  </section>
+
+  <section id="scene">
+    <header><span class="eyebrow">Step 2 · understand the strip</span><h2>Scene sheet</h2>
+      <p>The reference the translator works from: who speaks each bubble, what the jokes are. Judged on 3 Napirajz strips. Each judge rates its own family a little higher, so both are shown; the score is their mean. Hover a point for detail.</p></header>
+    <div class="two">
+      {{SCENE_CHART}}
+      <div class="scroll"><table>
+        <thead><tr><th scope="col">model</th><th scope="col" class="n">$/strip</th><th scope="col" class="n">Opus judge</th><th scope="col" class="n">Gemini judge</th><th scope="col" class="n">mean</th><th scope="col" class="n">time</th></tr></thead>
+        <tbody>
+{{SCENE_ROWS}}
+        </tbody></table></div>
+    </div>
+  </section>
+
+  <section id="translate">
+    <header><span class="eyebrow">Step 3 · translate and review</span><h2>Translation</h2>
+      <p>7 strips: 3 Napirajz into English, 4 English pages into Hungarian. Each candidate ran translate and review on the same scene sheet, saved as a translation version. For Pepper&amp;Carrot the judges also saw the publisher's official Hungarian page.</p></header>
+    <div class="two">
+      {{TR_CHART}}
+      <div class="scroll"><table>
+        <thead><tr><th scope="col">model</th><th scope="col" class="n">$/strip</th><th scope="col" class="n">Opus judge</th><th scope="col" class="n">Gemini judge</th><th scope="col" class="n">mean</th><th scope="col" class="n">time</th></tr></thead>
+        <tbody>
+{{TR_ROWS}}
+        </tbody></table></div>
+    </div>
+    <h3>Is the review pass worth a second call?</h3>
+    <div class="scroll"><table>
+      <thead><tr><th scope="col">model</th><th scope="col" class="n">draft only</th><th scope="col" class="n">after review</th><th scope="col" class="n">change</th><th scope="col" class="n">$/strip</th></tr></thead>
+      <tbody>
+{{REVIEW_ROWS}}
+      </tbody></table></div>
+    <p class="note">For the strong models, yes: about +0.7 points. For the budget models, no: their review makes it slightly worse, so a budget tier should skip it.</p>
+    {{TR_SAMPLES}}
+  </section>
+
+  <section id="e2e">
+    <header><span class="eyebrow">End to end</span><h2>Two unseen strips, one model per pipeline</h2>
+      <p>OCR, scene, translate and review all on Gemini 3.8 Flash, against the Sonnet pipeline now in prod. Judged by both judges (Opus / Gemini).</p></header>
+    <div class="scroll"><table>
+      <thead><tr><th scope="col">strip</th><th scope="col" class="n">Gemini pipeline $</th><th scope="col" class="n">judged</th><th scope="col" class="n">Sonnet pipeline $</th><th scope="col" class="n">judged</th></tr></thead>
+      <tbody>
+{{E2E_ROWS}}
+      </tbody></table></div>
+    <p class="note">On “Vödörre” Gemini left the invented parody names (SZAKADT PATENT, ELVONT SÖRÉNY) in Hungarian, which kills the joke; both judges caught it. A line in the translate prompt asking to localize invented names should fix it. Two strips prove little; read this as a direction, not a verdict.</p>
+  </section>
+
+  <section id="method">
+    <header><span class="eyebrow">How it was measured</span><h2>Method and caveats</h2></header>
+    <div class="method">
+      <div><h3>Data</h3><ul>
+        <li>Napirajz strips from the vault (kristalyhologram, zsenialis_rendszer, hatos_csavar, ket_nagy_szatyor; az_izzo_liget and vodorre for end to end).</li>
+        <li>Pepper&amp;Carrot episode 6, pages 1–2 (CC-BY 4.0, David Revoy) in English, with the official Hungarian edition as reference.</li>
+        <li>Two English memes from the vault (vim.jpg, my computer.jpg).</li>
+        <li>The pipeline used to assume every comic was Hungarian. Strips now carry a source language (picker on upload), and the Napirajz hints only apply to Hungarian.</li>
+      </ul></div>
+      <div><h3>Scoring</h3><ul>
+        <li>OCR: CER after uppercasing and collapsing spaces; boxes that duplicate another box or are illegible were left out (4).</li>
+        <li>Judges: blind, candidates shuffled, panel images included, scores 1–10. Opus via the Claude CLI and Gemini 3.8 Flash; each favours its own family slightly.</li>
+        <li>Unreviewed drafts were judged alongside the final versions to measure what the review call buys.</li>
+      </ul></div>
+      <div><h3>Did not work</h3><ul>
+        <li>Qwen3.7-Plus: its only provider (Alibaba) aborts with an error on profanity-heavy strips; empty replies on 2 of 3 Napirajz strips.</li>
+        <li>Qwen3.8 Flash: rate-limited and very slow (long reasoning); CER 0.05–0.14.</li>
+        <li>PaddleOCR v6: worse than v5 latin on hand lettering; Tesseract: noisy.</li>
+        <li>Local LLMs on devbox's CPU: correct direction, ~10 minutes per strip.</li>
+      </ul></div>
+    </div>
+    <p class="note">Rerun: <code>docs/cost-opt.md</code>, <code>docs/ocr-bench.md</code>. Raw results in <code>bench/results/</code> on branch ocr-bench.</p>
+  </section>
+</div>

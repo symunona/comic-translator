@@ -1,0 +1,57 @@
+{
+  "spec": "openrouter:qwen/qwen3.8-flash",
+  "log": "../bench/llm/prompts/3b3436860d742571c5a540084c396d020cb19fae9191994d00f2338e06c41d2b/llm/ocr-p3.json",
+  "text": "{\n  \"regions\": [\n    {\n      \"n\": 12,\n      \"kind\": \"none\",\n      \"lines\": [],\n      \"align\": \"center\",\n      \"caps\": false\n    },\n    {\n      \"n\": 13,\n      \"kind\": \"speech\",\n      \"lines\": [\n        \"VENNÉK EGY KURVANAGY\",\n        \"DOBOZT,\",\n        \"TELIS-TELE TIZES\",\n        \"VILÁSKULCCSAL! AGYIG\",\n        \"RAKVA,\",\n        \"TÖBB EZER\",\n        \"VÁGOD?\"\n      ],\n      \"align\": \"right\",\n      \"caps\": true\n    },\n    {\n      \"n\": 14,\n      \"kind\": \"speech\",\n      \"lines\": [\n        \"VENNÉK EGY KURVANAGY\",\n        \"DOBOZT,\",\n        \"TELIS-TELE TIZES\",\n        \"VILÁSKULCCSAL! AGYIG\",\n        \"RAKVA,\",\n        \"TÖBB EZER\",\n        \"VÁGOD?\"\n      ],\n      \"align\": \"right\",\n      \"caps\": true\n    }\n  ],\n  \"unboxed\": []\n}",
+  "json": {
+    "regions": [
+      {
+        "n": 12,
+        "kind": "none",
+        "lines": [],
+        "align": "center",
+        "caps": false
+      },
+      {
+        "n": 13,
+        "kind": "speech",
+        "lines": [
+          "VENNÉK EGY KURVANAGY",
+          "DOBOZT,",
+          "TELIS-TELE TIZES",
+          "VILÁSKULCCSAL! AGYIG",
+          "RAKVA,",
+          "TÖBB EZER",
+          "VÁGOD?"
+        ],
+        "align": "right",
+        "caps": true
+      },
+      {
+        "n": 14,
+        "kind": "speech",
+        "lines": [
+          "VENNÉK EGY KURVANAGY",
+          "DOBOZT,",
+          "TELIS-TELE TIZES",
+          "VILÁSKULCCSAL! AGYIG",
+          "RAKVA,",
+          "TÖBB EZER",
+          "VÁGOD?"
+        ],
+        "align": "right",
+        "caps": true
+      }
+    ],
+    "unboxed": []
+  },
+  "usage": {
+    "input_tokens": 1480,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2319,
+    "reasoning_tokens": 2013
+  },
+  "costUsd": 0.00131193,
+  "ms": 42788,
+  "at": "2026-10-20T07:14:09.116383454Z"
+}

@@ -1,0 +1,94 @@
+{
+  "spec": "openrouter:qwen/qwen3.8-flash",
+  "log": "../bench/llm/prompts/2afc78b45293acd677ffcba91f53fea50838d406d2dd965846e83408657e58c7/llm/ocr-p2.json",
+  "text": "{\n  \"regions\": [\n    {\"n\": 3, \"kind\": \"none\", \"lines\": [], \"align\": \"center\", \"caps\": false},\n    {\"n\": 4, \"kind\": \"speech\", \"lines\": [\"MOST ARRÁ GONDOLSZ,\", \"HOGY „DE KÁR, HOGY\", \"ELKÖLTÖTTEM AZ\", \"ELŐLEGET, MOST\", \"LEMONDHATNÁM\"], \"align\": \"left\", \"caps\": true},\n    {\"n\": 5, \"kind\": \"sign\", \"lines\": [\"CAVALEIR\"], \"align\": \"center\", \"caps\": true},\n    {\"n\": 6, \"kind\": \"speech\", \"lines\": [\"A MELÓT!\\\"\"], \"align\": \"left\", \"caps\": true},\n    {\"n\": 7, \"kind\": \"speech\", \"lines\": [\"HÁT... KÁBÉ.\"], \"align\": \"left\", \"caps\": true},\n    {\"n\": 8, \"kind\": \"sign\", \"lines\": [\"FASZI BÁCSI\"], \"align\": \"center\", \"caps\": true},\n    {\"n\": 9, \"kind\": \"speech\", \"lines\": [\"NA. PATTANJ FEL!\"], \"align\": \"left\", \"caps\": true},\n    {\"n\": 10, \"kind\": \"sign\", \"lines\": [\"FASZI-1\"], \"align\": \"center\", \"caps\": true}\n  ],\n  \"unboxed\": []\n}",
+  "json": {
+    "regions": [
+      {
+        "n": 3,
+        "kind": "none",
+        "lines": [],
+        "align": "center",
+        "caps": false
+      },
+      {
+        "n": 4,
+        "kind": "speech",
+        "lines": [
+          "MOST ARRÁ GONDOLSZ,",
+          "HOGY „DE KÁR, HOGY",
+          "ELKÖLTÖTTEM AZ",
+          "ELŐLEGET, MOST",
+          "LEMONDHATNÁM"
+        ],
+        "align": "left",
+        "caps": true
+      },
+      {
+        "n": 5,
+        "kind": "sign",
+        "lines": [
+          "CAVALEIR"
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 6,
+        "kind": "speech",
+        "lines": [
+          "A MELÓT!\""
+        ],
+        "align": "left",
+        "caps": true
+      },
+      {
+        "n": 7,
+        "kind": "speech",
+        "lines": [
+          "HÁT... KÁBÉ."
+        ],
+        "align": "left",
+        "caps": true
+      },
+      {
+        "n": 8,
+        "kind": "sign",
+        "lines": [
+          "FASZI BÁCSI"
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 9,
+        "kind": "speech",
+        "lines": [
+          "NA. PATTANJ FEL!"
+        ],
+        "align": "left",
+        "caps": true
+      },
+      {
+        "n": 10,
+        "kind": "sign",
+        "lines": [
+          "FASZI-1"
+        ],
+        "align": "center",
+        "caps": true
+      }
+    ],
+    "unboxed": []
+  },
+  "usage": {
+    "input_tokens": 2031,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 5766,
+    "reasoning_tokens": 5419
+  },
+  "costUsd": 0.00301467,
+  "ms": 81577,
+  "at": "2026-10-20T07:08:55.595709529Z"
+}

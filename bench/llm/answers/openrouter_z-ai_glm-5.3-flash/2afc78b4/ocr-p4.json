@@ -1,0 +1,75 @@
+{
+  "spec": "openrouter:z-ai/glm-5.3-flash",
+  "log": "../bench/llm/prompts/2afc78b45293acd677ffcba91f53fea50838d406d2dd965846e83408657e58c7/llm/ocr-p4.json",
+  "text": "{\"regions\":[{\"n\":15,\"kind\":\"speech\",\"lines\":[\"JÉZUS, ATYA, ÚRISTEN!\"],\"align\":\"left\",\"caps\":true},{\"n\":16,\"kind\":\"sign\",\"lines\":[\"VECALAIR\"],\"align\":\"center\",\"caps\":true},{\"n\":17,\"kind\":\"speech\",\"lines\":[\"Ó, A HÁLÓFÜLKÉBEN LÓG\",\"EGY KRISTÁLYHOLOGRAM\",\"FORMÁJÁBAN, DE ITT\",\"VALÓBAN A SZENTFÖLDI\",\"LOVAGVÁRAK\",\"STÍLUSÁT IGYEKEZTEM HOZNÍ.\",\"AZ OTT EGY BEDUIN\",\"KEMENCE, HENNÁS KASPÓ\",\"TEVÉNYEREG, ASZTROLÁBIUM...\"],\"align\":\"left\",\"caps\":true},{\"n\":18,\"kind\":\"sign\",\"lines\":[\"FASZÍ BÁCSI\"],\"align\":\"center\",\"caps\":true},{\"n\":19,\"kind\":\"speech\",\"lines\":[\"CSAK MÁR ECURE\",\"UNOM.\",\"EZÉRT VAGY ITT, E!\"],\"align\":\"center\",\"caps\":true}],\"unboxed\":[]}",
+  "json": {
+    "regions": [
+      {
+        "n": 15,
+        "kind": "speech",
+        "lines": [
+          "JÉZUS, ATYA, ÚRISTEN!"
+        ],
+        "align": "left",
+        "caps": true
+      },
+      {
+        "n": 16,
+        "kind": "sign",
+        "lines": [
+          "VECALAIR"
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 17,
+        "kind": "speech",
+        "lines": [
+          "Ó, A HÁLÓFÜLKÉBEN LÓG",
+          "EGY KRISTÁLYHOLOGRAM",
+          "FORMÁJÁBAN, DE ITT",
+          "VALÓBAN A SZENTFÖLDI",
+          "LOVAGVÁRAK",
+          "STÍLUSÁT IGYEKEZTEM HOZNÍ.",
+          "AZ OTT EGY BEDUIN",
+          "KEMENCE, HENNÁS KASPÓ",
+          "TEVÉNYEREG, ASZTROLÁBIUM..."
+        ],
+        "align": "left",
+        "caps": true
+      },
+      {
+        "n": 18,
+        "kind": "sign",
+        "lines": [
+          "FASZÍ BÁCSI"
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 19,
+        "kind": "speech",
+        "lines": [
+          "CSAK MÁR ECURE",
+          "UNOM.",
+          "EZÉRT VAGY ITT, E!"
+        ],
+        "align": "center",
+        "caps": true
+      }
+    ],
+    "unboxed": []
+  },
+  "usage": {
+    "input_tokens": 1832,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 259,
+    "reasoning_tokens": 1
+  },
+  "costUsd": 0.000187368,
+  "ms": 3388,
+  "at": "2026-10-20T07:08:03.601028674Z"
+}

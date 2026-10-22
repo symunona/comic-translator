@@ -1,0 +1,5 @@
+{
+ "tr-en:A": "v2 e2e gemini-3.8-flash pipeline (ocr+scene+translate+review)",
+ "tr-en:B": "v1 claude-cli:sonnet",
+ "tr-en:C": "draft claude-cli:sonnet"
+}

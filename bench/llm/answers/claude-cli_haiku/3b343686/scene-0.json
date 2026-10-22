@@ -1,0 +1,110 @@
+{
+  "spec": "claude-cli:haiku",
+  "log": "../data/3b3436860d742571c5a540084c396d020cb19fae9191994d00f2338e06c41d2b/llm/scene-0.json",
+  "text": "{\"summary\":\"A street interviewer with a mic (who keeps shouting and riffing) asks passers-by what they would do first if they hit the Hungarian ötöslottó jackpot. The quiet, cigarette-smoking man in the hoodie answers with a hesitant yes, and the interviewer then rattles off spending guesses and a crude, bolt-obsessed dream of a huge pile of tools. The humour comes from the escalating, vulgar overexcitement of the interviewer, the deadpan answers, and a running bolt/wrench gag that ends on a callback to the lottery's five numbers (ÖT).\",\"characters\":[{\"name\":\"street interviewer (bald, glasses, open shirt, holds mic)\",\"description\":\"Bald man with round glasses and a wide, open-mouthed grin, in an open-collared shirt and flip-flops, holding a microphone. Talks like a loud TV-style reporter: ecstatic, theatrical greetings and exclamations, heavy slang, and frequent 'vágod?' ('you get me?'). Speaks in r0, r2, r15 and (most likely) r13, and the list of guesses in r3, r4, r6, r7, r8, r10, r11.\"},{\"name\":\"lottery winner (hoodie, cigarette)\",\"description\":\"Heavyset man in a grey hooded sweatshirt and sandals, with glasses and a cigarette in his mouth, hands in his pockets. Speaks hesitantly and sardonically, with dithering interjections ('HM... LÁSSUK CSAK... HEHE... IGEN!'). Only speaks in r5. Presumably the ötös lottó winner the interviewer is asking.\"},{\"name\":\"wrench-holding man (glasses, half-closed eyes)\",\"description\":\"Bald-headed man with glasses and half-closed, sideways-looking eyes, holding a metal object (a wrench or tool, possibly a mic) in p3. Silent in all regions, so he is an onlooker or the object of the bragging in r13.\"},{\"name\":\"dazed friend (thin, wavy hair, glasses)\",\"description\":\"Thinner man with wavy hair and glasses, hand on his chest, looking to the side in p4 while his companion grins. Silent in all regions; reacts to the interviewer's outburst.\"},{\"name\":\"heavyset man with the bolts\",\"description\":\"Large, heavyset man with a bulging belly, sometimes with a big open mouth, who ends up sprawled on the floor in p6 while bolts lie scattered around him. Speaks in r16 (the hex bolt line, shouted in a burst bubble) and r17 (the 'not one, five!' line). Uses 'bazmeg' as an exclamation.\"}],\"panels\":[{\"panelId\":\"p0\",\"description\":\"The street interviewer, grinning and waving one hand, holds a mic and shouts his opening greeting in a tail-less bubble (r0). A zigzag tail (r1, no text) runs from the bubble down to his mouth, so r1 is a tail, not a second speech bubble.\"},{\"panelId\":\"p1\",\"description\":\"The interviewer, with arms spread, holds the mic toward the hoodie man, who walks away smoking with his hands in his pockets. The zigzag tail of r2 runs from the interviewer's bubble down to the mic and his mouth, so the question is his, and the hoodie man is the one being asked.\"},{\"panelId\":\"p2\",\"description\":\"The interviewer, on the left, holds the mic out toward the hoodie man on the right. The hoodie man's bubble (r5) has its tail reaching his mouth and carries his answer. Floating text-free lists (r3, r4, r6, r7, r8, r10, r11) surround the interviewer's head with no tails; they are guesses at what the winner would buy, and r9 is an empty area by the interviewer's body.\"},{\"panelId\":\"p3\",\"description\":\"The shouting bald interviewer on the left gestures with a clenched fist, with motion lines streaming from it. His big bubble (r13, with a small tail lobe pointing toward his face) carries the crude shopping-list rant, and the wrench-holding man on the right looks away. r12 and r14 are the bubble area and detector boxes over the two men (no text).\"},{\"panelId\":\"p4\",\"description\":\"The grinning interviewer on the right points into the distance with an outstretched arm while his dazed friend on the left looks on. The bubble r15 is attached to the grinning man by a tail, and its text is an over-the-top, crude ramble about travelling 'wherever the sun shines'.\"},{\"panelId\":\"p5\",\"description\":\"A heavyset man with a huge open mouth shouts while a smaller man with glasses in the left foreground looks startled. A jagged shout burst (r16) runs from above the big mouth and mentions a hex bolt, and a bolt lies on the floor at the bottom left.\"},{\"panelId\":\"p6\",\"description\":\"The heavyset man sits sprawled on the floor, legs out, with bolts and nuts scattered around him; his bubble (r17, tail to his head) says his final, absurd wish. The underlined 'ÖT!' is the closing payoff.\"}],\"speakers\":{\"r0\":\"street interviewer (bald, glasses, open shirt, holds mic)\",\"r1\":\"none\",\"r2\":\"street interviewer (bald, glasses, open shirt, holds mic)\",\"r3\":\"street interviewer (bald, glasses, open shirt, holds mic)\",\"r4\":\"street interviewer (bald, glasses, open shirt, holds mic)\",\"r5\":\"lottery winner (hoodie, cigarette)\",\"r6\":\"street interviewer (bald, glasses, open shirt, holds mic)\",\"r7\":\"street interviewer (bald, glasses, open shirt, holds mic)\",\"r8\":\"street interviewer (bald, glasses, open shirt, holds mic)\",\"r9\":\"none\",\"r10\":\"street interviewer (bald, glasses, open shirt, holds mic)\",\"r11\":\"street interviewer (bald, glasses, open shirt, holds mic)\",\"r12\":\"none\",\"r13\":\"street interviewer (bald, glasses, open shirt, holds mic)\",\"r14\":\"none\",\"r15\":\"street interviewer (bald, glasses, open shirt, holds mic)\",\"r16\":\"heavyset man with the bolts\",\"r17\":\"heavyset man with the bolts\"},\"notes\":[\"The lottery question is 'what would you do first if you won the ötös lottó' (the Hungarian five-number jackpot, 'a lottó ötöst'). The winner's answer in r5 is a stalling 'hm... let's see... hehe... yes!' that suggests he is making it up on the spot.\",\"r3, r4, r6, r7, r8, r10 and r11 are text-free guesses at the winner's spending, with no tails. The list reads: SPORTKOCSI? (sports car), PINÁK? (x3: r4, r8, r11), YACHT? (r6), UTAZGATÁS? (travel, r7), VILLA? (r10). They are attributed to the interviewer as prompts; the translator should keep them as a bare list of items, each with a question mark.\",\"PINÁK appears three times (r4, r8, r11) with the same spelling. It is not a word I can confidently identify. It may be slang or a deliberate nonsense word; check with a native speaker before translating, and keep the same rendering each time.\",\"Running gag: the spending list keeps repeating PINÁK (r4, r8, r11) between real luxury items (sports car, yacht, villa, travel). The joke is the absurd, comedic escalation of wishes, ending in an unreal bolt fantasy.\",\"'Hááhá! Jóestét!' (r0): 'HÁHHÁ' is an exaggerated, theatrical laugh, and 'jóestét' (good evening) is an odd, over-formal greeting said at a random moment. Keep the over-the-top mood.\",\"'Megvárjuk az első randomtibort' (r0): 'randomtibor' is a made-up compound like 'random Joe'. Tibor is a common Hungarian first name, and the speaker is calling the passer-by a random guy named Tibor. Keep the joke as 'the first random Tibor' rather than inventing an English name.\",\"'Jónapot uram!' (r2) is a polite, formal greeting. The interviewer's formality contrasts with his crude outbursts later in the strip.\",\"'Mi lenne az első dolog, amit csinálna, ha megnyerné a lottó ötöst?' is a normal man-on-the-street question. 'Ötöst' is the five-hit prize, which pays off in the final panel ('NEM EGY, ÖT!').\",\"'Hm... lássuk csak... hehe... igen!' (r5): the winner stalls ('hm', 'let's see'), then giggles and says yes. The clipped, casual phrasing marks a laid-back, unbothered speaker.\",\"'Vennék egy kurvanagy dobozt' (r13): 'kurvanagy' is 'fucking huge' (kurva = whore, used as a crude intensifier), so the box is fucking big. Crude and very casual.\",\"'Telis-tele tizes villáskulccsal' (r13): 'tizes villáskulcs' is a 10 mm combination wrench ('tizes' = size ten), and 'telis-tele' means full to the brim. The phrasing is a loud, bragging description of a box of wrenches.\",\"'Agyig rakva' (r13): 'agyig' means 'up to the brain' and is colloquial for fully stacked. 'Több ezer' (several thousand) and 'vágod?' ('you get me?') complete the rant.\",\"'Vágod?' is a casual, slangy tic that the interviewer uses in r13 and r15. It is a verbal tic, so keep its informal tone in translation.\",\"'Megfordulok, szórnám szélyel, mint a pitypang a szarjait, vágod?' (r15): 'pitypang' is a dandelion, and 'szarjait' is 'its shit' (the seeds are used as a crude joke). 'Szórnám szélyel' means I'd scatter myself in the wind. This is vulgar and crude, so keep it crude; 'mindenfelé!!!' (everywhere!) closes the line.\",\"'Hogyamikor ott egy hatos csavar, bazmeg' (r16): 'hatos csavar' is a six-sided (hex) bolt. 'Hogyamikor' is a clipped, colloquial 'how is it that', and the shout uses the vulgar exclamation 'bazmeg' (short for 'baszd meg', roughly 'fuck'). Keep the swearing level.\",\"'... akkor bárhova nyúlok, ott legyen, bazmeg. Nem egy, öt!' (r17): 'wherever I reach, let there be one, damn it. Not one, five!' The ÖT is underlined and is a callback to the 'ötöst' (five-hit) lottery jackpot in r2 and r5. Keep the underlining or emphasis.\",\"Running gag: bolts, nuts and wrenches (villáskulcs in r13, hatos csavar in r16, the bolts on the floor in p5 and p6) escalate toward an absurd hoard. The bolt on the floor in p5 and the scattered bolts in p6 are visual proof of the gag, so the translator should keep the hardware words consistent (csavar = bolt, villáskulcs = wrench).\",\"There are no readable background signs anywhere in the strip. The only background details that matter are the scattered bolts and nuts on the floor (p5, p6) and the cigarette in the hoodie man's mouth (p1, p2).\",\"Speaker attribution is inferred from face direction and the tails, not from clear mouth-to-tail lines. The interviewer voicing r13 and r15 and the heavyset man voicing r16 are the least certain; the translator should check the source art if a different speaker changes the joke.\"]}",
+  "json": {
+    "summary": "A street interviewer with a mic (who keeps shouting and riffing) asks passers-by what they would do first if they hit the Hungarian ötöslottó jackpot. The quiet, cigarette-smoking man in the hoodie answers with a hesitant yes, and the interviewer then rattles off spending guesses and a crude, bolt-obsessed dream of a huge pile of tools. The humour comes from the escalating, vulgar overexcitement of the interviewer, the deadpan answers, and a running bolt/wrench gag that ends on a callback to the lottery's five numbers (ÖT).",
+    "characters": [
+      {
+        "name": "street interviewer (bald, glasses, open shirt, holds mic)",
+        "description": "Bald man with round glasses and a wide, open-mouthed grin, in an open-collared shirt and flip-flops, holding a microphone. Talks like a loud TV-style reporter: ecstatic, theatrical greetings and exclamations, heavy slang, and frequent 'vágod?' ('you get me?'). Speaks in r0, r2, r15 and (most likely) r13, and the list of guesses in r3, r4, r6, r7, r8, r10, r11."
+      },
+      {
+        "name": "lottery winner (hoodie, cigarette)",
+        "description": "Heavyset man in a grey hooded sweatshirt and sandals, with glasses and a cigarette in his mouth, hands in his pockets. Speaks hesitantly and sardonically, with dithering interjections ('HM... LÁSSUK CSAK... HEHE... IGEN!'). Only speaks in r5. Presumably the ötös lottó winner the interviewer is asking."
+      },
+      {
+        "name": "wrench-holding man (glasses, half-closed eyes)",
+        "description": "Bald-headed man with glasses and half-closed, sideways-looking eyes, holding a metal object (a wrench or tool, possibly a mic) in p3. Silent in all regions, so he is an onlooker or the object of the bragging in r13."
+      },
+      {
+        "name": "dazed friend (thin, wavy hair, glasses)",
+        "description": "Thinner man with wavy hair and glasses, hand on his chest, looking to the side in p4 while his companion grins. Silent in all regions; reacts to the interviewer's outburst."
+      },
+      {
+        "name": "heavyset man with the bolts",
+        "description": "Large, heavyset man with a bulging belly, sometimes with a big open mouth, who ends up sprawled on the floor in p6 while bolts lie scattered around him. Speaks in r16 (the hex bolt line, shouted in a burst bubble) and r17 (the 'not one, five!' line). Uses 'bazmeg' as an exclamation."
+      }
+    ],
+    "panels": [
+      {
+        "panelId": "p0",
+        "description": "The street interviewer, grinning and waving one hand, holds a mic and shouts his opening greeting in a tail-less bubble (r0). A zigzag tail (r1, no text) runs from the bubble down to his mouth, so r1 is a tail, not a second speech bubble."
+      },
+      {
+        "panelId": "p1",
+        "description": "The interviewer, with arms spread, holds the mic toward the hoodie man, who walks away smoking with his hands in his pockets. The zigzag tail of r2 runs from the interviewer's bubble down to the mic and his mouth, so the question is his, and the hoodie man is the one being asked."
+      },
+      {
+        "panelId": "p2",
+        "description": "The interviewer, on the left, holds the mic out toward the hoodie man on the right. The hoodie man's bubble (r5) has its tail reaching his mouth and carries his answer. Floating text-free lists (r3, r4, r6, r7, r8, r10, r11) surround the interviewer's head with no tails; they are guesses at what the winner would buy, and r9 is an empty area by the interviewer's body."
+      },
+      {
+        "panelId": "p3",
+        "description": "The shouting bald interviewer on the left gestures with a clenched fist, with motion lines streaming from it. His big bubble (r13, with a small tail lobe pointing toward his face) carries the crude shopping-list rant, and the wrench-holding man on the right looks away. r12 and r14 are the bubble area and detector boxes over the two men (no text)."
+      },
+      {
+        "panelId": "p4",
+        "description": "The grinning interviewer on the right points into the distance with an outstretched arm while his dazed friend on the left looks on. The bubble r15 is attached to the grinning man by a tail, and its text is an over-the-top, crude ramble about travelling 'wherever the sun shines'."
+      },
+      {
+        "panelId": "p5",
+        "description": "A heavyset man with a huge open mouth shouts while a smaller man with glasses in the left foreground looks startled. A jagged shout burst (r16) runs from above the big mouth and mentions a hex bolt, and a bolt lies on the floor at the bottom left."
+      },
+      {
+        "panelId": "p6",
+        "description": "The heavyset man sits sprawled on the floor, legs out, with bolts and nuts scattered around him; his bubble (r17, tail to his head) says his final, absurd wish. The underlined 'ÖT!' is the closing payoff."
+      }
+    ],
+    "speakers": {
+      "r0": "street interviewer (bald, glasses, open shirt, holds mic)",
+      "r1": "none",
+      "r2": "street interviewer (bald, glasses, open shirt, holds mic)",
+      "r3": "street interviewer (bald, glasses, open shirt, holds mic)",
+      "r4": "street interviewer (bald, glasses, open shirt, holds mic)",
+      "r5": "lottery winner (hoodie, cigarette)",
+      "r6": "street interviewer (bald, glasses, open shirt, holds mic)",
+      "r7": "street interviewer (bald, glasses, open shirt, holds mic)",
+      "r8": "street interviewer (bald, glasses, open shirt, holds mic)",
+      "r9": "none",
+      "r10": "street interviewer (bald, glasses, open shirt, holds mic)",
+      "r11": "street interviewer (bald, glasses, open shirt, holds mic)",
+      "r12": "none",
+      "r13": "street interviewer (bald, glasses, open shirt, holds mic)",
+      "r14": "none",
+      "r15": "street interviewer (bald, glasses, open shirt, holds mic)",
+      "r16": "heavyset man with the bolts",
+      "r17": "heavyset man with the bolts"
+    },
+    "notes": [
+      "The lottery question is 'what would you do first if you won the ötös lottó' (the Hungarian five-number jackpot, 'a lottó ötöst'). The winner's answer in r5 is a stalling 'hm... let's see... hehe... yes!' that suggests he is making it up on the spot.",
+      "r3, r4, r6, r7, r8, r10 and r11 are text-free guesses at the winner's spending, with no tails. The list reads: SPORTKOCSI? (sports car), PINÁK? (x3: r4, r8, r11), YACHT? (r6), UTAZGATÁS? (travel, r7), VILLA? (r10). They are attributed to the interviewer as prompts; the translator should keep them as a bare list of items, each with a question mark.",
+      "PINÁK appears three times (r4, r8, r11) with the same spelling. It is not a word I can confidently identify. It may be slang or a deliberate nonsense word; check with a native speaker before translating, and keep the same rendering each time.",
+      "Running gag: the spending list keeps repeating PINÁK (r4, r8, r11) between real luxury items (sports car, yacht, villa, travel). The joke is the absurd, comedic escalation of wishes, ending in an unreal bolt fantasy.",
+      "'Hááhá! Jóestét!' (r0): 'HÁHHÁ' is an exaggerated, theatrical laugh, and 'jóestét' (good evening) is an odd, over-formal greeting said at a random moment. Keep the over-the-top mood.",
+      "'Megvárjuk az első randomtibort' (r0): 'randomtibor' is a made-up compound like 'random Joe'. Tibor is a common Hungarian first name, and the speaker is calling the passer-by a random guy named Tibor. Keep the joke as 'the first random Tibor' rather than inventing an English name.",
+      "'Jónapot uram!' (r2) is a polite, formal greeting. The interviewer's formality contrasts with his crude outbursts later in the strip.",
+      "'Mi lenne az első dolog, amit csinálna, ha megnyerné a lottó ötöst?' is a normal man-on-the-street question. 'Ötöst' is the five-hit prize, which pays off in the final panel ('NEM EGY, ÖT!').",
+      "'Hm... lássuk csak... hehe... igen!' (r5): the winner stalls ('hm', 'let's see'), then giggles and says yes. The clipped, casual phrasing marks a laid-back, unbothered speaker.",
+      "'Vennék egy kurvanagy dobozt' (r13): 'kurvanagy' is 'fucking huge' (kurva = whore, used as a crude intensifier), so the box is fucking big. Crude and very casual.",
+      "'Telis-tele tizes villáskulccsal' (r13): 'tizes villáskulcs' is a 10 mm combination wrench ('tizes' = size ten), and 'telis-tele' means full to the brim. The phrasing is a loud, bragging description of a box of wrenches.",
+      "'Agyig rakva' (r13): 'agyig' means 'up to the brain' and is colloquial for fully stacked. 'Több ezer' (several thousand) and 'vágod?' ('you get me?') complete the rant.",
+      "'Vágod?' is a casual, slangy tic that the interviewer uses in r13 and r15. It is a verbal tic, so keep its informal tone in translation.",
+      "'Megfordulok, szórnám szélyel, mint a pitypang a szarjait, vágod?' (r15): 'pitypang' is a dandelion, and 'szarjait' is 'its shit' (the seeds are used as a crude joke). 'Szórnám szélyel' means I'd scatter myself in the wind. This is vulgar and crude, so keep it crude; 'mindenfelé!!!' (everywhere!) closes the line.",
+      "'Hogyamikor ott egy hatos csavar, bazmeg' (r16): 'hatos csavar' is a six-sided (hex) bolt. 'Hogyamikor' is a clipped, colloquial 'how is it that', and the shout uses the vulgar exclamation 'bazmeg' (short for 'baszd meg', roughly 'fuck'). Keep the swearing level.",
+      "'... akkor bárhova nyúlok, ott legyen, bazmeg. Nem egy, öt!' (r17): 'wherever I reach, let there be one, damn it. Not one, five!' The ÖT is underlined and is a callback to the 'ötöst' (five-hit) lottery jackpot in r2 and r5. Keep the underlining or emphasis.",
+      "Running gag: bolts, nuts and wrenches (villáskulcs in r13, hatos csavar in r16, the bolts on the floor in p5 and p6) escalate toward an absurd hoard. The bolt on the floor in p5 and the scattered bolts in p6 are visual proof of the gag, so the translator should keep the hardware words consistent (csavar = bolt, villáskulcs = wrench).",
+      "There are no readable background signs anywhere in the strip. The only background details that matter are the scattered bolts and nuts on the floor (p5, p6) and the cigarette in the hoodie man's mouth (p1, p2).",
+      "Speaker attribution is inferred from face direction and the tails, not from clear mouth-to-tail lines. The interviewer voicing r13 and r15 and the heavyset man voicing r16 are the least certain; the translator should check the source art if a different speaker changes the joke."
+    ]
+  },
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 6320,
+    "cache_read_input_tokens": 5609,
+    "output_tokens": 18148
+  },
+  "costUsd": 0.010394490000000001,
+  "ms": 88158,
+  "at": "2026-10-20T07:11:01.476848164Z"
+}

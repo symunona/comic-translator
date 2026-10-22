@@ -1,0 +1,29 @@
+{
+  "spec": "ollama:bench-gemma4-12b-it-qat-32k?effort=none\u0026json=1\u0026timeout=30m",
+  "log": "../bench/llm/prompts/3b3436860d742571c5a540084c396d020cb19fae9191994d00f2338e06c41d2b/llm/ocr-p1.json",
+  "text": "{\"regions\":[{\"n\":2,\"kind\":\"speech\",\"lines\":[\"JÉSNAROT URAM!\",\"MI LENNE AZ ELSŐ DOLOG, AMIT CSINÁLNA,\\nHA MEGNYERNÉ A LOTO ÖTÖST?\"],\"align\":\"center\",\"caps\":true}],\"unboxed\":[]}",
+  "json": {
+    "regions": [
+      {
+        "n": 2,
+        "kind": "speech",
+        "lines": [
+          "JÉSNAROT URAM!",
+          "MI LENNE AZ ELSŐ DOLOG, AMIT CSINÁLNA,\nHA MEGNYERNÉ A LOTO ÖTÖST?"
+        ],
+        "align": "center",
+        "caps": true
+      }
+    ],
+    "unboxed": []
+  },
+  "usage": {
+    "input_tokens": 1088,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 69
+  },
+  "costUsd": 0,
+  "ms": 45233,
+  "at": "2026-10-20T07:41:55.758093486Z"
+}

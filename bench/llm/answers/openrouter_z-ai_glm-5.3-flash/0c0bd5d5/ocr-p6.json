@@ -1,0 +1,38 @@
+{
+  "spec": "openrouter:z-ai/glm-5.3-flash",
+  "log": "../bench/llm/prompts/0c0bd5d58b4b8bd03a1229371408586ca54a0de357a882ded2c9843589bea963/llm/ocr-p6.json",
+  "text": "{\"regions\":[{\"n\":19,\"kind\":\"speech\",\"lines\":[\"AAAARRRGH…\"],\"align\":\"left\",\"caps\":true},{\"n\":20,\"kind\":\"sign\",\"lines\":[\"7722 · 683/FELVESZEM\"],\"align\":\"left\",\"caps\":true}],\"unboxed\":[]}",
+  "json": {
+    "regions": [
+      {
+        "n": 19,
+        "kind": "speech",
+        "lines": [
+          "AAAARRRGH…"
+        ],
+        "align": "left",
+        "caps": true
+      },
+      {
+        "n": 20,
+        "kind": "sign",
+        "lines": [
+          "7722 · 683/FELVESZEM"
+        ],
+        "align": "left",
+        "caps": true
+      }
+    ],
+    "unboxed": []
+  },
+  "usage": {
+    "input_tokens": 1353,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 101,
+    "reasoning_tokens": 37
+  },
+  "costUsd": 0.000120322,
+  "ms": 846,
+  "at": "2026-10-20T07:07:36.451205226Z"
+}

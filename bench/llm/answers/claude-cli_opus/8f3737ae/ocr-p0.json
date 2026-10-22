@@ -1,0 +1,31 @@
+{
+  "spec": "claude-cli:opus",
+  "log": "../bench/llm/prompts/8f3737ae2df51cb23cc27c3f81a10a426a35fc918ea31cf1eff85be4fc0df452/llm/ocr-p0.json",
+  "text": "{\"regions\":[{\"n\":0,\"kind\":\"caption\",\"lines\":[\"How do I\",\"exit vim?\"],\"align\":\"left\",\"caps\":false}],\"unboxed\":[\"imgflip.com\"]}",
+  "json": {
+    "regions": [
+      {
+        "n": 0,
+        "kind": "caption",
+        "lines": [
+          "How do I",
+          "exit vim?"
+        ],
+        "align": "left",
+        "caps": false
+      }
+    ],
+    "unboxed": [
+      "imgflip.com"
+    ]
+  },
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 2621,
+    "cache_read_input_tokens": 4316,
+    "output_tokens": 417
+  },
+  "costUsd": 0.030187199999999997,
+  "ms": 8272,
+  "at": "2026-10-20T07:20:12.95725316Z"
+}

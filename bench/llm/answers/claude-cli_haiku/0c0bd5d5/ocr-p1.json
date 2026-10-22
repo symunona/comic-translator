@@ -1,0 +1,46 @@
+{
+  "spec": "claude-cli:haiku",
+  "log": "../bench/llm/prompts/0c0bd5d58b4b8bd03a1229371408586ca54a0de357a882ded2c9843589bea963/llm/ocr-p1.json",
+  "text": "{\"regions\":[{\"n\":1,\"kind\":\"speech\",\"lines\":[\"HRAHGHNRRR....\"],\"align\":\"center\",\"caps\":true},{\"n\":2,\"kind\":\"speech\",\"lines\":[\"MI A FASZOM?\"],\"align\":\"center\",\"caps\":true},{\"n\":3,\"kind\":\"sign\",\"lines\":[\"7722·683 / FELVESZEM\"],\"align\":\"center\",\"caps\":true}],\"unboxed\":[]}",
+  "json": {
+    "regions": [
+      {
+        "n": 1,
+        "kind": "speech",
+        "lines": [
+          "HRAHGHNRRR...."
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 2,
+        "kind": "speech",
+        "lines": [
+          "MI A FASZOM?"
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 3,
+        "kind": "sign",
+        "lines": [
+          "7722·683 / FELVESZEM"
+        ],
+        "align": "center",
+        "caps": true
+      }
+    ],
+    "unboxed": []
+  },
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 3843,
+    "cache_read_input_tokens": 4755,
+    "output_tokens": 1091
+  },
+  "costUsd": 0.00136205,
+  "ms": 8025,
+  "at": "2026-10-20T07:10:03.312383826Z"
+}

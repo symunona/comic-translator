@@ -1,6 +1,6 @@
 # OCR bench: in-browser OCR vs Opus
 
-Strip: kristalyhologram (`data/2afc78b4…`), 45 regions with text (53 minus 8 `none`). Run 2026-10-19, devbox (12 cores), Chromium 1234 headless.
+Strip: kristalyhologram (`data/2afc78b4…`), 45 regions with text (53 minus 8 `none`). Run 2026-10-19 (second full run; first run's file was overwritten by a smoke test, accuracy identical, times within ~20%), devbox (12 cores), Chromium 1234 headless.
 Ground truth: `stages/ocr@v1.json` `source.text` = Claude Opus via claude CLI. Not human-checked: Opus errors count as model errors.
 
 ## Run
@@ -33,20 +33,20 @@ node report.mjs                                   # markdown table + samples fro
 
 | model | threads | download MB | load ms | ms/crop median | ms/crop mean | CER | CER no punct | WER | exact | accent acc | speech CER | mem Δ MB | UA mem MB |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| **PaddleOCR PP-OCRv5 latin mobile** (det+rec) | 1 | 12.8 | 3526 | 230 | 460 | **0.172** | 0.168 | 0.601 | 10/45 | 0.46 | **0.149** | 450 | 103 |
-| PaddleOCR PP-OCRv5 latin mobile | 4 | 12.8 | 3462 | **134** | 263 | 0.172 | 0.168 | 0.601 | 10/45 | 0.46 | 0.149 | 470 | 88 |
-| TrOCR-small handwritten q8 (line split) | 1 | 68.1 | 5013 | 2621 | 2930 | 0.804 | 0.809 | 1.074 | 1/45 | 0.00 | 0.763 | 554 | 179 |
-| TrOCR-small handwritten q8 | 4 | 68.1 | 4928 | 1149 | 1307 | 0.804 | 0.809 | 1.074 | 1/45 | 0.00 | 0.763 | 578 | 180 |
-| TrOCR-small printed q8 | 1 | 68.1 | 5075 | 2780 | 3188 | 0.925 | 0.771 | 0.995 | 0/45 | 0.00 | 0.955 | 605 | 179 |
-| Florence-2-base-ft q8 (`<OCR_WITH_REGION>`) | 1 | 279.2 | 10223 | 33320 | 34263 | 0.228 | 0.217 | 0.697 | 0/45 | 0.04 | 0.169 | 919 | 824 |
-| Florence-2-base-ft q8 | 4 | 279.2 | 10479 | 12668 | 13263 | 0.228 | 0.217 | 0.697 | 0/45 | 0.04 | 0.169 | 1005 | 800 |
-| Tesseract.js 7 `hun` (baseline) | 1 | 2.9 | 627 | 99 | 226 | 0.574 | 0.515 | 1.356 | 1/45 | **0.71** | 0.299 | 102 | 44 |
+| PaddleOCR PP-OCRv5 latin mobile (det+rec) | 1 | 12.8 | 3175 | 207 | 412 | 0.172 | 0.168 | 0.601 | 10/45 | 0.46 | 0.149 | 446 | 103 |
+| PaddleOCR PP-OCRv5 latin mobile (det+rec) | 4 | 12.8 | 3195 | 101 | 227 | 0.172 | 0.168 | 0.601 | 10/45 | 0.46 | 0.149 | 466 | 105 |
+| TrOCR-small handwritten q8 (line split) | 1 | 68.1 | 4396 | 2180 | 2491 | 0.804 | 0.809 | 1.074 | 1/45 | 0.00 | 0.763 | 584 | 179 |
+| TrOCR-small handwritten q8 (line split) | 4 | 68.1 | 4539 | 1009 | 1170 | 0.804 | 0.809 | 1.074 | 1/45 | 0.00 | 0.763 | 546 | 185 |
+| TrOCR-small printed q8 | 1 | 68.1 | 5087 | 2192 | 2523 | 0.925 | 0.771 | 0.995 | 0/45 | 0.00 | 0.955 | 568 | 179 |
+| Florence-2-base-ft q8 (`<OCR_WITH_REGION>`) | 1 | 279.2 | 8512 | 25203 | 25435 | 0.228 | 0.217 | 0.697 | 0/45 | 0.04 | 0.169 | 943 | 824 |
+| Florence-2-base-ft q8 (`<OCR_WITH_REGION>`) | 4 | 279.2 | 6907 | 11649 | 12118 | 0.228 | 0.217 | 0.697 | 0/45 | 0.04 | 0.169 | 892 | 825 |
+| Tesseract.js 7 `hun` (baseline) | 1 | 2.9 | 590 | 107 | 201 | 0.574 | 0.515 | 1.356 | 1/45 | 0.71 | 0.299 | 58 | 44 |
 
 Raw: `bench/results/ocr-2026-10-19.json` (summary + every prediction + per-crop score).
 
 ## Findings
 
-- **Paddle v5 latin wins.** Best CER, 13 MB, ~0.13-0.23 s/crop, sane memory. Multi-thread: ~1.7x faster per crop, same output.
+- **Paddle v5 latin wins.** Best CER, 13 MB, ~0.10-0.21 s/crop median, sane memory. Multi-thread: ~2x faster per crop, same output.
 - Paddle loses accents: 46% kept. `É->E`, `Á->A`, `Ő->O` on hand lettering. Dict has ő/ű; model just misses small marks. Opus keeps them. Hungarian meaning breaks on accents (`HÁT` vs `HAT`).
 - Paddle failure modes: words glued at line joins (`EZA`, `VOLTAZ`), junk from sign borders (`FASZI-100`, `FAS21-1`), big SFX lettering garbage (r46), dense multi-line r30 (CER 0.44).
 - TrOCR: unusable. English LM hallucinates (`maleill education.`). Single-line model, no accents in vocab output. Printed variant reads caps a bit better on short lines, still ~0.9 CER.
@@ -56,7 +56,29 @@ Raw: `bench/results/ocr-2026-10-19.json` (summary + every prediction + per-crop 
 
 ## Verdict
 
-- Browser OCR default: **Paddle v5 latin**, 4 threads, worker. ~12 s for the 45-region strip on WASM 4 threads (21 s single). Florence: 10-26 min. TrOCR: 1-2.4 min.
+- Browser OCR default: **Paddle v5 latin**, 4 threads, worker. ~10 s for the 45-region strip on WASM 4 threads (~19 s single, sum of crop times). Florence: 9-19 min. TrOCR: 1-2 min.
 - Not good enough alone for Hungarian: ~1 in 2 accents lost, CER 0.17 vs Opus.
 - Plan: Paddle first -> per-region confidence + accent heuristic (Hungarian word list / LLM diacritic restore) -> LLM OCR fallback for low-confidence or SFX/sign regions. Or cheap LLM text-only pass "restore Hungarian accents, keep spelling" over Paddle output (no images, ~cents).
 - Next to try: PP-OCRv6 small rec (21 MB, artistic text), upscale small crops 2x, drop det for single-line crops, confidence threshold tuning. Harness takes a new engine as one `src/<engine>.js` + `RUNS` entry.
+
+## Translate bench: versions per backend (hu -> en)
+
+Run 2026-10-19/20. `bench/translate-versions.sh` -> `POST /api/strips/{id}/translations/en/versions {spec}` per backend. Full translate + review, scene + 10 panel images. Dump: `bench/results/translate-en-2026-10-20.json` (all versions, regions, usage).
+
+| v | backend | cost $ | in tok | out tok | time | bubbles | note |
+|---|---|---|---|---|---|---|---|
+| v1 | claude-cli:opus | ? | ? | ? | ? | 45/45 | old pipeline run, migrated, cost not split |
+| v2 | user | - | - | - | - | 45/45 | editor test: fork of v1, r0 changed |
+| v3 | claude-cli:haiku | 0.025 | 71.5k | 32.6k | 2m07s | 45/45 | more literal |
+| v4 | claude-cli:sonnet | 0.269 | 70.6k | 10.8k | 1m10s | 45/45 | close to Opus |
+| v5 | claude-cli:opus | 0.669 | 71.7k | 17.6k | 2m27s | 45/45 | quality bar |
+| v6 | ollama qwen3.5 4b | 0 | 33.3k | 1.8k | 15m29s | 1/45 | gave up after few bubbles; review bad JSON -> draft kept |
+| v7 | ollama gemma4 26b-a4b | 0 | 20.1k | 4.6k | 24m00s | 45/45 | own line breaks, some odd spelling ("YOUND ENUFF"), 5 over budget |
+| v8 | ollama gemma4 12b, `json=1` | 0 | 20.2k | 3.4k | 21m28s | 45/45 | 3 runs without `json=1` died on broken JSON |
+
+- claude-cli new versions total: **$0.96** (list-price equivalent, subscription).
+- No paid API keys on devbox: anthropic / openrouter / gemini / qwen etc. skipped.
+- Ollama: 4 GB GPU (1050 Ti) -> mostly CPU. Context 32k via `bench-*-32k` model tags (`ollama create`, Modelfile `num_ctx 32768`; default `OLLAMA_CONTEXT_LENGTH=12288` too small: prompt ~10-15k tok).
+- Local models: **always `json=1`** (ollama grammar-constrained JSON). Without it gemma4 12b: trailing comma (now auto-repaired), raw newline in string, bad escapes.
+- Review pass broken -> version keeps translate draft, `reviewError` set.
+- Quality: not scored. Read side by side in editor/viewer (`?ver=`) or the bench artifact.

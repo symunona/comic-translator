@@ -1,0 +1,41 @@
+{
+  "spec": "claude-cli:opus",
+  "log": "../bench/llm/prompts/8f3737ae2df51cb23cc27c3f81a10a426a35fc918ea31cf1eff85be4fc0df452/llm/ocr-strip.json",
+  "text": "{\"regions\":[{\"n\":0,\"kind\":\"caption\",\"lines\":[\"How do I\",\"exit vim?\"],\"align\":\"center\",\"caps\":false},{\"n\":1,\"kind\":\"caption\",\"lines\":[\"Why would I\",\"exit vim?\"],\"align\":\"center\",\"caps\":false}],\"unboxed\":[\"OUCH!\"]}",
+  "json": {
+    "regions": [
+      {
+        "n": 0,
+        "kind": "caption",
+        "lines": [
+          "How do I",
+          "exit vim?"
+        ],
+        "align": "center",
+        "caps": false
+      },
+      {
+        "n": 1,
+        "kind": "caption",
+        "lines": [
+          "Why would I",
+          "exit vim?"
+        ],
+        "align": "center",
+        "caps": false
+      }
+    ],
+    "unboxed": [
+      "OUCH!"
+    ]
+  },
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 3325,
+    "cache_read_input_tokens": 4520,
+    "output_tokens": 711
+  },
+  "costUsd": 0.04174,
+  "ms": 9965,
+  "at": "2026-10-20T07:20:31.901432644Z"
+}

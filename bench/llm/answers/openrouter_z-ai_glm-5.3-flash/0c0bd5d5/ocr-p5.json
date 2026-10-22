@@ -1,0 +1,52 @@
+{
+  "spec": "openrouter:z-ai/glm-5.3-flash",
+  "log": "../bench/llm/prompts/0c0bd5d58b4b8bd03a1229371408586ca54a0de357a882ded2c9843589bea963/llm/ocr-p5.json",
+  "text": "{\"regions\":[{\"n\":15,\"kind\":\"speech\",\"lines\":[\"AKURVAÉLET!\"],\"align\":\"center\",\"caps\":true},{\"n\":16,\"kind\":\"sign\",\"lines\":[\"7722·683/FELVESZEM\"],\"align\":\"left\",\"caps\":true},{\"n\":17,\"kind\":\"none\",\"lines\":[],\"align\":\"left\",\"caps\":false},{\"n\":18,\"kind\":\"none\",\"lines\":[],\"align\":\"left\",\"caps\":false}],\"unboxed\":[]}",
+  "json": {
+    "regions": [
+      {
+        "n": 15,
+        "kind": "speech",
+        "lines": [
+          "AKURVAÉLET!"
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 16,
+        "kind": "sign",
+        "lines": [
+          "7722·683/FELVESZEM"
+        ],
+        "align": "left",
+        "caps": true
+      },
+      {
+        "n": 17,
+        "kind": "none",
+        "lines": [],
+        "align": "left",
+        "caps": false
+      },
+      {
+        "n": 18,
+        "kind": "none",
+        "lines": [],
+        "align": "left",
+        "caps": false
+      }
+    ],
+    "unboxed": []
+  },
+  "usage": {
+    "input_tokens": 1594,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 504,
+    "reasoning_tokens": 399
+  },
+  "costUsd": 0.0004911,
+  "ms": 5796,
+  "at": "2026-10-20T07:07:32.761517634Z"
+}

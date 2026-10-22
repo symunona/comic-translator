@@ -1,0 +1,162 @@
+{
+  "spec": "openrouter:google/gemini-3.8-flash",
+  "log": "../bench/llm/judge/0c0bd5d58b4b8bd03a1229371408586ca54a0de357a882ded2c9843589bea963/llm/judge-tr-en.json",
+  "text": "{\"candidates\":{\"A\":{\"accuracy\":9,\"naturalness\":9,\"humour\":9,\"voice\":9,\"fit\":7,\"overall\":8,\"worst\":\"r5 exceeds space budget (89/87 chars)\"},\"B\":{\"accuracy\":9,\"naturalness\":9,\"humour\":9,\"voice\":9,\"fit\":9,\"overall\":9,\"worst\":\"r4 slightly loose for 'mi a gecit keresel'\"},\"C\":{\"accuracy\":8,\"naturalness\":8,\"humour\":8,\"voice\":8,\"fit\":6,\"overall\":7,\"worst\":\"r4 significantly exceeds budget (65/59 chars)\"},\"D\":{\"accuracy\":6,\"naturalness\":8,\"humour\":5,\"voice\":8,\"fit\":9,\"overall\":6,\"worst\":\"r13 misunderstands grammar to mean bags hit him, ruining the food gag\"},\"E\":{\"accuracy\":6,\"naturalness\":8,\"humour\":5,\"voice\":8,\"fit\":9,\"overall\":6,\"worst\":\"r13 reverses the bags' role, breaking the punchline setup\"},\"F\":{\"accuracy\":7,\"naturalness\":8,\"humour\":7,\"voice\":7,\"fit\":4,\"overall\":5,\"worst\":\"r15 severely over space budget (26/15 chars)\"},\"G\":{\"accuracy\":6,\"naturalness\":7,\"humour\":6,\"voice\":7,\"fit\":9,\"overall\":6,\"worst\":\"r13 incorrectly states he was hit by shopping bags\"},\"H\":{\"accuracy\":6,\"naturalness\":8,\"humour\":6,\"voice\":8,\"fit\":7,\"overall\":6,\"worst\":\"r13 distorts meaning of bags and r5 exceeds budget\"},\"I\":{\"accuracy\":8,\"naturalness\":8,\"humour\":8,\"voice\":8,\"fit\":9,\"overall\":8,\"worst\":\"r4 weakens 'mi a gecit keresel' into 'why're you'\"},\"J\":{\"accuracy\":6,\"naturalness\":7,\"humour\":5,\"voice\":6,\"fit\":9,\"overall\":6,\"worst\":\"r15 is an unnatural translation of 'a kurva élet'\"},\"K\":{\"accuracy\":7,\"naturalness\":8,\"humour\":6,\"voice\":8,\"fit\":9,\"overall\":7,\"worst\":\"r13 makes it sound like driver attacked with grocery bags\"},\"L\":{\"accuracy\":6,\"naturalness\":7,\"humour\":5,\"voice\":7,\"fit\":7,\"overall\":6,\"worst\":\"r13 distorts subject and exceeds character limit\"},\"M\":{\"accuracy\":8,\"naturalness\":9,\"humour\":8,\"voice\":8,\"fit\":9,\"overall\":8,\"worst\":\"r4 replaces specific 'flatbed' with generic 'truck'\"},\"N\":{\"accuracy\":9,\"naturalness\":9,\"humour\":9,\"voice\":9,\"fit\":9,\"overall\":9,\"worst\":\"r5 right at the absolute limit of bubble budget\"}},\"ranking\":[\"B\",\"N\",\"A\",\"M\",\"I\",\"C\",\"K\",\"D\",\"G\",\"E\",\"H\",\"L\",\"J\",\"F\"],\"notes\":\"Candidates B and N correctly grasp the punchline setup in r13: the victim survived a week on the flatbed because he was carrying two bags of groceries when hit. Many other candidates mistranslated r13 into the absurdly unrelated idea that the victim was struck by grocery bags, destroying the humor.\"}",
+  "json": {
+    "candidates": {
+      "A": {
+        "accuracy": 9,
+        "naturalness": 9,
+        "humour": 9,
+        "voice": 9,
+        "fit": 7,
+        "overall": 8,
+        "worst": "r5 exceeds space budget (89/87 chars)"
+      },
+      "B": {
+        "accuracy": 9,
+        "naturalness": 9,
+        "humour": 9,
+        "voice": 9,
+        "fit": 9,
+        "overall": 9,
+        "worst": "r4 slightly loose for 'mi a gecit keresel'"
+      },
+      "C": {
+        "accuracy": 8,
+        "naturalness": 8,
+        "humour": 8,
+        "voice": 8,
+        "fit": 6,
+        "overall": 7,
+        "worst": "r4 significantly exceeds budget (65/59 chars)"
+      },
+      "D": {
+        "accuracy": 6,
+        "naturalness": 8,
+        "humour": 5,
+        "voice": 8,
+        "fit": 9,
+        "overall": 6,
+        "worst": "r13 misunderstands grammar to mean bags hit him, ruining the food gag"
+      },
+      "E": {
+        "accuracy": 6,
+        "naturalness": 8,
+        "humour": 5,
+        "voice": 8,
+        "fit": 9,
+        "overall": 6,
+        "worst": "r13 reverses the bags' role, breaking the punchline setup"
+      },
+      "F": {
+        "accuracy": 7,
+        "naturalness": 8,
+        "humour": 7,
+        "voice": 7,
+        "fit": 4,
+        "overall": 5,
+        "worst": "r15 severely over space budget (26/15 chars)"
+      },
+      "G": {
+        "accuracy": 6,
+        "naturalness": 7,
+        "humour": 6,
+        "voice": 7,
+        "fit": 9,
+        "overall": 6,
+        "worst": "r13 incorrectly states he was hit by shopping bags"
+      },
+      "H": {
+        "accuracy": 6,
+        "naturalness": 8,
+        "humour": 6,
+        "voice": 8,
+        "fit": 7,
+        "overall": 6,
+        "worst": "r13 distorts meaning of bags and r5 exceeds budget"
+      },
+      "I": {
+        "accuracy": 8,
+        "naturalness": 8,
+        "humour": 8,
+        "voice": 8,
+        "fit": 9,
+        "overall": 8,
+        "worst": "r4 weakens 'mi a gecit keresel' into 'why're you'"
+      },
+      "J": {
+        "accuracy": 6,
+        "naturalness": 7,
+        "humour": 5,
+        "voice": 6,
+        "fit": 9,
+        "overall": 6,
+        "worst": "r15 is an unnatural translation of 'a kurva élet'"
+      },
+      "K": {
+        "accuracy": 7,
+        "naturalness": 8,
+        "humour": 6,
+        "voice": 8,
+        "fit": 9,
+        "overall": 7,
+        "worst": "r13 makes it sound like driver attacked with grocery bags"
+      },
+      "L": {
+        "accuracy": 6,
+        "naturalness": 7,
+        "humour": 5,
+        "voice": 7,
+        "fit": 7,
+        "overall": 6,
+        "worst": "r13 distorts subject and exceeds character limit"
+      },
+      "M": {
+        "accuracy": 8,
+        "naturalness": 9,
+        "humour": 8,
+        "voice": 8,
+        "fit": 9,
+        "overall": 8,
+        "worst": "r4 replaces specific 'flatbed' with generic 'truck'"
+      },
+      "N": {
+        "accuracy": 9,
+        "naturalness": 9,
+        "humour": 9,
+        "voice": 9,
+        "fit": 9,
+        "overall": 9,
+        "worst": "r5 right at the absolute limit of bubble budget"
+      }
+    },
+    "ranking": [
+      "B",
+      "N",
+      "A",
+      "M",
+      "I",
+      "C",
+      "K",
+      "D",
+      "G",
+      "E",
+      "H",
+      "L",
+      "J",
+      "F"
+    ],
+    "notes": "Candidates B and N correctly grasp the punchline setup in r13: the victim survived a week on the flatbed because he was carrying two bags of groceries when hit. Many other candidates mistranslated r13 into the absurdly unrelated idea that the victim was struck by grocery bags, destroying the humor."
+  },
+  "usage": {
+    "input_tokens": 16407,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 6433,
+    "reasoning_tokens": 5703
+  },
+  "costUsd": 0.036429,
+  "ms": 46798,
+  "at": "2026-10-20T07:34:18.151521727Z"
+}

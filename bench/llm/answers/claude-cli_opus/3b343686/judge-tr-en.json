@@ -1,0 +1,141 @@
+{
+  "spec": "claude-cli:opus",
+  "log": "../bench/llm/judge/3b3436860d742571c5a540084c396d020cb19fae9191994d00f2338e06c41d2b/llm/judge-tr-en.json",
+  "text": "{\"candidates\":{\"A\":{\"accuracy\":9,\"naturalness\":9,\"humour\":9,\"voice\":9,\"fit\":9,\"overall\":9,\"worst\":\"r0 'HAHHA!' keeps the Hungarian spelling of the laugh; 'HA-HA!' would read better in English\"},\"F\":{\"accuracy\":9,\"naturalness\":9,\"humour\":9,\"voice\":8,\"fit\":9,\"overall\":9,\"worst\":\"r2 'HELLO THERE, SIR!' loses some of the stiff TV politeness of 'Jónapot uram'\"},\"J\":{\"accuracy\":8,\"naturalness\":8,\"humour\":9,\"voice\":8,\"fit\":9,\"overall\":8,\"worst\":\"r13 'TO THE BRIM—THOUSANDS!' feels chopped off, and 'ten-packs' is a doubtful reading of 'tizes' (more likely 10 mm)\"},\"I\":{\"accuracy\":8,\"naturalness\":8,\"humour\":8,\"voice\":8,\"fit\":9,\"overall\":8,\"worst\":\"r16 'WHENEVER THERE'S A 6MM SCREW' is a bit unclear; it should say he needs one\"},\"D\":{\"accuracy\":8,\"naturalness\":8,\"humour\":9,\"voice\":8,\"fit\":7,\"overall\":8,\"worst\":\"r16 'SIX-MILLIMETRE SCREW' makes the line about 50 characters, over the 48-character budget\"},\"K\":{\"accuracy\":7,\"naturalness\":8,\"humour\":7,\"voice\":8,\"fit\":9,\"overall\":7,\"worst\":\"r5 'LOTTO JACKPOT' doesn't match 'FIVE-NUMBER LOTTO' in r2, so the 'five' pun gets weaker\"},\"H\":{\"accuracy\":7,\"naturalness\":8,\"humour\":8,\"voice\":8,\"fit\":9,\"overall\":7,\"worst\":\"r16 'JUST ONE 6MM SCREW' adds a meaning that isn't in the source\"},\"C\":{\"accuracy\":7,\"naturalness\":6,\"humour\":8,\"voice\":8,\"fit\":8,\"overall\":7,\"worst\":\"r15 'EVERYWHERE THE SUN SHINES.' is an awkward literal fragment; r16 'THERE'S A 6MM SCREW THERE' is clumsy\"},\"G\":{\"accuracy\":7,\"naturalness\":6,\"humour\":8,\"voice\":7,\"fit\":8,\"overall\":6,\"worst\":\"r15 'EVERYWHERE THE SUN SHINES.' is an awkward fragment, and r16 is clumsy too\"},\"B\":{\"accuracy\":7,\"naturalness\":8,\"humour\":6,\"voice\":8,\"fit\":9,\"overall\":6,\"worst\":\"r2/r5 'LOTTO JACKPOT' drops the 'five' setup for the 'NOT ONE, FIVE!' punchline; r15 adds 'ALL DAY LONG'\"},\"E\":{\"accuracy\":6,\"naturalness\":8,\"humour\":5,\"voice\":6,\"fit\":9,\"overall\":5,\"worst\":\"r16/r17 'GODDAMMIT'/'DAMMIT' are too mild for 'bazmeg', and 'jackpot' kills the 'five' pun\"},\"L\":{\"accuracy\":6,\"naturalness\":8,\"humour\":5,\"voice\":5,\"fit\":9,\"overall\":5,\"worst\":\"r16/r17 'DAMN IT' is too mild for 'bazmeg', and r2/r5 'JACKPOT' loses the 'five' echo\"}},\"ranking\":[\"A\",\"F\",\"J\",\"I\",\"D\",\"K\",\"H\",\"C\",\"G\",\"B\",\"E\",\"L\"],\"notes\":\"The top candidates keep the 'five' in r2/r5 ('all five', 'five-number'), so 'NOT ONE, FIVE!' still pays off. They also keep the swearing at full strength and make r16 clear that he needs the screw. Lower candidates swap in 'jackpot' and lose the pun, soften 'bazmeg', mistranslate r15/r16 too literally or add things, or go over the r16 budget.\"}",
+  "json": {
+    "candidates": {
+      "A": {
+        "accuracy": 9,
+        "naturalness": 9,
+        "humour": 9,
+        "voice": 9,
+        "fit": 9,
+        "overall": 9,
+        "worst": "r0 'HAHHA!' keeps the Hungarian spelling of the laugh; 'HA-HA!' would read better in English"
+      },
+      "F": {
+        "accuracy": 9,
+        "naturalness": 9,
+        "humour": 9,
+        "voice": 8,
+        "fit": 9,
+        "overall": 9,
+        "worst": "r2 'HELLO THERE, SIR!' loses some of the stiff TV politeness of 'Jónapot uram'"
+      },
+      "J": {
+        "accuracy": 8,
+        "naturalness": 8,
+        "humour": 9,
+        "voice": 8,
+        "fit": 9,
+        "overall": 8,
+        "worst": "r13 'TO THE BRIM—THOUSANDS!' feels chopped off, and 'ten-packs' is a doubtful reading of 'tizes' (more likely 10 mm)"
+      },
+      "I": {
+        "accuracy": 8,
+        "naturalness": 8,
+        "humour": 8,
+        "voice": 8,
+        "fit": 9,
+        "overall": 8,
+        "worst": "r16 'WHENEVER THERE'S A 6MM SCREW' is a bit unclear; it should say he needs one"
+      },
+      "D": {
+        "accuracy": 8,
+        "naturalness": 8,
+        "humour": 9,
+        "voice": 8,
+        "fit": 7,
+        "overall": 8,
+        "worst": "r16 'SIX-MILLIMETRE SCREW' makes the line about 50 characters, over the 48-character budget"
+      },
+      "K": {
+        "accuracy": 7,
+        "naturalness": 8,
+        "humour": 7,
+        "voice": 8,
+        "fit": 9,
+        "overall": 7,
+        "worst": "r5 'LOTTO JACKPOT' doesn't match 'FIVE-NUMBER LOTTO' in r2, so the 'five' pun gets weaker"
+      },
+      "H": {
+        "accuracy": 7,
+        "naturalness": 8,
+        "humour": 8,
+        "voice": 8,
+        "fit": 9,
+        "overall": 7,
+        "worst": "r16 'JUST ONE 6MM SCREW' adds a meaning that isn't in the source"
+      },
+      "C": {
+        "accuracy": 7,
+        "naturalness": 6,
+        "humour": 8,
+        "voice": 8,
+        "fit": 8,
+        "overall": 7,
+        "worst": "r15 'EVERYWHERE THE SUN SHINES.' is an awkward literal fragment; r16 'THERE'S A 6MM SCREW THERE' is clumsy"
+      },
+      "G": {
+        "accuracy": 7,
+        "naturalness": 6,
+        "humour": 8,
+        "voice": 7,
+        "fit": 8,
+        "overall": 6,
+        "worst": "r15 'EVERYWHERE THE SUN SHINES.' is an awkward fragment, and r16 is clumsy too"
+      },
+      "B": {
+        "accuracy": 7,
+        "naturalness": 8,
+        "humour": 6,
+        "voice": 8,
+        "fit": 9,
+        "overall": 6,
+        "worst": "r2/r5 'LOTTO JACKPOT' drops the 'five' setup for the 'NOT ONE, FIVE!' punchline; r15 adds 'ALL DAY LONG'"
+      },
+      "E": {
+        "accuracy": 6,
+        "naturalness": 8,
+        "humour": 5,
+        "voice": 6,
+        "fit": 9,
+        "overall": 5,
+        "worst": "r16/r17 'GODDAMMIT'/'DAMMIT' are too mild for 'bazmeg', and 'jackpot' kills the 'five' pun"
+      },
+      "L": {
+        "accuracy": 6,
+        "naturalness": 8,
+        "humour": 5,
+        "voice": 5,
+        "fit": 9,
+        "overall": 5,
+        "worst": "r16/r17 'DAMN IT' is too mild for 'bazmeg', and r2/r5 'JACKPOT' loses the 'five' echo"
+      }
+    },
+    "ranking": [
+      "A",
+      "F",
+      "J",
+      "I",
+      "D",
+      "K",
+      "H",
+      "C",
+      "G",
+      "B",
+      "E",
+      "L"
+    ],
+    "notes": "The top candidates keep the 'five' in r2/r5 ('all five', 'five-number'), so 'NOT ONE, FIVE!' still pays off. They also keep the swearing at full strength and make r16 clear that he needs the screw. Lower candidates swap in 'jackpot' and lose the pun, soften 'bazmeg', mistranslate r15/r16 too literally or add things, or go over the r16 budget."
+  },
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 12465,
+    "cache_read_input_tokens": 11778,
+    "output_tokens": 3583
+  },
+  "costUsd": 0.1737516,
+  "ms": 32155,
+  "at": "2026-10-20T07:33:27.769637127Z"
+}

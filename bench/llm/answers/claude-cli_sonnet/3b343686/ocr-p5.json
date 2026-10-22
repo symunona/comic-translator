@@ -1,0 +1,30 @@
+{
+  "spec": "claude-cli:sonnet",
+  "log": "../bench/llm/prompts/3b3436860d742571c5a540084c396d020cb19fae9191994d00f2338e06c41d2b/llm/ocr-p5.json",
+  "text": "{\"regions\":[{\"n\":16,\"kind\":\"speech\",\"lines\":[\"HOGYAMIKOR OTT EGY HATOS\",\"CSAVAR,\",\"BAZMEG,\"],\"align\":\"right\",\"caps\":true}],\"unboxed\":[]}",
+  "json": {
+    "regions": [
+      {
+        "n": 16,
+        "kind": "speech",
+        "lines": [
+          "HOGYAMIKOR OTT EGY HATOS",
+          "CSAVAR,",
+          "BAZMEG,"
+        ],
+        "align": "right",
+        "caps": true
+      }
+    ],
+    "unboxed": []
+  },
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 3104,
+    "cache_read_input_tokens": 4529,
+    "output_tokens": 321
+  },
+  "costUsd": 0.0160869,
+  "ms": 6554,
+  "at": "2026-10-20T07:08:24.053552626Z"
+}

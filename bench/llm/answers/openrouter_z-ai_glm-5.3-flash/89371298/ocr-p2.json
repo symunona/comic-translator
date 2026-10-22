@@ -1,0 +1,31 @@
+{
+  "spec": "openrouter:z-ai/glm-5.3-flash",
+  "log": "../bench/llm/prompts/893712989801daabc2a3d351e597946b61312aeb54e14e3d28aaf7f63ad64618/llm/ocr-p2.json",
+  "text": "{\"regions\":[{\"n\":1,\"kind\":\"thought\",\"lines\":[\"...and why can I see\",\"Komona through\",\"the window?\"],\"align\":\"center\",\"caps\":false}],\"unboxed\":[]}",
+  "json": {
+    "regions": [
+      {
+        "n": 1,
+        "kind": "thought",
+        "lines": [
+          "...and why can I see",
+          "Komona through",
+          "the window?"
+        ],
+        "align": "center",
+        "caps": false
+      }
+    ],
+    "unboxed": []
+  },
+  "usage": {
+    "input_tokens": 1059,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 43,
+    "reasoning_tokens": 1
+  },
+  "costUsd": 0.000086966,
+  "ms": 978,
+  "at": "2026-10-20T07:19:30.069172163Z"
+}

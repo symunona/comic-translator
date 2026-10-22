@@ -1,0 +1,31 @@
+{
+  "spec": "claude-cli:opus",
+  "log": "../bench/llm/prompts/0c0bd5d58b4b8bd03a1229371408586ca54a0de357a882ded2c9843589bea963/llm/ocr-p0.json",
+  "text": "{\"regions\":[{\"n\":0,\"kind\":\"sign\",\"lines\":[\"ÉΠŐÍPAI KIΠELEZÉS · 06\"],\"align\":\"left\",\"caps\":true}],\"unboxed\":[\"HLOTT!\",\"RITY!\"]}",
+  "json": {
+    "regions": [
+      {
+        "n": 0,
+        "kind": "sign",
+        "lines": [
+          "ÉΠŐÍPAI KIΠELEZÉS · 06"
+        ],
+        "align": "left",
+        "caps": true
+      }
+    ],
+    "unboxed": [
+      "HLOTT!",
+      "RITY!"
+    ]
+  },
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 4291,
+    "cache_read_input_tokens": 3453,
+    "output_tokens": 705
+  },
+  "costUsd": 0.0491346,
+  "ms": 10108,
+  "at": "2026-10-20T07:07:17.477895502Z"
+}

@@ -1,0 +1,92 @@
+{
+  "spec": "claude-cli:haiku",
+  "log": "../bench/llm/prompts/893712989801daabc2a3d351e597946b61312aeb54e14e3d28aaf7f63ad64618/llm/ocr-strip.json",
+  "text": "{\"regions\":[{\"n\":0,\"kind\":\"speech\",\"lines\":[\"Oh shoot, I fell asleep\",\"with the window open,\",\"again...\"],\"align\":\"center\",\"caps\":false},{\"n\":1,\"kind\":\"thought\",\"lines\":[\"...and why can I see\",\"Komona through\",\"the window?\"],\"align\":\"center\",\"caps\":false},{\"n\":2,\"kind\":\"speech\",\"lines\":[\"KOMONA!\"],\"align\":\"center\",\"caps\":true},{\"n\":3,\"kind\":\"speech\",\"lines\":[\"The Potion\",\"Contest!\"],\"align\":\"center\",\"caps\":false},{\"n\":4,\"kind\":\"speech\",\"lines\":[\"I must've...\",\"must've accidentally\",\"fallen asleep!\"],\"align\":\"center\",\"caps\":false},{\"n\":5,\"kind\":\"speech\",\"lines\":[\"...but?\"],\"align\":\"center\",\"caps\":false},{\"n\":6,\"kind\":\"speech\",\"lines\":[\"Where\",\"am I ?!?\"],\"align\":\"center\",\"caps\":false}],\"unboxed\":[\"quack?\"]}",
+  "json": {
+    "regions": [
+      {
+        "n": 0,
+        "kind": "speech",
+        "lines": [
+          "Oh shoot, I fell asleep",
+          "with the window open,",
+          "again..."
+        ],
+        "align": "center",
+        "caps": false
+      },
+      {
+        "n": 1,
+        "kind": "thought",
+        "lines": [
+          "...and why can I see",
+          "Komona through",
+          "the window?"
+        ],
+        "align": "center",
+        "caps": false
+      },
+      {
+        "n": 2,
+        "kind": "speech",
+        "lines": [
+          "KOMONA!"
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 3,
+        "kind": "speech",
+        "lines": [
+          "The Potion",
+          "Contest!"
+        ],
+        "align": "center",
+        "caps": false
+      },
+      {
+        "n": 4,
+        "kind": "speech",
+        "lines": [
+          "I must've...",
+          "must've accidentally",
+          "fallen asleep!"
+        ],
+        "align": "center",
+        "caps": false
+      },
+      {
+        "n": 5,
+        "kind": "speech",
+        "lines": [
+          "...but?"
+        ],
+        "align": "center",
+        "caps": false
+      },
+      {
+        "n": 6,
+        "kind": "speech",
+        "lines": [
+          "Where",
+          "am I ?!?"
+        ],
+        "align": "center",
+        "caps": false
+      }
+    ],
+    "unboxed": [
+      "quack?"
+    ]
+  },
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 6129,
+    "cache_read_input_tokens": 5232,
+    "output_tokens": 2311
+  },
+  "costUsd": 0.0024340200000000003,
+  "ms": 13374,
+  "at": "2026-10-20T07:20:07.630629467Z"
+}

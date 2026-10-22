@@ -1,0 +1,30 @@
+{
+  "spec": "claude-cli:opus",
+  "log": "../bench/llm/prompts/3b3436860d742571c5a540084c396d020cb19fae9191994d00f2338e06c41d2b/llm/ocr-p5.json",
+  "text": "{\"regions\":[{\"n\":16,\"kind\":\"speech\",\"lines\":[\"HOGYAMIKOR OTT EGY HATOS\",\"CSAVAR,\",\"BAZMEG,\"],\"align\":\"right\",\"caps\":true}],\"unboxed\":[]}",
+  "json": {
+    "regions": [
+      {
+        "n": 16,
+        "kind": "speech",
+        "lines": [
+          "HOGYAMIKOR OTT EGY HATOS",
+          "CSAVAR,",
+          "BAZMEG,"
+        ],
+        "align": "right",
+        "caps": true
+      }
+    ],
+    "unboxed": []
+  },
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 3100,
+    "cache_read_input_tokens": 4525,
+    "output_tokens": 475
+  },
+  "costUsd": 0.035221,
+  "ms": 8846,
+  "at": "2026-10-20T07:08:52.980725196Z"
+}

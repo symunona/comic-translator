@@ -34,6 +34,9 @@ type Pipeline struct {
 	Store    store.Store
 	Detector *detect.Detector
 	LLM      llm.LLM
+	// OCRPerPanel sends one OCR request per panel. Default is one request for
+	// the whole strip: as accurate in the bench (docs/ocr-bench.md) and cheaper.
+	OCRPerPanel bool
 
 	mu    sync.Mutex
 	locks map[string]*sync.Mutex
@@ -58,7 +61,7 @@ func (p *Pipeline) lock(key string) func() {
 func ImageURL(id, name string) string { return fmt.Sprintf("/api/strips/%s/image/%s", id, name) }
 
 // Ingest stores the upload under its content hash. Existing strips are left untouched.
-func (p *Pipeline) Ingest(data []byte, name string) (string, bool, error) {
+func (p *Pipeline) Ingest(data []byte, name, srcLang string) (string, bool, error) {
 	sum := sha256.Sum256(data)
 	id := hex.EncodeToString(sum[:])
 	defer p.lock(id)()
@@ -83,7 +86,7 @@ func (p *Pipeline) Ingest(data []byte, name string) (string, bool, error) {
 	}
 	meta := store.Meta{
 		ID: id, OrigName: filepath.Base(name), CreatedAt: time.Now().UTC(),
-		Width: img.Bounds().Dx(), Height: img.Bounds().Dy(), Mime: mime,
+		Width: img.Bounds().Dx(), Height: img.Bounds().Dy(), Mime: mime, SrcLang: srcLang,
 	}
 	return id, false, p.Store.SaveMeta(meta)
 }
@@ -191,7 +194,9 @@ func (r *runState) runStages(ctx context.Context, stages []stage, dirty *bool) e
 		if !s.streams {
 			s.publish()
 		}
-		r.stage(s.name, StatusDone, time.Since(start).Round(time.Millisecond).String(), nil)
+		took := time.Since(start)
+		r.p.recordStat(r.id, s.name, StageStat{Ms: took.Milliseconds(), Where: "server", Counts: r.counts(s.name)})
+		r.stage(s.name, StatusDone, took.Round(time.Millisecond).String(), nil)
 	}
 	return nil
 }

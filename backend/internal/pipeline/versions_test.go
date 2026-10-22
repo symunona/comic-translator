@@ -78,3 +78,30 @@ func TestSaveEditForksLLMVersion(t *testing.T) {
 		t.Fatal("deleting the only version must fail")
 	}
 }
+
+func TestFirstLLMVersionIsV1(t *testing.T) {
+	p, id := newTestPipeline(t)
+	r := &runState{p: p, id: id, lang: "en"}
+	if _, err := p.addVersion(id, "en", r.llmVersion("", map[string]TrRegion{"r0": {Text: "A"}})); err != nil {
+		t.Fatal(err)
+	}
+	if err := p.Store.SaveTranslation(id, "en", vReview, Translation{Lang: "en", Regions: map[string]TrRegion{"r0": {Text: "A"}}}); err != nil {
+		t.Fatal(err)
+	}
+	vs, _ := p.Versions(id, "en")
+	if len(vs.Versions) != 1 || vs.Active != "v1" {
+		t.Fatalf("want one version v1, got %+v", vs)
+	}
+}
+
+func TestOCRReplyApply(t *testing.T) {
+	yes := true
+	reply := ocrReply{Regions: []ocrBoxReply{{N: 2, Kind: "speech", Lines: []string{" HELLO ", "THERE"}, Align: "center", Caps: &yes}}}
+	got := reply.apply(Region{ID: "r2", Order: 2})
+	if got.Kind != "speech" || got.Source == nil || got.Source.Text != "HELLO THERE" || !got.Replace {
+		t.Fatalf("apply = %+v %+v", got, got.Source)
+	}
+	if miss := reply.apply(Region{ID: "r3", Order: 3}); miss.Kind != "none" || miss.Source != nil || miss.Replace {
+		t.Fatalf("skipped box = %+v", miss)
+	}
+}

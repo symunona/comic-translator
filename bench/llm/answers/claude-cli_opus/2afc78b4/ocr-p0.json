@@ -1,0 +1,29 @@
+{
+  "spec": "claude-cli:opus",
+  "log": "../bench/llm/prompts/2afc78b45293acd677ffcba91f53fea50838d406d2dd965846e83408657e58c7/llm/ocr-p0.json",
+  "text": "{\"regions\":[{\"n\":0,\"kind\":\"sfx\",\"lines\":[\"UNKA!\",\"E!\"],\"align\":\"center\",\"caps\":true}],\"unboxed\":[]}",
+  "json": {
+    "regions": [
+      {
+        "n": 0,
+        "kind": "sfx",
+        "lines": [
+          "UNKA!",
+          "E!"
+        ],
+        "align": "center",
+        "caps": true
+      }
+    ],
+    "unboxed": []
+  },
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 3036,
+    "cache_read_input_tokens": 4525,
+    "output_tokens": 524
+  },
+  "costUsd": 0.035689,
+  "ms": 7599,
+  "at": "2026-10-20T07:08:00.238505592Z"
+}

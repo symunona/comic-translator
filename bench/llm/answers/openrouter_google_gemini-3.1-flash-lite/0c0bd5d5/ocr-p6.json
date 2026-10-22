@@ -1,0 +1,37 @@
+{
+  "spec": "openrouter:google/gemini-3.1-flash-lite",
+  "log": "../bench/llm/prompts/0c0bd5d58b4b8bd03a1229371408586ca54a0de357a882ded2c9843589bea963/llm/ocr-p6.json",
+  "text": "{\"regions\":[{\"n\":19,\"kind\":\"speech\",\"lines\":[\"AAAAAAAgh....\"],\"align\":\"left\",\"caps\":true},{\"n\":20,\"kind\":\"sign\",\"lines\":[\"7722·683/FELVESZEM\"],\"align\":\"left\",\"caps\":true}],\"unboxed\":[]}",
+  "json": {
+    "regions": [
+      {
+        "n": 19,
+        "kind": "speech",
+        "lines": [
+          "AAAAAAAgh...."
+        ],
+        "align": "left",
+        "caps": true
+      },
+      {
+        "n": 20,
+        "kind": "sign",
+        "lines": [
+          "7722·683/FELVESZEM"
+        ],
+        "align": "left",
+        "caps": true
+      }
+    ],
+    "unboxed": []
+  },
+  "usage": {
+    "input_tokens": 4238,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 65
+  },
+  "costUsd": 0.001157,
+  "ms": 1376,
+  "at": "2026-10-20T07:07:31.414849136Z"
+}

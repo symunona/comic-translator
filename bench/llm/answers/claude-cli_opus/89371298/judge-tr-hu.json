@@ -1,0 +1,161 @@
+{
+  "spec": "claude-cli:opus",
+  "log": "../bench/llm/judge/893712989801daabc2a3d351e597946b61312aeb54e14e3d28aaf7f63ad64618/llm/judge-tr-hu.json",
+  "text": "{\"candidates\":{\"G\":{\"accuracy\":9,\"naturalness\":9,\"humour\":9,\"voice\":9,\"fit\":10,\"overall\":9,\"worst\":\"r0 puts 'megint' at the start, so the trailing 'again...' beat is lost, though it reads naturally\"},\"M\":{\"accuracy\":9,\"naturalness\":9,\"humour\":9,\"voice\":9,\"fit\":10,\"overall\":9,\"worst\":\"r0 puts 'megint' at the start, so the trailing 'again...' beat is lost (same text as G)\"},\"N\":{\"accuracy\":9,\"naturalness\":8,\"humour\":9,\"voice\":9,\"fit\":10,\"overall\":9,\"worst\":\"r0 'Jaj, a fenébe' is a little heavier than 'shoot', but the trailing 'megint...' keeps the joke\"},\"B\":{\"accuracy\":9,\"naturalness\":8,\"humour\":9,\"voice\":9,\"fit\":10,\"overall\":8,\"worst\":\"r0 'Jaj, a fenébe' is a little heavy, and r4 'aludtam el' is slightly less punchy\"},\"J\":{\"accuracy\":9,\"naturalness\":8,\"humour\":8,\"voice\":8,\"fit\":10,\"overall\":8,\"worst\":\"r0 'a nyitott ablaknál' has an unneeded article, and r6 drops the deliberate space before '?!?'\"},\"F\":{\"accuracy\":8,\"naturalness\":9,\"humour\":8,\"voice\":8,\"fit\":10,\"overall\":8,\"worst\":\"r3 'bájitalverseny' is lowercase, so it loses the proper event name, and r6 drops the styled space\"},\"H\":{\"accuracy\":9,\"naturalness\":9,\"humour\":8,\"voice\":8,\"fit\":10,\"overall\":8,\"worst\":\"r6 drops the deliberate space before '?!?' and uses mixed ellipsis characters (…)\"},\"A\":{\"accuracy\":8,\"naturalness\":7,\"humour\":8,\"voice\":8,\"fit\":10,\"overall\":7,\"worst\":\"r4 'Biztos, hogy... biztos, hogy' is clunky, and r6 adds 'én'\"},\"C\":{\"accuracy\":8,\"naturalness\":9,\"humour\":8,\"voice\":8,\"fit\":10,\"overall\":8,\"worst\":\"r0 'Jaj' alone weakens the 'Oh shoot' grumble\"},\"D\":{\"accuracy\":8,\"naturalness\":9,\"humour\":8,\"voice\":8,\"fit\":10,\"overall\":8,\"worst\":\"r0 'Jaj' alone weakens the 'Oh shoot' grumble (same text as C)\"},\"E\":{\"accuracy\":7,\"naturalness\":7,\"humour\":8,\"voice\":8,\"fit\":10,\"overall\":7,\"worst\":\"r3 'Főzetverseny' is not the usual term; Hungarian uses 'bájital'\"},\"I\":{\"accuracy\":7,\"naturalness\":6,\"humour\":8,\"voice\":8,\"fit\":10,\"overall\":6,\"worst\":\"r1 'a Komonát' wrongly puts an article before the city name\"},\"L\":{\"accuracy\":6,\"naturalness\":6,\"humour\":8,\"voice\":7,\"fit\":10,\"overall\":6,\"worst\":\"r1 'a Komonát' wrongly puts an article before the city name, and r4 adds 'Hát'\"},\"K\":{\"accuracy\":7,\"naturalness\":5,\"humour\":7,\"voice\":7,\"fit\":9,\"overall\":5,\"worst\":\"r3 'A Főzet- verseny' has a stray hyphen and space and uses an odd term\"}},\"ranking\":[\"G\",\"M\",\"N\",\"B\",\"C\",\"D\",\"F\",\"J\",\"H\",\"A\",\"E\",\"I\",\"L\",\"K\"],\"notes\":\"The best candidates (G/M) render 'Oh shoot' with the mild, family-friendly 'A csudába', use the standard term 'Bájitalverseny', write a clean stutter in r4 and keep the styled ' ?!?'. Weaker ones lose points for adding an article to Komona (I/L), using the non-standard 'Főzetverseny' (E/K, and K also has a broken hyphen), padding lines (L 'Hát', A 'én', 'Biztos, hogy'), or dropping the deliberate spacing. None of the candidates goes over a bubble's space budget.\"}",
+  "json": {
+    "candidates": {
+      "G": {
+        "accuracy": 9,
+        "naturalness": 9,
+        "humour": 9,
+        "voice": 9,
+        "fit": 10,
+        "overall": 9,
+        "worst": "r0 puts 'megint' at the start, so the trailing 'again...' beat is lost, though it reads naturally"
+      },
+      "M": {
+        "accuracy": 9,
+        "naturalness": 9,
+        "humour": 9,
+        "voice": 9,
+        "fit": 10,
+        "overall": 9,
+        "worst": "r0 puts 'megint' at the start, so the trailing 'again...' beat is lost (same text as G)"
+      },
+      "N": {
+        "accuracy": 9,
+        "naturalness": 8,
+        "humour": 9,
+        "voice": 9,
+        "fit": 10,
+        "overall": 9,
+        "worst": "r0 'Jaj, a fenébe' is a little heavier than 'shoot', but the trailing 'megint...' keeps the joke"
+      },
+      "B": {
+        "accuracy": 9,
+        "naturalness": 8,
+        "humour": 9,
+        "voice": 9,
+        "fit": 10,
+        "overall": 8,
+        "worst": "r0 'Jaj, a fenébe' is a little heavy, and r4 'aludtam el' is slightly less punchy"
+      },
+      "J": {
+        "accuracy": 9,
+        "naturalness": 8,
+        "humour": 8,
+        "voice": 8,
+        "fit": 10,
+        "overall": 8,
+        "worst": "r0 'a nyitott ablaknál' has an unneeded article, and r6 drops the deliberate space before '?!?'"
+      },
+      "F": {
+        "accuracy": 8,
+        "naturalness": 9,
+        "humour": 8,
+        "voice": 8,
+        "fit": 10,
+        "overall": 8,
+        "worst": "r3 'bájitalverseny' is lowercase, so it loses the proper event name, and r6 drops the styled space"
+      },
+      "H": {
+        "accuracy": 9,
+        "naturalness": 9,
+        "humour": 8,
+        "voice": 8,
+        "fit": 10,
+        "overall": 8,
+        "worst": "r6 drops the deliberate space before '?!?' and uses mixed ellipsis characters (…)"
+      },
+      "A": {
+        "accuracy": 8,
+        "naturalness": 7,
+        "humour": 8,
+        "voice": 8,
+        "fit": 10,
+        "overall": 7,
+        "worst": "r4 'Biztos, hogy... biztos, hogy' is clunky, and r6 adds 'én'"
+      },
+      "C": {
+        "accuracy": 8,
+        "naturalness": 9,
+        "humour": 8,
+        "voice": 8,
+        "fit": 10,
+        "overall": 8,
+        "worst": "r0 'Jaj' alone weakens the 'Oh shoot' grumble"
+      },
+      "D": {
+        "accuracy": 8,
+        "naturalness": 9,
+        "humour": 8,
+        "voice": 8,
+        "fit": 10,
+        "overall": 8,
+        "worst": "r0 'Jaj' alone weakens the 'Oh shoot' grumble (same text as C)"
+      },
+      "E": {
+        "accuracy": 7,
+        "naturalness": 7,
+        "humour": 8,
+        "voice": 8,
+        "fit": 10,
+        "overall": 7,
+        "worst": "r3 'Főzetverseny' is not the usual term; Hungarian uses 'bájital'"
+      },
+      "I": {
+        "accuracy": 7,
+        "naturalness": 6,
+        "humour": 8,
+        "voice": 8,
+        "fit": 10,
+        "overall": 6,
+        "worst": "r1 'a Komonát' wrongly puts an article before the city name"
+      },
+      "L": {
+        "accuracy": 6,
+        "naturalness": 6,
+        "humour": 8,
+        "voice": 7,
+        "fit": 10,
+        "overall": 6,
+        "worst": "r1 'a Komonát' wrongly puts an article before the city name, and r4 adds 'Hát'"
+      },
+      "K": {
+        "accuracy": 7,
+        "naturalness": 5,
+        "humour": 7,
+        "voice": 7,
+        "fit": 9,
+        "overall": 5,
+        "worst": "r3 'A Főzet- verseny' has a stray hyphen and space and uses an odd term"
+      }
+    },
+    "ranking": [
+      "G",
+      "M",
+      "N",
+      "B",
+      "C",
+      "D",
+      "F",
+      "J",
+      "H",
+      "A",
+      "E",
+      "I",
+      "L",
+      "K"
+    ],
+    "notes": "The best candidates (G/M) render 'Oh shoot' with the mild, family-friendly 'A csudába', use the standard term 'Bájitalverseny', write a clean stutter in r4 and keep the styled ' ?!?'. Weaker ones lose points for adding an article to Komona (I/L), using the non-standard 'Főzetverseny' (E/K, and K also has a broken hyphen), padding lines (L 'Hát', A 'én', 'Biztos, hogy'), or dropping the deliberate spacing. None of the candidates goes over a bubble's space budget."
+  },
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 9892,
+    "cache_read_input_tokens": 6656,
+    "output_tokens": 2769
+  },
+  "costUsd": 0.13586320000000002,
+  "ms": 29270,
+  "at": "2026-10-20T07:40:28.156556437Z"
+}

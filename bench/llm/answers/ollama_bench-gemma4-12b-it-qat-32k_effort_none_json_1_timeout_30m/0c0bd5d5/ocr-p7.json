@@ -1,0 +1,45 @@
+{
+  "spec": "ollama:bench-gemma4-12b-it-qat-32k?effort=none\u0026json=1\u0026timeout=30m",
+  "log": "../bench/llm/prompts/0c0bd5d58b4b8bd03a1229371408586ca54a0de357a882ded2c9843589bea963/llm/ocr-p7.json",
+  "text": "{\"regions\":[{\"n\":21,\"kind\":\"speech\",\"lines\":[\"ITT EGY PLÉD, BAZME.\",\"ÉN/JELENTEké MÁR\"],\"align\":\"center\",\"caps\":true},{\"n\":22,\"kind\":\"sign\",\"lines\":[\"77-22-683 / FEVESZEM\"],\"align\":\"left\",\"caps\":true},{\"n\":23,\"kind\":\"none\",\"lines\":[],\"align\":\"left\",\"caps\":false}],\"unboxed\":[]}",
+  "json": {
+    "regions": [
+      {
+        "n": 21,
+        "kind": "speech",
+        "lines": [
+          "ITT EGY PLÉD, BAZME.",
+          "ÉN/JELENTEké MÁR"
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 22,
+        "kind": "sign",
+        "lines": [
+          "77-22-683 / FEVESZEM"
+        ],
+        "align": "left",
+        "caps": true
+      },
+      {
+        "n": 23,
+        "kind": "none",
+        "lines": [],
+        "align": "left",
+        "caps": false
+      }
+    ],
+    "unboxed": []
+  },
+  "usage": {
+    "input_tokens": 1325,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 105
+  },
+  "costUsd": 0,
+  "ms": 134967,
+  "at": "2026-10-20T07:12:36.968419148Z"
+}

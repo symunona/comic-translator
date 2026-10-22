@@ -1,0 +1,40 @@
+{
+  "spec": "claude-cli:opus",
+  "log": "../bench/llm/prompts/6cbd56cdd933343ad87de8c3e3dd772f7f771dd3f4786507d9786c71aad26a05/llm/ocr-p3.json",
+  "text": "{\"regions\":[{\"n\":6,\"kind\":\"speech\",\"lines\":[\"ÁÁÁ!!! BASSZAMEG\",\"EGY KAUKÁZUSI FÉRFI\",\"SZÁRÍTOTT MÚMIÁJA,\",\"BAZMEG!!!\"],\"align\":\"center\",\"caps\":true},{\"n\":7,\"kind\":\"speech\",\"lines\":[\"TELEKVITA\"],\"align\":\"center\",\"caps\":true}],\"unboxed\":[]}",
+  "json": {
+    "regions": [
+      {
+        "n": 6,
+        "kind": "speech",
+        "lines": [
+          "ÁÁÁ!!! BASSZAMEG",
+          "EGY KAUKÁZUSI FÉRFI",
+          "SZÁRÍTOTT MÚMIÁJA,",
+          "BAZMEG!!!"
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 7,
+        "kind": "speech",
+        "lines": [
+          "TELEKVITA"
+        ],
+        "align": "center",
+        "caps": true
+      }
+    ],
+    "unboxed": []
+  },
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 3596,
+    "cache_read_input_tokens": 4653,
+    "output_tokens": 666
+  },
+  "costUsd": 0.0430346,
+  "ms": 9044,
+  "at": "2026-10-20T07:09:47.687424677Z"
+}

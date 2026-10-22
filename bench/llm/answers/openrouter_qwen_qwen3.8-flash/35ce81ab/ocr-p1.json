@@ -1,0 +1,32 @@
+{
+  "spec": "openrouter:qwen/qwen3.8-flash",
+  "log": "../bench/llm/prompts/35ce81ab353eaf542a2a53f673394ba425f4a3539a4b5f05a37172d09189cae8/llm/ocr-p1.json",
+  "text": "{\"regions\":[{\"n\":0,\"kind\":\"speech\",\"lines\":[\"Carrot!\",\"You're so cute to have\",\"thought of bringing me to\",\"the Contest!\"],\"align\":\"center\",\"caps\":false}],\"unboxed\":[]}",
+  "json": {
+    "regions": [
+      {
+        "n": 0,
+        "kind": "speech",
+        "lines": [
+          "Carrot!",
+          "You're so cute to have",
+          "thought of bringing me to",
+          "the Contest!"
+        ],
+        "align": "center",
+        "caps": false
+      }
+    ],
+    "unboxed": []
+  },
+  "usage": {
+    "input_tokens": 1101,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 144,
+    "reasoning_tokens": 93
+  },
+  "costUsd": 0.00023283,
+  "ms": 7619,
+  "at": "2026-10-20T07:19:50.343293057Z"
+}

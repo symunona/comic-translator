@@ -1,0 +1,31 @@
+{
+  "spec": "openrouter:qwen/qwen3.8-flash",
+  "log": "../bench/llm/prompts/3b3436860d742571c5a540084c396d020cb19fae9191994d00f2338e06c41d2b/llm/ocr-p5.json",
+  "text": "{\"regions\":[{\"n\":16,\"kind\":\"speech\",\"lines\":[\"HOGYAMIKOR OTT EGY HATOS\",\"CSAVAR,\",\"BAZMEGI,\"],\"align\":\"right\",\"caps\":true}],\"unboxed\":[]}",
+  "json": {
+    "regions": [
+      {
+        "n": 16,
+        "kind": "speech",
+        "lines": [
+          "HOGYAMIKOR OTT EGY HATOS",
+          "CSAVAR,",
+          "BAZMEGI,"
+        ],
+        "align": "right",
+        "caps": true
+      }
+    ],
+    "unboxed": []
+  },
+  "usage": {
+    "input_tokens": 1309,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 682,
+    "reasoning_tokens": 627
+  },
+  "costUsd": 0.00051689,
+  "ms": 12107,
+  "at": "2026-10-20T07:14:37.158562869Z"
+}

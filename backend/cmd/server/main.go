@@ -64,7 +64,7 @@ func immutable(h http.Handler) http.Handler {
 func main() {
 	addr := flag.String("addr", "127.0.0.1:4720", "listen address")
 	dataDir := flag.String("data", defaultData, "data directory")
-	model := flag.String("model", "opus", "claude CLI model when env LLM is unset")
+	model := flag.String("model", "sonnet", "claude CLI model when env LLM is unset")
 	detModel := flag.String("detector", defaultModel, "detector onnx path; empty = detect runs in the browser")
 	claudeBin := flag.String("claude", "claude", "claude CLI binary")
 	concurrency := flag.Int("llm-concurrency", 4, "max concurrent LLM calls")
@@ -72,6 +72,7 @@ func main() {
 	static := flag.String("static", "", "serve built frontend from this dir (SPA fallback to index.html)")
 	models := flag.String("models", "", "serve browser models (onnx) from this dir at /models/")
 	isolate := flag.Bool("isolate", false, "send COOP/COEP headers (multi-threaded WASM in the browser)")
+	ocrPerPanel := flag.Bool("ocr-per-panel", false, "one OCR request per panel instead of one for the whole strip")
 	debug := flag.Bool("debug", os.Getenv("DEBUG") == "1", "UI shows where each step ran, models, raw $ and tokens (env DEBUG=1)")
 	flag.Parse()
 
@@ -104,6 +105,7 @@ func main() {
 	defer stop()
 
 	p := pipeline.New(st, det, lm)
+	p.OCRPerPanel = *ocrPerPanel
 	var handler http.Handler = (&api.Server{
 		P: p, Jobs: pipeline.NewJobs(ctx, p), ClientDetect: det == nil,
 		Debug: *debug, DetectorModel: detName, LLMStages: lm.Specs(),

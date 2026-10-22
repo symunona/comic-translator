@@ -1,0 +1,41 @@
+{
+  "spec": "openrouter:z-ai/glm-5.3-flash",
+  "log": "../bench/llm/prompts/6cbd56cdd933343ad87de8c3e3dd772f7f771dd3f4786507d9786c71aad26a05/llm/ocr-p3.json",
+  "text": "{\"regions\":[{\"n\":6,\"kind\":\"speech\",\"lines\":[\"ÁÁÁ!!!BASSZAMEG\",\"EGY KAUKÁZUSI FÉRFI,\",\"SZÁRÍTOTT MUMIAJA,\",\"BAZMEG!!!\"],\"align\":\"center\",\"caps\":true},{\"n\":7,\"kind\":\"speech\",\"lines\":[\"TELEKVITA\"],\"align\":\"center\",\"caps\":true}],\"unboxed\":[]}",
+  "json": {
+    "regions": [
+      {
+        "n": 6,
+        "kind": "speech",
+        "lines": [
+          "ÁÁÁ!!!BASSZAMEG",
+          "EGY KAUKÁZUSI FÉRFI,",
+          "SZÁRÍTOTT MUMIAJA,",
+          "BAZMEG!!!"
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 7,
+        "kind": "speech",
+        "lines": [
+          "TELEKVITA"
+        ],
+        "align": "center",
+        "caps": true
+      }
+    ],
+    "unboxed": []
+  },
+  "usage": {
+    "input_tokens": 1582,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2336,
+    "reasoning_tokens": 2244
+  },
+  "costUsd": 0.001096208,
+  "ms": 11272,
+  "at": "2026-10-20T07:09:19.342639327Z"
+}

@@ -1,13 +1,14 @@
 #!/usr/bin/env bash
 # Build on devbox, ship to server, restart the user service.
+# Detect runs in the browser (onnxruntime-web); the server serves the model and runs no inference.
 set -euo pipefail
 
 host=${DEPLOY_HOST:-server}
 remote=comic-translator
 root="$(cd "$(dirname "$0")/.." && pwd)"
-ort_ver=1.29.0
-ort_url="https://github.com/microsoft/onnxruntime/releases/download/v${ort_ver}/onnxruntime-linux-x64-${ort_ver}.tgz"
-det_url="https://huggingface.co/ogkalu/comic-text-and-bubble-detector/resolve/main/detector.onnx"
+model=detector-v4-s_int8.onnx
+model_url="https://huggingface.co/ogkalu/comic-text-and-bubble-detector/resolve/main/$model"
+model_sha=5fe9e4f576e49d4e7e8b0e029d6d3cdc252abd4694113e1cae120e62c931ea79
 max_glibc=2.39
 
 export TMPDIR="$root/.tmp"
@@ -26,17 +27,14 @@ if [ "$(printf '%s\n%s\n' "$need" "$max_glibc" | sort -V | tail -1)" != "$max_gl
 fi
 
 echo "== prepare $host"
-ssh "$host" bash -s -- "$remote" "$ort_ver" "$ort_url" "$det_url" <<'REMOTE'
+ssh "$host" bash -s -- "$remote" "$model" "$model_url" "$model_sha" <<'REMOTE'
 set -euo pipefail
-dir=$HOME/$1; ort_ver=$2; ort_url=$3; det_url=$4
-mkdir -p "$dir"/{bin,web,data,tmp,vendor}
-if [ ! -f "$dir/vendor/onnxruntime/lib/libonnxruntime.so" ]; then
-  curl -fsSL "$ort_url" | tar -xz -C "$dir/vendor"
-  ln -sfn "onnxruntime-linux-x64-$ort_ver" "$dir/vendor/onnxruntime"
-fi
-if [ ! -s "$dir/vendor/detector.onnx" ]; then
-  curl -fsSL -o "$dir/vendor/detector.onnx.part" "$det_url"
-  mv "$dir/vendor/detector.onnx.part" "$dir/vendor/detector.onnx"
+dir=$HOME/$1; model=$2; url=$3; sha=$4
+mkdir -p "$dir"/{bin,web,data,tmp,vendor/models}
+if ! echo "$sha  $dir/vendor/models/$model" | sha256sum -c --quiet >/dev/null 2>&1; then
+  curl -fsSL -o "$dir/vendor/models/$model.part" "$url"
+  echo "$sha  $dir/vendor/models/$model.part" | sha256sum -c --quiet
+  mv "$dir/vendor/models/$model.part" "$dir/vendor/models/$model"
 fi
 command -v claude >/dev/null || { echo "claude CLI missing on $(hostname)" >&2; exit 1; }
 REMOTE

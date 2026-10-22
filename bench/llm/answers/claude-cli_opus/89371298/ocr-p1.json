@@ -1,0 +1,30 @@
+{
+  "spec": "claude-cli:opus",
+  "log": "../bench/llm/prompts/893712989801daabc2a3d351e597946b61312aeb54e14e3d28aaf7f63ad64618/llm/ocr-p1.json",
+  "text": "{\"regions\":[{\"n\":0,\"kind\":\"speech\",\"lines\":[\"Oh shoot, I fell asleep\",\"with the window open,\",\"again...\"],\"align\":\"center\",\"caps\":false}],\"unboxed\":[]}",
+  "json": {
+    "regions": [
+      {
+        "n": 0,
+        "kind": "speech",
+        "lines": [
+          "Oh shoot, I fell asleep",
+          "with the window open,",
+          "again..."
+        ],
+        "align": "center",
+        "caps": false
+      }
+    ],
+    "unboxed": []
+  },
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 2557,
+    "cache_read_input_tokens": 4306,
+    "output_tokens": 309
+  },
+  "costUsd": 0.0275132,
+  "ms": 8706,
+  "at": "2026-10-20T07:19:47.65604378Z"
+}

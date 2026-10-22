@@ -1,0 +1,69 @@
+{
+  "spec": "openrouter:google/gemini-3.8-flash",
+  "log": "../bench/llm/judge/3b3436860d742571c5a540084c396d020cb19fae9191994d00f2338e06c41d2b/llm/judge-scene.json",
+  "text": "{\"candidates\":{\"A\":{\"speakers\":1,\"jokes\":1,\"notes\":1,\"overall\":1,\"errors\":\"Empty submission.\"},\"B\":{\"speakers\":10,\"jokes\":10,\"notes\":10,\"overall\":10,\"errors\":\"\"},\"C\":{\"speakers\":10,\"jokes\":8,\"notes\":9,\"overall\":8.5,\"errors\":\"Notes state he demands five size-6 screws/bolts in r17, but he actually wants five 10 mm wrenches within reach whenever he encounters a size-6 bolt.\"},\"D\":{\"speakers\":5,\"jokes\":4,\"notes\":4,\"overall\":4,\"errors\":\"Wrong speakers for r13 and r15 (attributed to interviewer instead of passerby). Claims not to know what PINÁK means. Misinterprets the mechanic punchline as an unreal bolt fantasy.\"},\"E\":{\"speakers\":10,\"jokes\":10,\"notes\":10,\"overall\":9.8,\"errors\":\"\"},\"F\":{\"speakers\":10,\"jokes\":7,\"notes\":7,\"overall\":7.5,\"errors\":\"Summary and notes misread 'tizes villáskulccsal' as '10-packs of forks' and invents an intentional pun between 'villa' (mansion) and 'villáskulcs'.\"}},\"ranking\":[\"B\",\"E\",\"C\",\"F\",\"D\",\"A\"],\"notes\":\"B and E are both exceptional and correctly identify the core mechanic joke: an M6 bolt ('hatos csavar') takes a 10 mm open-end wrench ('tizes villáskulcs'), the exact tool notorious worldwide for always being lost. B has slightly richer linguistic detail and panel-by-panel breakdown.\"}",
+  "json": {
+    "candidates": {
+      "A": {
+        "speakers": 1,
+        "jokes": 1,
+        "notes": 1,
+        "overall": 1,
+        "errors": "Empty submission."
+      },
+      "B": {
+        "speakers": 10,
+        "jokes": 10,
+        "notes": 10,
+        "overall": 10,
+        "errors": ""
+      },
+      "C": {
+        "speakers": 10,
+        "jokes": 8,
+        "notes": 9,
+        "overall": 8.5,
+        "errors": "Notes state he demands five size-6 screws/bolts in r17, but he actually wants five 10 mm wrenches within reach whenever he encounters a size-6 bolt."
+      },
+      "D": {
+        "speakers": 5,
+        "jokes": 4,
+        "notes": 4,
+        "overall": 4,
+        "errors": "Wrong speakers for r13 and r15 (attributed to interviewer instead of passerby). Claims not to know what PINÁK means. Misinterprets the mechanic punchline as an unreal bolt fantasy."
+      },
+      "E": {
+        "speakers": 10,
+        "jokes": 10,
+        "notes": 10,
+        "overall": 9.8,
+        "errors": ""
+      },
+      "F": {
+        "speakers": 10,
+        "jokes": 7,
+        "notes": 7,
+        "overall": 7.5,
+        "errors": "Summary and notes misread 'tizes villáskulccsal' as '10-packs of forks' and invents an intentional pun between 'villa' (mansion) and 'villáskulcs'."
+      }
+    },
+    "ranking": [
+      "B",
+      "E",
+      "C",
+      "F",
+      "D",
+      "A"
+    ],
+    "notes": "B and E are both exceptional and correctly identify the core mechanic joke: an M6 bolt ('hatos csavar') takes a 10 mm open-end wrench ('tizes villáskulcs'), the exact tool notorious worldwide for always being lost. B has slightly richer linguistic detail and panel-by-panel breakdown."
+  },
+  "usage": {
+    "input_tokens": 14815,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 356
+  },
+  "costUsd": 0.01244625,
+  "ms": 5589,
+  "at": "2026-10-20T07:35:02.867861795Z"
+}

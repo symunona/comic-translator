@@ -1,0 +1,39 @@
+{
+  "spec": "openrouter:qwen/qwen3.8-flash",
+  "log": "../bench/llm/prompts/3b3436860d742571c5a540084c396d020cb19fae9191994d00f2338e06c41d2b/llm/ocr-p0.json",
+  "text": "{\"regions\":[{\"n\":0,\"kind\":\"speech\",\"lines\":[\"HÁHHA! JÓESTÉT!\",\"MEGVÁRJUK AZ ELSŐ RANDOMTIBORT,\",\"ÉS FELTESSZÜK NEKI\",\"A KÉRDÉST!\"],\"align\":\"left\",\"caps\":true},{\"n\":1,\"kind\":\"none\",\"lines\":[],\"align\":\"left\",\"caps\":true}],\"unboxed\":[]}",
+  "json": {
+    "regions": [
+      {
+        "n": 0,
+        "kind": "speech",
+        "lines": [
+          "HÁHHA! JÓESTÉT!",
+          "MEGVÁRJUK AZ ELSŐ RANDOMTIBORT,",
+          "ÉS FELTESSZÜK NEKI",
+          "A KÉRDÉST!"
+        ],
+        "align": "left",
+        "caps": true
+      },
+      {
+        "n": 1,
+        "kind": "none",
+        "lines": [],
+        "align": "left",
+        "caps": true
+      }
+    ],
+    "unboxed": []
+  },
+  "usage": {
+    "input_tokens": 1309,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 1649,
+    "reasoning_tokens": 1556
+  },
+  "costUsd": 0.00097138,
+  "ms": 22538,
+  "at": "2026-10-20T07:13:04.931008801Z"
+}

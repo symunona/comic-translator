@@ -1,0 +1,77 @@
+{
+  "spec": "claude-cli:opus",
+  "log": "../bench/llm/judge/0c0bd5d58b4b8bd03a1229371408586ca54a0de357a882ded2c9843589bea963/llm/judge-scene.json",
+  "text": "{\"candidates\":{\"D\":{\"speakers\":10,\"jokes\":10,\"notes\":9,\"overall\":10,\"errors\":\"No speaker errors; r6 is correctly treated as the end of r5's bubble. Minor uncertainty: reading 'KITTELEZÉS' (r0) as 'caulking' is speculative, since it could be a garbled 'KIVITELEZÉS'.\"},\"A\":{\"speakers\":10,\"jokes\":8,\"notes\":7,\"overall\":8,\"errors\":\"Speakers are correct, including r6. The 'FELVESZEM' note (r3 etc.) says it mocks tradesmen who never answer the phone. That is invented, and it misses the 'pick up a person' pun. The summary handles the r13 bags as groceries, which is fine. Other notes are good.\"},\"C\":{\"speakers\":9,\"jokes\":7,\"notes\":7,\"overall\":7,\"errors\":\"r6 is labelled a sign, but it continues the injured man's r5 speech. The summary says the driver groans, which contradicts r19 = injured man. 'Junk-collector truck with mattresses' is invented. It calls the r13 bags a 'weak excuse' and misses that the bags were his food. The pick-up pun is explained well.\"},\"F\":{\"speakers\":9,\"jokes\":7,\"notes\":5,\"overall\":6,\"errors\":\"r6 is labelled a sign, and the note invents that the injured man put the sign up. It invents a victim in a suit with a briefcase in p0. It falsely claims Gubacs Teréz út is a real street. It treats punctuation drift as a running gag. The r13 groceries explanation is correct.\"},\"B\":{\"speakers\":9,\"jokes\":3,\"notes\":3,\"overall\":3,\"errors\":\"r6 is labelled a sign. It misreads r13 as the bags hitting him. It attributes r21 (the blanket line) to the injured man in the notes and calls him a homeless person settling in. It misses the punchline that the driver brings the blanket. It invents a timeline contradiction.\"},\"E\":{\"speakers\":3,\"jokes\":2,\"notes\":2,\"overall\":2,\"errors\":\"r1 is assigned to the driver, but the groan comes from the truck bed. r2, r5, r9, r13 and r15 are given to a 'grumpy man' standing on the ground. r19 is assigned to the driver. r6 is labelled a sign. It invents a visual gag about a standing man. It misreads 'geci' and the bags joke.\"},\"G\":{\"speakers\":3,\"jokes\":1,\"notes\":1,\"overall\":1,\"errors\":\"r1, r5, r9, r13 and r19 are attributed to the truck instead of the injured man on the flatbed. It wrongly glosses 'Gubacs' as 'hunchbacked' and as a nickname for a woman who hit the truck. It wrongly says 'geci' means shit. It invents a premise about a wrecked truck.\"}},\"ranking\":[\"D\",\"A\",\"C\",\"F\",\"B\",\"E\",\"G\"],\"notes\":\"The driver parks and walks away. Groans come from the flatbed, where a man the driver hit last Tuesday on 'Gubacs Teréz út' has been lying with two broken legs. He survived on the two big shopping bags of groceries he was carrying (r13 delays 'két nagy szatyor' for the reveal). The punchline is that the driver tosses pillows and a blanket onto the bed because the nights are cold. 'FELVESZEM' means 'I pick up', which turns literal. r6 'FEKSZEM ITT.' sits inside the r5 bubble, so it is the injured man's speech, not a sign.\"}",
+  "json": {
+    "candidates": {
+      "D": {
+        "speakers": 10,
+        "jokes": 10,
+        "notes": 9,
+        "overall": 10,
+        "errors": "No speaker errors; r6 is correctly treated as the end of r5's bubble. Minor uncertainty: reading 'KITTELEZÉS' (r0) as 'caulking' is speculative, since it could be a garbled 'KIVITELEZÉS'."
+      },
+      "A": {
+        "speakers": 10,
+        "jokes": 8,
+        "notes": 7,
+        "overall": 8,
+        "errors": "Speakers are correct, including r6. The 'FELVESZEM' note (r3 etc.) says it mocks tradesmen who never answer the phone. That is invented, and it misses the 'pick up a person' pun. The summary handles the r13 bags as groceries, which is fine. Other notes are good."
+      },
+      "C": {
+        "speakers": 9,
+        "jokes": 7,
+        "notes": 7,
+        "overall": 7,
+        "errors": "r6 is labelled a sign, but it continues the injured man's r5 speech. The summary says the driver groans, which contradicts r19 = injured man. 'Junk-collector truck with mattresses' is invented. It calls the r13 bags a 'weak excuse' and misses that the bags were his food. The pick-up pun is explained well."
+      },
+      "F": {
+        "speakers": 9,
+        "jokes": 7,
+        "notes": 5,
+        "overall": 6,
+        "errors": "r6 is labelled a sign, and the note invents that the injured man put the sign up. It invents a victim in a suit with a briefcase in p0. It falsely claims Gubacs Teréz út is a real street. It treats punctuation drift as a running gag. The r13 groceries explanation is correct."
+      },
+      "B": {
+        "speakers": 9,
+        "jokes": 3,
+        "notes": 3,
+        "overall": 3,
+        "errors": "r6 is labelled a sign. It misreads r13 as the bags hitting him. It attributes r21 (the blanket line) to the injured man in the notes and calls him a homeless person settling in. It misses the punchline that the driver brings the blanket. It invents a timeline contradiction."
+      },
+      "E": {
+        "speakers": 3,
+        "jokes": 2,
+        "notes": 2,
+        "overall": 2,
+        "errors": "r1 is assigned to the driver, but the groan comes from the truck bed. r2, r5, r9, r13 and r15 are given to a 'grumpy man' standing on the ground. r19 is assigned to the driver. r6 is labelled a sign. It invents a visual gag about a standing man. It misreads 'geci' and the bags joke."
+      },
+      "G": {
+        "speakers": 3,
+        "jokes": 1,
+        "notes": 1,
+        "overall": 1,
+        "errors": "r1, r5, r9, r13 and r19 are attributed to the truck instead of the injured man on the flatbed. It wrongly glosses 'Gubacs' as 'hunchbacked' and as a nickname for a woman who hit the truck. It wrongly says 'geci' means shit. It invents a premise about a wrecked truck."
+      }
+    },
+    "ranking": [
+      "D",
+      "A",
+      "C",
+      "F",
+      "B",
+      "E",
+      "G"
+    ],
+    "notes": "The driver parks and walks away. Groans come from the flatbed, where a man the driver hit last Tuesday on 'Gubacs Teréz út' has been lying with two broken legs. He survived on the two big shopping bags of groceries he was carrying (r13 delays 'két nagy szatyor' for the reveal). The punchline is that the driver tosses pillows and a blanket onto the bed because the nights are cold. 'FELVESZEM' means 'I pick up', which turns literal. r6 'FEKSZEM ITT.' sits inside the r5 bubble, so it is the injured man's speech, not a sign."
+  },
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 19705,
+    "cache_read_input_tokens": 17818,
+    "output_tokens": 2719
+  },
+  "costUsd": 0.2155996,
+  "ms": 30136,
+  "at": "2026-10-20T07:32:10.586993978Z"
+}

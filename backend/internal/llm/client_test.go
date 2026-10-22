@@ -25,7 +25,7 @@ func TestExtractJSONTrailingComma(t *testing.T) {
 }
 
 func TestStageOf(t *testing.T) {
-	for in, want := range map[string]string{"ocr-p3": "ocr", "translate-en": "translate:en", "retranslate-de": "retranslate:de", "scene": "scene"} {
+	for in, want := range map[string]string{"ocr-p3": "ocr", "ocr-strip": "ocr", "translate-en": "translate:en", "retranslate-de": "retranslate:de", "scene": "scene"} {
 		if got := StageOf(in); got != want {
 			t.Errorf("StageOf(%q) = %q, want %q", in, got, want)
 		}

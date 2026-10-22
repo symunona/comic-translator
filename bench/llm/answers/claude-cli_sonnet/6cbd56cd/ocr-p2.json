@@ -1,0 +1,39 @@
+{
+  "spec": "claude-cli:sonnet",
+  "log": "../bench/llm/prompts/6cbd56cdd933343ad87de8c3e3dd772f7f771dd3f4786507d9786c71aad26a05/llm/ocr-p2.json",
+  "text": "{\"regions\":[{\"n\":4,\"kind\":\"speech\",\"lines\":[\"EZ EGY HELIKOPTER\",\"TURBINA?\"],\"align\":\"center\",\"caps\":true},{\"n\":5,\"kind\":\"speech\",\"lines\":[\"IGEN, MÖGÖTTE INDUL\",\"A LÉPCSÖ!\"],\"align\":\"center\",\"caps\":true}],\"unboxed\":[]}",
+  "json": {
+    "regions": [
+      {
+        "n": 4,
+        "kind": "speech",
+        "lines": [
+          "EZ EGY HELIKOPTER",
+          "TURBINA?"
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 5,
+        "kind": "speech",
+        "lines": [
+          "IGEN, MÖGÖTTE INDUL",
+          "A LÉPCSÖ!"
+        ],
+        "align": "center",
+        "caps": true
+      }
+    ],
+    "unboxed": []
+  },
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 3424,
+    "cache_read_input_tokens": 4657,
+    "output_tokens": 503
+  },
+  "costUsd": 0.0191997,
+  "ms": 7460,
+  "at": "2026-10-20T07:09:04.07242639Z"
+}

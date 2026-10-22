@@ -1,0 +1,56 @@
+{
+  "spec": "claude-cli:sonnet",
+  "log": "../bench/llm/prompts/3b3436860d742571c5a540084c396d020cb19fae9191994d00f2338e06c41d2b/llm/ocr-p3.json",
+  "text": "{\"regions\":[{\"n\":12,\"kind\":\"none\",\"lines\":[],\"align\":\"center\",\"caps\":true},{\"n\":13,\"kind\":\"speech\",\"lines\":[\"VENNÉK EGY KURVANAGY\",\"DOBOZT,\",\"TELIS-TELE TIZES\",\"VILLÁSKULCCSAL! AGYIG\",\"RAKVA,\",\"TÖBB EZER\",\"VÁGOD?\"],\"align\":\"center\",\"caps\":true},{\"n\":14,\"kind\":\"speech\",\"lines\":[\"VENNÉK EGY KURVANAGY\",\"DOBOZT,\",\"TELIS-TELE TIZES\",\"VILLÁSKULCCSAL! AGYIG\",\"RAKVA,\",\"TÖBB EZER\",\"VÁGOD?\"],\"align\":\"center\",\"caps\":true}],\"unboxed\":[]}",
+  "json": {
+    "regions": [
+      {
+        "n": 12,
+        "kind": "none",
+        "lines": [],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 13,
+        "kind": "speech",
+        "lines": [
+          "VENNÉK EGY KURVANAGY",
+          "DOBOZT,",
+          "TELIS-TELE TIZES",
+          "VILLÁSKULCCSAL! AGYIG",
+          "RAKVA,",
+          "TÖBB EZER",
+          "VÁGOD?"
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 14,
+        "kind": "speech",
+        "lines": [
+          "VENNÉK EGY KURVANAGY",
+          "DOBOZT,",
+          "TELIS-TELE TIZES",
+          "VILLÁSKULCCSAL! AGYIG",
+          "RAKVA,",
+          "TÖBB EZER",
+          "VÁGOD?"
+        ],
+        "align": "center",
+        "caps": true
+      }
+    ],
+    "unboxed": []
+  },
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 3684,
+    "cache_read_input_tokens": 4759,
+    "output_tokens": 743
+  },
+  "costUsd": 0.022649899999999997,
+  "ms": 13140,
+  "at": "2026-10-20T07:08:14.777712486Z"
+}

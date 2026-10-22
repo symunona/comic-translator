@@ -1,0 +1,61 @@
+{
+  "spec": "openrouter:google/gemini-3.1-flash-lite",
+  "log": "../bench/llm/prompts/0c0bd5d58b4b8bd03a1229371408586ca54a0de357a882ded2c9843589bea963/llm/ocr-p2.json",
+  "text": "{\n  \"regions\": [\n    {\n      \"n\": 4,\n      \"kind\": \"speech\",\n      \"lines\": [\n        \"KI VAGY, ÉS MI A GECIT\",\n        \"KERESEL A PLATÓMON,\",\n        \"BAZME?\"\n      ],\n      \"align\": \"left\",\n      \"caps\": true\n    },\n    {\n      \"n\": 5,\n      \"kind\": \"speech\",\n      \"lines\": [\n        \"A GUBACS TERÉZ\",\n        \"ÚTON ÜTÖTT EL,\",\n        \"MINDKÉT LÁBAM\",\n        \"ELTÖRÖTT, AZÓTA\",\n        \"FÁJ. FÁJOGAT.\"\n      ],\n      \"align\": \"left\",\n      \"caps\": true\n    },\n    {\n      \"n\": 6,\n      \"kind\": \"sign\",\n      \"lines\": [\n        \"FEKSZEM ITT.\"\n      ],\n      \"align\": \"left\",\n      \"caps\": true\n    },\n    {\n      \"n\": 7,\n      \"kind\": \"sign\",\n      \"lines\": [\n        \"7722.683/FELVESZEM\"\n      ],\n      \"align\": \"left\",\n      \"caps\": true\n    }\n  ],\n  \"unboxed\": []\n}",
+  "json": {
+    "regions": [
+      {
+        "n": 4,
+        "kind": "speech",
+        "lines": [
+          "KI VAGY, ÉS MI A GECIT",
+          "KERESEL A PLATÓMON,",
+          "BAZME?"
+        ],
+        "align": "left",
+        "caps": true
+      },
+      {
+        "n": 5,
+        "kind": "speech",
+        "lines": [
+          "A GUBACS TERÉZ",
+          "ÚTON ÜTÖTT EL,",
+          "MINDKÉT LÁBAM",
+          "ELTÖRÖTT, AZÓTA",
+          "FÁJ. FÁJOGAT."
+        ],
+        "align": "left",
+        "caps": true
+      },
+      {
+        "n": 6,
+        "kind": "sign",
+        "lines": [
+          "FEKSZEM ITT."
+        ],
+        "align": "left",
+        "caps": true
+      },
+      {
+        "n": 7,
+        "kind": "sign",
+        "lines": [
+          "7722.683/FELVESZEM"
+        ],
+        "align": "left",
+        "caps": true
+      }
+    ],
+    "unboxed": []
+  },
+  "usage": {
+    "input_tokens": 6408,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 319
+  },
+  "costUsd": 0.0020805,
+  "ms": 2339,
+  "at": "2026-10-20T07:07:25.542494037Z"
+}

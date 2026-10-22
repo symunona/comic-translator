@@ -1,0 +1,162 @@
+{
+  "spec": "openrouter:google/gemini-3.8-flash",
+  "log": "../bench/llm/judge/8f3737ae2df51cb23cc27c3f81a10a426a35fc918ea31cf1eff85be4fc0df452/llm/judge-tr-hu.json",
+  "text": "{\n  \"candidates\": {\n    \"A\": {\n      \"accuracy\": 9,\n      \"naturalness\": 9,\n      \"humour\": 9,\n      \"voice\": 9,\n      \"fit\": 8,\n      \"overall\": 8,\n      \"worst\": \"r0 slightly exceeds the 22-character space budget without line breaks\"\n    },\n    \"B\": {\n      \"accuracy\": 8,\n      \"naturalness\": 6,\n      \"humour\": 7,\n      \"voice\": 7,\n      \"fit\": 8,\n      \"overall\": 6,\n      \"worst\": \"r0 misses the definite article ('a vim-ből')\"\n    },\n    \"C\": {\n      \"accuracy\": 9,\n      \"naturalness\": 9,\n      \"humour\": 9,\n      \"voice\": 9,\n      \"fit\": 8,\n      \"overall\": 8,\n      \"worst\": \"r0 lacks line breaks and marginally exceeds budget\"\n    },\n    \"D\": {\n      \"accuracy\": 7,\n      \"naturalness\": 5,\n      \"humour\": 6,\n      \"voice\": 6,\n      \"fit\": 9,\n      \"overall\": 5,\n      \"worst\": \"r0 and r1 omit the required definite article ('vimből' instead of 'a vimből')\"\n    },\n    \"E\": {\n      \"accuracy\": 9,\n      \"naturalness\": 10,\n      \"humour\": 10,\n      \"voice\": 10,\n      \"fit\": 8,\n      \"overall\": 9,\n      \"worst\": \"r0 lacks a line break to comfortably stay within 22 characters\"\n    },\n    \"F\": {\n      \"accuracy\": 8,\n      \"naturalness\": 6,\n      \"humour\": 6,\n      \"voice\": 6,\n      \"fit\": 7,\n      \"overall\": 5,\n      \"worst\": \"r0 and r1 feature awkward multi-line hyphenation across 'vim-ből'\"\n    },\n    \"G\": {\n      \"accuracy\": 7,\n      \"naturalness\": 5,\n      \"humour\": 6,\n      \"voice\": 6,\n      \"fit\": 8,\n      \"overall\": 5,\n      \"worst\": \"r0 misses the definite article ('a vimből')\"\n    },\n    \"H\": {\n      \"accuracy\": 9,\n      \"naturalness\": 10,\n      \"humour\": 10,\n      \"voice\": 10,\n      \"fit\": 8,\n      \"overall\": 9,\n      \"worst\": \"r0 lacks a line break for layout fit\"\n    },\n    \"I\": {\n      \"accuracy\": 7,\n      \"naturalness\": 5,\n      \"humour\": 6,\n      \"voice\": 6,\n      \"fit\": 8,\n      \"overall\": 5,\n      \"worst\": \"r0 omits the definite article ('a vimből')\"\n    },\n    \"J\": {\n      \"accuracy\": 7,\n      \"naturalness\": 5,\n      \"humour\": 6,\n      \"voice\": 5,\n      \"fit\": 8,\n      \"overall\": 5,\n      \"worst\": \"r0 is unnaturally phrased without the definite article ('vimből')\"\n    },\n    \"K\": {\n      \"accuracy\": 7,\n      \"naturalness\": 5,\n      \"humour\": 6,\n      \"voice\": 6,\n      \"fit\": 9,\n      \"overall\": 5,\n      \"worst\": \"r0 omits the definite article ('a vimből')\"\n    },\n    \"L\": {\n      \"accuracy\": 9,\n      \"naturalness\": 9,\n      \"humour\": 9,\n      \"voice\": 9,\n      \"fit\": 10,\n      \"overall\": 9,\n      \"worst\": \"'Miért lépnék ki' in r1 is slightly less dismissive than 'Minek lépnék ki'\"\n    },\n    \"M\": {\n      \"accuracy\": 9,\n      \"naturalness\": 9,\n      \"humour\": 9,\n      \"voice\": 9,\n      \"fit\": 8,\n      \"overall\": 8,\n      \"worst\": \"r0 lacks a line break\"\n    },\n    \"N\": {\n      \"accuracy\": 7,\n      \"naturalness\": 5,\n      \"humour\": 6,\n      \"voice\": 6,\n      \"fit\": 9,\n      \"overall\": 5,\n      \"worst\": \"r0 and r1 omit the definite article ('vimből')\"\n    }\n  },\n  \"ranking\": [\n    \"L\",\n    \"E\",\n    \"H\",\n    \"A\",\n    \"C\",\n    \"M\",\n    \"B\",\n    \"D\",\n    \"N\",\n    \"K\",\n    \"G\",\n    \"I\",\n    \"J\",\n    \"F\"\n  ],\n  \"notes\": \"In Hungarian, software names require the definite article ('a vimből'). Candidates that omitted 'a' sounded broken. Candidate L is top-ranked because it correctly includes the article and uses sensible line breaks that fit the box dimensions.\"\n}",
+  "json": {
+    "candidates": {
+      "A": {
+        "accuracy": 9,
+        "naturalness": 9,
+        "humour": 9,
+        "voice": 9,
+        "fit": 8,
+        "overall": 8,
+        "worst": "r0 slightly exceeds the 22-character space budget without line breaks"
+      },
+      "B": {
+        "accuracy": 8,
+        "naturalness": 6,
+        "humour": 7,
+        "voice": 7,
+        "fit": 8,
+        "overall": 6,
+        "worst": "r0 misses the definite article ('a vim-ből')"
+      },
+      "C": {
+        "accuracy": 9,
+        "naturalness": 9,
+        "humour": 9,
+        "voice": 9,
+        "fit": 8,
+        "overall": 8,
+        "worst": "r0 lacks line breaks and marginally exceeds budget"
+      },
+      "D": {
+        "accuracy": 7,
+        "naturalness": 5,
+        "humour": 6,
+        "voice": 6,
+        "fit": 9,
+        "overall": 5,
+        "worst": "r0 and r1 omit the required definite article ('vimből' instead of 'a vimből')"
+      },
+      "E": {
+        "accuracy": 9,
+        "naturalness": 10,
+        "humour": 10,
+        "voice": 10,
+        "fit": 8,
+        "overall": 9,
+        "worst": "r0 lacks a line break to comfortably stay within 22 characters"
+      },
+      "F": {
+        "accuracy": 8,
+        "naturalness": 6,
+        "humour": 6,
+        "voice": 6,
+        "fit": 7,
+        "overall": 5,
+        "worst": "r0 and r1 feature awkward multi-line hyphenation across 'vim-ből'"
+      },
+      "G": {
+        "accuracy": 7,
+        "naturalness": 5,
+        "humour": 6,
+        "voice": 6,
+        "fit": 8,
+        "overall": 5,
+        "worst": "r0 misses the definite article ('a vimből')"
+      },
+      "H": {
+        "accuracy": 9,
+        "naturalness": 10,
+        "humour": 10,
+        "voice": 10,
+        "fit": 8,
+        "overall": 9,
+        "worst": "r0 lacks a line break for layout fit"
+      },
+      "I": {
+        "accuracy": 7,
+        "naturalness": 5,
+        "humour": 6,
+        "voice": 6,
+        "fit": 8,
+        "overall": 5,
+        "worst": "r0 omits the definite article ('a vimből')"
+      },
+      "J": {
+        "accuracy": 7,
+        "naturalness": 5,
+        "humour": 6,
+        "voice": 5,
+        "fit": 8,
+        "overall": 5,
+        "worst": "r0 is unnaturally phrased without the definite article ('vimből')"
+      },
+      "K": {
+        "accuracy": 7,
+        "naturalness": 5,
+        "humour": 6,
+        "voice": 6,
+        "fit": 9,
+        "overall": 5,
+        "worst": "r0 omits the definite article ('a vimből')"
+      },
+      "L": {
+        "accuracy": 9,
+        "naturalness": 9,
+        "humour": 9,
+        "voice": 9,
+        "fit": 10,
+        "overall": 9,
+        "worst": "'Miért lépnék ki' in r1 is slightly less dismissive than 'Minek lépnék ki'"
+      },
+      "M": {
+        "accuracy": 9,
+        "naturalness": 9,
+        "humour": 9,
+        "voice": 9,
+        "fit": 8,
+        "overall": 8,
+        "worst": "r0 lacks a line break"
+      },
+      "N": {
+        "accuracy": 7,
+        "naturalness": 5,
+        "humour": 6,
+        "voice": 6,
+        "fit": 9,
+        "overall": 5,
+        "worst": "r0 and r1 omit the definite article ('vimből')"
+      }
+    },
+    "ranking": [
+      "L",
+      "E",
+      "H",
+      "A",
+      "C",
+      "M",
+      "B",
+      "D",
+      "N",
+      "K",
+      "G",
+      "I",
+      "J",
+      "F"
+    ],
+    "notes": "In Hungarian, software names require the definite article ('a vimből'). Candidates that omitted 'a' sounded broken. Candidate L is top-ranked because it correctly includes the article and uses sensible line breaks that fit the box dimensions."
+  },
+  "usage": {
+    "input_tokens": 3274,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2359,
+    "reasoning_tokens": 1095
+  },
+  "costUsd": 0.01130175,
+  "ms": 17324,
+  "at": "2026-10-20T07:34:44.00124175Z"
+}

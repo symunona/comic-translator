@@ -6,7 +6,7 @@ export type Api = {
   panels(id: string): Promise<{ panels: Panel[]; detected: boolean }>;
   putDetect(id: string, body: ClientDetect): Promise<Region[]>;
   listStrips(limit: number): Promise<StripSummary[]>;
-  upload(file: File): Promise<{ id: string; existing: boolean }>;
+  upload(file: File, src?: string): Promise<{ id: string; existing: boolean }>;
   getStrip(id: string): Promise<Strip>;
   getTranslation(id: string, lang: string): Promise<Translation | null>;
   putTranslation(id: string, lang: string, t: Translation): Promise<Translation>;
@@ -46,9 +46,10 @@ export const httpApi: Api = {
   panels: (id) => fetch(`${base(id)}/panels`).then((r) => json<{ panels: Panel[]; detected: boolean }>(r)),
   putDetect: (id, body) => fetch(`${base(id)}/stages/detect`, send("PUT", body)).then((r) => json<Region[]>(r)),
   listStrips: (limit) => fetch(`/api/strips?limit=${limit}`).then((r) => json<StripSummary[]>(r)),
-  upload(file) {
+  upload(file, src) {
     const fd = new FormData();
     fd.append("file", file);
+    if (src) fd.append("src", src);
     return fetch("/api/strips", { method: "POST", body: fd }).then((r) => json(r));
   },
   getStrip: (id) => fetch(base(id)).then((r) => json<Strip>(r)),

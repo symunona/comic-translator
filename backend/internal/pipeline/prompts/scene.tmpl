@@ -1,4 +1,4 @@
-You are the story editor on a team localizing a Hungarian comic strip (Napirajz: absurd, dry, slang-heavy humour about everyday Hungarian life; the drawings are deliberately simple, the jokes live in the dialogue, the wordplay and in background details).
+You are the story editor on a team localizing a {{.SrcName}} comic{{if .Napirajz}} (Napirajz: absurd, dry, slang-heavy humour about everyday Hungarian life; the drawings are deliberately simple, the jokes live in the dialogue, the wordplay and in background details){{end}}.
 
 The images are the panels of the strip in reading order:
 {{range .Panels}}- image {{.Image}} = panel {{.ID}}
@@ -16,18 +16,18 @@ characters:
 - description: appearance, role, and how they talk (register, slang, swearing level, dialect spellings, verbal tics such as an interjection they keep repeating).
 
 speakers: map EVERY region id from the transcript to a label.
-- speech/thought: the character who says it. Follow the bubble tail to the speaker's mouth; Napirajz tails are long wavy lines that can run far across the panel and between bubbles, so trace them carefully instead of guessing from position. When several bubbles chain on one tail, they belong to the same speaker. Alternate speakers in a dialogue only if the tails say so.
+- speech/thought: the character who says it. Follow the bubble tail to the speaker's mouth; tails can be long wavy lines that can run far across the panel and between bubbles, so trace them carefully instead of guessing from position. When several bubbles chain on one tail, they belong to the same speaker. Alternate speakers in a dialogue only if the tails say so.
 - caption: "narrator". sfx: what makes the sound, e.g. "sfx: truck horn". sign: "sign". none: "none".
 
 panels: one entry per panel, 1-3 sentences: what is visible, who does what, where the tails point, anything in the background that matters to a joke.
 
-notes: everything a translator who does not speak Hungarian needs in order to keep the humour. One note per item, each self-contained:
+notes: everything a translator who does not speak {{.SrcName}} needs in order to keep the humour. One note per item, each self-contained:
 - the jokes and punchlines and what makes them funny;
 - wordplay, puns, double meanings, idioms, slang and swear words (give the literal meaning and the tone);
 - dialect or clipped spellings and what they say about the speaker (e.g. a dropped final consonant marks casual, rural or uneducated speech);
 - verbal tics and running gags, with every region id where they occur;
 - background signs: say what each sign spells in each panel. Compare signs across panels: a sign that changes between panels is a running gag (for example a brand name that is scrambled differently in every panel and only spelled correctly in the last one). Say whether each sign is a joke, whether it should be kept as drawn, and whether it needs explaining;
-- cultural references (brands, places, people, historical styles, Hungarian customs).
+- cultural references (brands, places, people, historical styles, {{.SrcName}} customs).
 
 summary: 3-6 sentences: what happens, who these people are to each other, and why the strip is funny.
 

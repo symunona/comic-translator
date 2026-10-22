@@ -1,0 +1,82 @@
+{
+  "spec": "claude-cli:opus",
+  "log": "../bench/llm/prompts/2afc78b45293acd677ffcba91f53fea50838d406d2dd965846e83408657e58c7/llm/ocr-p9.json",
+  "text": "{\"regions\":[{\"n\":46,\"kind\":\"sfx\",\"lines\":[\"FIFU!\",\"HURUHATÁRR!\"],\"align\":\"left\",\"caps\":true},{\"n\":47,\"kind\":\"sign\",\"lines\":[\"CAVALIER\"],\"align\":\"center\",\"caps\":true},{\"n\":48,\"kind\":\"speech\",\"lines\":[\"BOCSI.\"],\"align\":\"left\",\"caps\":true},{\"n\":49,\"kind\":\"speech\",\"lines\":[\"MEG\",\"HAZAVISZLEK.\"],\"align\":\"left\",\"caps\":true},{\"n\":50,\"kind\":\"sign\",\"lines\":[\"FASZI BÁCSI\"],\"align\":\"center\",\"caps\":true},{\"n\":51,\"kind\":\"none\",\"lines\":[],\"align\":\"center\",\"caps\":true},{\"n\":52,\"kind\":\"sign\",\"lines\":[\"FASZI-1\"],\"align\":\"center\",\"caps\":true}],\"unboxed\":[]}",
+  "json": {
+    "regions": [
+      {
+        "n": 46,
+        "kind": "sfx",
+        "lines": [
+          "FIFU!",
+          "HURUHATÁRR!"
+        ],
+        "align": "left",
+        "caps": true
+      },
+      {
+        "n": 47,
+        "kind": "sign",
+        "lines": [
+          "CAVALIER"
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 48,
+        "kind": "speech",
+        "lines": [
+          "BOCSI."
+        ],
+        "align": "left",
+        "caps": true
+      },
+      {
+        "n": 49,
+        "kind": "speech",
+        "lines": [
+          "MEG",
+          "HAZAVISZLEK."
+        ],
+        "align": "left",
+        "caps": true
+      },
+      {
+        "n": 50,
+        "kind": "sign",
+        "lines": [
+          "FASZI BÁCSI"
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 51,
+        "kind": "none",
+        "lines": [],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 52,
+        "kind": "sign",
+        "lines": [
+          "FASZI-1"
+        ],
+        "align": "center",
+        "caps": true
+      }
+    ],
+    "unboxed": []
+  },
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 5091,
+    "cache_read_input_tokens": 5167,
+    "output_tokens": 1418
+  },
+  "costUsd": 0.07013739999999999,
+  "ms": 17962,
+  "at": "2026-10-20T07:08:09.329868956Z"
+}

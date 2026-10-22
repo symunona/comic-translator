@@ -1,0 +1,47 @@
+{
+  "spec": "openrouter:qwen/qwen3.8-flash",
+  "log": "../bench/llm/prompts/0c0bd5d58b4b8bd03a1229371408586ca54a0de357a882ded2c9843589bea963/llm/ocr-p7.json",
+  "text": "{\n  \"regions\": [\n    {\n      \"n\": 21,\n      \"kind\": \"speech\",\n      \"lines\": [\n        \"IT EGY PLÉD, BAZME.\",\n        \"ÉJJELENTÉ MÁR\",\n        \"HIDEGEK VANNAK.\"\n      ],\n      \"align\": \"center\",\n      \"caps\": true\n    },\n    {\n      \"n\": 22,\n      \"kind\": \"sign\",\n      \"lines\": [\n        \"77·22·683/FEWESTEM\"\n      ],\n      \"align\": \"left\",\n      \"caps\": true\n    },\n    {\n      \"n\": 23,\n      \"kind\": \"none\",\n      \"lines\": [],\n      \"align\": \"left\",\n      \"caps\": false\n    }\n  ],\n  \"unboxed\": []\n}",
+  "json": {
+    "regions": [
+      {
+        "n": 21,
+        "kind": "speech",
+        "lines": [
+          "IT EGY PLÉD, BAZME.",
+          "ÉJJELENTÉ MÁR",
+          "HIDEGEK VANNAK."
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 22,
+        "kind": "sign",
+        "lines": [
+          "77·22·683/FEWESTEM"
+        ],
+        "align": "left",
+        "caps": true
+      },
+      {
+        "n": 23,
+        "kind": "none",
+        "lines": [],
+        "align": "left",
+        "caps": false
+      }
+    ],
+    "unboxed": []
+  },
+  "usage": {
+    "input_tokens": 1578,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 1991,
+    "reasoning_tokens": 1780
+  },
+  "costUsd": 0.00117247,
+  "ms": 23691,
+  "at": "2026-10-20T07:08:15.224525166Z"
+}

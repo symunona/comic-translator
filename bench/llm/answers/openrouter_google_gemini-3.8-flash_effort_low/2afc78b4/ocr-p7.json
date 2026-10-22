@@ -1,0 +1,28 @@
+{
+  "spec": "openrouter:google/gemini-3.8-flash?effort=low",
+  "log": "../bench/llm/prompts/2afc78b45293acd677ffcba91f53fea50838d406d2dd965846e83408657e58c7/llm/ocr-p7.json",
+  "text": "{\"regions\":[{\"n\":38,\"kind\":\"sign\",\"lines\":[\"BALKON\"],\"align\":\"center\",\"caps\":true}],\"unboxed\":[]}",
+  "json": {
+    "regions": [
+      {
+        "n": 38,
+        "kind": "sign",
+        "lines": [
+          "BALKON"
+        ],
+        "align": "center",
+        "caps": true
+      }
+    ],
+    "unboxed": []
+  },
+  "usage": {
+    "input_tokens": 3092,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 30
+  },
+  "costUsd": 0.0024315,
+  "ms": 13949,
+  "at": "2026-10-20T07:07:29.465347799Z"
+}

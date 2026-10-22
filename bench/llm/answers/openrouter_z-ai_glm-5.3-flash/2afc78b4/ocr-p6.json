@@ -1,0 +1,97 @@
+{
+  "spec": "openrouter:z-ai/glm-5.3-flash",
+  "log": "../bench/llm/prompts/2afc78b45293acd677ffcba91f53fea50838d406d2dd965846e83408657e58c7/llm/ocr-p6.json",
+  "text": "```json\n{\n  \"regions\": [\n    {\n      \"n\": 30,\n      \"kind\": \"speech\",\n      \"lines\": [\n        \"SZÓVAL,AMIKOR A GROBKUGELNI\",\n        \"PIHENŐBEN KINYITJA A\",\n        \"KURVA AZ AJTÓT AKKOR\",\n        \"NE AZT KÉRDEZLE,MERRE VAN\",\n        \"A MÚZEUMSHOP,VÁGOD?\",\n        \"IRÁNYNAK ILYEN NEOLOFTOS\",\n        \"ART DEKÓT GONDOLNÉK.\"\n      ],\n      \"align\": \"left\",\n      \"caps\": true\n    },\n    {\n      \"n\": 31,\n      \"kind\": \"none\",\n      \"lines\": [],\n      \"align\": \"left\",\n      \"caps\": true\n    },\n    {\n      \"n\": 32,\n      \"kind\": \"sign\",\n      \"lines\": [\n        \"RACALVIE\"\n      ],\n      \"align\": \"center\",\n      \"caps\": true\n    },\n    {\n      \"n\": 33,\n      \"kind\": \"sign\",\n      \"lines\": [\n        \"FASZI BÁCS\"\n      ],\n      \"align\": \"center\",\n      \"caps\": true\n    },\n    {\n      \"n\": 34,\n      \"kind\": \"speech\",\n      \"lines\": [\n        \"ÉRTEM. EZ A DOBOZ, EZ MI?\",\n        \"MARADNIA KELL?\"\n      ],\n      \"align\": \"center\",\n      \"caps\": true\n    },\n    {\n      \"n\": 35,\n      \"kind\": \"speech\",\n      \"lines\": [\n        \"AKKSIK A FÉNYHEZ. MARAD.\"\n      ],\n      \"align\": \"left\",\n      \"caps\": true\n    },\n    {\n      \"n\": 36,\n      \"kind\": \"speech\",\n      \"lines\": [\n        \"„FÉNYHEZ\\\"?\"\n      ],\n      \"align\": \"center\",\n      \"caps\": true\n    },\n    {\n      \"n\": 37,\n      \"kind\": \"sign\",\n      \"lines\": [\n        \"FASZI-1\"\n      ],\n      \"align\": \"center\",\n      \"caps\": true\n    }\n  ],\n  \"unboxed\": []\n}\n```",
+  "json": {
+    "regions": [
+      {
+        "n": 30,
+        "kind": "speech",
+        "lines": [
+          "SZÓVAL,AMIKOR A GROBKUGELNI",
+          "PIHENŐBEN KINYITJA A",
+          "KURVA AZ AJTÓT AKKOR",
+          "NE AZT KÉRDEZLE,MERRE VAN",
+          "A MÚZEUMSHOP,VÁGOD?",
+          "IRÁNYNAK ILYEN NEOLOFTOS",
+          "ART DEKÓT GONDOLNÉK."
+        ],
+        "align": "left",
+        "caps": true
+      },
+      {
+        "n": 31,
+        "kind": "none",
+        "lines": [],
+        "align": "left",
+        "caps": true
+      },
+      {
+        "n": 32,
+        "kind": "sign",
+        "lines": [
+          "RACALVIE"
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 33,
+        "kind": "sign",
+        "lines": [
+          "FASZI BÁCS"
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 34,
+        "kind": "speech",
+        "lines": [
+          "ÉRTEM. EZ A DOBOZ, EZ MI?",
+          "MARADNIA KELL?"
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 35,
+        "kind": "speech",
+        "lines": [
+          "AKKSIK A FÉNYHEZ. MARAD."
+        ],
+        "align": "left",
+        "caps": true
+      },
+      {
+        "n": 36,
+        "kind": "speech",
+        "lines": [
+          "„FÉNYHEZ\"?"
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 37,
+        "kind": "sign",
+        "lines": [
+          "FASZI-1"
+        ],
+        "align": "center",
+        "caps": true
+      }
+    ],
+    "unboxed": []
+  },
+  "usage": {
+    "input_tokens": 2216,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3923,
+    "reasoning_tokens": 3421
+  },
+  "costUsd": 0.0020071625,
+  "ms": 12454,
+  "at": "2026-10-20T07:08:07.835555627Z"
+}

@@ -1,0 +1,51 @@
+{
+  "spec": "claude-cli:haiku",
+  "log": "../bench/llm/prompts/0c0bd5d58b4b8bd03a1229371408586ca54a0de357a882ded2c9843589bea963/llm/ocr-p4.json",
+  "text": "{\"regions\":[{\"n\":12,\"kind\":\"speech\",\"lines\":[\"MÚLT HÉT KEDD?\",\"NE KAMUZZÁ!\",\"HOGY NEM HALTÁL ÉHEN?\"],\"align\":\"center\",\"caps\":true},{\"n\":13,\"kind\":\"speech\",\"lines\":[\"KIFELÉ JÖTTEM A BOLTBÓL,\",\"AMIKOR TELIBE KAPOTT...\",\"KÉT NAGY\",\"SZATYOR...\"],\"align\":\"center\",\"caps\":true},{\"n\":14,\"kind\":\"sign\",\"lines\":[\"4772·683/FEVESZEM\"],\"align\":\"center\",\"caps\":true}],\"unboxed\":[]}",
+  "json": {
+    "regions": [
+      {
+        "n": 12,
+        "kind": "speech",
+        "lines": [
+          "MÚLT HÉT KEDD?",
+          "NE KAMUZZÁ!",
+          "HOGY NEM HALTÁL ÉHEN?"
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 13,
+        "kind": "speech",
+        "lines": [
+          "KIFELÉ JÖTTEM A BOLTBÓL,",
+          "AMIKOR TELIBE KAPOTT...",
+          "KÉT NAGY",
+          "SZATYOR..."
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 14,
+        "kind": "sign",
+        "lines": [
+          "4772·683/FEVESZEM"
+        ],
+        "align": "center",
+        "caps": true
+      }
+    ],
+    "unboxed": []
+  },
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 3856,
+    "cache_read_input_tokens": 4757,
+    "output_tokens": 1646
+  },
+  "costUsd": 0.00164217,
+  "ms": 9174,
+  "at": "2026-10-20T07:07:27.659573955Z"
+}

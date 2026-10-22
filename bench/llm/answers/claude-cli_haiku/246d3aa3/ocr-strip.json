@@ -1,0 +1,41 @@
+{
+  "spec": "claude-cli:haiku",
+  "log": "../bench/llm/prompts/246d3aa3e5d91deb9d2434834daf01b518f3a80b89d0b936f87cf08623cd90f7/llm/ocr-strip.json",
+  "text": "{\"regions\":[{\"n\":0,\"kind\":\"caption\",\"lines\":[\"REMAIN\",\"AMBIVALENT\",\"ABOUT\"],\"align\":\"center\",\"caps\":true},{\"n\":1,\"kind\":\"caption\",\"lines\":[\"IT CONTAINS MULTITUDES. FRIENDS. ENEMIES.\",\"LOVE. HATE. TO REDUCE IT TO ONE OR THE OTHER\",\"IS AN EXERCISE IN FOOLISHNESS.\"],\"align\":\"center\",\"caps\":true}],\"unboxed\":[]}",
+  "json": {
+    "regions": [
+      {
+        "n": 0,
+        "kind": "caption",
+        "lines": [
+          "REMAIN",
+          "AMBIVALENT",
+          "ABOUT"
+        ],
+        "align": "center",
+        "caps": true
+      },
+      {
+        "n": 1,
+        "kind": "caption",
+        "lines": [
+          "IT CONTAINS MULTITUDES. FRIENDS. ENEMIES.",
+          "LOVE. HATE. TO REDUCE IT TO ONE OR THE OTHER",
+          "IS AN EXERCISE IN FOOLISHNESS."
+        ],
+        "align": "center",
+        "caps": true
+      }
+    ],
+    "unboxed": []
+  },
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 3667,
+    "cache_read_input_tokens": 4438,
+    "output_tokens": 1378
+  },
+  "costUsd": 0.0014671800000000002,
+  "ms": 11466,
+  "at": "2026-10-20T07:19:37.844859019Z"
+}

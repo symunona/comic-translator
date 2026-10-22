@@ -1,0 +1,61 @@
+{
+  "spec": "claude-cli:opus",
+  "log": "../bench/llm/prompts/0c0bd5d58b4b8bd03a1229371408586ca54a0de357a882ded2c9843589bea963/llm/ocr-p2.json",
+  "text": "{\"regions\":[{\"n\":4,\"kind\":\"speech\",\"lines\":[\"KI VAGY, ÉS MI A GECIT\",\"KERESEL A PLATÓMON,\",\"BAZME?\"],\"align\":\"right\",\"caps\":true},{\"n\":5,\"kind\":\"speech\",\"lines\":[\"A GUBACS TERÉZ\",\"ÚTON ÜTÖTT EL,\",\"MINDKÉT LÁBAM\",\"ELTÖRÖTT, AZÓTA\",\"FÁJ. FÁJOGAT.\"],\"align\":\"left\",\"caps\":true},{\"n\":6,\"kind\":\"speech\",\"lines\":[\"FEKSZEM ITT.\"],\"align\":\"left\",\"caps\":true},{\"n\":7,\"kind\":\"sign\",\"lines\":[\"7722.683/FELVESZEM\"],\"align\":\"left\",\"caps\":true}],\"unboxed\":[]}",
+  "json": {
+    "regions": [
+      {
+        "n": 4,
+        "kind": "speech",
+        "lines": [
+          "KI VAGY, ÉS MI A GECIT",
+          "KERESEL A PLATÓMON,",
+          "BAZME?"
+        ],
+        "align": "right",
+        "caps": true
+      },
+      {
+        "n": 5,
+        "kind": "speech",
+        "lines": [
+          "A GUBACS TERÉZ",
+          "ÚTON ÜTÖTT EL,",
+          "MINDKÉT LÁBAM",
+          "ELTÖRÖTT, AZÓTA",
+          "FÁJ. FÁJOGAT."
+        ],
+        "align": "left",
+        "caps": true
+      },
+      {
+        "n": 6,
+        "kind": "speech",
+        "lines": [
+          "FEKSZEM ITT."
+        ],
+        "align": "left",
+        "caps": true
+      },
+      {
+        "n": 7,
+        "kind": "sign",
+        "lines": [
+          "7722.683/FELVESZEM"
+        ],
+        "align": "left",
+        "caps": true
+      }
+    ],
+    "unboxed": []
+  },
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 5256,
+    "cache_read_input_tokens": 3784,
+    "output_tokens": 1479
+  },
+  "costUsd": 0.0724008,
+  "ms": 16146,
+  "at": "2026-10-20T07:07:17.478007308Z"
+}

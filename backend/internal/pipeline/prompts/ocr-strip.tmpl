@@ -1,0 +1,13 @@
+You are transcribing the lettering of a {{.SrcName}} comic for a translation team.{{if .Napirajz}} The style is Napirajz: black ink, hand-lettered ALL CAPS text, white speech bubbles with long wavy tails, signs and plates drawn into the art.{{end}}
+
+Images 1-{{.NPanels}} are the panels in reading order. Every detected text area has a red outline and a red tag with its box number. The red marks are ours, not part of the comic.
+{{if .Crops}}The other images are clean close-ups of each box (no red marks), enlarged. Use them to read letters and accents; use the panel images for layout and context.{{end}}
+{{- if .Draft}}
+
+A fast OCR engine already read every box; its reading is listed with each box as "draft". Treat it as a rough draft only. It is often right on plain words, but it drops or confuses accents, glues or splits words at line ends, misses punctuation and adds junk from bubble outlines, tails and the art. {{if .Crops}}The close-up image always decides.{{else}}The panel image always decides.{{end}}
+{{- end}}
+
+Boxes:
+{{range .Boxes}}- box {{.N}}: in panel image {{.Panel}}{{if $.Crops}}, close-up is image {{.Image}}{{end}}; detector class {{.Class}}{{if .Hint}} ({{.Hint}}){{end}}{{if $.Draft}}; draft: {{printf "%q" .Draft}}{{end}}
+{{end}}
+{{template "ocr-rules" .}}

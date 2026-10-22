@@ -71,7 +71,7 @@ type Report struct {
 
 var (
 	logName  = regexp.MustCompile(`^(.+)-\d+\.json$`)
-	panelLog = regexp.MustCompile(`^ocr-p\d+$`)
+	panelLog = regexp.MustCompile(`^ocr-(p\d+|strip)$`)
 	langLog  = regexp.MustCompile(`^(translate|review|retranslate)-(.+)$`)
 )
 

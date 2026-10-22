@@ -1,0 +1,69 @@
+{
+  "spec": "claude-cli:opus",
+  "log": "../bench/llm/judge/3b3436860d742571c5a540084c396d020cb19fae9191994d00f2338e06c41d2b/llm/judge-scene.json",
+  "text": "{\"candidates\":{\"B\":{\"speakers\":10,\"jokes\":10,\"notes\":10,\"overall\":10,\"errors\":\"No real errors. All speaker attributions are correct, including r5 and r13-r17 for the hoodie man. It correctly explains the 10 mm wrench and M6 bolt pairing and the 'ÖT' callback to 'lottó ötös'. It correctly says he is holding a wrench in p6.\"},\"E\":{\"speakers\":10,\"jokes\":8,\"notes\":7,\"overall\":8,\"errors\":\"Speakers are correct. It explains the 10 mm wrench and M6 bolt joke well. It invents a detail: in p6 he holds a wrench, not 'calmly lighting a match'. It never explains the 'Nem egy, öt!' (r17) callback to 'lottó ötös'. Its notes are shorter than B's.\"},\"C\":{\"speakers\":9,\"jokes\":5,\"notes\":6,\"overall\":6,\"errors\":\"Speaker roles are right, but it calls his hoodie a 'turtleneck'. It misreads the punchline: in r16/r17 he wants five wrenches within reach of any M6 bolt, not 'five size-6 screws'. It misses why the 10 mm wrench fits the M6 bolt. It also misses that 'öt' echoes 'lottó ötös' and even tells translators not to keep 'five'. 'Teles-tele' should be 'telis-tele'. It describes his 'Igen' (r5) as 'polite' and the shift to profanity as 'aggressive', which misreads the tone.\"},\"F\":{\"speakers\":9,\"jokes\":3,\"notes\":3,\"overall\":3,\"errors\":\"Speaker roles are right. The summary misreads the strip: it says '10-packs of forks' and a rant about 'a bolt that should be a hex-head bolt'. It makes up a claim that the transcript doesn't match the drawings, and makes up a villa/fork wordplay. It says he wants hex bolts everywhere, when he wants wrenches. It also misses the 10 mm/M6 logic.\"},\"D\":{\"speakers\":3,\"jokes\":2,\"notes\":2,\"overall\":2,\"errors\":\"r13 and r15 are wrongly given to the interviewer; the hoodie man says them. r16/r17 are given to a 'heavyset man', which is unclear and treats him as a separate character. It says it doesn't know what 'pinák' means. It translates 'szórnám széjjel' as 'scatter myself'. It reads 'hatos csavar' as a six-sided bolt instead of an M6 bolt. It renders 'hogyamikor' as 'how is it that' instead of 'so that when'. It misses the wrench joke.\"},\"A\":{\"speakers\":1,\"jokes\":1,\"notes\":1,\"overall\":1,\"errors\":\"The sheet is empty.\"}},\"ranking\":[\"B\",\"E\",\"C\",\"F\",\"D\",\"A\"],\"notes\":\"The reporter speaks r0, r2 and all the floating guesses (r3, r4, r6, r7, r8, r10, r11). The hoodie man speaks r5, r13, r15, r16 and r17; in p5 he becomes a monster and blows the reporter flat. The joke is that he wants thousands of 10 mm wrenches so one is always within reach when he meets an M6 bolt. 'Nem egy, ÖT!' (r17) echoes 'lottó ötös'. In p6 he walks off holding a wrench.\"}",
+  "json": {
+    "candidates": {
+      "B": {
+        "speakers": 10,
+        "jokes": 10,
+        "notes": 10,
+        "overall": 10,
+        "errors": "No real errors. All speaker attributions are correct, including r5 and r13-r17 for the hoodie man. It correctly explains the 10 mm wrench and M6 bolt pairing and the 'ÖT' callback to 'lottó ötös'. It correctly says he is holding a wrench in p6."
+      },
+      "E": {
+        "speakers": 10,
+        "jokes": 8,
+        "notes": 7,
+        "overall": 8,
+        "errors": "Speakers are correct. It explains the 10 mm wrench and M6 bolt joke well. It invents a detail: in p6 he holds a wrench, not 'calmly lighting a match'. It never explains the 'Nem egy, öt!' (r17) callback to 'lottó ötös'. Its notes are shorter than B's."
+      },
+      "C": {
+        "speakers": 9,
+        "jokes": 5,
+        "notes": 6,
+        "overall": 6,
+        "errors": "Speaker roles are right, but it calls his hoodie a 'turtleneck'. It misreads the punchline: in r16/r17 he wants five wrenches within reach of any M6 bolt, not 'five size-6 screws'. It misses why the 10 mm wrench fits the M6 bolt. It also misses that 'öt' echoes 'lottó ötös' and even tells translators not to keep 'five'. 'Teles-tele' should be 'telis-tele'. It describes his 'Igen' (r5) as 'polite' and the shift to profanity as 'aggressive', which misreads the tone."
+      },
+      "F": {
+        "speakers": 9,
+        "jokes": 3,
+        "notes": 3,
+        "overall": 3,
+        "errors": "Speaker roles are right. The summary misreads the strip: it says '10-packs of forks' and a rant about 'a bolt that should be a hex-head bolt'. It makes up a claim that the transcript doesn't match the drawings, and makes up a villa/fork wordplay. It says he wants hex bolts everywhere, when he wants wrenches. It also misses the 10 mm/M6 logic."
+      },
+      "D": {
+        "speakers": 3,
+        "jokes": 2,
+        "notes": 2,
+        "overall": 2,
+        "errors": "r13 and r15 are wrongly given to the interviewer; the hoodie man says them. r16/r17 are given to a 'heavyset man', which is unclear and treats him as a separate character. It says it doesn't know what 'pinák' means. It translates 'szórnám széjjel' as 'scatter myself'. It reads 'hatos csavar' as a six-sided bolt instead of an M6 bolt. It renders 'hogyamikor' as 'how is it that' instead of 'so that when'. It misses the wrench joke."
+      },
+      "A": {
+        "speakers": 1,
+        "jokes": 1,
+        "notes": 1,
+        "overall": 1,
+        "errors": "The sheet is empty."
+      }
+    },
+    "ranking": [
+      "B",
+      "E",
+      "C",
+      "F",
+      "D",
+      "A"
+    ],
+    "notes": "The reporter speaks r0, r2 and all the floating guesses (r3, r4, r6, r7, r8, r10, r11). The hoodie man speaks r5, r13, r15, r16 and r17; in p5 he becomes a monster and blows the reporter flat. The joke is that he wants thousands of 10 mm wrenches so one is always within reach when he meets an M6 bolt. 'Nem egy, ÖT!' (r17) echoes 'lottó ötös'. In p6 he walks off holding a wrench."
+  },
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 14694,
+    "cache_read_input_tokens": 14021,
+    "output_tokens": 2422
+  },
+  "costUsd": 0.16881220000000002,
+  "ms": 25345,
+  "at": "2026-10-20T07:33:11.41866791Z"
+}

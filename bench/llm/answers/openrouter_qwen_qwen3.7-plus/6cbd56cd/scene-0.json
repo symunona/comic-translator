@@ -1,0 +1,16 @@
+{
+  "spec": "openrouter:qwen/qwen3.7-plus",
+  "log": "../data/6cbd56cdd933343ad87de8c3e3dd772f7f771dd3f4786507d9786c71aad26a05/llm/scene-0.json",
+  "text": "",
+  "usage": {
+    "input_tokens": 8839,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 613,
+    "reasoning_tokens": 613
+  },
+  "costUsd": 0,
+  "ms": 15474,
+  "error": "no JSON object in model output",
+  "at": "2026-10-20T07:08:36.022109541Z"
+}
