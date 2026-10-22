@@ -9,7 +9,7 @@ Built for Napirajz (Hungarian, hand-lettered). Spec: [docs/spec.md](docs/spec.md
 |---|---|
 | `backend/` | Go API, pipeline, per-hash FS store, SSE |
 | detector | ogkalu/comic-text-and-bubble-detector ONNX via onnxruntime_go (CPU) |
-| LLM | `claude -p` CLI (Claude Code subscription auth), opus. Prompts `backend/internal/pipeline/prompts/` |
+| LLM | swappable backends (`docs/llm.md`). Prod: OpenRouter `google/gemini-3.8-flash` every step, OCR `effort=low`, 1 call per strip (`docs/cost-opt.md`). Dev default: `claude -p` CLI. Prompts `backend/internal/pipeline/prompts/` |
 | `frontend/` | SolidJS + Vite. One layout engine for preview + export |
 
 ## Dev (devbox)
@@ -40,4 +40,4 @@ just status
 | limits | `-llm-concurrency 2`, `MemoryMax=1800M` (box has ~3.8 GB) |
 
 Binary built on devbox (glibc 2.43) runs on server (2.39): deploy checks max `GLIBC_` symbol ≤ 2.39, fails otherwise.
-Prereqs on server: `claude` CLI logged in (`~/.local/bin/claude`). ORT + detector auto-downloaded to `vendor/` on first deploy.
+Prereqs on server: `~/comic-translator/.env` (0600) with `OPENROUTER_API_KEY=…`, read by the unit (`EnvironmentFile`). Deploy fails without it. No `claude` CLI needed: its OAuth expired 2026-10-22 and every OCR call died with `exit status 1`. Detector auto-downloaded to `vendor/` on first deploy.

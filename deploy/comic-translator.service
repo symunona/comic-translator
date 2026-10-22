@@ -1,5 +1,5 @@
 [Unit]
-Description=comic-translator API + web (comic.tmpx.space): detect in the browser, LLM claude-cli sonnet
+Description=comic-translator API + web (comic.tmpx.space): detect in the browser, LLM OpenRouter Gemini
 Documentation=https://github.com/symunona/comic-translator
 After=network-online.target
 Wants=network-online.target
@@ -8,7 +8,9 @@ Wants=network-online.target
 Type=simple
 WorkingDirectory=%h/comic-translator
 Environment=TMPDIR=%h/comic-translator/tmp
-Environment=LLM=claude-cli:sonnet
+EnvironmentFile=%h/comic-translator/.env
+Environment=LLM=openrouter:google/gemini-3.8-flash
+Environment=LLM_OCR=openrouter:google/gemini-3.8-flash?effort=low
 Environment=PATH=%h/.local/bin:/usr/local/bin:/usr/bin:/bin
 ExecStart=%h/comic-translator/bin/server \
   -addr 127.0.0.1:4720 \
@@ -17,7 +19,6 @@ ExecStart=%h/comic-translator/bin/server \
   -models %h/comic-translator/vendor/models \
   -detector "" \
   -debug \
-  -ocr-per-panel \
   -llm-concurrency 2
 Restart=always
 RestartSec=5

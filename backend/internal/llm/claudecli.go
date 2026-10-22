@@ -86,7 +86,11 @@ func (c *ClaudeCLI) Complete(ctx context.Context, req Request) (*Response, error
 	cmd.Stdout, cmd.Stderr = &stdout, &stderr
 
 	if err := cmd.Run(); err != nil {
-		return &Response{Text: stdout.String()}, fmt.Errorf("%v: %s", err, strings.TrimSpace(stderr.String()))
+		msg := strings.TrimSpace(stderr.String())
+		if msg == "" {
+			msg = strings.TrimSpace(stdout.String())
+		}
+		return &Response{Text: stdout.String()}, fmt.Errorf("%v: %s", err, msg)
 	}
 	var res cliResult
 	if err := json.Unmarshal(stdout.Bytes(), &res); err != nil {

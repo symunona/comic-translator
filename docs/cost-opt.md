@@ -101,7 +101,8 @@ Blind, two judges from different families (Opus via claude-cli, gemini-3.8-flash
 
 - vs Sonnet now ~$0.23 (claude-cli list) and Opus ~$1.45.
 - Gemini Flash price risk: docs/llm.md notes Gemini 3.8 Flash price doubles 2027-01-01 (direct API). Re-check OpenRouter price then.
-- Prod not switched: needs an API key on server. Config: `LLM=openrouter:google/gemini-3.8-flash LLM_OCR=openrouter:google/gemini-3.8-flash?effort=low`, drop `-ocr-per-panel`. Paddle-draft OCR needs browser Paddle wiring (not built).
+- **Prod switched 2026-10-22** (claude-cli OAuth on server expired, OCR died). Key in `~/comic-translator/.env` on server. Config: `LLM=openrouter:google/gemini-3.8-flash LLM_OCR=openrouter:google/gemini-3.8-flash?effort=low`, drop `-ocr-per-panel`. Paddle-draft + flash-lite OCR (the $0.007 pick) needs browser Paddle wiring: not built, OCR runs gemini-3.8-flash whole strip meanwhile.
+- Translate prompt now says: localize invented / parody names (the vodorre loss).
 
 ## Rerun
 

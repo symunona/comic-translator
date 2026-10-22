@@ -36,7 +36,7 @@ if ! echo "$sha  $dir/vendor/models/$model" | sha256sum -c --quiet >/dev/null 2>
   echo "$sha  $dir/vendor/models/$model.part" | sha256sum -c --quiet
   mv "$dir/vendor/models/$model.part" "$dir/vendor/models/$model"
 fi
-command -v claude >/dev/null || { echo "claude CLI missing on $(hostname)" >&2; exit 1; }
+grep -q "^OPENROUTER_API_KEY=." "$dir/.env" 2>/dev/null || { echo "OPENROUTER_API_KEY missing in $dir/.env on $(hostname)" >&2; exit 1; }
 REMOTE
 
 echo "== ship"
