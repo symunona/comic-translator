@@ -94,6 +94,9 @@ export default function Upload() {
 
   return (
     <div class="home">
+      <a class="gh-ribbon" href="https://github.com/symunona/comic-translator" target="_blank" rel="noopener">
+        Fork me on GitHub
+      </a>
       <header class="hero">
         <h1>
           <Logo size={58} />
@@ -101,7 +104,8 @@ export default function Upload() {
             comic<span>·</span>translator
           </span>
         </h1>
-        <p>Drop a strip. It finds the bubbles, reads them, gets the joke, and letters it back in your language. Runs in your browser: free on this computer, or with SOTA models on your own OpenRouter key.</p>
+        <p>Drop a strip. It finds the bubbles, clears them, translates them, reviews the result with LLMs, and you can edit every bubble by hand.</p>
+        <p>Try it free, right in your browser. Or use SOTA LLMs on your own OpenRouter key.</p>
         <div class="mode-row">
           <ModeToggle />
           <span class="muted">{settings.allFree() ? "Free: nothing leaves your computer, rougher." : settings.apiKey() ? "SOTA models, about $0.05–0.15 a strip." : "SOTA models, about $0.05–0.15 a strip. Asks for your key."}</span>
@@ -229,6 +233,10 @@ export default function Upload() {
       <footer class="home-foot muted">
         Everything runs in your browser: bubble detection, erasing, lettering. Text goes to the AI model through OpenRouter on your key. If you share, the hub stores the image's hash and
         the translation file, never the image.
+        <span class="foot-links">
+          Human here, need tokens for my next project: <a href="https://buymeacoffee.com/symunona" target="_blank" rel="noopener">buy me a coffee</a> ·{" "}
+          <a href="https://github.com/symunona/comic-translator" target="_blank" rel="noopener">GitHub</a>
+        </span>
       </footer>
     </div>
   );

@@ -681,6 +681,10 @@ button:disabled { opacity: 0.45; cursor: default; }
 .grid li:hover .thumb-del { opacity: 1; }
 .demos > p { margin: -6px 0 14px; }
 .home-foot { margin-top: 56px; font-size: 12px; line-height: 1.6; max-width: 640px; }
+.foot-links { display: block; margin-top: 10px; font-size: 13px; color: var(--ink); }
+.gh-ribbon { position: fixed; top: 34px; right: -54px; width: 230px; transform: rotate(45deg); z-index: 20; padding: 5px 0; text-align: center; background: var(--accent); color: var(--ink); border-block: 2px solid var(--ink); font-family: var(--hand); font-size: 16px; text-decoration: none; box-shadow: var(--shadow); }
+.gh-ribbon:hover { background: var(--ink); color: var(--accent); }
+@media (max-width: 640px) { .gh-ribbon { top: 18px; right: -70px; font-size: 13px; padding: 3px 0; } }
 
 .key-dialog { width: min(560px, 94vw); }
 .key-dialog .dialog-body { background: var(--card); display: flex; flex-direction: column; gap: 18px; }
