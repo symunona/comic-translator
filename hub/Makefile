@@ -1,11 +1,12 @@
 ROOT := $(abspath $(CURDIR)/..)
-GO   ?= /snap/bin/go
+GO   ?= go
+CACHE_DIR ?= $(ROOT)/.cache
 DATA ?= $(ROOT)/data-hub
 SESSION := comic-hub
 
 export TMPDIR     := $(ROOT)/.tmp
-export GOCACHE    := /data/cache/go-build
-export GOMODCACHE := /data/cache/go-mod
+export GOCACHE    := $(CACHE_DIR)/go-build
+export GOMODCACHE := $(CACHE_DIR)/go-mod
 export GOFLAGS    := -modcacherw
 export CGO_ENABLED := 0
 
@@ -16,7 +17,7 @@ build:
 	$(GO) build -trimpath -o bin/hub .
 
 run: build
-	./bin/hub -data $(DATA) -models /data/cache/models/comic-detector
+	./bin/hub -data $(DATA) -models $(CACHE_DIR)/models/comic-detector
 
 tmux: build
 	-tmux kill-session -t $(SESSION) 2>/dev/null

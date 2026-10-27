@@ -1,5 +1,5 @@
 [Unit]
-Description=comic-translator hub (comic.tmpx.space): static frontend, shared translations per image hash
+Description=comic-translator hub: static frontend, shared translations per image hash
 Documentation=https://github.com/symunona/comic-translator
 After=network-online.target
 Wants=network-online.target

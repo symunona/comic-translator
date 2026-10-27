@@ -11,7 +11,7 @@ import { score, summarize } from "./metrics.mjs";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const PORT = Number(process.env.OCR_BENCH_PORT ?? 4750);
-const CHROMIUM = process.env.CHROMIUM ?? "/data/cache/playwright/chromium-1234/chrome-linux64/chrome";
+const CHROMIUM = process.env.CHROMIUM;
 const MULTI = Number(process.env.OCR_BENCH_THREADS ?? 4);
 const LIMIT = Number(process.env.OCR_BENCH_LIMIT ?? 0);
 const TIMEOUT = 30 * 60 * 1000;

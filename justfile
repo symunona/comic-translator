@@ -1,4 +1,5 @@
 set shell := ["bash", "-euo", "pipefail", "-c"]
+set dotenv-load
 
 root := justfile_directory()
 
@@ -24,14 +25,14 @@ check:
     cd {{root}}/frontend && pnpm exec tsc --noEmit
     make -C {{root}}/hub vet test
 
-# build, ship to server, restart comic.tmpx.space
+# build, ship to $DEPLOY_HOST, restart the hub
 deploy:
     {{root}}/deploy/deploy.sh
 
-# tail prod logs on server
+# tail prod logs on $DEPLOY_HOST
 logs:
-    ssh server journalctl --user -u comic-hub -f -n 50
+    ssh "$DEPLOY_HOST" journalctl --user -u comic-hub -f -n 50
 
 # prod service status
 status:
-    ssh server systemctl --user status comic-hub --no-pager
+    ssh "$DEPLOY_HOST" systemctl --user status comic-hub --no-pager

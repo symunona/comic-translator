@@ -1,7 +1,7 @@
 import { mkdir, stat, writeFile } from "node:fs/promises";
 import { dirname, join } from "node:path";
 
-export const MODELS_DIR = process.env.OCR_BENCH_MODELS ?? "/data/cache/models/ocr-bench";
+export const MODELS_DIR = process.env.OCR_BENCH_MODELS ?? join(import.meta.dirname, ".models");
 
 const HF = "https://huggingface.co";
 const PADDLE = `${HF}/snowfluke/ppu-paddle-ocr-models/resolve/main`;

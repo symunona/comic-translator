@@ -18,7 +18,9 @@ node_modules/
 /frontend/.vite/
 *.tsbuildinfo
 
-# models and native libs live in /data/cache, never in git
+# models and native libs live in $CACHE_DIR, never in git
+/.cache/
+/bench/.models/
 *.onnx
 *.so
 *.so.*

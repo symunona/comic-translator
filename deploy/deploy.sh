@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
-# Build on devbox, ship to server ~/comic-hub, restart comic-hub.service.
+# Build here, ship to $DEPLOY_HOST ~/comic-hub, restart comic-hub.service.
 # Everything but the hub runs in the browser; the hub binary is static (CGO off).
 set -euo pipefail
 
-host=${DEPLOY_HOST:-server}
+host=${DEPLOY_HOST:?set DEPLOY_HOST in .env}
 remote=comic-hub
 port=4750
 root="$(cd "$(dirname "$0")/.." && pwd)"
@@ -46,7 +46,7 @@ ssh "$host" "mv $remote/bin/hub.new $remote/bin/hub \
 
 for _ in $(seq 1 20); do
   if ssh "$host" "curl -sf -o /dev/null 127.0.0.1:$port/api/config"; then
-    echo "== up: https://comic.tmpx.space"
+    echo "== up: ${PUBLIC_URL:-$host}"
     exit 0
   fi
   sleep 1
