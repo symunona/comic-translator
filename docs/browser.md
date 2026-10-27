@@ -1,5 +1,7 @@
 # Browser detect (branch `browser-offload`, experimental)
 
+> Describes the server pipeline, kept on tag `server-backend`. The current app runs the pipeline in the browser: see the README.
+
 Q3 step 1 from `docs/llm.md` done: bubble/text detection runs in the browser. Server runs no detector.
 
 Env: https://comic-browser.tmpx.space (server `~/comic-browser`, `comic-browser.service`, port 4740, own data dir, same basic auth as prod). Deploy: `just deploy-browser`. Logs: `just logs-browser`.

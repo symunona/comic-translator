@@ -1,0 +1,62 @@
+[
+ {
+  "name": "vodorre",
+  "title": "Vödörre",
+  "image": "vodorre.webp",
+  "hash": "e3d568cafffeeb3263f8572c19b288c32c7cee9b1eff81d834bf7ec29b0a9a2e",
+  "width": 620,
+  "height": 1583,
+  "translations": {
+   "de": "vodorre.de.json",
+   "en": "vodorre.en.json"
+  }
+ },
+ {
+  "name": "hatos_csavar",
+  "title": "Hatos csavar",
+  "image": "hatos_csavar.webp",
+  "hash": "3b3436860d742571c5a540084c396d020cb19fae9191994d00f2338e06c41d2b",
+  "width": 620,
+  "height": 3246,
+  "translations": {
+   "de": "hatos_csavar.de.json",
+   "en": "hatos_csavar.en.json"
+  }
+ },
+ {
+  "name": "zsenialis_rendszer",
+  "title": "Zseniális rendszer",
+  "image": "zsenialis_rendszer.webp",
+  "hash": "6cbd56cdd933343ad87de8c3e3dd772f7f771dd3f4786507d9786c71aad26a05",
+  "width": 620,
+  "height": 2420,
+  "translations": {
+   "de": "zsenialis_rendszer.de.json",
+   "en": "zsenialis_rendszer.en.json"
+  }
+ },
+ {
+  "name": "nyerstej_szallito",
+  "title": "Nyerstej-szállító",
+  "image": "nyerstej_szallito.png",
+  "hash": "24bfd5dec8442e77e52eee426b99362d20166e3ef0713d47a92c5b832bbcb8d3",
+  "width": 620,
+  "height": 1900,
+  "translations": {
+   "de": "nyerstej_szallito.de.json",
+   "en": "nyerstej_szallito.en.json"
+  }
+ },
+ {
+  "name": "ket_nagy_szatyor",
+  "title": "Két nagy szatyor",
+  "image": "ket_nagy_szatyor.webp",
+  "hash": "0c0bd5d58b4b8bd03a1229371408586ca54a0de357a882ded2c9843589bea963",
+  "width": 620,
+  "height": 4290,
+  "translations": {
+   "de": "ket_nagy_szatyor.de.json",
+   "en": "ket_nagy_szatyor.en.json"
+  }
+ }
+]

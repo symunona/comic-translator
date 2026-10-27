@@ -1,5 +1,7 @@
 # comic-translator spec (v1)
 
+> Describes the server pipeline, kept on tag `server-backend`. The current app runs the pipeline in the browser: see the README.
+
 Goal: upload comic strip -> detect -> OCR -> context -> translate -> erase text -> editor -> final PNG.
 Demo target: Napirajz `kristalyhologram.png` (620x5738, vertical, B/W hand lettering, white bubbles, Hungarian).
 Test file: `~/dropx/org/90-99 misc logs, admin, docs, and dumps/93 resources/memestream, comics, napirajz/napirajz-archivum/kristalyhologram.png`

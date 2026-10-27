@@ -1,43 +1,59 @@
 # comic-translator
 
-Upload comic strip → detect bubbles → OCR → scene context → translate + review → erase text → edit → export PNG.
-Built for Napirajz (Hungarian, hand-lettered). Spec: [docs/spec.md](docs/spec.md). Prior art: [docs/prior-art.md](docs/prior-art.md).
+Drop a comic strip → detect bubbles → erase → read → get the joke → translate + review → letter it back → PNG.
+Built for Napirajz (Hungarian, hand-lettered); any source language (detected) to any target language.
 
-## Stack
+Live: https://comic.tmpx.space (public). The old server-side pipeline is tag `server-backend` (docs/spec.md describes it).
 
-| part | what |
-|---|---|
-| `backend/` | Go API, pipeline, per-hash FS store, SSE |
-| detector | ogkalu/comic-text-and-bubble-detector ONNX via onnxruntime_go (CPU) |
-| LLM | swappable backends (`docs/llm.md`). Prod: OpenRouter `google/gemini-3.8-flash` every step, OCR `effort=low`, 1 call per strip (`docs/cost-opt.md`). Dev default: `claude -p` CLI. Prompts `backend/internal/pipeline/prompts/` |
-| `frontend/` | SolidJS + Vite. One layout engine for preview + export |
+## How it works
+
+Everything runs in the browser, on the user's own OpenRouter key.
+
+| step | where | how |
+|---|---|---|
+| panels, erase, fit box | browser | `frontend/src/lib/cv/` (TS ports of the Go CV) |
+| bubble detect | browser worker | onnxruntime-web, `detector-v4-s_int8.onnx` served at `/models/` |
+| shared lookup | hub | image SHA-256 → translations others shared (only when the user shares) |
+| ocr + source language, scene, translate, review | browser → OpenRouter | `google/gemini-3.8-flash`, prompts `frontend/src/lib/llm/prompts.ts`. ~$0.04 per strip, ~$0.016 per extra language |
+
+- Key: localStorage only (`ct.apiKey`), pasted or via OpenRouter OAuth (PKCE, `/oauth`). Never sent to the hub.
+- Strips: records in localStorage (`ct.strip.<hash>`), images in IndexedDB. Nothing leaves the browser unless shared.
+- Sharing (checkbox, default on, optional nickname): Cloudflare Turnstile once → 30-day hub session. Posted: hash + translation file (boxes, OCR text, scene, translation). Never the image. Sharers get existing translations for the same image without a key, and reuse OCR + scene for a new language.
+- Demos: `frontend/public/demos/` (5 Napirajz strips, en + de), bundled translation files, no key needed.
+
+## hub (`hub/`)
+
+Go, stdlib + `modernc.org/sqlite` (static, CGO off). `127.0.0.1:4750`.
+
+| method | path | |
+|---|---|---|
+| GET | `/api/config` | `{turnstileSiteKey}` |
+| POST | `/api/session` | `{token}` Turnstile → `{token, exp}` HMAC session (header `X-Session`) |
+| GET | `/api/comics/{hash}` | session. `{translations:[{id, lang, srcLang, nick, createdAt}]}` |
+| GET | `/api/translations/{id}` | session. the translation file |
+| POST | `/api/comics/{hash}/translations` | session. file ≤ 1 MB; nickname claimed by first `X-Nick-Secret` (random, per browser) |
+| GET | `/api/nicks/{nick}` | contributions of a nickname |
+| GET | `/api/fetch?url=` | image proxy for the URL input. Public addresses only, images only, ≤ 30 MB |
+
+Per-IP hourly limits. Also serves the built frontend (SPA fallback) and `/models/`.
 
 ## Dev (devbox)
 
 ```sh
-just serve     # API :4720 + vite :4721 in tmux comic-translator-api / -web
-just stop
-just check     # tsc + go vet
+just serve     # hub :4750 (tmux comic-hub) + vite :4721 (tmux comic-translator-web), Turnstile test keys
+just check     # tsc + go vet + hub tests
 ```
 
-Needs: ONNX Runtime 1.29.0 at `/data/cache/onnxruntime/…` (or `ORT_LIB`), detector at `/data/cache/models/comic-detector/detector.onnx`, `claude` logged in.
-
-## Prod: https://comic.tmpx.space (server)
+## Prod (server)
 
 ```sh
-just deploy    # build on devbox, rsync to server, restart user service
+just deploy    # build, rsync to ~/comic-hub, restart comic-hub.service
 just logs
-just status
 ```
 
 | thing | where |
 |---|---|
-| service | `~/.config/systemd/user/comic-translator.service` (from `deploy/`) |
-| app dir | `~/comic-translator/{bin,web,data,tmp,vendor}` |
-| port | `127.0.0.1:4720`, behind Caddy |
-| TLS + basic auth | `~/caddy/Caddyfile` block `comic.tmpx.space`. users as hashes only, never in repo |
-| DNS | Cloudflare A record, DNS-only |
-| limits | `-llm-concurrency 2`, `MemoryMax=1800M` (box has ~3.8 GB) |
-
-Binary built on devbox (glibc 2.43) runs on server (2.39): deploy checks max `GLIBC_` symbol ≤ 2.39, fails otherwise.
-Prereqs on server: `~/comic-translator/.env` (0600) with `OPENROUTER_API_KEY=…`, read by the unit (`EnvironmentFile`). Deploy fails without it. No `claude` CLI needed: its OAuth expired 2026-10-22 and every OCR call died with `exit status 1`. Detector auto-downloaded to `vendor/` on first deploy.
+| service | `~/.config/systemd/user/comic-hub.service` (from `deploy/`) |
+| app dir | `~/comic-hub/{bin,web,data,vendor}`, db `data/hub.db`, session key `data/session.key` |
+| secrets | `~/comic-hub/.env` (0600): `TURNSTILE_SITE_KEY`, `TURNSTILE_SECRET` |
+| proxy | Caddy block `comic.tmpx.space` → `127.0.0.1:4750`, no auth |

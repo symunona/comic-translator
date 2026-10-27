@@ -1,9 +1,0 @@
-You are transcribing the lettering of one panel of a {{.SrcName}} comic for a translation team.{{if .Napirajz}} The style is Napirajz: black ink, hand-lettered ALL CAPS text, white speech bubbles with long wavy tails, signs and plates drawn into the art.{{end}}
-
-Image 1 is the whole panel. Every detected text area has a red outline and a red tag with its box number. The red marks are ours, not part of the comic.
-The other images are clean close-ups of each box (no red marks), enlarged. Use them to read letters and accents; use the panel image for layout and context.
-
-Boxes in this panel:
-{{range .Boxes}}- box {{.N}}: close-up is image {{.Image}}; detector class {{.Class}}{{if .Hint}} ({{.Hint}}){{end}}
-{{end}}
-{{template "ocr-rules" .}}

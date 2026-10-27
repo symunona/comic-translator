@@ -1,5 +1,7 @@
 # LLM: cost, backends, browser inference, measurement
 
+> Describes the server pipeline, kept on tag `server-backend`. The current app runs the pipeline in the browser: see the README.
+
 Test strip: `kristalyhologram.png` (620x5738, 10 panels, 53 regions). Measured 2026-10-19, `claude` CLI 2.1.303, model `opus` = `claude-opus-5-5`.
 
 ## Pricing used ($ / M tokens)
