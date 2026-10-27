@@ -302,11 +302,10 @@ button:disabled { opacity: 0.45; cursor: default; }
 }
 .strip.loading .region-box.pending {
   outline-color: rgba(242, 194, 48, 0.95);
-  background: rgba(242, 194, 48, 0.18);
   animation: pop-in 0.3s ease both, pulse 1.2s ease-in-out 0.3s infinite;
 }
 .strip.loading .region-box.read { outline-color: rgba(47, 154, 90, 0.7); animation: settle 0.4s ease; }
-.region-box.hovered, .region-box.active { outline-color: var(--ink); background: rgba(242, 194, 48, 0.12); }
+.region-box.hovered, .region-box.active { outline-color: var(--ink); }
 .region-box.active { outline-width: 3px; }
 .region-box.keep.hovered { outline-style: dashed; }
 .region-num {
@@ -338,7 +337,7 @@ button:disabled { opacity: 0.45; cursor: default; }
 .fit.overflow { color: #a8261d; }
 .fit > div { height: auto; }
 
-@keyframes pulse { 50% { background: rgba(242, 194, 48, 0.42); outline-color: rgba(242, 194, 48, 0.4); } }
+@keyframes pulse { 50% { outline-color: rgba(242, 194, 48, 0.3); } }
 @keyframes pop-in { from { transform: scale(0.85); opacity: 0; } }
 @keyframes settle { from { transform: scale(1.05); } }
 @keyframes drop-in { from { transform: translateY(-12px) scale(0.96); opacity: 0; } }
@@ -700,3 +699,9 @@ button:disabled { opacity: 0.45; cursor: default; }
 .share-state p { margin: 0; font-size: 13px; }
 .step.skipped { opacity: 0.5; }
 .step-where { grid-column: 2 / -1; font-size: 11px; color: var(--muted); }
+
+.dialog .x { border: 0; box-shadow: none; background: transparent; font-size: 22px; line-height: 1; padding: 2px 8px; color: var(--muted); }
+.dialog .x:hover { color: var(--ink); }
+.step-where a { color: inherit; }
+.step-actions { grid-column: 2 / -1; display: flex; gap: 6px; margin-top: 4px; }
+.why-link { display: inline-block; margin: 6px 0 0 28px; font-size: 12px; color: var(--blue); }

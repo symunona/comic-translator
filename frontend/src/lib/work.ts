@@ -358,7 +358,7 @@ export function createWork(id: string) {
     batch(() => {
       setState("translation", "regions", rid, (x) => ({ ...(x ?? {}), text }));
       setState("translation", "edited", true);
-      if (state.translation?.origin !== "llm") setState("translation", "origin", "llm");
+      if (state.translation?.origin === "shared" || state.translation?.origin === "demo") setState("translation", "origin", "llm");
       setState("share", settings.share() ? "idle" : "off");
     });
     setSaveState("pending");
@@ -400,6 +400,31 @@ export function createWork(id: string) {
     }
   };
 
+  // editEmpty opens the editor with every bubble blank, for lettering by hand.
+  const editEmpty = () => {
+    const l = lang();
+    if (!state.rec || !orig) return;
+    gen++;
+    abort?.abort();
+    const t: Translation = { lang: l, regions: Object.fromEntries(rec().regions.map((r) => [r.id, { text: "" }])), updatedAt: now(), origin: "user", edited: true };
+    mutate((x) => (x.translations[l] = t));
+    batch(() => {
+      for (const st of STAGES) if (state.stages[st].status === "pending" || state.stages[st].status === "running") stage(st, { status: "skipped" });
+      setState("translation", reconcile(structuredClone(t)));
+      setState("phase", "done");
+      setState("error", "");
+      setState("share", "off");
+    });
+  };
+
+  // translateAI drops a hand-made translation and runs the LLM steps for the language.
+  const translateAI = () => {
+    const l = lang();
+    flush();
+    mutate((x) => void delete x.translations[l]);
+    run(l);
+  };
+
   onCleanup(() => {
     flush();
     gen++;
@@ -408,7 +433,7 @@ export function createWork(id: string) {
     if (imageUrl) URL.revokeObjectURL(imageUrl);
   });
 
-  return { state, lang, connect, retry, editText, setReplace, retranslate, flush, saveState, shareNow };
+  return { state, lang, connect, retry, editText, setReplace, retranslate, flush, saveState, shareNow, editEmpty, translateAI };
 }
 
 export type Work = ReturnType<typeof createWork>;

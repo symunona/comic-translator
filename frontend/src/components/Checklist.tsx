@@ -12,23 +12,46 @@ const LABELS: Record<StageName, string> = {
   review: "Review jokes & fit",
 };
 
-const WHERE: Record<StageName, string> = {
-  panels: "your browser",
-  detect: "your browser",
-  clean: "your browser",
-  shared: "comic hub",
-  ocr: "OpenRouter",
-  scene: "OpenRouter",
-  translate: "OpenRouter",
-  review: "OpenRouter",
+const LLM = new Set<StageName>(["ocr", "scene", "translate", "review"]);
+
+const HOW: Record<StageName, string> = {
+  panels: "your browser · XY-cut on the ink projection",
+  detect: "your browser · comic-text-and-bubble-detector v4-s int8 (RT-DETR v2, ONNX on WASM)",
+  clean: "your browser · lettering ink inside each bubble painted with the paper colour",
+  shared: "comic hub · lookup by the image's SHA-256",
+  ocr: "whole strip + close-up per box, 1 call, reasoning low",
+  scene: "all panels + transcript, 1 call",
+  translate: "all bubbles at once, 1 call",
+  review: "critique + rewrite, 1 call",
 };
+
+const modelLink = (m: string) => (
+  <a href={`https://openrouter.ai/${m}`} target="_blank" rel="noopener">
+    {m}
+  </a>
+);
 
 export const usd = (n: number) => (n < 0.01 ? `$${n.toFixed(4)}` : `$${n.toFixed(3)}`);
 
-export default function Checklist(p: { stages: Record<StageName, StageState>; collapsed: boolean; error: string; lang: string; calls: CallStat[] }) {
+type Props = {
+  stages: Record<StageName, StageState>;
+  collapsed: boolean;
+  error: string;
+  lang: string;
+  calls: CallStat[];
+  model: string;
+  onDownloadEmpty?: () => void;
+  onEditEmpty?: () => void;
+};
+
+export default function Checklist(p: Props) {
   const [expanded, setExpanded] = createSignal(false);
-  const cost = (name: StageName) =>
-    p.calls.filter((c) => c.stage === name || c.stage === `${name}:${p.lang}`).reduce((n, c) => n + c.costUsd, 0);
+  const callsOf = (name: StageName) => p.calls.filter((c) => c.stage === name || c.stage === `${name}:${p.lang}`);
+  const cost = (name: StageName) => callsOf(name).reduce((n, c) => n + c.costUsd, 0);
+  const models = (name: StageName) => {
+    const used = [...new Set(callsOf(name).map((c) => c.model))];
+    return used.length ? used : [p.model];
+  };
   const total = createMemo(() => p.calls.reduce((n, c) => n + c.costUsd, 0));
   const open = () => !p.collapsed || expanded();
   return (
@@ -69,15 +92,37 @@ export default function Checklist(p: { stages: Record<StageName, StageState>; co
                         <span class="credit">{usd(cost(name))}</span>
                       </Show>
                     </span>
-                    <span class="step-where">{WHERE[name]}</span>
+                    <span class="step-where">
+                      <Show when={LLM.has(name)} fallback={HOW[name]}>
+                        OpenRouter · <For each={models(name)}>{(m, i) => <>{i() ? ", " : ""}{modelLink(m)}</>}</For>
+                        <Show when={!callsOf(name).length}> (planned)</Show> · {HOW[name]}
+                      </Show>
+                    </span>
                     <Show when={st().message}>
                       <span class="step-msg">{st().message}</span>
+                    </Show>
+                    <Show when={name === "clean" && (p.onDownloadEmpty || p.onEditEmpty)}>
+                      <span class="step-actions">
+                        <Show when={p.onDownloadEmpty}>
+                          <button type="button" class="ghost small" onClick={p.onDownloadEmpty}>
+                            Download empty
+                          </button>
+                        </Show>
+                        <Show when={p.onEditEmpty}>
+                          <button type="button" class="ghost small" title="Open the editor with every bubble blank, letter it yourself" onClick={p.onEditEmpty}>
+                            Edit empty
+                          </button>
+                        </Show>
+                      </span>
                     </Show>
                   </li>
                 );
               }}
             </For>
           </ol>
+          <a class="why-link" href="/research.html" target="_blank" rel="noopener">
+            Why these models? The benchmarks →
+          </a>
         </div>
       </div>
       <Show when={p.error}>

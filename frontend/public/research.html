@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Why these models · comic·translator</title>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<style>
+  @font-face { font-family: "Patrick Hand"; src: url(/fonts/patrick-hand-latin.woff2) format("woff2"); font-display: swap; }
+  @font-face { font-family: "Patrick Hand"; src: url(/fonts/patrick-hand-latin-ext.woff2) format("woff2"); unicode-range: U+0100-02BA; font-display: swap; }
+  :root { --paper: #f7f4ec; --card: #fffdf8; --ink: #1b1a17; --muted: #77736a; --line: #e3ddd0; --accent: #f2c230; --green: #2f9a5a; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--paper); color: var(--ink); font: 15px/1.55 system-ui, -apple-system, "Segoe UI", sans-serif; }
+  main { max-width: 900px; margin: 0 auto; padding: 40px 16px 80px; }
+  h1, h2 { font-family: "Patrick Hand", cursive; font-weight: 400; }
+  h1 { font-size: 40px; margin: 0 0 4px; }
+  h2 { font-size: 28px; margin: 40px 0 8px; }
+  .muted { color: var(--muted); }
+  a { color: #2f6fd6; }
+  .table { overflow-x: auto; background: var(--card); border: 1px solid var(--line); border-radius: 10px; margin: 12px 0; }
+  table { border-collapse: collapse; width: 100%; font-size: 13.5px; }
+  th, td { padding: 7px 10px; text-align: left; border-bottom: 1px solid var(--line); white-space: nowrap; }
+  th { font-weight: 600; background: #f3efe4; }
+  tr:last-child td { border-bottom: 0; }
+  tr.pick td { background: #fff6d6; font-weight: 600; }
+  td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+  ul { padding-left: 20px; }
+  li { margin: 4px 0; }
+  .back { font-size: 14px; }
+</style>
+</head>
+<body>
+<main>
+<a class="back" href="/">← comic·translator</a>
+<h1>Why these models?</h1>
+<p class="muted">Benchmarks run in October 2026 on Napirajz strips (Hungarian, hand-lettered) plus Pepper&amp;Carrot pages and meme captions (English → Hungarian). Goal: the cheapest model per step that is as good as Claude Sonnet or better.</p>
+
+<h2>What runs now</h2>
+<div class="table"><table>
+<tr><th>step</th><th>where</th><th>model / method</th><th class="num">cost per strip</th></tr>
+<tr><td>find panels</td><td>your browser</td><td>XY-cut on the ink projection</td><td class="num">free</td></tr>
+<tr><td>detect bubbles</td><td>your browser</td><td>ogkalu comic-text-and-bubble-detector v4-s int8 (RT-DETR v2), onnxruntime-web WASM</td><td class="num">free</td></tr>
+<tr><td>erase text</td><td>your browser</td><td>ink components inside the bubble, painted with paper colour</td><td class="num">free</td></tr>
+<tr><td>read text + guess language</td><td>OpenRouter</td><td>google/gemini-3.8-flash, reasoning low, whole strip + close-ups in 1 call</td><td class="num">~$0.01–0.02</td></tr>
+<tr><td>understand scene</td><td>OpenRouter</td><td>google/gemini-3.8-flash, 1 call</td><td class="num">~$0.01–0.02</td></tr>
+<tr><td>translate + review</td><td>OpenRouter</td><td>google/gemini-3.8-flash, 2 calls (draft, then critique + rewrite)</td><td class="num">~$0.015–0.05</td></tr>
+<tr class="pick"><td>whole strip</td><td></td><td></td><td class="num">~$0.04–0.08</td></tr>
+</table></div>
+<p class="muted">Measured in the app: a 4-panel strip costs $0.038 for the first language, $0.016 for each further one (reading and scene are reused).</p>
+
+<h2>Reading the lettering (OCR)</h2>
+<p>104 boxes with text over 8 strips. Ground truth: Claude Opus, with 32 disputed crops checked by eye. CER = character error rate, lower is better. Accents = Hungarian accented letters kept (Ő, Ű, É…), which change the meaning.</p>
+<div class="table"><table>
+<tr><th>model</th><th>method</th><th class="num">CER</th><th class="num">accents</th><th class="num">$ / strip</th></tr>
+<tr><td>Claude Opus</td><td>whole strip</td><td class="num">0.002</td><td class="num">98%</td><td class="num">0.146</td></tr>
+<tr><td>Claude Sonnet</td><td>per panel</td><td class="num">0.008</td><td class="num">97%</td><td class="num">0.096</td></tr>
+<tr><td>gemini-3.1-flash-lite</td><td>PaddleOCR draft + close-ups, 1 call</td><td class="num">0.009</td><td class="num">98%</td><td class="num">0.007</td></tr>
+<tr class="pick"><td>gemini-3.8-flash (reasoning low)</td><td>whole strip</td><td class="num">0.009</td><td class="num">99%</td><td class="num">0.022</td></tr>
+<tr><td>Claude Haiku</td><td>whole strip</td><td class="num">0.010</td><td class="num">98%</td><td class="num">0.006</td></tr>
+<tr><td>glm-5.3-flash</td><td>whole strip</td><td class="num">0.019</td><td class="num">94%</td><td class="num">0.010, slow</td></tr>
+<tr><td>qwen3.8-flash</td><td>whole strip</td><td class="num">0.052</td><td class="num">95%</td><td class="num">0.006, slow</td></tr>
+<tr><td>PaddleOCR v5 latin</td><td>in the browser, per crop</td><td class="num">0.165</td><td class="num">33%</td><td class="num">free</td></tr>
+<tr><td>Tesseract.js hun</td><td>in the browser, per crop</td><td class="num">0.447</td><td class="num">70%</td><td class="num">free</td></tr>
+<tr><td>gemma4 12B (local, ollama)</td><td>per panel</td><td class="num">0.27</td><td class="num">58%</td><td class="num">free, ~10 min</td></tr>
+</table></div>
+<ul>
+<li>In-browser OCR engines lose every second accent on hand lettering; Florence-2 and TrOCR were worse and far heavier. Not usable alone.</li>
+<li>One call for the whole strip is as accurate as one call per panel for strong models and cheaper: the images and rules are sent once. Weak models skip boxes in long lists.</li>
+<li>Close-up crops matter for accents; panel images alone are cheaper but worse.</li>
+<li>Cheaper option for later: PaddleOCR draft in the browser + flash-lite at a third of the price, same quality.</li>
+</ul>
+
+<h2>Scene, translation and review</h2>
+<p>Blind scoring 1–10 by two judges from different model families (Opus and gemini-3.8-flash), panel images given; for Pepper&amp;Carrot the official Hungarian page was the human reference. Each judge rates its own family a bit higher, so read both columns.</p>
+<div class="table"><table>
+<tr><th>step</th><th>model</th><th class="num">$ / strip</th><th class="num">Opus judge</th><th class="num">Gemini judge</th></tr>
+<tr><td>scene</td><td>Claude Opus</td><td class="num">0.150</td><td class="num">10.0</td><td class="num">10.0</td></tr>
+<tr class="pick"><td>scene</td><td>gemini-3.8-flash</td><td class="num">0.017</td><td class="num">8.0</td><td class="num">9.9</td></tr>
+<tr><td>scene</td><td>Claude Sonnet</td><td class="num">0.037</td><td class="num">4.7</td><td class="num">7.2</td></tr>
+<tr><td>scene</td><td>deepseek-v4.1-flash</td><td class="num">0.025</td><td class="num">4.7</td><td class="num">6.2</td></tr>
+<tr><td>scene</td><td>gpt-5.6-luna / Haiku</td><td class="num">0.005 / 0.009</td><td class="num">2.3 / 1.7</td><td class="num">3.0 / 3.7</td></tr>
+<tr class="pick"><td>translate + review</td><td>gemini-3.8-flash</td><td class="num">0.055</td><td class="num">7.9</td><td class="num">7.9</td></tr>
+<tr><td>translate + review</td><td>Claude Opus</td><td class="num">0.239</td><td class="num">8.3</td><td class="num">7.0</td></tr>
+<tr><td>translate + review</td><td>deepseek-v4.1-flash</td><td class="num">0.016</td><td class="num">7.6</td><td class="num">6.4</td></tr>
+<tr><td>translate + review</td><td>gpt-5.6-luna</td><td class="num">0.008</td><td class="num">7.0</td><td class="num">6.4</td></tr>
+<tr><td>translate + review</td><td>Claude Sonnet</td><td class="num">0.092</td><td class="num">6.9</td><td class="num">6.4</td></tr>
+<tr><td>translate + review</td><td>qwen3.7-plus</td><td class="num">0.009</td><td class="num">6.2</td><td class="num">5.6</td></tr>
+<tr><td>translate + review</td><td>Claude Haiku</td><td class="num">0.009</td><td class="num">5.9</td><td class="num">5.0</td></tr>
+</table></div>
+<ul>
+<li>The scene step is where cheap models break: they get the speaker wrong (who says which bubble). gemini-3.8-flash is close to Opus there.</li>
+<li>The review pass (critique, then rewrite) adds about +0.7 points for strong models and makes weak ones worse, so it stays on with gemini.</li>
+<li>qwen3.7-plus aborts on profane strips (2 of 3 Napirajz). deepseek is slow (2–3 min per call).</li>
+<li>One translation call for all bubbles: jokes and verbal tics span bubbles, splitting would resend the images and the scene every time.</li>
+</ul>
+
+<h2>End to end, unseen strips</h2>
+<div class="table"><table>
+<tr><th>strip</th><th>gemini-3.8-flash pipeline</th><th>Sonnet pipeline</th></tr>
+<tr><td>Az izzó liget</td><td><b>$0.078</b>, judged 9 / 8</td><td>$0.363, judged 6 / 7</td></tr>
+<tr><td>Vödörre</td><td><b>$0.053</b>, judged 4 / 4</td><td>$0.198, judged 7 / 7</td></tr>
+</table></div>
+<p class="muted">The Vödörre loss came from leaving the parody names untranslated; the translate prompt now says to localize invented names. Two strips are not proof, but the direction matches the per-step results.</p>
+
+<h2>Bubble detection in the browser</h2>
+<ul>
+<li>The small int8 detector (11 MB) runs on WASM: ~1 s per panel single-threaded on a desktop, byte-identical boxes run to run.</li>
+<li>WebGPU was ~3× slower for this model (int8 and TopK ops fall back to the CPU) and drifts a few boxes, so WASM is the default.</li>
+<li>Compared with the larger server model it finds speech bubbles equally well and misses some tiny captions and signs.</li>
+</ul>
+</main>
+</body>
+</html>

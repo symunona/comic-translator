@@ -1,4 +1,4 @@
-import { Show, createSignal, onMount } from "solid-js";
+import { Show, createSignal, onCleanup, onMount } from "solid-js";
 import { keyInfo, startOAuth } from "../lib/llm/openrouter";
 import { settings } from "../lib/settings";
 import Turnstile from "./Turnstile";
@@ -53,6 +53,13 @@ export default function KeyDialog(p: Props) {
     settings.setNick(nick().trim().slice(0, 32));
   };
 
+  onCleanup(saveShare);
+
+  const close = () => {
+    saveShare();
+    p.onClose?.();
+  };
+
   const submit = async (e: Event) => {
     e.preventDefault();
     saveShare();
@@ -68,13 +75,13 @@ export default function KeyDialog(p: Props) {
   };
 
   return (
-    <div class="dialog-backdrop" onClick={(e) => e.target === e.currentTarget && p.onClose?.()}>
+    <div class="dialog-backdrop" onClick={(e) => e.target === e.currentTarget && close()}>
       <form class="dialog key-dialog" onSubmit={submit}>
         <header>
           <h3>{p.title ?? "Bubbles are empty. Let's fill them."}</h3>
           <Show when={p.onClose}>
-            <button type="button" class="ghost" onClick={p.onClose}>
-              Close
+            <button type="button" class="x" aria-label="Close" title="Close" onClick={close}>
+              ×
             </button>
           </Show>
         </header>
@@ -131,7 +138,14 @@ export default function KeyDialog(p: Props) {
 
           <section class="share-box">
             <label class="toggle big">
-              <input type="checkbox" checked={share()} onChange={(e) => setShare(e.currentTarget.checked)} />
+              <input
+                type="checkbox"
+                checked={share()}
+                onChange={(e) => {
+                  setShare(e.currentTarget.checked);
+                  settings.setShare(e.currentTarget.checked);
+                }}
+              />
               <span>I share my translations with others</span>
             </label>
             <Show when={share()}>
@@ -145,6 +159,7 @@ export default function KeyDialog(p: Props) {
                 placeholder="stay anonymous"
                 value={nick()}
                 onInput={(e) => setNick(e.currentTarget.value)}
+                onBlur={saveShare}
                 title="A nickname collects your contributions. Leave empty to stay anonymous."
               />
               <Show when={!verified()} fallback={<p class="key-ok">Verified, sharing is on.</p>}>

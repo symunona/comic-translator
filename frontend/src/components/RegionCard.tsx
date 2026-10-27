@@ -12,7 +12,7 @@ type Props = {
   onPick: () => void;
   onText: (text: string) => void;
   onReplace: (on: boolean) => void;
-  onRetranslate: () => Promise<void>;
+  onRetranslate?: () => Promise<void>;
 };
 
 export default function RegionCard(p: Props) {
@@ -21,7 +21,7 @@ export default function RegionCard(p: Props) {
   const retranslate = async () => {
     setBusy(true);
     try {
-      await p.onRetranslate();
+      await p.onRetranslate?.();
     } finally {
       setBusy(false);
     }
@@ -46,7 +46,9 @@ export default function RegionCard(p: Props) {
           <span class={`chip ${p.region.kind}`}>{p.region.kind}</span>
         </Show>
       </header>
+      <Show when={p.region.source}>
       <p class="source">{p.region.source?.lines?.length ? p.region.source.lines.join("\n") : p.region.source?.text}</p>
+      </Show>
       <div class="edit">
         <div class="edit-inner">
           <Show when={p.tr?.literal}>
@@ -74,9 +76,11 @@ export default function RegionCard(p: Props) {
                 {p.tr!.text?.length ?? 0}/{p.tr!.maxChars}
               </span>
             </Show>
-            <button class="ghost small" disabled={busy()} onClick={retranslate}>
-              {busy() ? "translating…" : "retranslate"}
-            </button>
+            <Show when={p.onRetranslate}>
+              <button class="ghost small" disabled={busy()} onClick={retranslate}>
+                {busy() ? "translating…" : "retranslate"}
+              </button>
+            </Show>
           </footer>
         </div>
       </div>

@@ -48,7 +48,7 @@ function WorkView(props: { id: string }) {
   );
 
   const editing = () => s.phase === "done";
-  const readRegions = createMemo(() => s.regions.filter((r) => r.source));
+  const readRegions = createMemo(() => s.regions.filter((r) => r.source || s.translation?.regions[r.id] !== undefined));
   const running = createMemo(() => STAGES.find((n) => s.stages[n].status === "running"));
   const showKey = () => keyOpen() || (s.phase === "needKey" && !keyDismissed());
   const translatedLangs = () => Object.keys(s.rec?.translations ?? {});
@@ -83,6 +83,19 @@ function WorkView(props: { id: string }) {
     } finally {
       setExporting(false);
     }
+  };
+
+  const downloadEmpty = () => {
+    const r = s.rec;
+    if (!r || !s.cleanUrl) return;
+    Object.assign(document.createElement("a"), { href: s.cleanUrl, download: `${r.name.replace(/\.[^.]+$/, "")}.empty.png` }).click();
+  };
+
+  const editEmpty = () => {
+    const t = s.translation;
+    if (t && t.origin !== "user" && Object.values(t.regions).some((x) => x.text.trim()) && !confirm("Replace this translation with empty bubbles?")) return;
+    setKeyDismissed(true);
+    work.editEmpty();
   };
 
   const onKey = (e: KeyboardEvent) => {
@@ -154,13 +167,30 @@ function WorkView(props: { id: string }) {
           </div>
           <Show when={s.phase === "needKey" && !showKey()}>
             <div class="need-key">
-              <p>The bubbles are erased. Reading and translating them needs your OpenRouter key.</p>
-              <button class="primary" onClick={() => setKeyDismissed(false)}>
-                Add key to continue
-              </button>
+              <p>The bubbles are erased. Reading and translating them needs your OpenRouter key. Or letter them yourself.</p>
+              <div class="step-actions">
+                <button class="primary" onClick={() => setKeyDismissed(false)}>
+                  Add key to continue
+                </button>
+                <button class="ghost" onClick={editEmpty}>
+                  Edit empty
+                </button>
+                <button class="ghost" onClick={downloadEmpty}>
+                  Download empty
+                </button>
+              </div>
             </div>
           </Show>
-          <Checklist stages={s.stages} collapsed={editing()} error={s.phase === "fatal" ? s.error : ""} lang={work.lang()} calls={s.rec?.calls ?? []} />
+          <Checklist
+            stages={s.stages}
+            collapsed={editing()}
+            error={s.phase === "fatal" ? s.error : ""}
+            lang={work.lang()}
+            calls={s.rec?.calls ?? []}
+            model={settings.model()}
+            onDownloadEmpty={s.cleanUrl ? downloadEmpty : undefined}
+            onEditEmpty={s.cleanUrl ? editEmpty : undefined}
+          />
           <Show when={s.phase === "fatal"}>
             <button class="ghost" onClick={work.retry}>
               Try again
@@ -173,6 +203,12 @@ function WorkView(props: { id: string }) {
               </Show>
               <Show when={s.translation?.origin === "shared"}>
                 <p class="muted">Shared translation{s.translation?.by ? ` by ${s.translation.by}` : ""}. Edits stay in this browser until you share them.</p>
+              </Show>
+              <Show when={s.translation?.origin === "user"}>
+                <p class="muted">Lettered by hand, saved in this browser.</p>
+                <button class="ghost small" onClick={work.translateAI}>
+                  Translate with AI instead
+                </button>
               </Show>
               <Show when={s.translation?.origin === "llm"}>
                 <Show when={s.share === "shared"}>
@@ -215,7 +251,7 @@ function WorkView(props: { id: string }) {
                   onPick={() => pickFromCard(r.id)}
                   onText={(t) => work.editText(r.id, t)}
                   onReplace={(on) => work.setReplace(r.id, on)}
-                  onRetranslate={() => work.retranslate(r.id)}
+                  onRetranslate={r.source ? () => work.retranslate(r.id) : undefined}
                 />
               )}
             </For>

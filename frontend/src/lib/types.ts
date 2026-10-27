@@ -44,7 +44,7 @@ export type Translation = {
   updatedAt: string;
   regions: Record<string, RegionTranslation>;
   model?: string;
-  origin: "llm" | "shared" | "demo";
+  origin: "llm" | "shared" | "demo" | "user";
   by?: string;
   edited?: boolean;
   draft?: boolean;
