@@ -222,6 +222,7 @@ export function createWork(id: string) {
           const o = await runOCR(orig!, r, llm("ocr", ac.signal));
           check(g);
           r = mutate((x) => {
+            x.panels = o.panels;
             x.regions = o.regions;
             x.srcLang = o.srcLang;
             x.unboxed = o.unboxed;
@@ -230,7 +231,7 @@ export function createWork(id: string) {
           });
           await reclean();
           return o;
-        }, (o) => `${o.regions.filter((x) => x.source).length} texts · ${o.srcLang}${o.font ? ` · ${o.font}` : ""}`);
+        }, (o) => `${o.regions.filter((x) => x.source).length} texts · ${o.srcLang}${o.rtl ? " · right to left" : ""}${o.font ? ` · ${o.font}` : ""}`);
       } else stage("ocr", { status: "cached", message: r.srcLang });
       check(g);
 

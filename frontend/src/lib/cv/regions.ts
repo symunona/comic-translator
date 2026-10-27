@@ -79,7 +79,7 @@ function verticalOverlap(a: Box, b: Box): number {
   return bottom <= top || h <= 0 ? 0 : (bottom - top) / h;
 }
 
-function readingOrder<T extends { textBox: Box }>(regs: T[]): T[] {
+function readingOrder<T extends { textBox: Box }>(regs: T[], rtl = false): T[] {
   const sorted = [...regs].sort((a, b) => a.textBox[1] - b.textBox[1]);
   const rows: T[][] = [];
   for (const r of sorted) {
@@ -87,7 +87,21 @@ function readingOrder<T extends { textBox: Box }>(regs: T[]): T[] {
     if (last && verticalOverlap(last[0].textBox, r.textBox) > ROW_OVERLAP) last.push(r);
     else rows.push([r]);
   }
-  return rows.flatMap((row) => row.sort((a, b) => a.textBox[0] - b.textBox[0]));
+  const right = (b: Box) => b[0] + b[2];
+  return rows.flatMap((row) => row.sort(rtl ? (a, b) => right(b.textBox) - right(a.textBox) : (a, b) => a.textBox[0] - b.textBox[0]));
+}
+
+// reorder renumbers panels and regions for a comic read right to left.
+// Ids stay, so translations keyed by region id keep working.
+export function reorder(rects: Rect[], panels: Panel[], regions: Region[], rtl: boolean): { panels: Panel[]; regions: Region[] } {
+  const rank = (p: Panel) => {
+    const i = rects.findIndex((r) => toBox(r).every((v, k) => v === p.bbox[k]));
+    return i < 0 ? rects.length + p.order : i;
+  };
+  const ordered = [...panels].sort((a, b) => rank(a) - rank(b)).map((p, i) => ({ ...p, order: i }));
+  const out: Region[] = [];
+  for (const p of ordered) for (const r of readingOrder(regions.filter((r) => r.panelId === p.id), rtl)) out.push({ ...r, order: out.length });
+  return { panels: ordered, regions: out };
 }
 
 // detectedRegions turns raw browser detections into ordered regions r0..rN.

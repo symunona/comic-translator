@@ -113,8 +113,9 @@ function segments(filled: boolean[]): [number, number][] {
   return out;
 }
 
-// panels splits a strip into panels by recursive XY-cut on the ink projection.
-export function panels(img: Img): Rect[] {
+// panels splits a strip into panels by recursive XY-cut on the ink projection,
+// in reading order: rows top to bottom, columns left to right or right to left.
+export function panels(img: Img, rtl = false): Rect[] {
   const m = new InkMap(img.w, img.h, img, PANEL_INK);
   m.despeckle(SPECK_AREA);
   const out: Rect[] = [];
@@ -124,7 +125,7 @@ export function panels(img: Img): Rect[] {
     for (const rows of [true, false]) {
       const segs = segments(m.profile(r, rows));
       if (segs.length < 2) continue;
-      for (const [a, b] of segs) cut(rows ? rect(r.x0, r.y0 + a, r.x1, r.y0 + b) : rect(r.x0 + a, r.y0, r.x0 + b, r.y1));
+      for (const [a, b] of rtl && !rows ? segs.reverse() : segs) cut(rows ? rect(r.x0, r.y0 + a, r.x1, r.y0 + b) : rect(r.x0 + a, r.y0, r.x0 + b, r.y1));
       return;
     }
     if (r.x1 - r.x0 >= PANEL_MIN_SIZE && r.y1 - r.y0 >= PANEL_MIN_SIZE) out.push(intersect(inset(r, -PANEL_PAD), bounds(img)));

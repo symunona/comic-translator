@@ -1,9 +1,11 @@
 import { cropImages, panelImages } from "./cv/annotate";
 import type { Img } from "./cv/image";
+import { panels as findPanels } from "./cv/panels";
+import { reorder } from "./cv/regions";
 import { fontName } from "./layout";
 import { call, type CallOptions } from "./llm/openrouter";
 import { CLASS_HINTS, OCR_SCHEMA, REVIEW_SCHEMA, SCENE_SCHEMA, TRANSLATE_SCHEMA, ocrPrompt, reviewPrompt, scenePrompt, translatePrompt, type OcrBox, type TrPromptData } from "./llm/prompts";
-import type { Align, Kind, Region, RegionTranslation, Scene, StripRecord } from "./types";
+import type { Align, Kind, Panel, Region, RegionTranslation, Scene, StripRecord } from "./types";
 
 const VALID_KINDS = new Set(["speech", "thought", "caption", "sfx", "sign", "none"]);
 
@@ -12,9 +14,11 @@ export const defaultReplace = (kind?: string) => kind === "speech" || kind === "
 const cleanLines = (lines: unknown): string[] => (Array.isArray(lines) ? lines.map((l) => String(l).trim()).filter(Boolean) : []);
 const normAlign = (a: unknown): Align => (a === "left" || a === "right" ? a : "center");
 
-type OcrReply = { lang?: string; regions?: { n: number; kind?: string; lines?: string[]; align?: string; caps?: boolean }[]; unboxed?: string[]; font?: string };
+type OcrReply = { lang?: string; direction?: string; regions?: { n: number; kind?: string; lines?: string[]; align?: string; caps?: boolean }[]; unboxed?: string[]; font?: string };
 
-export async function runOCR(img: Img, rec: StripRecord, o: CallOptions): Promise<{ regions: Region[]; srcLang: string; unboxed: string[]; font?: string }> {
+export type OcrResult = { panels: Panel[]; regions: Region[]; srcLang: string; rtl: boolean; unboxed: string[]; font?: string };
+
+export async function runOCR(img: Img, rec: StripRecord, o: CallOptions): Promise<OcrResult> {
   const used = rec.panels.filter((p) => rec.regions.some((r) => r.panelId === p.id));
   const panels = await panelImages(img, used, rec.regions);
   const crops = await cropImages(img, rec.regions);
@@ -39,13 +43,24 @@ export async function runOCR(img: Img, rec: StripRecord, o: CallOptions): Promis
       replace: defaultReplace(kind),
     };
   });
-  const srcLang = /^[a-z]{2,3}(-[A-Za-z]+)?$/.test(reply.lang ?? "") ? reply.lang! : "hu";
-  return { regions, srcLang, unboxed: cleanLines(reply.unboxed), font: fontName(reply.font) };
+  const srcLang = /^[a-z]{2,3}(-[A-Za-z]+)?$/.test(reply.lang ?? "") ? reply.lang! : "und";
+  const rtl = reply.direction === "rtl";
+  const ordered = rtl ? reorder(findPanels(img, true), rec.panels, regions, true) : { panels: rec.panels, regions };
+  return { ...ordered, srcLang, rtl, unboxed: cleanLines(reply.unboxed), font: fontName(reply.font) };
 }
 
 const quoteLines = (lines: string[]) => lines.map((l) => JSON.stringify(l)).join(" / ");
 
-export const budget = (text: string, lines: string[]): [number, number] => [Math.ceil([...text].length * 1.2), Math.max(lines.length, 1) + 1];
+const WIDE = /[\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}\p{Script=Hangul}]/u;
+const width = (text: string) => [...text].reduce((n, ch) => n + (WIDE.test(ch) ? 2 : 1), 0);
+
+// budget is what a translation may take in the source's bubble: characters
+// in Latin-width units (a CJK glyph is about two) and lines.
+export const budget = (text: string, lines: string[]): [number, number] => {
+  const w = width(text);
+  const wide = w > [...text].length * 1.5;
+  return [Math.ceil(w * 1.2), wide ? Math.max(3, Math.ceil(w / 12)) : Math.max(lines.length, 1) + 1];
+};
 
 // transcript lists regions per panel. With ids it only includes those regions
 // and annotates speaker and budget.
@@ -80,7 +95,7 @@ async function sceneImages(img: Img, rec: StripRecord) {
 
 export async function runScene(img: Img, rec: StripRecord, o: CallOptions): Promise<Scene> {
   const { images, list } = await sceneImages(img, rec);
-  const sc = await call<Scene>(scenePrompt(rec.srcLang ?? "hu", list, transcript(rec, null, false)), images, SCENE_SCHEMA, o);
+  const sc = await call<Scene>(scenePrompt(rec.srcLang ?? "und", list, transcript(rec, null, false)), images, SCENE_SCHEMA, o);
   return {
     summary: String(sc.summary ?? ""),
     characters: Array.isArray(sc.characters) ? sc.characters : [],
@@ -101,7 +116,7 @@ export type TrPass = { lang: string; ids: Set<string>; current?: Record<string, 
 function promptData(rec: StripRecord, pass: TrPass): TrPromptData {
   const cur = rec.regions.filter((r) => pass.current?.[r.id] && !pass.ids.has(r.id)).map((r) => `  ${r.id}: ${JSON.stringify(pass.current![r.id].text)}`);
   return {
-    src: rec.srcLang ?? "hu",
+    src: rec.srcLang ?? "und",
     lang: pass.lang,
     scene: JSON.stringify(rec.scene, null, 2),
     transcript: transcript(rec, pass.ids, true),
