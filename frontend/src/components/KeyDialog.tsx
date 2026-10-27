@@ -1,4 +1,8 @@
 import { Show, createSignal, onCleanup, onMount } from "solid-js";
+import { OPUS_MB, PADDLE } from "../lib/free/models";
+import { chromeTranslator, route, type MtRoute } from "../lib/free/mt";
+import { VLM_MB, hasWebGPU } from "../lib/free/vlm";
+import { langEnglishName } from "../lib/langs";
 import { keyInfo, startOAuth } from "../lib/llm/openrouter";
 import { settings } from "../lib/settings";
 import Turnstile from "./Turnstile";
@@ -10,6 +14,9 @@ type Props = {
   onDone: () => void;
   onClose?: () => void;
   onShareReady?: () => void;
+  lang?: string;
+  src?: string;
+  ask?: boolean;
 };
 
 const KEY_RE = /^sk-or-[A-Za-z0-9_-]{20,}$/;
@@ -44,9 +51,39 @@ export default function KeyDialog(p: Props) {
     }
   };
 
+  const [free, setFree] = createSignal<MtRoute | null>(null);
+  const [gpu, setGpu] = createSignal(false);
+  const freeSrc = () => p.src ?? "hu";
+
   onMount(() => {
     if (key()) check();
+    if (p.lang) route(freeSrc(), p.lang).then(setFree, () => setFree({ engine: "none" }));
+    hasWebGPU().then(setGpu);
   });
+
+  const freeLine = () => {
+    const r = free();
+    if (!r) return "Checking this browser…";
+    const target = langEnglishName(p.lang ?? "en");
+    const pair = p.src ? `${langEnglishName(p.src)} → ${target}` : `into ${target}`;
+    if (r.engine === "chrome") return `Works here: Chrome's built-in translator, ${PADDLE.mb} MB download.`;
+    if (r.engine === "opus") return `Works here ${p.src ? `for ${pair}` : "for some languages"}: ${PADDLE.mb} MB + ${OPUS_MB} MB per language pair, slower.`;
+    return `No free translator ${pair} in this browser. Chrome on a desktop has the most languages.`;
+  };
+
+  const useFree = () => {
+    saveShare();
+    if (p.lang && free()?.engine === "chrome") chromeTranslator(freeSrc(), p.lang).catch(() => {});
+    settings.setAllFree(true);
+    settings.setPathChoice("free");
+    p.onDone();
+  };
+
+  const [asking, setAsking] = createSignal(!!p.ask);
+  const goOpenRouter = () => {
+    settings.setPathChoice("openrouter");
+    setAsking(false);
+  };
 
   const saveShare = () => {
     settings.setShare(share());
@@ -66,11 +103,13 @@ export default function KeyDialog(p: Props) {
     const k = key().trim();
     if (!(await check(k))) return;
     settings.setApiKey(k);
+    settings.setAllFree(false);
     p.onDone();
   };
 
   const connect = () => {
     saveShare();
+    settings.setAllFree(false);
     startOAuth(location.pathname + location.search);
   };
 
@@ -85,7 +124,23 @@ export default function KeyDialog(p: Props) {
             </button>
           </Show>
         </header>
-        <div class="dialog-body">
+        <Show when={asking()}>
+          <div class="dialog-body">
+            <p class="lead">How should we read and translate them?</p>
+            <div class="path-choice">
+              <button type="button" class="primary" onClick={goOpenRouter}>
+                <b>Go with OpenRouter</b>
+                <span>Best: SOTA models read the lettering, get the jokes and fit the bubbles. Your own key, about $0.05–0.15 a strip.</span>
+              </button>
+              <button type="button" onClick={useFree} disabled={free()?.engine === "none"}>
+                <b>Free, lower effort</b>
+                <span>On this computer, nothing leaves it. Rougher: about 4 in 10 bubbles come out right as they are.</span>
+                <em>{freeLine()}</em>
+              </button>
+            </div>
+          </div>
+        </Show>
+        <div class="dialog-body" classList={{ hidden: asking() }}>
           <p class="lead">
             {p.lead ??
               "Reading the lettering, getting the jokes and translating them calls an AI model through OpenRouter, on your own API key. A strip costs about $0.05–0.15."}
@@ -136,6 +191,27 @@ export default function KeyDialog(p: Props) {
             </details>
           </section>
 
+          <section class="free-box">
+            <h4>Or free, on this computer</h4>
+            <p class="muted">
+              No account, nothing leaves your computer. Much rougher than with a key: in our tests about 4 in 10 bubbles came out right as they are, 1 in 5 wrong, jokes
+              literal. Fix any bubble by hand.
+            </p>
+            <p class={free()?.engine === "none" ? "key-error" : "key-ok"}>{freeLine()}</p>
+            <Show when={gpu()}>
+              <label class="toggle">
+                <input type="checkbox" checked={settings.freeGpu()} onChange={(e) => settings.setFreeGpu(e.currentTarget.checked)} />
+                <span>
+                  Re-read the letters with a small AI model on your graphics card: fewer misread letters (bubbles right: 4 → 5 in 10 in our tests). {VLM_MB.q4} MB download once,
+                  slow: about 30 s per bubble on a mid-range laptop GPU.
+                </span>
+              </label>
+            </Show>
+            <button type="button" onClick={useFree} disabled={free()?.engine === "none"}>
+              {settings.allFree() ? "Keep translating for free" : "Translate for free"}
+            </button>
+          </section>
+
           <section class="share-box">
             <label class="toggle big">
               <input
@@ -174,7 +250,7 @@ export default function KeyDialog(p: Props) {
             </Show>
           </section>
         </div>
-        <footer class="dialog-foot">
+        <footer class="dialog-foot" classList={{ hidden: asking() }}>
           <button type="submit" class="primary" disabled={checking() || !key().trim()}>
             {checking() ? "Checking…" : "Continue"}
           </button>

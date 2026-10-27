@@ -1,0 +1,720 @@
+{
+ "run": "bench/results/free-v1-2026-10-27.json",
+ "model": "opus",
+ "systems": [
+  "chrome:paddle",
+  "opus:paddle",
+  "chrome:gt",
+  "opus:gt"
+ ],
+ "strips": [
+  {
+   "id": "0c0bd5d5",
+   "src": "hu",
+   "lang": "en",
+   "labels": {
+    "A": "chrome:gt",
+    "B": "chrome:paddle",
+    "C": "opus:paddle",
+    "D": "opus:gt"
+   },
+   "scores": {
+    "chrome:paddle": {
+     "r0": 1,
+     "r1": 2,
+     "r2": 1,
+     "r3": 0,
+     "r4": 1,
+     "r5": 0,
+     "r6": 0,
+     "r7": 0,
+     "r8": 1,
+     "r9": 2,
+     "r11": 0,
+     "r12": 1,
+     "r13": 1,
+     "r14": 0,
+     "r15": 0,
+     "r16": 2,
+     "r19": 2,
+     "r20": 2,
+     "r21": 1,
+     "r22": 0
+    },
+    "opus:paddle": {
+     "r0": 1,
+     "r1": 1,
+     "r2": 2,
+     "r3": 1,
+     "r4": 1,
+     "r5": 0,
+     "r6": 2,
+     "r7": 0,
+     "r8": 1,
+     "r9": 0,
+     "r11": 0,
+     "r12": 1,
+     "r13": 1,
+     "r14": 0,
+     "r15": 0,
+     "r16": 1,
+     "r19": 2,
+     "r20": 1,
+     "r21": 1,
+     "r22": 0
+    },
+    "chrome:gt": {
+     "r0": 2,
+     "r1": 2,
+     "r2": 2,
+     "r3": 2,
+     "r4": 2,
+     "r5": 1,
+     "r6": 2,
+     "r7": 2,
+     "r8": 2,
+     "r9": 2,
+     "r11": 2,
+     "r12": 2,
+     "r13": 1,
+     "r14": 2,
+     "r15": 0,
+     "r16": 2,
+     "r19": 2,
+     "r20": 2,
+     "r21": 2,
+     "r22": 2
+    },
+    "opus:gt": {
+     "r0": 0,
+     "r1": 1,
+     "r2": 2,
+     "r3": 1,
+     "r4": 1,
+     "r5": 1,
+     "r6": 2,
+     "r7": 1,
+     "r8": 2,
+     "r9": 2,
+     "r11": 1,
+     "r12": 2,
+     "r13": 2,
+     "r14": 1,
+     "r15": 2,
+     "r16": 1,
+     "r19": 2,
+     "r20": 1,
+     "r21": 2,
+     "r22": 1
+    }
+   },
+   "notes": "B and C have OCR damage: the radio caption FELVESZEM came out garbled or nonsensical, the numbers got mangled, and slang (telibe kapott, akurvaélet, plató) was misread. D drops the word after the radio call sign and swaps in nearby nouns (platter, square). A is the most consistent, but it leaves 'bazme' untranslated and misses idioms like 'akurvaélet' and 'telibe kapott'."
+  },
+  {
+   "id": "246d3aa3",
+   "src": "en",
+   "lang": "hu",
+   "labels": {
+    "A": "chrome:paddle",
+    "B": "opus:gt",
+    "C": "opus:paddle",
+    "D": "chrome:gt"
+   },
+   "scores": {
+    "chrome:paddle": {
+     "r0": 1,
+     "r1": 1
+    },
+    "opus:paddle": {
+     "r0": 0,
+     "r1": 0
+    },
+    "chrome:gt": {
+     "r0": 2,
+     "r1": 2
+    },
+    "opus:gt": {
+     "r0": 0,
+     "r1": 1
+    }
+   },
+   "notes": "B turns r0 into a vulgar mistranslation and C leaves it in English. In r1, A merges 'enemies. love. hate.' into 'enemies love hate', B swaps 'enemies' for 'nausea', and C is garbled. D renders 'hate' as the verb 'utálom' ('I hate it'), but the meaning still comes through."
+  },
+  {
+   "id": "2afc78b4",
+   "src": "hu",
+   "lang": "en",
+   "labels": {
+    "A": "opus:paddle",
+    "B": "opus:gt",
+    "C": "chrome:gt",
+    "D": "chrome:paddle"
+   },
+   "scores": {
+    "chrome:paddle": {
+     "r0": 0,
+     "r1": 2,
+     "r2": 1,
+     "r4": 1,
+     "r5": 1,
+     "r6": 2,
+     "r7": 0,
+     "r8": 1,
+     "r9": 1,
+     "r10": 1,
+     "r11": 1,
+     "r12": 1,
+     "r13": 1,
+     "r14": 0,
+     "r15": 1,
+     "r16": 1,
+     "r17": 1,
+     "r18": 0,
+     "r19": 0,
+     "r20": 1,
+     "r23": 1,
+     "r24": 2,
+     "r25": 1,
+     "r26": 1,
+     "r27": 0,
+     "r28": 1,
+     "r29": 1,
+     "r30": 0,
+     "r32": 2,
+     "r33": 0,
+     "r34": 1,
+     "r35": 2,
+     "r36": 0,
+     "r37": 0,
+     "r38": 0,
+     "r40": 1,
+     "r41": 2,
+     "r42": 0,
+     "r45": 0,
+     "r46": 0,
+     "r47": 2,
+     "r48": 2,
+     "r49": 1,
+     "r50": 0,
+     "r52": 0
+    },
+    "opus:paddle": {
+     "r0": 0,
+     "r1": 2,
+     "r2": 2,
+     "r4": 0,
+     "r5": 1,
+     "r6": 2,
+     "r7": 0,
+     "r8": 2,
+     "r9": 1,
+     "r10": 1,
+     "r11": 1,
+     "r12": 2,
+     "r13": 2,
+     "r14": 1,
+     "r15": 2,
+     "r16": 1,
+     "r17": 0,
+     "r18": 0,
+     "r19": 0,
+     "r20": 1,
+     "r23": 2,
+     "r24": 1,
+     "r25": 0,
+     "r26": 0,
+     "r27": 0,
+     "r28": 1,
+     "r29": 0,
+     "r30": 0,
+     "r32": 2,
+     "r33": 0,
+     "r34": 1,
+     "r35": 0,
+     "r36": 0,
+     "r37": 1,
+     "r38": 0,
+     "r40": 0,
+     "r41": 1,
+     "r42": 0,
+     "r45": 0,
+     "r46": 0,
+     "r47": 2,
+     "r48": 0,
+     "r49": 2,
+     "r50": 0,
+     "r52": 0
+    },
+    "chrome:gt": {
+     "r0": 1,
+     "r1": 1,
+     "r2": 2,
+     "r4": 2,
+     "r5": 2,
+     "r6": 2,
+     "r7": 1,
+     "r8": 1,
+     "r9": 1,
+     "r10": 1,
+     "r11": 2,
+     "r12": 2,
+     "r13": 1,
+     "r14": 1,
+     "r15": 2,
+     "r16": 2,
+     "r17": 2,
+     "r18": 1,
+     "r19": 2,
+     "r20": 1,
+     "r23": 1,
+     "r24": 2,
+     "r25": 2,
+     "r26": 1,
+     "r27": 1,
+     "r28": 1,
+     "r29": 1,
+     "r30": 2,
+     "r32": 2,
+     "r33": 1,
+     "r34": 2,
+     "r35": 2,
+     "r36": 2,
+     "r37": 1,
+     "r38": 1,
+     "r40": 2,
+     "r41": 2,
+     "r42": 0,
+     "r45": 1,
+     "r46": 1,
+     "r47": 2,
+     "r48": 2,
+     "r49": 2,
+     "r50": 1,
+     "r52": 1
+    },
+    "opus:gt": {
+     "r0": 1,
+     "r1": 2,
+     "r2": 2,
+     "r4": 2,
+     "r5": 2,
+     "r6": 2,
+     "r7": 2,
+     "r8": 2,
+     "r9": 1,
+     "r10": 2,
+     "r11": 2,
+     "r12": 2,
+     "r13": 2,
+     "r14": 2,
+     "r15": 2,
+     "r16": 2,
+     "r17": 1,
+     "r18": 2,
+     "r19": 1,
+     "r20": 2,
+     "r23": 2,
+     "r24": 1,
+     "r25": 0,
+     "r26": 0,
+     "r27": 2,
+     "r28": 2,
+     "r29": 0,
+     "r30": 1,
+     "r32": 2,
+     "r33": 2,
+     "r34": 1,
+     "r35": 1,
+     "r36": 1,
+     "r37": 2,
+     "r38": 2,
+     "r40": 1,
+     "r41": 1,
+     "r42": 2,
+     "r45": 2,
+     "r46": 1,
+     "r47": 2,
+     "r48": 2,
+     "r49": 2,
+     "r50": 2,
+     "r52": 2
+    }
+   },
+   "notes": "A and D get OCR garbage on the long slang bubbles (stray characters, garbled words, made-up text), and they also translate several names wrongly. C translates the long bubbles faithfully but too literally (\"vágod\" comes out as \"cutting\", FASZI as \"fuck\"), while B reads smoothly but often leaves out or invents content in the long bubbles."
+  },
+  {
+   "id": "35ce81ab",
+   "src": "en",
+   "lang": "hu",
+   "labels": {
+    "A": "opus:paddle",
+    "B": "chrome:paddle",
+    "C": "chrome:gt",
+    "D": "opus:gt"
+   },
+   "scores": {
+    "chrome:paddle": {
+     "r0": 1,
+     "r1": 0,
+     "r2": 2,
+     "r3": 2
+    },
+    "opus:paddle": {
+     "r0": 1,
+     "r1": 0,
+     "r2": 1,
+     "r3": 1
+    },
+    "chrome:gt": {
+     "r0": 1,
+     "r1": 0,
+     "r2": 2,
+     "r3": 2
+    },
+    "opus:gt": {
+     "r0": 2,
+     "r1": 0,
+     "r2": 1,
+     "r3": 1
+    }
+   },
+   "notes": "A and D mistranslate 'potion' as 'cup' (csésze) and 'quote' (idézet), and A cuts off r0. B is truncated in r0 and garbles the name Carrot, C turns the name into 'Séta' (walk), and no candidate translated 'Fan-tas-tic!'."
+  },
+  {
+   "id": "3b343686",
+   "src": "hu",
+   "lang": "en",
+   "labels": {
+    "A": "chrome:gt",
+    "B": "opus:gt",
+    "C": "chrome:paddle",
+    "D": "opus:paddle"
+   },
+   "scores": {
+    "chrome:paddle": {
+     "r0": 1,
+     "r2": 0,
+     "r3": 1,
+     "r4": 0,
+     "r5": 1,
+     "r6": 2,
+     "r7": 2,
+     "r8": 0,
+     "r10": 0,
+     "r11": 0,
+     "r13": 1,
+     "r15": 0,
+     "r16": 0,
+     "r17": 2
+    },
+    "opus:paddle": {
+     "r0": 0,
+     "r2": 0,
+     "r3": 0,
+     "r4": 0,
+     "r5": 0,
+     "r6": 2,
+     "r7": 2,
+     "r8": 0,
+     "r10": 2,
+     "r11": 0,
+     "r13": 0,
+     "r15": 0,
+     "r16": 0,
+     "r17": 1
+    },
+    "chrome:gt": {
+     "r0": 2,
+     "r2": 2,
+     "r3": 2,
+     "r4": 1,
+     "r5": 2,
+     "r6": 2,
+     "r7": 2,
+     "r8": 1,
+     "r10": 0,
+     "r11": 1,
+     "r13": 2,
+     "r15": 1,
+     "r16": 1,
+     "r17": 2
+    },
+    "opus:gt": {
+     "r0": 1,
+     "r2": 1,
+     "r3": 2,
+     "r4": 2,
+     "r5": 1,
+     "r6": 2,
+     "r7": 2,
+     "r8": 2,
+     "r10": 2,
+     "r11": 2,
+     "r13": 1,
+     "r15": 0,
+     "r16": 1,
+     "r17": 1
+    }
+   },
+   "notes": "C and D often contain OCR garbage (dgamt, Vadenfle, cya gegnayl) and leave slang like PINÁK, bazmeg and RandomTibor untranslated. B and D drop or invent content (random wine, crowsome five, fork). A and C read VILLA as fork and lose the meaning of the long slang-heavy bubbles r15 and r16."
+  },
+  {
+   "id": "6cbd56cd",
+   "src": "hu",
+   "lang": "en",
+   "labels": {
+    "A": "opus:gt",
+    "B": "chrome:gt",
+    "C": "chrome:paddle",
+    "D": "opus:paddle"
+   },
+   "scores": {
+    "chrome:paddle": {
+     "r0": 1,
+     "r1": 0,
+     "r2": 2,
+     "r3": 1,
+     "r4": 1,
+     "r5": 0,
+     "r6": 0,
+     "r7": 2,
+     "r9": 0,
+     "r10": 0,
+     "r11": 1
+    },
+    "opus:paddle": {
+     "r0": 1,
+     "r1": 0,
+     "r2": 2,
+     "r3": 0,
+     "r4": 1,
+     "r5": 0,
+     "r6": 0,
+     "r7": 1,
+     "r9": 0,
+     "r10": 0,
+     "r11": 2
+    },
+    "chrome:gt": {
+     "r0": 2,
+     "r1": 1,
+     "r2": 0,
+     "r3": 1,
+     "r4": 2,
+     "r5": 2,
+     "r6": 2,
+     "r7": 2,
+     "r9": 1,
+     "r10": 1,
+     "r11": 1
+    },
+    "opus:gt": {
+     "r0": 2,
+     "r1": 2,
+     "r2": 2,
+     "r3": 0,
+     "r4": 2,
+     "r5": 2,
+     "r6": 2,
+     "r7": 1,
+     "r9": 2,
+     "r10": 2,
+     "r11": 2
+    }
+   },
+   "notes": "C and D often start from bad OCR (Cennce, E2, mogotte, Kaukazvsi) and leave Hungarian words untranslated or produce nonsense. B is mostly accurate but leaves words like sufni and Tiborom untranslated and gets exclamations wrong. A is the most reliable, though it badly mistranslates the KUPLERÁJ idiom in r3."
+  },
+  {
+   "id": "7f454423",
+   "src": "hu",
+   "lang": "en",
+   "labels": {
+    "A": "opus:gt",
+    "B": "chrome:paddle",
+    "C": "opus:paddle",
+    "D": "chrome:gt"
+   },
+   "scores": {
+    "chrome:paddle": {
+     "r0": 2,
+     "r1": 2,
+     "r2": 0,
+     "r3": 0,
+     "r4": 0,
+     "r5": 1,
+     "r6": 0,
+     "r7": 1,
+     "r8": 0,
+     "r9": 1
+    },
+    "opus:paddle": {
+     "r0": 1,
+     "r1": 2,
+     "r2": 0,
+     "r3": 0,
+     "r4": 0,
+     "r5": 1,
+     "r6": 0,
+     "r7": 1,
+     "r8": 1,
+     "r9": 1
+    },
+    "chrome:gt": {
+     "r0": 2,
+     "r1": 2,
+     "r2": 1,
+     "r3": 2,
+     "r4": 1,
+     "r5": 2,
+     "r6": 1,
+     "r7": 1,
+     "r8": 0,
+     "r9": 2
+    },
+    "opus:gt": {
+     "r0": 1,
+     "r1": 2,
+     "r2": 1,
+     "r3": 2,
+     "r4": 1,
+     "r5": 2,
+     "r6": 1,
+     "r7": 2,
+     "r8": 2,
+     "r9": 1
+    }
+   },
+   "notes": "B and C usually fail by garbling the OCR'd text (broken words, transliterated nonsense, dropped clauses), and C often invents content. A and D keep the meaning best, but they mistranslate slang and wordplay (tegelni, ikszet, aztakurva), invert negations (r6 D), confuse pronouns, and leave words untranslated."
+  },
+  {
+   "id": "89371298",
+   "src": "en",
+   "lang": "hu",
+   "labels": {
+    "A": "chrome:paddle",
+    "B": "opus:paddle",
+    "C": "chrome:gt",
+    "D": "opus:gt"
+   },
+   "scores": {
+    "chrome:paddle": {
+     "r0": 1,
+     "r1": 2,
+     "r2": 1,
+     "r3": 2,
+     "r4": 1,
+     "r5": 2,
+     "r6": 2
+    },
+    "opus:paddle": {
+     "r0": 2,
+     "r1": 2,
+     "r2": 2,
+     "r3": 0,
+     "r4": 2,
+     "r5": 2,
+     "r6": 2
+    },
+    "chrome:gt": {
+     "r0": 1,
+     "r1": 2,
+     "r2": 1,
+     "r3": 2,
+     "r4": 2,
+     "r5": 2,
+     "r6": 2
+    },
+    "opus:gt": {
+     "r0": 2,
+     "r1": 2,
+     "r2": 2,
+     "r3": 0,
+     "r4": 2,
+     "r5": 2,
+     "r6": 2
+    }
+   },
+   "notes": "A and C translate 'Oh shoot' word for word as 'Ó, lőj' and misspell the name as 'Kommona'. A also leaves English junk and the wrong person in r4. B and D get 'Potion Contest' badly wrong as 'seriffverseny' (sheriff contest), and B drops small details such as 'again' and 'accidentally'."
+  },
+  {
+   "id": "8f3737ae",
+   "src": "en",
+   "lang": "hu",
+   "labels": {
+    "A": "opus:paddle",
+    "B": "opus:gt",
+    "C": "chrome:paddle",
+    "D": "chrome:gt"
+   },
+   "scores": {
+    "chrome:paddle": {
+     "r0": 2,
+     "r1": 2
+    },
+    "opus:paddle": {
+     "r0": 2,
+     "r1": 1
+    },
+    "chrome:gt": {
+     "r0": 2,
+     "r1": 2
+    },
+    "opus:gt": {
+     "r0": 2,
+     "r1": 1
+    }
+   },
+   "notes": "A and B translate 'exit' in r1 as 'kihagy' (skip or miss out), not 'kilép' (leave). The line becomes 'Why would I skip Vim?', so it no longer echoes r0 and the punchline is mostly lost. C and D are correct throughout."
+  },
+  {
+   "id": "e3d568ca",
+   "src": "hu",
+   "lang": "en",
+   "labels": {
+    "A": "chrome:paddle",
+    "B": "chrome:gt",
+    "C": "opus:gt",
+    "D": "opus:paddle"
+   },
+   "scores": {
+    "chrome:paddle": {
+     "r0": 1,
+     "r1": 1,
+     "r2": 0,
+     "r3": 0,
+     "r4": 2,
+     "r5": 1,
+     "r6": 2
+    },
+    "opus:paddle": {
+     "r0": 2,
+     "r1": 0,
+     "r2": 0,
+     "r3": 0,
+     "r4": 2,
+     "r5": 1,
+     "r6": 1
+    },
+    "chrome:gt": {
+     "r0": 1,
+     "r1": 2,
+     "r2": 2,
+     "r3": 2,
+     "r4": 2,
+     "r5": 2,
+     "r6": 2
+    },
+    "opus:gt": {
+     "r0": 1,
+     "r1": 2,
+     "r2": 2,
+     "r3": 1,
+     "r4": 2,
+     "r5": 2,
+     "r6": 1
+    }
+   },
+   "notes": "B is consistently usable. A and D often break down on long bubbles: they translate word by word ('flight' for 'járatban'), leave Hungarian untranslated or garble it, or produce nonsense. C and D tend to shorten bubbles, dropping questions, conditions and the 'old Huron' insult."
+  }
+ ]
+}

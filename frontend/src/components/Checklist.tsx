@@ -1,4 +1,5 @@
 import { For, Show, createMemo, createSignal } from "solid-js";
+import { settings } from "../lib/settings";
 import { STAGES, type CallStat, type StageName, type StageState } from "../lib/types";
 
 const LABELS: Record<StageName, string> = {
@@ -25,6 +26,13 @@ const HOW: Record<StageName, string> = {
   review: "critique + rewrite, 1 call",
 };
 
+const FREE_HOW: Partial<Record<StageName, string>> = {
+  ocr: "your browser · PaddleOCR v5 latin (ONNX on WASM) + language guess",
+  scene: "skipped in free mode",
+  translate: "your browser · Chrome's built-in translator, or opus-mt",
+  review: "skipped in free mode",
+};
+
 const modelLink = (m: string) => (
   <a href={`https://openrouter.ai/${m}`} target="_blank" rel="noopener">
     {m}
@@ -40,6 +48,12 @@ type Props = {
   lang: string;
   calls: CallStat[];
   model: string;
+  freeRead?: boolean;
+  freeTranslate?: boolean;
+  freeGpu?: boolean;
+  hasKey: boolean;
+  onAddKey: () => void;
+  onNewVersion?: () => void;
   onDownloadEmpty?: () => void;
   onEditEmpty?: () => void;
 };
@@ -54,6 +68,8 @@ export default function Checklist(p: Props) {
   };
   const total = createMemo(() => p.calls.reduce((n, c) => n + c.costUsd, 0));
   const open = () => !p.collapsed || expanded();
+  const free = (name: StageName) => (name === "ocr" ? p.freeRead : name !== "panels" && name !== "detect" && name !== "clean" && name !== "shared" && p.freeTranslate);
+  const freeHow = (name: StageName) => (name === "ocr" && p.freeGpu ? `${FREE_HOW.ocr} + Qwen3.5-0.8B re-read on WebGPU` : FREE_HOW[name]);
   return (
     <div class="pipeline">
       <Show when={p.collapsed}>
@@ -93,7 +109,7 @@ export default function Checklist(p: Props) {
                       </Show>
                     </span>
                     <span class="step-where">
-                      <Show when={LLM.has(name)} fallback={HOW[name]}>
+                      <Show when={LLM.has(name) && !free(name)} fallback={(free(name) && freeHow(name)) || HOW[name]}>
                         OpenRouter · <For each={models(name)}>{(m, i) => <>{i() ? ", " : ""}{modelLink(m)}</>}</For>
                         <Show when={!callsOf(name).length}> (planned)</Show> · {HOW[name]}
                       </Show>
@@ -120,6 +136,26 @@ export default function Checklist(p: Props) {
               }}
             </For>
           </ol>
+          <div class="pipeline-opts">
+            <label class="toggle" classList={{ off: !p.hasKey }}>
+              <input type="checkbox" disabled={!p.hasKey} checked={p.hasKey && settings.sotaRead()} onChange={(e) => settings.setSotaRead(e.currentTarget.checked)} />
+              <span>Use SOTA models to read the text</span>
+            </label>
+            <label class="toggle" classList={{ off: !p.hasKey }}>
+              <input type="checkbox" disabled={!p.hasKey} checked={p.hasKey && settings.sotaTranslate()} onChange={(e) => settings.setSotaTranslate(e.currentTarget.checked)} />
+              <span>Use SOTA models to translate and review</span>
+            </label>
+            <p class="muted">
+              <Show when={p.hasKey} fallback={<>SOTA models need an OpenRouter key. <button type="button" class="ghost small" onClick={p.onAddKey}>Add key</button></>}>
+                Off: done on this computer, free, rougher.
+              </Show>
+            </p>
+            <Show when={p.onNewVersion}>
+              <button type="button" class="ghost small" title="Read and translate again with these settings. The current translation is kept as an older version." onClick={p.onNewVersion}>
+                New version
+              </button>
+            </Show>
+          </div>
           <a class="why-link" href="/research.html" target="_blank" rel="noopener">
             Why these models? The benchmarks →
           </a>

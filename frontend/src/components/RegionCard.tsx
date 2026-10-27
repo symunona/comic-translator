@@ -13,6 +13,7 @@ type Props = {
   onText: (text: string) => void;
   onReplace: (on: boolean) => void;
   onRetranslate?: () => Promise<void>;
+  onGoogle?: () => Promise<string>;
 };
 
 export default function RegionCard(p: Props) {
@@ -24,6 +25,15 @@ export default function RegionCard(p: Props) {
       await p.onRetranslate?.();
     } finally {
       setBusy(false);
+    }
+  };
+  const [google, setGoogle] = createSignal<{ text?: string; error?: string; busy?: boolean } | null>(null);
+  const askGoogle = async () => {
+    setGoogle({ busy: true });
+    try {
+      setGoogle({ text: await p.onGoogle!() });
+    } catch (e) {
+      setGoogle({ error: e instanceof Error ? e.message : String(e) });
     }
   };
   return (
@@ -66,6 +76,23 @@ export default function RegionCard(p: Props) {
           <Show when={p.tr?.notes}>
             <p class="notes">{p.tr!.notes}</p>
           </Show>
+          <Show when={google()}>
+            {(g) => (
+              <p class="suggest" classList={{ fatal: !!g().error }}>
+                <Show when={!g().busy} fallback={<><i class="spinner" /> asking Google…</>}>
+                  <span>Google: {g().error ?? g().text}</span>
+                  <Show when={g().text && p.tr}>
+                    <button type="button" class="ghost small" onClick={() => (p.onText(g().text!), setGoogle(null))}>
+                      use
+                    </button>
+                  </Show>
+                  <button type="button" class="x" aria-label="Dismiss" onClick={() => setGoogle(null)}>
+                    ×
+                  </button>
+                </Show>
+              </p>
+            )}
+          </Show>
           <footer>
             <label class="toggle" title="Erase the original lettering and draw the translation">
               <input type="checkbox" checked={p.region.replace} onChange={(e) => p.onReplace(e.currentTarget.checked)} />
@@ -76,11 +103,18 @@ export default function RegionCard(p: Props) {
                 {p.tr!.text?.length ?? 0}/{p.tr!.maxChars}
               </span>
             </Show>
-            <Show when={p.onRetranslate}>
-              <button class="ghost small" disabled={busy()} onClick={retranslate}>
-                {busy() ? "translating…" : "retranslate"}
-              </button>
-            </Show>
+            <span class="card-actions">
+              <Show when={p.onGoogle}>
+                <button class="ghost small" title="Ask Google Translate for this bubble. Sends its text to Google." disabled={google()?.busy} onClick={askGoogle}>
+                  Google
+                </button>
+              </Show>
+              <Show when={p.onRetranslate}>
+                <button class="ghost small" disabled={busy()} onClick={retranslate}>
+                  {busy() ? "translating…" : "retranslate"}
+                </button>
+              </Show>
+            </span>
           </footer>
         </div>
       </div>

@@ -62,12 +62,15 @@ export type StripRecord = {
   regions: Region[];
   detected: boolean;
   ocr: boolean;
+  ocrFree?: boolean;
+  ocrBy?: string;
   srcLang?: string;
   unboxed?: string[];
   font?: string;
   scene?: Scene;
   drafts: Record<string, Record<string, RegionTranslation>>;
   translations: Record<string, Translation>;
+  versions?: Record<string, Translation[]>;
   calls: CallStat[];
   shared: Record<string, number>;
 };

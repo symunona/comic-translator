@@ -9,8 +9,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@huggingface/transformers": "4.3.1",
     "@solidjs/router": "^1.0.0",
+    "franc-min": "6.2.0",
     "onnxruntime-web": "1.30.0",
+    "ppu-paddle-ocr": "6.6.1",
     "solid-js": "^1.9.17"
   },
   "devDependencies": {

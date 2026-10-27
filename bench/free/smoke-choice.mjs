@@ -1,0 +1,28 @@
+// node bench/free/smoke-choice.mjs <cdp> <app-url> <image> <lang> <shots-dir>: first-run choice, dismissal remembered, free from the sidebar
+import { chromium } from "playwright-core";
+const [cdp, app, img, lang, shots] = process.argv.slice(2);
+const b = await chromium.connectOverCDP(cdp);
+const p = await b.contexts()[0].newPage();
+p.on("pageerror", (e) => console.log("pageerror:", e.message));
+await p.setViewportSize({ width: 1400, height: 1000 });
+await p.goto(app);
+await p.evaluate(() => localStorage.clear());
+await p.goto(app);
+const [chooser] = await Promise.all([p.waitForEvent("filechooser"), p.evaluate(() => document.querySelector("input[type=file]").click())]);
+await chooser.setFiles(img);
+await p.waitForURL(/\/s\//);
+await p.goto(p.url().replace(/lang=[^&]*/, `lang=${lang}`));
+await p.waitForSelector(".path-choice", { timeout: 120000 });
+console.log("choice:", (await p.locator(".path-choice").innerText()).replace(/\n+/g, " | "));
+await p.screenshot({ path: `${shots}/3-choice.png` });
+await p.click(".dialog .x");
+console.log("pathChoice:", await p.evaluate(() => localStorage.getItem("ct.pathChoice")));
+await p.reload();
+await p.waitForSelector(".need-key", { timeout: 120000 });
+console.log("after reload, dialog:", await p.locator(".dialog").count(), "· panel:", (await p.locator(".need-key").innerText()).replace(/\n+/g, " | "));
+await p.screenshot({ path: `${shots}/4-dismissed.png` });
+await p.click(".need-key button:has-text('Free, lower effort')");
+await p.waitForFunction(() => !!document.querySelector(".card textarea") && ![...document.querySelectorAll(".checklist li")].some((l) => l.classList.contains("running")), null, { timeout: 600000 });
+console.log("free done, bubble 1:", JSON.stringify(await p.inputValue(".card textarea")), "· pathChoice:", await p.evaluate(() => localStorage.getItem("ct.pathChoice")));
+await p.close();
+await b.close();
