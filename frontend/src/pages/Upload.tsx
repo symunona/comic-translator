@@ -1,6 +1,7 @@
 import { useNavigate } from "@solidjs/router";
 import { For, Show, createResource, createSignal, onCleanup, onMount } from "solid-js";
 import LangPicker from "../components/LangPicker";
+import ModeToggle from "../components/ModeToggle";
 import Logo from "../components/Logo";
 import { demos, fetchImage, nickInfo, type Demo } from "../lib/hub";
 import { ingest, nameFromUrl } from "../lib/ingest";
@@ -100,7 +101,11 @@ export default function Upload() {
             comic<span>·</span>translator
           </span>
         </h1>
-        <p>Drop a strip. It finds the bubbles, reads them, gets the joke, and letters it back in your language. Runs in your browser, on your own OpenRouter key.</p>
+        <p>Drop a strip. It finds the bubbles, reads them, gets the joke, and letters it back in your language. Runs in your browser: free on this computer, or with SOTA models on your own OpenRouter key.</p>
+        <div class="mode-row">
+          <ModeToggle />
+          <span class="muted">{settings.allFree() ? "Free: nothing leaves your computer, rougher." : settings.apiKey() ? "SOTA models, about $0.05–0.15 a strip." : "SOTA models, about $0.05–0.15 a strip. Asks for your key."}</span>
+        </div>
       </header>
 
       <div

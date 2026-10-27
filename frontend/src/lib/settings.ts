@@ -19,6 +19,21 @@ const randomSecret = () => [...crypto.getRandomValues(new Uint8Array(24))].map((
 
 export type Session = { token: string; exp: number };
 
+// Each AI step runs on this computer ("free"), on the recommended model, or on a
+// model id the user picked. Free scene and review are skipped.
+export type AiStep = "ocr" | "scene" | "translate" | "review";
+export const AI_STEPS: AiStep[] = ["ocr", "scene", "translate", "review"];
+export const FREE = "free";
+export const RECOMMENDED = "recommended";
+
+function initialSteps(): Record<AiStep, string> {
+  const all = (v: string) => Object.fromEntries(AI_STEPS.map((s) => [s, v])) as Record<AiStep, string>;
+  const steps = all(RECOMMENDED);
+  if (!lsGet<boolean>("sotaRead", true)) steps.ocr = FREE;
+  if (!lsGet<boolean>("sotaTranslate", true)) Object.assign(steps, { scene: FREE, translate: FREE, review: FREE });
+  return steps;
+}
+
 export const settings = createRoot(() => {
   const [apiKey, setApiKey] = persisted("apiKey", "");
   const [share, setShare] = persisted("share", true);
@@ -29,18 +44,18 @@ export const settings = createRoot(() => {
   const [langs, setLangs] = persisted<string[]>("langs", []);
   const [model, setModel] = persisted("model", DEFAULT_MODEL);
   const [font, setFont] = persisted("font", AUTO_FONT);
-  const [sotaRead, setSotaRead] = persisted("sotaRead", true);
-  const [sotaTranslate, setSotaTranslate] = persisted("sotaTranslate", true);
+  const [steps, setSteps] = persisted("steps", initialSteps());
   const [freeGpu, setFreeGpu] = persisted("freeGpu", false);
   const [pathChoice, setPathChoice] = persisted<"" | "openrouter" | "free" | "dismissed">("pathChoice", "");
 
   const lastLang = () => langs()[0] ?? browserLang();
   const useLang = (code: string) => setLangs([code, ...langs().filter((l) => l !== code)].slice(0, 12));
-  const allFree = () => !sotaRead() && !sotaTranslate();
-  const setAllFree = (free: boolean) => {
-    setSotaRead(!free);
-    setSotaTranslate(!free);
-  };
+  const step = (s: AiStep) => steps()[s] ?? RECOMMENDED;
+  const setStep = (s: AiStep, v: string) => setSteps({ ...steps(), [s]: v });
+  const isFree = (s: AiStep) => step(s) === FREE;
+  const modelFor = (s: AiStep) => (isFree(s) || step(s) === RECOMMENDED ? model() : step(s));
+  const allFree = () => isFree("ocr") && isFree("translate");
+  const setAllFree = (free: boolean) => setSteps(Object.fromEntries(AI_STEPS.map((s) => [s, free ? FREE : RECOMMENDED])) as Record<AiStep, string>);
   const validSession = () => {
     const s = session();
     return s && s.exp * 1000 > Date.now() + 60_000 ? s.token : "";
@@ -48,6 +63,6 @@ export const settings = createRoot(() => {
 
   return {
     apiKey, setApiKey, share, setShare, nick, setNick, secret, session, setSession, validSession, langs, useLang, lastLang, model, setModel, font, setFont,
-    sotaRead, setSotaRead, sotaTranslate, setSotaTranslate, allFree, setAllFree, freeGpu, setFreeGpu, pathChoice, setPathChoice,
+    step, setStep, isFree, modelFor, allFree, setAllFree, freeGpu, setFreeGpu, pathChoice, setPathChoice,
   };
 });

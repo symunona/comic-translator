@@ -693,6 +693,12 @@ button:disabled { opacity: 0.45; cursor: default; }
 .key-row input:focus, .key-dialog .nick:focus { border-color: var(--ink); outline: none; }
 .key-error { color: var(--red); margin: 0; font-size: 13px; }
 .key-ok { color: var(--green); margin: 0; font-size: 13px; }
+.step-engine { grid-column: 2 / -1; display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin-top: 4px; }
+.step-engine select { max-width: 100%; min-width: 0; flex: 1 1 200px; font-size: 12px; height: auto; padding: 4px 6px; }
+.topbar button, .topbar .button { white-space: nowrap; }
+.mode-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; margin-top: 4px; font-size: 13px; }
+.mode-row .view-toggle { height: 34px; }
+.upgrade { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; padding: 10px 12px; border: 1px dashed var(--line); border-radius: 8px; }
 .path-choice { display: grid; gap: 10px; }
 .path-choice button { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; padding: 12px 14px; text-align: left; white-space: normal; }
 .path-choice b { font-size: 15px; }
@@ -720,5 +726,5 @@ button:disabled { opacity: 0.45; cursor: default; }
 .dialog .x { border: 0; box-shadow: none; background: transparent; font-size: 22px; line-height: 1; padding: 2px 8px; color: var(--muted); }
 .dialog .x:hover { color: var(--ink); }
 .step-where a { color: inherit; }
-.step-actions { grid-column: 2 / -1; display: flex; gap: 6px; margin-top: 4px; }
+.step-actions { grid-column: 2 / -1; display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
 .why-link { display: inline-block; margin: 6px 0 0 28px; font-size: 12px; color: var(--blue); }

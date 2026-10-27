@@ -16,7 +16,7 @@ const EMPTY_SCENE: Scene = { summary: "", characters: [], panels: [], speakers: 
 import { langEnglishName } from "./langs";
 import { getImage, loadStrip, saveStrip } from "./local";
 import { reviewPass, runOCR, runScene, translatable, translatePass } from "./pipeline";
-import { settings } from "./settings";
+import { settings, type AiStep } from "./settings";
 import { STAGES, type CallStat, type Region, type RegionTranslation, type Scene, type SharedTranslation, type StageName, type StageState, type StripRecord, type Translation } from "./types";
 
 export type SaveState = "idle" | "pending" | "saved" | "error";
@@ -101,7 +101,7 @@ export function createWork(id: string) {
 
   const onStat = (s: CallStat) => mutate((r) => void r.calls.push(s));
 
-  const llm = (stageName: string, signal: AbortSignal): CallOptions => ({ key: settings.apiKey(), model: settings.model(), stage: stageName, signal, onStat });
+  const llm = (stageName: string, signal: AbortSignal, model = settings.model()): CallOptions => ({ key: settings.apiKey(), model, stage: stageName, signal, onStat });
 
   const check = (g: number) => {
     if (g !== gen) throw new Cancelled();
@@ -224,16 +224,19 @@ export function createWork(id: string) {
       } else if (fresh) stage("shared", { status: "skipped", message: "new version" });
       else stage("shared", { status: "done", message: found.length ? "none in this language" : settings.share() ? "nothing shared yet" : "sharing is off" });
 
-      const sotaRead = settings.sotaRead();
-      const sotaTranslate = settings.sotaTranslate();
-      if ((sotaRead || sotaTranslate) && !settings.apiKey()) {
+      // Each step reads its engine when it starts, so a switch mid-run takes
+      // effect from the next step.
+      const keyMissing = () => {
+        if (settings.apiKey()) return false;
         setState("phase", "needKey");
-        return;
-      }
+        return true;
+      };
 
-      if (sotaRead && (!r.ocr || r.ocrFree)) {
+      if (!settings.isFree("ocr") && (!r.ocr || r.ocrFree)) {
+        if (keyMissing()) return;
+        const m = settings.modelFor("ocr");
         await timed("ocr", async () => {
-          const o = await runOCR(orig!, r, llm("ocr", ac.signal));
+          const o = await runOCR(orig!, r, llm("ocr", ac.signal, m));
           check(g);
           r = mutate((x) => {
             x.panels = o.panels;
@@ -243,7 +246,7 @@ export function createWork(id: string) {
             x.font = o.font;
             x.ocr = true;
             x.ocrFree = false;
-            x.ocrBy = settings.model();
+            x.ocrBy = m;
           });
           await reclean();
           return o;
@@ -252,46 +255,60 @@ export function createWork(id: string) {
       else stage("ocr", { status: "cached", message: r.srcLang });
       check(g);
 
-      if (!sotaTranslate) {
-        stage("scene", { status: "skipped", message: "free translation" });
-        const out = await translateFree(r, l, g);
-        if (!out) return;
-        stage("review", { status: "skipped", message: "free translation" });
-        finish({ lang: l, regions: out.regions, updatedAt: now(), model: `free:${rec().ocrBy ?? (rec().ocrFree ? PADDLE.name : "llm-ocr")}+${out.engine}`, origin: "llm" });
-        return;
-      }
-
-      if (!r.scene) {
+      if (r.scene) stage("scene", { status: "cached" });
+      else if (settings.isFree("scene")) stage("scene", { status: "skipped", message: "free: skipped" });
+      else {
+        if (keyMissing()) return;
         await timed("scene", async () => {
-          const sc = await runScene(orig!, r, llm("scene", ac.signal));
+          const sc = await runScene(orig!, r, llm("scene", ac.signal, settings.modelFor("scene")));
           check(g);
           r = mutate((x) => void (x.scene = sc));
           setState("regions", (regs) => withSpeakers(r, regs));
         });
-      } else stage("scene", { status: "cached" });
+      }
       check(g);
 
       const ids = translatable(r);
       let draft = r.drafts[l];
       if (!draft) {
-        draft = await timed("translate", () => translatePass(orig!, r, { lang: l, ids }, llm(`translate:${l}`, ac.signal)));
+        let by: string;
+        if (settings.isFree("translate")) {
+          const out = await translateFree(r, l, g);
+          if (!out) return;
+          draft = out.regions;
+          by = `free:${rec().ocrBy ?? (rec().ocrFree ? PADDLE.name : "llm-ocr")}+${out.engine}`;
+        } else {
+          if (keyMissing()) return;
+          by = settings.modelFor("translate");
+          draft = await timed("translate", () => translatePass(orig!, r, { lang: l, ids }, llm(`translate:${l}`, ac.signal, by)));
+        }
         check(g);
         const d = draft;
-        r = mutate((x) => void (x.drafts[l] = d));
+        r = mutate((x) => {
+          x.drafts[l] = d;
+          x.draftBy = { ...x.draftBy, [l]: by };
+        });
       } else stage("translate", { status: "cached" });
       setState("translation", { lang: l, regions: structuredClone(draft), updatedAt: now(), origin: "llm", draft: true });
 
       let final = draft;
+      let model = r.draftBy?.[l] ?? settings.model();
       let reviewError = "";
-      try {
-        final = await timed("review", () => reviewPass(orig!, r, { lang: l, ids }, draft!, llm(`review:${l}`, ac.signal)));
-      } catch (e) {
-        if (e instanceof Cancelled || ac.signal.aborted) throw e;
-        reviewError = e instanceof Error ? e.message : String(e);
-        stage("review", { status: "error", message: `${reviewError} · kept the draft` });
+      if (settings.isFree("review")) stage("review", { status: "skipped", message: "free: skipped" });
+      else if (keyMissing()) return;
+      else {
+        const m = settings.modelFor("review");
+        try {
+          final = await timed("review", () => reviewPass(orig!, r, { lang: l, ids }, draft!, llm(`review:${l}`, ac.signal, m)));
+          if (m !== model) model += `+review:${m}`;
+        } catch (e) {
+          if (e instanceof Cancelled || ac.signal.aborted) throw e;
+          reviewError = e instanceof Error ? e.message : String(e);
+          stage("review", { status: "error", message: `${reviewError} · kept the draft` });
+        }
       }
       check(g);
-      finish({ lang: l, regions: final, updatedAt: now(), model: settings.model(), origin: "llm", draft: !!reviewError });
+      finish({ lang: l, regions: final, updatedAt: now(), model, origin: "llm", draft: !!reviewError });
     } catch (e) {
       if (e instanceof Cancelled || (e instanceof DOMException && e.name === "AbortError")) return;
       if (g !== gen) return;
@@ -530,7 +547,7 @@ export function createWork(id: string) {
   };
 
   const retranslate = async (rid: string, hint?: string) => {
-    const free = !settings.sotaTranslate();
+    const free = settings.isFree("translate");
     if (!free && !settings.apiKey()) {
       setState("phase", "needKey");
       return;
@@ -545,8 +562,8 @@ export function createWork(id: string) {
     else {
       const signal = new AbortController().signal;
       const pass = { lang: l, ids, current: state.translation ? plain(state.translation.regions) : undefined, hint };
-      const draft = await translatePass(orig, r, pass, llm("retranslate", signal));
-      const final = await reviewPass(orig, r, pass, draft, llm("retranslate", signal)).catch(() => draft);
+      const draft = await translatePass(orig, r, pass, llm("retranslate", signal, settings.modelFor("translate")));
+      const final = settings.isFree("review") ? draft : await reviewPass(orig, r, pass, draft, llm("retranslate", signal, settings.modelFor("review"))).catch(() => draft);
       entry = final[rid];
     }
     if (entry && state.translation) {
@@ -585,7 +602,9 @@ export function createWork(id: string) {
   // newVersion runs the read/translate steps again with the current settings and
   // keeps the current translation among the versions of this language.
   const MAX_VERSIONS = 10;
-  const newVersion = async () => {
+  // rerunFrom reruns one AI step with its current engine and every step after it.
+  // Text and scene feed every language, so their reruns drop all drafts.
+  const rerunFrom = async (from: AiStep) => {
     const l = lang();
     await flush();
     clearTimeout(publishTimer);
@@ -595,12 +614,19 @@ export function createWork(id: string) {
       const t = x.translations[l];
       if (t) x.versions = { ...x.versions, [l]: [t, ...(x.versions?.[l] ?? [])].slice(0, MAX_VERSIONS) };
       delete x.translations[l];
-      delete x.drafts[l];
       delete x.shared[l];
+      if (from === "ocr") x.ocr = false;
+      if (from === "ocr" || from === "scene") {
+        delete x.scene;
+        x.drafts = {};
+        x.draftBy = {};
+      }
+      if (from === "translate") delete x.drafts[l];
     });
     wantFresh = true;
     run(l);
   };
+  const newVersion = () => rerunFrom("translate");
 
   // pickVersion makes an older version current; the current one joins the others.
   const pickVersion = async (i: number) => {
@@ -659,7 +685,7 @@ export function createWork(id: string) {
     if (imageUrl) URL.revokeObjectURL(imageUrl);
   });
 
-  return { state, lang, connect, retry, editText, setReplace, retranslate, flush, saveState, shareNow, editEmpty, translateAI, googleSuggest, newVersion, goFree, pickVersion };
+  return { state, lang, connect, retry, editText, setReplace, retranslate, flush, saveState, shareNow, editEmpty, translateAI, googleSuggest, newVersion, rerunFrom, goFree, pickVersion };
 }
 
 export type Work = ReturnType<typeof createWork>;

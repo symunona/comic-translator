@@ -69,6 +69,7 @@ export type StripRecord = {
   font?: string;
   scene?: Scene;
   drafts: Record<string, Record<string, RegionTranslation>>;
+  draftBy?: Record<string, string>;
   translations: Record<string, Translation>;
   versions?: Record<string, Translation[]>;
   calls: CallStat[];

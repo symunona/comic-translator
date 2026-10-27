@@ -4,13 +4,14 @@ import Brand from "../components/Brand";
 import Checklist from "../components/Checklist";
 import KeyDialog from "../components/KeyDialog";
 import LangPicker from "../components/LangPicker";
+import ModeToggle from "../components/ModeToggle";
 import RegionCard from "../components/RegionCard";
 import Strip from "../components/Strip";
 import Turnstile from "../components/Turnstile";
 import ViewToggle from "../components/ViewToggle";
 import { AUTO_FONT, FONTS, FONT_FAMILY, chosenFont, fontFamily } from "../lib/layout";
 import { renderStrip } from "../lib/render";
-import { settings } from "../lib/settings";
+import { settings, type AiStep } from "../lib/settings";
 import { STAGES, type Translation } from "../lib/types";
 import { createWork } from "../lib/work";
 
@@ -65,6 +66,23 @@ function WorkView(props: { id: string }) {
   const readRegions = createMemo(() => s.regions.filter((r) => r.source || s.translation?.regions[r.id] !== undefined));
   const running = createMemo(() => STAGES.find((n) => s.stages[n].status === "running"));
   const showKey = () => keyOpen() || (s.phase === "needKey" && !keyDismissed() && settings.pathChoice() !== "dismissed");
+  const onMode = (free: boolean) => {
+    setKeyDismissed(false);
+    if (s.phase === "needKey" && (free || settings.apiKey())) work.retry();
+  };
+  // rerun replaces the current translation; hand edits only survive in Versions.
+  const rerun = (step: AiStep) => {
+    const t = s.translation;
+    if (t && (t.edited || t.origin === "user") && !confirm("This translation has your edits. Rerunning replaces them here; the edited version stays in the Versions list.")) return;
+    setKeyDismissed(false);
+    work.rerunFrom(step);
+  };
+  const runWithKey = () => {
+    settings.setAllFree(false);
+    settings.setPathChoice("openrouter");
+    setKeyDismissed(false);
+    work.newVersion();
+  };
   const goOpenRouter = () => {
     settings.setPathChoice("openrouter");
     setKeyDismissed(false);
@@ -143,6 +161,7 @@ function WorkView(props: { id: string }) {
           <option value={AUTO_FONT}>auto-guess{s.rec?.font ? `: ${s.rec.font}` : ""}</option>
           <For each={Object.keys(FONTS)}>{(name) => <option value={name} style={{ "font-family": FONTS[name] }}>{name}</option>}</For>
         </select>
+        <ModeToggle onChange={onMode} />
         <LangPicker value={lang()} translated={translatedLangs()} shared={sharedLangs()} onSelect={(l) => setSearch({ lang: l })} />
         <button type="button" class="ghost" title="OpenRouter key and sharing" onClick={() => setKeyOpen(true)}>
           {settings.apiKey() ? "Key ✓" : "Add key"}
@@ -183,7 +202,7 @@ function WorkView(props: { id: string }) {
 
         <aside class="sidebar" classList={{ editing: editing() }}>
           <div class="side-head">
-            <h2>{editing() ? "Bubbles" : s.phase === "needKey" ? "Bubbles erased" : "Working on it"}</h2>
+            <h2>{editing() ? "Bubbles" : s.phase === "needKey" ? (s.rec?.ocr ? "Needs a key" : "Bubbles erased") : "Working on it"}</h2>
             <Show when={s.rec?.scene?.summary}>
               <p class="summary" classList={{ open: summaryOpen() }} title={summaryOpen() ? "" : "Show all"} onClick={() => setSummaryOpen((v) => !v)}>
                 {s.rec!.scene!.summary}
@@ -194,6 +213,7 @@ function WorkView(props: { id: string }) {
             <div class="need-key">
               <p>
                 {s.error ||
+                  (s.rec?.ocr && "The next step runs on OpenRouter and needs your key. Add it, or set that step to Free in the pipeline below.") ||
                   "The bubbles are erased. Read and translate them with SOTA models on your OpenRouter key, or for free on this computer (rougher). Or letter them yourself."}
               </p>
               <div class="step-actions">
@@ -219,12 +239,13 @@ function WorkView(props: { id: string }) {
             lang={work.lang()}
             calls={s.rec?.calls ?? []}
             model={settings.model()}
-            freeRead={s.rec?.ocr ? !!s.rec.ocrFree : !settings.apiKey() || !settings.sotaRead()}
-            freeTranslate={!settings.apiKey() || !settings.sotaTranslate()}
+            ocrFree={s.rec?.ocr ? !!s.rec.ocrFree : undefined}
+            ocrBy={s.rec?.ocr ? s.rec.ocrBy : undefined}
             freeGpu={settings.freeGpu()}
             hasKey={!!settings.apiKey()}
             onAddKey={() => setKeyOpen(true)}
-            onNewVersion={s.phase === "done" || s.phase === "fatal" ? work.newVersion : undefined}
+            onNewVersion={s.phase === "done" || s.phase === "fatal" ? () => rerun("translate") : undefined}
+            onRerun={s.phase !== "loading" ? rerun : undefined}
             onDownloadEmpty={s.cleanUrl ? downloadEmpty : undefined}
             onEditEmpty={s.cleanUrl ? editEmpty : undefined}
           />
@@ -235,6 +256,14 @@ function WorkView(props: { id: string }) {
           </Show>
           <Show when={editing() && s.translation}>
             <div class="share-state">
+              <Show when={s.translation?.model?.startsWith("free:") && !s.translation?.edited}>
+                <div class="upgrade">
+                  <p class="muted">Translated for free on this computer. SOTA models read the lettering better and get the jokes.</p>
+                  <button class="primary small" onClick={runWithKey}>
+                    {settings.apiKey() ? "Run with OpenRouter" : "Run with an OpenRouter key"}
+                  </button>
+                </div>
+              </Show>
               <Show when={versions().length}>
                 <label class="versions">
                   Version
@@ -318,7 +347,7 @@ function WorkView(props: { id: string }) {
 
       <Show when={showKey()}>
         <KeyDialog
-          title={keyOpen() ? "OpenRouter key and sharing" : undefined}
+          title={keyOpen() ? "OpenRouter key and sharing" : s.rec?.ocr ? "This step runs on OpenRouter" : undefined}
           lead={keyOpen() ? "Your key stays in this browser. Change it, or change how you share." : undefined}
           error={s.phase === "needKey" ? s.error : ""}
           onDone={() => {

@@ -118,7 +118,7 @@ function promptData(rec: StripRecord, pass: TrPass): TrPromptData {
   return {
     src: rec.srcLang ?? "und",
     lang: pass.lang,
-    scene: JSON.stringify(rec.scene, null, 2),
+    scene: rec.scene ? JSON.stringify(rec.scene, null, 2) : "(not analysed)",
     transcript: transcript(rec, pass.ids, true),
     current: cur.join("\n"),
     hint: pass.hint ?? "",

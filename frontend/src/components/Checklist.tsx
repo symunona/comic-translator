@@ -1,5 +1,6 @@
 import { For, Show, createMemo, createSignal } from "solid-js";
-import { settings } from "../lib/settings";
+import { visionModels, type ModelInfo } from "../lib/llm/models";
+import { FREE, RECOMMENDED, settings, type AiStep } from "../lib/settings";
 import { STAGES, type CallStat, type StageName, type StageState } from "../lib/types";
 
 const LABELS: Record<StageName, string> = {
@@ -14,6 +15,14 @@ const LABELS: Record<StageName, string> = {
 };
 
 const LLM = new Set<StageName>(["ocr", "scene", "translate", "review"]);
+const isAi = (name: StageName): name is AiStep => LLM.has(name);
+
+const FREE_OPTION: Record<AiStep, string> = {
+  ocr: "Free · PaddleOCR on this computer",
+  scene: "Free · skip it",
+  translate: "Free · Chrome or opus-mt on this computer",
+  review: "Free · skip it",
+};
 
 const HOW: Record<StageName, string> = {
   panels: "your browser · XY-cut on the ink projection",
@@ -28,9 +37,9 @@ const HOW: Record<StageName, string> = {
 
 const FREE_HOW: Partial<Record<StageName, string>> = {
   ocr: "your browser · PaddleOCR v5 latin (ONNX on WASM) + language guess",
-  scene: "skipped in free mode",
+  scene: "free: skipped",
   translate: "your browser · Chrome's built-in translator, or opus-mt",
-  review: "skipped in free mode",
+  review: "free: skipped",
 };
 
 const modelLink = (m: string) => (
@@ -48,12 +57,13 @@ type Props = {
   lang: string;
   calls: CallStat[];
   model: string;
-  freeRead?: boolean;
-  freeTranslate?: boolean;
+  ocrFree?: boolean;
+  ocrBy?: string;
   freeGpu?: boolean;
   hasKey: boolean;
   onAddKey: () => void;
   onNewVersion?: () => void;
+  onRerun?: (step: AiStep) => void;
   onDownloadEmpty?: () => void;
   onEditEmpty?: () => void;
 };
@@ -64,11 +74,15 @@ export default function Checklist(p: Props) {
   const cost = (name: StageName) => callsOf(name).reduce((n, c) => n + c.costUsd, 0);
   const models = (name: StageName) => {
     const used = [...new Set(callsOf(name).map((c) => c.model))];
-    return used.length ? used : [p.model];
+    return used.length ? used : [isAi(name) ? settings.modelFor(name) : p.model];
   };
   const total = createMemo(() => p.calls.reduce((n, c) => n + c.costUsd, 0));
   const open = () => !p.collapsed || expanded();
-  const free = (name: StageName) => (name === "ocr" ? p.freeRead : name !== "panels" && name !== "detect" && name !== "clean" && name !== "shared" && p.freeTranslate);
+  const free = (name: StageName) => isAi(name) && (name === "ocr" && p.ocrFree !== undefined ? p.ocrFree : settings.isFree(name));
+  const reused = () => p.ocrBy === "shared" || p.ocrBy === "demo";
+  const [options, setOptions] = createSignal<ModelInfo[]>([]);
+  const loadOptions = () => !options().length && visionModels().then(setOptions);
+  const custom = (name: AiStep) => ![FREE, RECOMMENDED].includes(settings.step(name)) && settings.step(name);
   const freeHow = (name: StageName) => (name === "ocr" && p.freeGpu ? `${FREE_HOW.ocr} + Qwen3.5-0.8B re-read on WebGPU` : FREE_HOW[name]);
   return (
     <div class="pipeline">
@@ -109,13 +123,38 @@ export default function Checklist(p: Props) {
                       </Show>
                     </span>
                     <span class="step-where">
-                      <Show when={LLM.has(name) && !free(name)} fallback={(free(name) && freeHow(name)) || HOW[name]}>
+                      <Show when={LLM.has(name) && !free(name) && !(name === "ocr" && reused())} fallback={(name === "ocr" && reused() && "reused from a shared translation") || (free(name) && freeHow(name)) || HOW[name]}>
                         OpenRouter · <For each={models(name)}>{(m, i) => <>{i() ? ", " : ""}{modelLink(m)}</>}</For>
                         <Show when={!callsOf(name).length}> (planned)</Show> · {HOW[name]}
                       </Show>
                     </span>
                     <Show when={st().message}>
                       <span class="step-msg">{st().message}</span>
+                    </Show>
+                    <Show when={isAi(name) && name}>
+                      {(step) => (
+                        <span class="step-engine">
+                          <select
+                            value={settings.step(step())}
+                            title="Engine for this step, used from its next run"
+                            onFocus={loadOptions}
+                            onPointerDown={loadOptions}
+                            onChange={(e) => settings.setStep(step(), e.currentTarget.value)}
+                          >
+                            <option value={FREE}>{FREE_OPTION[step()]}</option>
+                            <option value={RECOMMENDED}>Recommended · {settings.model()}</option>
+                            <Show when={custom(step())}>{(id) => <option value={id()}>{id()}</option>}</Show>
+                            <optgroup label={options().length ? "Other OpenRouter models (image input)" : "Other OpenRouter models: loading…"}>
+                              <For each={options().filter((m) => m.id !== custom(step()))}>{(m) => <option value={m.id}>{m.id}</option>}</For>
+                            </optgroup>
+                          </select>
+                          <Show when={p.onRerun}>
+                            <button type="button" class="ghost small" title="Run this step again with the engine on the left, and every step after it" onClick={() => p.onRerun!(step())}>
+                              rerun
+                            </button>
+                          </Show>
+                        </span>
+                      )}
                     </Show>
                     <Show when={name === "clean" && (p.onDownloadEmpty || p.onEditEmpty)}>
                       <span class="step-actions">
@@ -137,19 +176,14 @@ export default function Checklist(p: Props) {
             </For>
           </ol>
           <div class="pipeline-opts">
-            <label class="toggle" classList={{ off: !p.hasKey }}>
-              <input type="checkbox" disabled={!p.hasKey} checked={p.hasKey && settings.sotaRead()} onChange={(e) => settings.setSotaRead(e.currentTarget.checked)} />
-              <span>Use SOTA models to read the text</span>
-            </label>
-            <label class="toggle" classList={{ off: !p.hasKey }}>
-              <input type="checkbox" disabled={!p.hasKey} checked={p.hasKey && settings.sotaTranslate()} onChange={(e) => settings.setSotaTranslate(e.currentTarget.checked)} />
-              <span>Use SOTA models to translate and review</span>
-            </label>
-            <p class="muted">
-              <Show when={p.hasKey} fallback={<>SOTA models need an OpenRouter key. <button type="button" class="ghost small" onClick={p.onAddKey}>Add key</button></>}>
-                Off: done on this computer, free, rougher.
-              </Show>
-            </p>
+            <Show when={!p.hasKey}>
+              <p class="muted">
+                Models other than Free need an OpenRouter key.{" "}
+                <button type="button" class="ghost small" onClick={p.onAddKey}>
+                  Add key
+                </button>
+              </p>
+            </Show>
             <Show when={p.onNewVersion}>
               <button type="button" class="ghost small" title="Read and translate again with these settings. The current translation is kept as an older version." onClick={p.onNewVersion}>
                 New version
