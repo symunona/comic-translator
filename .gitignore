@@ -1,5 +1,7 @@
 # runtime data, per-hash store
 /data/
+/data-hub/
+/hub/bin/
 # scratch, tmp, screenshots
 /.tmp/
 .agent-browser/

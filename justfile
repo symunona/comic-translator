@@ -5,24 +5,24 @@ root := justfile_directory()
 default:
     @just --list
 
-# dev: API :4720 + vite :4721 in tmux (comic-translator-api / -web)
+# dev: hub :4750 + vite :4721 in tmux (comic-hub / comic-translator-web)
 serve:
     {{root}}/dev.sh
 
 # stop dev tmux sessions
 stop:
-    -tmux kill-session -t comic-translator-api
+    -tmux kill-session -t comic-hub
     -tmux kill-session -t comic-translator-web
 
-# build frontend dist + backend binary
+# build frontend dist + hub binary
 build:
     cd {{root}}/frontend && TMPDIR={{root}}/.tmp pnpm build
-    make -C {{root}}/backend build
+    make -C {{root}}/hub build
 
-# typecheck + vet
+# typecheck + vet + hub tests
 check:
     cd {{root}}/frontend && pnpm exec tsc --noEmit
-    make -C {{root}}/backend vet
+    make -C {{root}}/hub vet test
 
 # build, ship to server, restart comic.tmpx.space
 deploy:
@@ -30,16 +30,8 @@ deploy:
 
 # tail prod logs on server
 logs:
-    ssh server journalctl --user -u comic-translator -f -n 50
+    ssh server journalctl --user -u comic-hub -f -n 50
 
 # prod service status
 status:
-    ssh server systemctl --user status comic-translator --no-pager
-
-# browser-offload env: build, ship to server ~/comic-browser, restart comic-browser.tmpx.space
-deploy-browser:
-    {{root}}/deploy/browser.sh
-
-# tail browser-offload env logs on server
-logs-browser:
-    ssh server journalctl --user -u comic-browser -f -n 50
+    ssh server systemctl --user status comic-hub --no-pager

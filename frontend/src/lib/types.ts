@@ -19,8 +19,6 @@ export type Region = {
   replace: boolean;
   source?: Source;
   speaker?: string;
-  overlayBox?: Box;
-  overlayUrl?: string;
   fitBox?: Box;
   glyphHeight?: number;
 };
@@ -43,163 +41,60 @@ export type RegionTranslation = {
 
 export type Translation = {
   lang: string;
-  final: boolean;
-  edited: boolean;
   updatedAt: string;
   regions: Record<string, RegionTranslation>;
-  version?: string;
-  label?: string;
-  source?: string;
   model?: string;
+  origin: "llm" | "shared" | "demo";
+  by?: string;
+  edited?: boolean;
+  draft?: boolean;
 };
 
-export type VersionUsage = {
-  calls: number;
-  tokens: TokenUsage;
-  costUsd: number;
-  durationMs: number;
-  models: string[];
-};
+export type CallStat = { stage: string; model: string; ms: number; costUsd: number; tokensIn: number; tokensOut: number; error?: string };
 
-export type TrVersion = {
+export type StripRecord = {
   id: string;
-  label: string;
-  source: "user" | "llm" | string;
-  model?: string;
-  from?: string;
+  name: string;
   createdAt: string;
-  updatedAt: string;
-  usage?: VersionUsage;
-  reviewError?: string;
-  regions: Record<string, RegionTranslation>;
-};
-
-export type TrVersions = { lang: string; active: string; versions: TrVersion[] };
-
-export type Meta = {
-  id: string;
-  origName: string;
-  createdAt?: string;
   width: number;
   height: number;
-  mime?: string;
-  imageUrl?: string;
-};
-
-export type Strip = {
-  meta: Meta;
   panels: Panel[];
   regions: Region[];
+  detected: boolean;
+  ocr: boolean;
+  srcLang?: string;
+  unboxed?: string[];
   scene?: Scene;
-  stages: Record<string, string>;
-  imageUrl: string;
-  cleanUrl?: string;
+  drafts: Record<string, Record<string, RegionTranslation>>;
+  translations: Record<string, Translation>;
+  calls: CallStat[];
+  shared: Record<string, number>;
 };
 
-export type StripSummary = {
-  id: string;
-  origName: string;
-  createdAt: string;
+// SharedTranslation is the file posted to the hub and shipped with the demos:
+// everything needed to letter the strip again, no image.
+export type SharedTranslation = {
+  format: 1;
+  hash: string;
   width: number;
   height: number;
-  thumbUrl: string;
-  langs: string[];
+  srcLang: string;
+  panels: Panel[];
+  regions: Region[];
+  unboxed?: string[];
+  scene: Scene;
+  lang: string;
+  translation: Record<string, RegionTranslation>;
+  model?: string;
+  nick?: string;
+  createdAt: string;
 };
 
-export type StageStatus = "pending" | "running" | "done" | "cached" | "error";
+export type SharedListing = { id: number | string; lang: string; srcLang: string; nick?: string; createdAt: string };
 
-export type StageEvent = {
-  stage: string;
-  status: Exclude<StageStatus, "pending">;
-  message?: string;
-  progress?: { done: number; total: number };
-};
+export type StageStatus = "pending" | "running" | "done" | "cached" | "error" | "skipped";
 
-export type DataEvent =
-  | { kind: "meta"; payload: Meta }
-  | { kind: "panels"; payload: Panel[] }
-  | { kind: "regions"; payload: Region[] }
-  | { kind: "region"; payload: Region }
-  | { kind: "scene"; payload: Scene }
-  | { kind: "overlays"; payload: Region[] }
-  | { kind: "translation"; payload: Translation };
-
-export type StreamHandlers = {
-  stage: (e: StageEvent) => void;
-  data: (e: DataEvent) => void;
-  done: () => void;
-  fatal: (message: string) => void;
-};
-
-export type TokenUsage = {
-  input_tokens: number;
-  cache_creation_input_tokens: number;
-  cache_read_input_tokens: number;
-  output_tokens: number;
-};
-
-export type StageUsage = {
-  stage: string;
-  calls: number;
-  errors: number;
-  untracked: number;
-  turns: number;
-  tokens: TokenUsage;
-  costUsd: number;
-  durationMs: number;
-  models: string[];
-  paid: number;
-  credits: number;
-};
-
-export type LLMCall = {
-  name: string;
-  stage: string;
-  label: string;
-  backend: string;
-  model: string;
-  attempt: number;
-  error?: string;
-  local: boolean;
-  tokens?: TokenUsage;
-  turns?: number;
-  costUsd: number;
-  credits: number;
-  durationMs: number;
-  time: string;
-};
-
-export type DetectRun = {
-  where: string;
-  model: string;
-  bytes?: number;
-  device: string;
-  ms: number;
-  panels: number;
-  regions: number;
-  at: string;
-};
-
-export type StageStat = { ms: number; at: string; where?: string; detail?: string; counts?: Record<string, number> };
-
-export type UsageReport = { stages: StageUsage[]; total: StageUsage; calls: LLMCall[]; detect?: DetectRun; stats?: Record<string, StageStat> };
-
-export type Config = {
-  clientDetect: boolean;
-  debug: boolean;
-  detector?: string;
-  llm?: Record<string, string>;
-};
-
-export const STAGES = ["ingest", "panels", "detect", "order", "ocr", "scene", "clean", "translate", "review"] as const;
+export const STAGES = ["panels", "detect", "clean", "shared", "ocr", "scene", "translate", "review"] as const;
 export type StageName = (typeof STAGES)[number];
 
-export const LANGS: { code: string; name: string }[] = [
-  { code: "en", name: "English" },
-  { code: "de", name: "Deutsch" },
-  { code: "fr", name: "Français" },
-  { code: "es", name: "Español" },
-  { code: "it", name: "Italiano" },
-  { code: "pl", name: "Polski" },
-  { code: "hu", name: "Magyar" },
-];
+export type StageState = { status: StageStatus; message?: string; progress?: { done: number; total: number } };

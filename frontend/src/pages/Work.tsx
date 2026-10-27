@@ -1,34 +1,26 @@
 import { A, useParams, useSearchParams } from "@solidjs/router";
-import { For, Show, createEffect, createMemo, createResource, createSignal, on, onCleanup, onMount } from "solid-js";
+import { For, Show, createEffect, createMemo, createSignal, on, onCleanup, onMount } from "solid-js";
 import Brand from "../components/Brand";
 import Checklist from "../components/Checklist";
+import KeyDialog from "../components/KeyDialog";
 import LangPicker from "../components/LangPicker";
 import RegionCard from "../components/RegionCard";
 import Strip from "../components/Strip";
+import Turnstile from "../components/Turnstile";
 import ViewToggle from "../components/ViewToggle";
-import UsagePanel from "../components/UsagePanel";
-import VersionPicker from "../components/VersionPicker";
-import { api } from "../lib/api";
-import { langCredits } from "../lib/credits";
 import { FONT_FAMILY } from "../lib/layout";
 import { renderStrip } from "../lib/render";
-import { STAGES, type Region } from "../lib/types";
+import { settings } from "../lib/settings";
+import { STAGES } from "../lib/types";
 import { createWork } from "../lib/work";
 
-const SAVE_LABEL = { idle: "", pending: "editing…", saving: "saving…", saved: "saved", error: "save failed" };
-
-const withRev = (url: string, rev?: number) => (rev && !/^(blob|data):/.test(url) ? `${url}${url.includes("?") ? "&" : "?"}v=${rev}` : url);
+const SAVE_LABEL = { idle: "", pending: "editing…", saved: "saved in this browser", error: "save failed" };
 
 function WorkView(props: { id: string }) {
   const [search, setSearch] = useSearchParams();
-  const lang = () => (typeof search.lang === "string" && search.lang) || "en";
+  const lang = () => (typeof search.lang === "string" && search.lang) || settings.lastLang();
   const work = createWork(props.id);
   const s = work.state;
-  const [config] = createResource(() => api.config().catch(() => undefined));
-  const [usage] = createResource(
-    () => ({ id: props.id, key: `${work.usageRev()}:${s.phase}:${s.translation?.updatedAt ?? ""}` }),
-    ({ id }) => api.usage(id).catch(() => undefined),
-  );
 
   const [fontsReady, setFontsReady] = createSignal(false);
   const [hovered, setHovered] = createSignal<string | null>(null);
@@ -36,29 +28,31 @@ function WorkView(props: { id: string }) {
   const [showOriginal, setShowOriginal] = createSignal(false);
   const [summaryOpen, setSummaryOpen] = createSignal(false);
   const [exporting, setExporting] = createSignal(false);
-  const [result, setResult] = createSignal<{ url: string; name: string } | null>(null);
   const [exportError, setExportError] = createSignal("");
+  const [keyOpen, setKeyOpen] = createSignal(false);
+  const [keyDismissed, setKeyDismissed] = createSignal(false);
 
   const boxEls = new Map<string, HTMLElement>();
   const cardEls = new Map<string, HTMLElement>();
 
   onMount(() => {
-    Promise.all([
-      document.fonts.load(`32px ${FONT_FAMILY}`, "Aa"),
-      document.fonts.load(`32px ${FONT_FAMILY}`, "őű"),
-    ]).finally(() => setFontsReady(true));
+    Promise.all([document.fonts.load(`32px ${FONT_FAMILY}`, "Aa"), document.fonts.load(`32px ${FONT_FAMILY}`, "őű")]).finally(() => setFontsReady(true));
   });
 
-  createEffect(on(lang, (l) => work.connect(l, typeof search.ver === "string" ? search.ver : undefined)));
+  createEffect(
+    on(lang, (l) => {
+      settings.useLang(l);
+      setKeyDismissed(false);
+      work.connect(l);
+    }),
+  );
 
-  const imageUrl = () => s.meta?.imageUrl || api.imageUrl(props.id, "orig.png");
-  const overlaySrc = (r: Region) => {
-    const url = r.overlayUrl || (r.overlayBox ? api.imageUrl(props.id, `overlays/${r.id}.png`) : undefined);
-    return url && withRev(url, work.overlayRev()[r.id]);
-  };
-  const editing = () => s.everDone;
+  const editing = () => s.phase === "done";
   const readRegions = createMemo(() => s.regions.filter((r) => r.source));
   const running = createMemo(() => STAGES.find((n) => s.stages[n].status === "running"));
+  const showKey = () => keyOpen() || (s.phase === "needKey" && !keyDismissed());
+  const translatedLangs = () => Object.keys(s.rec?.translations ?? {});
+  const sharedLangs = () => [...new Set(s.listings.map((l) => l.lang))];
 
   const pickFromCard = (rid: string) => {
     setActive(rid);
@@ -71,26 +65,19 @@ function WorkView(props: { id: string }) {
     card?.querySelector("textarea")?.focus({ preventScroll: true });
   };
 
-  const onKey = (e: KeyboardEvent) => {
-    if (e.key === "Escape") setResult(null);
-  };
-  window.addEventListener("keydown", onKey);
-  onCleanup(() => window.removeEventListener("keydown", onKey));
-
   const save = async () => {
-    if (!s.meta) return;
+    const r = s.rec;
+    if (!r || !s.cleanUrl) return;
     setExporting(true);
     setExportError("");
     try {
       await work.flush();
       const l = lang();
-      const png = await renderStrip(s.meta, imageUrl(), s.regions, s.translation, l, overlaySrc);
-      const { url } = await api.render(props.id, l, png);
-      const name = `${s.meta.origName.replace(/\.[^.]+$/, "")}.${l}.png`;
-      const shown = withRev(url, Date.now());
-      setResult({ url: shown, name });
-      const a = Object.assign(document.createElement("a"), { href: shown, download: name });
-      a.click();
+      const png = await renderStrip(r.width, r.height, s.cleanUrl, s.regions, s.translation, l);
+      const url = URL.createObjectURL(png);
+      const name = `${r.name.replace(/\.[^.]+$/, "")}.${l}.png`;
+      Object.assign(document.createElement("a"), { href: url, download: name }).click();
+      setTimeout(() => URL.revokeObjectURL(url), 60_000);
     } catch (e) {
       setExportError(e instanceof Error ? e.message : String(e));
     } finally {
@@ -98,14 +85,20 @@ function WorkView(props: { id: string }) {
     }
   };
 
+  const onKey = (e: KeyboardEvent) => {
+    if (e.key === "Escape") setKeyOpen(false);
+  };
+  window.addEventListener("keydown", onKey);
+  onCleanup(() => window.removeEventListener("keydown", onKey));
+
   return (
     <div class="work">
       <header class="topbar">
         <Brand />
-        <span class="strip-name" title={s.meta?.origName}>
-          {s.meta?.origName ?? props.id.slice(0, 12)}
+        <span class="strip-name" title={s.rec?.name}>
+          {s.rec?.name ?? props.id.slice(0, 12)}
         </span>
-        <Show when={s.everDone && running()}>
+        <Show when={running()}>
           <span class="busy">
             <i class="spinner" /> {running()}
           </span>
@@ -113,39 +106,38 @@ function WorkView(props: { id: string }) {
         <div class="spacer" />
         <span class={`save-state ${work.saveState()}`}>{SAVE_LABEL[work.saveState()]}</span>
         <ViewToggle original={showOriginal()} onChange={setShowOriginal} />
-        <LangPicker
-          value={lang()}
-          translated={s.langs}
-          credits={langCredits(usage.latest, s.regions.length)}
-          onSelect={(l) => setSearch({ lang: l, ver: undefined })}
-          onTranslate={(l) => setSearch({ lang: l, ver: undefined })}
-        />
-        <A class="button ghost" href={`/v/${encodeURIComponent(props.id)}?lang=${lang()}${s.translation?.version ? `&ver=${s.translation.version}` : ""}`}>
+        <LangPicker value={lang()} translated={translatedLangs()} shared={sharedLangs()} onSelect={(l) => setSearch({ lang: l })} />
+        <button type="button" class="ghost" title="OpenRouter key and sharing" onClick={() => setKeyOpen(true)}>
+          {settings.apiKey() ? "Key ✓" : "Add key"}
+        </button>
+        <A class="button ghost" href={`/v/${encodeURIComponent(props.id)}?lang=${lang()}`}>
           View
         </A>
-        <button class="primary" disabled={!s.everDone || s.phase !== "done" || exporting()} onClick={save}>
+        <button class="primary" disabled={s.phase !== "done" || exporting()} onClick={save}>
           {exporting() ? "Rendering…" : "Save PNG"}
         </button>
       </header>
 
       <main class="columns">
         <section class="strip-col">
-          <Show when={s.meta} fallback={<div class="strip-placeholder"><i class="spinner" /> loading strip…</div>}>
+          <Show when={s.rec && s.imageUrl} fallback={<div class="strip-placeholder">{s.phase === "fatal" ? s.error : <><i class="spinner" /> loading strip…</>}</div>}>
             <Strip
-              meta={s.meta!}
-              panels={s.panels}
+              width={s.rec!.width}
+              height={s.rec!.height}
+              name={s.rec!.name}
+              panels={s.rec!.panels}
               regions={s.regions}
               translation={s.translation}
               lang={work.lang()}
-              loading={s.phase !== "done"}
-              imageUrl={imageUrl()}
+              loading={s.phase === "loading"}
+              imageUrl={s.imageUrl}
+              cleanUrl={s.cleanUrl}
               showOriginal={showOriginal()}
               fontsReady={fontsReady()}
               hovered={hovered()}
               active={active()}
               onHover={setHovered}
               onPick={pickFromStrip}
-              overlaySrc={overlaySrc}
               boxRef={(rid, el) => boxEls.set(rid, el)}
             />
           </Show>
@@ -153,37 +145,58 @@ function WorkView(props: { id: string }) {
 
         <aside class="sidebar" classList={{ editing: editing() }}>
           <div class="side-head">
-            <h2>{editing() ? "Bubbles" : "Working on it"}</h2>
-            <Show when={s.scene?.summary}>
+            <h2>{editing() ? "Bubbles" : s.phase === "needKey" ? "Bubbles erased" : "Working on it"}</h2>
+            <Show when={s.rec?.scene?.summary}>
               <p class="summary" classList={{ open: summaryOpen() }} title={summaryOpen() ? "" : "Show all"} onClick={() => setSummaryOpen((v) => !v)}>
-                {s.scene!.summary}
+                {s.rec!.scene!.summary}
               </p>
             </Show>
           </div>
-          <Checklist
-            stages={s.stages}
-            collapsed={s.everDone && s.phase !== "fatal"}
-            error={s.error}
-            lang={work.lang()}
-            usage={usage.latest}
-            config={config()}
-          />
-          <Show when={s.everDone && config()?.debug && usage.latest}>
-            <UsagePanel report={usage.latest!} />
+          <Show when={s.phase === "needKey" && !showKey()}>
+            <div class="need-key">
+              <p>The bubbles are erased. Reading and translating them needs your OpenRouter key.</p>
+              <button class="primary" onClick={() => setKeyDismissed(false)}>
+                Add key to continue
+              </button>
+            </div>
           </Show>
-          <Show when={s.everDone && s.versions && s.translation?.version}>
-            <VersionPicker
-              versions={s.versions!}
-              value={s.translation!.version!}
-              editable
-              onSelect={(v) => {
-                setSearch({ ver: undefined });
-                return work.switchVersion(v);
-              }}
-              onCopy={work.copyVersion}
-              onRename={work.renameVersion}
-              onDelete={work.deleteVersion}
-            />
+          <Checklist stages={s.stages} collapsed={editing()} error={s.phase === "fatal" ? s.error : ""} lang={work.lang()} calls={s.rec?.calls ?? []} />
+          <Show when={s.phase === "fatal"}>
+            <button class="ghost" onClick={work.retry}>
+              Try again
+            </button>
+          </Show>
+          <Show when={editing() && s.translation}>
+            <div class="share-state">
+              <Show when={s.translation?.origin === "demo"}>
+                <p class="muted">Demo translation, bundled with the site.</p>
+              </Show>
+              <Show when={s.translation?.origin === "shared"}>
+                <p class="muted">Shared translation{s.translation?.by ? ` by ${s.translation.by}` : ""}. Edits stay in this browser until you share them.</p>
+              </Show>
+              <Show when={s.translation?.origin === "llm"}>
+                <Show when={s.share === "shared"}>
+                  <p class="key-ok">Shared with others{settings.nick() ? ` as ${settings.nick()}` : " anonymously"}. Thanks!</p>
+                </Show>
+                <Show when={s.share === "sharing"}>
+                  <p class="muted">
+                    <i class="spinner" /> sharing…
+                  </p>
+                </Show>
+                <Show when={s.share === "needCaptcha"}>
+                  <p class="muted">One captcha, then your translation is shared.</p>
+                  <Turnstile onVerified={work.shareNow} />
+                </Show>
+                <Show when={s.share === "error"}>
+                  <p class="fatal">Sharing failed: {s.shareError}</p>
+                </Show>
+                <Show when={s.share === "idle" || s.share === "error" || s.share === "off"}>
+                  <button class="ghost small" onClick={work.shareNow}>
+                    Share this translation
+                  </button>
+                </Show>
+              </Show>
+            </div>
           </Show>
           <Show when={exportError()}>
             <p class="fatal">{exportError()}</p>
@@ -210,25 +223,21 @@ function WorkView(props: { id: string }) {
         </aside>
       </main>
 
-      <Show when={result()}>
-        {(res) => (
-          <div class="dialog-backdrop" onClick={(e) => e.target === e.currentTarget && setResult(null)}>
-            <div class="dialog">
-              <header>
-                <h3>Saved {res().name}</h3>
-                <a class="button primary" href={res().url} download={res().name}>
-                  Download
-                </a>
-                <button class="ghost" onClick={() => setResult(null)}>
-                  Close
-                </button>
-              </header>
-              <div class="dialog-body">
-                <img src={res().url} alt="rendered strip" />
-              </div>
-            </div>
-          </div>
-        )}
+      <Show when={showKey()}>
+        <KeyDialog
+          title={keyOpen() ? "OpenRouter key and sharing" : undefined}
+          lead={keyOpen() ? "Your key stays in this browser. Change it, or change how you share." : undefined}
+          error={s.phase === "needKey" ? s.error : ""}
+          onDone={() => {
+            setKeyOpen(false);
+            if (s.phase === "needKey") work.retry();
+          }}
+          onClose={() => {
+            setKeyOpen(false);
+            setKeyDismissed(true);
+          }}
+          onShareReady={() => s.phase === "needKey" && work.retry()}
+        />
       </Show>
     </div>
   );

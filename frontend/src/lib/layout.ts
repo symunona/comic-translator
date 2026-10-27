@@ -1,6 +1,6 @@
 import type { Align, Box } from "./types";
 
-export const FONT_FAMILY = '"Patrick Hand"';
+export const FONT_FAMILY = '"Patrick Hand", "Comic Neue", "Comic Sans MS", cursive, sans-serif';
 export const LINE_HEIGHT = 1.08;
 const MIN_SIZE = 6;
 const MAX_SIZE = 64;

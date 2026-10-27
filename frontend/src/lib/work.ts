@@ -1,175 +1,344 @@
 import { batch, createSignal, onCleanup } from "solid-js";
-import { createStore, produce, reconcile } from "solid-js/store";
-import { api } from "./api";
+import { createStore, reconcile, unwrap } from "solid-js/store";
+import { decode, toBlob, type Img } from "./cv/image";
+import { panels as findPanels } from "./cv/panels";
+import { cleanStrip, detectedRegions } from "./cv/regions";
+import { toBox } from "./cv/rect";
 import { detectInBrowser } from "./detect";
-import { translatedLangs } from "./langs";
-import { STAGES, type Meta, type Panel, type Region, type Scene, type StageEvent, type StageName, type StageStatus, type StreamHandlers, type Translation, type TrVersions } from "./types";
+import { contribute, fetchShared, listings, type Listing } from "./hub";
+import { LLMError, type CallOptions } from "./llm/openrouter";
+import { getImage, loadStrip, saveStrip } from "./local";
+import { reviewPass, runOCR, runScene, translatable, translatePass } from "./pipeline";
+import { settings } from "./settings";
+import { STAGES, type CallStat, type Region, type SharedTranslation, type StageName, type StageState, type StripRecord, type Translation } from "./types";
 
-export type StageState = { status: StageStatus; message?: string; progress?: { done: number; total: number } };
-export type SaveState = "idle" | "pending" | "saving" | "saved" | "error";
+export type SaveState = "idle" | "pending" | "saved" | "error";
+export type Phase = "loading" | "needKey" | "done" | "fatal";
+export type ShareState = "off" | "needCaptcha" | "sharing" | "shared" | "error" | "idle";
 
 const emptyStages = () => Object.fromEntries(STAGES.map((s) => [s, { status: "pending" }])) as Record<StageName, StageState>;
 
-const LLM_STAGES = new Set<StageName>(["ocr", "scene", "translate", "review"]);
+const now = () => new Date().toISOString();
 
-const stageName = (s: string) => s.split(":")[0] as StageName;
+class Cancelled extends Error {}
+
+export function sharedFile(rec: StripRecord, t: Translation): SharedTranslation {
+  return {
+    format: 1,
+    hash: rec.id,
+    width: rec.width,
+    height: rec.height,
+    srcLang: rec.srcLang ?? "",
+    panels: rec.panels,
+    regions: rec.regions.map(({ fitBox: _f, glyphHeight: _g, speaker: _s, ...r }) => r),
+    unboxed: rec.unboxed,
+    scene: rec.scene!,
+    lang: t.lang,
+    translation: t.regions,
+    model: t.model,
+    createdAt: now(),
+  };
+}
 
 export function createWork(id: string) {
   const [state, setState] = createStore({
-    meta: null as Meta | null,
-    panels: [] as Panel[],
+    rec: null as StripRecord | null,
     regions: [] as Region[],
-    scene: null as Scene | null,
     stages: emptyStages(),
     translation: null as Translation | null,
-    versions: null as TrVersions | null,
-    langs: [] as string[],
-    phase: "loading" as "loading" | "done" | "fatal",
-    everDone: false,
+    phase: "loading" as Phase,
     error: "",
+    imageUrl: "",
+    cleanUrl: "",
+    listings: [] as Listing[],
+    share: "idle" as ShareState,
+    shareError: "",
   });
   const [lang, setLang] = createSignal("");
   const [saveState, setSaveState] = createSignal<SaveState>("idle");
-  const [overlayRev, setOverlayRev] = createSignal<Record<string, number>>({});
-  const [usageRev, setUsageRev] = createSignal(0);
 
-  const upsertRegions = (list: Region[], replace = false) =>
-    setState(
-      "regions",
-      produce((rs) => {
-        if (replace) {
-          const ids = new Set(list.map((r) => r.id));
-          for (let i = rs.length - 1; i >= 0; i--) if (!ids.has(rs[i].id)) rs.splice(i, 1);
-        }
-        for (const r of list) {
-          const i = rs.findIndex((x) => x.id === r.id);
-          if (i < 0) rs.push(r);
-          else for (const [k, v] of Object.entries(r)) if (v != null) (rs[i] as Record<string, unknown>)[k] = v;
-        }
-        rs.sort((a, b) => a.order - b.order);
-      }),
-    );
+  let orig: Img | null = null;
+  let gen = 0;
+  let abort: AbortController | null = null;
+  let cleanUrl = "";
+  let imageUrl = "";
 
-  const setTranslation = (t: Translation) => {
-    if (t.lang && t.lang !== lang()) return;
-    setState("translation", reconcile(t));
+  let cur: StripRecord | null = null;
+  const stage = (name: StageName, s: StageState) => setState("stages", name, s);
+  const rec = () => cur!;
+  const plain = <T,>(v: T): T => structuredClone(unwrap(v));
+
+  const mutate = (fn: (r: StripRecord) => void) => {
+    const r = structuredClone(rec());
+    fn(r);
+    saveStrip(r);
+    cur = r;
+    setState("rec", reconcile(structuredClone(r)));
+    return r;
   };
 
-  const onStage = (e: StageEvent) => {
-    const name = stageName(e.stage);
-    if (!(name in state.stages)) return;
-    const prev = state.stages[name];
-    setState("stages", name, { status: e.status, message: e.message, progress: e.progress });
-    if (LLM_STAGES.has(name) && e.status !== "cached" && (prev.status !== e.status || prev.progress?.done !== e.progress?.done)) setUsageRev((n) => n + 1);
-  };
+  const withSpeakers = (r: StripRecord, regs: Region[]) => regs.map((x) => ({ ...x, speaker: r.scene?.speakers?.[x.id] }));
 
-  let close: (() => void) | null = null;
-  let timer: number | undefined;
-  let seq = 0;
-
-  const clientDetect = async () => {
-    const cfg = await api.config();
-    if (!cfg.clientDetect) return;
-    const { panels, detected } = await api.panels(id);
-    if (detected) return;
-    setState("panels", panels);
-    onStage({ stage: "detect", status: "running", message: "in browser" });
-    const run = await detectInBrowser(api.imageUrl(id, "orig.png"), panels, (done, total, device) =>
-      onStage({ stage: "detect", status: "running", message: `in browser · ${device}`, progress: { done, total } }),
-    );
-    console.info("browser detect", JSON.stringify({ device: run.result.device, ...run.timing }));
-    await api.putDetect(id, run.result);
-  };
-
-  const connect = (l: string, ver?: string) => {
-    close?.();
-    flush();
+  const reclean = async () => {
+    if (!orig) return;
+    const { clean, regions } = cleanStrip(orig, rec().regions);
+    const url = URL.createObjectURL(await toBlob(clean));
+    if (cleanUrl) URL.revokeObjectURL(cleanUrl);
+    cleanUrl = url;
     batch(() => {
-      setLang(l);
+      setState("regions", reconcile(withSpeakers(rec(), regions)));
+      setState("cleanUrl", url);
+    });
+  };
+
+  const onStat = (s: CallStat) => mutate((r) => void r.calls.push(s));
+
+  const llm = (stageName: string, signal: AbortSignal): CallOptions => ({ key: settings.apiKey(), model: settings.model(), stage: stageName, signal, onStat });
+
+  const check = (g: number) => {
+    if (g !== gen) throw new Cancelled();
+  };
+
+  const timed = async <T>(name: StageName, fn: () => Promise<T>, message?: (t: T) => string): Promise<T> => {
+    stage(name, { status: "running" });
+    const t0 = performance.now();
+    const out = await fn();
+    stage(name, { status: "done", message: message?.(out) ?? `${((performance.now() - t0) / 1000).toFixed(1)} s` });
+    return out;
+  };
+
+  const applyShared = (f: SharedTranslation, l: Listing, withTranslation: boolean) =>
+    mutate((r) => {
+      r.panels = f.panels;
+      r.regions = f.regions;
+      r.detected = true;
+      r.ocr = true;
+      r.srcLang = f.srcLang || r.srcLang;
+      r.unboxed = f.unboxed;
+      r.scene = f.scene;
+      if (withTranslation) {
+        r.translations[f.lang] = { lang: f.lang, regions: f.translation, updatedAt: f.createdAt || now(), model: f.model, origin: l.demo ? "demo" : "shared", by: f.nick || l.nick };
+        r.shared[f.lang] = typeof l.id === "number" ? l.id : -1;
+      }
+    });
+
+  const run = async (l: string) => {
+    const g = ++gen;
+    abort?.abort();
+    const ac = new AbortController();
+    abort = ac;
+    batch(() => {
       setState("stages", emptyStages());
-      setState("translation", null);
-      setState("versions", null);
       setState("phase", "loading");
       setState("error", "");
-      setSaveState("idle");
+      setState("translation", null);
     });
-    api
-      .getStrip(id)
-      .then((s) => {
-        setState("langs", (ls) => [...new Set([...ls, ...translatedLangs(s.stages)])]);
-        if (state.meta) return;
-        batch(() => {
-          setState("meta", { ...s.meta, imageUrl: s.imageUrl || s.meta.imageUrl });
-          if (!state.panels.length) setState("panels", s.panels ?? []);
-          upsertRegions(s.regions ?? []);
-          if (s.scene) setState("scene", s.scene);
+    try {
+      const loaded = loadStrip(id);
+      if (!loaded) throw new Error("This strip is not in this browser. Open it from the home page or drop the image again.");
+      let r: StripRecord = loaded;
+      cur = r;
+      setState("rec", reconcile(structuredClone(r)));
+      if (!orig) {
+        const blob = await getImage(id);
+        if (!blob) throw new Error("The image of this strip is missing from this browser. Drop it again.");
+        imageUrl = URL.createObjectURL(blob);
+        setState("imageUrl", imageUrl);
+        orig = await decode(blob);
+      }
+      check(g);
+
+      if (!r.panels.length) {
+        await timed("panels", async () => {
+          const rects = findPanels(orig!);
+          r = mutate((x) => void (x.panels = rects.map((rc, i) => ({ id: `p${i}`, order: i, bbox: toBox(rc) }))));
+          return rects.length;
+        }, (n) => `${n} panel${n === 1 ? "" : "s"}`);
+      } else stage("panels", { status: "cached", message: `${r.panels.length} panels` });
+      check(g);
+
+      if (!r.detected) {
+        stage("detect", { status: "running", message: "loading detector…" });
+        const det = await detectInBrowser(state.imageUrl, r.panels, (done, total, device) =>
+          stage("detect", { status: "running", message: device, progress: { done, total } }),
+        );
+        check(g);
+        const regions = detectedRegions(r.panels, det.result.panels);
+        r = mutate((x) => {
+          x.regions = regions;
+          x.detected = true;
         });
-      })
-      .catch(() => {});
-    const gen = ++seq;
-    clientDetect()
-      .then(() => {
-        if (gen === seq) close = api.stream(id, l, handlers(l, ver));
-      })
-      .catch((err) => {
-        if (gen !== seq) return;
-        onStage({ stage: "detect", status: "error", message: String(err?.message ?? err) });
+        stage("detect", { status: "done", message: `${regions.length} text areas · ${(det.result.ms / 1000).toFixed(1)} s` });
+      } else stage("detect", { status: "cached", message: `${r.regions.length} text areas` });
+      check(g);
+
+      await timed("clean", reclean);
+      check(g);
+
+      const have = r.translations[l];
+      if (have) {
         batch(() => {
-          setState("phase", "fatal");
-          setState("error", `browser detect failed: ${err?.message ?? err}`);
+          for (const s of ["shared", "ocr", "scene", "translate", "review"] as const) stage(s, { status: "cached" });
+          setState("translation", reconcile(structuredClone(have)));
+          setState("phase", "done");
         });
+        refreshListings();
+        return;
+      }
+
+      stage("shared", { status: "running", message: "looking for shared translations" });
+      const found = await listings(id);
+      check(g);
+      setState("listings", found);
+      const exact = found.find((x) => x.lang === l);
+      const base = exact ?? (!r.ocr ? found[0] : undefined);
+      if (base) {
+        const f = await fetchShared(base);
+        check(g);
+        r = applyShared(f, base, !!exact && f.lang === l);
+        await reclean();
+        if (exact) {
+          stage("shared", { status: "done", message: `${base.demo ? "demo" : "shared"} translation${base.nick ? ` by ${base.nick}` : ""}` });
+          for (const s of ["ocr", "scene", "translate", "review"] as const) stage(s, { status: "skipped" });
+          batch(() => {
+            setState("translation", reconcile(structuredClone(rec().translations[l])));
+            setState("phase", "done");
+            setState("share", "shared");
+          });
+          return;
+        }
+        stage("shared", { status: "done", message: `reusing text and scene from a ${base.lang} translation` });
+      } else stage("shared", { status: "done", message: found.length ? "none in this language" : settings.share() ? "nothing shared yet" : "sharing is off" });
+
+      if (!settings.apiKey()) {
+        setState("phase", "needKey");
+        return;
+      }
+
+      if (!r.ocr) {
+        await timed("ocr", async () => {
+          const o = await runOCR(orig!, r, llm("ocr", ac.signal));
+          check(g);
+          r = mutate((x) => {
+            x.regions = o.regions;
+            x.srcLang = o.srcLang;
+            x.unboxed = o.unboxed;
+            x.ocr = true;
+          });
+          await reclean();
+          return o;
+        }, (o) => `${o.regions.filter((x) => x.source).length} texts · ${o.srcLang}`);
+      } else stage("ocr", { status: "cached", message: r.srcLang });
+      check(g);
+
+      if (!r.scene) {
+        await timed("scene", async () => {
+          const sc = await runScene(orig!, r, llm("scene", ac.signal));
+          check(g);
+          r = mutate((x) => void (x.scene = sc));
+          setState("regions", (regs) => withSpeakers(r, regs));
+        });
+      } else stage("scene", { status: "cached" });
+      check(g);
+
+      const ids = translatable(r);
+      let draft = r.drafts[l];
+      if (!draft) {
+        draft = await timed("translate", () => translatePass(orig!, r, { lang: l, ids }, llm(`translate:${l}`, ac.signal)));
+        check(g);
+        const d = draft;
+        r = mutate((x) => void (x.drafts[l] = d));
+      } else stage("translate", { status: "cached" });
+      setState("translation", { lang: l, regions: structuredClone(draft), updatedAt: now(), origin: "llm", draft: true });
+
+      let final = draft;
+      let reviewError = "";
+      try {
+        final = await timed("review", () => reviewPass(orig!, r, { lang: l, ids }, draft!, llm(`review:${l}`, ac.signal)));
+      } catch (e) {
+        if (e instanceof Cancelled || ac.signal.aborted) throw e;
+        reviewError = e instanceof Error ? e.message : String(e);
+        stage("review", { status: "error", message: `${reviewError} · kept the draft` });
+      }
+      check(g);
+      const t: Translation = { lang: l, regions: final, updatedAt: now(), model: settings.model(), origin: "llm", draft: !!reviewError };
+      r = mutate((x) => (x.translations[l] = t));
+      batch(() => {
+        setState("translation", reconcile(structuredClone(t)));
+        setState("phase", "done");
       });
+      autoShare();
+    } catch (e) {
+      if (e instanceof Cancelled || (e instanceof DOMException && e.name === "AbortError")) return;
+      if (g !== gen) return;
+      const msg = e instanceof Error ? e.message : String(e);
+      const running = STAGES.find((s) => state.stages[s].status === "running");
+      if (running) stage(running, { status: "error", message: msg });
+      if (e instanceof LLMError && (e.status === 401 || e.status === 402)) {
+        batch(() => {
+          setState("error", e.status === 402 ? "Your OpenRouter balance is empty. Add credits and try again." : "OpenRouter rejected the API key.");
+          setState("phase", "needKey");
+        });
+        return;
+      }
+      batch(() => {
+        setState("phase", "fatal");
+        setState("error", msg);
+      });
+    }
   };
 
-  const handlers = (l: string, ver?: string): StreamHandlers => ({
-    stage: onStage,
-    data: (e) => {
-      switch (e.kind) {
-        case "meta":
-          return setState("meta", e.payload);
-        case "panels":
-          return setState("panels", e.payload);
-        case "regions":
-          return upsertRegions(e.payload, true);
-        case "overlays":
-          return upsertRegions(e.payload);
-        case "region":
-          return upsertRegions([e.payload]);
-        case "scene":
-          return setState("scene", e.payload);
-        case "translation":
-          return setTranslation(e.payload);
-      }
-    },
-    done: async () => {
-      const t = await api.getTranslation(id, l).catch(() => null);
-      if (l !== lang()) return;
-      batch(() => {
-        if (t) setTranslation(t);
-        if (ver && t?.version !== ver) switchVersion(ver).catch(() => loadVersions());
-        else loadVersions();
-        setState("langs", (ls) => (ls.includes(l) ? ls : [...ls, l]));
-        setState("phase", "done");
-        setState("everDone", true);
-      });
-    },
-    fatal: (message) => batch(() => {
-      setState("phase", "fatal");
-      setState("error", message);
-    }),
-  });
+  const refreshListings = () => listings(id).then((ls) => setState("listings", ls)).catch(() => {});
 
-  const put = async () => {
+  const connect = (l: string) => {
+    flush();
+    setLang(l);
+    setState("share", "idle");
+    run(l);
+  };
+
+  const retry = () => run(lang());
+
+  const shareNow = async () => {
     const t = state.translation;
-    if (!t) return;
-    setSaveState("saving");
+    const r = state.rec;
+    if (!t || !r?.scene || t.origin !== "llm") return;
+    if (!settings.validSession()) {
+      setState("share", "needCaptcha");
+      return;
+    }
+    await flush();
+    setState("share", "sharing");
     try {
-      const saved = await api.putTranslation(id, t.lang, { ...t, edited: true, regions: { ...t.regions } });
-      if (saved.lang === lang()) {
-        const forked = saved.version !== state.translation?.version;
-        setState("translation", (cur) => (cur ? { ...cur, updatedAt: saved.updatedAt, version: saved.version, label: saved.label, source: saved.source, model: saved.model } : cur));
-        if (forked) loadVersions();
-      }
+      const sid = await contribute(sharedFile(rec(), rec().translations[t.lang]));
+      mutate((x) => void (x.shared[t.lang] = sid));
+      setState("share", "shared");
+      refreshListings();
+    } catch (e) {
+      batch(() => {
+        setState("share", "error");
+        setState("shareError", e instanceof Error ? e.message : String(e));
+      });
+    }
+  };
+
+  function autoShare() {
+    const t = state.translation;
+    if (!t || !settings.share()) return setState("share", "off");
+    if (rec().shared[t.lang] !== undefined) return setState("share", "shared");
+    shareNow();
+  }
+
+  let timer: number | undefined;
+
+  const persistTranslation = () => {
+    const t = state.translation;
+    if (!t || !state.rec) return;
+    try {
+      mutate((x) => {
+        x.translations[t.lang] = { ...plain(t), draft: false };
+        delete x.shared[t.lang];
+      });
       setSaveState(timer === undefined ? "saved" : "pending");
     } catch {
       setSaveState("error");
@@ -180,89 +349,66 @@ export function createWork(id: string) {
     if (timer === undefined) return Promise.resolve();
     clearTimeout(timer);
     timer = undefined;
-    return put();
+    persistTranslation();
+    return Promise.resolve();
   }
 
   const editText = (rid: string, text: string) => {
     if (!state.translation) return;
-    setState("translation", "regions", rid, (r) => ({ ...(r ?? {}), text }));
-    setState("translation", "edited", true);
+    batch(() => {
+      setState("translation", "regions", rid, (x) => ({ ...(x ?? {}), text }));
+      setState("translation", "edited", true);
+      if (state.translation?.origin !== "llm") setState("translation", "origin", "llm");
+      setState("share", settings.share() ? "idle" : "off");
+    });
     setSaveState("pending");
     clearTimeout(timer);
     timer = window.setTimeout(() => {
       timer = undefined;
-      put();
-    }, 600);
+      persistTranslation();
+    }, 500);
   };
 
   const setReplace = async (rid: string, replace: boolean) => {
-    setState("regions", (r) => r.id === rid, "replace", replace);
-    try {
-      const r = await api.patchRegion(id, rid, { replace });
-      upsertRegions([r]);
-      setOverlayRev((m) => ({ ...m, [rid]: Date.now() }));
-    } catch {
-      setState("regions", (r) => r.id === rid, "replace", !replace);
-    }
+    mutate((x) => {
+      const reg = x.regions.find((y) => y.id === rid);
+      if (reg) reg.replace = replace;
+    });
+    await reclean();
   };
 
   const retranslate = async (rid: string, hint?: string) => {
+    if (!settings.apiKey()) {
+      setState("phase", "needKey");
+      return;
+    }
     await flush();
-    const t = await api.retranslate(id, lang(), { regionIds: [rid], hint }).finally(() => setUsageRev((n) => n + 1));
-    const entry = t.regions[rid];
-    if (entry && state.translation) setState("translation", "regions", rid, entry);
-    else setTranslation(t);
-    loadVersions();
-  };
-
-  const loadVersions = async () => {
     const l = lang();
-    const vs = await api.versions(id, l).catch(() => null);
-    if (l === lang()) setState("versions", vs ? reconcile(vs) : null);
-  };
-
-  const showVersions = (vs: TrVersions) => {
-    setState("versions", reconcile(vs));
-    const v = vs.versions.find((x) => x.id === vs.active);
-    if (!v) return;
-    setTranslation({
-      lang: lang(), final: true, edited: v.source === "user", updatedAt: v.updatedAt, regions: structuredClone(v.regions),
-      version: v.id, label: v.label, source: v.source, model: v.model,
-    });
-  };
-
-  const switchVersion = async (vid: string) => {
-    await flush();
-    showVersions(await api.activateVersion(id, lang(), vid));
-  };
-
-  const copyVersion = async () => {
-    await flush();
-    const v = await api.newVersion(id, lang(), { from: state.translation?.version });
-    const vs = await api.versions(id, lang());
-    if (vs) showVersions({ ...vs, active: v.id });
-  };
-
-  const renameVersion = async (vid: string, label: string) => {
-    const v = await api.patchVersion(id, lang(), vid, { label });
-    setState("versions", "versions", (x) => x.id === vid, "label", v.label);
-    if (state.translation?.version === vid) setState("translation", "label", v.label);
-  };
-
-  const deleteVersion = async (vid: string) => {
-    await flush();
-    showVersions(await api.deleteVersion(id, lang(), vid));
+    const r = rec();
+    const ids = translatable(r, [rid]);
+    if (!ids.size || !orig) return;
+    const signal = new AbortController().signal;
+    const pass = { lang: l, ids, current: state.translation ? plain(state.translation.regions) : undefined, hint };
+    const draft = await translatePass(orig, r, pass, llm("retranslate", signal));
+    const final = await reviewPass(orig, r, pass, draft, llm("retranslate", signal)).catch(() => draft);
+    const entry = final[rid];
+    if (entry && state.translation) {
+      setState("translation", "regions", rid, entry);
+      setState("translation", "origin", "llm");
+      persistTranslation();
+      setState("share", settings.share() ? "idle" : "off");
+    }
   };
 
   onCleanup(() => {
     flush();
-    close?.();
+    gen++;
+    abort?.abort();
+    if (cleanUrl) URL.revokeObjectURL(cleanUrl);
+    if (imageUrl) URL.revokeObjectURL(imageUrl);
   });
 
-return {
-    state, lang, connect, editText, setReplace, retranslate, flush, saveState, overlayRev, usageRev,
-    switchVersion, copyVersion, renameVersion, deleteVersion,
-  };
+  return { state, lang, connect, retry, editText, setReplace, retranslate, flush, saveState, shareNow };
 }
 
 export type Work = ReturnType<typeof createWork>;

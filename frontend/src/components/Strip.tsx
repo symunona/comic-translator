@@ -1,19 +1,21 @@
 import { For, Show, createMemo } from "solid-js";
 import { blockTop } from "../lib/layout";
 import { regionLayout } from "../lib/render";
-import type { Box, Meta, Panel, Region, Translation } from "../lib/types";
+import type { Box, Panel, Region, Translation } from "../lib/types";
 
 type Props = {
-  meta: Meta;
+  width: number;
+  height: number;
+  name: string;
   panels: Panel[];
   regions: Region[];
   translation: Translation | null;
   lang: string;
   loading?: boolean;
   imageUrl: string;
+  cleanUrl?: string;
   showOriginal: boolean;
   fontsReady: boolean;
-  overlaySrc: (r: Region) => string | undefined;
   hovered?: string | null;
   active?: string | null;
   onHover?: (rid: string | null) => void;
@@ -23,8 +25,8 @@ type Props = {
 };
 
 export default function Strip(p: Props) {
-  const W = () => p.meta.width;
-  const H = () => p.meta.height;
+  const W = () => p.width;
+  const H = () => p.height;
   const interactive = () => !!p.onPick;
   const pct = (b: Box) => ({
     left: `${(b[0] / W()) * 100}%`,
@@ -41,19 +43,18 @@ export default function Strip(p: Props) {
       classList={{ loading: p.loading, original: p.showOriginal }}
       style={{ "aspect-ratio": `${W()} / ${H()}` }}
     >
-      <img class="strip-img" src={p.imageUrl} alt={p.meta.origName} draggable={false} />
+      <img class="strip-img" src={p.imageUrl} alt={p.name} draggable={false} />
+      <Show when={p.cleanUrl}>
+        <img class="strip-img strip-clean" classList={{ hidden: p.showOriginal }} src={p.cleanUrl} alt="" draggable={false} />
+      </Show>
       <Show when={interactive()}>
         <For each={p.panels}>{(panel) => <div class="panel-box" style={pct(panel.bbox)} />}</For>
       </Show>
       <For each={p.regions}>
         {(r) => {
           const fit = createMemo(() => (p.fontsReady && p.translation ? regionLayout(r, p.translation, p.lang) : null));
-          const showOverlay = () => !p.showOriginal && r.replace && r.overlayBox && p.overlaySrc(r);
           return (
             <>
-              <Show when={showOverlay()}>
-                <img class="overlay" src={p.overlaySrc(r)} style={pct(r.overlayBox!)} alt="" />
-              </Show>
               <Show when={!p.showOriginal && fit()}>
                 {(l) => (
                   <div

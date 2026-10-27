@@ -3,13 +3,10 @@ import { Show, createMemo, createResource, createSignal, onCleanup, onMount } fr
 import Brand from "../components/Brand";
 import LangPicker from "../components/LangPicker";
 import Strip from "../components/Strip";
-import VersionPicker from "../components/VersionPicker";
 import ViewToggle from "../components/ViewToggle";
-import { api } from "../lib/api";
-import { langCredits } from "../lib/credits";
-import { translatedLangs } from "../lib/langs";
 import { FONT_FAMILY } from "../lib/layout";
-import type { Panel, Region, Translation } from "../lib/types";
+import type { Panel, Translation } from "../lib/types";
+import { loadView } from "../lib/view";
 
 type Cam = { x: number; y: number; k: number };
 
@@ -20,41 +17,28 @@ const MOVE_MS = 560;
 function ViewerView(props: { id: string }) {
   const [search, setSearch] = useSearchParams();
   const navigate = useNavigate();
-  const [strip] = createResource(() => props.id, api.getStrip);
-  const [usage] = createResource(() => props.id, (id) => api.usage(id).catch(() => undefined));
-  const langs = createMemo(() => translatedLangs(strip()?.stages));
+  const [strip] = createResource(() => props.id, loadView);
+  onCleanup(() => {
+    const v = strip();
+    if (v) [v.imageUrl, v.cleanUrl].forEach(URL.revokeObjectURL);
+  });
+  const langs = createMemo(() => Object.keys(strip()?.rec.translations ?? {}));
   const asked = () => (typeof search.lang === "string" ? search.lang : "");
   const lang = createMemo(() => {
     const ls = langs();
     if (ls.includes(asked())) return asked();
-    return ls.includes("en") ? "en" : ls[0] ?? (asked() || "en");
+    return ls[0] ?? (asked() || "en");
   });
-  const [versions] = createResource(
-    () => (langs().includes(lang()) ? lang() : false),
-    (l) => api.versions(props.id, l),
-  );
-  const ver = createMemo(() => {
-    const vs = versions();
-    if (!vs) return undefined;
-    const want = typeof search.ver === "string" ? search.ver : "";
-    return vs.versions.find((v) => v.id === want) ?? vs.versions.find((v) => v.id === vs.active) ?? vs.versions.at(-1);
-  });
-  const translation = createMemo<Translation | null>(() => {
-    const v = ver();
-    if (!v) return null;
-    return { lang: lang(), final: true, edited: v.source === "user", updatedAt: v.updatedAt, regions: v.regions, version: v.id, label: v.label, source: v.source, model: v.model };
-  });
+  const translation = createMemo<Translation | null>(() => strip()?.rec.translations[lang()] ?? null);
   const [fontsReady, setFontsReady] = createSignal(false);
   const [showOriginal, setShowOriginal] = createSignal(false);
   const [idx, setIdx] = createSignal(-1);
   const [cam, setCam] = createSignal<Cam | null>(null);
   const [animate, setAnimate] = createSignal(false);
 
-  const panels = createMemo<Panel[]>(() => [...(strip()?.panels ?? [])].sort((a, b) => a.order - b.order));
+  const panels = createMemo<Panel[]>(() => [...(strip()?.rec.panels ?? [])].sort((a, b) => a.order - b.order));
   const zoomed = () => idx() >= 0;
   const untranslated = () => strip.state === "ready" && !langs().length;
-  const imageUrl = () => strip()?.imageUrl || strip()?.meta.imageUrl || api.imageUrl(props.id, "orig.png");
-  const overlaySrc = (r: Region) => r.overlayUrl || (r.overlayBox ? api.imageUrl(props.id, `overlays/${r.id}.png`) : undefined);
 
   let stage!: HTMLDivElement;
   let frame!: HTMLDivElement;
@@ -67,7 +51,7 @@ function ViewerView(props: { id: string }) {
     ]).finally(() => setFontsReady(true));
   });
 
-  const scale = () => frame.offsetWidth / strip()!.meta.width;
+  const scale = () => frame.offsetWidth / strip()!.rec.width;
   const view = () => ({ w: stage.clientWidth, h: stage.clientHeight - BAR, pad: stage.clientWidth < 640 ? 4 : 20 });
 
   const target = (p: Panel): Cam => {
@@ -178,22 +162,17 @@ function ViewerView(props: { id: string }) {
     <div class="viewer">
       <header class="topbar">
         <Brand />
-        <span class="strip-name" title={strip()?.meta.origName}>
-          {strip()?.meta.origName ?? ""}
+        <span class="strip-name" title={strip()?.rec.name}>
+          {strip()?.rec.name ?? ""}
         </span>
         <div class="spacer" />
-        <Show when={versions() && versions()!.versions.length > 1 && ver()}>
-          <VersionPicker versions={versions()!} value={ver()!.id} onSelect={(v) => setSearch({ ver: v })} />
-        </Show>
         <ViewToggle original={showOriginal() || untranslated()} onChange={setShowOriginal} disabled={untranslated()} />
         <LangPicker
           value={lang()}
           translated={langs()}
-          credits={langCredits(usage(), strip()?.regions.length ?? 0)}
-          onSelect={(l) => setSearch({ lang: l, ver: undefined })}
-          onTranslate={(l) => navigate(`/s/${encodeURIComponent(props.id)}?lang=${l}`)}
+          onSelect={(l) => (langs().includes(l) ? setSearch({ lang: l }) : navigate(`/s/${encodeURIComponent(props.id)}?lang=${l}`))}
         />
-        <A class="button edit-link" href={`/s/${encodeURIComponent(props.id)}?lang=${lang()}${ver() ? `&ver=${ver()!.id}` : ""}`}>
+        <A class="button edit-link" href={`/s/${encodeURIComponent(props.id)}?lang=${lang()}`}>
           <svg viewBox="0 0 20 20" aria-hidden="true">
             <path d="M13.5 3.5l3 3L7 16H4v-3z" />
           </svg>
@@ -206,25 +185,27 @@ function ViewerView(props: { id: string }) {
           {(st) => (
             <div class="cam" classList={{ animate: animate() }} ref={frame} style={camStyle()}>
               <Strip
-                meta={st().meta}
+                width={st().rec.width}
+                height={st().rec.height}
+                name={st().rec.name}
                 panels={panels()}
                 regions={st().regions}
                 translation={translation()}
                 lang={lang()}
-                imageUrl={imageUrl()}
+                imageUrl={st().imageUrl}
+                cleanUrl={st().cleanUrl}
                 showOriginal={showOriginal() || untranslated()}
                 fontsReady={fontsReady()}
-                overlaySrc={overlaySrc}
               />
               <Show when={panels()[idx()]}>
                 {(p) => (
                   <div
                     class="spot"
                     style={{
-                      left: `${(p().bbox[0] / st().meta.width) * 100}%`,
-                      top: `${(p().bbox[1] / st().meta.height) * 100}%`,
-                      width: `${(p().bbox[2] / st().meta.width) * 100}%`,
-                      height: `${(p().bbox[3] / st().meta.height) * 100}%`,
+                      left: `${(p().bbox[0] / st().rec.width) * 100}%`,
+                      top: `${(p().bbox[1] / st().rec.height) * 100}%`,
+                      width: `${(p().bbox[2] / st().rec.width) * 100}%`,
+                      height: `${(p().bbox[3] / st().rec.height) * 100}%`,
                     }}
                   />
                 )}

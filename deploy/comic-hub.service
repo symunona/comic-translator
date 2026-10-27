@@ -1,0 +1,23 @@
+[Unit]
+Description=comic-translator hub (comic.tmpx.space): static frontend, shared translations per image hash
+Documentation=https://github.com/symunona/comic-translator
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=%h/comic-hub
+EnvironmentFile=%h/comic-hub/.env
+ExecStart=%h/comic-hub/bin/hub \
+  -addr 127.0.0.1:4750 \
+  -data %h/comic-hub/data \
+  -static %h/comic-hub/web \
+  -models %h/comic-hub/vendor/models
+Restart=always
+RestartSec=5
+MemoryHigh=200M
+MemoryMax=400M
+# deploy.sh swaps bin/hub by rename(2), so a restart never sees a half-copied binary.
+
+[Install]
+WantedBy=default.target
