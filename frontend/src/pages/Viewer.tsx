@@ -4,7 +4,8 @@ import Brand from "../components/Brand";
 import LangPicker from "../components/LangPicker";
 import Strip from "../components/Strip";
 import ViewToggle from "../components/ViewToggle";
-import { FONT_FAMILY } from "../lib/layout";
+import { FONT_FAMILY, chosenFont, fontFamily } from "../lib/layout";
+import { settings } from "../lib/settings";
 import type { Panel, Translation } from "../lib/types";
 import { loadView } from "../lib/view";
 
@@ -192,6 +193,7 @@ function ViewerView(props: { id: string }) {
                 regions={st().regions}
                 translation={translation()}
                 lang={lang()}
+                font={fontFamily(chosenFont(settings.font(), st().rec.font))}
                 imageUrl={st().imageUrl}
                 cleanUrl={st().cleanUrl}
                 showOriginal={showOriginal() || untranslated()}

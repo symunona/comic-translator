@@ -64,6 +64,7 @@ export type StripRecord = {
   ocr: boolean;
   srcLang?: string;
   unboxed?: string[];
+  font?: string;
   scene?: Scene;
   drafts: Record<string, Record<string, RegionTranslation>>;
   translations: Record<string, Translation>;
@@ -82,6 +83,7 @@ export type SharedTranslation = {
   panels: Panel[];
   regions: Region[];
   unboxed?: string[];
+  font?: string;
   scene: Scene;
   lang: string;
   translation: Record<string, RegionTranslation>;

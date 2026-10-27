@@ -1,6 +1,23 @@
 import type { Align, Box } from "./types";
 
 export const FONT_FAMILY = '"Patrick Hand", "Comic Neue", "Comic Sans MS", cursive, sans-serif';
+export const DEFAULT_FONT = "Patrick Hand";
+export const AUTO_FONT = "auto";
+export const FONTS: Record<string, string> = {
+  "Patrick Hand": FONT_FAMILY,
+  "Comic Sans MS": '"Comic Sans MS", "Comic Neue", cursive, sans-serif',
+  Arial: "Arial, Helvetica, sans-serif",
+  Verdana: "Verdana, Geneva, sans-serif",
+  "Trebuchet MS": '"Trebuchet MS", Helvetica, sans-serif',
+  Tahoma: "Tahoma, Verdana, sans-serif",
+  Impact: 'Impact, "Arial Black", sans-serif',
+  Georgia: "Georgia, serif",
+  "Times New Roman": '"Times New Roman", Times, serif',
+  "Courier New": '"Courier New", Courier, monospace',
+};
+export const fontFamily = (name: string) => FONTS[name] ?? FONT_FAMILY;
+export const fontName = (guess: unknown) => Object.keys(FONTS).find((n) => n.toLowerCase() === String(guess ?? "").trim().toLowerCase());
+export const chosenFont = (choice: string, guess?: string) => (choice === AUTO_FONT ? guess || DEFAULT_FONT : choice);
 export const LINE_HEIGHT = 1.08;
 const MIN_SIZE = 6;
 const MAX_SIZE = 64;
@@ -10,6 +27,7 @@ const CAP_SLACK = 1.15;
 export type Layout = {
   box: Box;
   align: Align;
+  family: string;
   fontSize: number;
   lineHeight: number;
   lines: string[];
@@ -22,7 +40,7 @@ export type Layout = {
 let ctx: CanvasRenderingContext2D | null = null;
 const measurer = () => (ctx ??= document.createElement("canvas").getContext("2d")!);
 
-export const fontString = (size: number) => `${size}px ${FONT_FAMILY}`;
+export const fontString = (size: number, family = FONT_FAMILY) => `${size}px ${family}`;
 
 export function padBox(textBox: Box): Box {
   const [x, y, w, h] = textBox;
@@ -72,17 +90,17 @@ export function prepareText(text: string, caps: boolean, lang: string): string {
   return caps ? t.toLocaleUpperCase(lang) : t;
 }
 
-function capRatio(c: CanvasRenderingContext2D): number {
-  c.font = fontString(100);
+function capRatio(c: CanvasRenderingContext2D, family: string): number {
+  c.font = fontString(100, family);
   return c.measureText("H").actualBoundingBoxAscent / 100;
 }
 
-export function layout(text: string, box: Box, align: Align, glyphHeight?: number): Layout {
+export function layout(text: string, box: Box, align: Align, glyphHeight?: number, family = FONT_FAMILY): Layout {
   const c = measurer();
   const [, , w, h] = box;
-  const maxSize = glyphHeight ? Math.max(MIN_SIZE, Math.min(MAX_SIZE, Math.floor((glyphHeight * CAP_SLACK) / capRatio(c)))) : MAX_SIZE;
+  const maxSize = glyphHeight ? Math.max(MIN_SIZE, Math.min(MAX_SIZE, Math.floor((glyphHeight * CAP_SLACK) / capRatio(c, family)))) : MAX_SIZE;
   const attempt = (size: number, breakWords: boolean) => {
-    c.font = fontString(size);
+    c.font = fontString(size, family);
     const lines = wrap(text, w, (s) => c.measureText(s).width, breakWords);
     const widest = Math.max(0, ...lines.map((l) => c.measureText(l).width));
     const ink = inkExtent(c, lines, size * LINE_HEIGHT);
@@ -104,13 +122,14 @@ export function layout(text: string, box: Box, align: Align, glyphHeight?: numbe
   };
   const whole = search(false);
   const best = whole.fits ? whole : search(true);
-  c.font = fontString(best.size);
+  c.font = fontString(best.size, family);
   const m = c.measureText("ÁÉŐŰgjpqy");
   const lineHeight = best.size * LINE_HEIGHT;
   const content = m.fontBoundingBoxAscent + m.fontBoundingBoxDescent;
   return {
     box,
     align,
+    family,
     fontSize: best.size,
     lineHeight,
     lines: best.lines,
@@ -133,7 +152,7 @@ export function blockTop(l: Layout): number {
 
 export function drawLayout(c: CanvasRenderingContext2D, l: Layout, color = "#111") {
   const [x, , w] = l.box;
-  c.font = fontString(l.fontSize);
+  c.font = fontString(l.fontSize, l.family);
   c.fillStyle = color;
   c.textBaseline = "alphabetic";
   c.textAlign = l.align;

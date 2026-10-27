@@ -1,5 +1,6 @@
 import { createRoot, createSignal, type Accessor } from "solid-js";
 import { browserLang } from "./langs";
+import { AUTO_FONT } from "./layout";
 import { DEFAULT_MODEL } from "./llm/openrouter";
 import { lsGet, lsSet } from "./local";
 
@@ -27,6 +28,7 @@ export const settings = createRoot(() => {
   const [session, setSession] = persisted<Session | null>("session", null);
   const [langs, setLangs] = persisted<string[]>("langs", []);
   const [model, setModel] = persisted("model", DEFAULT_MODEL);
+  const [font, setFont] = persisted("font", AUTO_FONT);
 
   const lastLang = () => langs()[0] ?? browserLang();
   const useLang = (code: string) => setLangs([code, ...langs().filter((l) => l !== code)].slice(0, 12));
@@ -35,5 +37,5 @@ export const settings = createRoot(() => {
     return s && s.exp * 1000 > Date.now() + 60_000 ? s.token : "";
   };
 
-  return { apiKey, setApiKey, share, setShare, nick, setNick, secret, session, setSession, validSession, langs, useLang, lastLang, model, setModel };
+  return { apiKey, setApiKey, share, setShare, nick, setNick, secret, session, setSession, validSession, langs, useLang, lastLang, model, setModel, font, setFont };
 });

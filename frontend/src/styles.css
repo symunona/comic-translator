@@ -162,7 +162,8 @@ button:disabled { opacity: 0.45; cursor: default; }
   border-left: 1.5px solid var(--line);
 }
 .strip-name:empty { display: none; }
-.topbar .button, .topbar button, .topbar .view-toggle { height: 34px; }
+.topbar .button, .topbar button, .topbar .view-toggle, .topbar .font-pick { height: 34px; }
+.font-pick { max-width: 150px; }
 .spacer { flex: 1; }
 .busy { font-size: 12px; color: var(--muted); display: flex; gap: 6px; align-items: center; }
 .save-state { font-size: 12px; color: var(--muted); min-width: 70px; text-align: right; transition: color 0.2s; }

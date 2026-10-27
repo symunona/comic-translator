@@ -32,6 +32,7 @@ export function sharedFile(rec: StripRecord, t: Translation): SharedTranslation 
     panels: rec.panels,
     regions: rec.regions.map(({ fitBox: _f, glyphHeight: _g, speaker: _s, ...r }) => r),
     unboxed: rec.unboxed,
+    font: rec.font,
     scene: rec.scene!,
     lang: t.lang,
     translation: t.regions,
@@ -115,6 +116,7 @@ export function createWork(id: string) {
       r.ocr = true;
       r.srcLang = f.srcLang || r.srcLang;
       r.unboxed = f.unboxed;
+      r.font = f.font || r.font;
       r.scene = f.scene;
       if (withTranslation) {
         r.translations[f.lang] = { lang: f.lang, regions: f.translation, updatedAt: f.createdAt || now(), model: f.model, origin: l.demo ? "demo" : "shared", by: f.nick || l.nick };
@@ -223,11 +225,12 @@ export function createWork(id: string) {
             x.regions = o.regions;
             x.srcLang = o.srcLang;
             x.unboxed = o.unboxed;
+            x.font = o.font;
             x.ocr = true;
           });
           await reclean();
           return o;
-        }, (o) => `${o.regions.filter((x) => x.source).length} texts · ${o.srcLang}`);
+        }, (o) => `${o.regions.filter((x) => x.source).length} texts · ${o.srcLang}${o.font ? ` · ${o.font}` : ""}`);
       } else stage("ocr", { status: "cached", message: r.srcLang });
       check(g);
 

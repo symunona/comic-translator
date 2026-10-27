@@ -8,7 +8,7 @@ import RegionCard from "../components/RegionCard";
 import Strip from "../components/Strip";
 import Turnstile from "../components/Turnstile";
 import ViewToggle from "../components/ViewToggle";
-import { FONT_FAMILY } from "../lib/layout";
+import { AUTO_FONT, FONTS, FONT_FAMILY, chosenFont, fontFamily } from "../lib/layout";
 import { renderStrip } from "../lib/render";
 import { settings } from "../lib/settings";
 import { STAGES } from "../lib/types";
@@ -47,6 +47,7 @@ function WorkView(props: { id: string }) {
     }),
   );
 
+  const family = () => fontFamily(chosenFont(settings.font(), s.rec?.font));
   const editing = () => s.phase === "done";
   const readRegions = createMemo(() => s.regions.filter((r) => r.source || s.translation?.regions[r.id] !== undefined));
   const running = createMemo(() => STAGES.find((n) => s.stages[n].status === "running"));
@@ -73,7 +74,7 @@ function WorkView(props: { id: string }) {
     try {
       await work.flush();
       const l = lang();
-      const png = await renderStrip(r.width, r.height, s.cleanUrl, s.regions, s.translation, l);
+      const png = await renderStrip(r.width, r.height, s.cleanUrl, s.regions, s.translation, l, family());
       const url = URL.createObjectURL(png);
       const name = `${r.name.replace(/\.[^.]+$/, "")}.${l}.png`;
       Object.assign(document.createElement("a"), { href: url, download: name }).click();
@@ -119,6 +120,10 @@ function WorkView(props: { id: string }) {
         <div class="spacer" />
         <span class={`save-state ${work.saveState()}`}>{SAVE_LABEL[work.saveState()]}</span>
         <ViewToggle original={showOriginal()} onChange={setShowOriginal} />
+        <select class="font-pick" title="Lettering font" value={settings.font()} onChange={(e) => settings.setFont(e.currentTarget.value)}>
+          <option value={AUTO_FONT}>auto-guess{s.rec?.font ? `: ${s.rec.font}` : ""}</option>
+          <For each={Object.keys(FONTS)}>{(name) => <option value={name} style={{ "font-family": FONTS[name] }}>{name}</option>}</For>
+        </select>
         <LangPicker value={lang()} translated={translatedLangs()} shared={sharedLangs()} onSelect={(l) => setSearch({ lang: l })} />
         <button type="button" class="ghost" title="OpenRouter key and sharing" onClick={() => setKeyOpen(true)}>
           {settings.apiKey() ? "Key ✓" : "Add key"}
@@ -142,6 +147,7 @@ function WorkView(props: { id: string }) {
               regions={s.regions}
               translation={s.translation}
               lang={work.lang()}
+              font={family()}
               loading={s.phase === "loading"}
               imageUrl={s.imageUrl}
               cleanUrl={s.cleanUrl}

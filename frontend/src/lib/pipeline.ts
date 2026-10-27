@@ -1,5 +1,6 @@
 import { cropImages, panelImages } from "./cv/annotate";
 import type { Img } from "./cv/image";
+import { fontName } from "./layout";
 import { call, type CallOptions } from "./llm/openrouter";
 import { CLASS_HINTS, OCR_SCHEMA, REVIEW_SCHEMA, SCENE_SCHEMA, TRANSLATE_SCHEMA, ocrPrompt, reviewPrompt, scenePrompt, translatePrompt, type OcrBox, type TrPromptData } from "./llm/prompts";
 import type { Align, Kind, Region, RegionTranslation, Scene, StripRecord } from "./types";
@@ -11,9 +12,9 @@ export const defaultReplace = (kind?: string) => kind === "speech" || kind === "
 const cleanLines = (lines: unknown): string[] => (Array.isArray(lines) ? lines.map((l) => String(l).trim()).filter(Boolean) : []);
 const normAlign = (a: unknown): Align => (a === "left" || a === "right" ? a : "center");
 
-type OcrReply = { lang?: string; regions?: { n: number; kind?: string; lines?: string[]; align?: string; caps?: boolean }[]; unboxed?: string[] };
+type OcrReply = { lang?: string; regions?: { n: number; kind?: string; lines?: string[]; align?: string; caps?: boolean }[]; unboxed?: string[]; font?: string };
 
-export async function runOCR(img: Img, rec: StripRecord, o: CallOptions): Promise<{ regions: Region[]; srcLang: string; unboxed: string[] }> {
+export async function runOCR(img: Img, rec: StripRecord, o: CallOptions): Promise<{ regions: Region[]; srcLang: string; unboxed: string[]; font?: string }> {
   const used = rec.panels.filter((p) => rec.regions.some((r) => r.panelId === p.id));
   const panels = await panelImages(img, used, rec.regions);
   const crops = await cropImages(img, rec.regions);
@@ -39,7 +40,7 @@ export async function runOCR(img: Img, rec: StripRecord, o: CallOptions): Promis
     };
   });
   const srcLang = /^[a-z]{2,3}(-[A-Za-z]+)?$/.test(reply.lang ?? "") ? reply.lang! : "hu";
-  return { regions, srcLang, unboxed: cleanLines(reply.unboxed) };
+  return { regions, srcLang, unboxed: cleanLines(reply.unboxed), font: fontName(reply.font) };
 }
 
 const quoteLines = (lines: string[]) => lines.map((l) => JSON.stringify(l)).join(" / ");

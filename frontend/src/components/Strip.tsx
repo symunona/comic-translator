@@ -11,6 +11,7 @@ type Props = {
   regions: Region[];
   translation: Translation | null;
   lang: string;
+  font?: string;
   loading?: boolean;
   imageUrl: string;
   cleanUrl?: string;
@@ -52,7 +53,7 @@ export default function Strip(p: Props) {
       </Show>
       <For each={p.regions}>
         {(r) => {
-          const fit = createMemo(() => (p.fontsReady && p.translation ? regionLayout(r, p.translation, p.lang) : null));
+          const fit = createMemo(() => (p.fontsReady && p.translation ? regionLayout(r, p.translation, p.lang, p.font) : null));
           return (
             <>
               <Show when={!p.showOriginal && fit()}>
@@ -62,6 +63,7 @@ export default function Strip(p: Props) {
                     classList={{ overflow: !l().fits }}
                     style={{
                       ...pct([l().box[0], blockTop(l()), l().box[2], l().lines.length * l().lineHeight]),
+                      "font-family": l().family,
                       "font-size": cq(l().fontSize),
                       "line-height": cq(l().lineHeight),
                       "text-align": l().align,

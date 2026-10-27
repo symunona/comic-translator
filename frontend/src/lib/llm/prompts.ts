@@ -1,6 +1,7 @@
 import { langEnglishName } from "../langs";
+import { FONTS } from "../layout";
 
-export const OCR_SCHEMA = `{"lang":"<ISO 639-1 code of the comic's language, e.g. hu>","regions":[{"n":<box number>,"kind":"speech|thought|caption|sfx|sign|none","lines":["LINE 1","LINE 2"],"align":"left|center|right","caps":true}],"unboxed":["text seen outside every box"]}`;
+export const OCR_SCHEMA = `{"lang":"<ISO 639-1 code of the comic's language, e.g. hu>","regions":[{"n":<box number>,"kind":"speech|thought|caption|sfx|sign|none","lines":["LINE 1","LINE 2"],"align":"left|center|right","caps":true}],"unboxed":["text seen outside every box"],"font":"<name from the font list>"}`;
 export const SCENE_SCHEMA = `{"summary":"...","characters":[{"name":"label","description":"..."}],"panels":[{"panelId":"p0","description":"..."}],"speakers":{"r0":"label"},"notes":["..."]}`;
 export const TRANSLATE_SCHEMA = `{"regions":{"r0":{"literal":"...","text":"...","notes":"..."}}}`;
 export const REVIEW_SCHEMA = `{"critique":"...","regions":{"r0":{"text":"...","notes":"..."}}}`;
@@ -49,6 +50,8 @@ kind values:
 align: "center" when the lines are centred on each other, "left" when they share a left edge, "right" when they share a right edge.
 
 Also list in "unboxed" any lettering you can see in the panel images that is NOT inside any red box (for example a tiny bubble the detector missed), transcribed with the same rules. Use [] if there is none.
+
+Pick the "font" the translation will be lettered in: the one from this list that looks most like the comic's dialogue lettering (hand-drawn or typeset, stroke weight, serif or not): ${Object.keys(FONTS).join(", ")}.
 
 Reply with JSON only.`;
 }
