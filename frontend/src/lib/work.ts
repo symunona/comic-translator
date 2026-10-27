@@ -7,14 +7,21 @@ import { toBox } from "./cv/rect";
 import { detectInBrowser } from "./detect";
 import { contribute, fetchShared, listings, type Listing } from "./hub";
 import { LLMError, type CallOptions } from "./llm/openrouter";
+import { PADDLE } from "./free/models";
+import { chromeStarted, route, type Progress } from "./free/mt";
+import { hasWebGPU, repairOCR } from "./free/vlm";
+
+const freeEngine = () => import("./free/engine");
+const EMPTY_SCENE: Scene = { summary: "", characters: [], panels: [], speakers: {}, notes: [] };
+import { langEnglishName } from "./langs";
 import { getImage, loadStrip, saveStrip } from "./local";
 import { reviewPass, runOCR, runScene, translatable, translatePass } from "./pipeline";
 import { settings } from "./settings";
-import { STAGES, type CallStat, type Region, type SharedTranslation, type StageName, type StageState, type StripRecord, type Translation } from "./types";
+import { STAGES, type CallStat, type Region, type RegionTranslation, type Scene, type SharedTranslation, type StageName, type StageState, type StripRecord, type Translation } from "./types";
 
 export type SaveState = "idle" | "pending" | "saved" | "error";
 export type Phase = "loading" | "needKey" | "done" | "fatal";
-export type ShareState = "off" | "needCaptcha" | "sharing" | "shared" | "error" | "idle";
+export type ShareState = "off" | "needCaptcha" | "queued" | "sharing" | "shared" | "error" | "idle";
 
 const emptyStages = () => Object.fromEntries(STAGES.map((s) => [s, { status: "pending" }])) as Record<StageName, StageState>;
 
@@ -32,7 +39,7 @@ export function sharedFile(rec: StripRecord, t: Translation): SharedTranslation 
     panels: rec.panels,
     regions: rec.regions.map(({ fitBox: _f, glyphHeight: _g, speaker: _s, ...r }) => r),
     unboxed: rec.unboxed,
-    scene: rec.scene!,
+    scene: rec.scene ?? EMPTY_SCENE,
     lang: t.lang,
     translation: t.regions,
     model: t.model,
@@ -113,6 +120,8 @@ export function createWork(id: string) {
       r.regions = f.regions;
       r.detected = true;
       r.ocr = true;
+      r.ocrFree = false;
+      r.ocrBy = l.demo ? "demo" : "shared";
       r.srcLang = f.srcLang || r.srcLang;
       r.unboxed = f.unboxed;
       r.scene = f.scene;
@@ -122,7 +131,10 @@ export function createWork(id: string) {
       }
     });
 
-  const run = async (l: string) => {
+  // fresh makes a new version: no cached translation, no shared one. It holds
+  // across retries until the version is done or the language changes.
+  let wantFresh = false;
+  const run = async (l: string, fresh = wantFresh) => {
     const g = ++gen;
     abort?.abort();
     const ac = new AbortController();
@@ -176,7 +188,7 @@ export function createWork(id: string) {
       check(g);
 
       const have = r.translations[l];
-      if (have) {
+      if (have && !fresh) {
         batch(() => {
           for (const s of ["shared", "ocr", "scene", "translate", "review"] as const) stage(s, { status: "cached" });
           setState("translation", reconcile(structuredClone(have)));
@@ -186,10 +198,9 @@ export function createWork(id: string) {
         return;
       }
 
-      stage("shared", { status: "running", message: "looking for shared translations" });
-      const found = await listings(id);
+      const found = fresh ? [] : await (stage("shared", { status: "running", message: "looking for shared translations" }), listings(id));
       check(g);
-      setState("listings", found);
+      if (!fresh) setState("listings", found);
       const exact = found.find((x) => x.lang === l);
       const base = exact ?? (!r.ocr ? found[0] : undefined);
       if (base) {
@@ -208,14 +219,17 @@ export function createWork(id: string) {
           return;
         }
         stage("shared", { status: "done", message: `reusing text and scene from a ${base.lang} translation` });
-      } else stage("shared", { status: "done", message: found.length ? "none in this language" : settings.share() ? "nothing shared yet" : "sharing is off" });
+      } else if (fresh) stage("shared", { status: "skipped", message: "new version" });
+      else stage("shared", { status: "done", message: found.length ? "none in this language" : settings.share() ? "nothing shared yet" : "sharing is off" });
 
-      if (!settings.apiKey()) {
+      const sotaRead = settings.sotaRead();
+      const sotaTranslate = settings.sotaTranslate();
+      if ((sotaRead || sotaTranslate) && !settings.apiKey()) {
         setState("phase", "needKey");
         return;
       }
 
-      if (!r.ocr) {
+      if (sotaRead && (!r.ocr || r.ocrFree)) {
         await timed("ocr", async () => {
           const o = await runOCR(orig!, r, llm("ocr", ac.signal));
           check(g);
@@ -224,12 +238,24 @@ export function createWork(id: string) {
             x.srcLang = o.srcLang;
             x.unboxed = o.unboxed;
             x.ocr = true;
+            x.ocrFree = false;
+            x.ocrBy = settings.model();
           });
           await reclean();
           return o;
         }, (o) => `${o.regions.filter((x) => x.source).length} texts · ${o.srcLang}`);
-      } else stage("ocr", { status: "cached", message: r.srcLang });
+      } else if (!r.ocr) r = await readFree(r, g);
+      else stage("ocr", { status: "cached", message: r.srcLang });
       check(g);
+
+      if (!sotaTranslate) {
+        stage("scene", { status: "skipped", message: "free translation" });
+        const out = await translateFree(r, l, g);
+        if (!out) return;
+        stage("review", { status: "skipped", message: "free translation" });
+        finish({ lang: l, regions: out.regions, updatedAt: now(), model: `free:${rec().ocrBy ?? (rec().ocrFree ? PADDLE.name : "llm-ocr")}+${out.engine}`, origin: "llm" });
+        return;
+      }
 
       if (!r.scene) {
         await timed("scene", async () => {
@@ -261,13 +287,7 @@ export function createWork(id: string) {
         stage("review", { status: "error", message: `${reviewError} · kept the draft` });
       }
       check(g);
-      const t: Translation = { lang: l, regions: final, updatedAt: now(), model: settings.model(), origin: "llm", draft: !!reviewError };
-      r = mutate((x) => (x.translations[l] = t));
-      batch(() => {
-        setState("translation", reconcile(structuredClone(t)));
-        setState("phase", "done");
-      });
-      autoShare();
+      finish({ lang: l, regions: final, updatedAt: now(), model: settings.model(), origin: "llm", draft: !!reviewError });
     } catch (e) {
       if (e instanceof Cancelled || (e instanceof DOMException && e.name === "AbortError")) return;
       if (g !== gen) return;
@@ -288,37 +308,139 @@ export function createWork(id: string) {
     }
   };
 
+  const progress =
+    (name: StageName): Progress =>
+    (p) =>
+      stage(name, { status: "running", message: p.message, progress: p.total ? { done: p.done ?? 0, total: p.total } : undefined });
+
+  const needClick = (message: string) =>
+    batch(() => {
+      setState("error", message);
+      setState("phase", "needKey");
+    });
+
+  function finish(t: Translation) {
+    wantFresh = false;
+    mutate((x) => (x.translations[t.lang] = t));
+    batch(() => {
+      setState("translation", reconcile(structuredClone(t)));
+      setState("phase", "done");
+    });
+    autoShare();
+  }
+
+  // readFree reads the bubbles on this computer: Paddle OCR, language guess,
+  // accents, and the optional Qwen re-read on WebGPU.
+  async function readFree(r: StripRecord, g: number): Promise<StripRecord> {
+    const { freeOCR, withAccents } = await freeEngine();
+    let note = "";
+    await timed("ocr", async () => {
+      const o = await freeOCR(orig!, r, progress("ocr"));
+      check(g);
+      let by: string = PADDLE.name;
+      if (settings.freeGpu() && (await hasWebGPU())) {
+        try {
+          const { repairs } = await repairOCR(orig!, o.regions, o.srcLang, progress("ocr"));
+          check(g);
+          const fixes = new Map(repairs.map((x) => [x.id, x]));
+          o.regions = o.regions.map((reg) => {
+            const fix = fixes.get(reg.id);
+            return fix?.ok && reg.source ? { ...reg, source: { ...reg.source, text: fix.used, lines: fix.lines } } : reg;
+          });
+          o.regions = await withAccents(o.regions, o.srcLang);
+          by += "+qwen3.5-0.8b";
+        } catch (e) {
+          if (e instanceof Cancelled) throw e;
+          note = " · GPU letter check failed, kept the plain OCR";
+        }
+      }
+      r = mutate((x) => {
+        x.regions = o.regions;
+        x.srcLang = o.srcLang;
+        x.unboxed = o.unboxed;
+        x.ocr = true;
+        x.ocrFree = true;
+        x.ocrBy = by;
+      });
+      await reclean();
+      return o;
+    }, (o) => `${o.regions.filter((x) => x.source).length} texts · ${langEnglishName(o.srcLang)}${note}`);
+    return r;
+  }
+
+  // translateFree translates on this computer: Chrome's built-in translator or
+  // opus-mt. null when it has to wait for a click or no translator fits.
+  async function translateFree(r: StripRecord, l: string, g: number): Promise<{ regions: Record<string, RegionTranslation>; engine: string } | null> {
+    const src = r.srcLang ?? "hu";
+    const ids = translatable(r);
+    if (src === l || !ids.size) {
+      stage("translate", { status: "skipped", message: src === l ? "already in this language" : "no text" });
+      return { regions: Object.fromEntries(r.regions.filter((x) => ids.has(x.id)).map((x) => [x.id, { text: x.source!.text }])), engine: "copy" };
+    }
+    const rt = await route(src, l);
+    check(g);
+    const pair = `${langEnglishName(src)} → ${langEnglishName(l)}`;
+    if (rt.engine === "none") {
+      stage("translate", { status: "error", message: `no free translator for ${pair} here` });
+      needClick(`No free translator for ${pair} in this browser. Chrome on a desktop has the most languages, or use an OpenRouter key.`);
+      return null;
+    }
+    if (rt.engine === "chrome" && rt.state === "download" && !navigator.userActivation?.isActive && !chromeStarted(src, l)) {
+      stage("translate", { status: "pending", message: "waiting for one click" });
+      needClick(`Chrome downloads its ${pair} translator once, after one click.`);
+      return null;
+    }
+    const { freeTranslate } = await freeEngine();
+    const tr = await timed("translate", () => freeTranslate(r, l, ids, progress("translate")), (x) => x.engine);
+    check(g);
+    return tr;
+  }
+
   const refreshListings = () => listings(id).then((ls) => setState("listings", ls)).catch(() => {});
 
   const connect = (l: string) => {
     flush();
+    publishPending();
     setLang(l);
+    wantFresh = false;
     setState("share", "idle");
     run(l);
   };
 
   const retry = () => run(lang());
 
-  const shareNow = async () => {
-    const t = state.translation;
-    const r = state.rec;
-    if (!t || !r?.scene || t.origin !== "llm") return;
-    if (!settings.validSession()) {
-      setState("share", "needCaptcha");
-      return;
+  const publishable = (t?: Translation) => !!t && (t.origin === "llm" || t.origin === "user") && Object.values(t.regions).some((x) => x.text.trim());
+
+  // shareNow posts the saved translation of the current language. auto never asks
+  // for the captcha: without a session it leaves the manual button.
+  const shareNow = async (auto = false) => {
+    const l = lang();
+    if (!auto) {
+      clearTimeout(publishTimer);
+      publishTimer = undefined;
     }
     await flush();
-    setState("share", "sharing");
+    if (!cur) return;
+    const t = rec().translations[l];
+    if (!publishable(t)) return;
+    const live = () => lang() === l;
+    if (!settings.validSession()) {
+      if (live()) setState("share", auto ? "idle" : "needCaptcha");
+      return;
+    }
+    lastPublish = Date.now();
+    if (live()) setState("share", "sharing");
     try {
-      const sid = await contribute(sharedFile(rec(), rec().translations[t.lang]));
-      mutate((x) => void (x.shared[t.lang] = sid));
-      setState("share", "shared");
+      const sid = await contribute(sharedFile(rec(), t));
+      mutate((x) => void (x.shared[l] = sid));
+      if (live()) setState("share", "shared");
       refreshListings();
     } catch (e) {
-      batch(() => {
-        setState("share", "error");
-        setState("shareError", e instanceof Error ? e.message : String(e));
-      });
+      if (live())
+        batch(() => {
+          setState("share", "error");
+          setState("shareError", e instanceof Error ? e.message : String(e));
+        });
     }
   };
 
@@ -326,7 +448,32 @@ export function createWork(id: string) {
     const t = state.translation;
     if (!t || !settings.share()) return setState("share", "off");
     if (rec().shared[t.lang] !== undefined) return setState("share", "shared");
-    shareNow();
+    shareNow(true);
+  }
+
+  // Edits publish on their own while sharing is on: after PUBLISH_QUIET_MS without
+  // edits, at most once per PUBLISH_GAP_MS. The hub keeps every version, newest first.
+  const PUBLISH_QUIET_MS = 15_000;
+  const PUBLISH_GAP_MS = 60_000;
+  let publishTimer: number | undefined;
+  let lastPublish = 0;
+
+  function schedulePublish() {
+    if (!settings.share()) return setState("share", "off");
+    clearTimeout(publishTimer);
+    const wait = Math.max(PUBLISH_QUIET_MS, lastPublish + PUBLISH_GAP_MS - Date.now());
+    publishTimer = window.setTimeout(() => {
+      publishTimer = undefined;
+      shareNow(true);
+    }, wait);
+    setState("share", "queued");
+  }
+
+  function publishPending() {
+    if (publishTimer === undefined) return;
+    clearTimeout(publishTimer);
+    publishTimer = undefined;
+    shareNow(true);
   }
 
   let timer: number | undefined;
@@ -359,8 +506,8 @@ export function createWork(id: string) {
       setState("translation", "regions", rid, (x) => ({ ...(x ?? {}), text }));
       setState("translation", "edited", true);
       if (state.translation?.origin === "shared" || state.translation?.origin === "demo") setState("translation", "origin", "llm");
-      setState("share", settings.share() ? "idle" : "off");
     });
+    schedulePublish();
     setSaveState("pending");
     clearTimeout(timer);
     timer = window.setTimeout(() => {
@@ -374,11 +521,13 @@ export function createWork(id: string) {
       const reg = x.regions.find((y) => y.id === rid);
       if (reg) reg.replace = replace;
     });
+    if (publishable(rec().translations[lang()])) schedulePublish();
     await reclean();
   };
 
   const retranslate = async (rid: string, hint?: string) => {
-    if (!settings.apiKey()) {
+    const free = !settings.sotaTranslate();
+    if (!free && !settings.apiKey()) {
       setState("phase", "needKey");
       return;
     }
@@ -387,17 +536,73 @@ export function createWork(id: string) {
     const r = rec();
     const ids = translatable(r, [rid]);
     if (!ids.size || !orig) return;
-    const signal = new AbortController().signal;
-    const pass = { lang: l, ids, current: state.translation ? plain(state.translation.regions) : undefined, hint };
-    const draft = await translatePass(orig, r, pass, llm("retranslate", signal));
-    const final = await reviewPass(orig, r, pass, draft, llm("retranslate", signal)).catch(() => draft);
-    const entry = final[rid];
+    let entry: RegionTranslation | undefined;
+    if (free) entry = (await (await freeEngine()).freeTranslate(r, l, ids)).regions[rid];
+    else {
+      const signal = new AbortController().signal;
+      const pass = { lang: l, ids, current: state.translation ? plain(state.translation.regions) : undefined, hint };
+      const draft = await translatePass(orig, r, pass, llm("retranslate", signal));
+      const final = await reviewPass(orig, r, pass, draft, llm("retranslate", signal)).catch(() => draft);
+      entry = final[rid];
+    }
     if (entry && state.translation) {
       setState("translation", "regions", rid, entry);
       setState("translation", "origin", "llm");
       persistTranslation();
-      setState("share", settings.share() ? "idle" : "off");
+      schedulePublish();
     }
+  };
+
+  // googleSuggest asks Google Translate for one bubble. It sends the text to Google.
+  const googleSuggest = async (rid: string): Promise<string> => {
+    const r = rec();
+    const reg = r.regions.find((x) => x.id === rid);
+    if (!reg?.source) return "";
+    const [{ googleTranslate }, { sentenceCase }] = await Promise.all([import("./free/google"), freeEngine()]);
+    const src = r.srcLang ?? "auto";
+    const [out] = await googleTranslate([sentenceCase(reg.source.text, src === "auto" ? "en" : src)], lang(), src);
+    return out ?? "";
+  };
+
+  // newVersion runs the read/translate steps again with the current settings and
+  // keeps the current translation among the versions of this language.
+  const MAX_VERSIONS = 10;
+  const newVersion = async () => {
+    const l = lang();
+    await flush();
+    clearTimeout(publishTimer);
+    publishTimer = undefined;
+    setState("share", "idle");
+    mutate((x) => {
+      const t = x.translations[l];
+      if (t) x.versions = { ...x.versions, [l]: [t, ...(x.versions?.[l] ?? [])].slice(0, MAX_VERSIONS) };
+      delete x.translations[l];
+      delete x.drafts[l];
+      delete x.shared[l];
+    });
+    wantFresh = true;
+    run(l);
+  };
+
+  // pickVersion makes an older version current; the current one joins the others.
+  const pickVersion = async (i: number) => {
+    const l = lang();
+    await flush();
+    clearTimeout(publishTimer);
+    publishTimer = undefined;
+    const r = mutate((x) => {
+      const old = x.versions?.[l] ?? [];
+      const pick = old[i];
+      if (!pick) return;
+      const cur = x.translations[l];
+      x.versions = { ...x.versions, [l]: cur ? old.map((v, j) => (j === i ? cur : v)) : old.filter((_, j) => j !== i) };
+      x.translations[l] = pick;
+      delete x.shared[l];
+    });
+    batch(() => {
+      setState("translation", reconcile(structuredClone(r.translations[l])));
+      setState("share", "idle");
+    });
   };
 
   // editEmpty opens the editor with every bubble blank, for lettering by hand.
@@ -421,19 +626,22 @@ export function createWork(id: string) {
   const translateAI = () => {
     const l = lang();
     flush();
+    clearTimeout(publishTimer);
+    publishTimer = undefined;
     mutate((x) => void delete x.translations[l]);
     run(l);
   };
 
   onCleanup(() => {
     flush();
+    publishPending();
     gen++;
     abort?.abort();
     if (cleanUrl) URL.revokeObjectURL(cleanUrl);
     if (imageUrl) URL.revokeObjectURL(imageUrl);
   });
 
-  return { state, lang, connect, retry, editText, setReplace, retranslate, flush, saveState, shareNow, editEmpty, translateAI };
+  return { state, lang, connect, retry, editText, setReplace, retranslate, flush, saveState, shareNow, editEmpty, translateAI, googleSuggest, newVersion, pickVersion };
 }
 
 export type Work = ReturnType<typeof createWork>;

@@ -27,13 +27,21 @@ export const settings = createRoot(() => {
   const [session, setSession] = persisted<Session | null>("session", null);
   const [langs, setLangs] = persisted<string[]>("langs", []);
   const [model, setModel] = persisted("model", DEFAULT_MODEL);
+  const [sotaRead, setSotaRead] = persisted("sotaRead", true);
+  const [sotaTranslate, setSotaTranslate] = persisted("sotaTranslate", true);
+  const [freeGpu, setFreeGpu] = persisted("freeGpu", false);
 
   const lastLang = () => langs()[0] ?? browserLang();
   const useLang = (code: string) => setLangs([code, ...langs().filter((l) => l !== code)].slice(0, 12));
+  const allFree = () => !sotaRead() && !sotaTranslate();
+  const setAllFree = (free: boolean) => {
+    setSotaRead(!free);
+    setSotaTranslate(!free);
+  };
   const validSession = () => {
     const s = session();
     return s && s.exp * 1000 > Date.now() + 60_000 ? s.token : "";
   };
 
-  return { apiKey, setApiKey, share, setShare, nick, setNick, secret, session, setSession, validSession, langs, useLang, lastLang, model, setModel };
+  return { apiKey, setApiKey, share, setShare, nick, setNick, secret, session, setSession, validSession, langs, useLang, lastLang, model, setModel, sotaRead, setSotaRead, sotaTranslate, setSotaTranslate, allFree, setAllFree, freeGpu, setFreeGpu };
 });

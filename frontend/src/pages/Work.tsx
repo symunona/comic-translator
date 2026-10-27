@@ -11,8 +11,21 @@ import ViewToggle from "../components/ViewToggle";
 import { FONT_FAMILY } from "../lib/layout";
 import { renderStrip } from "../lib/render";
 import { settings } from "../lib/settings";
-import { STAGES } from "../lib/types";
+import { STAGES, type Translation } from "../lib/types";
 import { createWork } from "../lib/work";
+
+const versionLabel = (t: Translation) => {
+  const who =
+    t.origin === "user"
+      ? "by hand"
+      : t.origin === "shared" || t.origin === "demo"
+        ? `shared${t.by ? ` by ${t.by}` : ""}`
+        : t.model?.startsWith("free:")
+          ? `free (${t.model.slice(5)})`
+          : (t.model?.split("/").pop() ?? "AI");
+  const when = new Date(t.updatedAt).toLocaleString([], { month: "short", day: "numeric", hour: "2-digit", minute: "2-digit" });
+  return `${who}${t.edited ? ", edited" : ""} · ${when}`;
+};
 
 const SAVE_LABEL = { idle: "", pending: "editing…", saved: "saved in this browser", error: "save failed" };
 
@@ -52,6 +65,7 @@ function WorkView(props: { id: string }) {
   const running = createMemo(() => STAGES.find((n) => s.stages[n].status === "running"));
   const showKey = () => keyOpen() || (s.phase === "needKey" && !keyDismissed());
   const translatedLangs = () => Object.keys(s.rec?.translations ?? {});
+  const versions = () => s.rec?.versions?.[lang()] ?? [];
   const sharedLangs = () => [...new Set(s.listings.map((l) => l.lang))];
 
   const pickFromCard = (rid: string) => {
@@ -188,6 +202,12 @@ function WorkView(props: { id: string }) {
             lang={work.lang()}
             calls={s.rec?.calls ?? []}
             model={settings.model()}
+            freeRead={s.rec?.ocr ? !!s.rec.ocrFree : !settings.apiKey() || !settings.sotaRead()}
+            freeTranslate={!settings.apiKey() || !settings.sotaTranslate()}
+            freeGpu={settings.freeGpu()}
+            hasKey={!!settings.apiKey()}
+            onAddKey={() => setKeyOpen(true)}
+            onNewVersion={s.phase === "done" || s.phase === "fatal" ? work.newVersion : undefined}
             onDownloadEmpty={s.cleanUrl ? downloadEmpty : undefined}
             onEditEmpty={s.cleanUrl ? editEmpty : undefined}
           />
@@ -198,6 +218,22 @@ function WorkView(props: { id: string }) {
           </Show>
           <Show when={editing() && s.translation}>
             <div class="share-state">
+              <Show when={versions().length}>
+                <label class="versions">
+                  Version
+                  <select
+                    value="-1"
+                    onChange={(e) => {
+                      const i = +e.currentTarget.value;
+                      e.currentTarget.value = "-1";
+                      if (i >= 0) work.pickVersion(i);
+                    }}
+                  >
+                    <option value="-1">{s.translation ? versionLabel(s.translation) : "current"}</option>
+                    <For each={versions()}>{(v, i) => <option value={i()}>{versionLabel(v)}</option>}</For>
+                  </select>
+                </label>
+              </Show>
               <Show when={s.translation?.origin === "demo"}>
                 <p class="muted">Demo translation, bundled with the site.</p>
               </Show>
@@ -210,7 +246,10 @@ function WorkView(props: { id: string }) {
                   Translate with AI instead
                 </button>
               </Show>
-              <Show when={s.translation?.origin === "llm"}>
+              <Show when={s.translation?.origin === "llm" || s.translation?.origin === "user"}>
+                <Show when={s.share === "queued"}>
+                  <p class="muted">Your edits will be shared in a moment.</p>
+                </Show>
                 <Show when={s.share === "shared"}>
                   <p class="key-ok">Shared with others{settings.nick() ? ` as ${settings.nick()}` : " anonymously"}. Thanks!</p>
                 </Show>
@@ -221,13 +260,13 @@ function WorkView(props: { id: string }) {
                 </Show>
                 <Show when={s.share === "needCaptcha"}>
                   <p class="muted">One captcha, then your translation is shared.</p>
-                  <Turnstile onVerified={work.shareNow} />
+                  <Turnstile onVerified={() => work.shareNow()} />
                 </Show>
                 <Show when={s.share === "error"}>
                   <p class="fatal">Sharing failed: {s.shareError}</p>
                 </Show>
-                <Show when={s.share === "idle" || s.share === "error" || s.share === "off"}>
-                  <button class="ghost small" onClick={work.shareNow}>
+                <Show when={s.share === "idle" || s.share === "error" || s.share === "off" || s.share === "queued"}>
+                  <button class="ghost small" onClick={() => work.shareNow()}>
                     Share this translation
                   </button>
                 </Show>
@@ -252,6 +291,7 @@ function WorkView(props: { id: string }) {
                   onText={(t) => work.editText(r.id, t)}
                   onReplace={(on) => work.setReplace(r.id, on)}
                   onRetranslate={r.source ? () => work.retranslate(r.id) : undefined}
+                  onGoogle={r.source ? () => work.googleSuggest(r.id) : undefined}
                 />
               )}
             </For>
@@ -273,6 +313,8 @@ function WorkView(props: { id: string }) {
             setKeyDismissed(true);
           }}
           onShareReady={() => s.phase === "needKey" && work.retry()}
+          lang={lang()}
+          src={s.rec?.srcLang}
         />
       </Show>
     </div>

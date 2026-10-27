@@ -38,3 +38,4 @@ deploy/*.local
 .vscode/
 *.swp
 /data-e2e/
+/frontend/.bench/

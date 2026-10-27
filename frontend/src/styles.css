@@ -497,7 +497,15 @@ button:disabled { opacity: 0.45; cursor: default; }
 }
 .card textarea:focus { outline: none; border-color: var(--ink); }
 .card footer { display: flex; align-items: center; gap: 10px; margin-top: 8px; }
-.card footer button { margin-left: auto; }
+.card-actions { margin-left: auto; display: flex; gap: 6px; }
+.suggest { display: flex; align-items: baseline; gap: 6px; margin: 6px 0 0; font-size: 12px; }
+.suggest span { flex: 1; white-space: pre-wrap; }
+.suggest .x { border: 0; background: none; padding: 0 2px; cursor: pointer; color: var(--muted); }
+.pipeline-opts { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; margin: 10px 0 0 28px; }
+.pipeline-opts p { margin: 0; font-size: 12px; }
+.pipeline-opts .toggle.off { opacity: 0.55; cursor: default; }
+.versions { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; }
+.versions select { max-width: 100%; font-size: 12px; }
 @container (min-width: 540px) {
   .card { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 3fr); column-gap: 18px; align-items: start; }
   .card header { grid-column: 1 / -1; }
@@ -684,6 +692,8 @@ button:disabled { opacity: 0.45; cursor: default; }
 .key-row input:focus, .key-dialog .nick:focus { border-color: var(--ink); outline: none; }
 .key-error { color: var(--red); margin: 0; font-size: 13px; }
 .key-ok { color: var(--green); margin: 0; font-size: 13px; }
+.free-box h4 { margin: 0; font-size: 15px; }
+.free-box p { margin: 0; font-size: 13px; }
 .key-privacy { margin: 0; font-size: 13px; background: #f1f7ee; border: 1px solid #cfe5c6; border-radius: 8px; padding: 8px 10px; }
 .howto { font-size: 13px; }
 .howto summary { cursor: pointer; color: var(--blue); }
